@@ -7,6 +7,7 @@ class CreateClubs < ActiveRecord::Migration[5.0]
       t.string :description
       t.integer :money, default: 0
       t.integer :rating, default: 0
+      t.integer :fee_per_month, default: 0
       t.boolean :is_active, default: false
       t.timestamps
     end
