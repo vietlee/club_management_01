@@ -9,14 +9,14 @@ class DeviseCreateUsers < ActiveRecord::Migration[5.0]
       t.string :full_name
       t.string :avatar
       t.string :phone
-      t.string :chatword
+      t.string :chatwork
       t.integer :role
       ## Trackable
-      # t.integer  :sign_in_count, default: 0, null: false
-      # t.datetime :current_sign_in_at
-      # t.datetime :last_sign_in_at
-      # t.string   :current_sign_in_ip
-      # t.string   :last_sign_in_ip
+      t.integer  :sign_in_count, default: 0, null: false
+      t.datetime :current_sign_in_at
+      t.datetime :last_sign_in_at
+      t.string   :current_sign_in_ip
+      t.string   :last_sign_in_ip
 
       t.string :confirmation_token
       t.datetime :confirmed_at
