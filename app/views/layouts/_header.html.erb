@@ -1,0 +1,33 @@
+<header id="header">
+  <%= link_to "#", class: "logo" do %>
+    <%= image_tag "logo.png" %>
+  <% end %>
+  <ul class="icons">
+    <li>
+      <%= link_to "#", class: "icon fa-twitter" do %>
+        <span class="label"></span>
+      <% end %>
+    </li>
+    <li>
+      <%= link_to "#", class: "icon fa-facebook" do %>
+        <span class="label"></span>
+      <% end %>
+    </li>
+    <li>
+      <%= link_to "#", class: "icon fa-snapchat-ghost" do %>
+        <span class="label"></span>
+      <% end %>
+    </li>
+    <li>
+      <%= link_to "#", class: "icon fa-globe" do %>
+        <span class="label"></span>
+      <% end %>
+    </li>
+    <li>
+      <%= link_to "#myModal", class: "icon fa-sign-in",
+        data: {toggle: "modal"} do %>
+        <span class="label"></span><%= t "login" %>
+      <% end %>
+    </li>
+  </ul>
+</header>

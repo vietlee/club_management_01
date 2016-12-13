@@ -1,0 +1,132 @@
+<div id="sidebar">
+  <div class="inner">
+    <section id="search" class="alt">
+      <%= form_tag "search", method: :post, id: :search,
+        class: "alt"  do %>
+        <%= text_field_tag :query, nil, id: "query",
+          placeholder: t("search") %>
+      <% end %>
+    </section>
+    <nav id="menu">
+      <header class="major">
+        <h2><%= t "title" %></h2>
+      </header>
+      <ul>
+        <li>
+          <%= link_to t("home_page"), t("href"),
+            class: "icon fa-home" %>
+        </li>
+        <li>
+          <%= link_to t("post_entry"), t("href"),
+            class: "icon fa-pencil" %>
+        </li>
+        <li>
+          <%= link_to t("new_event"), t("href"),
+            class: "icon fa-ils" %>
+        </li>
+        <li>
+          <%= link_to t("club_albums"), t("href"),
+            class: "icon fa-book" %>
+        </li>
+        <li>
+          <%= link_to t("other_club"), t("href"),
+            class: "icon fa-list" %>
+        </li>
+        <li>
+          <span class="opener">
+            <%= t "send_request" %>
+          </span>
+          <ul>
+            <li>
+              <%= link_to t("other_club"), t("href"),
+                class: "icon fa-list" %>
+            </li>
+            <li>
+              <%= link_to t("other_club"), t("href"),
+                class: "icon fa-list" %>
+            </li>
+            <li>
+              <%= link_to t("other_club"), t("href"),
+                class: "icon fa-list" %>
+            </li>
+            <li>
+              <%= link_to t("other_club"), t("href"),
+                class: "icon fa-list" %>
+            </li>
+          </ul>
+        </li>
+        <li>
+          <span class="opener">
+            <%= t "approve_request" %>
+          </span>
+          <ul>
+            <li>
+              <%= link_to t("other_club"), t("href"),
+                class: "icon fa-list" %>
+            </li>
+            <li>
+              <%= link_to t("other_club"), t("href"),
+                class: "icon fa-list" %>
+            </li>
+            <li>
+              <%= link_to t("other_club"), t("href"),
+                class: "icon fa-list" %>
+            </li>
+            <li>
+              <%= link_to t("other_club"), t("href"),
+                class: "icon fa-list" %>
+            </li>
+          </ul>
+        </li>
+        <li>
+          <%= link_to t("logout"), t("href"),
+            class: "icon fa-sign-out" %>
+        </li>
+      </ul>
+    </nav>
+    <section>
+      <header class="major">
+        <h2><%= t "club_suggest" %></h2>
+      </header>
+      <div class="mini-posts">
+        <article>
+          <%= link_to image_tag(""), t("href"),
+            class: "image" %>
+          <p><%= t "blah" %></p>
+        </article>
+        <article>
+          <%= link_to image_tag(""), t("href"),
+            class: "image" %>
+          <p><%= t "blah" %></p>
+        </article>
+        <article>
+          <%= link_to image_tag(""), t("href"),
+            class: "image" %>
+          <p><%= t "blah" %></p>
+        </article>
+      </div>
+    </section>
+    <section>
+      <header class="major">
+        <h2><%= t "contact_admin" %></h2>
+      </header>
+      <p><%= t"contact_suggest" %></p>
+      <ul class="contact">
+        <li class="fa-envelope-o">
+          <%= t "email_admin" %>
+        </li>
+        <li class="fa-phone">
+          <%= t "phone_admin" %>
+        </li>
+        <li class="fa-home">
+          <%= t "address_admin" %>
+        </li>
+      </ul>
+    </section>
+    <footer id="footer">
+      <p class="copyright">&copy;
+        <%= t "copy_right" %>
+      </p>
+    </footer>
+  </div>
+</div>
