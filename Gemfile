@@ -10,6 +10,7 @@ gem "jquery-rails"
 gem "turbolinks", "~> 5"
 gem "jbuilder", "~> 2.5"
 gem "font-awesome-rails"
+gem "devise"
 group :production do
   gem "pg"
   gem "rails_12factor"
