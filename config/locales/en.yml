@@ -13,6 +13,7 @@ en:
   post_entry: " Post Entry"
   new_event: " New Event"
   club_albums: " Club Albums"
+  list_club: "List Club"
   other_club: " Other Club"
   send_request: " Send Request"
   approve_request: " Approve Request"
@@ -26,5 +27,18 @@ en:
   address_admin: "6th floor, Vinh Trung Plaza, 255 - 257 Hung Vuong, Hai Chau, Da Nang"
   copy_right: " Ma Tien Thanh - Ly Duc Long. All rights reserved"
   football_club: "Football Club"
-
-
+  or: "OR"
+  session:
+    title: "Login & Sign up"
+    forgot: "Forgot your password?"
+    guide: "Enter your Email Address here to receive a link to change password."
+    name: "Name"
+    email: "Email"
+    password: "Password"
+    sign_in: "Sign In"
+    send_email: "Send Email"
+    sign_up: "Sign Up"
+    close: "Close"
+    password_confirm: "Password Confirmation"
+  login_signup: "Login | Sign up"
+  you_have_msg: "You have a messages!"

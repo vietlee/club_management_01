@@ -24,9 +24,14 @@
       <% end %>
     </li>
     <li>
-      <%= link_to "#myModal", class: "icon fa-sign-in",
-        data: {toggle: "modal"} do %>
-        <span class="label"></span><%= t "login" %>
+      <% if user_signed_in? %>
+        <%= link_to "#", class: "icon" do %>
+          <%= current_user.full_name %>
+        <% end %>
+      <% else %>
+        <%= link_to "#sessionModal", class: "icon", data: {toggle: "modal"} do %>
+          <span class="label"></span><%= t("login_signup") %>
+        <% end %>
       <% end %>
     </li>
   </ul>
