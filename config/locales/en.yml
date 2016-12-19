@@ -55,6 +55,8 @@ en:
   save_changes: "SAVE CHANGES"
   cancel: "CANCEL"
   create: "Create"
+  submit: "Submit"
+  new_organization: "New Organization"
   session:
     title: "Login & Sign up"
     forgot: "Forgot your password?"
@@ -79,6 +81,14 @@ en:
     avatar_change: "Upload a different photo..."
     cannot_updated: "You need enter password"
     profile_updated: "Updated successfull"
+  require_admin: "You are not admin!"
+  organization:
+    create_success: "Organization create successfull!"
+    create_fail: "Can not create organization, please enter full information and try again!"
+    update_success: "Organization update successfull!"
+    update_fail: "Organization update failed!"
+  submit: "Submit"
+  edit: "Edit"
   time:
     formats:
       date: "%H:%M %d/%m/%Y"
