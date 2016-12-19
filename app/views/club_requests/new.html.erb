@@ -1,0 +1,23 @@
+<div class="innerpage">
+  <div class="row">
+    <div class="col-md-7 request club">
+      <div class="form-group">
+        <h3><%= t "request_new_club" %></h3>
+        <%= form_for @club_request do |f| %>
+          <div class="form-group">
+            <%= f.label t "club_name" %>
+            <%= f.text_field :name %>
+            <%= f.hidden_field :action, value: t("create") %>
+          </div>
+          <div class="form-group">
+            <%= f.label t "descriptions_club" %>
+            <%= f.text_area :description, class: "text_area" %>
+          </div>
+          <div class="form-group">
+            <%= f.submit t "club_request" %>
+          </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,2 +1,46 @@
 @import 'bootstrap-sprockets';
 @import 'bootstrap';
+.modal-backdrop {
+  z-index: -1;
+}
+.innerpage {
+  margin-top: 50px;
+}
+.bootstrap-select button {
+  color: #9b8f8f!important;
+  text-transform: none!important;
+  font-family: Open Sans!important;
+  font-size: 1em;
+}
+.bootstrap-select button:hover {
+  background-color: transparent!important;
+}
+dropdown-menu:hover {
+  background-color: red!important;
+}
+.btn-default:active,
+.btn-default.active,
+.open > .btn-default.dropdown-toggle {
+  background-color: transparent;
+}
+.bootstrap-select.btn-group .dropdown-menu li a {
+  border-bottom: 1px solid #cecece!important;
+}
+.text_area {
+  min-width: 50em;
+  min-height: 8em;
+}
+#hour,
+#days {
+  height: 40px;
+  border-radius: 5px;
+  border: solid 1px #cecece;
+}
+#hour {
+  float: left;
+  margin-right: 10px;
+  width: 80%;
+}
+.hint {
+  margin: 5px;
+}
