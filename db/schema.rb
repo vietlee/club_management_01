@@ -9,9 +9,7 @@
 # you'll amass, the slower it'll run and the greater likelihood for issues).
 #
 # It's strongly recommended that you check this file into your version control system.
-
-
-ActiveRecord::Schema.define(version: 20161216024723) do
+ActiveRecord::Schema.define(version: 20161216044903) do
 
   create_table "activities", force: :cascade do |t|
     t.string   "action"
@@ -42,6 +40,7 @@ ActiveRecord::Schema.define(version: 20161216024723) do
     t.datetime "updated_at",                      null: false
     t.index ["organization_id"], name: "index_club_requests_on_organization_id"
     t.index ["user_id"], name: "index_club_requests_on_user_id"
+  end
 
   create_table "clubs", force: :cascade do |t|
     t.integer  "organization_id"
@@ -75,8 +74,8 @@ ActiveRecord::Schema.define(version: 20161216024723) do
     t.date     "date_start"
     t.string   "duration"
     t.string   "location"
-    t.datetime "created_at",              null: false
-    t.datetime "updated_at",              null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
     t.index ["club_id"], name: "index_event_requests_on_club_id"
     t.index ["user_id"], name: "index_event_requests_on_user_id"
   end

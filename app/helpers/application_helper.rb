@@ -14,4 +14,12 @@ module ApplicationHelper
   def devise_mapping
     @devise_mapping ||= Devise.mappings[:user]
   end
+
+  def index_continue object, index, per_page
+    (object.to_i - 1) * per_page.to_i + index + 1
+  end
+
+  def flash_error object
+    flash[:danger] = object.errors.full_messages
+  end
 end
