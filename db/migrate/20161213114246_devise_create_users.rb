@@ -9,7 +9,7 @@ class DeviseCreateUsers < ActiveRecord::Migration[5.0]
       t.string :full_name
       t.string :avatar
       t.string :phone
-      t.string :chatword
+      t.string :chatwork
       t.integer :role
       ## Trackable
       t.integer  :sign_in_count, default: 0, null: false

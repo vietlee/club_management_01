@@ -43,3 +43,6 @@ bower.json
 
 # Ignore database.yml file
 config/database.yml
+
+# Ignore gemfile.log
+Gemfile.lock
