@@ -7,6 +7,10 @@ class User < ApplicationRecord
   has_many :comments, dependent: :destroy
   has_many :news, dependent: :destroy
 
+  mount_uploader :avatar, AvatarUploader
+
+  validates :full_name, presence: true, length: {maximum: Settings.max_name}
+  validates :password, presence: true, length: {minimum: Settings.min_password}
   devise :database_authenticatable, :registerable, :recoverable, :rememberable,
     :trackable, :validatable
 end
