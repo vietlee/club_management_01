@@ -9,6 +9,7 @@
 # you'll amass, the slower it'll run and the greater likelihood for issues).
 #
 # It's strongly recommended that you check this file into your version control system.
+
 ActiveRecord::Schema.define(version: 20161216044903) do
 
   create_table "activities", force: :cascade do |t|
@@ -33,8 +34,8 @@ ActiveRecord::Schema.define(version: 20161216044903) do
     t.integer  "organization_id"
     t.integer  "user_id"
     t.string   "name"
-    t.string   "notification"
     t.text     "description"
+    t.string   "action"
     t.boolean  "approve",         default: false
     t.datetime "created_at",                      null: false
     t.datetime "updated_at",                      null: false
@@ -66,18 +67,8 @@ ActiveRecord::Schema.define(version: 20161216044903) do
   end
 
   create_table "event_requests", force: :cascade do |t|
-    t.integer  "user_id"
-    t.integer  "club_id"
-    t.string   "name"
-    t.text     "description"
-    t.integer  "expense",     default: 0
-    t.date     "date_start"
-    t.string   "duration"
-    t.string   "location"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["club_id"], name: "index_event_requests_on_club_id"
-    t.index ["user_id"], name: "index_event_requests_on_user_id"
   end
 
   create_table "events", force: :cascade do |t|
@@ -124,6 +115,22 @@ ActiveRecord::Schema.define(version: 20161216044903) do
     t.string   "location"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
+  end
+
+  create_table "requests", force: :cascade do |t|
+    t.integer  "category_request_id"
+    t.integer  "user_id"
+    t.integer  "target_id"
+    t.string   "target_type"
+    t.string   "content"
+    t.date     "date_start"
+    t.string   "duration"
+    t.string   "location"
+    t.boolean  "approve",             default: false
+    t.datetime "created_at",                          null: false
+    t.datetime "updated_at",                          null: false
+    t.index ["category_request_id"], name: "index_requests_on_category_request_id"
+    t.index ["user_id"], name: "index_requests_on_user_id"
   end
 
   create_table "user_clubs", force: :cascade do |t|
