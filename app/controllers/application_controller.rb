@@ -20,4 +20,12 @@ class ApplicationController < ActionController::Base
       redirect_to root_url
     end
   end
+
+  def load_organization
+    @organization = Organization.find_by id: params[:id]
+    unless @organization
+      flash[:danger] = t("cant_found")
+      redirect_to root_url
+    end
+  end
 end
