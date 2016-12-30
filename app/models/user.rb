@@ -9,6 +9,7 @@ class User < ApplicationRecord
   has_many :images
   has_many :comments, dependent: :destroy
   has_many :news, dependent: :destroy
+  has_many :target_hobbies_tags, as: :target
 
   belongs_to :organization
 
@@ -17,5 +18,6 @@ class User < ApplicationRecord
   validates :full_name, presence: true, length: {maximum: Settings.max_name}
   validates :password, presence: true, length: {minimum: Settings.min_password}
 
-  enum role: {admin: 1, manager: 2, member: 3}
+  enum role: {company_admin: 1}
+
 end

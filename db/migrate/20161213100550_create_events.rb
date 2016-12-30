@@ -5,6 +5,7 @@ class CreateEvents < ActiveRecord::Migration[5.0]
       t.text :description
       t.integer :expense, default: 0
       t.references :club, foreign_key: true
+      t.references :event_category, foreign_key: true
       t.date :date_start
       t.string :duration
       t.string :location
