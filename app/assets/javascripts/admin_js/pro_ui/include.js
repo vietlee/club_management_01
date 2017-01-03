@@ -1,4 +1,5 @@
 $(document).on('turbolinks:load', function() {
+  App.init();
 });
 
 $(document).ready(function() {
