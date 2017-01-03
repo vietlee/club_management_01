@@ -1,56 +1,80 @@
-<header id="header">
-  <%= link_to "#", class: "logo" do %>
-    <%= image_tag "logo.png" %>
-  <% end %>
-  <ul class="icons">
-    <li>
-      <%= link_to "#", class: "icon fa-twitter" do %>
-        <span class="label"></span>
+<div id="page-container">
+  <header>
+    <div class="container">
+      <%= link_to root_path, class: "site-logo" do %>
+        <i class="fa fa-flash fa-5x"></i>
+        <strong><%= t "logo" %></strong> - <%= t "clubs" %>
       <% end %>
-    </li>
-    <li>
-      <%= link_to "#", class: "icon fa-facebook" do %>
-        <span class="label"></span>
-      <% end %>
-    </li>
-    <li>
-      <%= link_to "#", class: "icon fa-snapchat-ghost" do %>
-        <span class="label"></span>
-      <% end %>
-    </li>
-    <li>
-      <%= link_to "#", class: "icon fa-globe" do %>
-        <span class="label"></span>
-      <% end %>
-    </li>
-    <li>
-      <% if user_signed_in? %>
-        <div class="dropdown">
-          <%= link_to "#", {class: "icon dropdown-toggle",
-            "data-toggle": "dropdown"} do %>
-            <%= current_user.full_name %>
-            <b class="caret"></b>
-          <% end %>
-          <ul class="dropdown-menu" role="menu">
-            <li>
-              <%= link_to t(" profile"), current_user,
-                class: "fa fa-file-o" %>
-            </li><br>
-            <li>
-              <%= link_to t(" club joined"), t("href"),
-                class: "fa fa-align-justify" %>
-            </li><br>
-            <li>
-              <%= link_to t(" update profile"), edit_user_path(current_user),
-                class: "fa fa-cog" %>
-            </li>
-          </ul>
-        </div>
-      <% else %>
-        <%= link_to "#sessionModal", class: "icon", data: {toggle: "modal"} do %>
-          <span class="label"></span><%= t("login_signup") %>
+      <nav>
+        <%= link_to "javascript:void(0)",
+          class: "btn btn-default site-menu-toggle visible-xs visible-sm" do %>
+          <i class="fa fa-bars"></i>
         <% end %>
-      <% end %>
-    </li>
-  </ul>
-</header>
+        <ul class="site-nav">
+          <li class="visible-xs visible-sm">
+            <%= link_to "javascript:void(0)",
+              class: "site-menu-toggle text-center" do %>
+              <i class="fa fa-times"></i>
+            <% end %>
+          </li>
+          <li><%= link_to t("home"), "#" %></li>
+          <li>
+            <%= link_to "#", class: "site-nav-sub" do %>
+              <i class="fa fa-angle-down site-nav-arrow"></i><%= t "club" %>
+            <% end %>
+            <ul>
+              <li><%= link_to t("club_details"), "#" %></li>
+              <li><%= link_to t("events"), "#" %></li>
+            </ul>
+          </li>
+          <li><%= link_to t("albums"), "#" %></li>
+          <li>
+            <%= link_to "#", class: "site-nav-sub" do %>
+              <i class="fa fa-angle-down site-nav-arrow"></i><%= t "clubs" %>
+            <% end %>
+            <ul>
+              <li><%= link_to t("my_club"), "#" %></li>
+              <li><%= link_to t("other_club"), "#" %></li>
+            </ul>
+          </li>
+          <li>
+            <%= link_to "#", class: "site-nav-sub" do %>
+              <i class="fa fa-angle-down site-nav-arrow"></i><%= t "requests" %>
+            <% end %>
+            <ul>
+              <li><%= link_to t("create_club"), "#" %></li>
+              <li><%= link_to t("list_request"), "#" %></li>
+            </ul>
+          </li>
+          <li><%= link_to t("contact"), "#" %></li>
+          <li><%= link_to t("about"), "#" %></li>
+          <li>
+            <%= link_to "#" do %>
+              <span class="fa fa-sign-in"></span><%= t "login" %>
+            <% end %>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+  <div class="media-container">
+    <section class="site-section site-section-light site-section-top">
+      <div class="container">
+        <%= link_to "#" do %>
+          <span class="site-top-avatar pull-right join-button animation-fadeIn360">
+            <%= t "join" %>
+          </span>
+        <% end %>
+        <h1 class="animation-slideDown"><strong><%= t "name_club" %></strong></h1>
+        <span class="animation-slideUp hidden-xs rating-container">
+          <input type="number" name="rating" class="rating" data-min=1 data-max= 5>
+          <p class="h3"><%= t "num_rate" %></p>
+        </span>
+        <p class="h3 animation-slideUp hidden-xs">
+          <%= t "descriptions_example" %>
+        </p>
+      </div>
+      <div class="container"></div>
+    </section>
+    <%= image_tag "placeholders/headers/blog_post.jpg", class: "media-image animation-pulseSlow" %>
+  </div>
