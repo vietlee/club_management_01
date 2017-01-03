@@ -13,6 +13,8 @@ gem "font-awesome-rails"
 gem "devise"
 gem "carrierwave"
 gem "config"
+gem "i18n-js"
+
 group :production do
   gem "pg"
   gem "rails_12factor"
