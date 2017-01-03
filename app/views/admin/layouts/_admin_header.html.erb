@@ -1,0 +1,47 @@
+<header class="navbar navbar-default">
+  <ul class="nav navbar-nav-custom">
+    <li>
+      <%= link_to t("do_nothing"), class: "toggle-sidebar" do %>
+        <i class="fa fa-bars fa-fw"></i>
+      <% end %>
+    </li>
+  </ul>
+  <ul class="nav navbar-nav-custom pull-right">
+    <li>
+      <%= link_to t("do_nothing") do %>
+        <i class="gi gi-globe_af"></i>
+        <span class="label label-primary label-indicator animation-floating"></span>
+      <% end %>
+    </li>
+    <li class="dropdown">
+      <%= link_to t("do_nothing"), {class: "dropdown-toggle",
+        "data-toggle": "dropdown"} do %>
+        <%= image_tag "placeholders/avatars/avatar2.jpg" %>
+        <b class="caret"></b>
+      <% end %>
+      <ul class="dropdown-menu dropdown-custom dropdown-menu-right">
+        <li class="dropdown-header text-center"><%= t "account" %></li>
+        <li class="divider"></li>
+        <li>
+          <%= link_to t("do_nothing") do %>
+            <i class="fa fa-user fa-fw pull-right"></i><%= t "Profile" %>
+          <% end %>
+          <%= link_to "#modal-user-settings", data: {toggle: "modal"} do %>
+            <i class="fa fa-cog fa-fw pull-right"></i><%= t "settings" %>
+          <% end %>
+        </li>
+        <li class="divider"></li>
+        <li>
+          <%= link_to t("do_nothing") do %>
+            <i class="fa fa-lock fa-fw pull-right"></i><%= t "lock accont" %>
+          <% end %>
+        </li>
+        <li>
+          <%= link_to t("do_nothing") do %>
+            <i class="fa fa-ban fa-fw pull-right"></i><%= t "log out" %>
+          <% end %>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</header>

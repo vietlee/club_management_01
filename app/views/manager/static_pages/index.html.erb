@@ -1,0 +1,49 @@
+<div class="row">
+  <div class="col-md-6">
+    <div class="block">
+      <div class="block-title">
+        <h2><strong><%= t "my" %></strong><%= t " activities" %></h2>
+      </div>
+      <div class="block-content-full">
+        <div class="timeline">
+          <ul class="timeline-list">
+            <li class="text-center">
+              <%= link_to t("view_more"), t("do_nothing"),
+                class: "btn btn-xs btn-default" %>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="block full">
+      <div class="block-title">
+        <h2><strong><%= t "newest" %></strong><%= t " members" %></h2>
+      </div>
+      <div class="row text-center">
+        <div class="text-center">
+          <%= link_to t("view_more"), t("do_nothing"),
+            class: "btn btn-xs btn-default" %>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-6">
+    <div class="block">
+      <div class="block-title">
+        <h2><strong><%= t "latest" %></strong><%= t " news" %></h2>
+      </div>
+      <div class="block-content-full">
+        <div class="timeline">
+          <ul class="timeline-list">
+            <li class="text-center">
+              <%= link_to t("view_more"), t("do_nothing"),
+                class: "btn btn-xs btn-default" %>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

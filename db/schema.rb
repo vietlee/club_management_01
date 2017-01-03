@@ -95,8 +95,8 @@ ActiveRecord::Schema.define(version: 20161229063512) do
 
   create_table "events", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "name"
-    t.text     "description",       limit: 65535
-    t.integer  "expense",                         default: 0
+    t.text     "description", limit: 65535
+    t.integer  "expense",                   default: 0
     t.integer  "club_id"
     t.integer  "event_category_id"
     t.date     "date_start"
