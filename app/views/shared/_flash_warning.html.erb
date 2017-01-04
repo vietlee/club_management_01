@@ -1,21 +1,9 @@
 <% if flash.any? %>
-  <div class="modal fade" id="errorModal" role="dialog">
-    <div class="modal-dialog modal-sm">
-      <div class="modal-content">
-        <div class="modal-header">
-        <h4 class="modal-title"><%= t "you_have_msg" %></h4>
-        </div>
-        <div class="modal-body">
-          <% flash.each do |key, value| %>
-            <%= content_tag :div, value, class: "alert alert-#{key}" %>
-          <% end %>
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-default" data-dismiss="modal">
-            <%= t "close" %>
-          </button>
-        </div>
-      </div>
-    </div>
-  </div>
+  <% flash.each do |key, value| %>
+  <section class="notify">
+    <%= content_tag :div, value, class: "alert alert-#{key}" do %>
+      <a href="javascript:void(0)" class="close-message"><span class="fa fa-times"></span></a>
+    <% end %>
+  </section>
+  <% end %>
 <% end %>

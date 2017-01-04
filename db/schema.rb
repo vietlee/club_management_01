@@ -10,23 +10,44 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161229015016) do
-  create_table "activities", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+ActiveRecord::Schema.define(version: 20161229063512) do
+
+  create_table "activities", force: :cascade do |t|
     t.string   "action"
     t.integer  "target_id"
     t.string   "target_type"
     t.integer  "user_id"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
-    t.index ["user_id"], name: "index_activities_on_user_id", using: :btree
+    t.index ["user_id"], name: "index_activities_on_user_id"
   end
 
-  create_table "albums", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+  create_table "admins", force: :cascade do |t|
+    t.string   "email",                  default: "", null: false
+    t.string   "encrypted_password",     default: "", null: false
+    t.string   "full_name"
+    t.string   "avatar"
+    t.string   "phone"
+    t.string   "reset_password_token"
+    t.datetime "reset_password_sent_at"
+    t.datetime "remember_created_at"
+    t.integer  "sign_in_count",          default: 0,  null: false
+    t.datetime "current_sign_in_at"
+    t.datetime "last_sign_in_at"
+    t.string   "current_sign_in_ip"
+    t.string   "last_sign_in_ip"
+    t.datetime "created_at",                          null: false
+    t.datetime "updated_at",                          null: false
+    t.index ["email"], name: "index_admins_on_email", unique: true
+    t.index ["reset_password_token"], name: "index_admins_on_reset_password_token", unique: true
+  end
+
+  create_table "albums", force: :cascade do |t|
     t.string   "name"
     t.integer  "club_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["club_id"], name: "index_albums_on_club_id", using: :btree
+    t.index ["club_id"], name: "index_albums_on_club_id"
   end
 
   create_table "club_requests", force: :cascade do |t|
@@ -42,89 +63,81 @@ ActiveRecord::Schema.define(version: 20161229015016) do
     t.index ["user_id"], name: "index_club_requests_on_user_id"
   end
 
-  create_table "club_hobbies_tags", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
-    t.integer  "hobbies_tag_id"
-    t.integer  "club_id"
-    t.datetime "created_at",    null: false
-    t.datetime "updated_at",    null: false
-    t.index ["club_id"], name: "index_club_hobbies_tags_on_club_id", using: :btree
-    t.index ["hobbies_tag_id"], name: "index_club_hobbies_tags_on_hobbies_tag_id", using: :btree
-  end
-
-  create_table "clubs", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+  create_table "clubs", force: :cascade do |t|
     t.integer  "organization_id"
     t.string   "name"
+    t.string   "image"
     t.string   "notification"
     t.string   "description"
     t.integer  "money",           default: 0
-    t.integer  "rating",          default: 0
+    t.float    "rating",          default: 0.0
     t.boolean  "is_active",       default: false
     t.datetime "created_at",                      null: false
     t.datetime "updated_at",                      null: false
-    t.index ["organization_id"], name: "index_clubs_on_organization_id", using: :btree
+    t.index ["organization_id"], name: "index_clubs_on_organization_id"
   end
 
-  create_table "comments", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
-    t.text     "content",    limit: 65535
+  create_table "comments", force: :cascade do |t|
+    t.text     "content"
     t.integer  "user_id"
     t.integer  "news_id"
-    t.datetime "created_at",               null: false
-    t.datetime "updated_at",               null: false
-    t.index ["news_id"], name: "index_comments_on_news_id", using: :btree
-    t.index ["user_id"], name: "index_comments_on_user_id", using: :btree
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["news_id"], name: "index_comments_on_news_id"
+    t.index ["user_id"], name: "index_comments_on_user_id"
   end
 
-  create_table "event_categories", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+  create_table "event_categories", force: :cascade do |t|
     t.string   "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
-  create_table "events", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+  create_table "events", force: :cascade do |t|
     t.string   "name"
-    t.text     "description",       limit: 65535
-    t.integer  "expense",                         default: 0
+    t.text     "description"
+    t.integer  "expense",     default: 0
     t.integer  "club_id"
-    t.integer  "event_category_id"
     t.date     "date_start"
-    t.string   "duration"
+    t.date     "date_end"
     t.string   "location"
-    t.integer  "number_like",                     default: 0
-    t.datetime "created_at",                                  null: false
-    t.datetime "updated_at",                                  null: false
-    t.index ["club_id"], name: "index_events_on_club_id", using: :btree
-    t.index ["event_category_id"], name: "index_events_on_event_category_id", using: :btree
+    t.integer  "num_like",    default: 0
+    t.datetime "created_at",              null: false
+    t.datetime "updated_at",              null: false
+    t.index ["club_id"], name: "index_events_on_club_id"
   end
 
-  create_table "hobbies_tags", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+  create_table "hobbies_tags", force: :cascade do |t|
     t.string   "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
-  create_table "images", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+  create_table "images", force: :cascade do |t|
     t.string   "name"
     t.integer  "album_id"
     t.integer  "user_id"
+    t.string   "url"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["album_id"], name: "index_images_on_album_id", using: :btree
-    t.index ["user_id"], name: "index_images_on_user_id", using: :btree
+    t.index ["album_id"], name: "index_images_on_album_id"
+    t.index ["user_id"], name: "index_images_on_user_id"
   end
 
-  create_table "news", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+  create_table "news", force: :cascade do |t|
     t.string   "title"
-    t.text     "content",    limit: 65535
+    t.text     "content"
+    t.string   "image"
     t.integer  "event_id"
     t.integer  "user_id"
-    t.boolean  "approve",                  default: false
-    t.datetime "created_at",                               null: false
-    t.datetime "updated_at",                               null: false
-    t.index ["event_id"], name: "index_news_on_event_id", using: :btree
-    t.index ["user_id"], name: "index_news_on_user_id", using: :btree
+    t.boolean  "approve",    default: false
+    t.datetime "created_at",                 null: false
+    t.datetime "updated_at",                 null: false
+    t.index ["event_id"], name: "index_news_on_event_id"
+    t.index ["user_id"], name: "index_news_on_user_id"
   end
 
-  create_table "organizations", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+  create_table "organizations", force: :cascade do |t|
     t.string   "name"
     t.string   "description"
     t.string   "phone"
@@ -134,37 +147,38 @@ ActiveRecord::Schema.define(version: 20161229015016) do
     t.datetime "updated_at",  null: false
   end
 
-  create_table "user_clubs", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+  create_table "target_hobbies_tags", force: :cascade do |t|
+    t.string   "hobbies_tag"
+    t.integer  "target_id"
+    t.string   "target_type"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
+
+  create_table "user_clubs", force: :cascade do |t|
     t.integer  "user_id"
     t.integer  "club_id"
     t.boolean  "is_manager", default: false
+    t.boolean  "status"
     t.datetime "created_at",                 null: false
     t.datetime "updated_at",                 null: false
-    t.index ["club_id"], name: "index_user_clubs_on_club_id", using: :btree
-    t.index ["user_id"], name: "index_user_clubs_on_user_id", using: :btree
+    t.index ["club_id"], name: "index_user_clubs_on_club_id"
+    t.index ["user_id"], name: "index_user_clubs_on_user_id"
   end
 
-  create_table "user_events", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+  create_table "user_events", force: :cascade do |t|
     t.integer  "user_id"
     t.integer  "event_id"
     t.integer  "club_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["club_id"], name: "index_user_events_on_club_id", using: :btree
-    t.index ["event_id"], name: "index_user_events_on_event_id", using: :btree
-    t.index ["user_id"], name: "index_user_events_on_user_id", using: :btree
+    t.index ["club_id"], name: "index_user_events_on_club_id"
+    t.index ["event_id"], name: "index_user_events_on_event_id"
+    t.index ["user_id"], name: "index_user_events_on_user_id"
   end
 
-  create_table "user_hobbies_tags", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
-    t.integer  "user_id"
-    t.integer  "hobbies_tag_id"
-    t.datetime "created_at",    null: false
-    t.datetime "updated_at",    null: false
-    t.index ["hobbies_tag_id"], name: "index_user_hobbies_tags_on_hobbies_tag_id", using: :btree
-    t.index ["user_id"], name: "index_user_hobbies_tags_on_user_id", using: :btree
-  end
-
-  create_table "users", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+  create_table "users", force: :cascade do |t|
+    t.integer  "organization_id"
     t.string   "email",                  default: "", null: false
     t.string   "encrypted_password",     default: "", null: false
     t.string   "reset_password_token"
@@ -173,7 +187,6 @@ ActiveRecord::Schema.define(version: 20161229015016) do
     t.string   "full_name"
     t.string   "avatar"
     t.string   "phone"
-    t.string   "chatwork"
     t.integer  "role"
     t.integer  "sign_in_count",          default: 0,  null: false
     t.datetime "current_sign_in_at"
@@ -186,30 +199,9 @@ ActiveRecord::Schema.define(version: 20161229015016) do
     t.string   "unconfirmed_email"
     t.datetime "created_at",                          null: false
     t.datetime "updated_at",                          null: false
-    t.index ["email"], name: "index_users_on_email", unique: true, using: :btree
-    t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
+    t.index ["email"], name: "index_users_on_email", unique: true
+    t.index ["organization_id"], name: "index_users_on_organization_id"
+    t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
-  add_foreign_key "activities", "users"
-  add_foreign_key "albums", "clubs"
-  add_foreign_key "club_hobbies_tags", "clubs"
-  add_foreign_key "club_hobbies_tags", "hobbies_tags"
-  add_foreign_key "club_requests", "organizations"
-  add_foreign_key "club_requests", "users"
-  add_foreign_key "clubs", "organizations"
-  add_foreign_key "comments", "news"
-  add_foreign_key "comments", "users"
-  add_foreign_key "events", "clubs"
-  add_foreign_key "events", "event_categories"
-  add_foreign_key "images", "albums"
-  add_foreign_key "images", "users"
-  add_foreign_key "news", "events"
-  add_foreign_key "news", "users"
-  add_foreign_key "user_clubs", "clubs"
-  add_foreign_key "user_clubs", "users"
-  add_foreign_key "user_events", "clubs"
-  add_foreign_key "user_events", "events"
-  add_foreign_key "user_events", "users"
-  add_foreign_key "user_hobbies_tags", "hobbies_tags"
-  add_foreign_key "user_hobbies_tags", "users"
 end
