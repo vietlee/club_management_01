@@ -1704,11 +1704,22 @@ li:last-child {
   border: solid 1px red;
   border-color: #dddddd;
 }
-.circle-profile {
+.circle-profile-list {
 width: 100px;
 height: 100px;
 background: red;
 -moz-border-radius: 50px;
 -webkit-border-radius: 50px;
 border-radius: 1000px;
+}
+.circle-profile {
+width: 200px;
+height: 200px;
+background: red;
+-moz-border-radius: 50px;
+-webkit-border-radius: 50px;
+border-radius: 1000px;
+}
+.center {
+  text-align: center;
 }
