@@ -1,7 +1,7 @@
 class CreateTargetHobbiesTags < ActiveRecord::Migration[5.0]
   def change
     create_table :target_hobbies_tags do |t|
-      t.string :hobbies_tag
+      t.references :hobbies_tag, foreign_key: true
       t.integer :target_id
       t.string :target_type
 
