@@ -1,3 +1,17 @@
+// I18n.js
+// =======
+//
+// This small library provides the Rails I18n API on the Javascript.
+// You don't actually have to use Rails (or even Ruby) to use I18n.js.
+// Just make sure you export all translations in an object like this:
+//
+//     I18n.translations.en = {
+//       hello: "Hello World"
+//     };
+//
+// See tests for specific formatting like numbers and dates.
+//
+
 ;(function(factory) {
   if (typeof module !== 'undefined' && module.exports) {
     // Node/CommonJS
@@ -970,6 +984,10 @@
       scope = scope.join(this.defaultSeparator);
     }
 
+    // Deal with the scope option provided through the second argument.
+    //
+    //    I18n.t('hello', {scope: 'greetings'});
+    //
     if (options.scope) {
       scope = [options.scope, scope].join(this.defaultSeparator);
     }

@@ -10,7 +10,7 @@ class DeviseCreateUsers < ActiveRecord::Migration[5.0]
       t.string :full_name
       t.string :avatar
       t.string :phone
-      t.integer :role
+      t.boolean :is_admin_company, default: false
       ## Trackable
       t.integer  :sign_in_count, default: 0, null: false
       t.datetime :current_sign_in_at

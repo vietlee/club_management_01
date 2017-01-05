@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= t "title" %></title>
+    <%= csrf_meta_tags %>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" charset="utf-8"/>
+    <%= stylesheet_link_tag "application_admin", media: "all", "data-turbolinks-track": "reload" %>
+    <%= javascript_include_tag "application_admin", "data-turbolinks-track": "reload" %>
+    <%= stylesheet_link_tag "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" %>
+  </head>
+  <body>
+    <%= render "shared/flash_warning" %>
+    <%= devise_error_messages! %>
+    <div id="page-wrapper">
+      <div id="page-container" class="sidebar-partial sidebar-visible-lg sidebar-no-animations">
+        <%= render "admin/layouts/admin_sidebar" %>
+        <div id="main-container">
+          <%= render "admin/layouts/admin_header" %>
+          <div id="page-content">
+            <%= yield %>
+          </div>
+          <%= render "admin/layouts/admin_footer" %>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
