@@ -1,4 +1,7 @@
 class Admin < ApplicationRecord
   devise :database_authenticatable, :registerable, :recoverable, :rememberable,
    :trackable, :validatable
+
+  has_many :notifications, as: :target, dependent: :destroy
+  has_many :activities, as: :person_target, dependent: :destroy
 end

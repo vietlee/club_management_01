@@ -1,7 +1,6 @@
 class DeviseCreateUsers < ActiveRecord::Migration[5.0]
   def change
     create_table :users do |t|
-      t.references :organization, foreign_key: true
       t.string :email, null: false, default: ""
       t.string :encrypted_password, null: false, default: ""
       t.string :reset_password_token
@@ -10,7 +9,6 @@ class DeviseCreateUsers < ActiveRecord::Migration[5.0]
       t.string :full_name
       t.string :avatar
       t.string :phone
-      t.boolean :is_admin_company, default: false
       ## Trackable
       t.integer  :sign_in_count, default: 0, null: false
       t.datetime :current_sign_in_at
