@@ -14,6 +14,7 @@ gem "devise"
 gem "carrierwave"
 gem "config"
 gem "i18n-js"
+gem "faker"
 
 group :production do
   gem "pg"

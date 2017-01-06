@@ -1,7 +1,8 @@
 <% if flash.any? %>
   <% flash.each do |key, value| %>
   <section class="notify">
-    <%= content_tag :div, value, class: "alert alert-#{key}" do %>
+    <%= content_tag :div, value, class: "alert alert-success" do %>
+      <%= value %>
       <a href="javascript:void(0)" class="close-message"><span class="fa fa-times"></span></a>
     <% end %>
   </section>

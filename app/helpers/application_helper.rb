@@ -29,4 +29,13 @@ module ApplicationHelper
       redirect_to root_url
     end
   end
+
+  def manager_club club
+    user_club = club.user_clubs.find_by is_manager: true
+    if user_club
+      user_club.user
+      return
+    end
+    nil
+  end
 end

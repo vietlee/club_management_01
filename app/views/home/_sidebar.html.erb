@@ -1,0 +1,38 @@
+<header>
+  <div class="container">
+    <%= link_to root_path, class: "site-logo" do %>
+      <i class="fa fa-flash fa-5x"></i>
+      <strong><%= t "logo" %></strong> - <%= t "clubs" %>
+    <% end %>
+    <nav>
+      <%= link_to "javascript:void(0)",
+        class: "btn btn-default site-menu-toggle visible-xs visible-sm" do %>
+        <i class="fa fa-bars"></i>
+      <% end %>
+      <ul class="site-nav">
+        <li class="visible-xs visible-sm">
+          <%= link_to "javascript:void(0)",
+            class: "site-menu-toggle text-center" do %>
+            <i class="fa fa-times"></i>
+          <% end %>
+        </li>
+        <li><%= link_to t("home"), root_url %></li>
+        <li><%= link_to t("my_company"), "#" %></li>
+        <li><%= link_to t("other_club"), "#" %></li>
+        <li><%= link_to t("my_club"), "#" %></li>
+        <li><%= link_to t("request_club"), new_user_club_request_url(user_id: current_user.id) %></li>
+        <li><%= link_to t("about"), "#" %></li>
+        <li><%= link_to t("contact"), "#" %></li>
+        <li>
+          <%= link_to "#",class: "site-nav-sub" do %>
+            <%= t "account" %> <span class="fa fa-user"></span>
+          <% end %>
+          <ul>
+            <li><%= link_to t("profile"), "#" %></li>
+            <li><%= link_to t("sign_out"), destroy_user_session_path, method: :delete %></li>
+          </ul>
+        </li>
+      </ul>
+    </nav>
+  </div>
+</header>

@@ -1,0 +1,79 @@
+<div class="tip join">
+  <a href="#">
+    <i class="fa fa-share"></i><span><%= t "join_this_event" %></span>
+  </a>
+</div>
+<div class="tip leave">
+  <a href="#">
+    <b class="fa fa-sign-out"></b><span><%= t "leave_this_event" %></span>
+  </a>
+</div>
+<div id="page-container">
+<%= render "clubs/header_club" %>
+  <section class="site-content site-section">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-10 col-md-offset-1 site-block">
+          <article>
+          <h1><%= @event.name %></h1>
+          <hr>
+          <div class="row">
+            <div class="col-md-3 fa fa-money"><strong> <%= t "expense" %></strong> <%= @event.expense %> <%= t "vnd" %></div>
+            <div class="col-md-3 fa fa-map-marker"><strong> <%= t "location" %></strong> <%= @event.location %></div>
+            <div class="col-md-3 fa fa-calendar"><strong> <%= t "date_start" %></strong> <%= @event.date_start %></div>
+            <div class="col-md-3 fa fa-clock-o"><strong> <%= t "date_end" %></strong> <%= @event.date_end %></div>
+          </div>
+          <hr>
+            <p><%= t "event_content" %></p>
+            <div class="row push-top-bottom">
+              <div class="col-sm-6">
+                <p>
+                  <a href="img/placeholders/photos/photo1.jpg" data-toggle="lightbox-image">
+                    <%= image_tag "placeholders/photos/photo1.jpg", class: "img-responsive" %>
+                  </a>
+                </p>
+              </div>
+              <div class="col-sm-6">
+                <p>
+                  <a href="img/placeholders/photos/photo21.jpg" data-toggle="lightbox-image">
+                    <%= image_tag "placeholders/photos/photo21.jpg", class: "img-responsive" %>
+                  </a>
+                </p>
+              </div>
+            </div>
+            <blockquote>
+              <p><%= t "event_content" %></p>
+              <footer>John Doe</footer>
+            </blockquote>
+            <p><%= t "event_content" %></p>
+            <div class="row push-top-bottom">
+              <div class="col-sm-4">
+                <p>
+                  <a href="img/placeholders/photos/photo14.jpg" data-toggle="lightbox-image">
+                    <%= image_tag "placeholders/photos/photo14.jpg", class: "img-responsive" %>
+                  </a>
+                </p>
+              </div>
+              <div class="col-sm-4">
+                <p>
+                  <a href="img/placeholders/photos/photo18.jpg" data-toggle="lightbox-image">
+                    <%= image_tag "placeholders/photos/photo18.jpg", class: "img-responsive" %>
+                  </a>
+                </p>
+              </div>
+              <div class="col-sm-4">
+                <p>
+                  <a href="img/placeholders/photos/photo22.jpg" data-toggle="lightbox-image">
+                    <%= image_tag "placeholders/photos/photo22.jpg", class: "img-responsive" %>
+                  </a>
+                </p>
+              </div>
+            </div>
+            <p><%= t "event_content" %></p>
+          </article>
+        </div>
+      </div>
+      <hr>
+    </div>
+  </section>
+</div>

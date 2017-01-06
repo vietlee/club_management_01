@@ -1,0 +1,21 @@
+<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1.0">
+<%= stylesheet_link_tag "user_login" %>
+<div class="container">
+  <div class="body"></div>
+  <div class="grad"></div>
+  <div class="header">
+    <div class=""><%= t "club" %><span><%= "interactive" %></span></div>
+  </div><br>
+  <div class="login">
+    <%= form_for(:user, as: :user, url: session_path(:user)) do |f| %>
+      <%= f.text_field :email, placeholder: t("email"), autofocus: true %>
+      <%= f.password_field :password, placeholder: t("password"), autocomplete: "off" %><br>
+      <% if devise_mapping.rememberable? -%>
+        <br><%= f.check_box :remember_me %>
+        <%= f.label :remember_me %>
+      <% end -%>
+      <%= f.submit "Log in" %>
+    <% end %>
+    <%= render "devise/shared/links" %>
+  </div>
+</div>
