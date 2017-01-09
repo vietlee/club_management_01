@@ -1,16 +1,32 @@
-50.times do |n|
-  organization_name = Faker::Name.name
-  description = Faker::Lorem.sentence(3)
-  phone = Faker::Company.duns_number
-  email = Faker::Internet.email + "#{n+1}"
-  location = Faker::Address.street_address + Faker::Address.city + "City"
-  Organization.create!(
-    name: organization_name,
-    description: description,
-    phone: phone,
-    email: email,
-    location: location)
-end
+Organization.create!(
+  name: "Framgia Da Nang",
+  description: "bla bla",
+  phone: "0966077747",
+  email: "framgia@framgia.com",
+  location: "Da Nang"
+)
+Organization.create!(
+  name: "FPT Da Nang Branch",
+  description: "bla bla",
+  phone: "0966077747",
+  email: "framgia2@framgia.com",
+  location: "Da Nang"
+)
+Organization.create!(
+  name: "Axon Da Nang",
+  description: "bla bla",
+  phone: "0966077747",
+  email: "framgia3@framgia.com",
+  location: "Da Nang"
+)
+Organization.create!(
+  name: "Evolabe Asian",
+  description: "bla bla",
+  phone: "0966077747",
+  email: "framgia4@framgia.com",
+  location: "Da Nang"
+)
+
 User.create!(
   email: "mahoangtienthanh@gmail.com",
   full_name: "Thanh ManCi",
@@ -23,33 +39,11 @@ User.create!(
   password: "longlyduc@gmail.com",
   phone: "0123456789",
 )
-50.times do |n|
-  organization_id = 1
-  club_name  = Faker::Name.name
-  notification = Faker::Lorem.sentence
-  description = Faker::Lorem.paragraph
-  created_at = Faker::Time.between(20.days.ago, Date.today, :all)
-  logo = Faker::Avatar.image
-  image = Faker::Avatar.image
-  Club.create!(
-    organization_id: organization_id,
-    name: club_name + " Club",
-    notification: notification,
-    description: description,
-    created_at: created_at,
-    logo: logo,
-    rating: rand(1..5),
-    image: image)
-end
-
-EventCategory.create!(
-  name: "Spend Money",
-)
-EventCategory.create!(
-  name: "Consumable Money",
-)
-EventCategory.create!(
-  name: "Periodic Money",
+Admin.create!(
+  email: "longlyduc@gmail.com",
+  full_name: "Ly Duc Long",
+  password: "longlyduc@gmail.com",
+  phone: "0123456789",
 )
 50.times do |n|
   organization_id = 1

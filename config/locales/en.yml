@@ -164,3 +164,5 @@ en:
   members: " Members"
   latest: "Latest"
   news: " News"
+  admin_require: "You need login as admin to access this page"
+  login_dashboard: "Login to dashboard"

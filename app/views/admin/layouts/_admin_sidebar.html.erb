@@ -15,7 +15,8 @@
           <%= link_to "#modal-user-settings", title: t("setting") do %>
             <i class="gi gi-cogwheel"></i></a>
           <% end %>
-          <%= link_to t("do_nothing"), title: t("logout") do %>
+          <%= link_to destroy_admin_session_path, method: :delete,
+            title: t("logout") do %>
             <i class="gi gi-exit"></i></a>
           <% end %>
         </div>
