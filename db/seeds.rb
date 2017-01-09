@@ -98,6 +98,7 @@ clubs.each do |club|
     date_end = Faker::Time.between(20.days.ago, Date.today, :all)
     location = Faker::Address.street_address + Faker::Address.street_address
     num_like = rand(0..100)
+    created_at = Time.now + 2.month
 
     Event.create!(
       name: event_name,
@@ -108,7 +109,8 @@ clubs.each do |club|
       date_start: date_start,
       date_end: date_end,
       location: location,
-      num_like: num_like
+      num_like: num_like,
+      created_at: created_at
     )
   end
 end

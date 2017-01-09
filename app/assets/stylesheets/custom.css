@@ -1,0 +1,19 @@
+.pagination a {
+  color: #1bbae1;
+  margin-left: 5px;
+  margin-right: 5px;
+  border: none;
+  border-radius: 25px;
+}
+
+.pagination .current {
+  font-style: normal;
+}
+
+.club-logo {
+  width: 50px;
+}
+
+.leave {
+  display: none;
+}

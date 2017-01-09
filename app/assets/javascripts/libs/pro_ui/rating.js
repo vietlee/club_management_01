@@ -4,14 +4,14 @@
 
     function _paintValue(ratingInput, value) {
       var selectedStar = $(ratingInput).find('[data-value=' + value + ']');
-      selectedStar.removeClass('fa fa-star-o animation-fadeIn360').addClass('fa fa-star');
-      selectedStar.prevAll('[data-value]').removeClass('fa fa-star-o animation-fadeIn360').addClass('fa fa-star animation-fadeIn360');
-      selectedStar.nextAll('[data-value]').removeClass('fa fa-star animation-fadeIn360').addClass('fa fa-star-o animation-fadeIn360');
+      selectedStar.removeClass('fa fa-star-o').addClass('fa fa-star');
+      selectedStar.prevAll('[data-value]').removeClass('fa fa-star-o').addClass('fa fa-star');
+      selectedStar.nextAll('[data-value]').removeClass('fa fa-star').addClass('fa fa-star-o');
     }
 
     function _clearValue(ratingInput) {
       var self = $(ratingInput);
-      self.find('[data-value]').removeClass('fa fa-star animation-fadeIn360').addClass('fa fa-star-o animation-fadeIn360');
+      self.find('[data-value]').removeClass('fa fa-star').addClass('fa fa-star-o');
       self.find('.rating-clear').hide();
       self.find('input').val('').trigger('change');
     }
@@ -23,7 +23,7 @@
         clearable = originalInput.data('clearable') || null,
         stars = '';
       for (i = min; i <= max; i++) {
-        stars += ['<span class="fa fa-star-o animation-fadeIn360" data-value="', i, '"></span>'].join('');
+        stars += ['<span class="fa fa-star-o" data-value="', i, '"></span>'].join('');
       }
       if (clearable) {
         stars += [

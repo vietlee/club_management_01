@@ -8,6 +8,6 @@ class Event < ApplicationRecord
 
   mount_uploader :image, ImageUploader
 
-  scope :order_like, -> {order num_like: :desc}
-  scope :order_created_at, -> {order created_at: :desc}
+  scope :top_like, -> {order num_like: :desc}
+  scope :newest, -> {order created_at: :desc}
 end

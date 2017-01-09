@@ -1,3 +1,7 @@
 max_name: 30
 min_password: 6
 min_description: 10
+max_for_limit: 5
+per_page: 5
+truncate_description: 90
+description_event: 360

@@ -5,7 +5,7 @@ class ClubsController < ApplicationController
   end
 
   def show
-    @events_top = @club.events.order_like.order_created_at.limit(10)
+    @events = @club.events.newest.page(params[:page]).per Settings.per_page
   end
 
   def load_club

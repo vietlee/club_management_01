@@ -1,4 +1,6 @@
 en:
+  line: "Line"
+  times: "Time"
   lorem: "Bring your project to life months sooner"
   intro_first: "A complete web solution for your awesome project"
   timeline_date: "20/10/2016"
@@ -46,6 +48,8 @@ en:
   let_us_know_name: "Please let us know your name!"
   info: "Info"
   organization_add: "Organization Address"
+  not_found: "Not found!"
+  company_add: "Company Address"
   require_boostrap: "bootstrap-datetimepicker requires Moment.js to be loaded first"
   create: "Create"
   club_name: "Club Name"
@@ -137,9 +141,9 @@ en:
     update_fail: "Organization update failed!"
   submit: "Submit"
   edit: "Edit"
-  time:
+  date:
     formats:
-      date: "%H:%M %d/%m/%Y"
+      date_utc: "%d/%M/%Y %H:%M"
   read_the_article: "Read the article"
   view_more: "View more ..."
   do_nothing: "javascript:void(0)"
