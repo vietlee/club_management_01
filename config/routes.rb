@@ -14,7 +14,8 @@ Rails.application.routes.draw do
     end
   end
   namespace :admin do
-    get "" => "static_pages#index"
+    get "/" => "static_pages#index"
+    resources :users
     resources :organizations
   end
   namespace :manager do

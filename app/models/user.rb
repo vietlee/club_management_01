@@ -3,6 +3,7 @@ class User < ApplicationRecord
     :trackable, :validatable
 
   has_many :organizations, through: :user_organizations
+  has_many :user_organizations, dependent: :destroy
   has_many :user_clubs, dependent: :destroy
   has_many :user_events, dependent: :destroy
   has_many :club_requests, dependent: :destroy
@@ -18,6 +19,8 @@ class User < ApplicationRecord
   has_many :messages, dependent: :destroy
 
   mount_uploader :avatar, AvatarUploader
+
+  scope :newest, -> {order created_at: :desc}
 
   validates :full_name, presence: true, length: {maximum: Settings.max_name}
   validates :password, presence: true, length: {minimum: Settings.min_password}
