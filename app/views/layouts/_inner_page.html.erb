@@ -1,0 +1,10 @@
+<% if current_page? root_url %>
+  <%= render "home/sidebar" %>
+  <%= render "home/header" %>
+  <%= render "clubs/index" %>
+  <%= render "layouts/sugest_club" %>
+<% elsif current_page? new_user_club_request_url %>
+  <%= render "home/sidebar" %>
+<% else %>
+  <%= render "clubs/sidebar_club" %>
+<% end %>

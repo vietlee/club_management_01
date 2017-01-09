@@ -7,4 +7,7 @@ class Event < ApplicationRecord
   belongs_to :club
 
   mount_uploader :image, ImageUploader
+
+  scope :order_like, -> {order num_like: :desc}
+  scope :order_created_at, -> {order created_at: :desc}
 end

@@ -1,25 +1,3 @@
-/*
- *  Document   : main.css
- *  Author   : pixelcave
- *  Description: The main stylesheet of the template
- *
- *  Structure (with shortcodes):
- *    (#m01mls) MAIN LAYOUT
- *    (#m02hds) HEADER
- *    (#m03mcs) MAIN CONTENT
- *    (#m04bos) BOOTSTRAP OVERWRITE/EXTEND STYLES
- *    (#m05ths) THEME
- *    (#m06hes) HELPERS
- *    (#m07res) RESPONSIVE
- *    (#m08rts) RETINA
- */
-/*
-=================================================================
-(#m01mls) MAIN LAYOUT
-=================================================================
-*/
-/* Include Open Sans font from Google Web Fonts */
-
 @import url('http://fonts.googleapis.com/css?family=Open+Sans:300,300italic,400,400italic,600,600italic,700,700italic');
 body {
   font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
@@ -33,12 +11,6 @@ body {
 #page-container.boxed {
   max-width: 1280px;
 }
-/*
-=================================================================
-(#m02hds) HEADER
-=================================================================
-*/
-
 header {
   position: fixed;
   top: 0;
@@ -84,7 +56,6 @@ a.site-logo:hover > i {
   -webkit-transform: rotate(360deg) scale(1.5);
   transform: rotate(360deg) scale(1.5);
 }
-/* Menu */
 
 header nav {
   float: right;
@@ -154,12 +125,6 @@ header nav {
   padding-top: 5px;
   padding-bottom: 5px;
 }
-/*
-=================================================================
-(#m03mcs) MAIN CONTENT
-=================================================================
-*/
-/* Main Structure */
 
 .site-section {
   padding: 50px 0;
@@ -1528,7 +1493,7 @@ p,
   /* General */
 
   .site-heading-promo {
-    margin-top: 60px;
+  margin-top: 60px;
   }
 }
 /* Medium devices, Desktops (>991px) */
@@ -1646,6 +1611,7 @@ only screen and (-o-min-device-pixel-ratio: 3/2),
 only screen and (min-device-pixel-ratio: 1.5) {
   /* If you did use a CSS image background, you can put your high resolution image here */
 }
+
 .notify {
   width: 35%;
   position: fixed;
@@ -1655,23 +1621,29 @@ only screen and (min-device-pixel-ratio: 1.5) {
   z-index: 1000;
   margin-top: 3.3%;
 }
+
 .notify a {
   float: right;
 }
+
 .action-comment {
   float: left;
   padding-right: 10px;
 }
+
 .comment-item {
   width: 10px!important;
   min-width: 500%;
 }
+
 .comment-item li {
   border-bottom: 1px solid rgba(255, 0, 0, .1);
 }
+
 li:last-child {
   border-bottom: none!important;
 }
+
 .join-button {
   font-size: 30px;
   color: white;
@@ -1683,43 +1655,97 @@ li:last-child {
   width: 150px;
   padding: 14px 0px;
 }
+
 .container .h3 {
   font-size: 1.3em;
   width: 90%;
 }
+
 .ul-breath i {
   color: #394263;
 }
+
 .rating-input {
   float: left;
   margin-top: 8px;
 }
+
 .rating-input span {
   font-size: 25px;
   padding-right: 5px;
   text-shadow: none;
 }
+
 #results-show .pagination {
   margin-top: 0px!important;
   border: solid 1px red;
   border-color: #dddddd;
 }
+
 .circle-profile-list {
-width: 100px;
-height: 100px;
-background: red;
--moz-border-radius: 50px;
--webkit-border-radius: 50px;
-border-radius: 1000px;
+  width: 100px;
+  height: 100px;
+  background: red;
+  -moz-border-radius: 50px;
+  -webkit-border-radius: 50px;
+  border-radius: 1000px;
 }
+
 .circle-profile {
-width: 200px;
-height: 200px;
-background: red;
--moz-border-radius: 50px;
--webkit-border-radius: 50px;
-border-radius: 1000px;
+  width: 200px;
+  height: 200px;
+  background: red;
+  -moz-border-radius: 50px;
+  -webkit-border-radius: 50px;
+  border-radius: 1000px;
 }
+
 .center {
   text-align: center;
+}
+
+.sugest-clubs {
+  background-color: cyan!important;
+}
+
+.border-white-50 {
+  border-bottom: solid 1px rgba(255, 255, 255, 0.3);
+}
+
+.small-event-image {
+  width: 70px!important;
+  height: 70px!important;
+}
+
+.tip {
+  padding: 10px 10px;
+  position: fixed;
+  z-index: 100;
+  float: right;
+  bottom: 150px;
+  right: 50px;
+  border-radius: 20px;
+  text-align: center;
+  font-size: 70px!important;
+  color: hsl(120, 60%, 80%)
+}
+
+.tip i {
+  transform: scaleX(-1);
+  position: relative;
+  margin-right: 20px;
+}
+
+.tip span {
+  font-size: 40px;
+  position: relative;
+  font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+.tip a {
+  text-decoration: none;
+}
+
+.tip a:hover {
+  color: #32A6C3;
 }
