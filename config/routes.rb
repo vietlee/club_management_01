@@ -13,6 +13,7 @@ Rails.application.routes.draw do
     get "/" => "static_pages#index"
     resources :users
     resources :organizations, except: [:edit, :update, :destroy]
+    resources :organization_requests
   end
   namespace :manager do
     root "static_pages#index"

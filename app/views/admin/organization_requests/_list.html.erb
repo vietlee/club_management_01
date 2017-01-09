@@ -1,0 +1,18 @@
+<% @organization_requests.each do |organization|%>
+  <tr>
+    <td class="text-center"><%= organization.id %></td>
+    <td class="text-center"><%= organization.full_name %></td>
+    <td><%= organization.name %></a></td>
+    <td><%= organization.email %></td>
+    <td><%= organization.location %></td>
+    <td class="text-center">
+      <div class="btn-group btn-group-sm">
+      <%= link_to t("view"), edit_admin_organization_request_path(organization),
+        class: "btn btn-lg btn-primary" %>
+      <%= link_to t("delete"),
+        admin_organization_request_url(organization), method: :delete,
+        data: {confirm: t("confirm_delete")}, class: "btn btn-lg btn-warning" %>
+      </div>
+    </td>
+  </tr>
+<% end %>

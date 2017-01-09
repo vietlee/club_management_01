@@ -1,0 +1,80 @@
+<div id="page-content">
+  <ul class="breadcrumb breadcrumb-top">
+    <li><%= link_to t("list_request"), admin_organization_requests_path %></a></li>
+    <li><%= t "show_request" %></li>
+  </ul>
+  <div class="row">
+    <div class="col-md-1"></div>
+    <div class="col-md-10">
+      <div class="block full">
+        <div class="block-title">
+          <h2><strong>
+            <%= @organization_request.full_name %>
+            <%= t "request_to_open"%>
+          </strong></h2>
+        </div>
+        <div class="block-content">
+          <div class="center"><%= image_tag @organization_request.logo,
+              class: "circle-profile" %></div><hr>
+          <div class="row">
+            <div class="col-md-3"></div>
+            <div class="col-md-2">
+              <strong class="pull-right"><%= t "name" %></strong>
+            </div>
+            <div class="col-md-6 center"><%= @organization_request.name %></div>
+            <div class="col-md-1"></div>
+          </div><hr>
+          <div class="row">
+            <div class="col-md-3"></div>
+            <div class="col-md-2">
+              <strong class="pull-right"><%= t "email" %></strong>
+            </div>
+            <div class="col-md-6 center"><%= @organization_request.email %></div>
+            <div class="col-md-1"></div>
+          </div><hr>
+          <div class="row">
+            <div class="col-md-3"></div>
+            <div class="col-md-2">
+              <strong class="pull-right"><%= t "phone" %></strong>
+            </div>
+            <div class="col-md-6 center"><%= @organization_request.phone %></div>
+            <div class="col-md-1"></div>
+          </div><hr>
+          <div class="row">
+            <div class="col-md-3"></div>
+            <div class="col-md-2">
+              <strong class="pull-right"><%= t "location" %></strong>
+            </div>
+            <div class="col-md-6 center"><%= @organization_request.location %></div>
+            <div class="col-md-1"></div>
+          </div><hr>
+          <div class="row">
+            <div class="col-md-3"></div>
+            <div class="col-md-2">
+              <strong class="pull-right"><%= t "description" %></strong>
+            </div>
+            <div class="col-md-6 center">
+              <%= @organization_request.description %>
+            </div>
+            <div class="col-md-1"></div>
+          </div><hr>
+          <div class="row">
+            <div class="center">
+              <div class="row">
+                <% if @organization_request.status? %>
+                  <%= button_to t("approved"), t("do_nothing"),
+                    class: "btn btn-lg btn-primary" %>
+                <% else %>
+                  <%= form_for [:admin, @organization_request] do |f| %>
+                    <%= f.submit t("approve"), class: "btn btn-lg btn-primary" %>
+                  <% end %>
+                <% end %>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-1"></div>
+  </div>
+</div>

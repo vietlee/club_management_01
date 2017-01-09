@@ -9,7 +9,7 @@ class Admin::OrganizationsController < ApplicationController
   def show
     @organization = Organization.find_by id: params[:id]
     unless @organization
-      flash[:danger] = t("not_found_oraganization")
+      flash[:danger] = t "not_found_oraganization"
       render :index
     end
   end
