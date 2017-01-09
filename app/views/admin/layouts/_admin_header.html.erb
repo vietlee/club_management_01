@@ -37,7 +37,7 @@
           <% end %>
         </li>
         <li>
-          <%= link_to t("do_nothing") do %>
+          <%= link_to destroy_admin_session_path, method: :delete do %>
             <i class="fa fa-ban fa-fw pull-right"></i><%= t "log out" %>
           <% end %>
         </li>

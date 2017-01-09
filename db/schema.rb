@@ -10,17 +10,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170106041836) do
-ActiveRecord::Schema.define(version: 20170105090808) do
+ActiveRecord::Schema.define(version: 20170106061034) do
 
   create_table "activities", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "action"
     t.integer  "target_id"
     t.string   "target_type"
-    t.integer  "user_id"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
-    t.index ["user_id"], name: "index_activities_on_user_id", using: :btree
+    t.integer  "person_target_id"
+    t.string   "person_target_type"
+    t.datetime "created_at",         null: false
+    t.datetime "updated_at",         null: false
   end
 
   create_table "admins", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
@@ -61,7 +60,6 @@ ActiveRecord::Schema.define(version: 20170105090808) do
     t.boolean  "approve",                       default: false
     t.datetime "created_at",                                    null: false
     t.datetime "updated_at",                                    null: false
-    t.string   "logo"
     t.index ["organization_id"], name: "index_club_requests_on_organization_id", using: :btree
     t.index ["user_id"], name: "index_club_requests_on_user_id", using: :btree
   end
@@ -78,10 +76,6 @@ ActiveRecord::Schema.define(version: 20170105090808) do
     t.string   "image"
     t.datetime "created_at",                                    null: false
     t.datetime "updated_at",                                    null: false
-    t.datetime "created_at",                                    null: false
-    t.datetime "updated_at",                                    null: false
-    t.string   "image"
-    t.string   "logo"
     t.index ["organization_id"], name: "index_clubs_on_organization_id", using: :btree
   end
 
@@ -106,21 +100,16 @@ ActiveRecord::Schema.define(version: 20170105090808) do
     t.text     "description",       limit: 65535
     t.integer  "expense",                         default: 0
     t.integer  "club_id"
-    t.integer  "event_categories_id"
+    t.integer  "event_category_id"
     t.date     "date_start"
     t.date     "date_end"
-    t.text     "location",            limit: 65535
-    t.integer  "num_like",                          default: 0
-    t.string   "image"
-    t.datetime "created_at",                                    null: false
-    t.datetime "updated_at",                                    null: false
     t.text     "location",          limit: 65535
     t.integer  "num_like",                        default: 0
+    t.string   "image"
     t.datetime "created_at",                                  null: false
     t.datetime "updated_at",                                  null: false
-    t.string   "image"
     t.index ["club_id"], name: "index_events_on_club_id", using: :btree
-    t.index ["event_categories_id"], name: "index_events_on_event_categories_id", using: :btree
+    t.index ["event_category_id"], name: "index_events_on_event_category_id", using: :btree
   end
 
   create_table "hobbies_tags", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
@@ -143,7 +132,7 @@ ActiveRecord::Schema.define(version: 20170105090808) do
   create_table "messages", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.integer  "user_id"
     t.integer  "club_id"
-    t.text     "message",    limit: 65535
+    t.text     "content",    limit: 65535
     t.datetime "created_at",               null: false
     t.datetime "updated_at",               null: false
     t.index ["club_id"], name: "index_messages_on_club_id", using: :btree
@@ -173,6 +162,20 @@ ActiveRecord::Schema.define(version: 20170105090808) do
     t.datetime "updated_at",                                null: false
   end
 
+  create_table "organization_requests", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.integer  "user_id"
+    t.string   "name"
+    t.text     "description", limit: 65535
+    t.string   "phone"
+    t.string   "email"
+    t.text     "location",    limit: 65535
+    t.string   "image"
+    t.boolean  "status",                    default: false
+    t.datetime "created_at",                                null: false
+    t.datetime "updated_at",                                null: false
+    t.index ["user_id"], name: "index_organization_requests_on_user_id", using: :btree
+  end
+
   create_table "organizations", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "name"
     t.text     "description", limit: 65535
@@ -185,19 +188,19 @@ ActiveRecord::Schema.define(version: 20170105090808) do
   end
 
   create_table "target_hobbies_tags", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
-    t.integer  "hobbies_tags_id"
+    t.integer  "hobbies_tag_id"
     t.integer  "target_id"
     t.string   "target_type"
-    t.datetime "created_at",      null: false
-    t.datetime "updated_at",      null: false
-    t.index ["hobbies_tags_id"], name: "index_target_hobbies_tags_on_hobbies_tags_id", using: :btree
+    t.datetime "created_at",     null: false
+    t.datetime "updated_at",     null: false
+    t.index ["hobbies_tag_id"], name: "index_target_hobbies_tags_on_hobbies_tag_id", using: :btree
   end
 
   create_table "user_clubs", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.integer  "user_id"
     t.integer  "club_id"
     t.boolean  "is_manager", default: false
-    t.boolean  "status"
+    t.boolean  "status",     default: false
     t.datetime "created_at",                 null: false
     t.datetime "updated_at",                 null: false
     t.index ["club_id"], name: "index_user_clubs_on_club_id", using: :btree
@@ -207,10 +210,8 @@ ActiveRecord::Schema.define(version: 20170105090808) do
   create_table "user_events", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.integer  "user_id"
     t.integer  "event_id"
-    t.integer  "club_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["club_id"], name: "index_user_events_on_club_id", using: :btree
     t.index ["event_id"], name: "index_user_events_on_event_id", using: :btree
     t.index ["user_id"], name: "index_user_events_on_user_id", using: :btree
   end
@@ -219,6 +220,7 @@ ActiveRecord::Schema.define(version: 20170105090808) do
     t.integer  "organization_id"
     t.integer  "user_id"
     t.boolean  "status",          default: false
+    t.boolean  "is_admin",        default: false
     t.datetime "created_at",                      null: false
     t.datetime "updated_at",                      null: false
     t.index ["organization_id"], name: "index_user_organizations_on_organization_id", using: :btree
@@ -228,16 +230,13 @@ ActiveRecord::Schema.define(version: 20170105090808) do
   create_table "users", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "email",                  default: "", null: false
     t.string   "encrypted_password",     default: "", null: false
-    t.string   "email",                  default: "",    null: false
-    t.string   "encrypted_password",     default: "",    null: false
     t.string   "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
     t.string   "full_name"
     t.string   "avatar"
     t.string   "phone"
-    t.boolean  "is_admin_company",       default: false
-    t.integer  "sign_in_count",          default: 0,     null: false
+    t.integer  "sign_in_count",          default: 0,  null: false
     t.datetime "current_sign_in_at"
     t.datetime "last_sign_in_at"
     t.string   "current_sign_in_ip"
@@ -246,30 +245,29 @@ ActiveRecord::Schema.define(version: 20170105090808) do
     t.datetime "confirmed_at"
     t.datetime "confirmation_sent_at"
     t.string   "unconfirmed_email"
-    t.datetime "created_at",                             null: false
-    t.datetime "updated_at",                             null: false
+    t.datetime "created_at",                          null: false
+    t.datetime "updated_at",                          null: false
     t.index ["email"], name: "index_users_on_email", unique: true, using: :btree
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
   end
 
-  add_foreign_key "activities", "users"
   add_foreign_key "albums", "clubs"
   add_foreign_key "club_requests", "organizations"
   add_foreign_key "club_requests", "users"
   add_foreign_key "clubs", "organizations"
   add_foreign_key "comments", "users"
   add_foreign_key "events", "clubs"
-  add_foreign_key "events", "event_categories", column: "event_categories_id"
+  add_foreign_key "events", "event_categories"
   add_foreign_key "images", "albums"
   add_foreign_key "images", "users"
   add_foreign_key "messages", "clubs"
   add_foreign_key "messages", "users"
   add_foreign_key "news", "events"
   add_foreign_key "news", "users"
-  add_foreign_key "target_hobbies_tags", "hobbies_tags", column: "hobbies_tags_id"
+  add_foreign_key "organization_requests", "users"
+  add_foreign_key "target_hobbies_tags", "hobbies_tags"
   add_foreign_key "user_clubs", "clubs"
   add_foreign_key "user_clubs", "users"
-  add_foreign_key "user_events", "clubs"
   add_foreign_key "user_events", "events"
   add_foreign_key "user_events", "users"
   add_foreign_key "user_organizations", "organizations"
