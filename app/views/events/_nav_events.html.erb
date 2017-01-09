@@ -1,0 +1,40 @@
+<div class="sidebar-block">
+  <ul class="nav nav-tabs push-bit" data-toggle="tabs">
+    <li class="active"><a href="#top"><i class="fa fa-users"></i> <%= t "periodic_events" %></a></li>
+    <li><a href="#periodic"><i class="fa fa-newspaper-o"></i> <%= t "top_events" %></a></li>
+  </ul>
+  <div class="tab-content">
+    <div class="tab-pane active" id="top">
+      <% @events.limit(Settings.max_for_limit).each do |event| %>
+        <div class="content-float clearfix">
+          <%= image_tag event.image, class: "img-circle pull-left small-event-image" %>
+          <h5>
+            <%= link_to club_event_url(event.club, event) do %>
+              <strong><%= event.name %></strong>
+            <% end %>
+          </h5>
+          <small class="text-muted">
+            <i><%= t "post_at" %></i>
+            <%= time_ago_in_words event.created_at %>
+          </small>
+        </div>
+      <% end %>
+    </div>
+    <div class="tab-pane" id="periodic">
+      <% @events.top_like.limit(Settings.max_for_limit).each do |event| %>
+          <div class="content-float clearfix">
+            <%= image_tag event.image, class: "img-circle pull-left small-event-image" %>
+            <h5>
+              <%= link_to club_event_url(event.club, event) do %>
+                <strong><%= event.name %></strong>
+              <% end %>
+            </h5>
+            <small class="text-muted">
+              <i><%= t "post_at" %></i>
+              <%= time_ago_in_words event.created_at %>
+            </small>
+          </div>
+      <% end %>
+    </div>
+  </div>
+</div>

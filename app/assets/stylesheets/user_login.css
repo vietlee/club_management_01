@@ -43,8 +43,8 @@
   font-weight: 200;
 }
 
-.header div span{
-  color: #5379fa !important;
+.header div .tit-login{
+  color: #5379fa;
 }
 
 .login{

@@ -1,0 +1,32 @@
+<% @events.each do |event| %>
+  <div class="site-block">
+    <div class="row">
+      <div class="col-md-4">
+        <p>
+          <%= link_to club_event_url(event.club, event) do %>
+            <%= image_tag event.image, class: "img-responsive" %>
+          <% end %>
+        </p>
+      </div>
+      <div class="col-md-8">
+        <h3 class="site-heading"><strong><%= event.name %></strong></h3>
+        <p><%= event.description.truncate Settings.description_event %></p>
+      </div>
+    </div>
+    <div class="clearfix">
+      <p class="pull-right">
+        <%= link_to t("read_more"),
+          club_event_url(event.club, event),
+          class: "label label-primary" %>
+      </p>
+      <ul class="list-inline pull-left">
+          <li><i class="fa fa-calendar"></i> <%= event.created_at.strftime(I18n.t :date_utc, scope: [:date, :formats]) %></li>
+        <li><i class="fa fa-user"></i> by <a href="javascript:void(0)"><%= @club.manager_club.first.user.full_name %></a></li>
+        <li><i class="fa fa-comments"></i> <a href="javascript:void(0)"><%= event.comments.size %></a></li>
+      </ul>
+    </div>
+  </div>
+<% end %>
+<div class="text-right">
+  <%= paginate @events %>
+</div>

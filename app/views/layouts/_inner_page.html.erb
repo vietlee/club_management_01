@@ -3,7 +3,7 @@
   <%= render "home/header" %>
   <%= render "clubs/index" %>
   <%= render "layouts/sugest_club" %>
-<% elsif current_page? new_user_club_request_url %>
+<% elsif current_page? new_user_club_request_url user_id: current_user.id %>
   <%= render "home/sidebar" %>
 <% else %>
   <%= render "clubs/sidebar_club" %>

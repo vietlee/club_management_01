@@ -5,7 +5,7 @@ class ApplicationController < ActionController::Base
   def user_signed_in
     unless user_signed_in?
       flash[:danger] = t("user.require_login")
-      redirect_to root_url
+      redirect_to new_user_session_url
     end
   end
 

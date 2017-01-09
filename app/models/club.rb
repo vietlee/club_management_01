@@ -16,11 +16,9 @@ class Club < ApplicationRecord
   validates :description, presence: true,
     length: {minimum: Settings.min_description}
 
-  def self.actives_club
-    Club.where status: true
-  end
+  scope :actives, -> {where status: true}
 
-  def self.alias user_club
-    Club.find(user_club.club_id).name
+  def manager_club
+    user_clubs.manager
   end
 end

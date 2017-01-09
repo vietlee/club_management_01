@@ -15,6 +15,9 @@ gem "carrierwave"
 gem "config"
 gem "i18n-js"
 gem "faker"
+gem "kaminari"
+gem "ransack"
+gem "bootstrap-kaminari-views"
 
 group :production do
   gem "pg"
