@@ -12,7 +12,7 @@ Rails.application.routes.draw do
   namespace :admin do
     get "/" => "static_pages#index"
     resources :users
-    resources :organizations
+    resources :organizations, except: [:edit, :update, :destroy]
   end
   namespace :manager do
     root "static_pages#index"

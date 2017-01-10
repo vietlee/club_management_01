@@ -1,0 +1,45 @@
+<div id="page-content">
+  <ul class="breadcrumb breadcrumb-top">
+    <li><%= t "admin" %></li>
+    <li><%= link_to t("list_organizations"), admin_organizations_path %></a></li>
+  </ul>
+  <div class="block full">
+    <div class="block-title">
+      <h2><strong><%= t "organizations" %></strong></h2>
+    </div>
+    <div class="table-responsive">
+      <table id="example-datatable"
+        class="table table-vcenter table-condensed table-bordered">
+        <thead>
+          <tr>
+            <th class="text-center"><i class="gi gi-building"></i></th>
+            <th><%= t "organization_name" %></th>
+            <th><%= t "email" %></th>
+            <th><%= t "location" %></th>
+            <th><%= t "phone" %></th>
+            <th><%= t "description" %></th>
+            <th class="text-center"><%= t "view_profile" %></th>
+          </tr>
+        </thead>
+        <tbody>
+          <% @organizations.each do |organization|%>
+            <tr>
+              <td class="text-center">
+                <%= image_tag organization.logo, class: "circle-profile-list" %>
+              </td>
+              <td><%= organization.name %></td>
+              <td><%= organization.email %></td>
+              <td><%= organization.location %></td>
+              <td><%= organization.phone %></td>
+              <td><%= organization.description %></td>
+              <td class="text-center">
+                <%= link_to t("view"), admin_organization_path(organization),
+                  class: "btn btn-lg btn-primary" %>
+              </td>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
