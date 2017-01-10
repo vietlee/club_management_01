@@ -1,0 +1,61 @@
+<div id="page-content">
+  <ul class="breadcrumb breadcrumb-top">
+    <li><%= t "show_organization" %></li>
+    <li><%= link_to @organization.name, t("do_nothing") %></a></li>
+  </ul>
+  <div class="row">
+    <div class="col-md-1"></div>
+    <div class="col-md-10">
+      <div class="block full">
+        <div class="block-title">
+          <h2><strong><%= link_to @organization.name, t("do_nothing") %></strong></h2>
+        </div>
+        <div class="block-content">
+          <div class="center"><%= image_tag @organization.logo,
+            class: "circle-profile" %></div><hr>
+          <div class="row">
+            <div class="col-md-3"></div>
+            <div class="col-md-2">
+              <strong class="pull-right"><%= t "name" %></strong>
+            </div>
+            <div class="col-md-6 center"><%= @organization.name %></div>
+            <div class="col-md-1"></div>
+          </div><hr>
+          <div class="row">
+            <div class="col-md-3"></div>
+            <div class="col-md-2">
+              <strong class="pull-right"><%= t "email" %></strong>
+            </div>
+            <div class="col-md-6 center"><%= @organization.email %></div>
+            <div class="col-md-1"></div>
+          </div><hr>
+          <div class="row">
+            <div class="col-md-3"></div>
+            <div class="col-md-2">
+              <strong class="pull-right"><%= t "phone" %></strong>
+            </div>
+            <div class="col-md-6 center"><%= @organization.phone %></div>
+            <div class="col-md-1"></div>
+          </div><hr>
+          <div class="row">
+            <div class="col-md-3"></div>
+            <div class="col-md-2">
+              <strong class="pull-right"><%= t "location" %></strong>
+            </div>
+            <div class="col-md-6 center"><%= @organization.location %></div>
+            <div class="col-md-1"></div>
+          </div><hr>
+          <div class="row">
+            <div class="col-md-3"></div>
+            <div class="col-md-2">
+              <strong class="pull-right"><%= t "description" %></strong>
+            </div>
+            <div class="col-md-6 center"><%= @organization.description %></div>
+            <div class="col-md-1"></div>
+          </div><hr>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-1"></div>
+  </div>
+</div>

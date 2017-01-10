@@ -11,5 +11,7 @@ class Organization < ApplicationRecord
   validates :location, presence: true
   validates :description, presence: true
 
-  mount_uploader :image, ImageUploader
+  mount_uploader :logo, ImageUploader
+
+  scope :newest, -> {order created_at: :desc}
 end

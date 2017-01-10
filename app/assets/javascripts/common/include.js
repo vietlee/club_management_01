@@ -1,6 +1,5 @@
 $(document).on('turbolinks:load', function() {
   App.init();
-  TablesDatatables.init();
 });
 
 $(document).ready(function() {
