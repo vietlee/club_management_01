@@ -1,0 +1,14 @@
+<% @members.each do |member|%>
+  <tr>
+    <td class="text-center"><%= member.id %></td>
+    <td class="text-center"><%= image_tag member.avatar,
+      class: "circle-profile-list" %></td>
+    <td><%= member.full_name %></a></td>
+    <td><%= member.email %></td>
+    <td><%= member.phone %></td>
+    <td class="text-center">
+      <%= link_to t("view"), club_manager_club_member_path(id: member.id),
+        class: "btn btn-lg btn-primary" %>
+    </td>
+  </tr>
+<% end %>

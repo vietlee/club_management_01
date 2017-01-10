@@ -23,10 +23,7 @@ module ApplicationHelper
     flash[:danger] = object.errors.full_messages
   end
 
-  def admin_verify
-    unless current_user.role == :admin
-      flash[:danger] = t("require_admin")
-      redirect_to root_url
-    end
+  def manager_of_club user
+    @user_clubs = user.user_clubs.manager
   end
 end

@@ -4,4 +4,6 @@ class UserClub < ApplicationRecord
 
   scope :manager, ->{where is_manager: true}
   scope :unactive, ->{where status: false}
+
+  delegate :name, to: :club, allow_nil: :true
 end
