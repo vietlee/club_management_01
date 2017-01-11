@@ -16,6 +16,7 @@ Rails.application.routes.draw do
   end
   namespace :manager do
     root "static_pages#index"
+    resources :requests
   end
 
   namespace :club_manager do
