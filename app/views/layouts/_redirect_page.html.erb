@@ -1,0 +1,6 @@
+<%= render "layouts/sidebar" %>
+<% if user_signed_in? %>
+  <%= render "layouts/inner_page" %>
+<% else %>
+  <%= render "layouts/outer_page" %>
+<% end %>

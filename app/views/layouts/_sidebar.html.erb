@@ -1,0 +1,5 @@
+<% if user_signed_in? %>
+  <%= render "clubs/sidebar_club" %>
+<% else %>
+  <%= render "home/sidebar" %>
+<% end %>

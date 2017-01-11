@@ -1,4 +1,8 @@
 en:
+  full_name: "Full Name"
+  placeholder_password: "Please choose a complex one.."
+  require_info: "Required Information"
+  register: "Register"
   line: "Line"
   times: "Time"
   lorem: "Bring your project to life months sooner"
@@ -218,3 +222,4 @@ en:
   cant_create_admin: "Cant create admin organization"
   cant_create_organization: "Cant create organization"
   cant_approve: "Cant approve request, please check request info and try again!"
+  user_info: "User Information:"

@@ -1,4 +1,5 @@
 vi:
+  full_name: "Họ và tên"
   lorem: "Mang project của bạn hoạt dộng sớm hơn"
   intro_first: "Một trang phương án web hoàn thiện cho ứng dụng tuyệt vời của bạn"
   timeline_date: "20/10/2016"
@@ -182,3 +183,8 @@ vi:
   users: "Người dùng"
   organization_request: "Yêu cầu mở tổ chức"
   request_approved: "Yêu cầu đã được chấp thuận!"
+  register: "Đăng ký"
+  devise:
+    sessions:
+      user:
+        signed_out: "Bạn đã đăng xuất!"

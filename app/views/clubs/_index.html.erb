@@ -1,21 +1,21 @@
 <section class="site-content site-section">
   <div class="container">
-      <div class="site-block text-center">
-        <h1><%= t "my_club" %></h1>
-      </div>
-      <div class="row portfolio">
-        <% @clubs.each do |club| %>
-          <div class="col-sm-4 portfolio-item animation-fadeInQuick" data-category="design">
-              <%= link_to club_path club do %>
-                <%= image_tag club.image, class: "img-responsive" %>
-                <span class="portfolio-item-info">
-                  <strong class="border-name-club"><%= club.name %></strong>
-                  <div class="border-white-50"></div>
-                  <%= club.description.truncate Settings.truncate_description %>
-                </span>
-              <% end %>
-          </div>
-        <% end %>
-      </div>
+    <div class="site-block text-center">
+      <h1><%= t "my_club" %></h1>
+    </div>
+    <div class="row portfolio">
+      <% @clubs.each do |club| %>
+        <div class="col-sm-4 portfolio-item animation-fadeInQuick" data-category="design">
+          <%= link_to club_path club do %>
+            <%= image_tag club.image, class: "img-responsive" %>
+            <span class="portfolio-item-info">
+              <strong class="border-name-club"><%= club.name %></strong>
+              <div class="border-white-50"></div>
+              <%= club.description.truncate Settings.truncate_description %>
+            </span>
+          <% end %>
+        </div>
+      <% end %>
+    </div>
   </div>
 </section>
