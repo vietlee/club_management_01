@@ -1,0 +1,5 @@
+<div class="tip leave">
+  <%= link_to join_event_url(event_id: @event.id), method: :delete, remote: true do %>
+    <b class="fa fa-sign-out"></b><span><%= t "leave_this_event" %></span>
+  <% end %>
+</div>

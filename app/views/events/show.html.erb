@@ -1,13 +1,3 @@
-<div class="tip join">
-  <a href="#">
-    <i class="fa fa-share"></i><span><%= t "join_this_event" %></span>
-  </a>
-</div>
-<div class="tip leave">
-  <a href="#">
-    <b class="fa fa-sign-out"></b><span><%= t "leave_this_event" %></span>
-  </a>
-</div>
 <div id="page-container">
 <%= render "clubs/header_club" %>
   <section class="site-content site-section">
@@ -76,4 +66,7 @@
       <hr>
     </div>
   </section>
+</div>
+<div class="join-event-toggle-container">
+  <%= render "user_events/join_event_toggle" %>
 </div>
