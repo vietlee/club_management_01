@@ -18,6 +18,13 @@ Rails.application.routes.draw do
     root "static_pages#index"
   end
 
+  namespace :club_manager do
+    get "/" => "static_pages#index"
+    resources :clubs, only: :show do
+      resources :members, only: [:index, :show]
+    end
+  end
+
   resources :users do
     resources :club_requests, only: [:new, :create, :index]
   end

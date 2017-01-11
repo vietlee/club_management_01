@@ -24,21 +24,16 @@
         <li class="divider"></li>
         <li>
           <%= link_to t("do_nothing") do %>
-            <i class="fa fa-user fa-fw pull-right"></i><%= t "Profile" %>
+            <i class="fa fa-user fa-fw pull-right"></i><%= t "profile" %>
           <% end %>
           <%= link_to "#modal-user-settings", data: {toggle: "modal"} do %>
-            <i class="fa fa-cog fa-fw pull-right"></i><%= t "settings" %>
+            <i class="fa fa-cog fa-fw pull-right"></i><%= t "setting" %>
           <% end %>
         </li>
         <li class="divider"></li>
         <li>
-          <%= link_to t("do_nothing") do %>
-            <i class="fa fa-lock fa-fw pull-right"></i><%= t "lock accont" %>
-          <% end %>
-        </li>
-        <li>
           <%= link_to destroy_admin_session_path, method: :delete do %>
-            <i class="fa fa-ban fa-fw pull-right"></i><%= t "log out" %>
+            <i class="fa fa-ban fa-fw pull-right"></i><%= t "sign_out" %>
           <% end %>
         </li>
       </ul>
