@@ -1,0 +1,65 @@
+<div id="modal-user-sign-up" class="modal fade" tabindex="-1" role="dialog" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h2 class="modal-title"><i class="fa fa-user-plus"></i> <%= t "regester" %></h2>
+      </div>
+      <div class="modal-body">
+        <%= form_for :user, url: user_registration_path, html: {class: "form-horizontal form-bordered" } do |f| %>
+          <div class="form-modal">
+            <fieldset>
+              <div class="form-group">
+                <label class="col-md-4 control-label"><%= t "email" %></label>
+                <div class="col-md-8">
+                  <%= f.email_field :email, class: "form-control", placeholder: t("example_email") %>
+                </div>
+              </div>
+              <div class="form-group">
+                <label class="col-md-4 control-label"><%= t "full_name" %></label>
+                <div class="col-md-8">
+                  <%= f.text_field :full_name, class: "form-control", placeholder: t("full_name") %>
+                </div>
+              </div>
+            </fieldset>
+            <fieldset>
+              <div class="form-group">
+                <label class="col-md-4 control-label"><%= t "phone" %></label>
+                <div class="col-md-8">
+                  <%= f.text_field :phone, class: "form-control", placeholder: t("phone") %>
+                </div>
+              </div>
+              <div class="form-group">
+                <label class="col-md-4 control-label"><%= t "avatar" %></label>
+                <div class="col-md-8">
+                  <%= f.file_field :avatar, class: "form-control", placeholder: t("full_name") %>
+                </div>
+              </div>
+            </fieldset>
+            <fieldset>
+              <div class="form-group">
+                <label class="col-md-4 control-label" for="user-settings-password"><%= t "password" %></label>
+                <div class="col-md-8">
+                  <%= f.password_field :password, class: "form-control",
+                    id: "user-settings-password" %>
+                </div>
+              </div>
+              <div class="form-group">
+                <label class="col-md-4 control-label" for="user-settings-repassword"><%= t "password" %></label>
+                <div class="col-md-8">
+                  <%= f.password_field :password_confirm, class: "form-control",
+                    id: "user-settings-password" %>
+                </div>
+              </div>
+            </fieldset>
+          </div>
+          <div class="form-group form-actions">
+            <div class="col-xs-12 text-right">
+              <button type="button" class="btn btn-sm btn-default" data-dismiss="modal"><%= t "close" %></button>
+              <%= f.submit :Register, class: "btn btn-sm btn-primary" %>
+            </div>
+          </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>

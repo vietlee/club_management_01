@@ -1,7 +1,7 @@
 <header>
   <div class="container">
     <%= link_to root_path, class: "site-logo" do %>
-      <%= image_tag @club.logo, class: "club-logo" %>
+      <%= image_tag @club.logo, class: "club-logo" if @club %>
     <% end %>
     <nav>
       <%= link_to "javascript:void(0)",
@@ -48,11 +48,11 @@
         <li><%= link_to t("about"), "#" %></li>
         <li>
           <%= link_to "#",class: "site-nav-sub" do %>
-            <%= t "account" %> <span class="fa fa-user"></span>
+            <%= current_user.full_name %> <span class="fa fa-user"></span>
           <% end %>
           <ul>
             <li><%= link_to t("profile"), "#" %></li>
-            <li><%= link_to t("sign_out"), destroy_user_session_path, method: :delete %></li>
+            <li><%= link_to t("log_out"), destroy_user_session_path, method: :delete %></li>
           </ul>
         </li>
       </ul>

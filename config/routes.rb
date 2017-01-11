@@ -1,6 +1,5 @@
 Rails.application.routes.draw do
   root "static_pages#index"
-
   devise_for :users, controllers: {registrations: "registrations", sessions: "authentications"}
   devise_for :admin, controllers: {sessions: "admin/sessions"}
 
