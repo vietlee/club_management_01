@@ -10,4 +10,16 @@ class Event < ApplicationRecord
 
   scope :top_like, -> {order num_like: :desc}
   scope :newest, -> {order created_at: :desc}
+  scope :by_current_year, -> {where "year(created_at) = ?", Time.zone.now.year}
+  scope :by_quarter, -> months {where("month(created_at) in (?)", months)}
+
+  def self.group_by_quarter
+    quarters = [[1,2,3], [4,5,6], [7,8,9], [10,11,12]]
+    array = Array.new
+    quarters.each_with_index do |quarter, index|
+      list_events = self.by_quarter quarters[index]
+      array.push list_events
+    end
+    array
+  end
 end

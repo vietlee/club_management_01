@@ -95,6 +95,7 @@ en:
   club_albums: " Club Albums"
   list_club: "List Club"
   other_club: " Other Club"
+  post_by: "Post by: "
   send_request: " Send Request"
   approve_request: " Approve Request"
   login: " Login"
@@ -145,9 +146,10 @@ en:
     update_fail: "Organization update failed!"
   submit: "Submit"
   edit: "Edit"
-  date:
+  time:
     formats:
-      date_utc: "%d/%M/%Y %H:%M"
+      date_utc: "%d/%m/%Y"
+      date_time_utc: "%d/%m/%Y %H:%M"
   read_the_article: "Read the article"
   view_more: "View more ..."
   do_nothing: "javascript:void(0)"

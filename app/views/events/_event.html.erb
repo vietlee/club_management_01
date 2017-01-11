@@ -20,9 +20,20 @@
           class: "label label-primary" %>
       </p>
       <ul class="list-inline pull-left">
-          <li><i class="fa fa-calendar"></i> <%= event.created_at.strftime(I18n.t :date_utc, scope: [:date, :formats]) %></li>
-        <li><i class="fa fa-user"></i> by <a href="javascript:void(0)"><%= @club.manager_club.first.user.full_name %></a></li>
-        <li><i class="fa fa-comments"></i> <a href="javascript:void(0)"><%= event.comments.size %></a></li>
+        <li>
+          <i class="fa fa-calendar"></i>
+          <%= l event.created_at, format: :date_utc %>
+        </li>
+        <li>
+          <i class="fa fa-user"></i> <%= t "post_by" %>
+          <a href="javascript:void(0)"><%= @club.manager_club.first.user.full_name %></a>
+        </li>
+        <li>
+          <i class="fa fa-comments"></i>
+          <a href="javascript:void(0)">
+            <%= event.comments.size %>
+          </a>
+        </li>
       </ul>
     </div>
   </div>
