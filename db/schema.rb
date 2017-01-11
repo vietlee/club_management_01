@@ -187,6 +187,16 @@ ActiveRecord::Schema.define(version: 20170112093641) do
     t.datetime "updated_at",                null: false
   end
 
+  create_table "ratings", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.integer  "user_id"
+    t.integer  "star"
+    t.integer  "rateable_id"
+    t.string   "rateable_type"
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
+    t.index ["user_id"], name: "index_ratings_on_user_id", using: :btree
+  end
+
   create_table "target_hobbies_tags", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.integer  "hobbies_tag_id"
     t.integer  "target_id"
@@ -268,6 +278,7 @@ ActiveRecord::Schema.define(version: 20170112093641) do
   add_foreign_key "news", "events"
   add_foreign_key "news", "users"
   add_foreign_key "organization_requests", "users"
+  add_foreign_key "ratings", "users"
   add_foreign_key "target_hobbies_tags", "hobbies_tags"
   add_foreign_key "user_clubs", "clubs"
   add_foreign_key "user_clubs", "users"

@@ -35,6 +35,7 @@ Rails.application.routes.draw do
   end
 
   resources :user_events, only: :create
+  resources :ratings, only: :create
   resources :organizations, only: :show
 
   delete "join_event" => "user_events#destroy"
