@@ -169,7 +169,7 @@ ActiveRecord::Schema.define(version: 20170106061034) do
     t.string   "phone"
     t.string   "email"
     t.text     "location",    limit: 65535
-    t.string   "image"
+    t.string   "logo"
     t.boolean  "status",                    default: false
     t.datetime "created_at",                                null: false
     t.datetime "updated_at",                                null: false

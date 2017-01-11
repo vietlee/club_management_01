@@ -5,3 +5,4 @@ max_for_limit: 5
 per_page: 5
 truncate_description: 90
 description_event: 360
+min_location: 15
