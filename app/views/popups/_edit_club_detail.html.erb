@@ -1,0 +1,53 @@
+<div class="modal-dialog">
+  <div class="modal-content">
+    <div class="modal-header text-center">
+      <h2 class="modal-title"><i class="fa fa-pencil"></i> <%= t "edit" %></h2>
+    </div>
+    <div class="modal-body">
+      <%= form_for [:club_manager, @club],
+        html: {multipart: true, enctype: "multipart/form-data",
+        class: "form-horizontal form-bordered"} do |f| %>
+        <fieldset>
+          <legend><strong><%= @club.name %><%= t "information" %></strong></legend>
+          <div class="form-group">
+            <label class="col-md-3 control-label"><%= t "name" %></label>
+            <div class="col-md-8">
+              <%= f.text_field :name, value: @club.name, class: "form-control" %>
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="col-md-3 control-label"><%= t "description" %></label>
+            <div class="col-md-8">
+              <%= f.text_area :description, value: @club.description,
+                class: "form-control", rows: Settings.edit_description %>
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="col-md-3 control-label"><%= t "logo" %></label>
+            <div class="col-md-8">
+              <%= f.file_field :logo %>
+            </div>
+          </div>
+        </fieldset>
+        <fieldset>
+          <legend><strong><%= t "notification" %></strong></legend>
+          <div class="form-group">
+            <label class="col-md-3 control-label" for="user-settings-password">
+              <%= t "notification" %>
+            </label>
+            <div class="col-md-8">
+              <%= f.text_area :notification, value: @club.notification, class: "form-control" %>
+            </div>
+          </div>
+        </fieldset>
+        <div class="form-group form-actions">
+          <div class="col-xs-12 text-right">
+            <%= f.button t("close"), class: "btn btn-sm btn-warning",
+              "data-dismiss": "modal" %>
+            <%= f.button t("save"), class: "btn btn-sm btn-primary" %>
+          </div>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,47 @@
+<div id="page-content">
+  <ul class="breadcrumb breadcrumb-top">
+    <li><%= t "club_management" %></li>
+    <li><%= link_to @club.name, t("do_nothing") %></li>
+  </ul>
+  <div class="row">
+    <div class="col-md-6">
+      <div class="block">
+        <div class="block-title">
+          <h2><strong><%= t "club_manager.event.new" %></strong></h2>
+        </div>
+        <%= render "new_event" %>
+      </div>
+    </div>
+    <div class="col-md-6 pull-right">
+      <div class="block">
+        <div class="block-title">
+          <h2><strong><%= @club.name %></strong></h2>
+        </div>
+        <div class="row"  >
+          <div class="col-md-5" >
+            <%= image_tag @club.image %>
+          </div>
+          <div class="col-md-7 pull-right" >
+            <p><%= @club.notification %></p>
+            <p><%= @club.description %></p>
+            <div class="col-md-6 col-md-offset-4">
+              <%= link_to "#modal-club-edit", data: {toggle: "modal"},
+                class: "btn btn-sm btn-primary" do %>
+                <i class="fa fa-pencil"></i><%= t "edit" %>
+              <% end %>
+            </div>
+          </div>
+        </div><br>
+      </div>
+      <div class="block">
+        <div class="block-title">
+          <h2><strong><%= t "members" %></strong></h2>
+        </div>
+        <%= render "club_member" %>
+      </div>
+    </div>
+  </div>
+</div>
+<div id="modal-club-edit" class="modal fade" tabindex="-1" role="dialog" aria-hidden="true">
+  <%= render "popups/edit_club_detail" %>
+</div>

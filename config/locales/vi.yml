@@ -43,10 +43,12 @@ vi:
   require_boostrap_jquery_higher: "Bootstrap's JavaScript yêu cầu jQuery phiên bản 1.9.1 hoặc cao hơn"
   require_boostrap_jquery: "Bootstrap's JavaScript yêu cầu jQuery"
   let_us_know_assist: "Cho chúng tôi biết cách để trợ giúp bạn!"
-  let_us_know_email: "Hãy cho chũng tôi địa chỉ email của bạn!"
-  let_us_know_name: "Hãy cho hcungs tôi biết tên của bạn!"
+  let_us_know_email: "Hãy cho chúng tôi địa chỉ email của bạn!"
+  let_us_know_name: "Hãy cho chúng tôi biết tên của bạn!"
   info: "Thông tin"
   organization_add: "Địa chỉ tổ chức"
+  company_add: "Địa chỉ của tổ chức"
+  not_found: "Không tìm thấy!"
   require_boostrap: "bootstrap-datetimepicker yêu cầu Moment.js được tải trước"
   create: "Tạo"
   club_name: "Tên club"
@@ -175,6 +177,24 @@ vi:
   phone: "Số điện thoại"
   admin_of: "Quản lý của"
   can_not_found_user: "Không tìm thấy người dùng"
+  create_organization_success: "Tạo thành công tổ chức."
+  create_organization_fail: "Tạo tổ chức thất bại, vui lòng thử lại."
+  description: "Mô tả"
+  not_found_oraganization: "Không tìm thấy tổ chức yêu cầu!"
+  show_organization: "Tổ chức"
+  admin: "Quản lý"
+  new_organization: "Tạo mới tổ chức"
+  organization_name: "Tên tổ chức"
+  name_guide: "Tên tổ chức không thể để trống và phải có ít nhất 10 ký tự"
+  email_guide: "Điền email của tổ chức"
+  phone_guide: "Điền số điện thoại của tổ chức"
+  edit_information: "Chỉnh sửa thông tin"
+  approve_ogranization_request: "Yêu cầu mở tổ chức"
+  enter_email: "Nhập email"
+  placeholder_phone: "Nhâp số điện thoại"
+  organization_location: "Địa chỉ của tổ chức"
+  organization_description: "Mô tả..."
+  reset: "Hủy"
   organization_request_approved: "Duyệt yêu cầu"
   deleted_successfull: "Xóa thành công"
   delete_failed: "Xóa không thành công, xin vui lòng thử lại"
@@ -183,6 +203,7 @@ vi:
   users: "Người dùng"
   organization_request: "Yêu cầu mở tổ chức"
   request_approved: "Yêu cầu đã được chấp thuận!"
+  localtion: "Địa chỉ"
   register: "Đăng ký"
   devise:
     sessions:
@@ -230,3 +251,90 @@ vi:
   status: "Trạng thái"
   date_request: "Ngày gửi"
   view_detail: "Chi tiết"
+  request_to_open: " yêu cầu mở một tổ chức"
+  approved: "Đã chấp thuận"
+  approve: "Chấp thuận"
+  approve_fail: "Không thể chấp thuận yêu cầu, vui lòng thử lại"
+  confirm_delete: "Bạn muốn xóa yêu cầu này?"
+  cant_create_admin: "Không thể tọa quản lý của tổ chức"
+  cant_create_organization: "Không thể tạo tổ chức"
+  cant_approve: "Không thể chấp thuận yêu cầu, vui lòng xem lại thông tin yêu cầu và thử lại!"
+  event: "Sự kiện"
+  member:
+    clubs: "Câu lạc bộ đã tham gia"
+    show: "Thành viên"
+  club_manager:
+    cant_fount: "Không thể tìm thấy câu lạc bộ!"
+    image:
+      guide: "Thêm mới ảnh"
+      name_holder: "Nhập tên ảnh"
+      images: "Ảnh"
+      create: "  THÊM MỚI ẢNH"
+      no_image: "Bộ sưu tập này tạm thời chưa có ảnh"
+      success_create: "Tạo mới ảnh thành công!"
+    album:
+      album: "Bộ sưu tập"
+      not_found: "Không tìm thấy bộ sưu tập!"
+      no_album: "Câu lạc bộ hiện thời chưa có bộ sưu tập ảnh!"
+      create: "  THÊM MỚI"
+      guide: "Tạo bộ sưu tập mới"
+      name_holder: "Nhập tên bộ sưu tập"
+      success_create: "Tạo mới bộ sưu tập thành công!"
+    event:
+      new: "Tạo mới sự kiện"
+      name_guide: "Tên sự kiện không thể để trống và phải có ít nhất 10 ký tự"
+      expense: "Chi phí sự kiện"
+      start: "Ngày bắt đầu"
+      image: "Ảnh sự kiện"
+      event_name: "Tên sự kiện"
+      expense_holder: "Nhập vào chi phí sự kiện"
+      location_holder: "Địa điểm tổ chức..."
+      day_start: "Từ ngày"
+      day_end: "Đến ngày"
+      description: "Mô tả..."
+      success_create: "Tạo mới sự kiện thành công!"
+    club:
+      success_update: "Thông tin câu lạc bộ được cập nhập thành công"
+  club_management: "Quản lý câu lạc bộ"
+  none: "Không"
+  location: "Địa chỉ"
+  view: "Xem"
+  list_request: "Danh sách yêu cầu"
+  information: " - Thông tin"
+  notification: "Thông báo"
+  save: "Lưu"
+  activerecord:
+    attributes:
+      event:
+        name: "Tên sự kiện"
+        location: "Địa điểm"
+        description: "Mô tả"
+        date_start: "Ngày bắt đầu"
+        date_end: "Ngày kết thúc"
+        image: "Ảnh"
+      album:
+        name: "Tên bộ sưu tập"
+    errors:
+      models:
+        event:
+          attributes:
+            name:
+              blank: " không được bỏ trống"
+              too_short: " quá ngắn"
+            location:
+              blank: " không được bỏ trống"
+              too_short: " quá ngắn"
+            description:
+              blank: " không được bỏ trống"
+              too_short: " quá ngắn"
+            date_start:
+              blank: " không được bỏ trống"
+            date_end:
+              blank: " không được bỏ trống"
+            image:
+              blank: " không được bỏ trống"
+        album:
+          attributes:
+            name:
+              blank: " không được bỏ trống"
+              too_short: " quá ngắn"

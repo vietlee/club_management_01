@@ -21,8 +21,9 @@ Rails.application.routes.draw do
 
   namespace :club_manager do
     get "/" => "static_pages#index"
-    resources :clubs, only: :show do
+    resources :clubs do
       resources :members, only: [:index, :show]
+      resources :events
     end
   end
 

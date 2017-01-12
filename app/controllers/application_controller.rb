@@ -35,4 +35,12 @@ class ApplicationController < ActionController::Base
       redirect_to new_admin_sessions_path
     end
   end
+
+  def create_acivity target, person_target, action
+    unless Activity.create target: target,
+      person_target: person_target, action: action
+      flash_error t("create_activity_fails")
+      redirect_to root_url
+    end
+  end
 end

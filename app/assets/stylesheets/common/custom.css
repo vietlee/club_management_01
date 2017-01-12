@@ -1,0 +1,10 @@
+.alert-alert {
+  color: #e74c3c;
+  background-color: #ffd1cc;
+  border-color: #ffb8b0;
+}
+.alert-notice {
+  color: #27ae60;
+  background-color: #daf2e4;
+  border-color: #b8e5cb;
+}
