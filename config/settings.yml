@@ -13,3 +13,7 @@ per_page_album: 9
 per_page_image: 12
 new_description: 9
 edit_description: 6
+min_rate: 1
+max_rate: 5
+ratings: "Ratings"
+round_float: 1
