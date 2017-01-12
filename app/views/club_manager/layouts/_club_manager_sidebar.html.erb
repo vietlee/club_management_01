@@ -50,7 +50,7 @@
           <% end %>
           <ul>
             <% manager_of_club(current_user).each do |f| %>
-              <li><%= link_to f.name, t("do_nothing") %></li>
+              <li><%= link_to f.name, club_manager_club_path(f.club_id) %></li>
             <% end %>
           </ul>
         </li>

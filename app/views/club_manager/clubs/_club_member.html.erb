@@ -1,0 +1,13 @@
+<div class="row text-center">
+  <% @club.users.newest.each do |f|  %>
+    <div class="col-sm-4">
+      <%= link_to club_manager_club_member_path(id: f.id, club_id: @club.id) do %>
+        <%= image_tag f.avatar, class: "circle-profile-list" %>
+      <% end %>
+      <h4><%= f.full_name %></h4>
+    </div>
+  <% end %>
+</div>
+<div class="text-center">
+  <%= link_to t("view_more"), club_manager_club_members_path(club_id: @club.id) %>
+</div><br>

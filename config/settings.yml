@@ -1,4 +1,5 @@
 max_name: 30
+min_name: 5
 min_password: 6
 min_description: 10
 max_for_limit: 5
@@ -6,3 +7,9 @@ per_page: 5
 truncate_description: 90
 description_event: 360
 min_location: 15
+update: "Update"
+create: "Create"
+per_page_album: 9
+per_page_image: 12
+new_description: 9
+edit_description: 6

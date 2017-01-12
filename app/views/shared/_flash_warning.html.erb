@@ -1,10 +1,18 @@
 <% if flash.any? %>
-  <% flash.each do |key, value| %>
+  <% flash.each do |key, values| %>
   <section class="notify">
-    <%= content_tag :div, value, class: "alert alert-success" do %>
-      <%= value %>
+    <%= content_tag :div, values, class: "alert alert-#{key}" do %>
       <%= link_to t("do_nothing"), class: "close-message" do %>
         <span class="fa fa-times"></span>
+      <% end %>
+      <% if values.class == Array %>
+        <ul>
+          <% values.each do |value| %>
+            <li><%= value %></li>
+          <% end %>
+        </ul>
+      <% else %>
+        <%= values %>
       <% end %>
     <% end %>
   </section>
