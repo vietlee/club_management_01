@@ -1,0 +1,42 @@
+<div id="page-content">
+  <div class="block full">
+    <div class="block-title">
+      <h2><strong><%= t "requests" %></strong></h2>
+    </div>
+    <div class="table-responsive">
+      <table id="example-datatable"
+        class="table table-vcenter table-condensed table-bordered">
+        <thead>
+          <tr>
+            <th class="text-center"><%= t "id" %></th>
+            <th class="text-center"><i class="gi gi-user"></i></th>
+            <th><%= t "name_request" %></th>
+            <th><%= t "status" %></th>
+            <th><%= t "date_request" %></th>
+            <th class="text-center"><%= t "view_detail" %></th>
+          </tr>
+        </thead>
+        <tbody>
+          <% @requests.each do |request| %>
+            <tr>
+              <td class="text-center"><%= request.id %></td>
+              <td class="text-center"><%= image_tag request.logo,
+                class: "circle-profile-list" %></td>
+              <td><%= request.name %></a></td>
+              <% if request.approve %>
+                <td><%= t "approved" %></td>
+              <% else %>
+                <td><%= t "not_approve" %></td>
+              <% end %>
+              <td><%= request.created_at %></td>
+              <td class="text-center">
+                <%= link_to t("view"), manager_request_path(request.id),
+                  class: "btn btn-lg btn-primary" %>
+              </td>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
