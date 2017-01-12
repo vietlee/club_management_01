@@ -93,7 +93,7 @@
           <ul>
             <% manager_of_club(current_user).each do |club| %>
               <li>
-                <%= link_to club.name, t("do_nothing") %>
+                <%= link_to club.name, club_manager_club_events_path(club.club_id) %>
               </li>
             <% end %>
           </ul>

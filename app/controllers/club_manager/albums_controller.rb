@@ -1,7 +1,7 @@
 class ClubManager::AlbumsController < BaseClubManagerController
   before_action :correct_manager
-  before_action :load_album, except: [:index, :create]
   before_action :load_club, only: [:index, :show, :create]
+  before_action :load_album, except: [:index, :create]
 
   def index
     @albums = @club.albums.newest.page(params[:page]).per Settings.per_page_album
@@ -23,6 +23,9 @@ class ClubManager::AlbumsController < BaseClubManagerController
     redirect_to club_manager_club_albums_path @club
   end
 
+  def edit
+  end
+
   def update
     if @album.update_attributes album_params
       create_acivity @album, current_user, Settings.update
@@ -34,7 +37,6 @@ class ClubManager::AlbumsController < BaseClubManagerController
   end
 
   private
-
   def load_album
     @album = Album.find_by id: params[:id]
     unless @album

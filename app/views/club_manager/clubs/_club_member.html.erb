@@ -1,13 +1,17 @@
 <div class="row text-center">
-  <% @club.users.newest.each do |f|  %>
-    <div class="col-sm-4">
-      <%= link_to club_manager_club_member_path(id: f.id, club_id: @club.id) do %>
-        <%= image_tag f.avatar, class: "circle-profile-list" %>
-      <% end %>
-      <h4><%= f.full_name %></h4>
-    </div>
+  <% @club.users.newest.each do |user_club|  %>
+    <% if status_user_club(user_club, @club) %>
+      <div class="col-sm-4">
+        <%= link_to club_manager_club_member_path(id: user_club.id, club_id: @club.id) do %>
+          <%= image_tag user_club.avatar, class: "circle-profile-list" %>
+        <% end %>
+        <h4><%= user_club.full_name %></h4>
+      </div>
+    <% end %>
   <% end %>
 </div>
-<div class="text-center">
-  <%= link_to t("view_more"), club_manager_club_members_path(club_id: @club.id) %>
-</div><br>
+<% if @club.users.size > Settings.club_member %>
+  <div class="text-center">
+    <%= link_to t("view_more"), club_manager_club_members_path(club_id: @club.id) %>
+  </div><br>
+<% end %>

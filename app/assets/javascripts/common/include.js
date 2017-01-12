@@ -3,6 +3,7 @@ $(document).on('turbolinks:load', function() {
   turbolink_app();
   $('.select-select2').select2();
   $('.input-slider').slider();
+  CKEDITOR.replace('ckeditor');
 });
 
 var turbolink_app = function(){

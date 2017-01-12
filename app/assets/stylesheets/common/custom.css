@@ -23,3 +23,9 @@
 .img-header {
   width: 100%;
 }
+.full-img img {
+  max-width: 100%;
+}
+.full-img-new img {
+  max-width: 70%;
+}
