@@ -1,13 +1,17 @@
 <div class="sidebar-block">
   <h4 class="site-heading"><strong><%= t "times" %></strong> <%= t "line" %></h4>
   <ul class="fa-ul ul-breath">
-    <li><i class="fa fa-bullseye fa-li"></i> <a href="javascript:void(0)"><%= t "timeline_date" %></a></li>
-    <li><i class="fa fa-bullseye fa-li"></i> <a href="javascript:void(0)"><%= t "timeline_date" %></a></li>
-    <li><i class="fa fa-bullseye fa-li"></i> <a href="javascript:void(0)"><%= t "timeline_date" %></a></li>
-    <li><i class="fa fa-bullseye fa-li"></i> <a href="javascript:void(0)"><%= t "timeline_date" %></a></li>
-    <li><i class="fa fa-bullseye fa-li"></i> <a href="javascript:void(0)"><%= t "timeline_date" %></a></li>
-    <li><i class="fa fa-bullseye fa-li"></i> <a href="javascript:void(0)"><%= t "timeline_date" %></a></li>
-    <li><i class="fa fa-bullseye fa-li"></i> <a href="javascript:void(0)"><%= t "timeline_date" %></a></li>
-    <li><i class="fa fa-bullseye fa-li"></i> <a href="javascript:void(0)"><%= t "timeline_date" %></a></li>
+    <% @time_line_events.each do |time_line| %>
+      <% if time_line.size != 0 %>
+        <li>
+          <i class="fa fa-bullseye fa-li"></i>
+          <%= link_to "#" do %>
+            <%= l time_line.first.created_at, format: :date_utc %>
+            <span class="fa fa-long-arrow-right"></span>
+            <%= l time_line.last.created_at, format: :date_utc %>
+          <% end %>
+        </li>
+      <% end %>
+    <% end %>
   </ul>
 </div>
