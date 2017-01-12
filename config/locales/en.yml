@@ -3,6 +3,9 @@ en:
   placeholder_password: "Please choose a complex one.."
   require_info: "Required Information"
   register: "Register"
+  not_found_user_event: "User Event not found!!!"
+  see_you_next_time: "See you next time!!"
+  thanks_for_join: "Thank you for joining us!!"
   line: "Line"
   times: "Time"
   lorem: "Bring your project to life months sooner"
@@ -130,7 +133,7 @@ en:
   user:
     edit_require: "Can can not edit other user profile"
     cant_found: "Can found user!"
-    not_found: "Not found!"
+    not_found_event: "Event not found!"
     require_login: "You need to sign in first"
     sign_at: "Sign up at"
     last_update: "Last update profile at"

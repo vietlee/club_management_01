@@ -1,0 +1,5 @@
+<% unless join_event? @event %>
+  <%= render "user_events/join_event" %>
+<% else %>
+  <%= render "user_events/un_join_event" %>
+<% end %>

@@ -1,0 +1,8 @@
+<%= form_for UserEvent.new, remote: true do |f| %>
+  <%= f.hidden_field :event_id, value: @event.id %>
+<% end %>
+<div class="tip join">
+  <a href="javascript:void(0)" class="join-event">
+    <i class="fa fa-share"></i><span><%= t "join_this_event" %></span>
+  </a>
+</div>

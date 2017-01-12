@@ -338,3 +338,7 @@ vi:
             name:
               blank: " không được bỏ trống"
               too_short: " quá ngắn"
+  not_found_user_event: "Không tìm thấy sự kiện mà bạn tham gia!"
+  see_you_next_time: "Gặp lại sau nhé!!"
+  thanks_for_join: "Cám ơn bạn gì đã tham gia!"
+  not_found_event: "Không tìm thấy sự kiện!"
