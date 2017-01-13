@@ -706,4 +706,3 @@ var App = function() {
     }
   };
 }();
-
