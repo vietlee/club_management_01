@@ -1,0 +1,16 @@
+<section class="site-content site-section">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-10 col-md-offset-1 site-block">
+        <a href="javascript:void(0)" class="pull-left">
+          <%= image_tag current_user.avatar, class: "img-circle img-user-time-line push-right" %>
+        </a>
+        <div class="media-body">
+          <%= render partial: "events/form_comment", locals: {target: t("event"),
+            target_id: @event.id} %>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="push"></div>
+</section>

@@ -4,6 +4,7 @@ en:
   organization_address: "Organization's address"
   organization_email: "Organization's email"
   organization_phone: "Organization's number phone"
+  comment_fail: "Comment Fail please check again!!!"
   full_name: "Full Name"
   placeholder_password: "Please choose a complex one.."
   require_info: "Required Information"
