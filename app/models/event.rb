@@ -12,7 +12,7 @@ class Event < ApplicationRecord
   validates :expense, presence: true
   validates :location, presence: true, length: {minimum: Settings.min_location}
   validates :description, presence: true, length: {minimum: Settings.min_description}
-  validates :date_start, :date_end, :image, presence: true
+  validates :date_start, :date_end, presence: true
 
   scope :top_like, -> {order num_like: :desc}
   scope :newest, -> {order created_at: :desc}

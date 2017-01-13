@@ -19,3 +19,4 @@
 //= require i18n/translations
 //= require_tree ./admin/pro_ui
 //= require_tree ./common
+//= require ckeditor/init

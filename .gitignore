@@ -51,3 +51,6 @@ app/assets/fonts/
 
 #Igrone schema.db
 db/schema.rb
+
+#Igrone public/uploads
+public/uploads
