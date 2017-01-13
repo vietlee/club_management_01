@@ -36,6 +36,7 @@ Rails.application.routes.draw do
 
   resources :users do
     resources :club_requests, only: [:new, :create, :index]
+    resources :organization_requests, only: [:new, :create, :index]
   end
 
   resources :clubs, only: :show do

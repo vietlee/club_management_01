@@ -7,6 +7,11 @@ vi:
   cant_found_request: "Không tìm thấy yêu cầu"
   list_members_unactive: "Danh sách yêu cầu gia nhập"
   request_join: "Yêu cầu gia nhập"
+  organization_sign: "Tổ chức"
+  organization_logo: "Logo tổ chức"
+  organization_address: "Địa chỉ tổ chức"
+  organization_email: "Hòm thư điện tử tổ chức"
+  organization_phone: "Số điện thoại tổ chức"
   full_name: "Họ và tên"
   my_club: "Câu lạc bộ của tôi"
   create_club: "Tạo câu lạc bộ"
@@ -41,7 +46,7 @@ vi:
   town_city: "Thị xã/Thành phố"
   send_request_club: "Gửi yêu cầu tạo câu lạc bộ mới"
   post_at: "Đăng vào lúc:"
-  description_request: "Hãy cho chúng tôi biết mô tả của câu lạc bộ"
+  description_request: "Hãy cho chúng tôi biết mô tả của câu lạc bộ... (tối thiểu 10 ký tự)"
   logo_club: "Logo Club"
   for_ratings: "(Điểm đánh giá)"
   support: "Hỗ trợ"
@@ -351,10 +356,22 @@ vi:
         image: "Ảnh"
       album:
         name: "Tên bộ sưu tập"
+      organization_request:
+        email: "Email"
+        location: "Địa chỉ"
+        description: "Mô tả"
     errors:
       messages:
         record_invalid: "Bản ghi không hợp lệ"
       models:
+        organization_request:
+          attributes:
+            email:
+              taken: " này có rồi"
+            location:
+              too_short: " quá ngắn"
+            description:
+              too_short: " quá ngắn"
         event:
           attributes:
             name:
