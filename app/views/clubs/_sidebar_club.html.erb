@@ -16,15 +16,6 @@
           <% end %>
         </li>
         <li><%= link_to t("home"), root_url %></li>
-        <li>
-          <%= link_to "#", class: "site-nav-sub" do %>
-            <i class="fa fa-angle-down site-nav-arrow"></i><%= t "club" %>
-          <% end %>
-          <ul>
-            <li><%= link_to t("club_details"), "#" %></li>
-            <li><%= link_to t("events"), "#" %></li>
-          </ul>
-        </li>
         <li><%= link_to t("albums"), "#" %></li>
         <li>
           <%= link_to "#", class: "site-nav-sub" do %>
@@ -40,9 +31,25 @@
             <i class="fa fa-angle-down site-nav-arrow"></i><%= t "requests" %>
           <% end %>
           <ul>
-            <li><%= link_to t("send_request_club"), new_user_club_request_url(user_id: current_user.id) %></li>
-            <li><%= link_to t("organization_request"), new_user_club_request_url(user_id: current_user.id) %></li>
-            <li><%= link_to t("list_request"), "#" %></li>
+            <li><%= link_to t("send_request_club"),
+              new_user_club_request_url(user_id: current_user.id) %>
+            </li>
+            <li><%= link_to t("organization_request"),
+              new_user_club_request_url(user_id: current_user.id) %>
+            </li>
+            <li><%= link_to t("list_request"), "#modal-request-question",
+              data: {toggle: "modal"}, class: "enable-tooltip"  %>
+            </li>
+          </ul>
+        </li>
+        <%= render "request/request_question" %>
+        <li>
+          <%= link_to "#", class: "site-nav-sub" do %>
+            <i class="fa fa-angle-down site-nav-arrow"></i><%= t "manager" %>
+          <% end %>
+          <ul>
+            <li><%= link_to t("organization_management"), club_manager_url %></li>
+            <li><%= link_to t("club_management"), manager_url %></li>
           </ul>
         </li>
         <li><%= link_to t("contact"), "#" %></li>

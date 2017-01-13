@@ -16,11 +16,16 @@
             <i class="fa fa-times"></i>
           <% end %>
         </li>
-        <li><%= link_to t("home"), root_url %></li>
-        <li><%= link_to t("my_company"), "#" %></li>
-        <li><%= link_to t("other_club"), "#" %></li>
-        <li><%= link_to t("my_club"), "#" %></li>
-        <li><%= link_to t("request_club"), "#" %></li>
+        <li><%= link_to t("home"), root_path %></li>
+        <li>
+          <%= link_to "#", class: "site-nav-sub" do %>
+            <i class="fa fa-angle-down site-nav-arrow"></i><%= t "manager" %>
+          <% end %>
+          <ul>
+            <li><%= link_to t("organization_management"), club_manager_path %></li>
+            <li><%= link_to t("club_management"), manager_path %></li>
+          </ul>
+        </li>
         <li><%= link_to t("about"), "#" %></li>
         <li><%= link_to t("contact"), "#" %></li>
           <li>
@@ -28,7 +33,7 @@
               <%= t "account" %> <span class="fa fa-user"></span>
             <% end %>
             <ul>
-              <li><%= link_to t("login"), new_user_session_url %></li>
+              <li><%= link_to t("login"), new_user_session_path %></li>
               <li><%= link_to t("register"), "#modal-user-sign-up", data:{toggle: "modal"}, class: "enable-tooltip" %></li>
             </ul>
           </li>
