@@ -30,6 +30,7 @@ Rails.application.routes.draw do
       resources :albums do
         resources :images
       end
+      resources :user_clubs
     end
   end
 

@@ -9,4 +9,5 @@ class UserClub < ApplicationRecord
   end
 
   delegate :name, to: :club, allow_nil: :true
+  delegate :full_name, :avatar, :email, :phone, to: :user, allow_nil: :true
 end
