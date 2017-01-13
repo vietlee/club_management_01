@@ -44,7 +44,9 @@
             </div>
             <div class="col-md-6 center">
               <% @member.clubs.each do |club| %>
-                <%= club.name %><br>
+                <% if status_user_club(@member, club) %>
+                  <%= club.name %><br>
+                <% end %>
               <% end %>
             </div>
             <div class="col-md-1"></div>

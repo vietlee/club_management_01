@@ -30,4 +30,9 @@ module ApplicationHelper
   def image_holder album
     album.images.first.url
   end
+
+  def status_user_club user, club
+    user_club = user.user_clubs.find_by club_id: club.id
+    user_club.present? ? user_club.status : nil
+  end
 end
