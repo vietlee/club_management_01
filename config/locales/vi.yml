@@ -1,5 +1,28 @@
 vi:
+  clubs: "Danh sách câu lạc bộ"
+  club: "Câu lạc bộ"
+  club_details: "Giới thiệu"
+  events: "Sự kiện"
+  albums: "Bộ sưu tập"
   full_name: "Họ và tên"
+  my_club: "Câu lạc bộ của tôi"
+  create_club: "Tạo câu lạc bộ"
+  contact: "Liên hệ"
+  about: "Giới thiệu"
+  log_out: "Đăng xuất"
+  contact_us: "Liên hệ với chúng tôi"
+  chat: "Trò chuyện"
+  live: " trực tiếp"
+  times: "Dòng thời gian"
+  line: ""
+  us: " chúng tôi"
+  join: "Tham gia"
+  company: "Tổ chức"
+  form: ":"
+  periodic_events: "Thường xuyên"
+  top_events: "Nổi bật"
+  post_by: "Đăng bởi"
+  read_more: "Xem thêm"
   lorem: "Mang project của bạn hoạt dộng sớm hơn"
   intro_first: "Một trang phương án web hoàn thiện cho ứng dụng tuyệt vời của bạn"
   timeline_date: "20/10/2016"
@@ -17,7 +40,7 @@ vi:
   post_at: "Đăng vào lúc:"
   description_request: "Hãy cho chúng tôi biết mô tả của câu lạc bộ"
   logo_club: "Logo Club"
-  for_ratings: "(Dành cho đánh giá)"
+  for_ratings: "(Điểm đánh giá)"
   support: "Hỗ trợ"
   password: "Mật khẩu"
   email: "Email"
@@ -143,6 +166,8 @@ vi:
   time:
     formats:
       date: "%H:%M %d/%m/%Y"
+      date_utc: "%d/%m/%Y"
+      date_time_utc: "%d/%m/%Y %H:%M"
   read_the_article: "Đọc điều khoản"
   view_more: "Xem thêm ..."
   do_nothing: "javascript:void(0)"
@@ -272,6 +297,10 @@ vi:
       create: "  THÊM MỚI ẢNH"
       no_image: "Bộ sưu tập này tạm thời chưa có ảnh"
       success_create: "Tạo mới ảnh thành công!"
+      confirm_delete: "Bạn có muốn xóa ảnh này không?"
+      deleted: "Xóa ảnh thành công!"
+      cant_delete: "Không thể xóa ảnh, vui lòng xem lại!"
+      not_found_image: "Không tìm thấy ảnh!"
     album:
       album: "Bộ sưu tập"
       not_found: "Không tìm thấy bộ sưu tập!"
@@ -280,6 +309,7 @@ vi:
       guide: "Tạo bộ sưu tập mới"
       name_holder: "Nhập tên bộ sưu tập"
       success_create: "Tạo mới bộ sưu tập thành công!"
+      success_update: "Tên bộ sưu tập đưọc câph nhập thành công!"
     event:
       new: "Tạo mới sự kiện"
       name_guide: "Tên sự kiện không thể để trống và phải có ít nhất 10 ký tự"
@@ -315,6 +345,8 @@ vi:
       album:
         name: "Tên bộ sưu tập"
     errors:
+      messages:
+        record_invalid: "Bản ghi không hợp lệ"
       models:
         event:
           attributes:
@@ -344,3 +376,6 @@ vi:
   not_found_event: "Không tìm thấy sự kiện!"
   create_activity_fails: "Ghi nhật ký hoạt động thất bại!"
   you_rated: "Bạn đã đánh giá rồi!"
+  datetime:
+    distance_in_words:
+      about_x_months: ""

@@ -18,8 +18,8 @@
           <h2><strong><%= @club.name %></strong></h2>
         </div>
         <div class="row"  >
-          <div class="col-md-5" >
-            <%= image_tag @club.image %>
+          <div class="col-md-5 pull-left" >
+            <%= image_tag @club.image, class: "image-full" %>
           </div>
           <div class="col-md-7 pull-right" >
             <p><%= @club.notification %></p>
