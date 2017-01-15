@@ -1,0 +1,33 @@
+<% @clubs.each do |club| %>
+  <% club.activities.each do |active| %>
+    <li class="media">
+      <%= image_tag active.person_target.avatar,
+        class: "img-circle pull-left img-user-time-line" %>
+      <div class="media-body">
+        <p class="push-none">
+            <span class="text-muted pull-right">
+              <span class="text-success">
+                <i class="fa fa-globe"></i>
+              </span>
+            </span>
+            <strong>
+              <%= link_to active.person_target.full_name, active.person_target %>
+              <%= t "has_been" %> <%= active.action %> <%= t "in_the" %>
+              <span class="text-danger"><%= active.target.name %></span>
+            </strong>
+        </p>
+        <a href="javascript:void(0)" class="btn btn-xs btn-default btn-like">
+          <i class="fa fa-thumbs-o-up"></i> <%= t "like" %>
+        </a>
+        <a href="javascript:void(0)"
+          class="btn btn-xs btn-default btn-comment" id="<%= active.id %>">
+          <i class="fa fa-comments-o"></i> <%= t "comment" %>
+        </a>
+        <div class="list-comment-time-line-<%= active.id %>">
+          <%= render partial: "time_line_homes/comments",
+            locals: {active: active} %>
+        </div>
+      </div>
+    </li>
+  <% end %>
+<% end %>

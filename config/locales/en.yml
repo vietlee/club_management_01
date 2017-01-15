@@ -68,7 +68,7 @@ en:
   days: "Days"
   duration: "Duration's Event (Days)"
   date_start: "Date start"
-  expense: "Expense's Event (VND)"
+  expense: "Expense's Event"
   event_name: "Event Name"
   choose_club: "Choose the Club which you want to send request"
   descriptions_club: "Description's Club"
@@ -151,10 +151,10 @@ en:
     update_fail: "Organization update failed!"
   submit: "Submit"
   edit: "Edit"
-  time:
+  date:
     formats:
-      date_utc: "%d/%m/%Y"
-      date_time_utc: "%d/%m/%Y %H:%M"
+      full_date: "%d/%M/%Y %H:%M"
+      short: "%d/%M/%Y"
   read_the_article: "Read the article"
   view_more: "View more ..."
   do_nothing: "javascript:void(0)"
@@ -260,3 +260,7 @@ en:
   view_detail: "View detail"
   create_activity_fails: "Create Activity Fails!"
   you_rated: "You has been rate!"
+  your_comment: "Your comment..."
+  post_comment: "Post Comment"
+  has_been: "has been"
+  in_the: "in the"

@@ -8,24 +8,24 @@
           <h1><%= @event.name %></h1>
           <hr>
           <div class="row">
-            <div class="col-md-3 fa fa-money"><strong> <%= t "expense" %></strong> <%= @event.expense %> <%= t "vnd" %></div>
-            <div class="col-md-3 fa fa-map-marker"><strong> <%= t "location" %></strong> <%= @event.location %></div>
-            <div class="col-md-3 fa fa-calendar"><strong> <%= t "date_start" %></strong> <%= @event.date_start %></div>
-            <div class="col-md-3 fa fa-clock-o"><strong> <%= t "date_end" %></strong> <%= @event.date_end %></div>
+            <div class="col-md-3 fa fa-money"><strong> <%= t "expense" %></strong> <br><%= number_to_vnd @event.expense %></div>
+            <div class="col-md-3 fa fa-map-marker"><strong> <%= t "location" %></strong> <br><%= @event.location %></div>
+            <div class="col-md-3 fa fa-calendar"><strong> <%= t "date_start" %></strong> <br><%= @event.date_start %></div>
+            <div class="col-md-3 fa fa-clock-o"><strong> <%= t "date_end" %></strong> <br><%= @event.date_end %></div>
           </div>
           <hr>
             <p><%= t "event_content" %></p>
             <div class="row push-top-bottom">
               <div class="col-sm-6">
                 <p>
-                  <a href="img/placeholders/photos/photo1.jpg" data-toggle="lightbox-image">
+                  <a href="#" data-toggle="lightbox-image">
                     <%= image_tag "placeholders/photos/photo1.jpg", class: "img-responsive" %>
                   </a>
                 </p>
               </div>
               <div class="col-sm-6">
                 <p>
-                  <a href="img/placeholders/photos/photo21.jpg" data-toggle="lightbox-image">
+                  <a href="#" data-toggle="lightbox-image">
                     <%= image_tag "placeholders/photos/photo21.jpg", class: "img-responsive" %>
                   </a>
                 </p>
@@ -39,21 +39,21 @@
             <div class="row push-top-bottom">
               <div class="col-sm-4">
                 <p>
-                  <a href="img/placeholders/photos/photo14.jpg" data-toggle="lightbox-image">
+                  <a href="#" data-toggle="lightbox-image">
                     <%= image_tag "placeholders/photos/photo14.jpg", class: "img-responsive" %>
                   </a>
                 </p>
               </div>
               <div class="col-sm-4">
                 <p>
-                  <a href="img/placeholders/photos/photo18.jpg" data-toggle="lightbox-image">
+                  <a href="#" data-toggle="lightbox-image">
                     <%= image_tag "placeholders/photos/photo18.jpg", class: "img-responsive" %>
                   </a>
                 </p>
               </div>
               <div class="col-sm-4">
                 <p>
-                  <a href="img/placeholders/photos/photo22.jpg" data-toggle="lightbox-image">
+                  <a href="#" data-toggle="lightbox-image">
                     <%= image_tag "placeholders/photos/photo22.jpg", class: "img-responsive" %>
                   </a>
                 </p>
@@ -66,6 +66,8 @@
       <hr>
     </div>
   </section>
+  <%= render partial: "events/comment", locals: {target: @event} if @event.comments.any? %>
+  <%= render "new_comment" %>
 </div>
 <div class="join-event-toggle-container">
   <%= render "user_events/join_event_toggle" %>

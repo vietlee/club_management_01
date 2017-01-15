@@ -15,5 +15,5 @@ new_description: 9
 edit_description: 6
 min_rate: 1
 max_rate: 5
-ratings: "Ratings"
 round_float: 1
+max_show_comment: 5
