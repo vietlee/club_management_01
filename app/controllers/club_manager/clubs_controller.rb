@@ -1,5 +1,4 @@
 class ClubManager::ClubsController < BaseClubManagerController
-
   before_action :load_club
   before_action :manager_club
 

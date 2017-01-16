@@ -417,3 +417,8 @@ vi:
   your_comment: "Đăng bình luận tại đây..."
   post_comment: "Đăng bình luận"
   has_been: "đã"
+  clubs: "Câu lạc bộ"
+  name_club: "Tên Câu Lạc Bộ"
+  notification: "Thông báo"
+  view_member: "Hiển thị thành viên"
+  not_found_club: "Câu lạc bộ này không tồn tại"

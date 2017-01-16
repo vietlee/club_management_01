@@ -18,6 +18,7 @@ class Club < ApplicationRecord
     length: {minimum: Settings.min_description}
 
   scope :actives, -> {where status: true}
+  scope :order_by_date_desc, -> {order created_at: :desc}
 
   def manager_club
     user_clubs.manager

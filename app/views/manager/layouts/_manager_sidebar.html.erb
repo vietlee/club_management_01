@@ -57,12 +57,13 @@
             </span>
           <% end %>
           <ul>
-            <li>
-              <%= link_to t("dashboard"), t("do_nothing") %>
-            </li>
-            <li>
-              <%= link_to t("list_staff"), t("do_nothing") %>
-            </li>
+            <% @organizations.each do |organization| %>
+              <li>
+                <%= link_to organization.name,
+                 manager_members_path(organization: organization.id)
+                  %>
+              </li>
+            <% end %>
           </ul>
         </li>
         <li>
@@ -72,8 +73,14 @@
             <span class="sidebar-nav-mini-hide"><%= t("my_company") %></span>
           <% end %>
           <ul>
-            <li><%= link_to t("Dashboard"), t("do_nothing") %></li>
-            <li><%= link_to t("list_clubs"), t("do_nothing") %></li>
+            <li><%= link_to t("dashboard"), t("do_nothing") %></li>
+            <% @organizations.each do |organization| %>
+              <li>
+                <%= link_to organization.name,
+                 manager_clubs_path(organization: organization.id)
+                  %>
+              </li>
+            <% end %>
           </ul>
         </li>
       </ul>
