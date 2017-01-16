@@ -182,7 +182,7 @@ ActiveRecord::Schema.define(version: 20170113134100) do
     t.string   "email"
     t.text     "location",    limit: 65535
     t.string   "logo"
-    t.boolean  "status",                    default: false
+    t.boolean  "approve",                   default: false
     t.datetime "created_at",                                null: false
     t.datetime "updated_at",                                null: false
     t.index ["user_id"], name: "index_organization_requests_on_user_id", using: :btree

@@ -1,6 +1,8 @@
 $(document).on('turbolinks:load', function() {
   App.init();
   turbolink_app();
+  $('.select-select2').select2();
+  $('.input-slider').slider();
 });
 
 var turbolink_app = function(){

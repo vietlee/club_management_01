@@ -1,0 +1,25 @@
+<div id="modal-request-question" class="modal fade" tabindex="-1" role="dialog" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h2 class="modal-title">
+            <span class="fa fa-question-circle-o">
+          <%= t "request_question" %>
+          </span>
+        </h2>
+      </div>
+      <div class="modal-body">
+      <fieldset>
+        <legend><i class="fa fa-angle-right"></i>
+          <%= t "request_question_details" %>
+        <select class="form-control" id="request-type" data-placeholder="Choose one..">
+          <%= content_tag(:option, t("organization_request"), value: Organization.name) %>
+          <%= content_tag(:option, t("club_request"), value: Club.name) %>
+        </select>
+        </legend>
+      </fieldset>
+      <fieldset class="data-request"><%= render "request/data_request" unless @requests.nil? %></fieldset>
+      </div>
+    </div>
+  </div>
+</div>
