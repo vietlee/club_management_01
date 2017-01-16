@@ -40,7 +40,8 @@
             <i class="fa fa-angle-down site-nav-arrow"></i><%= t "requests" %>
           <% end %>
           <ul>
-            <li><%= link_to t("create_club"), new_user_club_request_url(user_id: current_user.id) %></li>
+            <li><%= link_to t("send_request_club"), new_user_club_request_url(user_id: current_user.id) %></li>
+            <li><%= link_to t("organization_request"), new_user_club_request_url(user_id: current_user.id) %></li>
             <li><%= link_to t("list_request"), "#" %></li>
           </ul>
         </li>
