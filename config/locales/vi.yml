@@ -1,4 +1,6 @@
 vi:
+  list_news: "Danh sách tin tức"
+  new_news: "Thêm tin mới"
   clubs: "Danh sách câu lạc bộ"
   club: "Câu lạc bộ"
   club_details: "Giới thiệu"
@@ -313,6 +315,12 @@ vi:
     cant_fount: "Không thể tìm thấy câu lạc bộ!"
     user_club:
       success_update: "Duyệt thành viên thành công!"
+    news:
+      title: "Tiêu đề"
+      content: "Nội dung"
+      title_guide: "Tiêu đề không được bỏ trống và phải có ít nhất 10 ký tự!"
+      title_holder: "Nhập tiêu đề vào đây..."
+      images: "Ảnh đại diện"
     image:
       guide: "Thêm mới ảnh"
       name_holder: "Nhập tên ảnh"
@@ -346,6 +354,15 @@ vi:
       day_end: "Đến ngày"
       description: "Mô tả..."
       success_create: "Tạo mới sự kiện thành công!"
+      like: "Thích"
+      joined: "Người tham gia"
+      not_found: "Không tìm thấy sự kiện bạn yêu cầu!"
+      location: "Địa điểm tổ chức"
+      show_expense: " Chi phí tổ chức: "
+      show_location: " Địa điểm tổ chức: "
+      show_date_start: " Bắt đầu vào lúc: "
+      show_date_end: " Kết thúc lúc: "
+      to: "Đến"
     club:
       success_update: "Thông tin câu lạc bộ được cập nhập thành công"
   club_management: "Quản lý câu lạc bộ"

@@ -11,9 +11,16 @@ update: "Update"
 create: "Create"
 per_page_album: 9
 per_page_image: 12
+per_page_event: 6
 new_description: 9
+new_content: 9
 edit_description: 6
 min_rate: 1
 max_rate: 5
 round_float: 1
 max_show_comment: 5
+min_title: 10
+new_detail: 20
+event_user: 6
+event_new: 2
+club_member: 6
