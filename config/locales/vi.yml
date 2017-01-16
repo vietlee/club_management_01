@@ -4,6 +4,9 @@ vi:
   club_details: "Giới thiệu"
   events: "Sự kiện"
   albums: "Bộ sưu tập"
+  cant_found_request: "Không tìm thấy yêu cầu"
+  list_members_unactive: "Danh sách yêu cầu gia nhập"
+  request_join: "Yêu cầu gia nhập"
   full_name: "Họ và tên"
   my_club: "Câu lạc bộ của tôi"
   create_club: "Tạo câu lạc bộ"
@@ -292,6 +295,8 @@ vi:
     show: "Thành viên"
   club_manager:
     cant_fount: "Không thể tìm thấy câu lạc bộ!"
+    user_club:
+      success_update: "Duyệt thành viên thành công!"
     image:
       guide: "Thêm mới ảnh"
       name_holder: "Nhập tên ảnh"
