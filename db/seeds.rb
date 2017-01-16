@@ -114,3 +114,55 @@ clubs.each do |club|
     )
   end
 end
+
+OrganizationRequest.create!(
+  user_id: User.last.id,
+  name: "Pixelz Inc",
+  description: Faker::Lorem.paragraph,
+  phone: "09660725487",
+  email: "Pixelz@gmaiol.com",
+  location: "Da Nang"
+)
+
+OrganizationRequest.create!(
+  user_id: User.last.id,
+  name: "Trong Nhan Inc",
+  description: Faker::Lorem.paragraph,
+  phone: "09660725487",
+  email: "Pixelz@gmaiol.com",
+  location: "Da Nang"
+)
+
+OrganizationRequest.create!(
+  user_id: User.last.id,
+  name: "Tech Master Inc",
+  description: Faker::Lorem.paragraph,
+  phone: "09660725487",
+  email: "Pixelz@gmaiol.com",
+  location: "Da Nang"
+)
+
+ClubRequest.create!(
+  user_id: User.last.id,
+  organization_id: Organization.last.id,
+  name: "Bong Chuyen Club",
+  description: Faker::Lorem.paragraph,
+  action: "User send request"
+)
+
+
+ClubRequest.create!(
+  user_id: User.last.id,
+  organization_id: Organization.last.id,
+  name: "Bong Da Club",
+  description: Faker::Lorem.paragraph,
+  action: "User send request"
+)
+
+ClubRequest.create!(
+  user_id: User.first.id,
+  organization_id: Organization.last.id,
+  name: "Cau Long Club",
+  description: Faker::Lorem.paragraph,
+  action: "User send request"
+)

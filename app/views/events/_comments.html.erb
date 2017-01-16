@@ -1,0 +1,38 @@
+<ul class="media-list load-more comments-ul-<%= activity.id %>">
+  <li class="media">
+    <div class="push-top form-hide form-comment-<%= activity.id %>">
+      <%= link_to current_user do %>
+        <%= image_tag current_user.avatar,
+          class: "img-circle pull-left img-user-time-line-small" %>
+      <% end %>
+      <div class="media-body">
+      <%= render partial: "events/form_comment", locals: {target: t("activity"),
+        target_id: activity.id} %>
+      </div>
+    </div>
+  </li>
+  <% activity.comments.newest.each do |comment| %>
+    <dt class="media">
+        <%= image_tag comment.user.avatar,
+          class: "img-circle pull-left img-user-time-line-small" %>
+        <div class="media-body">
+            <%= link_to comment.user do %>
+              <strong><%= comment.user.full_name %></strong>
+            <% end %>
+            <span class="text-muted">
+              <small><em><%= time_ago_in_words comment.created_at %></em></small>
+            </span>
+            <p><%= comment.content %></p>
+        </div>
+    </dt>
+  <% end %>
+  <div class="push-top">
+    <% if activity.comments.size > Settings.max_show_comment %>
+      <span class="media text-center">
+        <a href="javascript:void(0)"
+          class="btn btn-xs btn-default push load-more-comment"
+          id="comments-ul-<%= activity.id %>"><%= t "load_more" %></a>
+      </span>
+    <% end %>
+  </div>
+</ul>
