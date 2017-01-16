@@ -15,6 +15,7 @@ class ClubsController < ApplicationController
     @time_line_events = @events.by_current_year.group_by_quarter
     @messages = @club.messages
     @message = Message.new
+    @user_club = UserClub.new
   end
 
   private

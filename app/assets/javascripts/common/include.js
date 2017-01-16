@@ -20,6 +20,10 @@ var turbolink_app = function(){
       });
     });
 
+    $(".join-club-button").click(function(){
+      $("#new_user_club").submit();
+    });
+
     $(".btn-comment").click(function(){
       $(".form-comment-"+$(this).attr("id")).slideDown();
     });

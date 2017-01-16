@@ -15,7 +15,7 @@
             <i class="fa fa-times"></i>
           <% end %>
         </li>
-        <li><%= link_to t("home"), root_url %></li>
+        <li><%= link_to t("home"), root_path %></li>
         <li><%= link_to t("albums"), "#" %></li>
         <li>
           <%= link_to "#", class: "site-nav-sub" do %>
@@ -31,14 +31,16 @@
           <% end %>
           <ul>
             <li><%= link_to t("send_request_club"),
-              new_user_club_request_url(user_id: current_user.id) %>
+              new_user_club_request_path(user_id: current_user.id) %>
             </li>
             <li><%= link_to t("organization_request"),
-              new_user_club_request_url(user_id: current_user.id) %>
+              new_user_club_request_path(user_id: current_user.id) %>
             </li>
             <li><%= link_to t("list_request"), "#modal-request-question",
               data: {toggle: "modal"}, class: "enable-tooltip" %>
             </li>
+            <li><%= link_to t("leave_club_request"), "#modal-leave-club",
+              data:{ toggle: "modal"}, class: "enable-tooltip" if @club %></li>
           </ul>
         </li>
         <%= render "request/request_question" %>
@@ -47,9 +49,10 @@
             <i class="fa fa-angle-down site-nav-arrow"></i><%= t "manager" %>
           <% end %>
           <ul>
-            <li><%= link_to t("organization_management"), club_manager_url %></li>
-            <li><%= link_to t("club_management"), manager_url %></li>
+            <li><%= link_to t("club_management"), club_manager_path %></li>
+            <li><%= link_to t("organization_management"), manager_path %></li>
           </ul>
+          <%= render "user_clubs/leave" if @club %>
         </li>
         <li><%= link_to t("contact"), "#" %></li>
         <li><%= link_to t("about"), "#" %></li>

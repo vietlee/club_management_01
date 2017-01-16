@@ -122,7 +122,7 @@ OrganizationRequest.create!(
   name: "Pixelz Inc",
   description: Faker::Lorem.paragraph,
   phone: "09660725487",
-  email: "organization@gmail.com",
+  email: "Pixelz1@gmaiol.com",
   location: "Da Nang"
 )
 
@@ -131,7 +131,7 @@ OrganizationRequest.create!(
   name: "Trong Nhan Inc",
   description: Faker::Lorem.paragraph,
   phone: "09660725487",
-  email: "organization_1@gmail.com",
+  email: "Pixelz2@gmaiol.com",
   location: "Da Nang"
 )
 
@@ -140,7 +140,7 @@ OrganizationRequest.create!(
   name: "Tech Master Inc",
   description: Faker::Lorem.paragraph,
   phone: "09660725487",
-  email: "organization_2@gmail.com",
+  email: "Pixelz3@gmaiol.com",
   location: "Da Nang"
 )
 

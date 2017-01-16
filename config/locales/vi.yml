@@ -4,6 +4,8 @@ vi:
   for_rating: "Điểm đánh giá"
   members_with_dot: "Member:"
   type_your_message: "Viết tin nhắn tại đây..."
+  line_single: "Line"
+  time_single: "Time"
   cant_edit: "Không thể chỉnh sửa thông tin"
   event_status: "Trạng thái: "
   event_is_finish: "Sự kiện đã kết thúc!!!"
@@ -41,6 +43,15 @@ vi:
   filters: "Lọc theo"
   list_news: "Danh sách tin tức"
   new_news: "Thêm tin mới"
+  cancel_success: "Hủy bỏ thành công!"
+  cancel: "Hủy bỏ"
+  success_for_join: "Yêu cầu tham gia câu lạc bộ thành công!"
+  error_for_join: "Yêu cầu tham gia câu lạc bộ thất bại!"
+  leave_question: "Hãy cho chúng tôi biết lý do vì sao bạn muốn rời câu lạc bộ này?"
+  success_leave: "Rời câu lạc bộ thành công, cám ơn bạn vì những ngày vui cùng nhau... Chào tạm biệt!"
+  contact_form: "Biểu mẫu liên hệ"
+  content: "Nhập nội dung liên hệ..."
+  leave_club_request: "Yêu cầu rời câu lạc bộ"
   clubs: "Danh sách câu lạc bộ"
   club: "Câu lạc bộ"
   club_details: "Giới thiệu"
@@ -228,6 +239,12 @@ vi:
     update_fail: "Cập nhập tổ chức thất bại!"
   submit: "Gửi"
   edit: "Sửa"
+  time:
+    formats:
+      date: "%H:%M %d/%m/%Y"
+      date_time_utc: "%d/%m/%Y %H:%M"
+      full_date: "%d/%M/%Y %H:%M"
+      short: "%d/%M/%Y"
   time:
     formats:
       date: "%H:%M %d/%m/%Y"
@@ -522,6 +539,7 @@ vi:
             description:
               blank: " không được bỏ trống"
   not_found_user_event: "Không tìm thấy sự kiện mà bạn tham gia!"
+  not_found_user_club: "Không tìm thấy câu lạc bộ mà bạn tham gia!"
   see_you_next_time: "Gặp lại sau nhé!!"
   thanks_for_join: "Cám ơn bạn gì đã tham gia!"
   not_found_event: "Không tìm thấy sự kiện!"

@@ -61,4 +61,6 @@ Rails.application.routes.draw do
   resources :time_line_homes
   resources :comments
   resources :set_language, only: :update
+  resources :reason_leaves, only: [:index, :show, :create]
+  resources :user_clubs, only: [:create, :destroy]
 end
