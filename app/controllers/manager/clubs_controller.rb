@@ -16,6 +16,6 @@ class Manager::ClubsController < BaseOrganizationManagerController
       flash[:danger] = t("not_found_club")
       redirect_to request.referrer
     end
-    @organization = @club.organizations
+    @organization = @club.organization
   end
 end
