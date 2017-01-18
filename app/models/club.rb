@@ -17,8 +17,12 @@ class Club < ApplicationRecord
   validates :description, presence: true,
     length: {minimum: Settings.min_description}
 
-  scope :actives, -> {where status: true}
-  scope :order_by_date_desc, -> {order created_at: :desc}
+  scope :actives, -> {where is_active: true}
+  scope :newest, -> {order created_at: :desc}
+  scope :without_clubs, -> clubs {where.not(id: clubs.ids)}
+  scope :of_organizations, -> organizations do
+    where(organization_id: organizations.ids)
+  end
 
   def manager_club
     user_clubs.manager

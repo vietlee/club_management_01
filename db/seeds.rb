@@ -61,7 +61,8 @@ Admin.create!(
     created_at: created_at,
     logo: logo,
     rating: rand(1..5),
-    image: image)
+    image: image,
+    is_active: true)
 end
 
 EventCategory.create!(
@@ -110,7 +111,8 @@ clubs.each do |club|
       date_end: date_end,
       location: location,
       num_like: num_like,
-      created_at: created_at
+      created_at: created_at,
+      user_id: rand(1..3)
     )
   end
 end
@@ -120,7 +122,7 @@ OrganizationRequest.create!(
   name: "Pixelz Inc",
   description: Faker::Lorem.paragraph,
   phone: "09660725487",
-  email: "Pixelz1@gmaiol.com",
+  email: "organization@gmail.com",
   location: "Da Nang"
 )
 
@@ -129,7 +131,7 @@ OrganizationRequest.create!(
   name: "Trong Nhan Inc",
   description: Faker::Lorem.paragraph,
   phone: "09660725487",
-  email: "Pixelz2@gmaiol.com",
+  email: "organization_1@gmail.com",
   location: "Da Nang"
 )
 
@@ -138,7 +140,7 @@ OrganizationRequest.create!(
   name: "Tech Master Inc",
   description: Faker::Lorem.paragraph,
   phone: "09660725487",
-  email: "Pixelz3@gmaiol.com",
+  email: "organization_2@gmail.com",
   location: "Da Nang"
 )
 

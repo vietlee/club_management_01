@@ -2,7 +2,7 @@ class Manager::ClubsController < BaseOrganizationManagerController
   before_action :load_club, only: :show
 
   def index
-    @clubs = @organization.clubs.order_by_date_desc
+    @clubs = @organization.clubs.newest
   end
 
   def show

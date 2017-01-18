@@ -1,5 +1,6 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
+  before_filter :set_locale
   include ApplicationHelper
 
   def user_signed_in
@@ -42,5 +43,11 @@ class ApplicationController < ActionController::Base
       flash_error t("create_activity_fails")
       redirect_to root_url
     end
+  end
+
+  private
+  def set_locale
+    I18n.locale = session[:locale] || I18n.default_locale
+    session[:locale] = I18n.locale
   end
 end

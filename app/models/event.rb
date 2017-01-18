@@ -7,6 +7,7 @@ class Event < ApplicationRecord
 
   belongs_to :club
   belongs_to :event_category
+  belongs_to :user
 
   mount_uploader :image, ImageUploader
 
