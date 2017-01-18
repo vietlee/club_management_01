@@ -189,6 +189,13 @@ vi:
     update_fail: "Cập nhập tổ chức thất bại!"
   submit: "Gửi"
   edit: "Sửa"
+  date:
+    formats:
+      date: "%H:%M %d/%m/%Y"
+      date_utc: "%d/%m/%Y"
+      date_time_utc: "%d/%m/%Y %H:%M"
+      full_date: "%d/%M/%Y %H:%M"
+      short: "%d/%M/%Y"
   time:
     formats:
       date: "%H:%M %d/%m/%Y"
@@ -328,6 +335,9 @@ vi:
       title_guide: "Tiêu đề không được bỏ trống và phải có ít nhất 10 ký tự!"
       title_holder: "Nhập tiêu đề vào đây..."
       images: "Ảnh đại diện"
+      post_by: " Đăng bởi: "
+      post_at: " Đăng lên vào lúc: "
+      last_update_at: " Chỉnh sửa lần cuối lúc: "
     image:
       guide: "Thêm mới ảnh"
       name_holder: "Nhập tên ảnh"
@@ -382,6 +392,9 @@ vi:
   save: "Lưu"
   activerecord:
     attributes:
+      news:
+        title: "Tiêu đề"
+        content: "Nội dung"
       event:
         name: "Tên sự kiện"
         location: "Địa điểm"
@@ -399,6 +412,14 @@ vi:
       messages:
         record_invalid: "Bản ghi không hợp lệ"
       models:
+        news:
+          attributes:
+            title:
+              blank: " không được bỏ trống"
+              too_short: " quá ngắn"
+            content:
+              blank: " không được bỏ trống"
+              too_short: " quá ngắn"
         organization_request:
           attributes:
             email:

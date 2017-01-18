@@ -1,7 +1,7 @@
 class ClubManager::ImagesController < ApplicationController
   before_action :user_signed_in
-  before_action :load_image, except: :create
   before_action :load_album, only: :destroy
+  before_action :load_image, except: :create
 
   def create
     image = Image.new image_params

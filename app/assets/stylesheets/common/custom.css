@@ -29,3 +29,6 @@
 .full-img-new img {
   max-width: 70%;
 }
+.inside-div {
+  word-wrap: break-word;
+}

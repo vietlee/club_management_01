@@ -20,8 +20,10 @@ max_rate: 5
 round_float: 1
 max_show_comment: 5
 min_title: 10
-new_detail: 20
+new_detail: 100
 event_user: 6
 event_new: 2
 club_member: 6
 event_type: 2
+min_title: 10
+min_content: 10

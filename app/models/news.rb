@@ -4,4 +4,11 @@ class News < ApplicationRecord
 
   belongs_to :user
   belongs_to :event
+
+  mount_uploader :image, ImageUploader
+
+  validates :title, presence: true, length: {minimum: Settings.min_title}
+  validates :content, presence: true, length: {minimum: Settings.min_content}
+
+  delegate :full_name, to: :user, allow_nil: :true
 end
