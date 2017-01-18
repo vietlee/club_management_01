@@ -6,6 +6,7 @@ class Event < ApplicationRecord
   has_many :activities, as: :target, dependent: :destroy
 
   belongs_to :club
+  belongs_to :event_category
 
   mount_uploader :image, ImageUploader
 

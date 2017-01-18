@@ -1,4 +1,6 @@
 vi:
+  spend-money: "Chi tiền"
+  consumable-money: "Tiêu tiền"
   list_news: "Danh sách tin tức"
   new_news: "Thêm tin mới"
   clubs: "Danh sách câu lạc bộ"
@@ -18,6 +20,7 @@ vi:
   delete_succsess: "Xóa thành công!"
   un_approve: "Chưa được giải quyết"
   request_question_details: "Chọn loại request mà bạn muốn xem"
+  request_question: "Yêu cầu câu hỏi"
   manager: "Quản lý"
   organization_management: "Quản lý tổ chức"
   club_management: "Quản lý câu lạc bộ"
@@ -25,6 +28,8 @@ vi:
   select_one_organization: "Chọn Tổ chức"
   organization_sign: "Tổ chức"
   full_name: "Họ và tên"
+  placeholder_password: "Nhập mật khẩu..."
+  require_info: "Thông tin cần thiết"
   my_club: "Câu lạc bộ của tôi"
   create_club: "Tạo câu lạc bộ"
   contact: "Liên hệ"
@@ -168,7 +173,7 @@ vi:
   user:
     edit_require: "Bạn không thể chỉnh sửa thông tin người dùng khác"
     cant_found: "Không tìm thấy người dùng!"
-    not_found: "Không tìm thấy!"
+    not_found: "Không tìm thấy người dùng!"
     require_login: "Bạn cần đăng nhập trước"
     sign_at: "Đăng ký lúc"
     last_update: "Chỉnh sửa lần cuối lúc"
@@ -184,7 +189,7 @@ vi:
     update_fail: "Cập nhập tổ chức thất bại!"
   submit: "Gửi"
   edit: "Sửa"
-  date:
+  time:
     formats:
       date: "%H:%M %d/%m/%Y"
       date_utc: "%d/%m/%Y"
@@ -244,6 +249,7 @@ vi:
   organization_description: "Mô tả..."
   reset: "Hủy"
   organization_request_approved: "Duyệt yêu cầu"
+  name: "Tên"
   deleted_successfull: "Xóa thành công"
   delete_failed: "Xóa không thành công, xin vui lòng thử lại"
   not_found_request: "Không tìm thấy yêu cầu"
@@ -270,6 +276,7 @@ vi:
   cant_create_admin: "Không thể tạo quản lý tổ chức"
   cant_create_organization: "Không thể tạo tổ chức"
   cant_approve: "Không thể duyệt yêu cầu, xin vui lòng kiểm tra thông tin yêu cầu và thử lại!"
+  user_info: "Thông tin người dùng:"
   not_correct_manager: "Bạn không phải quản lý của câu lạc bộ này!"
   list_members: "Danh sách thành viên"
   member:
@@ -340,7 +347,7 @@ vi:
       guide: "Tạo bộ sưu tập mới"
       name_holder: "Nhập tên bộ sưu tập"
       success_create: "Tạo mới bộ sưu tập thành công!"
-      success_update: "Tên bộ sưu tập đưọc câph nhập thành công!"
+      success_update: "Tên bộ sưu tập đưọc cập nhập thành công!"
     event:
       new: "Tạo mới sự kiện"
       name_guide: "Tên sự kiện không thể để trống và phải có ít nhất 10 ký tự"
