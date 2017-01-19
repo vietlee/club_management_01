@@ -70,10 +70,11 @@
           <%= link_to t("do_nothing"), class: "sidebar-nav-menu" do %>
             <i class="fa fa-angle-left sidebar-nav-indicator sidebar-nav-mini-hide"></i>
             <i class="gi gi-building sidebar-nav-icon"></i>
-            <span class="sidebar-nav-mini-hide"><%= t("my_company") %></span>
+            <span class="sidebar-nav-mini-hide">
+              <%= t("club_of_my_company") %>
+            </span>
           <% end %>
           <ul>
-            <li><%= link_to t("dashboard"), t("do_nothing") %></li>
             <% @organizations.each do |organization| %>
               <li>
                 <%= link_to organization.name,

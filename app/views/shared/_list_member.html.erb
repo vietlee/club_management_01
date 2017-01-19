@@ -1,9 +1,14 @@
 <div id="page-content">
   <div class="block full">
     <div class="block-title">
-      <h2><strong><%= t "members" %></strong></h2>
+      <% if @club.nil? %>
+        <h2><strong><%= t "members_of" %><%= organization.name %></strong></h2>
+      <% else %>
+        <h2><strong><%= t "members_of" %><%= @club.name %></strong></h2>
+      <% end %>
     </div>
     <div class="table-responsive">
+      <%= link_to t("back"), :back, class: "btn btn-default" %>
       <table id="example-datatable"
         class="table table-vcenter table-condensed table-bordered">
         <thead>
@@ -12,25 +17,14 @@
             <th class="text-center"><i class="gi gi-user"></i></th>
             <th><%= t "user_name" %></th>
             <th><%= t "email" %></th>
-            <th><%= t "organizations" %></th>
+            <th><%= t "phone" %></th>
+            <th><%= t "status" %></th>
             <th class="text-center"><%= t "view_profile" %></th>
           </tr>
         </thead>
         <tbody>
-          <% users.each do |user| %>
-            <tr>
-              <td class="text-center"><%= user.id %></td>
-              <td class="text-center"><%= image_tag user.avatar,
-                class: "circle-profile-list" %></td>
-              <td><%= user.full_name %></a></td>
-              <td><%= user.email %></td>
-              <td><%= organization.name %></td>
-              <td class="text-center">
-                <%= link_to t("view"), manager_member_path(user.id),
-                  class: "btn btn-lg btn-primary" %>
-              </td>
-            </tr>
-          <% end %>
+          <%= render partial: "shared/view_case_user",
+            locals: {users: users, club: @club, organization: organization} %>
         </tbody>
       </table>
     </div>

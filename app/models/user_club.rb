@@ -7,6 +7,9 @@ class UserClub < ApplicationRecord
   scope :user_club, ->club_id do
     where club_id: club_id
   end
+  scope :find_with_user_of_club, ->user_id, club_id do
+    find_by user_id: user_id, club_id: club_id
+  end
 
   delegate :name, to: :club, allow_nil: :true
   delegate :full_name, :avatar, :email, :phone, to: :user, allow_nil: :true

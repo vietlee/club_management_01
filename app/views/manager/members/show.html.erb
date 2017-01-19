@@ -12,7 +12,8 @@
         </div>
         <div class="block-content">
           <%= render partial: "shared/profile",
-            locals: {user: @user, organization: @organization} %>
+            locals: {user: @user,organization: params[:organization],
+            organizations: @organizations} %>
         </div>
       </div>
     </div>
