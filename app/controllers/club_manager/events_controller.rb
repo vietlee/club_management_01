@@ -1,6 +1,6 @@
 class ClubManager::EventsController < BaseClubManagerController
-  before_action :load_club, only: [:index, :show, :create]
-  before_action :load_event, only: [:show, :edit, :update]
+  before_action :load_club
+  before_action :load_event, except: [:index, :create, :new]
 
   def index
     unless @club
@@ -8,6 +8,14 @@ class ClubManager::EventsController < BaseClubManagerController
       redirect_to club_manager_path
     end
     @events = @club.events.newest.page(params[:page]).per Settings.per_page_event
+    @new_event = Event.new
+  end
+
+  def edit
+  end
+
+  def new
+    @event = Event.new
   end
 
   def create
@@ -20,6 +28,16 @@ class ClubManager::EventsController < BaseClubManagerController
       flash_error event
       redirect_to :back
     end
+  end
+
+  def update
+    if @event.update_attributes event_params
+      create_acivity @event, current_user, Settings.update
+      flash[:success] = t "club_manager.event.success_update"
+    else
+      flash_error @event
+    end
+    redirect_to :back
   end
 
   def show

@@ -1,5 +1,5 @@
 <div class="row text-center">
-  <% @club.users.newest.each do |user_club|  %>
+  <% @club.users.newest.take(Settings.club_member).each do |user_club|  %>
     <% if status_user_club(user_club, @club) %>
       <div class="col-sm-4">
         <%= link_to club_manager_club_member_path(id: user_club.id, club_id: @club.id) do %>

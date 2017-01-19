@@ -10,5 +10,7 @@ class News < ApplicationRecord
   validates :title, presence: true, length: {minimum: Settings.min_title}
   validates :content, presence: true, length: {minimum: Settings.min_content}
 
+  scope :newest, -> {order created_at: :desc}
+
   delegate :full_name, to: :user, allow_nil: :true
 end

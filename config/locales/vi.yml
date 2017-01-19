@@ -1,6 +1,8 @@
 vi:
+  approve_success: "Chấp thuận yêu cầu thành công!"
+  finished: "Kết thúc"
   spend-money: "Chi tiền"
-  consumable-money: "Tiêu tiền"
+  consumable-money: "Nhận tiền"
   list_news: "Danh sách tin tức"
   new_news: "Thêm tin mới"
   clubs: "Danh sách câu lạc bộ"
@@ -380,6 +382,9 @@ vi:
       show_date_start: " Bắt đầu vào lúc: "
       show_date_end: " Kết thúc lúc: "
       to: "Đến"
+      type: "Loại sự kiện"
+      success_update: "Cập nhập thông tin sự kiện thành công"
+      edit: "Chỉnh sửa thông tin sự kiện"
     club:
       success_update: "Thông tin câu lạc bộ được cập nhập thành công"
   club_management: "Quản lý câu lạc bộ"

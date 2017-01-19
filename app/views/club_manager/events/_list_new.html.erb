@@ -3,7 +3,7 @@
     <h2><strong><%= t "list_news" %></strong></h2>
   </div>
   <div class="row">
-    <% @event.news.each do |news| %>
+    <% @event.news.newest.take(Settings.event_news).each do |news| %>
       <div class="row form-group">
         <div class="col-sm-5 text-center full-img-new">
           <%= link_to club_manager_club_event_news_path(event_id: @event.id, id: news.id) do %>
