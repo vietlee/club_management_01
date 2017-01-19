@@ -5,7 +5,7 @@ class ApproveOrganizationService
   end
 
   def approve_request
-    @organization_request.update_attributes status: true
+    @organization_request.update_attributes approve: true
   end
 
   def create_organization organization

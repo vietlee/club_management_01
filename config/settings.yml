@@ -1,4 +1,4 @@
-max_name: 30
+max_name: 100
 min_name: 5
 min_password: 6
 min_description: 10
@@ -22,8 +22,11 @@ max_show_comment: 5
 min_title: 10
 new_detail: 100
 event_user: 6
-event_new: 2
+event_new: 4
 club_member: 6
 event_type: 2
 min_title: 10
 min_content: 10
+club_event: 4
+event_news: 4
+club_member: 6

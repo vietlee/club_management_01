@@ -4,12 +4,14 @@
   </div>
   <div class="row text-center">
     <% @event.users.each do |user_event| %>
-      <div class="col-sm-4">
-        <a href="javascript:void(0)">
-          <%= image_tag user_event.avatar %>
-        </a>
+      <% if join_event? @event %>
+        <div class="col-sm-4">
+        <%= link_to club_manager_club_member_path(id: user_event.id, club_id: @club.id) do %>
+          <%= image_tag user_event.avatar, class: "circle-profile-list" %>
+        <% end %>
         <h4><%= user_event.full_name %></h4>
       </div>
+      <% end %>
     <% end %>
   </div>
   <% if @event.users.size > Settings.event_user  %>

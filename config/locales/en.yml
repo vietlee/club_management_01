@@ -1,4 +1,6 @@
 en:
+  approve_success: "Request approve successfull"
+  finished: "Finished"
   spend-money: "Spend Money"
   consumable-money: "Consume Money"
   list_news: "List news"
@@ -343,6 +345,8 @@ en:
       show_date_start: " Event start at: "
       show_date_end: " Event end at: "
       to: "To"
+      success_update: "Event's information update successfull"
+      edit: "Edit event's information"
     club:
       success_update: "Club's information update successfull"
   cant_found_club: "Can found club"

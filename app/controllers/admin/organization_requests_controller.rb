@@ -16,6 +16,7 @@ class Admin::OrganizationRequestsController < ApplicationController
       service.approve_request
       @organization = service.create_organization @organization_request
       service.create_user_organization @organization.id
+      flash[:success] = t("approve_success")
       redirect_to admin_organization_requests_path
     end
     rescue

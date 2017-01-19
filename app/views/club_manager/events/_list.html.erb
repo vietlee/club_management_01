@@ -20,15 +20,15 @@
                 </small>
               </h3>
               <div class="widget-options-left">
-                <%= link_to t("do_nothing"), data: {toggle: "modal"},
-                  class: "btn btn-xs btn-warning" do %>
+                <%= link_to edit_club_manager_club_event_path(id: event.id),
+                  class: "btn btn-nm btn-warning" do %>
                   <i class="fa fa-pencil"></i>
                 <% end %>
               </div>
               <div class="widget-options">
                 <%= link_to t("do_nothing"), data: {toggle: "modal"},
-                  class: "btn btn-xs btn-warning" do %>
-                  <i class="fa fa-cog"></i>
+                  class: "btn btn-nm btn-warning", title: t("finished") do %>
+                  <i class="fa fa-step-forward"></i>
                 <% end %>
               </div>
             </div>
