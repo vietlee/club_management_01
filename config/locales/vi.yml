@@ -1,4 +1,6 @@
 vi:
+  busy: "Ẩn với mọi người"
+  available: "Trực tuyến"
   approve_success: "Chấp thuận yêu cầu thành công!"
   finished: "Kết thúc"
   spend-money: "Chi tiền"

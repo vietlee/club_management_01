@@ -1,0 +1,13 @@
+<li class="mar-btm">
+  <div class="media-left" id="message-<%= message.id %>">
+    <%= image_tag message.user.avatar, class: "img-circle img-sm" %>
+  </div>
+  <div class="media-body pad-hor" id="pad-hor-<%= message.id %>">
+    <div class="speech">
+      <%= link_to message.user.full_name, message.user, class: "media-heading" %>
+      <p><%= message.content %><br>
+        <small class="text-mute timeago foat-right"><%= l (message.created_at), format: :full_date %></small>
+      </p>
+    </div>
+  </div>
+</li>

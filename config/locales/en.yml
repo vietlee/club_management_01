@@ -1,4 +1,6 @@
 en:
+  busy: "Busy"
+  available: "Available"
   approve_success: "Request approve successfull"
   finished: "Finished"
   spend-money: "Spend Money"
