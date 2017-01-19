@@ -6,18 +6,25 @@
     <% @event.news.each do |news| %>
       <div class="row form-group">
         <div class="col-sm-5 text-center full-img-new">
-          <%= image_tag news.image %>
+          <%= link_to club_manager_club_event_news_path(event_id: @event.id, id: news.id) do %>
+            <%= image_tag news.image %>
+          <% end %>
         </div>
-        <div class="col-sm-7">
+        <div class="col-sm-6">
           <h4><b><%= news.title %></b></h4>
-          <%= news.content.truncate_words Settings.new_detail %>
+          <div class="inside-div">
+            <%= truncate_html(news.content.html_safe, length: Settings.new_detail) %><br>
+            <%= link_to t("view_more"),
+              club_manager_club_event_news_path(event_id: @event.id, id: news.id),
+              class: "pull-right" %>
+          </div>
         </div>
       </div><hr>
     <% end %>
   </div>
   <% if @event.news.size > Settings.event_new  %>
     <div class="text-center">
-      <%= link_to t "view_more", t("do_nothing") %>
+      <%= link_to t("view_more"), t("do_nothing") %>
     </div>
   <% end %>
 </div>

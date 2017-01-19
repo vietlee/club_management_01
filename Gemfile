@@ -20,6 +20,7 @@ gem "faker"
 gem "kaminari"
 gem "ransack"
 gem "bootstrap-kaminari-views"
+gem "truncate_html"
 
 group :production do
   gem "pg"

@@ -6,7 +6,6 @@
     <%= form_for [:club_manager, @club, @event, @news],
       html: {multipart: true, enctype: "multipart/form-data",
         class: "form-horizontal form-bordered"} do |f| %>
-      <%= f.hidden_field :event_id, value: @event.id %>
       <div class="form-group">
         <label class="col-md-2 control-label" for="example-text-input">
           <%= t "club_manager.news.title" %>

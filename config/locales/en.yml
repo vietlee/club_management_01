@@ -202,6 +202,7 @@ en:
     formats:
       full_date: "%d/%M/%Y %H:%M"
       short: "%d/%M/%Y"
+      date: "%H:%M %d/%m/%Y"
   read_the_article: "Read the article"
   view_more: "View more ..."
   do_nothing: "javascript:void(0)"
@@ -297,6 +298,9 @@ en:
       title_guide: "Title cant blank and must have atleast 10 character!"
       title_holder: "Enter title here..."
       images: "Image"
+      post_by: " Post by: "
+      post_at: " Post at: "
+      last_update_at: " Last update at: "
     image:
       guide: "New Image"
       name_holder: "Enter image's name here..."
