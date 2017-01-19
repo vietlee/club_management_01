@@ -303,6 +303,9 @@ en:
       post_by: " Post by: "
       post_at: " Post at: "
       last_update_at: " Last update at: "
+      new: "New news"
+      success_create: "Create news successfull!"
+      success_update: "Update news successfull!"
     image:
       guide: "New Image"
       name_holder: "Enter image's name here..."
