@@ -3,7 +3,7 @@
     <li><%= t "admin" %></li>
     <li>
       <%= link_to t("club_manager.event.new"),
-        new_club_manager_club_event_path(@news) %>
+        new_club_manager_club_event_path %>
     </li>
   </ul>
   <div class="row">
@@ -11,7 +11,7 @@
     <div class="col-md-10">
       <div class="block">
         <div class="block-title">
-          <h2><strong><%= @news.title %></strong></h2>
+          <h2><strong><%= @club.name %></strong></h2>
         </div>
         <%= render "form_club_event" %>
       </div>
