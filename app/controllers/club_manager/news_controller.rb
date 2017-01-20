@@ -1,18 +1,33 @@
 class ClubManager::NewsController < BaseClubManagerController
+  before_action :load_club
   before_action :load_event
-  before_action :load_news, only: [:show, :update]
+  before_action :load_news, only: [:show, :update, :edit]
 
   def create
     news = News.new news_params
     if news.save
-      flash[:success] = t "club_manager.image.success_create"
+      flash[:success] = t "club_manager.news.success_create"
     else
       flash_error news
     end
     redirect_to club_manager_club_event_path id: params[:event_id]
   end
 
+  def new
+    @news = News.new
+  end
+
+  def edit
+  end
+
   def update
+    if @news.update_attributes news_params
+      flash[:success] = t "club_manager.news.success_update"
+      redirect_to club_manager_club_event_news_path
+    else
+      flash_error @news
+      redirect_to :back
+    end
   end
 
   def show
@@ -36,6 +51,14 @@ class ClubManager::NewsController < BaseClubManagerController
     @event = Event.find_by id: params[:event_id]
     unless @event
       flash[:danger] = t "club_manager.event.not_found"
+      redirect_to :back
+    end
+  end
+
+  def load_club
+    @club = Club.find_by id: params[:club_id]
+    unless @club
+      flash[:danger] = t "club_manager.club.not_found"
       redirect_to :back
     end
   end

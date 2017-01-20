@@ -340,6 +340,9 @@ vi:
       post_by: " Đăng bởi: "
       post_at: " Đăng lên vào lúc: "
       last_update_at: " Chỉnh sửa lần cuối lúc: "
+      new: "Thêm tin tức"
+      success_create: "Thêm mới tin tức thành công!"
+      success_update: "Cập nhập tin tức thành công!"
     image:
       guide: "Thêm mới ảnh"
       name_holder: "Nhập tên ảnh"
