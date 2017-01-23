@@ -22,11 +22,11 @@
       <ul class="list-inline pull-left">
         <li>
           <i class="fa fa-calendar"></i>
-          <%= l event.created_at, format: :date_utc %>
+          <%= l event.created_at, format: :short %>
         </li>
         <li>
           <i class="fa fa-user"></i> <%= t "post_by" %>
-          <a href="javascript:void(0)"><%= t "manager" %></a>
+          <%= link_to event.user.full_name, event.user %>
         </li>
         <li>
           <i class="fa fa-comments"></i>

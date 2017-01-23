@@ -3,35 +3,70 @@
   background-color: #ffd1cc;
   border-color: #ffb8b0;
 }
+
 .alert-notice {
   color: #27ae60;
   background-color: #daf2e4;
   border-color: #b8e5cb;
 }
+
 .image-full {
   height: 200px !important;
   width: auto !important;
 }
+
 .album-full {
   height: 270px !important;
   width: auto !important;
 }
+
 .border {
   border: solid;
   border-width: thin;
 }
+
 .img-header {
   width: 100%;
 }
+
 .full-img img {
   max-width: 100%;
 }
+
 .full-img-new img {
   max-width: 70%;
 }
+
 .inside-div {
   word-wrap: break-word;
 }
 .edit-club {
   width: 100%;
+}
+
+.list-language a {
+  margin-bottom: 5px;
+}
+
+.list-language div {
+  float: left;
+  width: 50px;
+  height: 25px;
+  margin-right: 5px;
+  padding: 15px;
+}
+
+.vi {
+  background: url(/assets/flag-full-icons.png);
+  background-position: 49px 106px;
+}
+
+.en {
+  background:url(/assets/flag-full-icons.png);
+  background-position: 242px 1050px;
+}
+
+.jp {
+  background: url(/assets/flag-full-icons.png);
+  background-position: 916px 735px;
 }

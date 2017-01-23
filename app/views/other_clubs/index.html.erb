@@ -1,0 +1,4 @@
+<%= render "home/header" %>
+<%= render partial: "clubs/list_clubs",
+  locals: {clubs: @other_clubs.page(params[:page]).per(Settings.club_per_page),
+  title_page: t("other_club")} %>

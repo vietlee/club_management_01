@@ -22,8 +22,8 @@
             <i class="fa fa-angle-down site-nav-arrow"></i><%= t "clubs" %>
           <% end %>
           <ul>
-            <li><%= link_to t("my_club"), "#" %></li>
-            <li><%= link_to t("other_club"), "#" %></li>
+            <li><%= link_to t("my_club"), clubs_path %></li>
+            <li><%= link_to t("other_club"), path: "other-club" %></li>
           </ul>
         </li>
         <li>
@@ -64,6 +64,7 @@
             <li><%= link_to t("log_out"), destroy_user_session_path, method: :delete %></li>
           </ul>
         </li>
+        <%= render "shared/languages_nav" %>
       </ul>
     </nav>
   </div>

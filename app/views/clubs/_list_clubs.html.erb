@@ -1,0 +1,134 @@
+<section class="site-content site-section">
+  <div class="container">
+    <div class="row">
+      <div class="push-bit">
+        <h1 class="text-center"><%= title_page %></h1><br>
+      </div>
+      <div class="col-md-4 col-lg-3">
+        <aside class="sidebar site-block">
+          <div class="sidebar-block">
+            <form action="ecom_search_results.html" method="post"
+              class="form-horizontal">
+              <div class="form-group push-bit">
+                <div class="col-xs-12">
+                  <div class="input-group">
+                    <input type="text" id="ecom-search" name="ecom-search"
+                      class="form-control" placeholder="Name Club...">
+                    <div class="input-group-btn">
+                      <button type="submit" class="btn btn-primary">
+                        <i class="fa fa-search"></i>
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div><hr>
+              <h4><strong><%= t "filters" %></strong></h4>
+              <div class="form-group">
+                <div class="col-sm-8">
+                  <select id="ecom-filter-condition" name="ecom-filter-condition"
+                    class="form-control" size="1">
+                    <option value="0" disabled selected>
+                      <%= t "hobbies" %>
+                    </option>
+                    <option value="new"><%= t "football_club" %></option>
+                  </select>
+                </div>
+              </div>
+              <div class="form-group">
+                <div class="col-sm-8">
+                  <select id="ecom-filter-rating" name="ecom-filter-rating"
+                    class="form-control" size="1">
+                    <option value="0" disabled selected>
+                      <%= t "ratings" %>
+                    </option>
+                    <%= Settings.max_rate.times do |index| %>
+                      <option value="<%= index %>">
+                        <%= index %> <%= t "stars" %>
+                      </option>
+                    <% end %>
+                  </select>
+                </div>
+              </div><hr>
+              <h4 class="-header"><strong><%= t "organizations" %></strong></h4>
+              <div class="form-group">
+                <% current_user.organizations.each do |organization| %>
+                  <div class="col-xs-12">
+                    <label class="radio-inline"
+                      for="organization-radio<%= organization.id %>">
+                    <input type="radio" id="organization-radio<%= organization.id %>"
+                      name="organizations" value="<%= organization.id %>">
+                      <%= organization.name %>
+                  </div>
+                <% end %>
+                <hr>
+              </div>
+            </form>
+          </div>
+          <div class="sidebar-block">
+            <div class="row">
+              <div class="col-xs-6 push-bit">
+                  <input type="button" class="btn btn-xs btn-default push load-more-toggle"
+                    value="Load More">
+              </div>
+            </div>
+          </div>
+        </aside>
+      </div>
+      <div class="col-md-8 col-lg-9">
+        <div class="form-inline push-bit clearfix">
+          <div class="pull-right">
+              <%= paginate clubs %>
+          </div>
+          <select id="results-sort" name="results-sort" class="form-control" size="1">
+            <option value="0" disabled selected><%= t "sort_by" %></option>
+            <option value="2"><%= t "name" %> <%= t "a-z" %></option>
+            <option value="3"><%= t "name" %> <%= t "z-a" %></option>
+            <option value="4"><%= t "rating" %> <%= t "low_to_hight" %></option>
+            <option value="5"><%= t "rating" %> <%= t "hight_to_low" %></option>
+            <option value="6"><%= t "members" %> <%= t "low_to_hight" %></option>
+            <option value="7"><%= t "members" %> <%= t "hight_to_low" %></option>
+            <option value="8"><%= t "money" %> <%= t "low_to_hight" %></option>
+            <option value="9"><%= t "money" %> <%= t "hight_to_low" %></option>
+          </select>
+        </div>
+        <div class="row store-items">
+          <% clubs.each do |club| %>
+            <div class="col-md-6 visibility-none" data-toggle="animation-appear"
+              data-animation-class="animation-fadeInQuick" data-element-offset="-100">
+              <div class="store-item">
+                <div class="store-item-rating text-warning">
+                  <% club.rating.round.times do %>
+                    <i class="fa fa-star"></i>
+                  <% end %>
+                  <%= club.rating %> <%= t "for_ratings" %>
+                </div>
+                <div class="store-item-image">
+                    <%= link_to club do %>
+                      <%= image_tag club.image, class: "img-responsive" %>
+                    <% end %>
+                </div>
+                <div class="store-item-info clearfix">
+                  <span class="store-item-price themed-color-dark pull-left">
+                    <%= club.name %>
+                  </span>
+                  <small class="pull-left">
+                    <i class="fa fa-hand-o-right text-muted"></i>
+                    <%= link_to club do %>
+                      <%= club.description.truncate Settings.truncate_description %>
+                    <% end %>
+                  </small>
+                  <div>
+                    <%= link_to club do %>
+                      <strong class="pull-right fa fa-users"><%= t "members_with_dot" %>
+                      <%= club.users.size %></strong>
+                    <% end %>
+                  </div>
+                </div>
+              </div>
+            </div>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

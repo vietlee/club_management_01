@@ -28,15 +28,16 @@
         </li>
         <li><%= link_to t("about"), "#" %></li>
         <li><%= link_to t("contact"), "#" %></li>
-          <li>
-            <%= link_to "#",class: "site-nav-sub" do %>
-              <%= t "account" %> <span class="fa fa-user"></span>
-            <% end %>
-            <ul>
-              <li><%= link_to t("login"), new_user_session_path %></li>
-              <li><%= link_to t("register"), "#modal-user-sign-up", data:{toggle: "modal"}, class: "enable-tooltip" %></li>
-            </ul>
-          </li>
+        <li>
+          <%= link_to "#", class: "site-nav-sub" do %>
+            <%= t "account" %> <span class="fa fa-user"></span>
+          <% end %>
+          <ul>
+            <li><%= link_to t("login"), new_user_session_path %></li>
+            <li><%= link_to t("register"), "#modal-user-sign-up", data:{toggle: "modal"}, class: "enable-tooltip" %></li>
+          </ul>
+        </li>
+        <%= render "shared/languages_nav" %>
       </ul>
     </nav>
   </div>

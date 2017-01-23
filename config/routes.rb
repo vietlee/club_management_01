@@ -1,7 +1,9 @@
 Rails.application.routes.draw do
   root "static_pages#index"
+  mount ActionCable.server => "/cable"
   mount Ckeditor::Engine => '/ckeditor'
   delete "join_event" => "user_events#destroy"
+  get "other-clubs" => "clubs#index"
 
   devise_for :users, controllers: {registrations: "registrations", sessions: "authentications"}
   devise_for :admin, controllers: {sessions: "admin/sessions"}
@@ -42,9 +44,10 @@ Rails.application.routes.draw do
   resources :users do
     resources :club_requests, only: [:new, :create, :index]
     resources :organization_requests, only: [:new, :create, :index]
+    resources :other_clubs, only: :index
   end
 
-  resources :clubs, only: :show do
+  resources :clubs, only: [:show, :index] do
     resources :events, only: :show
   end
 
@@ -54,5 +57,5 @@ Rails.application.routes.draw do
   resources :organizations, only: :show
   resources :time_line_homes
   resources :comments
-  mount ActionCable.server => "/cable"
+  resources :set_language, only: :update
 end

@@ -1,4 +1,6 @@
 max_name: 100
+languages: {en: "english", vi: "vietnam", jp: "japan"}
+max_name: 30
 min_name: 5
 min_password: 6
 min_description: 10
@@ -30,3 +32,8 @@ min_content: 10
 club_event: 4
 event_news: 4
 club_member: 6
+club_per_page: 4
+my_clubs: "/clubs"
+en: "english"
+vi: "vietnam"
+jp: "japan"

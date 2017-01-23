@@ -1,0 +1,14 @@
+<li>
+  <%= link_to t("do_nothing"), class: "site-nav-sub" do %>
+    <%= I18n.locale %> <span class="fa fa-language"></span>
+  <% end %>
+  <ul class="list-language">
+    <% Settings.languages.map do |key, val| %>
+      <li>
+        <div class="<%= key %>"></div>
+        <%= link_to_unless I18n.locale == val.to_sym,
+          t(val), set_language_path(id: val.downcase), method: :put %>
+      </li>
+    <% end %>
+  </ul>
+</li>

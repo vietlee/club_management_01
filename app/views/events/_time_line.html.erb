@@ -6,9 +6,9 @@
         <li>
           <i class="fa fa-bullseye fa-li"></i>
           <%= link_to "#" do %>
-            <%= l time_line.first.created_at, format: :date_utc %>
+            <%= l time_line.first.created_at, format: :short %>
             <span class="fa fa-long-arrow-right"></span>
-            <%= l time_line.last.created_at, format: :date_utc %>
+            <%= l time_line.last.created_at, format: :short %>
           <% end %>
         </li>
       <% end %>
