@@ -8,7 +8,7 @@ class Organization < ApplicationRecord
 
   validates :name, uniqueness: true, presence: true,
     length: {maximum: Settings.max_name}
-  validates :email, uniqueness: true, presence: true, uniqueness: true
+  validates :email, uniqueness: true, presence: true
   validates :phone, presence: true
   validates :location, presence: true
   validates :description, presence: true

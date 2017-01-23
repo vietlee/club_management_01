@@ -42,6 +42,14 @@
             <i class="fa fa-clock-o">
               <strong><%= t "club_manager.event.show_date_end" %></strong>
               <%= l @event.date_end, format: :date %>
+            </i><br><hr>
+            <i class="fa fa-clock-o">
+              <strong><%= t "event_status" %></strong>
+              <% if @event.finished? %>
+                <%= t "finished" %>
+              <% else %>
+                <%= t "inprocess" %>
+              <% end %>
             </i><br>
           </div>
         </div><hr>

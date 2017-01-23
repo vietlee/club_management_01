@@ -15,6 +15,9 @@
           </div>
           <div class="col-md-7" >
             <p><%= @club.notification %></p>
+            <p class="fa fa-money"> <%= t "club_manager.money" %>
+              <%= @club.money %>
+            </p><br>
             <p><%= @club.description.html_safe %></p>
             <div class="col-md-6 col-md-offset-4">
               <%= link_to "#modal-club-edit", data: {toggle: "modal"},

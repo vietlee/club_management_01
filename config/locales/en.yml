@@ -1,4 +1,8 @@
 en:
+  cant_edit: "Can edit information!"
+  event_status: "Status: "
+  event_is_finish: "Event already finish!!!"
+  inprocess: "In process"
   busy: "Busy"
   available: "Available"
   approve_success: "Request approve successfull"
@@ -6,6 +10,7 @@ en:
   english: "English"
   japan: "Japan"
   vietnam: "Việt Nam"
+  periodic-money: "Notification"
   spend-money: "Spend Money"
   consumable-money: "Consume Money"
   list_news: "List news"
@@ -309,6 +314,7 @@ en:
     clubs: "Clubs joined"
     show: "Show member"
   club_manager:
+    money: "Money"
     cant_fount: "Can found club!"
     user_club:
       success_update: "Approve request to join successfull!"
@@ -345,6 +351,7 @@ en:
       success_create: "Create new album successfull!"
       success_update: "Album's name update successfull!"
     event:
+      status: "Status"
       new: "New event"
       name_guide: "Event's name cant blank and must have atleast 10 character!"
       expense: "Event's expense"

@@ -112,7 +112,7 @@ clubs.each do |club|
       location: location,
       num_like: num_like,
       created_at: created_at,
-      user_id: rand(1..3)
+      user_id: rand(1..2)
     )
   end
 end
