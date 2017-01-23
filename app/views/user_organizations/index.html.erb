@@ -1,0 +1,26 @@
+<%= render "home/header" %>
+<section class="site-content site-section">
+  <div class="container">
+    <div class="site-block clearfix">
+      <h1><%= t "user_organizations" %></h1>
+      <%= link_to clubs_path, class: "btn btn-primary" do %>
+        <i class="fa fa-chevron-left"></i>
+        <%= t("back_to_my_club") %>
+      <% end %>
+    </div>
+    <div class="row">
+      <div class="organization-details">
+        <%= render partial: "user_organizations/organization_details",
+          locals: {organization: current_user.organizations.first} %>
+      </div>
+      <div class="col-sm-7 site-block">
+        <h1><%= t "my_organizations" %></h1>
+        <%= render "user_organizations/my_organizations" %>
+      </div>
+    </div>
+    <hr>
+    <h1><%= t "organizations" %></h1>
+    <%= render partial: "user_organizations/other_organizations",
+      locals: {organizations: @organizations.page(params[:page]).per(Settings.organization_per_page)} %>
+  </div>
+</section>

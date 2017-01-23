@@ -1,0 +1,21 @@
+<div class="row portfolio">
+  <% organizations.each do |organization| %>
+    <div class="col-sm-4 portfolio-item animation-fadeInQuick">
+      <%= link_to user_user_organization_path(user_id: current_user.id,
+        id: organization.id), remote: true do %>
+      <%= image_tag organization.logo, class: "img-responsive" %>
+        <span class="portfolio-item-info">
+          <strong>
+            <span class="text-success pull-right"><%= organization.name %></span><hr>
+            <small class="text-small">
+              <%= organization.description.truncate Settings.truncate_organization %>
+            </small>
+          </strong>
+        </span>
+      <% end %>
+    </div>
+  <% end %>
+  <div class="pull-right">
+    <%= paginate organizations %>
+  </div>
+</div>

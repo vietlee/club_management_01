@@ -5,7 +5,7 @@ class ClubsController < ApplicationController
   def index
     if request.fullpath == Settings.my_clubs
       @clubs = current_user.clubs.newest
-      @organizations = current_user.user_organizations.joined
+      @organizations = current_user.user_organizations.actives
     else
       clubs_organizations = Club.of_organizations current_user.organizations
       @other_clubs = clubs_organizations.without_clubs(current_user.clubs).actives

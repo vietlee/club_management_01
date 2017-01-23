@@ -1,0 +1,48 @@
+<div class="col-sm-5 site-block">
+  <div id="project-carousel" class="carousel slide" data-ride="carousel" data-interval="3000">
+    <div class="carousel-inner text-center">
+      <div class="item active gallery-image">
+        <%= image_tag organization.logo %>
+        <div class="gallery-image-options">
+          <div class="btn-group btn-group-lg pull-right">
+            <%= render partial: "user_organizations/toggle_user_organization",
+              locals: {organization: organization} %>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <table class="table table-striped">
+    <tbody>
+      <tr>
+        <td><strong class="fa fa-map-marker"> <%= t "address" %></strong></td>
+        <td class="text-right"><%= organization.location %></td>
+      </tr>
+      <tr>
+        <td><strong class="fa fa-envelope-o"> <%= t "email" %></strong></td>
+        <td class="text-right"><%= organization.email %></td>
+      </tr>
+      <tr>
+        <td><strong class="fa fa-mobile"> <%= t "phone" %></strong></td>
+        <td class="text-right"><%= organization.phone %></td>
+      </tr>
+      <tr>
+        <td><strong class="fa fa-sort-numeric-asc"> <%= t "num_club" %></strong></td>
+        <td class="text-right"><%= organization.clubs.size %></td>
+      </tr>
+      <tr>
+        <td><strong class="fa fa-users"> <%= t "num_member" %></strong></td>
+        <td class="text-right"><%= organization.users.size %></td>
+      </tr>
+      <tr>
+        <td><strong class="fa fa-calendar"> <%= t "organizaiton_created_at" %></strong></td>
+        <td class="text-right"><%= l organization.created_at, format: :short %></td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+<div class="col-sm-7 site-block">
+  <h1 class="site-heading"><%= organization.name %></h1>
+  <h3><%= organization.description %></h3>
+  <hr>
+</div>

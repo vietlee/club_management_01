@@ -1,0 +1,15 @@
+<div class="row portfolio">
+  <% current_user.user_organizations.actives.each do |user_organization| %>
+    <div class="col-sm-3 portfolio-item animation-fadeInQuick">
+      <%= link_to user_user_organization_path(user_id: current_user.id,
+        id: user_organization.organization.id), remote: true do %>
+        <%= image_tag user_organization.organization.logo, class: "img-responsive" %>
+        <span class="portfolio-item-info">
+          <strong class="text-success pull-right">
+            <%= user_organization.organization.name %>
+          </strong>
+        </span>
+      <% end %>
+    </div>
+  <% end %>
+</div>
