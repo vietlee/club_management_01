@@ -285,7 +285,7 @@ en:
   not_found_request: "Cant not found request"
   please_login: "Please Login"
   request_approved: "Request approved!"
-  localtion: "Location"
+  location: "Location"
   devise:
    sessions:
     user:
@@ -429,3 +429,9 @@ en:
   user_organization_not_found: "This user not found"
   can_not_active: "Can not active this user"
   back: "Back"
+  update_organization_success: "Updated this organization success!"
+  error_update: "Update fail,please try again!"
+  name_exist: "This name have exit,please choose different name!"
+  organization_manager: "Organization manager"
+  edit_organization: "Edit organization: "
+  not_approve: "Not approve"

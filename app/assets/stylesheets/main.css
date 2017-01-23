@@ -1749,3 +1749,11 @@ li:last-child {
 .tip a:hover {
   color: #32A6C3;
 }
+
+.edit-organization h1 {
+  text-align: center;
+}
+
+#error-explanation {
+  color: red;
+}

@@ -432,6 +432,12 @@ vi:
         email: "Email"
         location: "Địa chỉ"
         description: "Mô tả"
+      organization:
+        name: "Tên tổ chức"
+        email: "Email"
+        phone: "Số điện thoại"
+        location: "Địa chỉ"
+        description: "Mô tả"
     errors:
       messages:
         record_invalid: "Bản ghi không hợp lệ"
@@ -474,6 +480,19 @@ vi:
             name:
               blank: " không được bỏ trống"
               too_short: " quá ngắn"
+        organization:
+          attributes:
+            name:
+              taken: " đã tồn tại"
+            email:
+              blank: " không được bỏ trống"
+              taken: " đã tồn tại"
+            phone:
+              blank: " không được bỏ trống"
+            location:
+              blank: " không được bỏ trống"
+            description:
+              blank: " không được bỏ trống"
   not_found_user_event: "Không tìm thấy sự kiện mà bạn tham gia!"
   see_you_next_time: "Gặp lại sau nhé!!"
   thanks_for_join: "Cám ơn bạn gì đã tham gia!"
@@ -502,3 +521,10 @@ vi:
   user_organization_not_found: "Người dùng này không tìm thấy!"
   can_not_active: "Không thể kích hoạt người dùng này!"
   back: "Trở về "
+  not_authorities_to_access: "Bạn không có quyền truy cập trang này!"
+  update_organization_success: "Đã cập nhật thông tin tổ chức này thành công!"
+  error_update: "Cập nhật thất bại,vui lòng thử lại!"
+  name_exist: "Tên này đã tồn tại,vui lòng chọn tên khác!"
+  organization_manager: "Quản Lý Tổ Chức"
+  edit_organization: "Sửa Thông Tin: "
+  not_approve: "Chưa chấp nhận"
