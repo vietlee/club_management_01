@@ -21,7 +21,7 @@ class Manager::RequestsController < BaseOrganizationManagerController
 
   def update
     ActiveRecord::Base.transaction do
-      unless @request.update_attributes approve: ClubRequest.aprroved
+      unless @request.update_attributes approve: ClubRequest.joined
         flash[:danger] = t "can_not_approve"
         redirect_to request.referrer
       end
