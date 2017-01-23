@@ -16,7 +16,7 @@ class Manager::MembersController < BaseOrganizationManagerController
 
   def update
     respond_to do |format|
-      unless @user_organization.update_attributes status: UserOrganization.joined
+      unless @user.joined!
         flash[:danger] = t "can_not_active"
       end
       format.js
