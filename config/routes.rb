@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
-  mount Ckeditor::Engine => '/ckeditor'
   root "static_pages#index"
+  mount Ckeditor::Engine => '/ckeditor'
   delete "join_event" => "user_events#destroy"
 
   devise_for :users, controllers: {registrations: "registrations", sessions: "authentications"}
@@ -48,9 +48,11 @@ Rails.application.routes.draw do
     resources :events, only: :show
   end
 
+  resources :messages, only: [:new, :create, :index]
   resources :user_events, only: :create
   resources :ratings, only: :create
   resources :organizations, only: :show
   resources :time_line_homes
   resources :comments
+  mount ActionCable.server => "/cable"
 end

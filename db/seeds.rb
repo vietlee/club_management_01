@@ -166,3 +166,18 @@ ClubRequest.create!(
   description: Faker::Lorem.paragraph,
   action: "User send request"
 )
+
+3.times do |n|
+  Message.create!(
+    user_id: 1,
+    club_id: Club.first.id,
+    content: Faker::Lorem.sentence
+  )
+
+  Message.create!(
+    user_id: 2,
+    club_id: Club.first.id,
+    content: Faker::Lorem.sentence
+  )
+end
+

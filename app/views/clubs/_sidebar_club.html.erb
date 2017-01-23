@@ -57,6 +57,7 @@
         <li>
           <%= link_to "#",class: "site-nav-sub" do %>
             <%= current_user.full_name %> <span class="fa fa-user"></span>
+            <input type="hidden" class="current-user-id" value="<%= current_user.id %>">
           <% end %>
           <ul>
             <li><%= link_to t("profile"), "#" %></li>

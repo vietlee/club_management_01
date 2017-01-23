@@ -1,0 +1,40 @@
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<div class="col-md-3 offset-md-6 panel chat-box">
+  <div class="panel-heading chat-box-head">
+    <div class="panel-control">
+      <div class="btn-group">
+        <button class="btn btn-default" type="button" data-toggle="collapse" data-target="#demo-chat-body"><i class="fa fa-chevron-down"></i></button>
+        <button type="button" class="btn btn-default" data-toggle="dropdown"><i class="fa fa-gear"></i></button>
+        <ul class="dropdown-menu dropdown-menu-right">
+          <li><a href="#"><%= t "available" %></a></li>
+          <li class="divider"></li>
+          <li><a href="#"><%= t "busy" %></a></li>
+        </ul>
+      </div>
+    </div>
+    <h3 class="panel-title chat-box-title"><%= @club.name %></h3>
+  </div>
+  <div id="demo-chat-body" class="collapse in">
+    <div class="nano has-scrollbar" style="height:380px">
+      <div class="nano-content pad-all" tabindex="0" style="right: -17px;">
+        <ul class="list-unstyled media-block" id="list-messages">
+          <%= render @messages %>
+        </ul>
+      </div>
+    <div class="nano-pane"><div class="nano-slider" style="height: 141px; transform: translate(0px, 0px);"></div></div></div>
+    <div class="panel-footer chat-box-footer">
+      <div class="row chat-box-action">
+        <%= form_for @message, remote: true do |f| %>
+          <%= f.hidden_field :club_id, value: @club.id, id: "chat-box-club-id" %>
+          <div class="col-xs-8">
+            <%= f.text_area :content, data: {behavior: "club_speaker"},
+              class: "form-control chat-input", rows: 2 %>
+          </div>
+          <div class="col-xs-2">
+            <%= f.submit :Send, class: "btn btn-default chat-box-submit" %>
+          </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
