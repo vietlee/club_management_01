@@ -6,8 +6,9 @@ class Organization < ApplicationRecord
   has_many :user_organizations, dependent: :destroy
   has_many :club_requests, dependent: :destroy
 
-  validates :name, presence: true, length: {maximum: Settings.max_name}
-  validates :email, presence: true, uniqueness: true
+  validates :name, uniqueness: true, presence: true,
+    length: {maximum: Settings.max_name}
+  validates :email, uniqueness: true, presence: true, uniqueness: true
   validates :phone, presence: true
   validates :location, presence: true
   validates :description, presence: true

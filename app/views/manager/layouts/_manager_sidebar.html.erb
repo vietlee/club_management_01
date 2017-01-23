@@ -4,7 +4,7 @@
       <div class="sidebar-section sidebar-user clearfix sidebar-nav-mini-hide">
         <div class="sidebar-user-avatar">
           <%= link_to t("do_nothing") do %>
-            <%= image_tag "placeholders/avatars/avatar2.jpg" %>
+            <%= image_tag current_user.avatar %>
           <% end %>
         </div>
         <div class="sidebar-user-name"></div>
@@ -22,10 +22,12 @@
       </div>
       <ul class="sidebar-nav">
         <li class="sidebar-header">
-          <span class="sidebar-header-title"><%= t "company_manager" %></span>
+          <span class="sidebar-header-title">
+            <%= t "organization_manager" %>
+          </span>
         </li>
         <li>
-          <%= link_to t("do_nothing") do %>
+          <%= link_to manager_path do %>
             <i class="gi gi-leaf sidebar-nav-icon"></i>
             <span class="sidebar-nav-mini-hide"><%= t "dashboard" %></span></a>
           <% end %>

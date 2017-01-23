@@ -1,47 +1,41 @@
 <div class="row">
-  <div class="col-md-6">
+  <div class="col-md-12">
     <div class="block">
       <div class="block-title">
-        <h2><strong><%= t "my" %></strong><%= t " activities" %></h2>
+        <h2><strong><%= t "my_organization" %></strong></h2>
       </div>
       <div class="block-content-full">
-        <div class="timeline">
-          <ul class="timeline-list">
-            <li class="text-center">
-              <%= link_to t("view_more"), t("do_nothing"),
-                class: "btn btn-xs btn-default" %>
-              </a>
-            </li>
-          </ul>
-        </div>
-      </div>
-    </div>
-    <div class="block full">
-      <div class="block-title">
-        <h2><strong><%= t "newest" %></strong><%= t " members" %></h2>
-      </div>
-      <div class="row text-center">
-        <div class="text-center">
-          <%= link_to t("view_more"), t("do_nothing"),
-            class: "btn btn-xs btn-default" %>
-          </a>
-        </div>
-      </div>
-    </div>
-  </div>
-  <div class="col-md-6">
-    <div class="block">
-      <div class="block-title">
-        <h2><strong><%= t "latest" %></strong><%= t " news" %></h2>
-      </div>
-      <div class="block-content-full">
-        <div class="timeline">
-          <ul class="timeline-list">
-            <li class="text-center">
-              <%= link_to t("view_more"), t("do_nothing"),
-                class: "btn btn-xs btn-default" %>
-            </li>
-          </ul>
+        <div class="table-responsive">
+          <table id="example-datatable"
+            class="table table-vcenter table-condensed table-bordered">
+            <thead>
+              <tr>
+                <th class="text-center"><%= t "id" %></th>
+                <th class="text-center"><i class="gi gi-user"></i></th>
+                <th><%= t "name_organization" %></th>
+                <th><%= t "email" %></th>
+                <th><%= t "phone" %></th>
+                <th class="text-center"><%= t "view" %></th>
+              </tr>
+            </thead>
+            <tbody>
+              <% @organizations.each do |organization| %>
+                <tr>
+                  <td class="text-center"><%= organization.id %></td>
+                  <td class="text-center"><%= image_tag organization.logo,
+                    class: "circle-profile-list" %></td>
+                  <td><%= organization.name %></a></td>
+                  <td><%= organization.email %></td>
+                  <td><%= organization.phone %></td>
+                  <td class="text-center">
+                    <%= link_to t("view"),
+                      manager_organization_path(organization.id),
+                      class: "btn btn-lg btn-primary" %>
+                  </td>
+                </tr>
+              <% end %>
+            </tbody>
+          </table>
         </div>
       </div>
     </div>

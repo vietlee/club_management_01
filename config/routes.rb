@@ -25,6 +25,7 @@ Rails.application.routes.draw do
     resources :requests
     resources :members
     resources :clubs
+    resources :organizations
   end
 
   namespace :club_manager do
