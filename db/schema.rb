@@ -112,7 +112,6 @@ ActiveRecord::Schema.define(version: 20170113134100) do
     t.text     "description",       limit: 65535
     t.integer  "expense",                         default: 0
     t.integer  "club_id"
-    t.integer  "user_id"
     t.integer  "event_category_id"
     t.date     "date_start"
     t.date     "date_end"
@@ -123,7 +122,6 @@ ActiveRecord::Schema.define(version: 20170113134100) do
     t.datetime "updated_at",                                  null: false
     t.index ["club_id"], name: "index_events_on_club_id", using: :btree
     t.index ["event_category_id"], name: "index_events_on_event_category_id", using: :btree
-    t.index ["user_id"], name: "index_events_on_user_id", using: :btree
   end
 
   create_table "hobbies_tags", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
@@ -242,10 +240,10 @@ ActiveRecord::Schema.define(version: 20170113134100) do
     t.index ["user_id"], name: "index_user_events_on_user_id", using: :btree
   end
 
-  create_table "user_organizations", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+  create_table "user_organizations", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", comment: "utf8_general_ci" do |t|
     t.integer  "organization_id"
     t.integer  "user_id"
-    t.boolean  "status",          default: false
+    t.integer  "status",          default: 0
     t.boolean  "is_admin",        default: false
     t.datetime "created_at",                      null: false
     t.datetime "updated_at",                      null: false
@@ -285,7 +283,6 @@ ActiveRecord::Schema.define(version: 20170113134100) do
   add_foreign_key "comments", "users"
   add_foreign_key "events", "clubs"
   add_foreign_key "events", "event_categories"
-  add_foreign_key "events", "users"
   add_foreign_key "images", "albums"
   add_foreign_key "images", "users"
   add_foreign_key "messages", "clubs"

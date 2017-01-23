@@ -2,7 +2,7 @@ module Manager::MembersHelper
   def choose_view_company user_id, organization_id
     user_organization = UserOrganization.find_with_user_of_company user_id,
       organization_id
-    if user_organization.status?
+    if user_organization.joined?
       t "actived"
     else
       link_to t("active"), manager_member_path(user_organization), method: :put,
