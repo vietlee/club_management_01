@@ -1,5 +1,6 @@
 class ClubManager::EventsController < BaseClubManagerController
   before_action :load_club
+  before_action :correct_manager
   before_action :load_event, except: [:index, :create, :new]
   before_action :is_finished, only: :edit
 
