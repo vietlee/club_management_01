@@ -52,6 +52,7 @@ class Manager::RequestsController < BaseOrganizationManagerController
   end
 
   def create_user_club user_id, club_id
-    UserClub.create user_id: user_id, club_id: club_id, is_manager: true
+    UserClub.create user_id: user_id, club_id: club_id, is_manager: true,
+      status: :joined
   end
 end
