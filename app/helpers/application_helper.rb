@@ -33,6 +33,6 @@ module ApplicationHelper
 
   def status_user_club user, club
     user_club = user.user_clubs.find_by club_id: club.id
-    user_club.present? ? user_club.status : nil
+    user_club.present? ? user_club.joined? : nil
   end
 end
