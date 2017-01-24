@@ -53,6 +53,7 @@ Rails.application.routes.draw do
     resources :events, only: :show
   end
 
+  resources :invite_join_clubs, only: :create
   resources :messages, only: [:new, :create, :index]
   resources :user_events, only: :create
   resources :ratings, only: :create

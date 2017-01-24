@@ -1,0 +1,30 @@
+<div id="modal-users" class="modal fade" role="dialog" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h2 class="modal-title">
+          <span class="fa fa-user-plus">
+            <%= t "invite_users" %>
+          </span>
+        </h2>
+      </div>
+      <div class="modal-body">
+        <div class="table-responsive">
+          <table id="example-datatable"
+            class="table table-vcenter table-condensed table-bordered">
+            <thead><tr><th></th><th></th></tr></thead>
+            <tbody></tbody>
+          </table>
+        </div>
+        <div class="form-group form-actions">
+          <div class="col-xs-12 text-right">
+            <button type="button" class="btn btn-sm btn-default" data-dismiss="modal">
+              <%= t "close" %>
+            </button>
+          </div>
+        </div>
+        <div class="push-bit"></div>
+      </div>
+    </div>
+  </div>
+</div>

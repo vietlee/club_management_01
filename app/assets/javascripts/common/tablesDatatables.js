@@ -22,9 +22,6 @@ var TablesDatatables = function() {
           [10, 20, 30, 'All']
         ]
       });
-
-      /* Add placeholder attribute to the search input */
-      $('.dataTables_filter input').attr('placeholder', 'Search');
     }
   };
 }();

@@ -15,5 +15,6 @@ module Clubmanagement
     # -- all .rb files in that directory are automatically loaded.
     config.i18n.default_locale = :vi
     config.assets.paths << Rails.root.join("/app/assets/fonts/")
+    config.middleware.use I18n::JS::Middleware
   end
 end

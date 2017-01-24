@@ -1,4 +1,5 @@
 <div class="media-container">
+<%= render "users/users" %>
   <section class="site-section site-section-light site-section-top">
     <div class="container">
       <%= link_to "#" do %>
@@ -6,7 +7,17 @@
           <%= t "join" %>
         </span>
       <% end %>
-      <h1 class="animation-slideDown"><strong><%= @club.name %></strong></h1>
+      <h1 class="animation-slideDown">
+        <strong><%= @club.name %> </strong>
+        <div class="pull-left dropdown">
+          <span class="caret" data-toggle="dropdown"></span>
+          <ul class="dropdown-menu">
+            <li><%= link_to t("invite_join_club"),"#modal-users",
+              data: {toggle: "modal"} %></li>
+            <li><%= link_to t("leave_club") %></li>
+          </ul>
+        </div>
+      </h1>
       <span class="animation-slideUp hidden-xs rating-container">
         <%= render "ratings/rating" %>
       </span>

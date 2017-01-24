@@ -2484,7 +2484,7 @@
         d = a.oLanguage,
         e = a.oPreviousSearch,
         f = a.aanFeatures,
-        g = '<input type="search" class="' + b.sFilterInput + '"/>',
+        g = '<input type="search" class="form-control" placeholder="'+ I18n.t('next_step')+'"/>',
         i = d.sSearch,
         i = i.match(/_INPUT_/) ? i.replace("_INPUT_", g) : i + g,
         b = h("<div/>", {

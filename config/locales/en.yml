@@ -1,5 +1,6 @@
 en:
   name_des: "Name, Description..."
+  type_your_message: "Type your messages here!!"
   cant_edit: "Can edit information!"
   event_status: "Status: "
   event_is_finish: "Event already finish!!!"
@@ -12,6 +13,11 @@ en:
   organizaiton_created_at: "Date Created"
   back_to_my_club: "Back to my clubs"
   user_organizations: "Organizations of User"
+  show_chat_box: "Show Chat Box"
+  invite_user_join_club: "Invite friends to joins Club"
+  invites_user: "Invites Users"
+  leave_club: "Leave This Club"
+  invite_join_club: "Invites to join Club"
   busy: "Busy"
   available: "Available"
   approve_success: "Request approve successfull"
