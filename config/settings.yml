@@ -26,7 +26,7 @@ new_detail: 100
 event_user: 6
 event_new: 4
 club_member: 6
-event_type: 2
+event_type: 3
 min_title: 10
 min_content: 10
 club_event: 4
@@ -37,3 +37,8 @@ my_clubs: "/clubs"
 en: "english"
 vi: "vietnam"
 jp: "japan"
+spend: 1
+consum: 2
+inprocess: "inprocess"
+finished: "finished"
+event: "Event"

@@ -83,11 +83,11 @@ ActiveRecord::Schema.define(version: 20170113134100) do
     t.text     "description",     limit: 65535
     t.integer  "money",                         default: 0
     t.float    "rating",          limit: 24,    default: 0.0
-    t.boolean  "is_active",                     default: false
+    t.boolean  "is_active",                     default: true
     t.string   "logo"
     t.string   "image"
-    t.datetime "created_at",                                    null: false
-    t.datetime "updated_at",                                    null: false
+    t.datetime "created_at",                                   null: false
+    t.datetime "updated_at",                                   null: false
     t.index ["organization_id"], name: "index_clubs_on_organization_id", using: :btree
   end
 
@@ -118,6 +118,7 @@ ActiveRecord::Schema.define(version: 20170113134100) do
     t.text     "location",          limit: 65535
     t.integer  "num_like",                        default: 0
     t.string   "image"
+    t.integer  "status",                          default: 0
     t.datetime "created_at",                                  null: false
     t.datetime "updated_at",                                  null: false
     t.index ["club_id"], name: "index_events_on_club_id", using: :btree
@@ -181,8 +182,8 @@ ActiveRecord::Schema.define(version: 20170113134100) do
     t.string   "phone"
     t.string   "email"
     t.text     "location",    limit: 65535
-    t.string   "image"
-    t.boolean  "status",                    default: false
+    t.string   "logo"
+    t.boolean  "approve",                   default: false
     t.datetime "created_at",                                null: false
     t.datetime "updated_at",                                null: false
     t.index ["user_id"], name: "index_organization_requests_on_user_id", using: :btree

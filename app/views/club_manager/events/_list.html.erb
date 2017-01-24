@@ -26,9 +26,16 @@
                 <% end %>
               </div>
               <div class="widget-options">
-                <%= link_to t("do_nothing"), data: {toggle: "modal"},
-                  class: "btn btn-nm btn-warning", title: t("finished") do %>
-                  <i class="fa fa-step-forward"></i>
+                <% if event.finished? %>
+                  <%= link_to t("do_nothing"),
+                    class: "btn btn-nm btn-primary", title: t("finished") do %>
+                    <i class="fa fa-check"></i>
+                  <% end %>
+                <% else %>
+                  <%= link_to t("do_nothing"), method: :patch,
+                    class: "btn btn-nm btn-warning", title: t("inprocess") do %>
+                    <i class="fa fa-step-forward"></i>
+                  <% end %>
                 <% end %>
               </div>
             </div>

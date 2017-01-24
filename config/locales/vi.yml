@@ -1,15 +1,18 @@
 vi:
+  cant_edit: "Không thể chỉnh sửa thông tin"
+  event_status: "Trạng thái: "
+  event_is_finish: "Sự kiện đã kết thúc!!!"
+  inprocess: "Đang diễn ra"
   busy: "Ẩn với mọi người"
   available: "Trực tuyến"
   approve_success: "Chấp thuận yêu cầu thành công!"
   finished: "Kết thúc"
+  periodic-money: "Thông báo"
   spend-money: "Chi tiền"
   consumable-money: "Nhận tiền"
   english: "English"
   japan: "Japan"
   vietnam: "Việt Nam"
-  spend-money: "Chi tiền"
-  consumable-money: "Tiêu tiền"
   english: "English"
   vietnamese: "Việt Nam"
   japanese: "JaPanese"
@@ -344,6 +347,7 @@ vi:
     clubs: "Câu lạc bộ đã tham gia"
     show: "Thành viên"
   club_manager:
+    money: "Tiền quỹ: "
     cant_fount: "Không thể tìm thấy câu lạc bộ!"
     user_club:
       success_update: "Duyệt thành viên thành công!"
@@ -380,6 +384,7 @@ vi:
       success_create: "Tạo mới bộ sưu tập thành công!"
       success_update: "Tên bộ sưu tập đưọc cập nhập thành công!"
     event:
+      status: "Trạng thái"
       new: "Tạo mới sự kiện"
       name_guide: "Tên sự kiện không thể để trống và phải có ít nhất 10 ký tự"
       expense: "Chi phí sự kiện"

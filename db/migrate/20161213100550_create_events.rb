@@ -12,6 +12,7 @@ class CreateEvents < ActiveRecord::Migration[5.0]
       t.text :location
       t.integer :num_like, default: 0
       t.string :image
+      t.integer :status, default: 0
       t.timestamps
     end
   end

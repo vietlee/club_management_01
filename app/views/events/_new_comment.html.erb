@@ -6,7 +6,7 @@
           <%= image_tag current_user.avatar, class: "img-circle img-user-time-line push-right" %>
         </a>
         <div class="media-body">
-          <%= render partial: "events/form_comment", locals: {target: t("event"),
+          <%= render partial: "events/form_comment", locals: {target: @event,
             target_id: @event.id} %>
         </div>
       </div>
