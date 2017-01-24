@@ -3,6 +3,14 @@ vi:
   event_status: "Trạng thái: "
   event_is_finish: "Sự kiện đã kết thúc!!!"
   inprocess: "Đang diễn ra"
+  answer_join: "Bạn thật sự muốn tham gia?"
+  success_create_user_organization: "Tham gia tổ chức thành công! vui lòng đợi quản lý duyệt!"
+  cant_create_user_organization: "Không thể tạo join vào tổ chức, vui lòng kiểm tra lại!"
+  num_member: "Số lượng thành viên"
+  num_club: "Số lượng câu lạc bộ"
+  organizaiton_created_at: "Ngày tạo"
+  back_to_my_club: "Danh sách câu lạc bộ"
+  user_organizations: "Tổ chức của bạn"
   busy: "Ẩn với mọi người"
   available: "Trực tuyến"
   approve_success: "Chấp thuận yêu cầu thành công!"
@@ -210,13 +218,6 @@ vi:
     update_fail: "Cập nhập tổ chức thất bại!"
   submit: "Gửi"
   edit: "Sửa"
-  date:
-    formats:
-      date: "%H:%M %d/%m/%Y"
-      date_utc: "%d/%m/%Y"
-      date_time_utc: "%d/%m/%Y %H:%M"
-      full_date: "%d/%M/%Y %H:%M"
-      short: "%d/%M/%Y"
   time:
     formats:
       date: "%H:%M %d/%m/%Y"

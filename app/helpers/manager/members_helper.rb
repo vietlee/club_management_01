@@ -6,7 +6,7 @@ module Manager::MembersHelper
       t "actived"
     else
       link_to t("active"), manager_member_path(user_organization), method: :put,
-        remote: true, data: {confirm: t("answer_active")}
+        remote: true, class: "btn btn-primary", data: {confirm: t("answer_active")}
     end
   end
 

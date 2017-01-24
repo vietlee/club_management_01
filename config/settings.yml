@@ -7,6 +7,7 @@ min_description: 10
 max_for_limit: 5
 per_page: 5
 truncate_description: 90
+truncate_organization: 30
 description_event: 360
 min_location: 5
 update: "Update"
@@ -33,6 +34,7 @@ club_event: 4
 event_news: 4
 club_member: 6
 club_per_page: 4
+organization_per_page: 3
 my_clubs: "/clubs"
 en: "english"
 vi: "vietnam"

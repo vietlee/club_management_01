@@ -1,6 +1,5 @@
 Rails.application.routes.draw do
   root "static_pages#index"
-  mount ActionCable.server => "/cable"
   mount Ckeditor::Engine => '/ckeditor'
   delete "join_event" => "user_events#destroy"
   get "other-clubs" => "clubs#index"
@@ -46,9 +45,11 @@ Rails.application.routes.draw do
     resources :club_requests, only: [:new, :create, :index]
     resources :organization_requests, only: [:new, :create, :index]
     resources :other_clubs, only: :index
+    resources :user_organizations, except: [:new, :update]
   end
 
   resources :clubs, only: [:show, :index] do
+    mount ActionCable.server => "/cable"
     resources :events, only: :show
   end
 
