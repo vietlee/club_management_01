@@ -44,3 +44,5 @@ consum: 2
 inprocess: "inprocess"
 finished: "finished"
 event: "Event"
+spend_money: 1
+none: 0

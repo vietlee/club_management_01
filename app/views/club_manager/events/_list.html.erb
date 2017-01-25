@@ -3,7 +3,11 @@
 <% else %>
   <div class="row">
     <% @events.each do |event|%>
-      <div class="col-md-4">
+      <% if event.finished? %>
+        <div class="col-md-4 finished">
+      <% else  %>
+        <div class="col-md-4">
+      <% end %>
         <div class="widget border">
           <div class="widget-advanced widget-advanced-alt">
             <div class="widget-header text-left">
@@ -43,10 +47,10 @@
               <div class="row text-center animation-fadeIn">
                 <div class="col-xs-4">
                   <h3>
-                    <strong class="themed-color-autumn">
+                    <strong class="themed-color-autumn move-left">
                       <%= event.num_like %>
                     </strong><br>
-                    <small><%= t "club_manager.event.like" %></small>
+                    <i class="fa fa-heart color-red"></i>
                   </h3>
                 </div>
                 <div class="col-xs-4">

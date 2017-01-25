@@ -8,7 +8,9 @@
       </div>
       <div class="col-sm-6">
         <h4><b><%= event_club.name %></b></h4>
-        <h5><b><%= t "club_manager.event.show_expense" %></b><%= event_club.expense %></h5>
+        <h5><b><%= t "club_manager.event.show_expense" %></b>
+          <%= number_to_currency(event_club.expense, locale: :vi) %>
+        </h5>
         <div class="inside-div">
           <%= truncate_html(event_club.description.html_safe, length: Settings.new_detail) %><br>
           <%= link_to t("view_more"),
