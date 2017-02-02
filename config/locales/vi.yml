@@ -1,4 +1,8 @@
 vi:
+  name_des: "Tên hoặc mô tả..."
+  created_at: "Ngày thành lập"
+  for_rating: "Điểm đánh giá"
+  members_with_dot: "Member:"
   cant_edit: "Không thể chỉnh sửa thông tin"
   event_status: "Trạng thái: "
   event_is_finish: "Sự kiện đã kết thúc!!!"
@@ -236,6 +240,7 @@ vi:
         separator: "."
         precision: 0
         format: "%n%u"
+      short: "%d/%m/%Y"
   read_the_article: "Đọc điều khoản"
   view_more: "Xem thêm ..."
   do_nothing: "javascript:void(0)"
@@ -546,3 +551,6 @@ vi:
   edit_organization: "Sửa Thông Tin: "
   not_approve: "Chưa chấp nhận"
   user_request: "Người gửi yêu cầu"
+  views:
+    pagination:
+      truncate: ""

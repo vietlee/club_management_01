@@ -20,6 +20,7 @@ new_content: 9
 edit_description: 6
 min_rate: 1
 max_rate: 5
+max_for_rating: 6
 round_float: 1
 max_show_comment: 5
 min_title: 10

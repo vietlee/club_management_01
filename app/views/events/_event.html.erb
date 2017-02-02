@@ -22,7 +22,9 @@
       <ul class="list-inline pull-left">
         <li>
           <i class="fa fa-calendar"></i>
-          <%= l event.created_at, format: :short %>
+          <%= event.date_start %>
+          <span class="fa fa-long-arrow-right"></span>
+          <%= event.date_end %>
         </li>
         <li>
           <i class="fa fa-user"></i> <%= t "post_by" %>

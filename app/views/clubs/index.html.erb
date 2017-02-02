@@ -1,10 +1,4 @@
-<%= render "home/header" %>
-<% if request.fullpath == Settings.my_clubs %>
-  <%= render partial: "clubs/list_clubs",
-    locals: {clubs: @clubs.page(params[:page]).per(Settings.club_per_page),
-    title_page: t("my_club")} %>
-<% else %>
-  <%= render partial: "clubs/list_clubs",
-    locals: {clubs: @other_clubs.page(params[:page]).per(Settings.club_per_page),
-    title_page: t("other_club")} %>
-<% end %>
+<%= render "layouts/content" %>
+<%= render partial: "clubs/list_clubs",
+  locals: {clubs: @clubs, title_page: t("list_club")} %>
+<%= render "layouts/content" %>
