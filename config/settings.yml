@@ -10,6 +10,8 @@ truncate_description: 90
 truncate_organization: 30
 description_event: 360
 min_location: 5
+delete: "delete"
+edit: "edit"
 update: "Update"
 create: "Create"
 per_page_album: 9

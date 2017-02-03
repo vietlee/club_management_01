@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
   root "static_pages#index"
-  mount Ckeditor::Engine => "/ckeditor"
+
+  mount Ckeditor::Engine => '/ckeditor'
+
   delete "join_event" => "user_events#destroy"
   get "other-clubs" => "clubs#index"
 
@@ -63,6 +65,7 @@ Rails.application.routes.draw do
   resources :comments
   resources :set_language, only: :update
   resources :reason_leaves, only: [:index, :show, :create]
+  resources :activities, only: :create
   resources :user_clubs, only: [:create, :destroy]
   resources :user_organizations, only: [:create, :destroy]
 end

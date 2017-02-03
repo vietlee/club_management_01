@@ -2,6 +2,8 @@ class UserClub < ApplicationRecord
   belongs_to :user
   belongs_to :club
 
+  has_many :activities, as: :trackable, dependent: :destroy
+
   enum status: {pending: 0, joined: 1, reject: 2}
 
   scope :manager, -> {where is_manager: true}
@@ -16,6 +18,12 @@ class UserClub < ApplicationRecord
   class << self
     def of_club club
       find_by club: club
+    end
+
+    def verify_manager? user
+      user = find_by(id: user.id)
+      return user.is_manager if user
+      false
     end
   end
 

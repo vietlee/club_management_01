@@ -1,0 +1,84 @@
+<div id="page-content">
+  <ul class="breadcrumb breadcrumb-top">
+    <li><%= t "club_management" %></li>
+    <% @club = Club.first %>
+    <li><%= link_to @club.name, t("do_nothing") %></li>
+  </ul>
+  <div class="row">
+    <div class="col-md-6">
+      <div class="block">
+        <div class="block-title">
+          <h2><strong><%= t "club" %></strong></h2>
+        </div>
+        <div class="row">
+          <div class="push-bit">
+            <div class="col-sm-6 col-md-8 site-block">
+              <%= form_tag club_manager_club_budgets_path, remote: true, id: "form-contact" do |f|%>
+                <div class="form-group">
+                  <div class="col-md-10">
+                    <label for="contact-name">Chose one a club to create budgets</label><br>
+                  </div>
+                  <div class="col-md-11">
+                    <%= select_tag :club_id, options_for_select(@clubs.collect {|club| [ club.name, club.id ]}), class: "select-chosen form-control"  %>
+                  </div>
+                  <div class="col-md-1">
+                    <button class="btn btn-info"><i class="fa fa-share"></i> Get Data</button>
+                  </div>
+                </div>
+              <% end %>
+            </div>
+              <div class="col-sm-12 site-block">
+                <div class="row">
+                  <div class="col-md-10 form-group">
+                    <label for="contact-name"><%= t "club_details" %></label><br>
+                  </div>
+                  <div class="budgets-club-details">
+                    <%= render partial: "club_details",
+                      locals: {club: @club} if @club %>
+                  </div>
+                </div>
+                  <hr>
+                  <div class="push-bit"></div>
+                  <div class="col-md-10 form-group">
+                    <label for="contact-name">Da Nop tien</label><br>
+                  </div>
+<table id="example-datatable" class="table table-vcenter table-condensed table-bordered dataTable no-footer datatable" role="grid" aria-describedby="example-datatable_info">
+  <thead>
+    <tr role="row"><th class="sorting_asc" tabindex="0" aria-controls="example-datatable" rowspan="1" colspan="1" aria-sort="ascending" aria-label=": activate to sort column descending" style="width: 103px;"><i class="fa fa-user-circle"></i></th><th class="sorting" tabindex="0" aria-controls="example-datatable" rowspan="1" colspan="1" aria-label="Name: activate to sort column ascending" style="width: 115px;">Name</th><th class="sorting" tabindex="0" aria-controls="example-datatable" rowspan="1" colspan="1" aria-label="Email: activate to sort column ascending" style="width: 303px;">Email</th><th class="sorting" tabindex="0" aria-controls="example-datatable" rowspan="1" colspan="1" aria-label="Add: activate to sort column ascending" style="width: 78px;">Add</th></tr>
+  </thead>
+<tbody>
+
+
+<tr role="row" class="odd">
+      <td class="sorting_1"><img class="img-responsive img-user-budgets" src="/assets/avatar-781b754e50434597da1fe79dfbb94be546843dcd02e51f1bc257b55c7759a108.png" alt="Avatar"></td>
+      <td>Thanh ManCi</td>
+      <td>mahoangtienthanh@gmail.com</td>
+      <td><input type="submit" value="add" class="btn btn-info"></td>
+    </tr><tr role="row" class="even">
+      <td class="sorting_1"><img class="img-responsive img-user-budgets" src="/assets/avatar-781b754e50434597da1fe79dfbb94be546843dcd02e51f1bc257b55c7759a108.png" alt="Avatar"></td>
+      <td>Ly Duc Long</td>
+      <td>longlyduc@gmail.com</td>
+      <td><input type="submit" value="add" class="btn btn-info"></td>
+    </tr></tbody>
+</table>
+              </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-6">
+      <div class="block">
+        <div class="block-title">
+          <h2><strong><%= t "club" %></strong></h2>
+        </div>
+        <div class="row budgets-member">
+          <%= render partial: "members",
+            locals: {users: @users} if @users %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<script type="text/javascript">
+
+</script>

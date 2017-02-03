@@ -23,6 +23,7 @@ gem "bootstrap-kaminari-views"
 gem "truncate_html"
 gem "ransack"
 gem "chartkick"
+gem "public_activity"
 
 group :production do
   gem "pg"

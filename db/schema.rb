@@ -10,16 +10,24 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170116060728) do
+ActiveRecord::Schema.define(version: 20170207094551) do
 
   create_table "activities", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
-    t.string   "action"
-    t.integer  "target_id"
-    t.string   "target_type"
-    t.integer  "person_target_id"
-    t.string   "person_target_type"
-    t.datetime "created_at",         null: false
-    t.datetime "updated_at",         null: false
+    t.string   "trackable_type"
+    t.integer  "trackable_id"
+    t.string   "owner_type"
+    t.integer  "owner_id"
+    t.string   "key"
+    t.text     "parameters",     limit: 65535
+    t.string   "container_type"
+    t.integer  "container_id"
+    t.integer  "read",                         default: 0
+    t.integer  "recipt_type",                  default: 0
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.index ["container_id", "container_type"], name: "index_activities_on_container_id_and_container_type", using: :btree
+    t.index ["owner_id", "owner_type"], name: "index_activities_on_owner_id_and_owner_type", using: :btree
+    t.index ["trackable_id", "trackable_type"], name: "index_activities_on_trackable_id_and_trackable_type", using: :btree
   end
 
   create_table "admins", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
@@ -165,16 +173,6 @@ ActiveRecord::Schema.define(version: 20170116060728) do
     t.datetime "updated_at",                               null: false
     t.index ["event_id"], name: "index_news_on_event_id", using: :btree
     t.index ["user_id"], name: "index_news_on_user_id", using: :btree
-  end
-
-  create_table "notifications", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
-    t.integer  "target_id"
-    t.string   "target_type"
-    t.text     "content",     limit: 65535
-    t.string   "url"
-    t.boolean  "read",                      default: false
-    t.datetime "created_at",                                null: false
-    t.datetime "updated_at",                                null: false
   end
 
   create_table "organization_requests", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
