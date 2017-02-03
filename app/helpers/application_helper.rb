@@ -35,4 +35,8 @@ module ApplicationHelper
     user_club = user.user_clubs.find_by club_id: club.id
     user_club.present? ? user_club.joined? : nil
   end
+
+  def count_request variable
+    variable.club.user_clubs.unactive.count
+  end
 end

@@ -70,3 +70,19 @@
   background: url(/assets/flag-full-icons.png);
   background-position: 916px 735px;
 }
+
+.finished {
+  -webkit-filter: blur(1px);
+  -moz-filter: blur(1px);
+  -ms-filter: blur(1px);
+  -o-filter: blur(1px);
+  filter: blur(1px);
+}
+
+.color-red {
+  color: red;
+}
+
+.move-left {
+  margin-left: 7px;
+}

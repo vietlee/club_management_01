@@ -4,7 +4,7 @@
       <div class="sidebar-section sidebar-user clearfix sidebar-nav-mini-hide">
         <div class="sidebar-user-avatar">
           <%= link_to t("do_nothing") do %>
-            <%= image_tag "placeholders/avatars/avatar2.jpg" %>
+            <%= image_tag current_user.avatar %>
           <% end %>
         </div>
         <div class="sidebar-user-name"></div>
@@ -15,7 +15,8 @@
           <%= link_to "#modal-user-settings", title: t("setting") do %>
             <i class="gi gi-cogwheel"></i></a>
           <% end %>
-          <%= link_to t("do_nothing"), title: t("logout") do %>
+          <%= link_to destroy_user_session_path, method: :delete,
+            title: t("logout") do %>
             <i class="gi gi-exit"></i></a>
           <% end %>
         </div>
@@ -39,7 +40,7 @@
           <ul>
             <% manager_of_club(current_user).each do |club| %>
               <li>
-                <%= link_to club.name, club_manager_club_members_path(club.club_id) %>
+                <%= link_to club.name, club_manager_club_members_path(club) %>
               </li>
             <% end %>
           </ul>
@@ -52,7 +53,16 @@
           <% end %>
           <ul>
             <% manager_of_club(current_user).each do |club| %>
-              <li><%= link_to club.name, club_manager_club_user_clubs_path(club.club_id) %></li>
+              <li>
+                <div class="col-md-10">
+                  <%= link_to club.name, club_manager_club_user_clubs_path(club) %>
+                </div>
+                <div class="col-md-2">
+                  <% if count_request(club) > Settings.none %>
+                    <%= count_request club %>
+                  <% end %>
+                </div>
+              </li>
             <% end %>
           </ul>
         </li>
@@ -65,7 +75,7 @@
           <ul>
             <% manager_of_club(current_user).each do |club| %>
               <li>
-                <%= link_to club.name, club_manager_club_path(club.club_id) %>
+                <%= link_to club.name, club_manager_club_path(club) %>
               </li>
             <% end %>
           </ul>
@@ -79,7 +89,7 @@
           <ul>
             <% manager_of_club(current_user).each do |club| %>
               <li>
-                <%= link_to club.name, club_manager_club_albums_path(club.club_id) %>
+                <%= link_to club.name, club_manager_club_albums_path(club) %>
               </li>
             <% end %>
           </ul>
@@ -93,7 +103,7 @@
           <ul>
             <% manager_of_club(current_user).each do |club| %>
               <li>
-                <%= link_to club.name, club_manager_club_events_path(club.club_id) %>
+                <%= link_to club.name, club_manager_club_events_path(club) %>
               </li>
             <% end %>
           </ul>

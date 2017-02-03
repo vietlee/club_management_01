@@ -225,6 +225,17 @@ vi:
       date_time_utc: "%d/%m/%Y %H:%M"
       full_date: "%d/%M/%Y %H:%M"
       short: "%d/%M/%Y"
+  date:
+    formats:
+      date: "%H:%M %d/%m/%Y"
+  number:
+    currency:
+      format:
+        unit: " VNĐ"
+        delimiter: ","
+        separator: "."
+        precision: 0
+        format: "%n%u"
   read_the_article: "Đọc điều khoản"
   view_more: "Xem thêm ..."
   do_nothing: "javascript:void(0)"
