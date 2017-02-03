@@ -1,0 +1,5 @@
+$('.join-cancel-toggle-container').html('<%=j render "join_cancel_toggle" %>');
+alert(I18n.t("see_you_next_time"));
+$(".join-club-button").click(function(){
+  $("#new_user_club").submit();
+});

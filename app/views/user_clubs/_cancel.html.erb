@@ -1,0 +1,6 @@
+<%= link_to user_club_path(id: 1, club_id: @club.id),
+  method: :delete, remote: true, class: "join-club-button" do %>
+  <span class="site-top-avatar pull-right join-button animation-fadeIn360">
+    <%= t "cancel" %>
+  </span>
+<% end %>

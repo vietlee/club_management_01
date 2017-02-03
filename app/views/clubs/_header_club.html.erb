@@ -2,13 +2,11 @@
 <%= render "users/users" %>
   <section class="site-section site-section-light site-section-top">
     <div class="container">
-      <%= link_to "#" do %>
-        <span class="site-top-avatar pull-right join-button animation-fadeIn360">
-          <%= t "join" %>
-        </span>
-      <% end %>
+      <div class="join-cancel-toggle-container">
+        <%= render "user_clubs/join_cancel_toggle" %>
+      </div>
       <h1 class="animation-slideDown">
-        <strong><%= @club.name %> </strong>
+        <strong><%= @club.name %></strong>
         <div class="pull-left dropdown">
           <span class="caret" data-toggle="dropdown"></span>
           <ul class="dropdown-menu">

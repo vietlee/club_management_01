@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170113134100) do
+ActiveRecord::Schema.define(version: 20170116060728) do
 
   create_table "activities", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "action"
@@ -212,6 +212,16 @@ ActiveRecord::Schema.define(version: 20170113134100) do
     t.index ["user_id"], name: "index_ratings_on_user_id", using: :btree
   end
 
+  create_table "reason_leaves", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.integer  "user_id"
+    t.integer  "club_id"
+    t.text     "content",    limit: 65535
+    t.datetime "created_at",               null: false
+    t.datetime "updated_at",               null: false
+    t.index ["club_id"], name: "index_reason_leaves_on_club_id", using: :btree
+    t.index ["user_id"], name: "index_reason_leaves_on_user_id", using: :btree
+  end
+
   create_table "target_hobbies_tags", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.integer  "hobbies_tag_id"
     t.integer  "target_id"
@@ -295,6 +305,8 @@ ActiveRecord::Schema.define(version: 20170113134100) do
   add_foreign_key "news", "users"
   add_foreign_key "organization_requests", "users"
   add_foreign_key "ratings", "users"
+  add_foreign_key "reason_leaves", "clubs"
+  add_foreign_key "reason_leaves", "users"
   add_foreign_key "target_hobbies_tags", "hobbies_tags"
   add_foreign_key "user_clubs", "clubs"
   add_foreign_key "user_clubs", "users"
