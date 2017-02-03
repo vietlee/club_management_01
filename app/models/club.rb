@@ -23,8 +23,4 @@ class Club < ApplicationRecord
   scope :of_organizations, -> organizations do
     where(organization_id: organizations.ids)
   end
-
-  def manager_club
-    user_clubs.manager
-  end
 end
