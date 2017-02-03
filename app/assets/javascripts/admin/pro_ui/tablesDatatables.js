@@ -23,8 +23,6 @@ var TablesDatatables = function() {
         ]
       });
 
-      /* Add placeholder attribute to the search input */
-      $('.dataTables_filter input').attr('placeholder', 'Search');
     }
   };
 }();

@@ -24,6 +24,8 @@ class User < ApplicationRecord
   mount_uploader :avatar, AvatarUploader
 
   scope :newest, -> {order created_at: :desc}
+  scope :eliminate, -> user {where.not id: user.id}
+  scope :without_users, -> users {where.not id: users.ids}
 
   validates :full_name, presence: true, length: {maximum: Settings.max_name}
   validates :password, presence: true, length: {minimum: Settings.min_password}

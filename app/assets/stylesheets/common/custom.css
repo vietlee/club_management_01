@@ -1,3 +1,6 @@
+suppermall {
+  font-size: 65%;
+}
 .alert-alert {
   color: #e74c3c;
   background-color: #ffd1cc;
@@ -101,8 +104,12 @@
   filter: alpha(opacity=100);
 }
 
-.text-organiztion{
+.text-organiztion {
   color: #fff;
   font-weight: bold;
   font-size: 20px;
+}
+
+.push-mini-bit {
+  padding-top: 5px;
 }

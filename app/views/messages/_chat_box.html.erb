@@ -1,40 +1,49 @@
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<div class="col-md-3 offset-md-6 panel chat-box">
-  <div class="panel-heading chat-box-head">
-    <div class="panel-control">
-      <div class="btn-group chat-button">
-        <button class="btn btn-default" type="button" data-toggle="collapse" data-target="#demo-chat-body"><i class="fa fa-chevron-down"></i></button>
-        <button type="button" class="btn btn-default" data-toggle="dropdown"><i class="fa fa-gear"></i></button>
-        <ul class="dropdown-menu dropdown-menu-right">
-          <li><a href="#"><%= t "available" %></a></li>
-          <li class="divider"></li>
-          <li><a href="#"><%= t "busy" %></a></li>
-        </ul>
+<div class="container-chat">
+  <div class="panel-heading header-chat">
+    <h4 class="panel-title">
+      <a data-toggle="collapse" data-parent="#panel-quote-group"
+        href="#browser-window">
+        <strong class="text-warning">
+          <%= t "show_chat_box" %>
+        </strong>
+        <span class="toggle-icon fa fa-envelope-o"></span>
+      </a>
+    </h4>
+  </div>
+  <div id="browser-window" class="panel-collapse collapse">
+    <div class="header-chat toggle-chat">
+      <div class="col-md-12">
+        <div class="pull-right">
+          <a data-toggle="collapse" data-parent="#panel-quote-group"
+            href="#browser-window" class="pull-right">
+            <i class="fa fa-bars"></i>
+          </a>
+        </div>
+        <strong class="text-center">
+          <div class="push-mini-bit"><%= @club.name %></div>
+        </strong>
       </div>
     </div>
-    <h3 class="panel-title chat-box-title"><%= @club.name %></h3>
-  </div>
-  <div id="demo-chat-body" class="collapse in">
-    <div class="nano has-scrollbar">
-      <div class="nano-content pad-all">
-        <ul class="list-unstyled media-block" id="list-messages">
-          <%= render @messages %>
-        </ul>
-      </div>
-    <div class="nano-pane"><div class="nano-slider" style="height: 141px; transform: translate(0px, 0px);"></div></div></div>
-    <div class="panel-footer chat-box-footer">
-      <div class="row chat-box-action">
-        <%= form_for @message, remote: true do |f| %>
-          <%= f.hidden_field :club_id, value: @club.id, id: "chat-box-club-id" %>
-          <div class="col-xs-8">
-            <%= f.text_area :content, data: {behavior: "club_speaker"},
-              class: "form-control chat-input", rows: 2 %>
+    <div class="panel-body">
+      <div id="viewport">
+        <div id="viewport-content">
+          <div class="nano-content pad-all">
+            <ul class="list-unstyled media-block" id="list-messages">
+              <%= render @messages %>
+            </ul>
           </div>
-          <div class="col-xs-2">
-            <%= f.submit :Send, class: "btn btn-default chat-box-submit" %>
-          </div>
-        <% end %>
+        </div>
       </div>
+      <%= form_for @message, remote: true, html: {class: "row row-chat"} do |f| %>
+        <%= f.hidden_field :club_id, value: @club.id, id: "chat-box-club-id" %>
+        <div class="input-group">
+          <%= f.text_field :content, data: {behavior: "club_speaker"},
+            class: "form-control chat-input", placeholder: t("type_your_message") %>
+          <span class="input-group-btn">
+            <%= f.submit t("send"), class: "btn btn-primary chat-box-submit" %>
+          </span>
+        </div>
+      <% end %>
     </div>
   </div>
 </div>
