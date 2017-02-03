@@ -8,7 +8,7 @@ class BaseOrganizationManagerController < ApplicationController
 
   protected
   def admin_verify
-    @admin = current_user.user_organizations.is_admin
+    @admin = current_user.user_organizations.are_admin
     unless @admin.any?
       flash[:danger] = t "not_authorities_to_access"
       redirect_to root_path
