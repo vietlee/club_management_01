@@ -2,35 +2,22 @@
   <div class="col-md-6">
     <div class="block">
       <div class="block-title">
-        <h2><strong><%= t "my" %></strong><%= t "activities" %></h2>
+        <h2><strong><%= t "users" %></h2>
       </div>
       <div class="block-content-full">
-        <div class="timeline">
-          <ul class="timeline-list">
-            <li class="text-center">
-              <%= link_to t("view_more"), t("do_nothing"),
-                class: "btn btn-xs btn-default" %>
-              </a>
-            </li>
-          </ul>
-        </div>
+        <%= line_chart User.group(:created_at).count, min: Settings.min_line,
+          max: Settings.max_line, refresh: Settings.refresh %>
       </div>
     </div>
   </div>
   <div class="col-md-6">
     <div class="block">
       <div class="block-title">
-        <h2><strong><%= t "latest" %></strong><%= t "news" %></h2>
+        <h2><strong><%= t "organizations" %></h2>
       </div>
       <div class="block-content-full">
-        <div class="timeline">
-          <ul class="timeline-list">
-            <li class="text-center">
-              <%= link_to t("view_more"), t("do_nothing"),
-                class: "btn btn-xs btn-default" %>
-            </li>
-          </ul>
-        </div>
+        <%= line_chart Organization.group(:created_at).count, min: Settings.min_line,
+          max: Settings.max_line, refresh: Settings.refresh %>
       </div>
     </div>
   </div>

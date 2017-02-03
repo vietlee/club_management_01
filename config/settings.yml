@@ -47,3 +47,6 @@ finished: "finished"
 event: "Event"
 spend_money: 1
 none: 0
+min_line: 0
+max_line: 6
+refresh: 60

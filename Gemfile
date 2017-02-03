@@ -22,6 +22,7 @@ gem "ransack"
 gem "bootstrap-kaminari-views"
 gem "truncate_html"
 gem "ransack"
+gem "chartkick"
 
 group :production do
   gem "pg"
