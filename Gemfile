@@ -21,6 +21,7 @@ gem "kaminari"
 gem "ransack"
 gem "bootstrap-kaminari-views"
 gem "truncate_html"
+gem "ransack"
 
 group :production do
   gem "pg"

@@ -16,4 +16,9 @@ $(document).on('turbolinks:load', function() {
 });
 
 $(document).ready(function() {
+  $("#ecom-filter-rating").change(function(){
+    $("#ecom-search").attr("name", "q[rating_eq]");
+    $("#ecom-search").val($(this).val());
+    $("#club_search").submit();
+  });
 });

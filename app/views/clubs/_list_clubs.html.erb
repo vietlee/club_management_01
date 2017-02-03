@@ -7,13 +7,13 @@
       <div class="col-md-4 col-lg-3">
         <aside class="sidebar site-block">
           <div class="sidebar-block">
-            <form action="ecom_search_results.html" method="post"
-              class="form-horizontal">
+            <%= search_form_for @q, class: "form-horizontal" do |f| %>
               <div class="form-group push-bit">
                 <div class="col-xs-12">
                   <div class="input-group">
-                    <input type="text" id="ecom-search" name="ecom-search"
-                      class="form-control" placeholder="Name Club...">
+                    <%= f.text_field :name_or_description_cont,
+                      class: "form-control", id: "ecom-search",
+                      placeholder: t("name_des") %>
                     <div class="input-group-btn">
                       <button type="submit" class="btn btn-primary">
                         <i class="fa fa-search"></i>
@@ -41,7 +41,7 @@
                     <option value="0" disabled selected>
                       <%= t "ratings" %>
                     </option>
-                    <%= Settings.max_rate.times do |index| %>
+                    <%= Settings.max_for_rating.times do |index| %>
                       <option value="<%= index %>">
                         <%= index %> <%= t "stars" %>
                       </option>
@@ -49,28 +49,21 @@
                   </select>
                 </div>
               </div><hr>
-              <h4 class="-header"><strong><%= t "organizations" %></strong></h4>
+              <h4 class="-header"><strong><%= t "sort_by" %></strong></h4>
               <div class="form-group">
-                <% current_user.organizations.each do |organization| %>
-                  <div class="col-xs-12">
-                    <label class="radio-inline"
-                      for="organization-radio<%= organization.id %>">
-                    <input type="radio" id="organization-radio<%= organization.id %>"
-                      name="organizations" value="<%= organization.id %>">
-                      <%= organization.name %>
-                  </div>
-                <% end %>
+                <div class="col-xs-12">
+                  <%= sort_link(@q, :name,
+                    [:name, "name asc"], t("name_club")) %>
+                  <br>
+                  <%= sort_link(@q, :rating,
+                    [:rating, "rating desc"], t("for_rating")) %>
+                  <br>
+                  <%= sort_link(@q, :created_at,
+                    [:created_at, "created_at desc"], t("created_at")) %>
+                </div>
                 <hr>
               </div>
-            </form>
-          </div>
-          <div class="sidebar-block">
-            <div class="row">
-              <div class="col-xs-6 push-bit">
-                  <input type="button" class="btn btn-xs btn-default push load-more-toggle"
-                    value="Load More">
-              </div>
-            </div>
+            <% end %>
           </div>
         </aside>
       </div>
@@ -102,10 +95,15 @@
                   <% end %>
                   <%= club.rating %> <%= t "for_ratings" %>
                 </div>
+                <div class="store-item-organiztion text-organiztion text-warning">
+                  <span><%= club.organization.name %></span>
+                </div>
                 <div class="store-item-image">
-                    <%= link_to club do %>
-                      <%= image_tag club.image, class: "img-responsive" %>
-                    <% end %>
+                  <%= link_to club do %>
+                    <%= image_tag club.image, class: "img-responsive" %>
+                    <%= image_tag "tick.png",
+                      class: "store-item-joined" if current_user.user_clubs.of_club club %>
+                  <% end %>
                 </div>
                 <div class="store-item-info clearfix">
                   <span class="store-item-price themed-color-dark pull-left">
@@ -119,8 +117,10 @@
                   </small>
                   <div>
                     <%= link_to club do %>
-                      <strong class="pull-right fa fa-users"><%= t "members_with_dot" %>
-                      <%= club.users.size %></strong>
+                      <strong class="pull-right fa fa-users">
+                        <%= t "members_with_dot" %>
+                        <%= club.users.size %>
+                      </strong>
                     <% end %>
                   </div>
                 </div>
