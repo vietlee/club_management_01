@@ -1,32 +1,35 @@
-<div id="page-content">
-  <div class="block full">
-    <div class="block-title">
-      <% if @club.nil? %>
-        <h2><strong><%= t "members_of" %><%= organization.name %></strong></h2>
-      <% else %>
-        <h2><strong><%= t "members_of" %><%= @club.name %></strong></h2>
-      <% end %>
-    </div>
-    <div class="table-responsive">
-      <%= link_to t("back"), :back, class: "btn btn-default" %>
-      <table id="example-datatable"
-        class="table table-vcenter table-condensed table-bordered">
-        <thead>
-          <tr>
-            <th class="text-center"><%= t "id" %></th>
-            <th class="text-center"><i class="gi gi-user"></i></th>
-            <th><%= t "user_name" %></th>
-            <th><%= t "email" %></th>
-            <th><%= t "phone" %></th>
-            <th><%= t "status" %></th>
-            <th class="text-center"><%= t "view_profile" %></th>
-          </tr>
-        </thead>
-        <tbody>
-          <%= render partial: "shared/view_case_user",
-            locals: {users: users, club: @club, organization: organization} %>
-        </tbody>
-      </table>
+<div class="block">
+  <div id="page-content">
+    <div class="block full">
+      <div class="block-title">
+        <% if @club.nil? %>
+          <h2>
+            <strong><%= t "members_of" %><%= organization.name %></strong>
+          </h2>
+        <% else %>
+          <h2><strong><%= t "members_of" %><%= @club.name %></strong></h2>
+        <% end %>
+      </div>
+      <div class="table-responsive">
+        <%= link_to t("back"), :back, class: "btn btn-default" %>
+        <table id="example-datatable"
+          class="table table-vcenter table-condensed table-bordered">
+          <thead>
+            <tr>
+              <th class="text-center"><%= t "id" %></th>
+              <th class="text-center"><i class="gi gi-user"></i></th>
+              <th><%= t "user_name" %></th>
+              <th><%= t "email" %></th>
+              <th><%= t "phone" %></th>
+              <th class="text-center"><%= t "view_profile" %></th>
+            </tr>
+          </thead>
+          <tbody>
+            <%= render partial: "shared/view_case_user",
+              locals: {users: users, club: @club, organization: organization} %>
+          </tbody>
+        </table>
+      </div>
     </div>
   </div>
 </div>

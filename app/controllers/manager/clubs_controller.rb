@@ -6,7 +6,7 @@ class Manager::ClubsController < BaseOrganizationManagerController
   end
 
   def show
-    @users = @club.users
+    @users = @club.user_clubs.joined
   end
 
   private

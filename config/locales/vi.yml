@@ -596,3 +596,11 @@ vi:
   views:
     pagination:
       truncate: ""
+  admin_club: "(Quản lý)"
+  member_request: "Xét yêu cầu thành viên"
+  reject: "Từ chối"
+  answer_reject: "Bạn chắc chắn muốn từ chối yêu cầu này?"
+  accept_request: "Đã chấp nhận yêu cầu gia nhập!"
+  reject_request: "Đã từ chối yêu cầu gia nhập"
+  error_process: "Có lỗi trong quá trình xử lý,vui lòng thử lại"
+  success_process: "Bạn đã xử lý thành công"
