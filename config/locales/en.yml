@@ -1,4 +1,10 @@
 en:
+  google_plus: "Google Plus"
+  twitter: "Twitter"
+  joined: "Already a member"
+  club_inner: "List Clubs inner Organization"
+  overview: "Overview"
+  organization_details: "Organization detail"
   name_des: "Name, Description..."
   type_your_message: "Type your messages here!!"
   line_single: "Line"

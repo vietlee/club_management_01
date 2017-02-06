@@ -1,4 +1,11 @@
 vi:
+  google_plus: "Google Plus"
+  twitter: "Twitter"
+  facebook: "Facebook"
+  joined: "Đã là thành viên"
+  club_inner: "Danh sách câu lạc bộ trong tổ chức"
+  overview: "Tổng quan"
+  organization_details: "Chi tiết tổ chức"
   name_des: "Tên hoặc mô tả..."
   created_at: "Ngày thành lập"
   for_rating: "Điểm đánh giá"
@@ -239,22 +246,19 @@ vi:
     update_fail: "Cập nhập tổ chức thất bại!"
   submit: "Gửi"
   edit: "Sửa"
-  time:
-    formats:
-      date: "%H:%M %d/%m/%Y"
-      date_time_utc: "%d/%m/%Y %H:%M"
-      full_date: "%d/%M/%Y %H:%M"
-      short: "%d/%M/%Y"
-  time:
-    formats:
-      date: "%H:%M %d/%m/%Y"
-      date_utc: "%d/%m/%Y"
-      date_time_utc: "%d/%m/%Y %H:%M"
-      full_date: "%d/%M/%Y %H:%M"
-      short: "%d/%M/%Y"
   date:
     formats:
-      date: "%H:%M %d/%m/%Y"
+      date: "%H:%m %d/%m/%Y"
+      date_time_utc: "%d/%m/%Y %H:%m"
+      full_date: "%d/%m/%Y %H:%m"
+      short: "%d/%m/%Y"
+  time:
+    formats:
+      date: "%H:%m %d/%m/%Y"
+      date_utc: "%d/%m/%Y"
+      date_time_utc: "%d/%m/%Y %H:%m"
+      full_date: "%d/%m/%Y %H:%m"
+      short: "%d/%m/%Y"
   number:
     currency:
       format:
