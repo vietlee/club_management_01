@@ -1,7 +1,24 @@
 $(document).on('turbolinks:load', function() {
+  jQuery(document).on('change', '#file-upload', function(e) {
+    var preview = document.getElementById("img-upload");
+    var file    = document.querySelector('input[type=file]').files[0];
+    var reader  = new FileReader();
+    reader.onloadend = function () {
+      preview.src = reader.result;
+    }
+    if (file) {
+      reader.readAsDataURL(file);
+    } else {
+      preview.src = "";
+    }
+  });
+
   App.init();
+
   turbolink_app();
+
   $('.select-select2').select2();
+
   $('.input-slider').slider();
 });
 

@@ -1,0 +1,78 @@
+<%= form_for @user, html:{id: "form-validation",
+  multipart: true, class: "form-horizontal form-bordered"} do |f| %>
+  <fieldset>
+    <legend><h3><%= t "edit_user" %></h3></legend>
+    <div class="form-group">
+      <label class="col-md-4 control-label" for="val_username">
+      <%= t "full_name" %> <span class="text-danger">*</span></label>
+      <div class="col-md-6">
+        <div class="input-group">
+          <%= f.text_field :full_name, class: "form-control", id: "val_username", placeholder: t("your_full_name") %>
+          <span class="input-group-addon"><i class="gi gi-user"></i></span>
+        </div>
+      </div>
+    </div>
+    <div class="form-group">
+      <label class="col-md-4 control-label" for="val_email">
+        <%= t "email" %>
+      <span class="text-danger">*</span></label>
+      <div class="col-md-6">
+        <div class="input-group">
+          <%= f.email_field :email, class: "form-control", id: "val_email", placeholder: t("example_email") %>
+          <span class="input-group-addon"><i class="gi gi-envelope"></i></span>
+        </div>
+      </div>
+    </div>
+    <div class="form-group">
+      <label class="col-md-4 control-label" for="val_email">
+        <%= t "phone" %>
+      <span class="text-danger"></span></label>
+      <div class="col-md-6">
+        <div class="input-group">
+          <%= f.number_field :phone, class: "form-control", id: "val_phone", placeholder: t("phone") %>
+          <span class="input-group-addon"><i class="fa fa-phone"></i></span>
+        </div>
+      </div>
+    </div>
+    <div class="form-group">
+      <label class="col-md-4 control-label" for="val_file">
+      <%= t "avatar" %>
+      <span class="text-danger">*</span></label>
+      <div class="col-md-6">
+        <div class="input-group">
+          <%= f.file_field :avatar, class: "form-control", id: "file-upload" %>
+          <span class="input-group-addon"><i class="fa fa-picture-o"></i></span>
+        </div>
+      </div>
+    </div>
+    <div class="form-group">
+      <label class="col-md-4 control-label" for="val_password">
+      <%= t "password" %>
+      <span class="text-danger">*</span></label>
+      <div class="col-md-6">
+        <div class="input-group">
+          <%= f.password_field :password, class: "form-control", id: "val_password", placeholder: t("placeholder_password") %>
+          <span class="input-group-addon"><i class="gi gi-asterisk"></i></span>
+        </div>
+      </div>
+    </div>
+    <div class="form-group">
+      <label class="col-md-4 control-label" for="val_confirm_password">
+      <%= t "password_confirmation" %>
+      <span class="text-danger">*</span></label>
+      <div class="col-md-6">
+        <div class="input-group">
+          <%= f.password_field :password_confirmation, class: "form-control", id: "val_password", placeholder: t("placeholder_password") %>
+          <span class="input-group-addon"><i class="gi gi-asterisk"></i></span>
+        </div>
+      </div>
+    </div>
+    <div class="form-group">
+      <div class="col-md-11">
+        <div class="pull-right">
+          <%= f.submit t("update"), class: "btn btn-nm btn-primary" %>
+        </div>
+      </div>
+    </div>
+  </fieldset>
+<% end %>

@@ -1,0 +1,30 @@
+<div class="push-bit"></div>
+<h4><strong><%= t "list_clubs" %>:</strong></h4>
+<div class="row store-items">
+  <% clubs.each do |club| %>
+    <div class="col-md-6 visibility-none" data-toggle="animation-appear"
+      data-animation-class="animation-fadeInQuick" data-element-offset="-100">
+      <div class="store-item">
+        <div class="store-item-rating text-warning">
+          <% club.rating.round.times do %>
+            <i class="fa fa-star"></i>
+          <% end %>
+          <%= club.rating %> <%= t "for_ratings" %>
+        </div>
+        <div class="store-item-image">
+          <%= link_to club do %>
+            <%= image_tag club.image, class: "img-responsive" %>
+          <% end %>
+        </div>
+        <div class="store-item-info clearfix">
+          <span class="store-item-price themed-color-dark pull-left">
+            <%= club.name %>
+          </span>
+        </div>
+      </div>
+    </div>
+  <% end %>
+</div>
+<div class="pull-right">
+  <%= paginate clubs %>
+</div>
