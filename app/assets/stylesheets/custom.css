@@ -816,3 +816,7 @@ table{
 .switch-danger input:checked + span {
   background-color: #ef8a80;
 }
+
+.user-edit:hover{
+  color: orange;
+}

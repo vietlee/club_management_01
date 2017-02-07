@@ -113,3 +113,15 @@ suppermall {
 .push-mini-bit {
   padding-top: 5px;
 }
+
+.usr-img-details {
+  width: 50px;
+  border: none!important;
+  margin: 2px;
+  border-radius: 5px;
+}
+.usr-img-details:hover{
+  -moz-transform: scale(1.1);
+  -webkit-transform: scale(1.1);
+  transform: scale(1.2);
+}

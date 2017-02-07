@@ -1,0 +1,93 @@
+<%= stylesheet_link_tag "organization-details",
+  media: "all", "data-turbolinks-track": "reload" %>
+<section class="pad-top-organization"></section>
+<section class="site-content site-section">
+  <div class="container" id="main">
+    <div class="row">
+      <div class="col-lg-3 col-md-3 col-sm-4 col-xs-12">
+        <div id="sidebar">
+          <div class="sosmed">
+            <div class="text-center">
+              <a href="#">
+                <i class="fa fa-facebook fa-2x" title="Facebook"></i>
+              </a>
+              <a href="#">
+                <i class="fa fa-twitter fa-2x" title="Twitter"></i>
+              </a>
+              <a href="#">
+                <i class="fa fa-google-plus fa-2x" title="Google Plus"></i>
+              </a>
+            </div>
+          </div>
+          <div class="user">
+            <div class="text-center">
+              <%= image_tag @user.avatar,
+                class: "img-circle org-img-details", id: "img-upload" %>
+            </div>
+            <div class="user-head">
+              <h1><%= @user.full_name %></h1>
+              <div class="hr-center"></div>
+              <div class="push-mini-bit"></div>
+              <h5><%= t "number_organization" %>:
+                <%= @user.organizations.size %>
+              </h5>
+              <% @user.organizations.each do |organization| %>
+                <%= link_to(image_tag(organization.logo,
+                  title: organization.name,
+                  class: "usr-img-details"), organization) %>
+              <% end %>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-9 col-md-9 col-sm-8 col-xs-12">
+        <div id="content">
+          <div class="main-content">
+            <ul class="timeline">
+              <li id="id-profile">
+                <div class="timeline-badge default">
+                  <i class="fa fa-user"></i>
+                </div>
+                <h1 class="timeline-head"><%= t "user_details" %></h1>
+              </li>
+              <li id="profile">
+                <div class="timeline-badge primary"></div>
+                <div class="timeline-panel">
+                  <h1>
+                    <strong><%= @user.full_name %></strong>
+                    <div class="pull-right">
+                      <% if current_user == @user %>
+                        <%= link_to edit_user_path(@user) do %>
+                          <i class="fa fa-pencil-square-o user-edit"></i>
+                        <% end %>
+                      <% end %>
+                    </div>
+                  </h1><hr>
+                  <h4><strong><%= t "phone" %>:</strong>
+                    <%= @user.phone %>
+                  </h4>
+                  <div class="hr-left"></div>
+                  <h4><strong><%= t "email" %>:</strong>
+                    <%= @user.email %>
+                  </h4>
+                  <div class="hr-left"></div>
+                  <h4><strong><%= t "number_club_joined" %>:</strong>
+                    <%= @user.clubs.size %>
+                  </h4>
+                  <div class="hr-left"></div>
+                  <% if current_page? edit_user_path %>
+                    <%= render "users/form_edit" %>
+                  <% else %>
+                    <%= render partial: "list_clubs_user",
+                      locals: {clubs: @user.clubs.page(params[:page]).per(Settings.club_per_page)} %>
+                  <% end %>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="site-section site-section-light themed-background-dark"></section>
