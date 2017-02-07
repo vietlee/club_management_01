@@ -14,14 +14,19 @@ $(document).on('turbolinks:load', function() {
     );
   });
 
+  $(".org-link-to").click(function(){
+    window.open($(this).attr("data-link"), "_self");
+  });
   App.init();
 });
 
 $(document).ready(function() {
   $("#ecom-filter-rating").change(function(){
-  $("#ecom-search").attr("name", "q[rating_eq]");
-  $("#ecom-search").val($(this).val());
-  $("#club_search").submit();
+    $("#ecom-search").attr("name", "q[rating_eq]");
+    $("#ecom-search").val($(this).val());
+    $("#club_search").submit();
+  });
+
   $("#example-datatable").dataTable();
 
   $(".container-chat").hover(function(){
