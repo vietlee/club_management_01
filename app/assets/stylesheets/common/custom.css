@@ -61,28 +61,39 @@ suppermall {
 
 .vi {
   background: url(/assets/flag-full-icons.png);
-  background-position: 49px 106px;
+  background-position: 50px 106px;
+  border-radius: 5px;
 }
 
 .en {
   background:url(/assets/flag-full-icons.png);
   background-position: 242px 1050px;
+  border-radius: 5px;
 }
 
 .jp {
   background: url(/assets/flag-full-icons.png);
   background-position: 916px 735px;
+  border-radius: 5px;
 }
 
+.pad-right-none {
+  padding-right: 0px !important;
+}
 .store-item-joined {
   position: absolute;
   float: right;
-  right: 10px!important;
+  right: 10px !important;
   width: 50px;
   bottom: 120px;
   z-index: 200;
   opacity: 0.8;
   filter: alpha(opacity = 80)
+}
+
+.last-site-nav {
+  padding-left: 50px;
+  padding-bottom: 30px;
 }
 
 .store-item-organiztion {

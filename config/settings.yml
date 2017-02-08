@@ -53,3 +53,6 @@ refresh: 60
 joined: "joined"
 pending: "pending"
 reject: "reject"
+en: "English"
+vi: "Việt Nam"
+jp: "日本語"
