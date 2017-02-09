@@ -57,10 +57,11 @@ Rails.application.routes.draw do
   resources :messages, only: [:new, :create, :index]
   resources :user_events, only: :create
   resources :ratings, only: :create
-  resources :organizations, only: :show
+  resources :organizations, only: [:show, :index]
   resources :time_line_homes
   resources :comments
   resources :set_language, only: :update
   resources :reason_leaves, only: [:index, :show, :create]
   resources :user_clubs, only: [:create, :destroy]
+  resources :user_organizations, only: [:create, :destroy]
 end

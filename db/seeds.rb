@@ -1,27 +1,27 @@
 Organization.create!(
   name: "Framgia Da Nang",
-  description: "bla bla",
+  description: Faker::Lorem.paragraph,
   phone: "0966077747",
   email: "framgia@framgia.com",
   location: "Da Nang"
 )
 Organization.create!(
   name: "FPT Da Nang Branch",
-  description: "bla bla",
+  description: Faker::Lorem.paragraph,
   phone: "0966077747",
   email: "framgia2@framgia.com",
   location: "Da Nang"
 )
 Organization.create!(
   name: "Axon Da Nang",
-  description: "bla bla",
+  description: Faker::Lorem.paragraph,
   phone: "0966077747",
   email: "framgia3@framgia.com",
   location: "Da Nang"
 )
 Organization.create!(
   name: "Evolabe Asian",
-  description: "bla bla",
+  description: Faker::Lorem.paragraph,
   phone: "0966077747",
   email: "framgia4@framgia.com",
   location: "Da Nang"
@@ -168,18 +168,3 @@ ClubRequest.create!(
   description: Faker::Lorem.paragraph,
   action: "User send request"
 )
-
-3.times do |n|
-  Message.create!(
-    user_id: 1,
-    club_id: Club.first.id,
-    content: Faker::Lorem.sentence
-  )
-
-  Message.create!(
-    user_id: 2,
-    club_id: Club.first.id,
-    content: Faker::Lorem.sentence
-  )
-end
-

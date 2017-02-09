@@ -1,4 +1,7 @@
 en:
+  cancel_success: "Cancel for error!"
+  cancel_success: "Cancel for successfull!"
+  clubs_with_dot: "Number of Clubs:"
   google_plus: "Google Plus"
   twitter: "Twitter"
   joined: "Already a member"

@@ -1,0 +1,26 @@
+<% if @user_organization.nil? %>
+  <%= form_for(UserOrganization.new) do |f| %>
+    <%= f.hidden_field :organization_id, value: @organization.id %>
+    <%= button_tag(type: :submit, class: "btn btn-lg btn-info") do %>
+      <%= t "join" %>
+      <i class="fa fa-sign-in"></i>
+    <% end %>
+  <% end %>
+<% else %>
+  <% case when @user_organization.joined? %>
+    <%= link_to user_organization_path(id: @organization.id),
+      class: "btn btn-lg btn-info", method: :delete do  %>
+      <i class="fa fa-sign-out"></i> <%= t "leave" %>
+    <% end %>
+  <% when @user_organization.pending? %>
+    <%= link_to user_organization_path(id: @organization.id),
+      class: "btn btn-lg btn-info", method: :delete do  %>
+      <i class="fa fa-times"></i> <%= t "cancel" %>
+    <% end %>
+  <% when @user_organization.reject? %>
+    <button class="btn btn-lg btn-info" disabled=true>
+      <i class="fa fa-undo"></i>
+      <%= t "reject" %>
+    </button>
+  <% end %>
+<% end %>
