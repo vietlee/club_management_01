@@ -1,6 +1,6 @@
 <li>
-  <%= link_to t("do_nothing"), class: "site-nav-sub" do %>
-    <%= I18n.locale %> <span class="fa fa-language"></span>
+  <%= link_to t("do_nothing"), class: "site-nav-sub pad-right-none" do %>
+    <%= t I18n.locale.to_s %> <span class="fa fa-language"></span>
   <% end %>
   <ul class="list-language">
     <% Settings.languages.map do |key, val| %>
@@ -12,3 +12,5 @@
     <% end %>
   </ul>
 </li>
+<li>
+<div class="<%= I18n.locale %> last-site-nav"></div>
