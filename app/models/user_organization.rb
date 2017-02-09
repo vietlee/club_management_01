@@ -12,5 +12,6 @@ class UserOrganization < ApplicationRecord
   def self.join? organization
     self.find_by(organization_id: organization.id).nil?
   end
+
   delegate :name, to: :organization, allow_nil: :true
 end

@@ -50,3 +50,6 @@ none: 0
 min_line: 0
 max_line: 6
 refresh: 60
+joined: "joined"
+pending: "pending"
+reject: "reject"

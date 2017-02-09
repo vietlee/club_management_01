@@ -1,5 +1,5 @@
 class UserOrganizationsController < ApplicationController
-  before_action :load_organization, only: :show
+  before_action :load_organization, only: [:show, :destroy]
 
   def index
     @organizations = Organization.page(params[:page]).per(Settings.organization_per_page)
@@ -18,19 +18,29 @@ class UserOrganizationsController < ApplicationController
     else
       flash[:danger] = t("cant_create_user_organization")
     end
-    redirect_to user_user_organizations_path
+    redirect_to :back
+  end
+
+  def destroy
+    user_organization = @organization.user_organizations
+    .find_by user_id: current_user.id
+    if user_organization.destroy
+      flash[:success] = t("cancel_success")
+    else
+      flash[:danger] = t("cancel_error")
+    end
+    redirect_to organization_path(@organization)
   end
 
   private
   def load_organization
     @organization = Organization.find_by id: params[:id]
-    unless @organization
-      flash[:danger] = t("organization_not_found")
-      redirect_to :back
-    end
+    return if @organization
+    flash[:danger] = t("organization_not_found")
+    redirect_to :back
   end
 
   def organization_params
-    params.permit(:organization_id).merge! user_id: current_user.id
+    params.require(:user_organization).permit(:organization_id).merge! user_id: current_user.id
   end
 end

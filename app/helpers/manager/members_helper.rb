@@ -1,6 +1,6 @@
 module Manager::MembersHelper
   def choose_view_company user_id, organization_id
-    user_organization = UserOrganization.find_with_user_of_company user_id,
+    user_organization = UserOrganization.of_user_organization user_id,
       organization_id
     if user_organization.joined?
       t "actived"

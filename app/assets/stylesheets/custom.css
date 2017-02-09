@@ -820,3 +820,7 @@ table{
 .user-edit:hover{
   color: orange;
 }
+
+.organizations-image-index {
+  padding:5px 5px;
+}

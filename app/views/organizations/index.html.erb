@@ -1,0 +1,98 @@
+<section class="site-content site-section">
+  <div class="container">
+    <div class="row">
+      <div class="push-bit">
+        <h1 class="text-center"><%= t "list_organizations" %></h1><br>
+      </div>
+      <div class="col-md-4 col-lg-3">
+        <aside class="sidebar site-block">
+          <div class="sidebar-block">
+            <%= search_form_for @q, class: "form-horizontal" do |f| %>
+              <div class="form-group push-bit">
+                <div class="col-xs-12">
+                  <div class="input-group">
+                    <%= f.text_field :name_or_description_cont,
+                      class: "form-control", id: "ecom-search",
+                      placeholder: t("name_des") %>
+                    <div class="input-group-btn">
+                      <button type="submit" class="btn btn-primary">
+                        <i class="fa fa-search"></i>
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div><hr>
+              <h4 class="-header"><strong><%= t "sort_by" %></strong></h4>
+              <div class="form-group">
+                <div class="col-xs-12">
+                  <select id="results-sort" name="results-sort" class="form-control" size="1">
+                    <option value="0" disabled selected><%= t "sort_by" %></option>
+                    <option value="2"><%= t "name" %> <%= t "a-z" %></option>
+                    <option value="3"><%= t "name" %> <%= t "z-a" %></option>
+                    <option value="4"><%= t "rating" %> <%= t "low_to_hight" %></option>
+                    <option value="5"><%= t "rating" %> <%= t "hight_to_low" %></option>
+                    <option value="6"><%= t "members" %> <%= t "low_to_hight" %></option>
+                    <option value="7"><%= t "members" %> <%= t "hight_to_low" %></option>
+                    <option value="8"><%= t "money" %> <%= t "low_to_hight" %></option>
+                    <option value="9"><%= t "money" %> <%= t "hight_to_low" %></option>
+                  </select>
+                </div>
+                <hr>
+              </div>
+            <% end %>
+          </div>
+        </aside>
+      </div>
+      <div class="col-md-8 col-lg-9">
+        <div class="form-inline push-bit clearfix">
+          <div class="pull-right">
+            <%= paginate @organizations %>
+          </div>
+        </div>
+        <div class="row store-items">
+          <% @organizations.each do |organization| %>
+            <div class="col-md-6 visibility-none" data-toggle="animation-appear"
+              data-animation-class="animation-fadeInQuick" data-element-offset="-100">
+              <div class="store-item">
+                <% if organization.user_organizations.are_admin.first %>
+                  <div class="store-item-rating">
+                    <%= t "manager" %>:
+                    <strong class="text-warning">
+                      <%= organization.user_organizations.are_admin.first.user.full_name %>
+                    </strong>
+                  </div>
+                <% end %>
+                <div class="store-item-image">
+                  <%= link_to organization do %>
+                    <%= image_tag organization.logo, class: "img-responsive" %>
+                  <% end %>
+                </div>
+                <div class="store-item-info clearfix">
+                  <span class="store-item-price themed-color-dark pull-left">
+                    <%= organization.name %>
+                  </span><br>
+                  <small class="pull-left">
+                    <i class="fa fa-hand-o-right text-muted"></i>
+                    <%= link_to organization do %>
+                      <%= organization.description.truncate Settings.truncate_description %>
+                    <% end %>
+                  </small>
+                  <div><div class="push-bit"></div>
+                    <%= link_to organization do %>
+                      <strong class="pull-right fa fa-users">
+                        <%= t "members_with_dot" %>
+                        <%= organization.users.size %> |
+                        <%= t "clubs_with_dot" %>
+                        <%= organization.clubs.size %>
+                      </strong>
+                    <% end %>
+                  </div>
+                </div>
+              </div>
+            </div>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
