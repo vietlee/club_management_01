@@ -7,7 +7,7 @@ class CreateClubRequests < ActiveRecord::Migration[5.0]
       t.text :description
       t.string :action
       t.string :logo
-      t.boolean :approve, default: false
+      t.integer :status, default: 0
       t.timestamps
     end
   end
