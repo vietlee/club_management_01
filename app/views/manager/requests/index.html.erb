@@ -28,7 +28,7 @@
               <% else %>
                 <td><%= t "not_approve" %></td>
               <% end %>
-              <td><%= request.created_at %></td>
+              <td><%= l request.created_at, format: :short %></td>
               <td class="text-center">
                 <%= link_to t("view"), manager_request_path(request.id),
                   class: "btn btn-lg btn-primary" %>

@@ -1,46 +1,48 @@
-<h1><%= @organization.name %></h1>
-<%= link_to "back", :back, class: "btn btn-danger" %>
-<div class="row">
-  <div class="col-md-3"></div>
-  <div class="col-md-2">
-    <strong class="pull-right"><%= t "name" %></strong>
-  </div>
-  <div class="col-md-6 center"><%= @organization.name %></div>
-  <div class="col-md-1"></div>
-</div><hr>
-<div class="row">
-  <div class="col-md-3"></div>
-  <div class="col-md-2">
-    <strong class="pull-right"><%= t "email" %></strong>
-  </div>
-  <div class="col-md-6 center"><%= @organization.email %></div>
-  <div class="col-md-1"></div>
-</div><hr>
-<div class="row">
-  <div class="col-md-3"></div>
-  <div class="col-md-2">
-    <strong class="pull-right"><%= t "location" %></strong>
-  </div>
-  <div class="col-md-6 center"><%= @organization.location %></div>
-  <div class="col-md-1"></div>
-</div><hr>
-<div class="row">
-  <div class="col-md-3"></div>
-  <div class="col-md-2">
-    <strong class="pull-right"><%= t "logo" %></strong>
-  </div>
-  <div class="col-md-6 center">
-    <%= image_tag @organization.logo, class: "circle-profile" %>
-  </div>
-  <div class="col-md-1"></div>
-</div><hr>
-<div class="row">
-  <div class="col-md-3"></div>
-  <div class="col-md-2">
-  </div>
-  <div class="col-md-6 center">
-    <%= link_to "edit", edit_manager_organization_path(@organization.id),
-      class: "btn btn-lg btn-primary" %>
-  </div>
-  <div class="col-md-1"></div>
-</div><hr>
+<div class="block">
+  <h1><%= @organization.name %></h1>
+  <%= link_to "back", :back, class: "btn btn-danger" %>
+  <div class="row">
+    <div class="col-md-3"></div>
+    <div class="col-md-2">
+      <strong class="pull-right"><%= t "name" %></strong>
+    </div>
+    <div class="col-md-6 center"><%= @organization.name %></div>
+    <div class="col-md-1"></div>
+  </div><hr>
+  <div class="row">
+    <div class="col-md-3"></div>
+    <div class="col-md-2">
+      <strong class="pull-right"><%= t "email" %></strong>
+    </div>
+    <div class="col-md-6 center"><%= @organization.email %></div>
+    <div class="col-md-1"></div>
+  </div><hr>
+  <div class="row">
+    <div class="col-md-3"></div>
+    <div class="col-md-2">
+      <strong class="pull-right"><%= t "location" %></strong>
+    </div>
+    <div class="col-md-6 center"><%= @organization.location %></div>
+    <div class="col-md-1"></div>
+  </div><hr>
+  <div class="row">
+    <div class="col-md-3"></div>
+    <div class="col-md-2">
+      <strong class="pull-right"><%= t "logo" %></strong>
+    </div>
+    <div class="col-md-6 center">
+      <%= image_tag @organization.logo, class: "circle-profile" %>
+    </div>
+    <div class="col-md-1"></div>
+  </div><hr>
+  <div class="row">
+    <div class="col-md-3"></div>
+    <div class="col-md-2">
+    </div>
+    <div class="col-md-6 center">
+      <%= link_to "edit", edit_manager_organization_path(@organization.id),
+        class: "btn btn-lg btn-primary" %>
+    </div>
+    <div class="col-md-1"></div>
+  </div><hr>
+</div>

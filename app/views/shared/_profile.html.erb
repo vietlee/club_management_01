@@ -37,13 +37,26 @@
   </div>
 </div>
 <% if organization.present? %>
-  <div class="row">
-    <div class="col-md-3"></div>
-    <div class="col-md-2">
-      <strong class="pull-right"><%= t "status" %></strong>
+  <% unless @user_organization.joined? %>
+    <div class="row">
+      <div class="col-md-3"></div>
+      <div class="col-md-2">
+        <strong class="pull-right"><%= t "status" %></strong>
+      </div>
+      <div class="col-md-6 center" id="view-button-<%= user.id %>">
+        <%= link_to t("active"),
+          manager_member_path(id: @user_organization,
+          status: UserOrganization.statuses[:joined],
+          organization: @user_organization.organization_id), method: :put,
+          remote: true, class: "btn btn-primary",
+          data: {confirm: t("answer_active")} %>
+        <%= link_to t("reject"),
+          manager_member_path(id: @user_organization,
+          status: UserOrganization.statuses[:reject],
+          organization: @user_organization.organization_id), method: :put,
+          remote: true, class: "btn btn-danger",
+          data: {confirm: t("answer_reject")} %>
+      </div>
     </div>
-    <div class="col-md-6 center" id="view-button-<%= user.id %>">
-      <%= choose_view_company(user.id, organization) %>
-   </div>
-  </div>
+  <% end %>
 <% end %>

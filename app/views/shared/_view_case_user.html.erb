@@ -1,25 +1,26 @@
 <% users.each do |member| %>
   <tr>
-    <td class="text-center"><%= member.id %></td>
-    <td class="text-center"><%= image_tag member.avatar,
+    <td class="text-center"><%= member.user.id %></td>
+    <td class="text-center"><%= image_tag member.user.avatar,
       class: "circle-profile-list" %></td>
-    <td><%= member.full_name %></a></td>
-    <td><%= member.email %></td>
-    <td><%= member.phone %></td>
+    <td>
+      <%= member.user.full_name %>
+      <% if !club.nil? && member.is_manager? %>
+        <strong><%= t "admin_club" %></strong>
+      <% end %>
+    </td>
+    <td><%= member.user.email %></td>
+    <td><%= member.user.phone %></td>
     <% if club.nil? %>
-      <td id="view-button-<%= member.id %>">
-        <%= choose_view_company(member.id, organization.id) %>
-      </td>
       <td class="text-center">
-        <%= link_to t("view"),
-          manager_member_path(id: member.id, organization: organization.id),
+        <%= link_to t("view"), manager_member_path(id: member.user.id,
+          organization: organization.id),
           class: "btn btn-lg btn-primary" %>
       </td>
     <% else %>
-      <td><%= choose_view_club(member.id, club.id) %></td>
       <td class="text-center">
         <%= link_to t("view"),
-          manager_member_path(id: member.id, organization: nil),
+          manager_member_path(id: member.user.id, organization: nil),
           class: "btn btn-lg btn-primary" %>
       </td>
     <% end %>

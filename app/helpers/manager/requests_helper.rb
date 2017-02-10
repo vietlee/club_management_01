@@ -1,10 +1,16 @@
 module Manager::RequestsHelper
-  def choose_view_button request
-    if request.approve
-      t("approved")
-    else
-      link_to t("approve"), manager_request_path(request), method: :put,
-        data: {confirm: t("answer_approve")}
-    end
+  def view_sidebar_club organization
+    "#{organization.name}
+    <span class='label label-primary label-indicator
+      animation-floating'>
+      #{organization.club_requests.pending.size}
+    </span>".html_safe
+  end
+  def view_side_bar_memeber organization
+    "#{organization.name}
+    <span class='label label-primary label-indicator
+      animation-floating'>
+      #{organization.user_organizations.pending.size}
+    </span>".html_safe
   end
 end
