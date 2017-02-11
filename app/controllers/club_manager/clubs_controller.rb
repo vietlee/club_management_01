@@ -8,7 +8,7 @@ class ClubManager::ClubsController < BaseClubManagerController
 
   def update
     if @club.update_attributes club_params
-      create_acivity @club, current_user, Settings.update
+      create_acivity @club, Settings.update, @club, current_user
       flash[:success] = t "club_manager.club.success_update"
     else
       flash_error @club

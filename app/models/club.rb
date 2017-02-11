@@ -4,9 +4,11 @@ class Club < ApplicationRecord
   has_many :albums, dependent: :destroy
   has_many :users, through: :user_clubs
   has_many :target_hobbies_tags, as: :target, dependent: :destroy
-  has_many :activities, as: :target
   has_many :messages, dependent: :destroy
   has_many :ratings, as: :rateable
+  has_many :notifications, as: :target, dependent: :destroy
+  has_many :activities, as: :trackable, dependent: :destroy
+  has_many :activities, as: :container, dependent: :destroy
 
   belongs_to :organization
 

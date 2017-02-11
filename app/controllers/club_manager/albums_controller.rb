@@ -16,6 +16,7 @@ class ClubManager::AlbumsController < BaseClubManagerController
   def create
     album = Album.new album_params
     if album.save
+      create_acivity album, Settings.create, album.club, current_user
       flash[:success] = t "club_manager.album.success_create"
     else
       flash_error album
@@ -28,7 +29,7 @@ class ClubManager::AlbumsController < BaseClubManagerController
 
   def update
     if @album.update_attributes album_params
-      create_acivity @album, current_user, Settings.update
+      create_acivity @album, Settings.update, @album.club, current_user
       flash[:success] = t "club_manager.album.success_update"
     else
       flash_error @album

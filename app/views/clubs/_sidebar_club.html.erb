@@ -1,4 +1,4 @@
-<header>
+  <header>
   <div class="container">
     <%= link_to root_path, class: "site-logo" do %>
       <%= image_tag @club.logo, class: "club-logo" if @club %>
@@ -65,6 +65,9 @@
             <li><%= link_to t("profile"), user_path(current_user) %></li>
             <li><%= link_to t("log_out"), destroy_user_session_path, method: :delete %></li>
           </ul>
+        </li>
+        <li class="notification_li">
+          <%= render "notifications/notification_container" %>
         </li>
         <%= render "shared/languages_nav" %>
       </ul>

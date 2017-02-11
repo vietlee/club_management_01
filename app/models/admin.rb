@@ -4,4 +4,6 @@ class Admin < ApplicationRecord
 
   has_many :notifications, as: :target, dependent: :destroy
   has_many :activities, as: :person_target, dependent: :destroy
+
+  mount_uploader :avatar, AvatarUploader
 end

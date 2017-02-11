@@ -1,0 +1,21 @@
+<span class="notification_count">
+  <% @notifications = notifications_result %>
+  <%= @notifications.un_read.size if @notifications %>
+</span>
+<%= link_to t("do_nothing"), class: "notifiglobe" do %>
+  <i class="fa fa-bell-o"></i>
+<% end %>
+<div class="notificationContainer">
+  <div class="notificationTitle">
+    <%= t "notifications" %>
+    <div class="pull-right">
+      <span class="fa fa-times hide-notification"></span>
+    </div>
+  </div>
+  <div class="notificationsBody notifications">
+    <% @notifications.each do |notification| %>
+      <%= render partial: "notifications/notification",
+        locals: {notification: notification} %>
+    <% end %>
+  </div>
+</div>

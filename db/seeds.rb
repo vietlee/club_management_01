@@ -39,6 +39,12 @@ User.create!(
   password: "longlyduc@gmail.com",
   phone: "0123456789",
 )
+User.create!(
+  email: "lequocviet@gmail.com",
+  full_name: "Le Quoc Viet",
+  password: "lequocviet@gmail.com",
+  phone: "0123456789",
+)
 Admin.create!(
   email: "longlyduc@gmail.com",
   full_name: "Ly Duc Long",
@@ -167,4 +173,31 @@ ClubRequest.create!(
   name: "Cau Long Club",
   description: Faker::Lorem.paragraph,
   action: "User send request"
+)
+
+3.times do |n|
+  Message.create!(
+    user_id: 1,
+    club_id: Club.first.id,
+    content: Faker::Lorem.sentence
+  )
+
+  Message.create!(
+    user_id: 2,
+    club_id: Club.first.id,
+    content: Faker::Lorem.sentence
+  )
+end
+
+UserOrganization.create!(
+  user_id: 1,
+  organization_id: 1,
+  status: 1
+)
+
+UserOrganization.create!(
+  user_id: 3,
+  organization_id: 1,
+  status: 1,
+  is_admin: 1
 )

@@ -4,6 +4,7 @@ class CommentsController < ApplicationController
     respond_to do |format|
       if comment.save
         @target = comment.target
+        create_acivity comment, Comment.class.name, comment.target.club, current_user
         format.js
       else
         format.js{alert(t("comment_fail"))}

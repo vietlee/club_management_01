@@ -6,7 +6,7 @@ class RatingsController < ApplicationController
       ActiveRecord::Base.transaction do
         @club.ratings.build(user: current_user, star: params[:rating]).save
         rating_executed
-        create_acivity @club, current_user, Settings.ratings
+        create_acivity @club, Settings.ratings, @club.organization, current_user
         respond_to do |format|
           format.js
         end

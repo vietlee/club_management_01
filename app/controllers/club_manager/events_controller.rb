@@ -23,7 +23,7 @@ class ClubManager::EventsController < BaseClubManagerController
   def create
     event = Event.new event_params
     if event.save
-      create_acivity event, current_user, Settings.create
+      create_acivity event, Settings.create, event.club, current_user
       flash[:success] = t "club_manager.event.success_create"
       redirect_to club_manager_club_path params[:club_id]
     else
@@ -37,7 +37,7 @@ class ClubManager::EventsController < BaseClubManagerController
       service = UpdateClubMoneyService.new @event, @club, event_params
       service.update_event
       service.update_money
-      create_acivity @event, current_user, Settings.update
+      create_acivity @event, Settings.update, event.club, current_user
       flash[:success] = t "club_manager.event.success_update"
       redirect_to club_manager_club_event_path(id: @event.id)
     end

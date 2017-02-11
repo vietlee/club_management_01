@@ -1,6 +1,13 @@
 $(document).on('turbolinks:load', function() {
   $('input.rating[type=number]').rating();
 
+  $("#ecom-filter-rating").change(function(){
+    $("#ecom-search").attr("name", "q[rating_eq]");
+    $("#ecom-search").val($(this).val());
+    $("#club_search").submit();
+    $("#example-datatable").dataTable();
+  });
+
   $(".join-event").click(function(){
     $("#new_user_event").submit();
   });
