@@ -1,25 +1,22 @@
-class ClubManager::ClubBudgetsController < BaseClubManagerController
-  before_action :load_club, only: :create
-  def index
-    @event = Event.new
-    @clubs = Club.of_user_clubs(current_user.user_clubs.manager)
-  end
-
-  def new
-  end
+class ClubManager::ClubBudgetsController < ApplicationController
+  before_action :load_club, :load_event, only: :create
 
   def create
-    @users = @club.users
+    if @event
+      @users = @club.users.payment_not_yet(@event.budgets)
+    else
+      @users = @club.users
+    end
     respond_to do |format|
       format.js
     end
   end
 
   private
-  def load_club
-    @club = Club.find_by id: params[:club_id]
-    return if @club
-    flash[:danger] = t("not_found_club")
-    redirect_to club_manager_club_budgets_url
+  def load_event
+    @event = @club.events.of_category(4).find_by month_of_payment:
+      params[:month_of_payment]
+    return if @event
+    flash[:danger] = t("event.not_found")
   end
 end

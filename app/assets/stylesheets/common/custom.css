@@ -138,5 +138,17 @@ suppermall {
 }
 
 .logo-page {
-width:130px;
+  width:130px;
+}
+
+.img-budgets-member {
+  width: 80px;
+}
+
+.tagsinput {
+  display:none;
+}
+
+.members-budgeted button {
+  margin-right:10px!important;
 }

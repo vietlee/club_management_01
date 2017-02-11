@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170210064706) do
+ActiveRecord::Schema.define(version: 20170211092010) do
 
   create_table "activities", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "trackable_type"
@@ -60,11 +60,9 @@ ActiveRecord::Schema.define(version: 20170210064706) do
 
   create_table "budgets", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.integer  "event_id"
-    t.integer  "user_id"
-    t.datetime "budgets_date", null: false
-    t.integer  "money",        null: false
-    t.datetime "created_at",   null: false
-    t.datetime "updated_at",   null: false
+    t.integer  "user_id",    null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
     t.index ["event_id"], name: "index_budgets_on_event_id", using: :btree
   end
 
@@ -138,6 +136,8 @@ ActiveRecord::Schema.define(version: 20170210064706) do
     t.integer  "num_like",                        default: 0
     t.string   "image"
     t.integer  "status",                          default: 0
+    t.string   "month_of_payment"
+    t.integer  "amount"
     t.datetime "created_at",                                  null: false
     t.datetime "updated_at",                                  null: false
     t.index ["club_id"], name: "index_events_on_club_id", using: :btree
