@@ -1,1 +1,69 @@
-<%= render "home/header" %>
+<%= stylesheet_link_tag "intro",
+  media: "all", "data-turbolinks-track": "reload" %>
+<div class="app-wrap" id="skrollr-body">
+  <div class="page front-page">
+    <div class="container">
+      <div class="wrapper">
+        <div>
+          <%= image_tag "akita.png" %>
+            <h1><%= t "overview_intro" %><span><%= t "f_club" %></span>
+            </h1>
+        </div>
+        <p><%= t "content_intro" %></p>
+      </div>
+      <div class="scroll-arrow" data-7000="opacity: 1;" data-8000="opacity: 0;"></div>
+    </div>
+  </div>
+  <div class="decades">
+    <section id="decade2010" class="page decade decade2010">
+      <div class="container">
+        <header>
+          <h2><span><%= t "register_account" %></span></h2>
+        </header>
+        <%= image_tag "2010.png" %>
+      </div>
+    </section>
+    <section id="decade2000" class="page decade decade2000">
+      <div class="container">
+        <header>
+          <h2><%= t "computing" %><span><%= t "request_create_or" %></span></h2>
+        </header>
+        <div class="inner">
+          <%= image_tag "2000.png" %>
+            <div class="fact bottom-left hide-if-js">
+            </div>
+        </div>
+      </div>
+    </section>
+    <section id="decade1990" class="page decade decade1990">
+      <div class="container">
+        <header>
+          <h2><%= t "computing" %><span><%= t "request_create_cl" %></span></h2>
+        </header>
+        <div class="inner">
+          <div class="fact top-left">
+          </div>
+          <%= image_tag "1990.png" %>
+        </div>
+      </div>
+    </section>
+    <section id="decade1980" class="page decade decade1980">
+      <div class="container">
+        <header>
+          <h2><%= t "computing" %><span><%= t "join_club" %></span></h2>
+        </header>
+        <div class="inner" data-3800="top: -100px;" data-4000="top: 190px;" data-4700="opacity: 1;" data-5000="opacity: 0;">
+          <div class="fact top-left" data-4100="opacity: 0;"
+            data-4300="opacity: 1;">
+          </div>
+          <%= image_tag "1980.png" %>
+        </div>
+      </div>
+    </section>
+  </div>
+  <footer class="app-footer" data-8900="opacity: 1; z-index: 10000;"
+    data-9000="opacity: 0; z-index: -1;">
+    <div class="container">
+    </div>
+  </footer>
+</div>
