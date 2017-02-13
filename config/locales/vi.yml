@@ -624,3 +624,6 @@ vi:
   request_create_or: "Yêu cầu để tạo tổ chức"
   request_create_cl: "Yêu cầu để tạo câu lạc bộ"
   join_club: "Tham gia câu lạc bộ với chúng tôi"
+  answer_active_club: "Bạn chắc chắn muốn kích hoạt câu lạc bộ này?"
+  answer_reject_club: "Bạn chắc chắn muốn từ chối câu lạc bộ này?"
+  cant_not_update: "Không thể hoàn thành cập nhập này,vui lòng thực hiện lại"
