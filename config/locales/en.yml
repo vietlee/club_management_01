@@ -527,3 +527,6 @@ en:
   request_create_or: "Request to create Organization"
   request_create_cl: "Request to create Club"
   join_club: "Join to Club with Us!"
+  answer_active_club: "Are you sure approve this club?"
+  answer_reject_club: "Are you sure reject this club?"
+  cant_not_update: "Can not update in this case,please try again"

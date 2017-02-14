@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170207094551) do
+ActiveRecord::Schema.define(version: 20170210064706) do
 
   create_table "activities", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "trackable_type"
@@ -58,6 +58,16 @@ ActiveRecord::Schema.define(version: 20170207094551) do
     t.index ["club_id"], name: "index_albums_on_club_id", using: :btree
   end
 
+  create_table "budgets", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.integer  "event_id"
+    t.integer  "user_id"
+    t.datetime "budgets_date", null: false
+    t.integer  "money",        null: false
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
+    t.index ["event_id"], name: "index_budgets_on_event_id", using: :btree
+  end
+
   create_table "ckeditor_assets", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "data_file_name",               null: false
     t.string   "data_content_type"
@@ -77,9 +87,9 @@ ActiveRecord::Schema.define(version: 20170207094551) do
     t.text     "description",     limit: 65535
     t.string   "action"
     t.string   "logo"
-    t.boolean  "approve",                       default: false
-    t.datetime "created_at",                                    null: false
-    t.datetime "updated_at",                                    null: false
+    t.integer  "status",                        default: 0
+    t.datetime "created_at",                                null: false
+    t.datetime "updated_at",                                null: false
     t.index ["organization_id"], name: "index_club_requests_on_organization_id", using: :btree
     t.index ["user_id"], name: "index_club_requests_on_user_id", using: :btree
   end
@@ -288,6 +298,7 @@ ActiveRecord::Schema.define(version: 20170207094551) do
   end
 
   add_foreign_key "albums", "clubs"
+  add_foreign_key "budgets", "events"
   add_foreign_key "club_requests", "organizations"
   add_foreign_key "club_requests", "users"
   add_foreign_key "clubs", "organizations"

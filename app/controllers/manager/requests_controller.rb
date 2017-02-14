@@ -8,7 +8,7 @@ class Manager::RequestsController < BaseOrganizationManagerController
       flash[:danger] = t "not_found_organization"
       redirect_to request.referrer
     end
-    @requests = @organization.club_requests.order_date_desc
+    @requests = @organization.club_requests.pending.order_date_desc
   end
 
   def show
@@ -21,16 +21,22 @@ class Manager::RequestsController < BaseOrganizationManagerController
 
   def update
     ActiveRecord::Base.transaction do
-      unless @request.update_attributes approve: ClubRequest.joined
-        flash[:danger] = t "can_not_approve"
-        redirect_to request.referrer
+      if @request.update_attributes status: params[:status].to_i
+        if params[:status].to_i == ClubRequest.statuses[:joined]
+          create_club @request.organization_id, @request.name,
+            @request.description, @request.logo
+          create_user_club @request.user_id, @club.id
+        end
+        flash[:success] = t("success_process")
+        redirect_to manager_requests_path(organization: params[:organization])
+      else
+        flash[:danger] = t("error_process")
+        redirect_to :back
       end
-      create_club @request.organization_id, @request.name, @request.description,
-        @request.logo
-      create_user_club @request.user_id, @club.id
     end
-    flash[:success] = t "aprroved_success"
-    redirect_to request.referrer
+    rescue
+      flash[:danger] = t("cant_not_update")
+      redirect_to :back
   end
 
   private

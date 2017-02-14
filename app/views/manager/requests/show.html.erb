@@ -43,7 +43,18 @@
       <strong class="pull-right"><%= t "status" %></strong>
     </div>
     <div class="col-md-6 center">
-      <%= choose_view_button(@request) %>
+      <%= link_to t("active"),
+        manager_request_path(id: @request,
+        status: ClubRequest.statuses[:joined],
+        organization: @request.organization.id), method: :put,
+        remote: true, class: "btn btn-primary",
+        data: {confirm: t("answer_active_club")} %>
+      <%= link_to t("reject"),
+        manager_request_path(id: @request,
+        status: ClubRequest.statuses[:reject],
+        organization: @request.organization.id), method: :put,
+        remote: true,  class: "btn btn-danger",
+        data: {confirm: t("answer_reject_club")} %>
     </div>
     <div class="col-md-1"></div>
   </div><hr>

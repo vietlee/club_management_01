@@ -11,8 +11,8 @@
             <th class="text-center"><%= t "id" %></th>
             <th class="text-center"><i class="gi gi-user"></i></th>
             <th><%= t "name_request" %></th>
-            <th><%= t "status" %></th>
             <th><%= t "date_request" %></th>
+            <th><%= t "user_request" %></th>
             <th class="text-center"><%= t "view_detail" %></th>
           </tr>
         </thead>
@@ -23,12 +23,8 @@
               <td class="text-center"><%= image_tag request.logo,
                 class: "circle-profile-list" %></td>
               <td><%= request.name %></a></td>
-              <% if request.approve %>
-                <td><%= t "approved" %></td>
-              <% else %>
-                <td><%= t "not_approve" %></td>
-              <% end %>
               <td><%= l request.created_at, format: :short %></td>
+              <td><%= request.user.full_name %></td>
               <td class="text-center">
                 <%= link_to t("view"), manager_request_path(request.id),
                   class: "btn btn-lg btn-primary" %>
