@@ -8,4 +8,6 @@ class Image < ApplicationRecord
 
   validates :name, presence: true, length: {minimum: Settings.min_name}
   validates :url, presence: true
+
+  scope :newest, -> {order created_at: :desc}
 end
