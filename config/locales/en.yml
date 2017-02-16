@@ -1,4 +1,8 @@
 en:
+  request_parent:
+    pending: "Watting..."
+    joined: "Done"
+    reject: "Reject"
   cancel_success: "Cancel for error!"
   cancel_success: "Cancel for successfull!"
   clubs_with_dot: "Number of Clubs:"

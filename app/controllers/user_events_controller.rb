@@ -1,4 +1,5 @@
 class UserEventsController < ApplicationController
+  before_action :authenticate_user!
   before_action :load_event, only: :create
 
   def create

@@ -5,7 +5,7 @@ class ApproveOrganizationService
   end
 
   def approve_request
-    @organization_request.update_attributes approve: true
+    @organization_request.joined!
   end
 
   def create_organization organization
@@ -17,7 +17,7 @@ class ApproveOrganizationService
   def create_user_organization organization_id
     @user_organization = UserOrganization.new user_id: @user.id,
       organization_id: organization_id, is_admin: true
-    @user_organization.save
+    @user_organization.joined!
   end
 
 end

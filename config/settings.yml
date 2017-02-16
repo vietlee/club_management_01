@@ -11,6 +11,7 @@ truncate_organization: 30
 description_event: 360
 min_location: 5
 delete: "delete"
+comment: "comment"
 edit: "edit"
 update: "Update"
 create: "Create"

@@ -35,7 +35,7 @@ class Admin::OrganizationRequestsController < ApplicationController
 
   private
   def load_unapprove
-    @organization_requests = OrganizationRequest.unapprove
+    @organization_requests = OrganizationRequest.pending
     unless @organization_requests
       flash_error @organization_requests
       redirect_to :back

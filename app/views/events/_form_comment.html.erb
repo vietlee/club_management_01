@@ -3,7 +3,7 @@
     id: "profile-newsfeed-comment", rows: 4,
     placeholder: t("your_comment") %>
   <%= f.hidden_field :target_id, value: target.id %>
-  <%= f.hidden_field :target_type, value: target %>
+  <%= f.hidden_field :target_type, value: Settings.event %>
   <%= f.submit t("post_comment"),
     class: "btn btn-xs btn-primary pull-right" %>
 <% end %>

@@ -1,4 +1,5 @@
 class UserClubsController < ApplicationController
+  before_action :authenticate_user!
   before_action :load_user_club, only: :destroy
 
   def create

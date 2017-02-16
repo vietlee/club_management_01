@@ -1,10 +1,11 @@
 class CommentsController < ApplicationController
+  before_action :authenticate_user!
   def create
     comment = Comment.new comment_params
     respond_to do |format|
       if comment.save
         @target = comment.target
-        create_acivity comment, Comment.class.name, comment.target.club, current_user
+        create_acivity comment.target, Settings.comment, comment.target.club, current_user
         format.js
       else
         format.js{alert(t("comment_fail"))}

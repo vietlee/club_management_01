@@ -136,3 +136,7 @@ suppermall {
   -webkit-transform: scale(1.1);
   transform: scale(1.2);
 }
+
+.logo-page {
+width:130px;
+}

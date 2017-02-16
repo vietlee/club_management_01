@@ -1,8 +1,7 @@
 <header>
   <div class="container">
     <%= link_to root_path, class: "site-logo" do %>
-      <i class="fa fa-flash fa-5x"></i>
-      <strong><%= t "logo" %></strong> - <%= t "clubs" %>
+      <%= image_tag "logo.png", class: "img-responsive logo-page" %>
     <% end %>
     <nav>
       <%= link_to "javascript:void(0)",

@@ -1,4 +1,8 @@
 vi:
+  request_parent:
+    pending: "Chờ duyệt"
+    joined: "Đã duyệt"
+    reject: "Từ chối"
   cancel_error: "Huỷ thất bại"
   cancel_success: "Huỷ thành công!"
   clubs_with_dot: "Số lượng câu lạc bộ:"
