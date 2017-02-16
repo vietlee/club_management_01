@@ -7,7 +7,7 @@
       <li>
         <div class="<%= key %>"></div>
         <%= link_to_unless I18n.locale == val.to_sym,
-          t(val), set_language_path(id: val.downcase), method: :put %>
+          t(key), set_language_path(id: val.downcase), method: :put %>
       </li>
     <% end %>
   </ul>

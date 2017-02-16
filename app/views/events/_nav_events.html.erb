@@ -5,7 +5,7 @@
   </ul>
   <div class="tab-content">
     <div class="tab-pane active" id="top">
-      <% @events.limit(Settings.max_for_limit).each do |event| %>
+      <% @events.periodic.limit(Settings.max_for_limit).each do |event| %>
         <div class="content-float clearfix">
           <%= image_tag event.image, class: "img-circle pull-left small-event-image" %>
           <h5>

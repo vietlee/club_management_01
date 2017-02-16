@@ -102,7 +102,7 @@
                   <%= link_to club do %>
                     <%= image_tag club.image, class: "img-responsive" %>
                     <%= image_tag "tick.png",
-                      class: "store-item-joined" if current_user.user_clubs.of_club club %>
+                      class: "store-item-joined" if current_user.user_clubs.joined.of_club(club) %>
                   <% end %>
                 </div>
                 <div class="store-item-info clearfix">
