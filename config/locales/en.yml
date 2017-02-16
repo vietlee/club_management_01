@@ -530,3 +530,5 @@ en:
   answer_active_club: "Are you sure approve this club?"
   answer_reject_club: "Are you sure reject this club?"
   cant_not_update: "Can not update in this case,please try again"
+  album_empty: "This album empty"
+  background: "background"

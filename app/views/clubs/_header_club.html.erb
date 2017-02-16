@@ -21,7 +21,7 @@
         <%= render "ratings/rating" %>
       </span>
       <p class="h3 animation-slideUp hidden-xs">
-        <%= @club.description %>
+        <%= @club.description.html_safe %>
       </p>
     </div>
     <div class="container"></div>

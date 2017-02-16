@@ -3,6 +3,7 @@ class Activity < ApplicationRecord
   belongs_to :owner, polymorphic: true
   belongs_to :container, polymorphic: true
 
+  has_many :comments, as: :target, dependent: :destroy
   enum read: {un_read: 0, readed: 1}
 
   after_create :push_notify

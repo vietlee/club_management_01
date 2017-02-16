@@ -1,7 +1,7 @@
 <% @clubs.each do |club| %>
   <% club.activities.each do |active| %>
     <li class="media">
-      <%= image_tag active.person_target.avatar,
+      <%= image_tag active.owner.avatar,
         class: "img-circle pull-left img-user-time-line" %>
       <div class="media-body">
         <p class="push-none">
@@ -11,9 +11,9 @@
               </span>
             </span>
             <strong>
-              <%= link_to active.person_target.full_name, active.person_target %>
-              <%= t "has_been" %> <%= active.action %> <%= t "in_the" %>
-              <span class="text-danger"><%= active.target.name %></span>
+              <%= link_to active.owner.full_name, active.owner %>
+              <%= t "has_been" %> <%= active.key %> <%= t "in_the" %>
+              <span class="text-danger"><%= active.trackable.name %></span>
             </strong>
         </p>
         <a href="javascript:void(0)" class="btn btn-xs btn-default btn-like">

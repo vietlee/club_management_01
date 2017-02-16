@@ -11,11 +11,15 @@
     <div class="container">
       <div class="site-block text-center">
         <div class="btn-group portfolio-filter">
-          <%= link_to t("all"), "javascript:void(0)",
+          <% if @album.any? %>
+            <%= link_to t("all"), "javascript:void(0)",
               class: "btn btn-primary", "data-category" => "all" %>
-          <% @album.each do |album| %>
-            <%= link_to album.name, "javascript:void(0)",
-              class: "btn btn-primary", "data-category" => album.id %>
+            <% @album.each do |album| %>
+              <%= link_to album.name, "javascript:void(0)",
+                class: "btn btn-primary", "data-category" => album.id %>
+            <% end %>
+          <% else %>
+            <h1><%= t "album_empty" %></h1>
           <% end %>
         </div>
       </div>
@@ -26,6 +30,9 @@
               data-category="<%= album.id %>">
               <%= link_to "javascript:void(0)" do %>
                 <%= image_tag image.url, class: "img-responsive thumb" %>
+                <span class="portfolio-item-info">
+                  <strong><%= image.name %><</strong>
+                </span>
               <% end %>
             </div>
           <% end %>
