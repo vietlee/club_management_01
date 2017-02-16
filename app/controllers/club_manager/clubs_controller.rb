@@ -18,7 +18,7 @@ class ClubManager::ClubsController < BaseClubManagerController
 
   private
   def club_params
-    params.require(:club).permit :name, :description, :logo,
+    params.require(:club).permit :name, :description, :logo, :image,
       :notification
   end
 

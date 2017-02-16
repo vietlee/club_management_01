@@ -627,3 +627,5 @@ vi:
   answer_active_club: "Bạn chắc chắn muốn kích hoạt câu lạc bộ này?"
   answer_reject_club: "Bạn chắc chắn muốn từ chối câu lạc bộ này?"
   cant_not_update: "Không thể hoàn thành cập nhập này,vui lòng thực hiện lại"
+  album_empty: "Bộ sưu tập này chưa có ảnh nào"
+  background: "Hình nền"

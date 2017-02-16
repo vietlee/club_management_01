@@ -5,6 +5,7 @@ $('.thumb').click(function(){
     var title = $(this).parent('a').attr("title");
     $('.modal-title').html(title);
     $($(this).parents('div').html()).appendTo('.modal-body');
+    $(".modal-body").find('span').remove();
     $('#myModal').modal({show:true});
 });
 });
