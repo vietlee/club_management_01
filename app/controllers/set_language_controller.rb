@@ -2,11 +2,11 @@ class SetLanguageController < ApplicationController
   def update
     language = params[:id]
     case language
-    when Settings.en
+    when Settings.languages.en
       I18n.locale = :en
-    when Settings.vi
+    when Settings.languages.vi
       I18n.locale = :vi
-    when Settings.jp
+    when Settings.languages.jp
       I18n.locale = :jp
     end
     set_session_and_redirect

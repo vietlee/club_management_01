@@ -3,6 +3,9 @@ class UsersController < ApplicationController
   before_action :load_user, only: [:show]
 
   def show
+    @clubs = Club.of_userclubs(@user.user_clubs.joined)
+    @organizaitons = Organization.by_user_organizations(
+      @user.user_organizations.joined)
   end
 
   def edit

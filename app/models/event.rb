@@ -20,6 +20,7 @@ class Event < ApplicationRecord
 
   scope :top_like, -> {order num_like: :desc}
   scope :newest, -> {order created_at: :desc}
+  scope :periodic, -> {where event_category_id: Settings.periodic_category}
   scope :by_current_year, -> {where "year(created_at) = ?", Time.zone.now.year}
   scope :by_quarter, -> months {where("month(created_at) in (?)", months)}
 

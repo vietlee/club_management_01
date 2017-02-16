@@ -20,6 +20,7 @@ class Club < ApplicationRecord
     length: {minimum: Settings.min_description}
 
   scope :actives, -> {where is_active: true}
+  scope :of_userclubs, -> userclubs {where id: userclubs.map(&:club_id)}
   scope :newest, -> {order created_at: :desc}
   scope :without_clubs, -> clubs {where.not(id: clubs.ids)}
   scope :of_organizations, -> organizations do
