@@ -18,7 +18,7 @@ class ClubsController < ApplicationController
     @user_club = UserClub.new
   end
 
-  private
+  protected
   def verify_club
     unless @club.is_active?
       flash[:danger] = t("club_is_lock")

@@ -16,7 +16,6 @@
           <% end %>
         </li>
         <li><%= link_to t("home"), root_path %></li>
-        <li><%= link_to t("albums"), "#" %></li>
         <li>
           <%= link_to "#", class: "site-nav-sub" do %>
             <i class="fa fa-angle-down site-nav-arrow"></i><%= t "clubs" %>
@@ -55,7 +54,6 @@
           <%= render "user_clubs/leave" if @club %>
         </li>
         <li><%= link_to t("organizations"), organizations_path %></li>
-        <li><%= link_to t("about"), "#" %></li>
         <li>
           <%= link_to "#",class: "site-nav-sub" do %>
             <%= current_user.full_name %> <span class="fa fa-user"></span>

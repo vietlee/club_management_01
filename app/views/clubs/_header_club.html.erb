@@ -10,6 +10,7 @@
         <div class="pull-left dropdown">
           <span class="caret" data-toggle="dropdown"></span>
           <ul class="dropdown-menu">
+            <li><%= link_to t("albums"), album_path(@club) %></li>
             <li><%= link_to t("invite_join_club"),"#modal-users",
               data: {toggle: "modal"} %></li>
             <li><%= link_to t("leave_club") %></li>
