@@ -8,7 +8,7 @@ class CreateOrganizationRequests < ActiveRecord::Migration[5.0]
       t.string :email
       t.text :location
       t.string :logo
-      t.boolean :approve, default: false
+      t.integer :status, default: 0
       t.timestamps
     end
   end

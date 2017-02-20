@@ -1,4 +1,5 @@
 class ClubRequestsController < ApplicationController
+  before_action :authenticate_user!
   def index
     @requests = current_user.club_requests
     if @request

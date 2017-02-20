@@ -1,4 +1,13 @@
 class OrganizationRequestsController < ApplicationController
+  before_action :authenticate_user!
+
+  def index
+    @requests = current_user.organization_requests
+    respond_to do |format|
+      format.js
+    end
+  end
+
   def new
     @request = OrganizationRequest.new
   end

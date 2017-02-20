@@ -1,4 +1,5 @@
 class ClubsController < ApplicationController
+  before_action :authenticate_user!
   before_action :load_club, only: [:show, :verify_club]
   before_action :verify_club, only: :show
 

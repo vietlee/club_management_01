@@ -13,12 +13,21 @@ $(document).on('turbolinks:load', function() {
   });
 
   $("#request-type").click(function() {
-    $.post(
-      "/request", {
-        type: $(this).val()
-      },
-      function(data) {}
-    );
+    if ($(this).val() == "Organization"){
+      $.get(
+        "/users/1/organization_requests", {
+          type: $(this).val()
+        },
+        function(data) {}
+      );
+    }else{
+      $.get(
+        "/users/1/club_requests", {
+          type: $(this).val()
+        },
+        function(data) {}
+      );
+    }
   });
 
   $(".org-link-to").click(function(){

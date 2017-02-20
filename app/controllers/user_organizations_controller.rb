@@ -1,4 +1,5 @@
 class UserOrganizationsController < ApplicationController
+  before_action :authenticate_user!
   before_action :load_organization, only: [:show, :destroy]
 
   def index
