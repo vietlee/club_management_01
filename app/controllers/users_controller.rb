@@ -1,11 +1,11 @@
 class UsersController < ApplicationController
   before_action :authenticate_user!
-  before_action :load_user, only: [:show]
+  before_action :load_user, only: :show
+  before_action :load_organizations, only: [:show, :edit]
 
   def show
     @clubs = Club.of_user_clubs(@user.user_clubs.joined)
-    @organizaitons = Organization.by_user_organizations(
-      @user.user_organizations.joined)
+    @club_time_lines = current_user.clubs
   end
 
   def edit
@@ -37,5 +37,10 @@ class UsersController < ApplicationController
   def user_params
     params.require(:user).permit :full_name, :email, :phone, :avatar,
       :password, :password_confirmation
+  end
+
+  def load_organizations
+    @organizaitons = Organization.by_user_organizations(
+      @user.user_organizations.joined)
   end
 end

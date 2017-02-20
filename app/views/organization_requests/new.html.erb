@@ -2,26 +2,8 @@
 <section class="site-content site-section">
   <div class="container">
     <div class="row">
-      <div class="col-sm-6 col-md-4 site-block">
-        <div class="site-block">
-          <h3 class="h2 site-heading"><strong><%= t "company" %></strong> <%= t "inc" %></h3>
-          <address>
-            <%= t "address" %><br>
-            <%= t "town_city" %><br>
-            <%= t "cip_code_ect" %><br><br>
-            <i class="fa fa-phone"></i> <%= t "zero_phone" %><br>
-            <i class="fa fa-envelope-o"></i> <a href="javascript:void(0)"><%= t "example_email" %></a>
-          </address>
-        </div>
-        <div class="site-block">
-          <h3 class="h2 site-heading"><strong><%= t "about" %></strong> <%= t "us" %></h3>
-          <p class="remove-margin">
-            <%= t "des_company" %>
-          </p>
-        </div>
-      </div>
-      <div class="col-sm-6 col-md-8 site-block">
-        <h3 class="h2 site-heading"><strong>
+      <div class="col-sm-6 col-md-8 col-md-offset-2 site-block">
+        <h3 class="h2 site-heading center"><strong>
           <%= t "request" %></strong> <%= t "organization_sign" %>
         </h3>
         <%= form_for [:user, @request], html: {id: "form-contact"} do |f|%>
@@ -61,7 +43,7 @@
             <%= f.text_area :description, placeholder: t("description_request"),
               class: "form-control input-lg", id: "contact-message", row: 10  %>
           </div>
-          <div class="form-group">
+          <div class="form-group center">
             <%= f.submit t("send_request"), class: "btn btn-primary btn-lg" %>
           </div>
         <% end %>

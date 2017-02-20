@@ -1,4 +1,4 @@
-  <header>
+ <header>
   <div class="container">
     <%= link_to root_path, class: "site-logo" do %>
       <%= image_tag @club.logo, class: "club-logo" if @club %>
@@ -15,15 +15,8 @@
             <i class="fa fa-times"></i>
           <% end %>
         </li>
-        <li><%= link_to t("home"), root_path %></li>
-        <li>
-          <%= link_to "#", class: "site-nav-sub" do %>
-            <i class="fa fa-angle-down site-nav-arrow"></i><%= t "clubs" %>
-          <% end %>
-          <ul>
-            <li><%= link_to t("list_club"), clubs_path %></li>
-          </ul>
-        </li>
+        <li><%= link_to t("organizations"), organizations_path %></li>
+        <li><%= link_to t("clubs"), clubs_path %></li>
         <li>
           <%= link_to "#", class: "site-nav-sub" do %>
             <i class="fa fa-angle-down site-nav-arrow"></i><%= t "requests" %>
@@ -34,6 +27,7 @@
             </li>
             <li><%= link_to t("organization_request"),
               new_user_organization_request_path(user_id: current_user.id) %>
+            </li>
             </li>
             <li><%= link_to t("list_request"), "#modal-request-question",
               data: {toggle: "modal"}, class: "enable-tooltip" %>
@@ -53,10 +47,10 @@
           </ul>
           <%= render "user_clubs/leave" if @club %>
         </li>
-        <li><%= link_to t("organizations"), organizations_path %></li>
         <li>
           <%= link_to "#",class: "site-nav-sub" do %>
-            <%= current_user.full_name %> <span class="fa fa-user"></span>
+            <i class="name-user"><%= current_user.full_name %></i>
+              <span class="fa fa-user"></span>
             <input type="hidden" class="current-user-id" value="<%= current_user.id %>">
           <% end %>
           <ul>
