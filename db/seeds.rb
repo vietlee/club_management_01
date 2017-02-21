@@ -80,6 +80,9 @@ EventCategory.create!(
 EventCategory.create!(
   name: "Periodic Money",
 )
+EventCategory.create!(
+  name: "Funds Money"
+)
 
 users = User.order(:created_at).take(2)
 clubs = Club.order(:created_at).take(15)

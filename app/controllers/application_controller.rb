@@ -42,6 +42,13 @@ class ApplicationController < ActionController::Base
     trackable: trackable, owner: owner
   end
 
+  def load_club
+    @club = Club.find_by id: params[:club_id]
+    return if @club
+    flash[:danger] = t("not_found_club")
+    redirect_to :back
+  end
+
   private
   def set_locale
     I18n.locale = session[:locale] || I18n.default_locale

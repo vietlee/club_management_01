@@ -13,6 +13,8 @@ class CreateEvents < ActiveRecord::Migration[5.0]
       t.integer :num_like, default: 0
       t.string :image
       t.integer :status, default: 0
+      t.string :month_of_payment
+      t.integer :amount
       t.timestamps
     end
   end

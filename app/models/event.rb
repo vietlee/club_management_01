@@ -3,6 +3,7 @@ class Event < ApplicationRecord
   has_many :user_events, dependent: :destroy
   has_many :users, through: :user_events
   has_many :comments, as: :target, dependent: :destroy
+  has_many :budgets, dependent: :destroy
   has_many :notifications, as: :target, dependent: :destroy
   has_many :activities, as: :trackable, dependent: :destroy
 
@@ -19,10 +20,12 @@ class Event < ApplicationRecord
   validates :date_start, :date_end, presence: true
 
   scope :top_like, -> {order num_like: :desc}
+  scope :of_month_payment, -> month_payment {where month_of_payment: month_payment}
   scope :newest, -> {order created_at: :desc}
   scope :periodic, -> {where event_category_id: Settings.periodic_category}
   scope :by_current_year, -> {where "year(created_at) = ?", Time.zone.now.year}
   scope :by_quarter, -> months {where("month(created_at) in (?)", months)}
+  scope :of_category, -> category_id {where event_category_id: category_id}
 
   enum status: {inprocess: 0, finished: 1}
 
@@ -34,5 +37,9 @@ class Event < ApplicationRecord
       array.push list_events
     end
     array
+  end
+
+  def cost_expense total
+     self.update_attributes expense: self.expense.to_i + self.amount.to_i * total
   end
 end

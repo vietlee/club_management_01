@@ -37,7 +37,7 @@ class ClubManager::EventsController < BaseClubManagerController
       service = UpdateClubMoneyService.new @event, @club, event_params
       service.update_event
       service.update_money
-      create_acivity @event, Settings.update, event.club, current_user
+      create_acivity @event, Settings.update, @event.club, current_user
       flash[:success] = t "club_manager.event.success_update"
       redirect_to club_manager_club_event_path(id: @event.id)
     end
