@@ -21,7 +21,7 @@ class ClubManager::AlbumsController < BaseClubManagerController
     else
       flash_error album
     end
-    redirect_to club_manager_club_albums_path @club
+    redirect_to :back
   end
 
   def edit

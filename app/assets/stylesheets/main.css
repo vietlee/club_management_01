@@ -8,8 +8,19 @@ body {
   margin: 0 auto;
   width: 100%;
 }
+#page-content  {
+  height: 80%;
+}
+.admin {
+  color: red;
+  font-size: 12px;
+}
 #page-container.boxed {
   max-width: 1280px;
+  height: 100%;
+}
+.member {
+  width: 100% !important;
 }
 header {
   position: fixed;
@@ -146,7 +157,7 @@ header nav {
   padding-bottom: 1px;
 }
 .site-section-top {
-  padding-top: 350px;
+  padding-top: 250px;
   overflow: hidden;
 }
 .site-section-light {
@@ -189,7 +200,7 @@ header nav {
 
 .media-container {
   position: relative;
-  height: 550px;
+  height: 450px;
   overflow: hidden;
 }
 .media-container > .site-section {
@@ -1351,16 +1362,24 @@ fieldset[disabled] .btn-info.active {
   padding-left: 7px;
   padding-right: 7px;
   margin-bottom: -1px;
+  font-weight: bold;
+  color: green;
 }
 .nav-tabs > li > a:hover {
   border-color: #eaedf1;
 }
+#tab-chir li a {
+  margin-top: -15px;
+  font-size: 12px;
+  color: black;
+}
 .nav-tabs > li.active > a,
 .nav-tabs > li.active > a:hover,
 .nav-tabs > li.active > a:focus {
-  color: #394263;
+  color: black;
   border-color: #eaedf1;
   border-bottom-color: transparent;
+  font-weight: bold;
 }
 .nav-pills > li.active > a > .badge {
   background: url('../img/template/ie8_opacity_dark_20.png') repeat;

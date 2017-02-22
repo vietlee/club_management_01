@@ -1,50 +1,105 @@
-<div id="page-content">
-  <ul class="breadcrumb breadcrumb-top">
-    <li><%= t "club_management" %></li>
-    <li><%= link_to @club.name, t("do_nothing") %></li>
-  </ul>
-  <div class="row">
-    <div class="col-md-6">
-      <div class="block">
-        <div class="block-title">
-          <h2><strong><%= t "event" %></strong></h2>
-        </div>
-        <%= render "club_event" %>
+<%= javascript_include_tag "club_manager/select_tag",
+  "data-turbolinks-track" => true %>
+<div class="media-container">
+  <section class="site-section site-section-light site-section-top">
+    <div class="container">
+      <h1 class="animation-slideDown">
+        <strong><%= @club.name %></strong>
+      </h1>
+      <p class="h3 animation-slideUp hidden-xs">
+        <%= @club.description.html_safe %>
+      </p>
+      <div class="join-cancel-toggle-container">
+        <%= link_to "#modal-club-edit", data: {toggle: "modal"},
+          class: "btn btn-sm btn-primary animation-fadeIn360" do %>
+          <i class="fa fa-pencil "></i><%= t "edit" %>
+        <% end %>
       </div>
     </div>
-    <div class="col-md-6">
-      <div class="block">
-        <div class="block-title">
-          <h2><strong><%= @club.name %></strong></h2>
-        </div>
-        <div class="row">
-          <div class="col-md-5 full-img" >
-            <%= image_tag @club.image %>
+    <div class="container"></div>
+  </section>
+  <%= image_tag @club.image, class: "media-image animation-pulseSlow" %>
+</div>
+<ul class="nav nav-tabs" role="tablist">
+  <li role="presentation" class="active">
+    <%= link_to t("events"), "#events", data: {toggle: "tab"} %>
+  </li>
+  <li role="presentation">
+    <%= link_to "#members", data: {toggle: "tab"} do %>
+      <%= t("members") %>
+      <span class="label label-primary label-indicator
+        animation-floating">
+        <%= @members.joined.size %>
+      </span>
+    <% end %>
+  </li>
+  <li role="presentation">
+    <%= link_to "#manager", data: {toggle: "tab"} do %>
+      <%= t("manager") %>
+      <span class="label label-primary label-indicator
+        animation-floating">
+        <%= @members.manager.size %>
+      </span>
+    <% end %>
+  </li>
+  <li role="presentation">
+    <%= link_to "#request", data: {toggle: "tab"} do %>
+      <%= t("request") %>
+      <span class="label label-primary label-indicator
+        animation-floating">
+        <%= @members.pending.size %>
+      </span>
+    <% end %>
+  </li>
+  <li role="presentation">
+    <%= link_to t("albums"), "#albums", data: {toggle: "tab"} %>
+  </li>
+  <li role="presentation">
+    <%= link_to t("budget"), "#budget", data: {toggle: "tab"} %>
+  </li>
+</ul>
+<div id="page-content">
+  <div class="row">
+    <div class="col-md-12">
+      <div class="tab-content">
+        <div role="tabpanel" class="tab-pane fade in active" id="events">
+          <div class="row block">
+            <%= render "club_event" %>
           </div>
-          <div class="col-md-7" >
-            <p><%= @club.notification %></p>
-            <p class="fa fa-money"> <%= t "club_manager.money" %>
-              <%= number_to_currency(@club.money, locale: :vi) %>
-            </p><br>
-            <p><%= @club.description.html_safe %></p>
-            <div class="col-md-6 col-md-offset-4">
-              <%= link_to "#modal-club-edit", data: {toggle: "modal"},
-                class: "btn btn-sm btn-primary" do %>
-                <i class="fa fa-pencil"></i><%= t "edit" %>
-              <% end %>
-            </div>
-          </div>
-        </div><br>
-      </div>
-      <div class="block">
-        <div class="block-title">
-          <h2><strong><%= t "members" %></strong></h2>
         </div>
-        <%= render "club_member" %>
+        <div role="tabpanel" class="tab-pane fade in" id="members">
+          <div class="row block">
+            <%= render partial: "list_member",
+              locals: {members: @members.joined.newest.page(params[:page]).per( Settings.member_club)} %>
+          </div>
+        </div>
+        <div role="tabpanel" class="tab-pane fade in" id="manager">
+          <div class="row block">
+            <%= render partial: "list_member",
+              locals: {members: @members.manager.newest.page(params[:page]).per( Settings.member_club)} %>
+          </div>
+        </div>
+        <div role="tabpanel" class="tab-pane fade in" id="request">
+          <div class="row block">
+            <%= render partial: "list_member",
+              locals: {members: @members.pending.newest.page(params[:page]).per( Settings.member_club)} %>
+          </div>
+        </div>
+        <div role="tabpanel" class="tab-pane fade in" id="albums">
+          <div class="row block">
+            <%= render "list_albums" %>
+          </div>
+        </div>
+        <div role="tabpanel" class="tab-pane fade in" id="budget">
+          <div class="row block">
+            <%= render "budget" %>
+          </div>
+        </div>
       </div>
     </div>
   </div>
 </div>
-<div id="modal-club-edit" class="modal fade" tabindex="-1" role="dialog" aria-hidden="true">
+<div id="modal-club-edit" class="modal fade" tabindex="-1" role="dialog"
+  aria-hidden="true">
   <%= render "popups/edit_club_detail" %>
 </div>

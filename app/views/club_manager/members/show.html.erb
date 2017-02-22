@@ -10,6 +10,8 @@
         <div class="block-title">
           <h2><strong><%= link_to @member.full_name, t("do_nothing") %></strong></h2>
         </div>
+        <%= link_to t("back"), club_manager_club_path(@club.id),
+          class: "btn btn-danger" %>
         <div class="block-content">
           <div class="center"><%= image_tag @member.avatar,
             class: "circle-profile" %></div><hr>

@@ -14,6 +14,7 @@ class UserClub < ApplicationRecord
   scope :find_with_user_of_club, -> user_id, club_id do
     find_by user_id: user_id, club_id: club_id
   end
+  scope :newest, -> {order created_at: :desc}
 
   class << self
     def of_club club

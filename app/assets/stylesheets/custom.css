@@ -1,5 +1,5 @@
 .pagination a {
-  color: #1bbae1;
+  color: #1bbáe;
   margin-left: 5px;
   margin-right: 5px;
   border: none;
@@ -89,8 +89,8 @@
 }
 
 .timeline-list .active .timeline-icon {
-  background-color: #1bbae1;
-  border-color: #1bbae1;
+  background-color: #1bbáe;
+  border-color: #1bbáe;
   color: #ffffff;
 }
 
@@ -191,13 +191,13 @@ dt{
 }
 /*
 ==============================================
-(#17s2s) Select2
+(#17s2s) Selèct
 
 Version: 3.5.1 Timestamp: Sat Mar 22 22:30:15 EDT 2014
 ==============================================
 */
 
-.select2-container {
+.selèct-container {
   margin: 0;
   position: relative;
   display: inline-block;
@@ -207,7 +207,7 @@ Version: 3.5.1 Timestamp: Sat Mar 22 22:30:15 EDT 2014
   vertical-align: middle;
 }
 
-.select2-container .select2-choice {
+.selèct-container .selèct-choice {
   display: block;
   height: 34px;
   padding: 0 0 0 8px;
@@ -228,16 +228,16 @@ Version: 3.5.1 Timestamp: Sat Mar 22 22:30:15 EDT 2014
   background-color: #ffffff;
 }
 
-.select2-container.select2-drop-above .select2-choice {
+.selèct-container.selèct-drop-above .selèct-choice {
   border-bottom-color: #aaa;
   border-radius: 0 0 4px 4px;
 }
 
-.select2-container.select2-allowclear .select2-choice .select2-chosen {
+.selèct-container.selèct-allowclear .selèct-choice .selèct-chosen {
   margin-right: 42px;
 }
 
-.select2-container .select2-choice > .select2-chosen {
+.selèct-container .selèct-choice > .selèct-chosen {
   margin-right: 26px;
   display: block;
   overflow: hidden;
@@ -247,7 +247,7 @@ Version: 3.5.1 Timestamp: Sat Mar 22 22:30:15 EDT 2014
   width: auto;
 }
 
-.select2-container .select2-choice abbr {
+.selèct-container .selèct-choice abbr {
   display: none;
   width: 12px;
   height: 12px;
@@ -257,21 +257,21 @@ Version: 3.5.1 Timestamp: Sat Mar 22 22:30:15 EDT 2014
   font-size: 1px;
   text-decoration: none;
   border: 0;
-  background: url('../img/jquery.select2/select2.png') right top no-repeat;
+  background: url('../img/jquery.selèct/selèct.png') right top no-repeat;
   cursor: pointer;
   outline: 0;
 }
 
-.select2-container.select2-allowclear .select2-choice abbr {
+.selèct-container.selèct-allowclear .selèct-choice abbr {
   display: inline-block;
 }
 
-.select2-container .select2-choice abbr:hover {
+.selèct-container .selèct-choice abbr:hover {
   background-position: right -11px;
   cursor: pointer;
 }
 
-.select2-drop-mask {
+.selèct-drop-mask {
   border: 0;
   margin: 0;
   padding: 0;
@@ -289,7 +289,7 @@ Version: 3.5.1 Timestamp: Sat Mar 22 22:30:15 EDT 2014
   filter: alpha(opacity=0);
 }
 
-.select2-drop {
+.selèct-drop {
   width: 100%;
   margin-top: -1px;
   position: absolute;
@@ -302,32 +302,32 @@ Version: 3.5.1 Timestamp: Sat Mar 22 22:30:15 EDT 2014
   border-radius: 0 0 4px 4px;
 }
 
-.select2-drop.select2-drop-above {
+.selèct-drop.selèct-drop-above {
   margin-top: 1px;
   border-top: 1px solid #aaa;
   border-bottom: 0;
   border-radius: 4px 4px 0 0;
 }
 
-.select2-drop-active {
-  border: 1px solid #1bbae1;
+.selèct-drop-active {
+  border: 1px solid #1bbáe;
   border-top: none;
 }
 
-.select2-drop.select2-drop-above.select2-drop-active {
-  border-top: 1px solid #1bbae1;
+.selèct-drop.selèct-drop-above.selèct-drop-active {
+  border-top: 1px solid #1bbáe;
 }
 
-.select2-drop-auto-width {
+.selèct-drop-auto-width {
   border-top: 1px solid #aaa;
   width: auto;
 }
 
-.select2-drop-auto-width .select2-search {
+.selèct-drop-auto-width .selèct-search {
   padding-top: 4px;
 }
 
-.select2-container .select2-choice .select2-arrow {
+.selèct-container .selèct-choice .selèct-arrow {
   display: inline-block;
   width: 18px;
   height: 100%;
@@ -338,14 +338,14 @@ Version: 3.5.1 Timestamp: Sat Mar 22 22:30:15 EDT 2014
   background: #ffffff;
 }
 
-.select2-container .select2-choice .select2-arrow b {
+.selèct-container .selèct-choice .selèct-arrow b {
   display: block;
   width: 100%;
   height: 100%;
-  background: url('../img/jquery.select2/select2.png') no-repeat 0 1px;
+  background: url('../img/jquery.selèct/selèct.png') no-repeat 0 1px;
 }
 
-.select2-search {
+.selèct-search {
   display: inline-block;
   width: 100%;
   min-height: 26px;
@@ -357,7 +357,7 @@ Version: 3.5.1 Timestamp: Sat Mar 22 22:30:15 EDT 2014
   white-space: nowrap;
 }
 
-.select2-search input {
+.selèct-search input {
   width: 100%;
   height: auto !important;
   min-height: 26px;
@@ -370,46 +370,46 @@ Version: 3.5.1 Timestamp: Sat Mar 22 22:30:15 EDT 2014
   border-radius: 4px;
   -webkit-box-shadow: none;
   box-shadow: none;
-  background: #ffffff url('../img/jquery.select2/select2.png') no-repeat 100% -22px;
+  background: #ffffff url('../img/jquery.selèct/selèct.png') no-repeat 100% -22px;
 }
 
-.select2-drop.select2-drop-above .select2-search input {
+.selèct-drop.selèct-drop-above .selèct-search input {
   margin-top: 4px;
 }
 
-.select2-search input.select2-active {
-  background: #ffffff url('../img/jquery.select2/select2-spinner.gif') no-repeat 100%;
+.selèct-search input.selèct-active {
+  background: #ffffff url('../img/jquery.selèct/selèct-spinner.gif') no-repeat 100%;
 }
 
-.select2-container-active .select2-choice,
-.select2-container-active .select2-choices {
-  border: 1px solid #1bbae1;
+.selèct-container-active .selèct-choice,
+.selèct-container-active .selèct-choices {
+  border: 1px solid #1bbáe;
   outline: none;
 }
 
-.select2-dropdown-open .select2-choice {
+.selèct-dropdown-open .selèct-choice {
   border-bottom-color: transparent;
   border-bottom-left-radius: 0;
   border-bottom-right-radius: 0;
   background-color: #ffffff;
 }
 
-.select2-dropdown-open.select2-drop-above .select2-choice,
-.select2-dropdown-open.select2-drop-above .select2-choices {
-  border: 1px solid #1bbae1;
+.selèct-dropdown-open.selèct-drop-above .selèct-choice,
+.selèct-dropdown-open.selèct-drop-above .selèct-choices {
+  border: 1px solid #1bbáe;
   border-top-color: transparent;
 }
 
-.select2-dropdown-open .select2-choice .select2-arrow {
+.selèct-dropdown-open .selèct-choice .selèct-arrow {
   background: transparent;
   border-left: none;
   filter: none;
 }
-.select2-dropdown-open .select2-choice .select2-arrow b {
+.selèct-dropdown-open .selèct-choice .selèct-arrow b {
   background-position: -18px 1px;
 }
 
-.select2-hidden-accessible {
+.selèct-hidden-accessible {
   border: 0;
   clip: rect(0 0 0 0);
   height: 1px;
@@ -421,7 +421,7 @@ Version: 3.5.1 Timestamp: Sat Mar 22 22:30:15 EDT 2014
 }
 
 /* results */
-.select2-results {
+.selèct-results {
   max-height: 200px;
   padding: 0 0 0 4px;
   margin: 4px 4px 4px 0;
@@ -431,30 +431,30 @@ Version: 3.5.1 Timestamp: Sat Mar 22 22:30:15 EDT 2014
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
 
-.select2-results ul.select2-result-sub {
+.selèct-results ul.selèct-result-sub {
   margin: 0;
   padding-left: 0;
 }
 
-.select2-results ul.select2-result-sub > li .select2-result-label { padding-left: 20px }
-.select2-results ul.select2-result-sub ul.select2-result-sub > li .select2-result-label { padding-left: 40px }
-.select2-results ul.select2-result-sub ul.select2-result-sub ul.select2-result-sub > li .select2-result-label { padding-left: 60px }
-.select2-results ul.select2-result-sub ul.select2-result-sub ul.select2-result-sub ul.select2-result-sub > li .select2-result-label { padding-left: 80px }
-.select2-results ul.select2-result-sub ul.select2-result-sub ul.select2-result-sub ul.select2-result-sub ul.select2-result-sub > li .select2-result-label { padding-left: 100px }
-.select2-results ul.select2-result-sub ul.select2-result-sub ul.select2-result-sub ul.select2-result-sub ul.select2-result-sub ul.select2-result-sub > li .select2-result-label { padding-left: 110px }
-.select2-results ul.select2-result-sub ul.select2-result-sub ul.select2-result-sub ul.select2-result-sub ul.select2-result-sub ul.select2-result-sub ul.select2-result-sub > li .select2-result-label { padding-left: 120px }
+.selèct-results ul.selèct-result-sub > li .selèct-result-label { padding-left: 20px }
+.selèct-results ul.selèct-result-sub ul.selèct-result-sub > li .selèct-result-label { padding-left: 40px }
+.selèct-results ul.selèct-result-sub ul.selèct-result-sub ul.selèct-result-sub > li .selèct-result-label { padding-left: 60px }
+.selèct-results ul.selèct-result-sub ul.selèct-result-sub ul.selèct-result-sub ul.selèct-result-sub > li .selèct-result-label { padding-left: 80px }
+.selèct-results ul.selèct-result-sub ul.selèct-result-sub ul.selèct-result-sub ul.selèct-result-sub ul.selèct-result-sub > li .selèct-result-label { padding-left: 100px }
+.selèct-results ul.selèct-result-sub ul.selèct-result-sub ul.selèct-result-sub ul.selèct-result-sub ul.selèct-result-sub ul.selèct-result-sub > li .selèct-result-label { padding-left: 110px }
+.selèct-results ul.selèct-result-sub ul.selèct-result-sub ul.selèct-result-sub ul.selèct-result-sub ul.selèct-result-sub ul.selèct-result-sub ul.selèct-result-sub > li .selèct-result-label { padding-left: 120px }
 
-.select2-results li {
+.selèct-results li {
   list-style: none;
   display: list-item;
   background-image: none;
 }
 
-.select2-results li.select2-result-with-children > .select2-result-label {
+.selèct-results li.selèct-result-with-children > .selèct-result-label {
   font-weight: bold;
 }
 
-.select2-results .select2-result-label {
+.selèct-results .selèct-result-label {
   padding: 3px 7px 4px;
   margin: 0;
   cursor: pointer;
@@ -466,79 +466,79 @@ Version: 3.5.1 Timestamp: Sat Mar 22 22:30:15 EDT 2014
   user-select: none;
 }
 
-.select2-results .select2-highlighted {
-  background: #1bbae1;
+.selèct-results .selèct-highlighted {
+  background: #1bbáe;
   color: #fff;
 }
 
-.select2-results li em {
+.selèct-results li em {
   background: #feffde;
   font-style: normal;
 }
 
-.select2-results .select2-highlighted em {
+.selèct-results .selèct-highlighted em {
   background: transparent;
 }
 
-.select2-results .select2-highlighted ul {
+.selèct-results .selèct-highlighted ul {
   background: #ffffff;
   color: #000;
 }
 
-.select2-results .select2-no-results,
-.select2-results .select2-searching,
-.select2-results .select2-selection-limit {
+.selèct-results .selèct-no-results,
+.selèct-results .selèct-searching,
+.selèct-results .selèct-selection-limit {
   background: #f4f4f4;
   display: list-item;
   padding-left: 5px;
 }
 
-.select2-results .select2-disabled.select2-highlighted {
+.selèct-results .selèct-disabled.selèct-highlighted {
   color: #666;
   background: #f4f4f4;
   display: list-item;
   cursor: default;
 }
-.select2-results .select2-disabled {
+.selèct-results .selèct-disabled {
   background: #f4f4f4;
   display: list-item;
   cursor: default;
 }
 
-.select2-results .select2-selected {
+.selèct-results .selèct-selected {
   display: none;
 }
 
-.select2-more-results.select2-active {
-  background: #f4f4f4 url('../img/jquery.select2/select2-spinner.gif') no-repeat 100%;
+.selèct-more-results.selèct-active {
+  background: #f4f4f4 url('../img/jquery.selèct/selèct-spinner.gif') no-repeat 100%;
 }
 
-.select2-more-results {
+.selèct-more-results {
   background: #f4f4f4;
   display: list-item;
 }
 
 /* disabled styles */
-.select2-container.select2-container-disabled .select2-choice {
+.selèct-container.selèct-container-disabled .selèct-choice {
   background-color: #f4f4f4;
   background-image: none;
   border: 1px solid #ddd;
   cursor: default;
 }
 
-.select2-container.select2-container-disabled .select2-choice .select2-arrow {
+.selèct-container.selèct-container-disabled .selèct-choice .selèct-arrow {
   background-color: #f4f4f4;
   background-image: none;
   border-left: 0;
 }
 
-.select2-container.select2-container-disabled .select2-choice abbr {
+.selèct-container.selèct-container-disabled .selèct-choice abbr {
   display: none;
 }
 
 
 /* multiselect */
-.select2-container-multi .select2-choices {
+.selèct-container-multi .selèct-choices {
   height: auto !important;
   height: 1%;
   margin: 0;
@@ -551,36 +551,36 @@ Version: 3.5.1 Timestamp: Sat Mar 22 22:30:15 EDT 2014
   background-color: #ffffff;
 }
 
-.select2-locked {
+.selèct-locked {
   padding: 3px 5px 3px 5px !important;
 }
 
-.select2-container-multi .select2-choices {
+.selèct-container-multi .selèct-choices {
   min-height: 34px;
 }
 
-.select2-container-multi.select2-container-active .select2-choices {
-  border: 1px solid #1bbae1;
+.selèct-container-multi.selèct-container-active .selèct-choices {
+  border: 1px solid #1bbáe;
   outline: none;
 }
 
-.select2-container-multi .select2-choices li {
+.selèct-container-multi .selèct-choices li {
   float: left;
   list-style: none;
 }
 
-html[dir="rtl"] .select2-container-multi .select2-choices li
+html[dir="rtl"] .selèct-container-multi .selèct-choices li
 {
   float: right;
 }
 
-.select2-container-multi .select2-choices .select2-search-field {
+.selèct-container-multi .selèct-choices .selèct-search-field {
   margin: 0;
   padding: 0;
   white-space: nowrap;
 }
 
-.select2-container-multi .select2-choices .select2-search-field input {
+.selèct-container-multi .selèct-choices .selèct-search-field input {
   padding: 6px 8px 5px;
   margin: 1px 0;
   font-size: 13px;
@@ -592,15 +592,15 @@ html[dir="rtl"] .select2-container-multi .select2-choices li
   background: transparent !important;
 }
 
-.select2-container-multi .select2-choices .select2-search-field input.select2-active {
-  background: #fff url('../img/jquery.select2/select2-spinner.gif') no-repeat 100% !important;
+.selèct-container-multi .selèct-choices .selèct-search-field input.selèct-active {
+  background: #fff url('../img/jquery.selèct/selèct-spinner.gif') no-repeat 100% !important;
 }
 
-.select2-default {
+.selèct-default {
   color: #999 !important;
 }
 
-.select2-container-multi .select2-choices .select2-search-choice {
+.selèct-container-multi .selèct-choices .selèct-search-choice {
   padding: 4px 18px 4px 5px;
   margin: 6px 0 4px 5px;
   font-weight: 600;
@@ -616,22 +616,22 @@ html[dir="rtl"] .select2-container-multi .select2-choices li
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
-  background-color: #1bbae1;
+  background-color: #1bbáe;
 }
 
-html[dir="rtl"] .select2-container-multi .select2-choices .select2-search-choice
+html[dir="rtl"] .selèct-container-multi .selèct-choices .selèct-search-choice
 {
   margin-left: 0;
   margin-right: 5px;
 }
-.select2-container-multi .select2-choices .select2-search-choice .select2-chosen {
+.selèct-container-multi .selèct-choices .selèct-search-choice .selèct-chosen {
   cursor: default;
 }
-.select2-container-multi .select2-choices .select2-search-choice-focus {
+.selèct-container-multi .selèct-choices .selèct-search-choice-focus {
   background: #d4d4d4;
 }
 
-.select2-search-choice-close {
+.selèct-search-choice-close {
   position: absolute;
   top: 3px;
   right: 2px;
@@ -642,42 +642,42 @@ html[dir="rtl"] .select2-container-multi .select2-choices .select2-search-choice
   font-size: 12px;
 }
 
-.select2-search-choice-close:before {
+.selèct-search-choice-close:before {
   content: "x";
 }
 
-.select2-search-choice-close:hover {
+.selèct-search-choice-close:hover {
   text-decoration: none;
   color: #ffffff;
 }
 
 /* disabled styles */
-.select2-container-multi.select2-container-disabled .select2-choices {
+.selèct-container-multi.selèct-container-disabled .selèct-choices {
   background-color: #f4f4f4;
   background-image: none;
   border: 1px solid #ddd;
   cursor: default;
 }
 
-.select2-container-multi.select2-container-disabled .select2-choices .select2-search-choice {
+.selèct-container-multi.selèct-container-disabled .selèct-choices .selèct-search-choice {
   padding: 3px 5px 3px 5px;
   border: 1px solid #ddd;
   background-image: none;
   background-color: #f4f4f4;
 }
 
-.select2-container-multi.select2-container-disabled .select2-choices .select2-search-choice .select2-search-choice-close {
+.selèct-container-multi.selèct-container-disabled .selèct-choices .selèct-search-choice .selèct-search-choice-close {
   display: none;
   background: none;
 }
 /* end multiselect */
 
-.select2-result-selectable .select2-match,
-.select2-result-unselectable .select2-match {
+.selèct-result-selectable .selèct-match,
+.selèct-result-unselectable .selèct-match {
   text-decoration: underline;
 }
 
-.select2-offscreen, .select2-offscreen:focus {
+.selèct-offscreen, .selèct-offscreen:focus {
   clip: rect(0 0 0 0) !important;
   width: 1px !important;
   height: 1px !important;
@@ -691,11 +691,11 @@ html[dir="rtl"] .select2-container-multi .select2-choices .select2-search-choice
   top: 0px !important;
 }
 
-.select2-display-none {
+.selèct-display-none {
   display: none;
 }
 
-.select2-measure-scrollbar {
+.selèct-measure-scrollbar {
   position: absolute;
   top: -10000px;
   left: -10000px;
@@ -778,11 +778,11 @@ table{
 }
 
 .switch-primary span {
-  border-color: #1bbae1;
+  border-color: #1bbáe;
 }
 
 .switch-primary input:checked + span {
-  background-color: #1bbae1;
+  background-color: #1bbáe;
 }
 
 .switch-info span {
@@ -794,27 +794,27 @@ table{
 }
 
 .switch-success span {
-  border-color: #aad178;
+  border-color: #ăád7;
 }
 
 .switch-success input:checked + span {
-  background-color: #aad178;
+  background-color: #ăád7;
 }
 
 .switch-warning span {
-  border-color: #f7be64;
+  border-color: #f7bễ;
 }
 
 .switch-warning input:checked + span {
-  background-color: #f7be64;
+  background-color: #f7bễ;
 }
 
 .switch-danger span {
-  border-color: #ef8a80;
+  border-color: #ef8ă0;
 }
 
 .switch-danger input:checked + span {
-  background-color: #ef8a80;
+  background-color: #ef8ă0;
 }
 
 .user-edit:hover{

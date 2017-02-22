@@ -2,9 +2,9 @@ class ClubManager::MembersController < BaseClubManagerController
   before_action :correct_manager
   before_action :load_member, only: :show
   before_action :load_correct_member, only: :show
+  before_action :load_club, only: [:index, :show]
 
   def index
-    @club = Club.find_by id: params[:club_id]
     unless @club
       flash[:danger] = t "cant_found_club"
       redirect_to club_manager_path
@@ -21,6 +21,14 @@ class ClubManager::MembersController < BaseClubManagerController
     unless @member
       flash[:danger] = t("user.cant_found")
       redirect_to club_manager_club_members_path params[:club_id]
+    end
+  end
+
+  def load_club
+    @club = Club.find_by id: params[:club_id]
+    unless @club
+      flash[:danger] = t("cant_found_club")
+      redirect_to club_manager_path
     end
   end
 end
