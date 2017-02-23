@@ -1,2 +1,0 @@
-module ClubManager::ClubBudgetsHelper
-end

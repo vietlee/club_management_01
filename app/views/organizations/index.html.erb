@@ -66,10 +66,11 @@
                 <% end %>
                 <div class="store-item-image">
                   <%= link_to organization do %>
-                    <%= image_tag organization.logo, class: "img-responsive" %>
+                    <%= image_tag organization.logo,
+                      class: "img-responsive image-club" %>
                   <% end %>
                 </div>
-                <div class="store-item-info clearfix">
+                <div class="store-item-info clearfix block-club">
                   <span class="store-item-price themed-color-dark pull-left">
                     <%= organization.name %>
                   </span><br>

@@ -16,7 +16,15 @@
           <% end %>
         </li>
         <li><%= link_to t("organizations"), organizations_path %></li>
-        <li><%= link_to t("clubs"), clubs_path %></li>
+        <li>
+          <%= link_to "#", class: "site-nav-sub" do %>
+            <i class="fa fa-angle-down site-nav-arrow"></i><%= t "clubs" %>
+          <% end %>
+          <ul>
+            <li><%= link_to t("my_club"), my_clubs_path %></li>
+            <li><%= link_to t("other_club"), clubs_path %></li>
+          </ul>
+        </li>
         <li>
           <%= link_to "#", class: "site-nav-sub" do %>
             <i class="fa fa-angle-down site-nav-arrow"></i><%= t "requests" %>

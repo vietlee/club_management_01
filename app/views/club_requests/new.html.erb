@@ -2,35 +2,15 @@
 <section class="site-content site-section">
   <div class="container">
     <div class="row">
+
       <div class="col-sm-6 col-md-8 col-md-offset-2 site-block">
-        <div class="site-block">
-          <h3 class="h2 site-heading center"><strong><%= t "request" %>
-           </strong> <%= t "form" %></h3>
-          <address>
-            <%= t "address" %><br>
-            <%= t "town_city" %><br>
-            <%= t "cip_code_ect" %><br><br>
-            <i class="fa fa-phone"></i> <%= t "zero_phone" %><br>
-            <i class="fa fa-envelope-o"></i> <a href="javascript:void(0)"><%= t "example_email" %></a>
-          </address>
-        </div>
-        <div class="site-block">
-          <h3 class="h2 site-heading"><strong><%= t "about" %></strong> <%= t "us" %></h3>
-          <p class="remove-margin">
-            <%= t "des_company" %>
-          </p>
-        </div>
-      </div>
-      <div class="col-sm-6 col-md-8 site-block">
-        <h3 class="h2 site-heading"><strong><%= t "request" %></strong> <%= t "form" %></h3>
+        <h3 class="h2 site-heading center"><strong><%= t "request" %></strong> <%= t "club" %></h3>
         <%= form_for [:user, @request], html: {id: "form-contact"} do |f|%>
           <div class="form-group">
             <label for="contact-name"><%= t "organization_sign" %></label><br>
-            <%= f.select(:organization_id, @organizations.collect { |org| [ org.name, org.id ] },
-              {include_blank: t("select_one_organization")}, {class: "select-select2" }) %>
+            <%= f.select(:organization_id, @organizations.collect {|org| [ org.name, org.id ]}, {class: "select-select2" }) %>
             <label class="push-left"><%= t "organization_question" %></label>
-            <%= link_to t("click_here!"),
-              new_user_organization_request_path(user_id: current_user.id) %>
+            <%= link_to t("click_here!"), new_user_organization_request_path(user_id: current_user.id) %>
           </div>
           <div class="form-group">
             <label for="contact-name"><%= t "club_name" %></label>
@@ -48,12 +28,12 @@
               </div>
             </div>
           </div>
-          <div class="form-group center">
+          <div class="form-group">
             <label for="contact-message"><%= t "description" %></label>
             <%= f.text_area :description, placeholder: t("description_request"),
               class: "form-control input-lg", id: "contact-message", row: 10  %>
           </div>
-          <div class="form-group">
+          <div class="form-group center">
             <%= f.submit t("send_request"), class: "btn btn-primary btn-lg" %>
           </div>
         <% end %>
@@ -61,4 +41,3 @@
     </div>
   </div>
 </section>
-

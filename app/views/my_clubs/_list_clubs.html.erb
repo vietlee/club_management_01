@@ -7,7 +7,9 @@
       <div class="col-md-4 col-lg-3">
         <aside class="sidebar site-block">
           <div class="sidebar-block">
-            <%= search_form_for @q, class: "form-horizontal" do |f| %>
+            <%= search_form_for @q,
+              url: my_clubs_path,
+               class: "form-horizontal" do |f| %>
               <div class="form-group push-bit">
                 <div class="col-xs-12">
                   <div class="input-group">

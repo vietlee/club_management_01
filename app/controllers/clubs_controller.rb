@@ -4,7 +4,10 @@ class ClubsController < ApplicationController
   before_action :verify_club, only: :show
 
   def index
-    clubs = Club.of_organizations(current_user.organizations)
+    @club_joined = Club.of_organizations(
+      current_user.organizations).of_user_clubs(current_user.user_clubs.joined)
+    clubs = Club.of_organizations(current_user.organizations).without_clubs(
+      @club_joined)
     @q = clubs.search(params[:q])
     @clubs = @q.result.newest.page(params[:page]).per Settings.club_per_page
   end
@@ -17,6 +20,7 @@ class ClubsController < ApplicationController
     @messages = @club.messages
     @message = Message.new
     @user_club = UserClub.new
+    @members = @club.user_clubs.joined
   end
 
   protected

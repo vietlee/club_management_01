@@ -15,12 +15,29 @@ body {
   color: red;
   font-size: 12px;
 }
+.modal-footer {
+  border: none !important;
+}
 #page-container.boxed {
   max-width: 1280px;
   height: 100%;
 }
 .member {
   width: 100% !important;
+}
+.image-club {
+  height: 260px;
+  width: 100%;
+}
+.block-club {
+  height: 115px;
+}
+.members-club {
+  width: 50px !important;
+  height: 50px !important;
+}
+.name-member {
+  font-size: 10px !important;
 }
 header {
   position: fixed;

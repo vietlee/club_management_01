@@ -520,8 +520,13 @@ vi:
         name: "Tên ảnh"
         url: "Đường dẫn ảnh"
       organization_request:
+        name: "Tên"
         email: "Email"
         location: "Địa chỉ"
+        description: "Mô tả"
+        phone: "Số điện thoại"
+      club_request:
+        name: "Tên câu lạc bộ"
         description: "Mô tả"
       organization:
         name: "Tên tổ chức"
@@ -543,11 +548,24 @@ vi:
               too_short: " quá ngắn"
         organization_request:
           attributes:
+            name:
+              blank: " không được bỏ trống"
             email:
-              taken: " này có rồi"
-            location:
+              taken: " đã tồn tại"
+              blank: " không được bỏ trống"
+            description:
+              blank: " không được bỏ trống"
+              too_short: " quá ngắn"
+            phone:
+              blank: " không được bỏ trống"
+        club_request:
+          attributes:
+            name:
+              taken: " đã tồn tại"
+              blank: " không được bỏ trống"
               too_short: " quá ngắn"
             description:
+              blank: " không được bỏ trống"
               too_short: " quá ngắn"
         event:
           attributes:

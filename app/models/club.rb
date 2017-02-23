@@ -26,4 +26,6 @@ class Club < ApplicationRecord
   scope :of_organizations, -> organizations do
     where(organization_id: organizations.ids)
   end
+
+  delegate :name, to: :organization, prefix: :club, allow_nil: :true
 end

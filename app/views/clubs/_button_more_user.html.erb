@@ -1,0 +1,21 @@
+<div class="modal-dialog">
+  <div class="modal-content">
+    <div class="modal-body">
+      <% @members.each do |member| %>
+        <div class="col-md-2 col-sm-6">
+          <div class="text-center">
+            <%= link_to user_path(member.user_id), title: member.full_name do %>
+              <%= image_tag member.avatar,
+                class: "circle-profile-list" %>
+            <% end %>
+          </div>
+        </div>
+      <% end %>
+    </div>
+    <div class="modal-footer">
+      <button type="button" class="btn btn-default" data-dismiss="modal">
+        <%= t "close" %>
+      </button>
+    </div>
+  </div>
+</div>
