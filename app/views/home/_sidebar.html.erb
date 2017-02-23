@@ -1,7 +1,8 @@
 <header>
   <div class="container">
     <%= link_to root_path, class: "site-logo" do %>
-      <%= image_tag "logo.png", class: "img-responsive logo-page" %>
+      <i class="fa fa-flash fa-5x"></i>
+      <strong><%= t "logo" %></strong> - <%= t "clubs" %>
     <% end %>
     <nav>
       <%= link_to "javascript:void(0)",
@@ -25,8 +26,6 @@
             <li><%= link_to t("club_management"), manager_path %></li>
           </ul>
         </li>
-        <li><%= link_to t("about"), "#" %></li>
-        <li><%= link_to t("contact"), "#" %></li>
         <li>
           <%= link_to "#", class: "site-nav-sub" do %>
             <%= t "account" %> <span class="fa fa-user"></span>

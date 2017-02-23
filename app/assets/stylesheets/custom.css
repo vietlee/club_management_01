@@ -824,3 +824,17 @@ table{
 .organizations-image-index {
   padding:5px 5px;
 }
+.caret {
+ border-left: 8px solid transparent;
+ border-right: 8px solid transparent;
+ border-top: 8px solid white;
+ margin-right: 5px;
+}
+
+#sidebar {
+  margin-top: 100px;
+}
+.name-user {
+ font-size: 11px !important;
+}
+

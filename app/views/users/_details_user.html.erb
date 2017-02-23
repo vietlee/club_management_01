@@ -1,24 +1,12 @@
 <%= stylesheet_link_tag "organization-details",
   media: "all", "data-turbolinks-track": "reload" %>
-<section class="pad-top-organization"></section>
-<section class="site-content site-section">
+<section class="site-section site-section-light themed-background-dark">
+</section>
+<section class="site-content">
   <div class="container" id="main">
     <div class="row">
       <div class="col-lg-3 col-md-3 col-sm-4 col-xs-12">
         <div id="sidebar">
-          <div class="sosmed">
-            <div class="text-center">
-              <a href="#">
-                <i class="fa fa-facebook fa-2x" title="Facebook"></i>
-              </a>
-              <a href="#">
-                <i class="fa fa-twitter fa-2x" title="Twitter"></i>
-              </a>
-              <a href="#">
-                <i class="fa fa-google-plus fa-2x" title="Google Plus"></i>
-              </a>
-            </div>
-          </div>
           <div class="user">
             <div class="text-center">
               <%= image_tag @user.avatar,
@@ -78,8 +66,8 @@
                   <% if current_page? edit_user_path %>
                     <%= render "users/form_edit" %>
                   <% else %>
-                    <%= render partial: "list_clubs_user",
-                      locals: {clubs: @clubs.page(params[:page]).per(Settings.club_per_page)} %>
+                    <%= render "time_line_homes/time_line" %>
+                    <%= render "time_line_homes/club_tree" %>
                   <% end %>
                 </div>
               </li>
@@ -90,4 +78,3 @@
     </div>
   </div>
 </section>
-<section class="site-section site-section-light themed-background-dark"></section>
