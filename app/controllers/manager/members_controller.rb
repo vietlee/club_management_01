@@ -17,12 +17,17 @@ class Manager::MembersController < BaseOrganizationManagerController
   end
 
   def update
-    unless @user.update_attributes status: params[:status].to_i
+    if params[:status].blank?
+      user = @user.update_attributes is_admin: true
+    else
+      user = @user.update_attributes status: params[:status].to_i
+    end
+    unless user
       flash[:danger] = t("error_process")
       redirect_to :back
     end
     flash[:success] = t("success_process")
-    redirect_to manager_request_members_path(organization: params[:organization])
+    redirect_to :back
   end
 
   private

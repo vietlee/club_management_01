@@ -37,68 +37,14 @@
             <i class="fa fa-angle-left sidebar-nav-indicator sidebar-nav-mini-hide"></i>
             <i class="gi gi-user sidebar-nav-icon"></i>
             <span class="sidebar-nav-mini-hide">
-              <%= t "approve_club_request" %>
-            </span>
-          <% end %>
-          <ul>
-            <% @organizations.each do |organization| %>
-              <li>
-                <%= link_to manager_requests_path(organization: organization.id) do %>
-                  <%= view_sidebar_club organization %>
-                <% end %>
-              </li>
-            <% end %>
-          </ul>
-        </li>
-        <li>
-          <%= link_to t("do_nothing"), class: "sidebar-nav-menu" do %>
-            <i class="fa fa-angle-left sidebar-nav-indicator sidebar-nav-mini-hide"></i>
-            <i class="gi gi-user sidebar-nav-icon"></i>
-            <span class="sidebar-nav-mini-hide">
-              <%= t "member_request" %>
-            </span>
-          <% end %>
-          <ul>
-            <% @organizations.each do |organization| %>
-              <li>
-                <%= link_to manager_request_members_path(organization: organization.id) do %>
-                  <%= view_side_bar_memeber organization %>
-                <% end %>
-              </li>
-            <% end %>
-          </ul>
-        </li>
-        <li>
-          <%= link_to t("do_nothing"), class: "sidebar-nav-menu" do %>
-            <i class="fa fa-angle-left sidebar-nav-indicator sidebar-nav-mini-hide"></i>
-            <i class="gi gi-user sidebar-nav-icon"></i>
-            <span class="sidebar-nav-mini-hide">
-              <%= t "members" %>
+              <%= t "my_organization" %>
             </span>
           <% end %>
           <ul>
             <% @organizations.each do |organization| %>
               <li>
                 <%= link_to organization.name,
-                 manager_members_path(organization: organization.id)
-                  %>
-              </li>
-            <% end %>
-          </ul>
-        </li>
-        <li>
-          <%= link_to t("do_nothing"), class: "sidebar-nav-menu" do %>
-            <i class="fa fa-angle-left sidebar-nav-indicator sidebar-nav-mini-hide"></i>
-            <i class="gi gi-building sidebar-nav-icon"></i>
-            <span class="sidebar-nav-mini-hide">
-              <%= t("club_of_my_company") %>
-            </span>
-          <% end %>
-          <ul>
-            <% @organizations.each do |organization| %>
-              <li>
-                <%= link_to organization.name,
-                 manager_clubs_path(organization: organization.id)
+                  manager_organization_path(id: organization.id)
                   %>
               </li>
             <% end %>

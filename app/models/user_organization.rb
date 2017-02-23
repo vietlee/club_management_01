@@ -10,7 +10,9 @@ class UserOrganization < ApplicationRecord
   scope :find_with_user_of_company, -> user_id, organization_id do
     find_by user_id: user_id, organization_id: organization_id
   end
+  scope :newest, -> {order created_at: :desc}
 
+  delegate :full_name, :avatar, :email, :phone, to: :user, allow_nil: :true
   delegate :name, to: :organization, allow_nil: :true
 
   class << self

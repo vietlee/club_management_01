@@ -11,18 +11,10 @@
     </td>
     <td><%= member.user.email %></td>
     <td><%= member.user.phone %></td>
-    <% if club.nil? %>
-      <td class="text-center">
-        <%= link_to t("view"), manager_member_path(id: member.user.id,
-          organization: organization.id),
-          class: "btn btn-lg btn-primary" %>
-      </td>
-    <% else %>
-      <td class="text-center">
-        <%= link_to t("view"),
-          manager_member_path(id: member.user.id, organization: nil),
-          class: "btn btn-lg btn-primary" %>
-      </td>
-    <% end %>
+    <td class="text-center">
+      <%= link_to t("view"), manager_member_path(id: member.user.id,
+        organization: organization.id),
+        class: "btn btn-lg btn-primary" %>
+    </td>
   </tr>
 <% end %>

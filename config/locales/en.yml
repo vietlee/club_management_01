@@ -553,3 +553,8 @@ en:
   answer_admin: "Are you sure want to add this member is admin"
   budget: "Budget"
   get_data: "Get data"
+  no_data: "No Data"
+  answer_admin_organization: "Are you sure want to add this member is admin"
+  request_member: "Request join organization"
+  request_club: "Requests open a club"
+  add_admin: "Add this member is Admin"
