@@ -203,7 +203,7 @@ vi:
   hour: "Giờ"
   days: "Ngày"
   duration: "Thời gian diễn ra sự kiện"
-  date_start: "Thời gian bắt đầu sự kiện"
+  date_start: "Thời gian bắt đầu"
   expense: "Chi phí tổ chức (VND)"
   event_name: "Tên sự kiện"
   choose_club: "Chọn một câu lạc bộ mà bạn muốn gửi yêu cầu"
@@ -682,3 +682,4 @@ vi:
   request_member: "Yêu cầu gia nhập"
   request_club: "Yêu cầu mở câu lạc bộ"
   add_admin: "Thêm người này làm admin"
+  no_member: "Chưa có thành viên nào tham gia!"

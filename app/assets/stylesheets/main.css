@@ -39,6 +39,15 @@ body {
 .name-member {
   font-size: 10px !important;
 }
+.infor-event {
+  margin-bottom: 10px;
+}
+.user img {
+  margin-bottom: 10px;
+}
+.infor-event strong {
+  font-size: 17px;
+}
 header {
   position: fixed;
   top: 0;
