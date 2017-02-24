@@ -516,6 +516,9 @@ vi:
         image: "Ảnh"
       album:
         name: "Tên bộ sưu tập"
+      image:
+        name: "Tên ảnh"
+        url: "Đường dẫn ảnh"
       organization_request:
         email: "Email"
         location: "Địa chỉ"
@@ -568,6 +571,13 @@ vi:
             name:
               blank: " không được bỏ trống"
               too_short: " quá ngắn"
+        image:
+          attributes:
+            name:
+              blank: " không được bỏ trống"
+              too_short: " quá ngắn"
+            url:
+              blank: " chưa được chọn"
         organization:
           attributes:
             name:
@@ -643,3 +653,9 @@ vi:
   cant_not_update: "Không thể hoàn thành cập nhập này,vui lòng thực hiện lại"
   album_empty: "Bộ sưu tập này chưa có ảnh nào"
   background: "Hình nền"
+  accept: Duyệt?
+  add_admin: "Thêm người này làm admin"
+  no_data: "Không có dữ liệu"
+  answer_admin: "Bạn muốn thành viên này làm quản trị viên cho câu lạc bộ?"
+  budget: "Thu quỹ"
+  get_data: "Lấy dữ liệu"

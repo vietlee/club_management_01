@@ -547,3 +547,9 @@ en:
   cant_not_update: "Can not update in this case,please try again"
   album_empty: "This album empty"
   background: "background"
+  accept: accept
+  add_admin: "Add this member is Admin"
+  no_data: "No Data"
+  answer_admin: "Are you sure want to add this member is admin"
+  budget: "Budget"
+  get_data: "Get data"

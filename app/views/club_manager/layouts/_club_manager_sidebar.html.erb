@@ -34,41 +34,6 @@
         <li>
           <%= link_to t("do_nothing"), class: "sidebar-nav-menu" do %>
             <i class="fa fa-angle-left sidebar-nav-indicator sidebar-nav-mini-hide"></i>
-            <i class="gi gi-user sidebar-nav-icon"></i>
-            <span class="sidebar-nav-mini-hide"><%= t "members" %></span>
-          <% end %>
-          <ul>
-            <% manager_of_club(current_user).each do |user_club| %>
-              <li>
-                <%= link_to user_club.name, club_manager_club_members_path(user_club.club_id) %>
-              </li>
-            <% end %>
-          </ul>
-        </li>
-        <li>
-          <%= link_to t("do_nothing"), class: "sidebar-nav-menu" do %>
-            <i class="fa fa-angle-left sidebar-nav-indicator sidebar-nav-mini-hide"></i>
-            <i class="gi gi-user sidebar-nav-icon"></i>
-            <span class="sidebar-nav-mini-hide"><%= t "request_join" %></span>
-          <% end %>
-          <ul>
-            <% manager_of_club(current_user).each do |user_club| %>
-              <li>
-                <div class="col-md-10">
-                  <%= link_to user_club.name, club_manager_club_user_clubs_path(user_club.club_id) %>
-                </div>
-                <div class="col-md-2">
-                  <% if count_request(user_club) > Settings.none %>
-                    <%= count_request user_club %>
-                  <% end %>
-                </div>
-              </li>
-            <% end %>
-          </ul>
-        </li>
-        <li>
-          <%= link_to t("do_nothing"), class: "sidebar-nav-menu" do %>
-            <i class="fa fa-angle-left sidebar-nav-indicator sidebar-nav-mini-hide"></i>
             <i class="gi gi-group sidebar-nav-icon"></i>
             <span class="sidebar-nav-mini-hide"><%= t "my_clubs" %></span>
           <% end %>
@@ -79,40 +44,6 @@
               </li>
             <% end %>
           </ul>
-        </li>
-        <li>
-          <%= link_to t("do_nothing"), class: "sidebar-nav-menu" do %>
-            <i class="fa fa-angle-left sidebar-nav-indicator sidebar-nav-mini-hide"></i>
-            <i class="gi gi-camera sidebar-nav-icon"></i>
-            <span class="sidebar-nav-mini-hide"><%= t "clubs's_album" %></span>
-          <% end %>
-          <ul>
-            <% manager_of_club(current_user).each do |user_club| %>
-              <li>
-                <%= link_to user_club.name, club_manager_club_albums_path(user_club.club_id) %>
-              </li>
-            <% end %>
-          </ul>
-        </li>
-        <li>
-          <%= link_to t("do_nothing"), class: "sidebar-nav-menu" do %>
-            <i class="fa fa-angle-left sidebar-nav-indicator sidebar-nav-mini-hide"></i>
-            <i class="gi gi-gamepad sidebar-nav-icon"></i>
-            <span class="sidebar-nav-mini-hide"><%= t "event" %></span>
-          <% end %>
-          <ul>
-            <% manager_of_club(current_user).each do |user_club| %>
-              <li>
-                <%= link_to user_club.name, club_manager_club_events_path(user_club.club_id) %>
-              </li>
-            <% end %>
-          </ul>
-        </li>
-        <li>
-          <%= link_to club_manager_budgets_path do %>
-            <i class="fa fa-usd sidebar-nav-icon"></i>
-            <span class="sidebar-nav-mini-hide"><%= t "budget" %></span>
-          <% end %>
         </li>
       </ul>
     </div>

@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
   before_action :authenticate_user!
-  before_action :load_user, only: :show
+  before_action :load_user, only: [:show, :edit]
   before_action :load_organizations, only: [:show, :edit]
 
   def show

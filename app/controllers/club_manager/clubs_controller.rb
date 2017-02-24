@@ -4,6 +4,9 @@ class ClubManager::ClubsController < BaseClubManagerController
 
   def show
     @event = Event.new
+    @members = @club.user_clubs
+    @albums = @club.albums.newest.page(params[:page]).per Settings.per_page_album
+    @new_album = Album.new
   end
 
   def update

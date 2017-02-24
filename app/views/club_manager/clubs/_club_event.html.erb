@@ -14,8 +14,7 @@
         <div class="inside-div">
           <%= truncate_html(event_club.description.html_safe, length: Settings.new_detail) %><br>
           <%= link_to t("view_more"),
-            club_manager_club_event_path(club_id: @club.id, id: event_club.id),
-            class: "pull-right" %>
+            club_manager_club_event_path(club_id: @club.id, id: event_club.id) %>
         </div>
       </div>
     </div><hr>

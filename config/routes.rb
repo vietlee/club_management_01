@@ -41,6 +41,7 @@ Rails.application.routes.draw do
         resources :images
       end
       resources :user_clubs
+      resources :requests
     end
     resources :budgets
     resources :club_budgets, only: :create
