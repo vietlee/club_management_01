@@ -64,3 +64,8 @@ periodic_category: 4
 payment_budget: "Payment For Club Of Month:"
 member_club: 18
 club_member: 18
+notification: 3
+get_money: 2
+pay_money: 1
+event_page: 4
+member_manager: 23

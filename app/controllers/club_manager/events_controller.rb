@@ -22,8 +22,17 @@ class ClubManager::EventsController < BaseClubManagerController
 
   def create
     event = Event.new event_params
+    event.event_category = params[:event][:event_category].to_i
     if event.save
       create_acivity event, Settings.create, event.club, current_user
+      if params[:event][:event_category].to_i == Event.event_categories[:pay_money]
+        @money = @club.money.to_i-params[:event][:expense].to_i
+        club = @club.update_attributes money: @money
+        unless club
+          flash[:danger] = t "error_process"
+          redirect_to :back
+        end
+      end
       flash[:success] = t "club_manager.event.success_create"
       redirect_to club_manager_club_path params[:club_id]
     else
@@ -34,6 +43,9 @@ class ClubManager::EventsController < BaseClubManagerController
 
   def update
     ActiveRecord::Base.transaction do
+      if params[:event][:event_category].to_i == Event.event_categories[:pay_money]
+        @club.pay_money_change(@event, params[:event][:expense])
+      end
       service = UpdateClubMoneyService.new @event, @club, event_params
       service.update_event
       service.update_money
@@ -48,6 +60,8 @@ class ClubManager::EventsController < BaseClubManagerController
 
   def show
     @news = News.new
+    @users_done = @club.users.done_by_ids(@event.budgets.map(&:user_id))
+    @users_yet = @club.users.yet_by_ids(@event.budgets.map(&:user_id))
   end
 
   private
@@ -69,7 +83,7 @@ class ClubManager::EventsController < BaseClubManagerController
 
   def event_params
     params.require(:event).permit :club_id, :name, :date_start, :status,
-      :expense, :date_end, :location, :description, :image, :event_category_id
+      :expense, :date_end, :location, :description, :image, :user_id
   end
 
   def is_finished

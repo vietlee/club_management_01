@@ -1,27 +1,44 @@
-<div class="row">
-  <% @club.events.newest.take(Settings.club_event).each do |event_club|  %>
-    <div class="row form-group">
-      <div class="col-sm-5 text-center full-img-new">
-        <%= link_to club_manager_club_event_path(club_id: @club.id, id: event_club.id) do %>
-          <%= image_tag event_club.image %>
-        <% end %>
-      </div>
-      <div class="col-sm-6">
-        <h4><b><%= event_club.name %></b></h4>
-        <h5><b><%= t "club_manager.event.show_expense" %></b>
-          <%= number_to_currency(event_club.expense, locale: :vi) %>
-        </h5>
-        <div class="inside-div">
-          <%= truncate_html(event_club.description.html_safe, length: Settings.new_detail) %><br>
-          <%= link_to t("view_more"),
-            club_manager_club_event_path(club_id: @club.id, id: event_club.id) %>
+<div class="row block">
+  <div class="block breadcrumb breadcrumb-top form-group">
+    <%= link_to new_club_manager_club_event_path(club_id: @club.id),
+      class: "btn btn-sm btn-primary" do %>
+      <i class="fa fa-camera"> </i><%= t "club_manager.album.create" %>
+    <% end %>
+    <div class="pull-right">
+      <ul class="nav nav-tabs" role="tablist">
+        <li role="presentation" class="active">
+          <%= link_to t("notification"), "#notification", data: {toggle: "tab"} %>
+        </li>
+        <li role="presentation">
+          <%= link_to t("get_money"), "#get_money", data: {toggle: "tab"} %>
+        </li>
+        <li role="presentation">
+          <%= link_to t("pay_money"), "#pay_money", data: {toggle: "tab"} %>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+<div id="page-content">
+  <div class="row">
+    <div class="col-md-12">
+      <div class="tab-content">
+        <div role="tabpanel" class="tab-pane fade in active" id="notification">
+          <div class="row block">
+            <%= render "notification" %>
+          </div>
+        </div>
+        <div role="tabpanel" class="tab-pane fade in" id="get_money">
+          <div class="row block">
+            <%= render "get_money" %>
+          </div>
+        </div>
+        <div role="tabpanel" class="tab-pane fade in" id="pay_money">
+          <div class="row block">
+            <%= render "pay_money" %>
+          </div>
         </div>
       </div>
-    </div><hr>
-  <% end %>
+    </div>
+  </div>
 </div>
-<% if @club.events.size > Settings.club_event %>
-  <div class="text-center">
-    <%= link_to t("view_more"), club_manager_club_events_path(club_id: @club.id) %>
-  </div><br>
-<% end %>

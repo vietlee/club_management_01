@@ -41,6 +41,6 @@ class ClubManager::BudgetsController < BaseClubManagerController
       date_start: (params[:month_of_payment].first.to_datetime).at_beginning_of_month,
       date_end: (params[:month_of_payment].first.to_datetime).end_of_month,
       month_of_payment: params[:month_of_payment].first,
-      event_category_id: Settings.periodic_category
+      event_category: Settings.periodic_category
   end
 end

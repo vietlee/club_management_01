@@ -1,6 +1,6 @@
 <% if members.any? %>
   <div class="col-md-12">
-    <% members.each do |member| %>
+    <% members.take(Settings.member_manager).each do |member| %>
       <div class="col-md-2 col-sm-2 col-sm-2 member-manager">
         <div class="text-center">
           <%= link_to club_manager_club_member_path(id: member.user.id,
@@ -35,11 +35,25 @@
           <% end %>
         </div>
       </div>
+      <% if members.size > Settings.member_manager %>
+        <div class="col-md-4 col-sm-6">
+          <%= link_to ".manager-user", data: {toggle: "modal"},
+            class: "circle-profile-list members-club
+              animation-fadeIn360", title: "more" do %>
+            <%= image_tag "more.png", class: "circle-profile-list
+              members-club animation-fadeIn360" %>
+          <% end %>
+        </div>
+      <% end %>
+      <div class="text-center">
+        <div id="" class="modal manager-user fade" tabindex="-1"
+          role="dialog" aria-hidden="true">
+          <%= render partial: "member_more_manager", locals: {all_members: members} %>
+        </div>
+      </div>
     <% end %>
-  </div>
-  <div class="col-md-12">
-    <%= paginate members %>
   </div>
 <% else %>
   <h1><%= t "no_data" %></h1>
 <% end %>
+

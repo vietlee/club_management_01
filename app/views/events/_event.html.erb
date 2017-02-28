@@ -10,7 +10,7 @@
       </div>
       <div class="col-md-8">
         <h3 class="site-heading"><strong><%= event.name %></strong></h3>
-        <p><%= event.description.truncate Settings.description_event %></p>
+        <p><%= event.description.html_safe.truncate Settings.description_event %></p>
       </div>
     </div>
     <div class="clearfix">

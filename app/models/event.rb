@@ -8,7 +8,6 @@ class Event < ApplicationRecord
   has_many :activities, as: :trackable, dependent: :destroy
 
   belongs_to :club
-  belongs_to :event_category
   belongs_to :user
 
   mount_uploader :image, ImageUploader
@@ -22,12 +21,13 @@ class Event < ApplicationRecord
   scope :top_like, -> {order num_like: :desc}
   scope :of_month_payment, -> month_payment {where month_of_payment: month_payment}
   scope :newest, -> {order created_at: :desc}
-  scope :periodic, -> {where event_category_id: Settings.periodic_category}
+  scope :periodic, -> {where event_category: Settings.periodic_category}
   scope :by_current_year, -> {where "year(created_at) = ?", Time.zone.now.year}
   scope :by_quarter, -> months {where("month(created_at) in (?)", months)}
-  scope :of_category, -> category_id {where event_category_id: category_id}
+  scope :of_category, -> event_category {where event_category: event_category}
 
   enum status: {inprocess: 0, finished: 1}
+  enum event_category: {pay_money: 1, get_money: 2, notification: 3}
 
   def self.group_by_quarter
     quarters = [[1,2,3], [4,5,6], [7,8,9], [10,11,12]]

@@ -28,4 +28,16 @@ class Club < ApplicationRecord
   end
 
   delegate :name, to: :organization, prefix: :club, allow_nil: :true
+
+  def calculate_change_budget event
+    self.update_attributes money: self.money.to_i - event.expense.to_i
+  end
+
+  def calculate_get_budget event, size_member
+    self.update_attributes money: size_member*event.expense.to_i + self.money.to_i
+  end
+
+  def pay_money_change event, change
+    self.update_attributes money: self.money.to_i + (event.expense.to_i - change.to_i)
+  end
 end

@@ -6,6 +6,10 @@
       <h1 class="animation-slideDown">
         <strong><%= @club.name %></strong>
       </h1>
+      <h3>
+        <i class="fa fa-dollar"></i>
+        <%= t "budget_now" %><%= number_to_vnd @club.money %>
+      </h3>
       <p class="h3 animation-slideUp hidden-xs">
         <%= @club.description.html_safe %>
       </p>
@@ -20,44 +24,43 @@
   </section>
   <%= image_tag @club.image, class: "media-image animation-pulseSlow" %>
 </div>
-<ul class="nav nav-tabs" role="tablist">
-  <li role="presentation" class="active">
-    <%= link_to t("events"), "#events", data: {toggle: "tab"} %>
-  </li>
-  <li role="presentation">
-    <%= link_to "#members", data: {toggle: "tab"} do %>
-      <%= t("members") %>
-      <span class="label label-primary label-indicator
-        animation-floating">
-        <%= @members.joined.size %>
-      </span>
-    <% end %>
-  </li>
-  <li role="presentation">
-    <%= link_to "#manager", data: {toggle: "tab"} do %>
-      <%= t("manager") %>
-      <span class="label label-primary label-indicator
-        animation-floating">
-        <%= @members.manager.size %>
-      </span>
-    <% end %>
-  </li>
-  <li role="presentation">
-    <%= link_to "#request", data: {toggle: "tab"} do %>
-      <%= t("request") %>
-      <span class="label label-primary label-indicator
-        animation-floating">
-        <%= @members.pending.size %>
-      </span>
-    <% end %>
-  </li>
-  <li role="presentation">
-    <%= link_to t("albums"), "#albums", data: {toggle: "tab"} %>
-  </li>
-  <li role="presentation">
-    <%= link_to t("budget"), "#budget", data: {toggle: "tab"} %>
-  </li>
-</ul>
+<div class="block ">
+  <ul class="nav nav-tabs" role="tablist">
+    <li role="presentation" class="active">
+      <%= link_to t("events"), "#events", data: {toggle: "tab"} %>
+    </li>
+    <li role="presentation">
+      <%= link_to "#members", data: {toggle: "tab"} do %>
+        <%= t("members") %>
+        <span class="label label-primary label-indicator
+          animation-floating">
+          <%= @members.joined.size %>
+        </span>
+      <% end %>
+    </li>
+    <li role="presentation">
+      <%= link_to "#manager", data: {toggle: "tab"} do %>
+        <%= t("manager") %>
+        <span class="label label-primary label-indicator
+          animation-floating">
+          <%= @members.manager.size %>
+        </span>
+      <% end %>
+    </li>
+    <li role="presentation">
+      <%= link_to "#request", data: {toggle: "tab"} do %>
+        <%= t("request") %>
+        <span class="label label-primary label-indicator
+          animation-floating">
+          <%= @members.pending.size %>
+        </span>
+      <% end %>
+    </li>
+    <li role="presentation">
+      <%= link_to t("albums"), "#albums", data: {toggle: "tab"} %>
+    </li>
+  </ul>
+</div>
 <div id="page-content">
   <div class="row">
     <div class="col-md-12">
@@ -70,29 +73,24 @@
         <div role="tabpanel" class="tab-pane fade in" id="members">
           <div class="row block">
             <%= render partial: "list_member",
-              locals: {members: @members.joined.newest.page(params[:page]).per( Settings.member_club)} %>
+              locals: {members: @members.joined} %>
           </div>
         </div>
         <div role="tabpanel" class="tab-pane fade in" id="manager">
           <div class="row block">
             <%= render partial: "list_member",
-              locals: {members: @members.manager.newest.page(params[:page]).per( Settings.member_club)} %>
+              locals: {members: @members.manager} %>
           </div>
         </div>
         <div role="tabpanel" class="tab-pane fade in" id="request">
           <div class="row block">
             <%= render partial: "list_member",
-              locals: {members: @members.pending.newest.page(params[:page]).per( Settings.member_club)} %>
+              locals: {members: @members.pending} %>
           </div>
         </div>
         <div role="tabpanel" class="tab-pane fade in" id="albums">
           <div class="row block">
             <%= render "list_albums" %>
-          </div>
-        </div>
-        <div role="tabpanel" class="tab-pane fade in" id="budget">
-          <div class="row block">
-            <%= render "budget" %>
           </div>
         </div>
       </div>

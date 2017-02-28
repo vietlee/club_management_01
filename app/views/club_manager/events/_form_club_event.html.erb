@@ -7,10 +7,10 @@
       <%= t "club_manager.event.type" %>
     </label>
     <div class="col-md-7">
-      <%= f.select :event_category_id,
-        EventCategory.take(Settings.event_type).collect {|item| [ t("#{item.name.parameterize}"),
-        item.id ]}, {}, {class: "form-control selectpicker",
-        "data-live-search": true, selected: @event.event_category_id} %>
+      <%= f.select(:event_category, options_for_select([[t("pay_money"),
+        Event.event_categories[:pay_money]],
+        [t("get_money"), Event.event_categories[:get_money]],
+        [t("notification"), Event.event_categories[:notification]]]))%>
     </div>
   </div>
   <div class="form-group">
@@ -22,6 +22,7 @@
       <%= f.label :status_in_procress, t("inprocess") %>
       <%= f.radio_button :status, Settings.finished, checked: @event.finished? %>
       <%= f.label :status_finished, t("finished") %>
+      <%= f.hidden_field :user_id, value: current_user.id %>
     </div>
   </div>
   <div class="form-group">
