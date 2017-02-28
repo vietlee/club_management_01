@@ -3,6 +3,7 @@ class EventsController < ApplicationController
   before_action :load_club, :load_event, only: :show
 
   def show
+    @members = @event.users
   end
 
   private

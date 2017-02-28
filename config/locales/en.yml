@@ -558,3 +558,4 @@ en:
   request_member: "Request join organization"
   request_club: "Requests open a club"
   add_admin: "Add this member is Admin"
+  no_member: "Has not member yet"

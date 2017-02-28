@@ -5,16 +5,52 @@
       <div class="row">
         <div class="col-md-10 col-md-offset-1 site-block">
           <article>
-          <h1><%= @event.name %></h1>
+          <h1 class="center"><strong><%= @event.name %></h1></strong>
           <hr>
-          <div class="row">
-            <div class="col-md-3 fa fa-money"><strong> <%= t "expense" %></strong> <br><%= number_to_vnd @event.expense %></div>
-            <div class="col-md-3 fa fa-map-marker"><strong> <%= t "location" %></strong> <br><%= @event.location %></div>
-            <div class="col-md-3 fa fa-calendar"><strong> <%= t "date_start" %></strong> <br><%= @event.date_start %></div>
-            <div class="col-md-3 fa fa-clock-o"><strong> <%= t "date_end" %></strong> <br><%= @event.date_end %></div>
+          <div class="row block col-md-6">
+            <div class="col-md-6 fa fa-money center infor-event">
+              <strong> <%= t "expense" %></strong> <br>
+              <p><%= number_to_vnd @event.expense %></p></div>
+            <div class="col-md-6 fa fa-map-marker center infor-event">
+              <strong> <%= t "location" %></strong> <br>
+              <p><%= @event.location %></p></div>
+            <div class="col-md-6 fa fa-calendar center infor-event">
+              <strong> <%= t "date_start" %></strong> <br>
+              <p><%= @event.date_start %></p></div>
+            <div class="col-md-6 fa fa-clock-o center infor-event">
+              <strong> <%= t "date_end" %></strong><br>
+              <p><%= @event.date_end %></p></div>
           </div>
-          <hr>
-            <p><%= t "event_content" %></p>
+          <div class="block col-md-6">
+            <div class="row text-center">
+              <% if @members.any? %>
+                <% @members.take(Settings.event_user).each do |user_event| %>
+                  <% if join_event? @event %>
+                    <div class="col-sm-2">
+                      <%= link_to user_path(id: user_event.id) do %>
+                        <%= image_tag user_event.avatar,
+                          class: "circle-profile-list members-club",
+                          title: user_event.full_name %>
+                      <% end %>
+                    </div>
+                  <% end %>
+                <% end %>
+                <% if @members.size > Settings.event_user  %>
+                  <div class="col-sm-2">
+                    <%= link_to "#modal-user", data: {toggle: "modal"},
+                      class: "circle-profile-list members-club
+                        animation-fadeIn360", title: "more" do %>
+                      <%= image_tag "more.png", class: "circle-profile-list
+                        members-club animation-fadeIn360" %>
+                    <% end %>
+                  </div>
+                <% end %>
+              <% else %>
+                <h3><%= t "no_member" %></h3>
+              <% end %>
+            </div>
+          </div>
+          <div class="col-md-12">
             <div class="row push-top-bottom">
               <div class="col-sm-6">
                 <p>
@@ -31,10 +67,6 @@
                 </p>
               </div>
             </div>
-            <blockquote>
-              <p><%= t "event_content" %></p>
-              <footer>John Doe</footer>
-            </blockquote>
             <p><%= t "event_content" %></p>
             <div class="row push-top-bottom">
               <div class="col-sm-4">
@@ -61,6 +93,7 @@
             </div>
             <p><%= t "event_content" %></p>
           </article>
+          </div>
         </div>
       </div>
       <hr>
@@ -74,4 +107,10 @@
 </div>
 <div class="join-event-toggle-container">
   <%= render "user_events/join_event_toggle" %>
+</div>
+<div class="text-center">
+  <div id="modal-user" class="modal fade" tabindex="-1"
+    role="dialog" aria-hidden="true">
+    <%= render "button_more_user" %>
+  </div>
 </div>
