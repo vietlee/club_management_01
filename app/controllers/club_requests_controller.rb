@@ -21,7 +21,7 @@ class ClubRequestsController < ApplicationController
     else
       flash_error request
     end
-    redirect_to root_path
+    redirect_to :back
   end
 
   def destroy

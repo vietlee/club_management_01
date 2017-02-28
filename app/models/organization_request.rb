@@ -8,10 +8,7 @@ class OrganizationRequest < ApplicationRecord
 
   validates :name, presence: true, uniqueness: true
   validates :email, presence: true, uniqueness: true
-  validates :description, presence: true,
-    length: {minimum: Settings.min_description}
-  validates :location, presence: true,
-    length: {minimum: Settings.min_location}
+  validates :description, presence: true
   validates :phone, presence: true
 
   delegate :full_name, to: :user, allow_nil: :true

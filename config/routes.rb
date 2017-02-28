@@ -66,6 +66,7 @@ Rails.application.routes.draw do
   resources :organizations, only: [:show, :index]
   resources :time_line_homes
   resources :time_line_homes
+  resources :my_clubs
   resources :comments
   resources :set_language, only: :update
   resources :reason_leaves, only: [:index, :show, :create]
