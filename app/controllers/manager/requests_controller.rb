@@ -28,7 +28,7 @@ class Manager::RequestsController < BaseOrganizationManagerController
           create_user_club @request.user_id, @club.id
         end
         flash[:success] = t("success_process")
-        redirect_to manager_requests_path(organization: params[:organization])
+        redirect_to manager_organization_path(id: @request.organization_id)
       else
         flash[:danger] = t("error_process")
         redirect_to :back

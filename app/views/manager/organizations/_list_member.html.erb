@@ -1,0 +1,47 @@
+<% if members.any? %>
+  <div class="col-md-12">
+    <% members.each do |member| %>
+      <div class="col-md-2 col-sm-2 col-sm-2 member-manager">
+        <div class="text-center">
+          <%= link_to manager_member_path(id: member.user_id,
+            organization: @organization.id) do %>
+            <%= image_tag member.avatar, class: "circle-profile-list" %>
+            <h4 class="center">
+              <b><%= member.full_name %></b></br>
+              <% if member.joined? && !member.is_admin? %>
+                <%= link_to manager_member_path(id: member.id,
+                  organization_id: @organization.id, status: nil), method: :put,
+                  title: t("add_admin"),
+                  data: {confirm: t("answer_admin_organization")} do %>
+                  <i class="gi gi-cogwheel btn btn-danger"></i>
+                <% end %>
+              <% end %>
+              <% if member.joined? && member.is_admin? %>
+                <i class="gi gi-old_man btn btn-primary", title="Admin"></i>
+              <% end %>
+            </h4>
+            <% if member.pending? && !member.reject? %>
+              <%= link_to t("active"),
+                manager_member_path(id: member.id,
+                status: UserOrganization.statuses[:joined],
+                organization: member.organization_id), method: :put,
+                remote: true, class: "btn btn-primary",
+                data: {confirm: t("answer_active")} %>
+              <%= link_to t("reject"),
+                manager_member_path(id: member.id,
+                status: UserOrganization.statuses[:reject],
+                organization: member.organization_id), method: :put,
+                remote: true, class: "btn btn-danger",
+                data: {confirm: t("answer_reject")} %>
+            <% end %>
+          <% end %>
+        </div>
+      </div>
+    <% end %>
+    <div class="col-md-12">
+      <%= paginate members %>
+    </div>
+  </div>
+<% else %>
+  <h1><%= t "no_data" %></h1>
+<% end %>

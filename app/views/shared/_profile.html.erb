@@ -1,4 +1,6 @@
-<%= link_to t("back"), :back, class: "btn btn-default" %>
+<%= link_to t("back"),
+  manager_organization_path(id: params[:organization]),
+  class: "btn btn-default" %>
 <div class="center"><%= image_tag user.avatar,
   class: "circle-profile" %></div><hr>
 <div class="row">

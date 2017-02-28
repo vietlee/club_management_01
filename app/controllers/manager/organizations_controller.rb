@@ -2,6 +2,9 @@ class Manager::OrganizationsController < BaseOrganizationManagerController
   before_action :load_organization, only: [:show, :edit, :update]
 
   def show
+    @members = @organization.user_organizations.includes(:user)
+    @requests = @organization.club_requests.pending.order_date_desc
+    @clubs = @organization.clubs.newest
   end
 
   def edit
@@ -10,7 +13,7 @@ class Manager::OrganizationsController < BaseOrganizationManagerController
   def update
     if @organization.update_attributes organization_parmas
       flash[:success] = t("update_organization_success")
-      redirect_to :manager
+      redirect_to manager_organization_path(id: @organization.id)
     else
       flash[:danger] = t "error_update"
       render :edit

@@ -7,5 +7,7 @@ class ClubRequest < ApplicationRecord
 
   scope :order_date_desc, -> {order created_at: :desc}
 
+  delegate :full_name, to: :user, allow_nil: :true
+
   mount_uploader :logo, ImageUploader
 end
