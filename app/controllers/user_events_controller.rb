@@ -8,9 +8,8 @@ class UserEventsController < ApplicationController
       flash_error user_event
       redirect_to :back
     end
-    respond_to do |format|
-      format.js
-    end
+    flash[:success] = t("thanks_for_join")
+    redirect_to :back
   end
 
   def destroy
@@ -25,9 +24,8 @@ class UserEventsController < ApplicationController
       flash[:danger] = t("not_found_user_event")
       redirect_to :back
     end
-    respond_to do |format|
-      format.js
-    end
+    flash[:success] = t("see_you_next_time")
+    redirect_to :back
   end
 
   private

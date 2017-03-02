@@ -22,9 +22,41 @@ h4 .money {
 .tab-list {
   margin-top: 10px;
 }
+.detail-text {
+  color: #394263;
+  font-weight: bold;
+}
+.notifi-empty {
+  color: red !important;
+}
+.event-title {
+  background: #394263;
+  padding: 10px;
+  color: white;
+}
+.event-block {
+  border: 1px solid #394263;
+}
+.site-block .title {
+  color: #394263;
+  font-weight: bold;
+  font-size: 18px;
+}
+.media-body {
+  height: 90px;
+}
+.media-comment {
+  height: 120px;
+}
 .admin {
   color: red;
   font-size: 12px;
+}
+.notification, .money {
+  color: #BEBDE2;
+}
+.notifi-join {
+  font-weight: bold;
 }
 .modal-footer {
   border: none !important;

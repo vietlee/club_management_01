@@ -1,4 +1,4 @@
-<section class="site-content site-section">
+<section class="site-content">
   <div class="container">
     <div class="row">
       <div class="col-sm-8 col-md-9">
@@ -8,7 +8,7 @@
         <%= render partial: "events/event", locals: {event: @events} %>
       </div>
       <div class="col-sm-4 col-md-3">
-        <aside class="sidebar site-block">
+        <aside class="sidebar site-block site-section">
           <div class="sidebar-block">
             <%= search_form_for @q, url: club_url, method: :get do |f| %>
               <div class="input-group">

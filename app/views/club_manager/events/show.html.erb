@@ -28,31 +28,31 @@
             <div class="col-md-6 full-img" >
                 <%= image_tag @event.image %>
             </div>
-            <div class="col-md-6 " >
-              <strong><%= t "club_manager.event.show_expense" %>
-              </strong class="pull-right">
-              <%= number_to_currency(@event.expense, locale: :vi) %>
-              </i><br><hr>
-              <i class="fa fa-map-marker">
-                <strong><%= t "club_manager.event.show_location" %></strong>
-                <%= @event.location %>
-              </i><br><hr>
-              <i class="fa fa-calendar">
-                <strong><%= t "club_manager.event.show_date_start" %></strong>
-                <%= l @event.date_start, format: :date %>
-              </i><br><hr>
-              <i class="fa fa-clock-o">
-                <strong><%= t "club_manager.event.show_date_end" %></strong>
-                <%= l @event.date_end, format: :date %>
-              </i><br><hr>
-              <i class="fa fa-clock-o">
-                <strong><%= t "event_status" %></strong>
-                <% if @event.finished? %>
-                  <%= t "finished" %>
-                <% else %>
-                  <%= t "inprocess" %>
-                <% end %>
-              </i><br>
+          <div class="col-md-6" >
+            <strong><%= t "club_manager.event.show_expense" %>
+            </strong class="pull-right">
+            <%= number_to_currency(@event.expense, locale: :vi) %>
+            </i><br><hr>
+            <i class="fa fa-map-marker">
+              <strong><%= t "club_manager.event.show_location" %></strong>
+              <%= @event.location %>
+            </i><br><hr>
+            <i class="fa fa-calendar">
+              <strong><%= t "club_manager.event.show_date_start" %></strong>
+              <%= l @event.date_start, format: :date %>
+            </i><br><hr>
+            <i class="fa fa-clock-o">
+              <strong><%= t "club_manager.event.show_date_end" %></strong>
+              <%= l @event.date_end, format: :date %>
+            </i><br><hr>
+            <i class="fa fa-clock-o">
+              <strong><%= t "event_status" %></strong>
+              <% if @event.finished? %>
+                <%= t "finished" %>
+              <% else %>
+                <%= t "inprocess" %>
+              <% end %>
+            </i><br>
             </div>
           </div><hr>
           <div class="row" >

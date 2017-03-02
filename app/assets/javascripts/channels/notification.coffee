@@ -9,7 +9,5 @@ App.notification = App.cable.subscriptions.create 'NotificationChannel',
     $('.notificationsBody').append data.notification
     $('.notification_count').text($('.notification-un_read').length)
     $('.notification_count').fadeIn('slow')
-
-
   push: ->
     @perform 'push'
