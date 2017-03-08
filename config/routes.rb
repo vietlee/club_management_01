@@ -34,6 +34,7 @@ Rails.application.routes.draw do
     get "/" => "static_pages#index"
     resources :clubs do
       resources :members, only: [:index, :show]
+      resources :club_budgets
       resources :events do
         resources :news
       end
@@ -44,7 +45,6 @@ Rails.application.routes.draw do
       resources :requests
     end
     resources :budgets
-    resources :club_budgets, only: :create
   end
 
   resources :users do

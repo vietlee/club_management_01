@@ -117,31 +117,24 @@ ActiveRecord::Schema.define(version: 20170211092010) do
     t.index ["user_id"], name: "index_comments_on_user_id", using: :btree
   end
 
-  create_table "event_categories", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
-    t.string   "name"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
   create_table "events", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "name"
-    t.text     "description",       limit: 65535
-    t.integer  "expense",                         default: 0
+    t.text     "description",      limit: 65535
+    t.integer  "expense",                        default: 0
     t.integer  "club_id"
     t.integer  "user_id"
-    t.integer  "event_category_id"
+    t.integer  "event_category",                 default: 0
     t.date     "date_start"
     t.date     "date_end"
-    t.text     "location",          limit: 65535
-    t.integer  "num_like",                        default: 0
+    t.text     "location",         limit: 65535
+    t.integer  "num_like",                       default: 0
     t.string   "image"
-    t.integer  "status",                          default: 0
+    t.integer  "status",                         default: 0
     t.string   "month_of_payment"
     t.integer  "amount"
-    t.datetime "created_at",                                  null: false
-    t.datetime "updated_at",                                  null: false
+    t.datetime "created_at",                                 null: false
+    t.datetime "updated_at",                                 null: false
     t.index ["club_id"], name: "index_events_on_club_id", using: :btree
-    t.index ["event_category_id"], name: "index_events_on_event_category_id", using: :btree
     t.index ["user_id"], name: "index_events_on_user_id", using: :btree
   end
 
@@ -304,7 +297,6 @@ ActiveRecord::Schema.define(version: 20170211092010) do
   add_foreign_key "clubs", "organizations"
   add_foreign_key "comments", "users"
   add_foreign_key "events", "clubs"
-  add_foreign_key "events", "event_categories"
   add_foreign_key "events", "users"
   add_foreign_key "images", "albums"
   add_foreign_key "images", "users"

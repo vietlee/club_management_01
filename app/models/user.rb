@@ -26,7 +26,8 @@ class User < ApplicationRecord
 
   scope :newest, -> {order created_at: :desc}
   scope :eliminate, -> user {where.not id: user.id}
-  scope :payment_not_yet, -> budgets {where.not id: budgets.map(&:user_id)}
+  scope :yet_by_ids, -> ids {where.not id: ids}
+  scope :done_by_ids, -> ids {where id: ids}
 
   validates :full_name, presence: true, length: {maximum: Settings.max_name}
   validates :password, presence: true, length: {minimum: Settings.min_password}, on: :create

@@ -70,20 +70,6 @@ Admin.create!(
     image: image,
     is_active: true)
 end
-
-EventCategory.create!(
-  name: "Spend Money",
-)
-EventCategory.create!(
-  name: "Consumable Money",
-)
-EventCategory.create!(
-  name: "Periodic Money",
-)
-EventCategory.create!(
-  name: "Funds Money"
-)
-
 users = User.order(:created_at).take(2)
 clubs = Club.order(:created_at).take(15)
 clubs.each do |club|
@@ -103,7 +89,7 @@ clubs.each do |club|
     description = Faker::Lorem.paragraph
     expense = Faker::Number.number(5)
     club_id = club.id
-    event_category_id = rand(1..3)
+    event_category = rand(1..3)
     date_start = Faker::Time.between(20.days.ago, Date.today, :all)
     date_end = Faker::Time.between(20.days.ago, Date.today, :all)
     location = Faker::Address.city
@@ -115,7 +101,7 @@ clubs.each do |club|
       description: description,
       expense: expense,
       club_id: club_id,
-      event_category_id: event_category_id,
+      event_category: rand(1..3),
       date_start: date_start,
       date_end: date_end,
       location: location,

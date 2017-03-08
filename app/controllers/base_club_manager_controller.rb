@@ -28,4 +28,12 @@ class BaseClubManagerController < ApplicationController
       redirect_to club_manager_club_members_path params[:club_id]
     end
   end
+
+  def load_club
+    @club = Club.find_by id: params[:club_id]
+    unless @club
+      flash[:danger] = t("club_not_found")
+      redirect_to :back
+    end
+  end
 end

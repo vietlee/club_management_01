@@ -11,6 +11,17 @@ body {
 #page-content  {
   height: 80%;
 }
+h4 .notification {
+  color: #60BFD6;
+  font-size: 25px !important;
+}
+h4 .money {
+  color: #60BFD6;
+  font-size: 25px !important;
+}
+.tab-list {
+  margin-top: 10px;
+}
 .admin {
   color: red;
   font-size: 12px;

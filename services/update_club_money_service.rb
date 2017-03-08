@@ -10,9 +10,9 @@ class UpdateClubMoneyService
   end
 
   def update_money
-    if @event.event_category_id == Settings.spend && @event.status?
+    if @event.event_category == Settings.spend && @event.status?
       @club.money -= @event.expense
-    elsif @event.event_category_id == Settings.consum && @event.status?
+    elsif @event.event_category == Settings.consum && @event.status?
       @club.money += @event.expense
     end
     @club.save
