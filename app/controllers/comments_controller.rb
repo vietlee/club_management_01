@@ -1,15 +1,43 @@
 class CommentsController < ApplicationController
   before_action :authenticate_user!
+  before_action :load_comment, except: :create
+
   def create
     comment = Comment.new comment_params
-    respond_to do |format|
-      if comment.save
-        @target = comment.target
-        create_acivity comment.target, Settings.comment, comment.target.club, current_user
+    if comment.save
+      @target = comment.target
+      create_acivity comment.target, Settings.comment, comment.target.club, current_user
+      respond_to do |format|
         format.js
-      else
+      end
+    else
+      respond_to do |format|
         format.js{alert(t("comment_fail"))}
       end
+    end
+
+  end
+
+  def destroy
+    unless @comment.destroy
+      flash[:danger] = t("error_process")
+      redirect_to :back
+    end
+    respond_to do |format|
+      format.js
+    end
+  end
+
+  def edit
+    respond_to do |format|
+      format.js
+    end
+  end
+
+  def update
+    @comment.update_attributes content: params[:comment][:content]
+    respond_to do |format|
+      format.js
     end
   end
 
@@ -17,5 +45,13 @@ class CommentsController < ApplicationController
   def comment_params
     params.require(:comment).permit(:target_id,
       :target_type, :content).merge! user_id: current_user.id
+  end
+
+  def load_comment
+    @comment = Comment.find_by id: params[:id]
+    unless @comment
+      flash[:danger] = t("not_found_comment")
+      redirect_to :back
+    end
   end
 end

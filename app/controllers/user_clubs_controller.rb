@@ -10,9 +10,8 @@ class UserClubsController < ApplicationController
       flash[:danger] = t("error_for_join")
     end
     @club = user_club.club
-    respond_to do |format|
-      format.js
-    end
+    flash[:success] = t("join_and_wait")
+    redirect_to :back
   end
 
   def destroy
@@ -23,9 +22,8 @@ class UserClubsController < ApplicationController
       flash_error @user_club
     end
     @user_club = UserClub.new
-    respond_to do |format|
-      format.js
-    end
+    flash[:success] = t("see_you_next_time")
+    redirect_to :back
   end
 
   private

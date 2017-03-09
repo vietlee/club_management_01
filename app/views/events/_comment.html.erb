@@ -11,13 +11,17 @@
               </a>
               <div class="media-body">
                 <span class="text-muted pull-right"><small><em>
-                  <%= time_ago_in_words comment.created_at %>
+                  <%= l comment.created_at, format: :short %>
                 </em></small></span>
                 <%= link_to comment.user do %>
                   <strong><%= comment.user.full_name %></strong>
                 <% end %>
-                <%= render "comments/toggle" %>
-                <p><%= comment.content %></p>
+                <%= render partial: "comments/toggle",
+                  locals:
+                  {comment_select: comment} if current_user == comment.user %>
+                <p class="edit-comment-<%= comment.id %>">
+                  <%= comment.content %>
+                </p>
               </div>
             </li>
             <div class="push-top"></div>

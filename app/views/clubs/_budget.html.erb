@@ -1,5 +1,19 @@
-<div class="sidebar-block">
-  <% if current_user.user_clubs.of_club @club %>
-  <h4 class="site-heading"><strong><%= t "budget_now" %></strong></h4>
-  <% end %>
-</div>
+<% if current_user.user_clubs.joined.of_club(@club) %>
+  <div class="sidebar-block">
+    <% if current_user.user_clubs.joined.of_club(@club) %>
+      <h4 class="site-heading"><strong><%= t "budget_now" %></strong>
+        <%= number_to_vnd @club.money %>
+      </h4>
+      <div class="join-cancel-toggle-container center">
+        <%= link_to "#budget-club", data: {toggle: "modal"},
+          class: "btn btn-sm btn-default animation-fadeIn360" do %>
+          <i class="fa fa-pencil "></i><%= t "view_detail_budget" %>
+        <% end %>
+      </div>
+      <div id="budget-club" class="modal fade" tabindex="-1" role="dialog"
+        aria-hidden="true">
+        <%= render "popups/budget_club" %>
+      </div>
+    <% end %>
+  </div>
+<% end %>
