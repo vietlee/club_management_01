@@ -57,6 +57,7 @@ Rails.application.routes.draw do
   resources :clubs, only: [:show, :index] do
     mount ActionCable.server => "/cable"
     resources :events, only: :show
+    resources :albums
   end
 
   resources :invite_join_clubs, only: :create
@@ -73,5 +74,4 @@ Rails.application.routes.draw do
   resources :activities, only: :create
   resources :user_clubs, only: [:create, :destroy]
   resources :user_organizations, only: [:create, :destroy]
-  resources :albums
 end

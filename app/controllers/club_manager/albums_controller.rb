@@ -24,6 +24,15 @@ class ClubManager::AlbumsController < BaseClubManagerController
     redirect_to :back
   end
 
+  def destroy
+    unless @album.destroy
+      flash[:danger] = t "error_process"
+      redirect_to :back
+    end
+    flash[:success] = t "success_process"
+    redirect_to :back
+  end
+
   def edit
   end
 

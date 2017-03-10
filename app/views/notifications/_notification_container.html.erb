@@ -14,8 +14,10 @@
   </div>
   <div class="notificationsBody notifications">
     <% @notifications.each do |notification| %>
-      <%= render partial: "notifications/notification",
-        locals: {notification: notification} %>
+      <% if current_user.user_clubs.of_club(notification.container_id).joined? %>
+        <%= render partial: "notifications/notification",
+          locals: {notification: notification} %>
+      <% end %>
     <% end %>
   </div>
 </div>

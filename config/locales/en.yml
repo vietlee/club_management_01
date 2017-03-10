@@ -586,3 +586,7 @@ en:
   not_found_comment: "Comment not found"
   confirm_delete_comment: "Are you sure want to delete this comment?"
   no_data_club: "You are not a member of any organization or not involved in any clubs!"
+  no_club: "This Organization have not yet club!!"
+  let_join: "You can research other club "
+  here: " in here"
+  confirm_delete_album: "Are you sure delete this album?"

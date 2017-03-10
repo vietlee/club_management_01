@@ -84,7 +84,11 @@
             <option value="9"><%= t "money" %> <%= t "hight_to_low" %></option>
           </select>
         </div>
-        <%= render partial: "shared/list_club", locals: {clubs: clubs} %>
+        <% if clubs.any? %>
+          <%= render partial: "shared/list_club", locals: {clubs: clubs} %>
+        <% else %>
+          <h4 class="notifi-join"><%= t "no_club" %></h4>
+        <% end %>
       </div>
     </div>
   </div>

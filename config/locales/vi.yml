@@ -713,3 +713,7 @@ vi:
   comments: "Bình luận:"
   no_data_club: "Bạn chưa phải là thành viên của tổ chức nào HOẶC chưa tham gia vào câu lạc bộ nào!!"
   content_event: "Nội Dung: "
+  no_club: "Tổ chức này chưa có câu lạc bộ nào!!!"
+  let_join: "Bạn có thể tìm tìm hiểu thêm các câu lạc bộ khác"
+  here: " tại đây!"
+  confirm_delete_album: "Bạn chắc chắn muốn xóa bộ sưu tậm này?"

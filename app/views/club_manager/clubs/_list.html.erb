@@ -28,6 +28,11 @@
               data: {toggle: "modal"}, class: "btn btn-sm btn-warning" do %>
               <i class="fa fa-pencil"><%= t "club_manager.image.edit" %></i>
             <% end %>
+            <%= link_to club_manager_club_album_path(id: album.id,
+              club_id: @club.id), class: "btn btn-sm btn-warning",
+              method: :delete, data: {confirm: t("confirm_delete_album")} do %>
+              <i class="fa fa-window-close"><%= t "delete" %></i>
+            <% end %>
           </div>
           <div id="modal-album-edit-<%= album.id %>" class="modal fade"
             tabindex="-1" role="dialog" aria-hidden="true">

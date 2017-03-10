@@ -17,4 +17,12 @@ module NotificationsHelper
     end
     image_tag img, class: "img-responsive"
   end
+
+  def url_notification notification
+    if notification.trackable_type == Settings.notification_event
+      url = club_event_path(id: notification.trackable_id, club_id: notification.container_id)
+    else
+      url = club_albums_path(club_id: notification.container_id)
+    end
+  end
 end

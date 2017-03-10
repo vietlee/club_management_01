@@ -45,16 +45,22 @@
           </ul>
         </li>
         <%= render "request/request_question" %>
-        <li>
-          <%= link_to "#", class: "site-nav-sub" do %>
-            <i class="fa fa-angle-down site-nav-arrow"></i><%= t "manager" %>
-          <% end %>
-          <ul>
-            <li><%= link_to t("club_management"), club_manager_path %></li>
-            <li><%= link_to t("organization_management"), manager_path %></li>
-          </ul>
-          <%= render "user_clubs/leave" if @club %>
-        </li>
+        <% if current_user.user_clubs.manager.any? || current_user.user_organizations.are_admin.any? %>
+          <li>
+            <%= link_to "#", class: "site-nav-sub" do %>
+              <i class="fa fa-angle-down site-nav-arrow"></i><%= t "manager" %>
+            <% end %>
+            <ul>
+              <% if current_user.user_clubs.manager.any? %>
+                <li><%= link_to t("club_management"), club_manager_path %></li>
+              <% end %>
+              <% if current_user.user_organizations.are_admin.any? %>
+                <li><%= link_to t("organization_management"), manager_path %></li>
+              <% end %>
+            </ul>
+            <%= render "user_clubs/leave" if @club %>
+          </li>
+        <% end %>
         <li>
           <%= link_to "#",class: "site-nav-sub" do %>
             <i class="name-user"><%= current_user.full_name %></i>

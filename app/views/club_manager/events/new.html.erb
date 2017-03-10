@@ -13,6 +13,8 @@
         <div class="block-title">
           <h2><strong><%= @club.name %></strong></h2>
         </div>
+        <%= link_to t("back"), club_manager_club_path(@club.id),
+          class: "btn btn-danger" %>
         <%= render "form_club_event" %>
       </div>
     </div>

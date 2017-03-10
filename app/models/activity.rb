@@ -11,6 +11,10 @@ class Activity < ApplicationRecord
   scope :of_user_clubs, -> user_clubs {where container_id: user_clubs.map(&:club_id).uniq}
   scope :oder_by_read, -> {order read: :asc}
 
+  delegate :name, to: :container, prefix: :container, allow_nil: :true
+  delegate :name, to: :trackable, prefix: :trackable, allow_nil: :true
+  delegate :full_name, to: :owner, prefix: :owner, allow_nil: :true
+
   private
   def push_notify
     NotificationBroadcastJob.perform_now self
