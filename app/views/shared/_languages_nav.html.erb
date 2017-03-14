@@ -1,8 +1,8 @@
 <li>
   <%= link_to t("do_nothing"), class: "site-nav-sub pad-right-none" do %>
-    <%= t I18n.locale.to_s %> <span class="fa fa-language"></span>
+    <%= t I18n.locale.to_s %>
   <% end %>
-  <ul class="list-language">
+  <ul class="list-language-head">
     <% Settings.languages.map do |key, val| %>
       <li>
         <div class="<%= key %>"></div>

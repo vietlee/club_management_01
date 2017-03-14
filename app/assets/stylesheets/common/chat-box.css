@@ -23,17 +23,21 @@
   position:fixed;
   margin: 0;
   z-index: 190;
-  left: 10px;
-  bottom: 0px;
+  bottom: 50px;
+  right: 5%;
 }
 
+.icon-chat {
+  font-size: 60px !important;
+  color: #FF6600;
+}
 .chat-button{
   padding: 1px 12px;
   z-index: 320;
 }
 
 .toggle-chat{
-  left: 9px;
+  right: 0px;
   bottom: 450px;
   z-index: 210;
 }
@@ -60,9 +64,9 @@
   padding: 49px 25px 10px 25px;
   margin: auto;
   position:fixed;
-  left: 0px;
   bottom: 10px;
   z-index: 210;
+  right: 0px;
 }
 
 #viewport {

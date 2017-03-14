@@ -1,0 +1,61 @@
+<%= javascript_include_tag "images", "data-turbolinks-track" => true  %>
+<div id="page-container">
+  <section class="site-section site-section-light site-head themed-background-dark">
+    <div class="container">
+      <h1 class="text-center animation-slideDown">
+        <strong><%= t "albums" %></strong>
+      </h1>
+    </div>
+  </section>
+  <section class="site-content site-section">
+    <div class="container">
+      <div class="site-block text-center">
+        <div class="btn-group portfolio-filter">
+          <% if @albums.any? %>
+            <%= link_to t("all"), "javascript:void(0)",
+              class: "btn btn-primary", "data-category" => "all" %>
+            <% @albums.each do |album| %>
+              <%= link_to album.name, "javascript:void(0)",
+                class: "btn btn-primary", "data-category" => album.id %>
+            <% end %>
+          <% else %>
+            <h1><%= t "album_empty" %></h1>
+          <% end %>
+        </div>
+      </div>
+      <div class="row portfolio">
+        <% @albums.each do |album| %>
+          <% album.images.newest.each do |image| %>
+            <div class="col-sm-4 portfolio-item animation-fadeInQuick image-size"
+              data-category="<%= album.id %>">
+              <%= link_to "javascript:void(0)" do %>
+                <%= image_tag image.url, class: "img-responsive thumb" %>
+                <span class="portfolio-item-info">
+                  <strong><%= image.name %></strong>
+                </span>
+              <% end %>
+            </div>
+          <% end %>
+        <% end %>
+      </div>
+    </div>
+  </section>
+  <section class="site-section site-section-light site-bottom themed-background-dark">
+  </section>
+</div>
+<div tabindex="-1" class="modal fade" id="myModal" role="dialog">
+  <div class="modal-dialog">
+  <div class="modal-content">
+    <div class="modal-header">
+    <button class="close" type="button" data-dismiss="modal">×</button>
+  </div>
+  <div class="modal-body">
+  </div>
+  <div class="modal-footer">
+    <button class="btn btn-default" data-dismiss="modal">
+      <%= t "close" %>
+    </button>
+  </div>
+   </div>
+  </div>
+</div>

@@ -40,4 +40,10 @@ class Club < ApplicationRecord
   def pay_money_change event, change
     self.update_attributes money: self.money.to_i + (event.expense.to_i - change.to_i)
   end
+
+  def rating_club club
+    self.rating.round.times do
+      "<i class='fa fa-star'></i>".html_safe
+    end
+  end
 end

@@ -18,15 +18,6 @@
         <li><%= link_to t("home"), root_path %></li>
         <li>
           <%= link_to "#", class: "site-nav-sub" do %>
-            <i class="fa fa-angle-down site-nav-arrow"></i><%= t "manager" %>
-          <% end %>
-          <ul>
-            <li><%= link_to t("organization_management"), club_manager_path %></li>
-            <li><%= link_to t("club_management"), manager_path %></li>
-          </ul>
-        </li>
-        <li>
-          <%= link_to "#", class: "site-nav-sub" do %>
             <%= t "account" %> <span class="fa fa-user"></span>
           <% end %>
           <ul>

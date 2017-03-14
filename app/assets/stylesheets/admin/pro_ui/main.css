@@ -1358,7 +1358,7 @@ a.widget.widget-hover-effect4:active {
     font-size: 28px;
     text-align: center;
     color: #ffffff;
-    background-color: #000000;
+    background-color: #1BBAE1 !important;
     opacity: 0.1;
     filter: alpha(opacity=10);
 }

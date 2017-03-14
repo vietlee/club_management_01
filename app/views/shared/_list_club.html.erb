@@ -1,48 +1,42 @@
-<% if clubs.any? %>
-  <div class="row store-items">
-    <% clubs.each do |club| %>
-      <div class="col-md-6 visibility-none" data-toggle="animation-appear"
-        data-animation-class="animation-fadeInQuick" data-element-offset="-100">
-        <div class="store-item">
-          <div class="store-item-rating text-warning">
-            <% club.rating.round.times do %>
-              <i class="fa fa-star"></i>
-            <% end %>
-            <%= club.rating %> <%= t "for_ratings" %>
-          </div>
-          <div class="store-item-organiztion text-organiztion text-warning">
-            <span><%= club.club_name %></span>
-          </div>
-          <div class="store-item-image">
+<div class="row store-items">
+  <% clubs.each do |club| %>
+    <div class="col-md-6 visibility-none" data-toggle="animation-appear"
+      data-animation-class="animation-fadeInQuick" data-element-offset="-100">
+      <div class="store-item">
+        <div class="store-item-rating text-warning">
+          <%= club.rating_club(club) %>
+          <%= club.rating %> <%= t "for_ratings" %>
+        </div>
+        <div class="store-item-organiztion text-organiztion text-warning">
+          <span><%= club.club_name %></span>
+        </div>
+        <div class="store-item-image">
+          <%= link_to club do %>
+            <%= image_tag club.image, class: "img-responsive image-club" %>
+            <%= image_tag "tick.png",
+              class: "store-item-joined" if current_user.user_clubs.joined.of_club(club) %>
+          <% end %>
+        </div>
+        <div class="store-item-info clearfix block-club">
+          <span class="store-item-price themed-color-dark pull-left">
+            <%= club.name %>
+          </span>
+          <small class="pull-left">
+            <i class="fa fa-hand-o-right text-muted"></i>
             <%= link_to club do %>
-              <%= image_tag club.image, class: "img-responsive image-club" %>
-              <%= image_tag "tick.png",
-                class: "store-item-joined" if current_user.user_clubs.joined.of_club(club) %>
+              <%= club.description.truncate Settings.truncate_description %>
             <% end %>
-          </div>
-          <div class="store-item-info clearfix block-club">
-            <span class="store-item-price themed-color-dark pull-left">
-              <%= club.name %>
-            </span>
-            <small class="pull-left">
-              <i class="fa fa-hand-o-right text-muted"></i>
-              <%= link_to club do %>
-                <%= club.description.truncate Settings.truncate_description %>
-              <% end %>
-            </small>
-            <div>
-              <%= link_to club do %>
-                <strong class="pull-right fa fa-users">
-                  <%= t "members_with_dot" %>
-                  <%= club.users.size %>
-                </strong>
-              <% end %>
-            </div>
+          </small>
+          <div>
+            <%= link_to club do %>
+              <strong class="pull-right fa fa-users">
+                <%= t "members_with_dot" %>
+                <%= club.users.size %>
+              </strong>
+            <% end %>
           </div>
         </div>
       </div>
-    <% end %>
-  </div>
-<% else %>
-  <h3 class="notifi-join"><%= t "no_data_club" %></h3>
-<% end %>
+    </div>
+  <% end %>
+</div>
