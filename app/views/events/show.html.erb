@@ -70,7 +70,7 @@
             <% if @event.notification? %>
               <strong class="title"><%= t "content_event" %></strong><p><%= @event.description.html_safe %></p>
             <% end %>
-            <% if @event.pay_money? %>
+            <% if @event.pay_money? || @event.subsidy? %>
               <%= render partial: "view_pay_money" %>
             <% end %>
             <% if @event.get_money? %>

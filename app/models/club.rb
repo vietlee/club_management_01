@@ -46,4 +46,16 @@ class Club < ApplicationRecord
       "<i class='fa fa-star'></i>".html_safe
     end
   end
+
+  def money_pay club, money
+    self.update_attributes money: self.money - money
+  end
+
+  def money_subsidy club, money
+    self.update_attributes money: self.money + money
+  end
+
+  def subsidy_money_change event, change
+    self.update_attributes money: self.money.to_i + (change.to_i - event.expense.to_i)
+  end
 end

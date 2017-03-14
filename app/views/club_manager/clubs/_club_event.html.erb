@@ -15,6 +15,9 @@
         <li role="presentation">
           <%= link_to t("pay_money"), "#pay_money", data: {toggle: "tab"} %>
         </li>
+        <li role="presentation">
+          <%= link_to t("subsidy"), "#subsidy", data: {toggle: "tab"} %>
+        </li>
       </ul>
     </div>
   </div>
@@ -36,6 +39,11 @@
         <div role="tabpanel" class="tab-pane fade in" id="pay_money">
           <div class="row block">
             <%= render "pay_money" %>
+          </div>
+        </div>
+        <div role="tabpanel" class="tab-pane fade in" id="subsidy">
+          <div class="row block">
+            <%= render "subsidy" %>
           </div>
         </div>
       </div>

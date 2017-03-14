@@ -26,12 +26,9 @@ class ClubManager::EventsController < BaseClubManagerController
     if event.save
       create_acivity event, Settings.create, event.club, current_user
       if params[:event][:event_category].to_i == Event.event_categories[:pay_money]
-        @money = @club.money.to_i-params[:event][:expense].to_i
-        club = @club.update_attributes money: @money
-        unless club
-          flash[:danger] = t "error_process"
-          redirect_to :back
-        end
+        @club.money_pay(@club, params[:event][:expense].to_i)
+      elsif params[:event][:event_category].to_i == Event.event_categories[:subsidy]
+        @club.money_subsidy(@club, params[:event][:expense].to_i)
       end
       flash[:success] = t "club_manager.event.success_create"
       redirect_to club_manager_club_path params[:club_id]
@@ -45,6 +42,8 @@ class ClubManager::EventsController < BaseClubManagerController
     ActiveRecord::Base.transaction do
       if params[:event][:event_category].to_i == Event.event_categories[:pay_money]
         @club.pay_money_change(@event, params[:event][:expense])
+      elsif params[:event][:event_category].to_i == Event.event_categories[:subsidy]
+        @club.subsidy_money_change(@event, params[:event][:expense])
       end
       service = UpdateClubMoneyService.new @event, @club, event_params
       service.update_event
