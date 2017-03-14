@@ -27,7 +27,7 @@ class Event < ApplicationRecord
   scope :of_category, -> event_category {where event_category: event_category}
 
   enum status: {inprocess: 0, finished: 1}
-  enum event_category: {pay_money: 1, get_money: 2, notification: 3}
+  enum event_category: {pay_money: 1, get_money: 2, notification: 3, subsidy: 0}
 
   def self.group_by_quarter
     quarters = [[1,2,3], [4,5,6], [7,8,9], [10,11,12]]
@@ -40,6 +40,6 @@ class Event < ApplicationRecord
   end
 
   def cost_expense total
-     self.update_attributes expense: self.expense.to_i + self.amount.to_i * total
+    self.update_attributes expense: self.expense.to_i + self.amount.to_i * total
   end
 end

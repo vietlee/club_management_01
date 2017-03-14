@@ -11,6 +11,23 @@ body {
 #page-content  {
   height: 80%;
 }
+.char-app {
+  font-family: serif;
+  color: white;
+  font-size: 35px;
+  font-weight: bold;
+}
+.footer-icon {
+  margin-bottom: 0px;
+}
+.logo-small {
+  color: white;
+  font-weight: bold;
+}
+.copyright-image {
+  width: 25px;
+  height: 25px;
+}
 .notifi strong {
   color: black;
 }
@@ -21,7 +38,7 @@ body {
   padding: 10px;
 }
 .list-language-head {
-  width: 90px !important;
+  width: 125px !important;
 }
 h4 .notification {
   color: #60BFD6;
@@ -319,9 +336,21 @@ header nav {
 
 .site-footer {
   color: #656565;
-  padding-top: 11px;
-  padding-bottom: 40px;
-  background-color: #252525;
+  padding-top: 0px;
+  padding-bottom: 0px;
+  background-color: black;
+}
+.color-white {
+  color: white;
+}
+.address-footer p {
+  margin-bottom: 0px;
+  color: white;
+  margin-top: 10px;
+  margin-left: 0px;
+}
+.follow-footer {
+  margin-top: -15px;
 }
 .footer-heading {
   color: #ffffff;

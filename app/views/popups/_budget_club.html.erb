@@ -10,6 +10,9 @@
           <li role="presentation">
             <%= link_to t("pay_money"), "#pay_money", data: {toggle: "tab"} %>
           </li>
+          <li role="presentation">
+            <%= link_to t("subsidy"), "#subsidy", data: {toggle: "tab"} %>
+          </li>
         </ul>
       </div>
       <div class="modal-body">
@@ -28,6 +31,12 @@
                   <div class="row block">
                     <%= render partial: "list_budget",
                       locals: {events: @club.events.pay_money.newest} %>
+                  </div>
+                </div>
+                <div role="tabpanel" class="tab-pane fade in" id="subsidy">
+                  <div class="row block">
+                    <%= render partial: "list_budget",
+                      locals: {events: @club.events.subsidy.newest} %>
                   </div>
                 </div>
               </div>
