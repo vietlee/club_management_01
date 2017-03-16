@@ -11,7 +11,7 @@ class ClubRequestsController < ApplicationController
 
   def new
     @request = ClubRequest.new
-    @organizations = current_user.organizations
+    @organizations = current_user.user_organizations.joined
   end
 
   def create

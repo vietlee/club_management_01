@@ -5,7 +5,7 @@ class Manager::StaticPagesController < ApplicationController
   before_action :admin_verify
 
   def index
-    @organizations = current_user.organizations
+    @organizations = current_user.user_organizations.are_admin
   end
 
   private
