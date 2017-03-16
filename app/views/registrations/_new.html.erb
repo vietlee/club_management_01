@@ -2,7 +2,7 @@
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header text-center">
-        <h2 class="modal-title"><i class="fa fa-user-plus"></i> <%= t "regester" %></h2>
+        <h2 class="modal-title"><i class="fa fa-user-plus"></i> <%= t "register" %></h2>
       </div>
       <div class="modal-body">
         <%= form_for :user, url: user_registration_path, html: {class: "form-horizontal form-bordered" } do |f| %>
@@ -55,7 +55,7 @@
           <div class="form-group form-actions">
             <div class="col-xs-12 text-right">
               <button type="button" class="btn btn-sm btn-default" data-dismiss="modal"><%= t "close" %></button>
-              <%= f.submit :Register, class: "btn btn-sm btn-primary" %>
+              <%= f.submit t("register"), class: "btn btn-sm btn-primary" %>
             </div>
           </div>
         <% end %>

@@ -86,8 +86,13 @@
             <option value="9"><%= t "money" %> <%= t "hight_to_low" %></option>
           </select>
         </div>
-        <% if clubs.any? %>
-          <%= render partial: "shared/list_club", locals: {clubs: clubs} %>
+        <% if current_user.user_organizations.joined.any? &&
+          current_user.user_clubs.joined.any? %>
+          <% if clubs.any? %>
+            <%= render partial: "shared/list_club", locals: {clubs: clubs} %>
+          <% else %>
+            <h4 class="notifi-join"><%= t "no_data" %></h4 >
+          <% end %>
         <% else %>
           <h4 class="notifi-join"><%= t "no_data_club" %></h4 >
           <h4>

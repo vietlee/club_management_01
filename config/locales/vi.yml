@@ -723,3 +723,8 @@ vi:
   address_com: " Tầng 13, Keangnam Landmark 72, Đường Phạm Hùng, Nam Từ Liêm, Hà Nội, Việt Nam"
   phone_com: " 84-4-3795-5417"
   mail_com: " hr_team@framgia.com"
+  no_data_club_organization: "Bạn không phải là thành viên của tổ chức nào!"
+  let_join_organization: "Hãy tham gia tổ chức nào đó tại: "
+  danger: "Yêu cầu tham gia tổ chức này của bạn đang chờ được xử lý!!!"
+  wait_process_club: "Yêu cầu tham gia câu lạc bộ này của bạn đang chờ được xử lý!!!"
+  address: "Địa chỉ"

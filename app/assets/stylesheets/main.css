@@ -19,6 +19,17 @@ body {
 }
 .footer-icon {
   margin-bottom: 0px;
+  margin-top: 0px;
+}
+.icon-noti {
+  margin-top: 50px;
+}
+.fa-exclamation-triangle {
+  color: red;
+  font-size: 65px !important;
+}
+.fa-2x {
+  color: #2E354F;
 }
 .logo-small {
   color: white;

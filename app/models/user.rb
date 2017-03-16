@@ -31,4 +31,12 @@ class User < ApplicationRecord
 
   validates :full_name, presence: true, length: {maximum: Settings.max_name}
   validates :password, presence: true, length: {minimum: Settings.min_password}, on: :create
+
+  def joined_organization? organization
+    self.user_organizations.joined.join?(organization)
+  end
+
+  def pending_organization? organization
+    self.user_organizations.pending.join?(organization)
+  end
 end
