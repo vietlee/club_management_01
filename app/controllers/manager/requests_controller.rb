@@ -26,6 +26,7 @@ class Manager::RequestsController < BaseOrganizationManagerController
           create_club @request.organization_id, @request.name,
             @request.description, @request.logo
           create_user_club @request.user_id, @club.id
+          send_mail_club_request @request.user_id, @club
         end
         flash[:success] = t("success_process")
         redirect_to manager_organization_path(id: @request.organization_id)
@@ -60,5 +61,14 @@ class Manager::RequestsController < BaseOrganizationManagerController
   def create_user_club user_id, club_id
     UserClub.create user_id: user_id, club_id: club_id, is_manager: true,
       status: :joined
+  end
+
+  def send_mail_club_request user_id, club
+    @user = User.find_by id: user_id
+    unless @user
+      flash[:danger] = t("not_found_user")
+      redirect_to root_url
+    end
+    OrganizationMailer.mail_to_club_request(@user, club).deliver_later
   end
 end

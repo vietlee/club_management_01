@@ -24,6 +24,8 @@ gem "truncate_html"
 gem "ransack"
 gem "chartkick"
 gem "public_activity"
+gem "figaro"
+gem "delayed_job_active_record"
 
 group :production do
   gem "pg"

@@ -56,3 +56,6 @@ db/schema.rb
 public/uploads
 #Igrone public/assets
 public/assets
+
+# Ignore application configuration
+/config/application.yml
