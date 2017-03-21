@@ -4,12 +4,15 @@ class ClubsController < ApplicationController
   before_action :verify_club, only: :show
 
   def index
+    organizations_joined = Organization.by_user_organizations(
+      current_user.user_organizations.joined)
     @club_joined = Club.of_organizations(
-      current_user.organizations).of_user_clubs(current_user.user_clubs.joined)
-    clubs = Club.of_organizations(current_user.organizations).without_clubs(
+      organizations_joined).of_user_clubs(current_user.user_clubs.joined)
+    clubs = Club.of_organizations(organizations_joined).without_clubs(
       @club_joined)
     @q = clubs.search(params[:q])
     @clubs = @q.result.newest.page(params[:page]).per Settings.club_per_page
+    @user_organizations = current_user.user_organizations.joined
   end
 
   def show

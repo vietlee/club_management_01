@@ -70,7 +70,9 @@
       <div class="col-md-8 col-lg-9">
         <div class="form-inline push-bit clearfix">
           <div class="pull-right">
+          <% if @user_organizations.any? %>
             <%= paginate clubs %>
+          <% end %>
           </div>
           <select id="results-sort" name="results-sort" class="form-control" size="1">
             <option value="0" disabled selected><%= t "sort_by" %></option>
@@ -84,10 +86,19 @@
             <option value="9"><%= t "money" %> <%= t "hight_to_low" %></option>
           </select>
         </div>
-        <% if clubs.any? %>
-          <%= render partial: "shared/list_club", locals: {clubs: clubs} %>
+        <% if @user_organizations.any? %>
+          <% if clubs.any? %>
+            <%= render partial: "shared/list_club", locals: {clubs: clubs} %>
+          <% else %>
+            <h4 class="notifi-join"><%= t "no_data" %></h4>
+          <% end %>
         <% else %>
-          <h4 class="notifi-join"><%= t "no_club" %></h4>
+          <h4 class="notifi-join"><%= t "no_data_club_organization" %></h4 >
+          <h4>
+            <span><%= t "let_join_organization" %></span>
+            <%= link_to t("here"), organizations_path, target: :blank,
+              class: "btn btn-danger" %>
+          </h4>
         <% end %>
       </div>
     </div>

@@ -67,9 +67,7 @@
                     <strong><%= @organization.name %></strong>
                     <%= t "overview" %>
                     <div class="pull-right">
-                      <%= content_tag(:i, nil,
-                        class: "fa fa-check fa-2x", title: t("joined")
-                        ) unless current_user.user_organizations.joined.join? @organization %>
+                      <%= select_case_view(@organization) %>
                     </div>
                   </h1>
                   <h4>
@@ -95,35 +93,38 @@
               </li>
               <% if @organization.clubs.present? %>
                 <li id="personal-info">
-                  <div class="timeline-badge primary"></div>
-                  <div class="timeline-panel">
-                    <h1><%= t "club_inner" %></h1>
-                    <div class="hr-left"></div>
-                      <div class="table-responsive">
-                        <table id="example-datatable"
-                          class="table table-vcenter table-condensed table-bordered org-tbl">
-                          <thead>
-                            <tr>
-                              <th class="org-first-th"></th>
-                              <th><i class="fa fa-sort-alpha-desc"></i></th>
-                              <th><i class="fa fa-sort-numeric-asc"></i></th>
-                            </tr>
-                          </thead>
-                          <tbody>
-                            <% @organization.clubs.each do |club| %>
-                              <tr data-link="<%= club_url(club) %>" class="org-link-to">
-                                <td class="org-td">
-                                  <%= image_tag club.image,
-                                    class: "img-responsive img-club-org-details" %>
-                                </td>
-                                <td><%= club.name %></td>
-                                <td><%= club.rating %></td>
+                  <% unless current_user.user_organizations.joined.join?(
+                    @organization) %>
+                    <div class="timeline-badge primary"></div>
+                    <div class="timeline-panel">
+                      <h1><%= t "club_inner" %></h1>
+                      <div class="hr-left"></div>
+                        <div class="table-responsive">
+                          <table id="example-datatable"
+                            class="table table-vcenter table-condensed table-bordered org-tbl">
+                            <thead>
+                              <tr>
+                                <th class="org-first-th"></th>
+                                <th><i class="fa fa-sort-alpha-desc"></i></th>
+                                <th><i class="fa fa-sort-numeric-asc"></i></th>
                               </tr>
-                            <% end %>
-                          </tbody>
-                        </table>
-                      </div>
-                  </div>
+                            </thead>
+                            <tbody>
+                              <% @organization.clubs.each do |club| %>
+                                <tr data-link="<%= club_url(club) %>" class="org-link-to">
+                                  <td class="org-td">
+                                    <%= image_tag club.image,
+                                      class: "img-responsive img-club-org-details" %>
+                                  </td>
+                                  <td><%= club.name %></td>
+                                  <td><%= club.rating %></td>
+                                </tr>
+                              <% end %>
+                            </tbody>
+                          </table>
+                        </div>
+                    </div>
+                  <% end %>
                 </li>
               <% end %>
             </ul>
