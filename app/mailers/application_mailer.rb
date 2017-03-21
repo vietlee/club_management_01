@@ -1,4 +1,4 @@
 class ApplicationMailer < ActionMailer::Base
-  default from: "from@example.com"
+  default from: ENV['FCLUB_EMAIL_USERNAME']
   layout "mailer"
 end

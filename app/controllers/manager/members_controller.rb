@@ -1,5 +1,6 @@
 class Manager::MembersController < BaseOrganizationManagerController
   before_action :load_user_organization, only: :update
+  before_action :organization, only: :update
 
   def index
     @users = @organization.user_organizations.joined
@@ -19,8 +20,13 @@ class Manager::MembersController < BaseOrganizationManagerController
   def update
     if params[:status].blank?
       user = @user.update_attributes is_admin: true
+      OrganizationMailer.mail_to_user_admin_organization(
+        @user.user, @organization).deliver_later
     else
       user = @user.update_attributes status: params[:status].to_i
+      if params[:status].to_i == UserOrganization.statuses[:joined]
+        OrganizationMailer.mail_to_user_join(@user.user, @organization).deliver_later
+      end
     end
     unless user
       flash[:danger] = t("error_process")
@@ -35,6 +41,14 @@ class Manager::MembersController < BaseOrganizationManagerController
     @user = UserOrganization.find_by id: params[:id]
     unless @user
       flash[:danger] = t("user_organization_not_found")
+      redirect_to request.referrer
+    end
+  end
+
+  def organization
+    @organization = Organization.find_by id: params[:organization_id]
+    unless @organization
+      flash[:danger] = t("not_found_organization")
       redirect_to request.referrer
     end
   end

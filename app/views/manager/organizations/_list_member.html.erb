@@ -24,13 +24,13 @@
               <%= link_to t("active"),
                 manager_member_path(id: member.id,
                 status: UserOrganization.statuses[:joined],
-                organization: member.organization_id), method: :put,
+                organization_id: member.organization_id), method: :put,
                 remote: true, class: "btn btn-primary",
                 data: {confirm: t("answer_active")} %>
               <%= link_to t("reject"),
                 manager_member_path(id: member.id,
                 status: UserOrganization.statuses[:reject],
-                organization: member.organization_id), method: :put,
+                organization_id: member.organization_id), method: :put,
                 remote: true, class: "btn btn-danger",
                 data: {confirm: t("answer_reject")} %>
             <% end %>
