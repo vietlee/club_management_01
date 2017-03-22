@@ -20,6 +20,10 @@ class UserOrganization < ApplicationRecord
       find_by(organization_id: organization.id).nil?
     end
 
+    def join? organization_id
+      find_by(organization_id: organization_id).nil?
+    end
+
     def verify_manager? user
       user = find_by(id: user.id)
       return user.is_admin if user

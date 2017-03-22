@@ -16,4 +16,5 @@
 *= require main
 *= require plugins
 *= require custom
+*= require bootstrap-tagsinput
 */

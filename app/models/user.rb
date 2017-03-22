@@ -1,4 +1,6 @@
 class User < ApplicationRecord
+  acts_as_taggable
+
   devise :database_authenticatable, :registerable, :recoverable, :rememberable,
     :trackable, :validatable
 
@@ -31,6 +33,7 @@ class User < ApplicationRecord
 
   validates :full_name, presence: true, length: {maximum: Settings.max_name}
   validates :password, presence: true, length: {minimum: Settings.min_password}, on: :create
+  validate :validate_tags
 
   def joined_organization? organization
     self.user_organizations.joined.join?(organization)
@@ -38,5 +41,28 @@ class User < ApplicationRecord
 
   def pending_organization? organization
     self.user_organizations.pending.join?(organization)
+  end
+
+  def validate_tags
+    errors.add(:tag_list) if tag_list.size > Settings.limit_tags
+  end
+
+  def is_user? user
+    self == user
+  end
+
+  def tags_clubs
+    organizaitons = Organization.by_user_organizations(
+      self.user_organizations.joined)
+    arr = []
+    club = Club.of_organizations(organizations)
+    self.tag_list.each do |tag|
+      if club.tagged_with(tag).any?
+        club.tagged_with(tag).each do |club|
+          arr << club
+        end
+      end
+    end
+    arr
   end
 end

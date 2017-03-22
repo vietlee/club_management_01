@@ -24,7 +24,7 @@ class Manager::RequestsController < BaseOrganizationManagerController
       if @request.update_attributes status: params[:status].to_i
         if params[:status].to_i == ClubRequest.statuses[:joined]
           create_club @request.organization_id, @request.name,
-            @request.description, @request.logo
+            @request.description, @request.logo, @request.club_type
           create_user_club @request.user_id, @club.id
           send_mail_club_request @request.user_id, @club
         end
@@ -53,9 +53,9 @@ class Manager::RequestsController < BaseOrganizationManagerController
     end
   end
 
-  def create_club organization_id, name, description, logo
+  def create_club organization_id, name, description, logo, club_type
     @club = Club.create organization_id: organization_id, name: name,
-      description: description, logo: logo, is_active: true
+      description: description, logo: logo, is_active: true, club_type: club_type
   end
 
   def create_user_club user_id, club_id

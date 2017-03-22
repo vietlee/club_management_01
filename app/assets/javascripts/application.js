@@ -21,3 +21,4 @@
 //= require_tree ./libs/pro_ui
 //= require_tree ./common
 //= require cable
+//= require bootstrap-tagsinput

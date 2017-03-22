@@ -24,6 +24,16 @@
       </div>
     </div>
     <div class="form-group">
+      <label class="col-md-4 control-label">
+        <%= t "enter_tags" %></br>
+        <p class="character-input"><%= t "character_input" %></p>
+      </label>
+      <div class="col-md-8">
+        <%= f.text_field(:tag_list, value: @user.tag_list.join(","),
+          "data-role": "tagsinput", class: "form-control")%>
+      </div>
+    </div>
+    <div class="form-group">
       <label class="col-md-4 control-label" for="val_email">
         <%= t "phone" %>
       <span class="text-danger"></span></label>

@@ -11,11 +11,43 @@ body {
 #page-content  {
   height: 80%;
 }
+.character-input {
+  font-weight: none;
+  font-size: 12px;
+}
+.gi-lightbulb {
+  color: yellow;
+  font-size: 25px;
+}
+.site-span {
+  width: 100%;
+}
+.fa-users {
+  margin-top: 5px;
+}
+.site-description {
+  width: 100%;
+}
+.tag {
+  background-color: #DBE3E8;
+  padding: 1px;
+  border-radius: 3px;
+  margin-bottom: 5px;
+}
+.tag:hover {
+  text-decoration: none;
+}
 .char-app {
   font-family: serif;
   color: white;
   font-size: 35px;
   font-weight: bold;
+}
+.view-tags {
+  margin-bottom: 10px;
+}
+.tags-club {
+  background-color: #F3F3F3;
 }
 .footer-icon {
   margin-bottom: 0px;
