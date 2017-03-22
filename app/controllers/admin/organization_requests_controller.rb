@@ -16,6 +16,7 @@ class Admin::OrganizationRequestsController < ApplicationController
       service.approve_request
       @organization = service.create_organization @organization_request
       service.create_user_organization @organization.id
+      send_mail_respond @organization_request
       flash[:success] = t("approve_success")
       redirect_to admin_organization_requests_path
     end
@@ -48,5 +49,14 @@ class Admin::OrganizationRequestsController < ApplicationController
       flash[:danger] = t("not_found_request")
       redirect_to root_path
     end
+  end
+
+  def send_mail_respond organization
+    @user = User.find_by id: organization.user_id
+    unless @user
+      flash[:danger] = t("can_not_found_user")
+      redirect_to :backs
+    end
+    AdminMailer.mail_to_user_request(@user, organization).deliver_later
   end
 end
