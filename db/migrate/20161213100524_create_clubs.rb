@@ -10,6 +10,7 @@ class CreateClubs < ActiveRecord::Migration[5.0]
       t.boolean :is_active, default: true
       t.string :logo
       t.string :image
+      t.integer :type_club, default: 0
       t.timestamps
     end
   end

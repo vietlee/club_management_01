@@ -20,3 +20,4 @@
 //= require_tree ./admin/pro_ui
 //= require_tree ./common
 //= require ckeditor/init
+//= require bootstrap-tagsinput

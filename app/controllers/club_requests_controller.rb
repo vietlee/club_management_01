@@ -38,7 +38,9 @@ class ClubRequestsController < ApplicationController
 
   private
   def request_params
+    club_type = params[:club_request][:club_type].to_i
     params.require(:club_request).permit(:name, :logo,
-      :description, :action, :organization_id).merge! user_id: current_user.id
+      :description, :action, :organization_id).merge! user_id: current_user.id,
+      club_type: club_type
   end
 end

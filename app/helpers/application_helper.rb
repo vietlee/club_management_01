@@ -39,4 +39,11 @@ module ApplicationHelper
   def count_request variable
     variable.club.user_clubs.unactive.count
   end
+
+  def sort_suggest array_club
+    h = Hash.new(0)
+    array_club.each {| v | h.store(v, h[v]+1)}
+    h = Hash[h.sort_by{|_, v| -v}]
+    a = h.map(&:flatten)
+  end
 end

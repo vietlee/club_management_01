@@ -7,23 +7,6 @@
     <div class="row">
       <div class="col-lg-3 col-md-3 col-sm-4 col-xs-12">
         <div id="sidebar">
-          <div class="sosmed">
-            <div class="text-center">
-              <a href="#">
-                <i class="fa fa-facebook fa-2x" title="Facebook"></i>
-              </a>
-              <a href="#">
-                <i class="fa fa-twitter fa-2x"
-                  title="<%= t "twitter" %>">
-                </i>
-              </a>
-              <a href="#">
-                <i class="fa fa-google-plus fa-2x"
-                  title="<%= t "google_plus" %>">
-                </i>
-              </a>
-            </div>
-          </div>
           <div class="user">
             <div class="text-center">
               <%= image_tag @organization.logo,
@@ -32,11 +15,6 @@
             <div class="user-head">
               <h1><%= @organization.name %></h1>
               <div class="hr-center"></div>
-              <% if @organization.users.present? %>
-                <h5><%= t "manager" %>:
-                  <%= link_to @organization.users.first.full_name, @organization.users.first %>
-                </h5>
-              <% end %>
               <h5><%= t "members" %>:
                 <%= @organization.users.size %>
               </h5>

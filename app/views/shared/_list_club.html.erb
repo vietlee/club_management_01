@@ -18,10 +18,10 @@
           <% end %>
         </div>
         <div class="store-item-info clearfix block-club">
-          <span class="store-item-price themed-color-dark pull-left">
+          <span class="store-item-price themed-color-dark pull-left site-span">
             <%= club.name %>
           </span>
-          <small class="pull-left">
+          <small class="pull-left site-description">
             <i class="fa fa-hand-o-right text-muted"></i>
             <%= link_to club do %>
               <%= club.description.truncate Settings.truncate_description %>
@@ -29,7 +29,7 @@
           </small>
           <div>
             <%= link_to club do %>
-              <strong class="pull-right fa fa-users">
+              <strong class="fa fa-users">
                 <%= t "members_with_dot" %>
                 <%= club.users.size %>
               </strong>

@@ -40,8 +40,6 @@
             <li><%= link_to t("list_request"), "#modal-request-question",
               data: {toggle: "modal"}, class: "enable-tooltip" %>
             </li>
-            <li><%= link_to t("leave_club_request"), "#modal-leave-club",
-              data:{ toggle: "modal"}, class: "enable-tooltip" if @club %></li>
           </ul>
         </li>
         <%= render "request/request_question" %>

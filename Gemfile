@@ -26,6 +26,9 @@ gem "chartkick"
 gem "public_activity"
 gem "figaro"
 gem "delayed_job_active_record"
+gem "acts-as-taggable-on"
+gem "bootstrap-tagsinput-rails"
+gem "daemons"
 
 group :production do
   gem "pg"

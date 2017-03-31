@@ -27,6 +27,28 @@
             </div>
           </div>
         </div>
+        <div class="col-md-12">
+          <% if (current_user.tag_list.any?) && (current_user.is_user?@user) %>
+            <h4><i class="gi gi-lightbulb"></i><strong><%= t "club_suggest" %></strong></h4>
+            <div>
+              <% if current_user.tags_clubs.any? %>
+                <% sort_suggest(current_user.tags_clubs).each do |club, s| %>
+                  <% unless current_user.user_clubs.of_club(club) %>
+                    <%= link_to club_path(club.id), target: "blank" do %>
+                      <i class="gi gi-brightness_reduce"></i>
+                      <%= club.name %></br>
+                    <% end %>
+                  <% end %>
+                <% end %>
+              <% else %>
+                <i class="fa fa-hand-o-right"></i>
+                <strong>
+                  <%= t "not_club_conformity" %>
+                </strong>
+              <% end %>
+            </div>
+          <% end %>
+        </div>
       </div>
       <div class="col-lg-9 col-md-9 col-sm-8 col-xs-12">
         <div id="content">
@@ -43,13 +65,6 @@
                 <div class="timeline-panel">
                   <h1>
                     <strong><%= @user.full_name %></strong>
-                    <div class="pull-right">
-                      <% if current_user == @user %>
-                        <%= link_to edit_user_path(@user) do %>
-                          <i class="fa fa-pencil-square-o user-edit"></i>
-                        <% end %>
-                      <% end %>
-                    </div>
                   </h1><hr>
                   <h4><strong><%= t "phone" %>:</strong>
                     <%= @user.phone %>
@@ -63,11 +78,8 @@
                     <%= @user.clubs.size %>
                   </h4>
                   <div class="hr-left"></div>
-                  <% if current_page? edit_user_path %>
+                  <% if current_user.is_user?@user %>
                     <%= render "users/form_edit" %>
-                  <% else %>
-                    <%= render "time_line_homes/time_line" %>
-                    <%= render "time_line_homes/club_tree" %>
                   <% end %>
                 </div>
               </li>

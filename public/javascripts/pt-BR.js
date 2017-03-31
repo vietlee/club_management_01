@@ -53,3 +53,4 @@ I18n.translations["nb"] = I18n.extend((I18n.translations["nb"] || {}), {});
 I18n.translations["pt-PT"] = I18n.extend((I18n.translations["pt-PT"] || {}), {});
 I18n.translations["sq"] = I18n.extend((I18n.translations["sq"] || {}), {});
 I18n.translations["sv-SE"] = I18n.extend((I18n.translations["sv-SE"] || {}), {});
+I18n.translations["jp"] = I18n.extend((I18n.translations["jp"] || {}), {});

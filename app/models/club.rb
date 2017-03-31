@@ -1,4 +1,6 @@
 class Club < ApplicationRecord
+  acts_as_taggable
+
   has_many :user_clubs, dependent: :destroy
   has_many :events, dependent: :destroy
   has_many :albums, dependent: :destroy
@@ -18,6 +20,9 @@ class Club < ApplicationRecord
   validates :name, presence: true, uniqueness: true
   validates :description, presence: true,
     length: {minimum: Settings.min_description}
+
+  enum club_type: {hobbies: 8, sport: 1, game: 2, education: 3, music: 4,
+    entertainment: 5, confidential: 6, junket: 7, other: 0}
 
   scope :actives, -> {where is_active: true}
   scope :of_user_clubs, -> user_clubs {where id: user_clubs.map(&:club_id)}

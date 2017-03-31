@@ -10,8 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-
-ActiveRecord::Schema.define(version: 20170319072705) do
+ActiveRecord::Schema.define(version: 20170324062106) do
 
   create_table "activities", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "trackable_type"
@@ -79,7 +78,7 @@ ActiveRecord::Schema.define(version: 20170319072705) do
     t.index ["type"], name: "index_ckeditor_assets_on_type", using: :btree
   end
 
-  create_table "club_requests", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+  create_table "club_requests", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", comment: "utf8_general_ci" do |t|
     t.integer  "organization_id"
     t.integer  "user_id"
     t.string   "name"
@@ -89,11 +88,12 @@ ActiveRecord::Schema.define(version: 20170319072705) do
     t.integer  "status",                        default: 0
     t.datetime "created_at",                                null: false
     t.datetime "updated_at",                                null: false
+    t.integer  "club_type",                     default: 0, null: false
     t.index ["organization_id"], name: "index_club_requests_on_organization_id", using: :btree
     t.index ["user_id"], name: "index_club_requests_on_user_id", using: :btree
   end
 
-  create_table "clubs", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+  create_table "clubs", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", comment: "utf8_general_ci" do |t|
     t.integer  "organization_id"
     t.string   "name"
     t.text     "notification",    limit: 65535
@@ -103,6 +103,7 @@ ActiveRecord::Schema.define(version: 20170319072705) do
     t.boolean  "is_active",                     default: true
     t.string   "logo"
     t.string   "image"
+    t.integer  "club_type",                     default: 0
     t.datetime "created_at",                                   null: false
     t.datetime "updated_at",                                   null: false
     t.index ["organization_id"], name: "index_clubs_on_organization_id", using: :btree
@@ -131,12 +132,6 @@ ActiveRecord::Schema.define(version: 20170319072705) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.index ["priority", "run_at"], name: "delayed_jobs_priority", using: :btree
-  end
-
-  create_table "event_categories", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
-    t.string   "name"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
   end
 
   create_table "events", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
@@ -243,6 +238,31 @@ ActiveRecord::Schema.define(version: 20170319072705) do
     t.datetime "updated_at",               null: false
     t.index ["club_id"], name: "index_reason_leaves_on_club_id", using: :btree
     t.index ["user_id"], name: "index_reason_leaves_on_user_id", using: :btree
+  end
+
+  create_table "taggings", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.integer  "tag_id"
+    t.string   "taggable_type"
+    t.integer  "taggable_id"
+    t.string   "tagger_type"
+    t.integer  "tagger_id"
+    t.string   "context",       limit: 128
+    t.datetime "created_at"
+    t.index ["context"], name: "index_taggings_on_context", using: :btree
+    t.index ["tag_id", "taggable_id", "taggable_type", "context", "tagger_id", "tagger_type"], name: "taggings_idx", unique: true, using: :btree
+    t.index ["tag_id"], name: "index_taggings_on_tag_id", using: :btree
+    t.index ["taggable_id", "taggable_type", "context"], name: "index_taggings_on_taggable_id_and_taggable_type_and_context", using: :btree
+    t.index ["taggable_id", "taggable_type", "tagger_id", "context"], name: "taggings_idy", using: :btree
+    t.index ["taggable_id"], name: "index_taggings_on_taggable_id", using: :btree
+    t.index ["taggable_type"], name: "index_taggings_on_taggable_type", using: :btree
+    t.index ["tagger_id", "tagger_type"], name: "index_taggings_on_tagger_id_and_tagger_type", using: :btree
+    t.index ["tagger_id"], name: "index_taggings_on_tagger_id", using: :btree
+  end
+
+  create_table "tags", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.string  "name",                       collation: "utf8_bin"
+    t.integer "taggings_count", default: 0
+    t.index ["name"], name: "index_tags_on_name", unique: true, using: :btree
   end
 
   create_table "target_hobbies_tags", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|

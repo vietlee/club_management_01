@@ -18,6 +18,11 @@
           class: "btn btn-sm btn-primary animation-fadeIn360" do %>
           <i class="fa fa-pencil "></i><%= t "edit" %>
         <% end %>
+        <% if @club.tag_list.join.blank? %>
+          <%= t "head_note" %>
+          <i class="fa fa-hand-o-right"></i>
+          <strong><%= t "note_cotent" %></strong>
+        <% end %>
       </div>
     </div>
     <div class="container"></div>

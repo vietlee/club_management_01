@@ -534,6 +534,10 @@ vi:
         phone: "Số điện thoại"
         location: "Địa chỉ"
         description: "Mô tả"
+      user:
+        tag_list: "Danh sách Tags: "
+        password: "Mật khẩu"
+        password_confirmation: "Xác nhận mật khẩu"
     errors:
       messages:
         record_invalid: "Bản ghi không hợp lệ"
@@ -609,6 +613,15 @@ vi:
               blank: " không được bỏ trống"
             description:
               blank: " không được bỏ trống"
+        user:
+          attributes:
+            password:
+              blank: " không được bỏ trống"
+              too_short: " quá ngắn"
+            password_confirmation:
+              confirmation: " không đúng"
+            tag_list:
+              invalid: "Bạn chỉ được thêm tối đa 4 tags"
   not_found_user_event: "Không tìm thấy sự kiện mà bạn tham gia!"
   not_found_user_club: "Không tìm thấy câu lạc bộ mà bạn tham gia!"
   see_you_next_time: "Gặp lại sau nhé!!"
@@ -751,3 +764,19 @@ vi:
   accept_for_you: " của bạn đã được chấp nhận!!!"
   let_access_manager_organization: "Hãy truy cập website để quản lý tổ chức của bạn!!!"
   admin_now: "Hiện tại bạn là ADMIN của tổ chức này."
+  type_club: "Loại CLB"
+  sport: "Thể thao"
+  game: "Game"
+  education: "Giáo dục"
+  other: "Khác..."
+  music: "Âm nhạc"
+  entertainment: "Giải trí"
+  confidential: "Tâm sự-Chuyện riêng"
+  junket: "Tiệc tùng-Ăn uống"
+  enter_tags: "Nhập Tags"
+  note_tags: "Nếu là thành viên của tổ chức,hãy vào hồ sơ cá nhân và thêm TAGS để tìm được CLB mong muốn!!!"
+  head_note: " ("
+  note_cotent: " Gợi ý: Hãy thêm Tags cho CLB của bạn để người khác có thể tìm thấy dễ dàng!!! )"
+  character_input: "(Hãy nhập vào chữ thường)"
+  club_suggest: " CLB gợi ý cho bạn"
+  not_club_conformity: "Không có CLB nào phù hợp với Tags bạn quan tâm!!!"
