@@ -22,6 +22,9 @@ body {
 .site-span {
   width: 100%;
 }
+.notification-un_read {
+  background-color: #F8F8F8;
+}
 .fa-users {
   margin-top: 5px;
 }

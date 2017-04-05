@@ -640,3 +640,6 @@ en:
   character_input: "(Let's input lower case)"
   club_suggest: " Club is suggest for you"
   not_club_conformity: "No club conform with your tags"
+  leave_organization: "Are you sure leave this organization?"
+  before_money: "Before money: "
+  after_money: "After money: "

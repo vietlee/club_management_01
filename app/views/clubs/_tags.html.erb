@@ -1,5 +1,6 @@
 <div class="col-md-12 view-tags">
-  <h4><strong><%= t "tags" %></strong></h4>
+  <h4><strong><i class="fa fa-tags" aria-hidden="true"></i>
+    <%= t "tags" %></strong></h4>
     <p><% @club.tag_list.each do |tag| %>
       <%= link_to tag, "javascript:", class: "tag" %>
     <% end %></p>

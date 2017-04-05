@@ -8,7 +8,7 @@ class CreateClubRequests < ActiveRecord::Migration[5.0]
       t.string :action
       t.string :logo
       t.integer :status, default: 0
-      t.integer :type_club, default: 0
+      t.integer :club_type, default: 0
       t.timestamps
     end
   end

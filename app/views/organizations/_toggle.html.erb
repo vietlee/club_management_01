@@ -9,7 +9,7 @@
 <% else %>
   <% case when @user_organization.joined? %>
     <%= link_to user_organization_path(id: @organization.id),
-      class: "btn btn-lg btn-info", method: :delete do  %>
+      class: "btn btn-lg btn-info", method: :delete, data: {confirm: t("leave_organization")} do  %>
       <i class="fa fa-sign-out"></i> <%= t "leave" %>
     <% end %>
   <% when @user_organization.pending? %>
