@@ -29,6 +29,9 @@ gem "delayed_job_active_record"
 gem "acts-as-taggable-on"
 gem "bootstrap-tagsinput-rails"
 gem "daemons"
+source "https://rails-assets.org" do
+  gem "rails-assets-chosen"
+end
 
 group :production do
   gem "pg"

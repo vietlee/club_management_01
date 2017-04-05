@@ -24,7 +24,7 @@
           <small class="pull-left site-description">
             <i class="fa fa-hand-o-right text-muted"></i>
             <%= link_to club do %>
-              <%= club.description.truncate Settings.truncate_description %>
+              <%= club.description.html_safe %>
             <% end %>
           </small>
           <div>

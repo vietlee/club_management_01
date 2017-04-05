@@ -86,9 +86,9 @@ ActiveRecord::Schema.define(version: 20170324062106) do
     t.string   "action"
     t.string   "logo"
     t.integer  "status",                        default: 0
+    t.integer  "club_type",                     default: 0
     t.datetime "created_at",                                null: false
     t.datetime "updated_at",                                null: false
-    t.integer  "club_type",                     default: 0, null: false
     t.index ["organization_id"], name: "index_club_requests_on_organization_id", using: :btree
     t.index ["user_id"], name: "index_club_requests_on_user_id", using: :btree
   end
