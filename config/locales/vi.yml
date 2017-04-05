@@ -780,3 +780,6 @@ vi:
   character_input: "(Hãy nhập vào chữ thường)"
   club_suggest: " CLB gợi ý cho bạn"
   not_club_conformity: "Không có CLB nào phù hợp với Tags bạn quan tâm!!!"
+  leave_organization: "Bạn chắc chắn muốn rời khỏi tổ chức này?"
+  before_money: "Số tiền ban đầu: "
+  after_money: "Số tiền sau đó: "

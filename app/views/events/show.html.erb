@@ -16,7 +16,39 @@
               </div>
               <div class="col-md-6 fa fa-money center infor-event">
                 <strong> <%= t "expense" %></strong> <br>
-                <p><%= number_to_vnd @event.expense %></p></div>
+                <p><%= number_to_currency(@event.expense, locale: :vi) %>
+                  <% unless @event.notification? %>
+                    <button type="button" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#myModal">
+                      <i class="fa fa-angle-double-up" aria-hidden="true"></i>
+                    </button>
+                    <div class="">
+                      <div class="modal fade" id="myModal" role="dialog">
+                        <div class="modal-dialog modal-sm">
+                          <div class="modal-content col-md-5 col-md-offset-4">
+                            <div class="modal-header">
+                              <button type="button" class="close" data-dismiss="modal">&times;</button>
+                              <h3 class="modal-title">
+                                <strong><%= t "detail" %></strong>
+                              </h3>
+                            </div>
+                            <div class="modal-body">
+                              <p><strong><%= t "before_money" %></strong>
+                                <%= number_to_currency(@event.amount, locale: :vi) %>
+                              </p>
+                              <p><strong><%= t "after_money" %></strong>
+                                <%= number_to_currency(view_case_money_after(@event), locale: :vi)%>
+                              </p>
+                            </div>
+                            <div class="modal-footer">
+                              <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  <% end %>
+                </p>
+                </div>
               <div class="col-md-6 fa fa-map-marker center infor-event">
                 <strong> <%= t "location" %></strong> <br>
                 <p><%= @event.location %></p></div>

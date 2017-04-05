@@ -22,7 +22,7 @@ class ClubManager::EventsController < BaseClubManagerController
 
   def create
     event = Event.new event_params
-    event.event_category = params[:event][:event_category].to_i
+    event.amount = @club.money
     if event.save
       create_acivity event, Settings.create, event.club, current_user
       if params[:event][:event_category].to_i == Event.event_categories[:pay_money]
@@ -81,8 +81,9 @@ class ClubManager::EventsController < BaseClubManagerController
   end
 
   def event_params
-    params.require(:event).permit :club_id, :name, :date_start, :status,
-      :expense, :date_end, :location, :description, :image, :user_id
+    event_category = params[:event][:event_category].to_i
+    params.require(:event).permit(:club_id, :name, :date_start, :status,
+      :expense, :date_end, :location, :description, :image, :user_id).merge! event_category: event_category
   end
 
   def is_finished
