@@ -29,5 +29,10 @@ class UserOrganization < ApplicationRecord
       return user.is_admin if user
       false
     end
+
+    def create_user_organization user_id, organization_id
+      create user_id: user_id, organization_id: organization_id,
+        status: :joined
+    end
   end
 end
