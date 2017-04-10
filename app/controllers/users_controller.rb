@@ -36,7 +36,7 @@ class UsersController < ApplicationController
 
   def user_params
     params.require(:user).permit :full_name, :email, :phone, :avatar,
-      :password, :password_confirmation, :tag_list
+      :password, :password_confirmation, :tag_list, :tag, {tag_ids: []}, :tag_ids
   end
 
   def load_organizations

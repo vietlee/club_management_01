@@ -34,7 +34,7 @@
               <% if current_user.tags_clubs.any? %>
                 <% sort_suggest(current_user.tags_clubs).each do |club, s| %>
                   <% unless current_user.user_clubs.of_club(club) %>
-                    <%= link_to club_path(club.id), target: "blank" do %>
+                    <%= link_to club_path(club.id), target: "_blank" do %>
                       <i class="gi gi-brightness_reduce"></i>
                       <%= club.name %></br>
                     <% end %>
