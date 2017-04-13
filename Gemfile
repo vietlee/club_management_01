@@ -29,6 +29,9 @@ gem "delayed_job_active_record"
 gem "acts-as-taggable-on"
 gem "bootstrap-tagsinput-rails"
 gem "daemons"
+gem "roo"
+gem "roo-xls"
+gem "activerecord-import"
 source "https://rails-assets.org" do
   gem "rails-assets-chosen"
 end

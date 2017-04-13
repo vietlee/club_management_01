@@ -2,6 +2,9 @@ require_relative 'boot'
 require 'rails/all'
 require 'carrierwave'
 require 'carrierwave/orm/activerecord'
+require 'roo'
+require "activerecord-import/base"
+ActiveRecord::Import.require_adapter('mysql2')
 # Require the gems listed in Gemfile, including any gems
 # you've limited to :test, :development, or :production.
 Bundler.require(*Rails.groups)

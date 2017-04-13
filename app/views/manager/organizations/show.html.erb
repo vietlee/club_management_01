@@ -4,16 +4,25 @@
   <section class="site-section site-section-light site-section-top">
     <div class="container">
       <h1 class="animation-slideDown">
-        <strong><%= @organization.name %></strong>
+        <strong><%= @organization.name %>
+          <%= link_to "#modal-club-edit",
+            data: {toggle: "modal"},
+            class: "btn btn-sm btn-primary animation-fadeIn360" do %>
+            <i class="fa fa-pencil "></i><%= t "edit" %>
+          <% end %>
+        </strong>
       </h1>
       <p class="h3 animation-slideUp hidden-xs">
         <%= @organization.description.html_safe %>
       </p>
       <div class="join-cancel-toggle-container">
-        <%= link_to "#modal-club-edit", data: {toggle: "modal"},
-          class: "btn btn-sm btn-primary animation-fadeIn360" do %>
-          <i class="fa fa-pencil "></i><%= t "edit" %>
-        <% end %>
+        <div class="pull-left">
+          <%= form_tag manager_import_users_path(organization:
+            @organization.id), multipart: true, method: :post do %>
+            <%= file_field_tag :file %>
+            <%= submit_tag t("import_user"), class: "btn btn-success", title: t("title_import") %>
+          <% end %>
+        </div>
       </div>
     </div>
     <div class="container"></div>
@@ -106,7 +115,12 @@
     </div>
   </div>
 </div>
-<div id="modal-club-edit" class="modal fade" tabindex="-1" role="dialog"
-  aria-hidden="true">
+<div id="modal-club-edit" class="modal fade" tabindex="-1"
+  role="dialog" aria-hidden="true">
   <%= render "popups/edit_organization_detail" %>
 </div>
+<% if @errors %>
+  <% @errors.each do |message| %>
+    <%= message %>
+  <% end %>
+<% end %>

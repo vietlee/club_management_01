@@ -30,6 +30,7 @@ class User < ApplicationRecord
   scope :eliminate, -> user {where.not id: user.id}
   scope :yet_by_ids, -> ids {where.not id: ids}
   scope :done_by_ids, -> ids {where id: ids}
+  scope :done_by_emails, -> emails {where email: emails}
 
   validates :full_name, presence: true, length: {maximum: Settings.max_name}
   validates :password, presence: true, length: {minimum: Settings.min_password}, on: :create
@@ -64,5 +65,37 @@ class User < ApplicationRecord
       end
     end
     arr
+  end
+
+  def self.import_file(file, organization)
+    users = []
+    spreadsheet = open_spreadsheet(file)
+    header = spreadsheet.row(Settings.read_key_row1)
+    (Settings.read_data_row2..spreadsheet.last_row).each do |i|
+      row = Hash[[header, spreadsheet.row(i)].transpose]
+      user = find_by_id(row["id"]) || new
+      user.attributes = row.to_hash.slice(*row.to_hash.keys)
+      users << user
+    end
+    if User.done_by_emails(users.map(&:email)).any?
+      @errors = Settings.error_data
+    else
+      User.import users
+      @users = User.done_by_emails users.map(&:email)
+      @users.each do |user|
+        UserOrganization.create_user_organization user.id, organization.id
+      end
+    end
+  end
+
+  def self.open_spreadsheet(file)
+    @errors = []
+    case File.extname(file.original_filename)
+    when ".csv" then Roo::CSV.new(file.path)
+    when ".xls" then Roo::Excel.new(file.path)
+    when ".xlsx" then Roo::Excelx.new(file.path)
+    else
+      @errors = Settings.error_import
+    end
   end
 end

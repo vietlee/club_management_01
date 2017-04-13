@@ -34,6 +34,8 @@ GEM
       activemodel (= 5.0.1)
       activesupport (= 5.0.1)
       arel (~> 7.0)
+    activerecord-import (0.17.2)
+      activerecord (>= 3.2)
     activesupport (5.0.1)
       concurrent-ruby (~> 1.0, >= 1.0.2)
       i18n (~> 0.7)
@@ -206,6 +208,15 @@ GEM
       ffi (>= 0.5.0)
     responders (2.3.0)
       railties (>= 4.2.0, < 5.1)
+    roo (2.7.1)
+      nokogiri (~> 1)
+      rubyzip (~> 1.1, < 2.0.0)
+    roo-xls (1.0.0)
+      nokogiri
+      roo (>= 2.0.0beta1, < 3)
+      spreadsheet (> 0.9.0)
+    ruby-ole (1.2.12.1)
+    rubyzip (1.2.1)
     sass (3.4.23)
     sass-rails (5.0.6)
       railties (>= 4.0.0, < 6)
@@ -214,6 +225,8 @@ GEM
       sprockets-rails (>= 2.0, < 4.0)
       tilt (>= 1.1, < 3)
     slop (3.6.0)
+    spreadsheet (1.1.4)
+      ruby-ole (>= 1.0)
     spring (2.0.1)
       activesupport (>= 4.2)
     spring-watcher-listen (2.0.1)
@@ -252,6 +265,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  activerecord-import
   acts-as-taggable-on
   bootstrap-kaminari-views
   bootstrap-sass
@@ -283,6 +297,8 @@ DEPENDENCIES
   rails-assets-chosen!
   rails_12factor
   ransack
+  roo
+  roo-xls
   sass-rails (~> 5.0)
   spring
   spring-watcher-listen (~> 2.0.0)

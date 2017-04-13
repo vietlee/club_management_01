@@ -72,3 +72,7 @@ member_manager: 23
 notification_event: "Event"
 my_url: "google.com.vn"
 limit_tags: 4
+error_import: "error when input file"
+error_data: "has user exist"
+read_key_row1: 1
+read_data_row2: 2

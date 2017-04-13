@@ -28,6 +28,7 @@ Rails.application.routes.draw do
     resources :members
     resources :clubs
     resources :organizations
+    resources :import_users, only: :create
     resources :request_members
   end
 
