@@ -1,32 +1,18 @@
-<section class="site-content site-section event-comment">
+<section class="site-content event-comment">
   <div class="container">
     <div class="row">
       <div class="col-md-10 col-md-offset-1 site-block">
         <h3 class="site-heading"><strong><%= t "comments" %></strong></h3>
         <ul class="media-list">
-          <% target.comments.each do |comment| %>
-            <li class="media">
-              <a href="javascript:void(0)" class="pull-left">
-                <%= image_tag comment.user.avatar, class: "img-circle img-user-time-line" %>
-              </a>
-              <div class="media-body">
-                <span class="text-muted pull-right"><small><em>
-                  <%= l comment.created_at, format: :short %>
-                </em></small></span>
-                <%= link_to comment.user do %>
-                  <strong><%= comment.user.full_name %></strong>
-                <% end %>
-                <%= render partial: "comments/toggle",
-                  locals:
-                  {comment_select: comment} if current_user == comment.user %>
-                <p class="edit-comment-<%= comment.id %>">
-                  <%= comment.content %>
-                </p>
-              </div>
-            </li>
-            <div class="push-top"></div>
-          <% end %>
+          <%= render partial: "events/list_comment", locals: {comments: comments} %>
         </ul>
+        <% if event.comments.size > Settings.limit_comments && comments.size == Settings.limit_comments %>
+          <%= link_to t("view_all"), club_event_path(comment_status: "all"),
+            class: "btn btn-primary", remote: true %>
+        <% elsif event.comments.size > Settings.limit_comments && comments.size > Settings.limit_comments %>
+          <%= link_to t("view_less"), club_event_path(comment_status: "less"),
+            class: "btn btn-primary", remote: true %>
+        <% end %>
       </div>
     </div>
   </div>

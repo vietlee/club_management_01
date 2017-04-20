@@ -1,0 +1,22 @@
+<% comments.each do |comment| %>
+  <li class="media">
+    <a href="javascript:void(0)" class="pull-left">
+      <%= image_tag comment.user.avatar, class: "img-circle img-user-time-line" %>
+    </a>
+    <div class="media-body">
+      <span class="text-muted pull-right"><small><em>
+        <%= l comment.created_at, format: :short %>
+      </em></small></span>
+      <%= link_to comment.user do %>
+        <strong><%= comment.user.full_name %></strong>
+      <% end %>
+      <%= render partial: "comments/toggle",
+        locals:
+        {comment_select: comment} if current_user == comment.user %>
+      <p class="edit-comment-<%= comment.id %>">
+        <%= comment.content %>
+      </p>
+    </div>
+  </li>
+  <div class="push-top"></div>
+<% end %>

@@ -76,3 +76,4 @@ error_import: "error when input file"
 error_data: "has user exist"
 read_key_row1: 1
 read_data_row2: 2
+limit_comments: 5

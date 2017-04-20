@@ -19,6 +19,9 @@ body {
   color: yellow;
   font-size: 25px;
 }
+.version-beta {
+  color: #981414;
+}
 .site-span {
   width: 100%;
 }

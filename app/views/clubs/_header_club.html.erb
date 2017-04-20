@@ -9,10 +9,12 @@
         <strong><%= @club.name %></strong>
         <div class="pull-left dropdown">
           <span class="caret" data-toggle="dropdown"></span>
-          <ul class="dropdown-menu">
-            <li><%= link_to t("albums"), club_albums_path(club_id: @club.id) %></li>
-            <li><%= link_to t("leave_club") %></li>
-          </ul>
+          <% if current_user.user_clubs.joined.of_club(@club) %>
+            <ul class="dropdown-menu">
+              <li><%= link_to t("albums"), club_albums_path(club_id: @club.id) %></li>
+              <li><%= link_to t("leave_club"), user_club_path(club_id: @club.id), method: :delete, data: {confirm: t("answer_leave")} %></li>
+            </ul>
+          <% end %>
         </div>
       </h1>
       <span class="animation-slideUp hidden-xs rating-container">
