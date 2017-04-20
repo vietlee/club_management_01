@@ -5,7 +5,8 @@ class CommentsController < ApplicationController
   def create
     comment = Comment.new comment_params
     if comment.save
-      @target = comment.target
+      @event = comment.target
+      @comments = @event.comments.newest.take(Settings.limit_comments)
       create_acivity comment.target, Settings.comment, comment.target.club, current_user
       respond_to do |format|
         format.js
@@ -23,6 +24,7 @@ class CommentsController < ApplicationController
       flash[:danger] = t("error_process")
       redirect_to :back
     end
+    @comments = @comment.target.comments.newest.take(Settings.limit_comments)
     respond_to do |format|
       format.js
     end

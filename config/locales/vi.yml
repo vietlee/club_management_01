@@ -789,3 +789,7 @@ vi:
   import_file: "Bạn chưa chọn file nào,vui lòng chọn trước!"
   errors_file_format: "File bạn nhập không đúng định dạng,vui lòng thử lại!"
   errors_file_user: "Trong file có chứa người dùng với email đã tồn tại,vui lòng sửa lại!!!"
+  leave: "Rời khỏi"
+  answer_leave: "Bạn chắc chắn muốn rời khỏi câu lạc bộ này?"
+  view_all: "Hiển thị tất cả"
+  view_less: "Hiển thị ít hơn"

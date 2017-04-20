@@ -6,6 +6,14 @@ class EventsController < ApplicationController
     @members = @event.users
     @members_done = @club.users.done_by_ids(@event.budgets.map(&:user_id))
     @members_yet = @club.users.yet_by_ids(@event.budgets.map(&:user_id))
+    if params[:comment_status] == "all"
+      @comments = @event.comments.newest
+      respond_to do |format|
+        format.js
+      end
+    else
+      @comments = @event.comments.newest.take(Settings.limit_comments)
+    end
   end
 
   private

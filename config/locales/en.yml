@@ -649,3 +649,6 @@ en:
   import_file: "you have not choose any file yet!"
   errors_file_format: "File you import wrong format,please try again!"
   errors_file_user: "In this file contain user exits,please edit it!"
+  answer_leave: "Are you sure leave this club?"
+  view_all: "view all"
+  view_less: "view less"

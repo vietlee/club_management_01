@@ -1,2 +1,2 @@
-$('.list-comment-event').html('<%=j render partial: "events/comment", locals: {target: @comment.target} %>');
+$('.media-list').html('<%=j render partial: "events/list_comment", locals: {comments: @comments} %>');
 $('#profile-newsfeed-comment').val('');
