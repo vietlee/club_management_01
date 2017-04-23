@@ -10,7 +10,7 @@
             <%= search_form_for @q, class: "form-horizontal" do |f| %>
               <div class="form-group push-bit">
                 <div class="col-xs-12">
-                  <div class="input-group">
+                  <div class="input-group" id="search-club-input">
                     <%= f.text_field :name_or_description_cont,
                       class: "form-control", id: "ecom-search",
                       placeholder: t("name_des") %>
@@ -64,29 +64,11 @@
         </aside>
       </div>
       <div class="col-md-8 col-lg-9">
-        <div class="form-inline push-bit clearfix">
-          <div class="pull-right">
-          <% if @user_organizations.any? %>
-            <%= paginate clubs %>
-          <% end %>
-          </div>
-          <select id="results-sort" name="results-sort" class="form-control" size="1">
-            <option value="0" disabled selected><%= t "sort_by" %></option>
-            <option value="2"><%= t "name" %> <%= t "a-z" %></option>
-            <option value="3"><%= t "name" %> <%= t "z-a" %></option>
-            <option value="4"><%= t "rating" %> <%= t "low_to_hight" %></option>
-            <option value="5"><%= t "rating" %> <%= t "hight_to_low" %></option>
-            <option value="6"><%= t "members" %> <%= t "low_to_hight" %></option>
-            <option value="7"><%= t "members" %> <%= t "hight_to_low" %></option>
-            <option value="8"><%= t "money" %> <%= t "low_to_hight" %></option>
-            <option value="9"><%= t "money" %> <%= t "hight_to_low" %></option>
-          </select>
-        </div>
         <% if @user_organizations.any? %>
           <% if clubs.any? %>
             <%= render partial: "shared/list_club", locals: {clubs: clubs} %>
           <% else %>
-            <h4 class="notifi-join"><%= t "no_data" %></h4>
+            <h4 class="notifi-join center"><%= t "no_data" %></h4>
           <% end %>
         <% else %>
           <h4 class="notifi-join"><%= t "no_data_club_organization" %></h4 >
@@ -96,6 +78,13 @@
               class: "btn btn-danger" %>
           </h4>
         <% end %>
+        <div class="form-inline push-bit clearfix">
+          <div class="pull-right">
+            <% if @user_organizations.any? %>
+              <%= paginate clubs %>
+            <% end %>
+          </div>
+        </div>
       </div>
     </div>
   </div>

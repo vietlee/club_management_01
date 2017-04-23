@@ -46,4 +46,14 @@ module ApplicationHelper
     h = Hash[h.sort_by{|_, v| -v}]
     a = h.map(&:flatten)
   end
+
+  def club_suggest_user_tag
+    clubs = []
+    sort_suggest(current_user.tags_clubs).each do |club, s|
+      unless current_user.user_clubs.of_club(club)
+        clubs << club
+      end
+    end
+    clubs
+  end
 end

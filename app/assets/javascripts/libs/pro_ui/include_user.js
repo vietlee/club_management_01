@@ -11,6 +11,7 @@ $(document).on('turbolinks:load', function() {
   $("#ecom-filter-condition").change(function(){
     $("#ecom-search").attr("name", "q[club_type_eq]");
     $("#ecom-search").val($(this).val());
+    document.getElementById("search-club-input").style.display = 'none';
     $("#club_search").submit();
     $("#example-datatable").dataTable();
   });

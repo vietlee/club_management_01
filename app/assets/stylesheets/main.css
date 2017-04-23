@@ -19,6 +19,13 @@ body {
   color: yellow;
   font-size: 25px;
 }
+.suggest-club a {
+  font-weight: bold;
+}
+.suggest-club a:hover {
+  text-decoration: none;
+  color: green;
+}
 .version-beta {
   color: #981414;
 }
@@ -35,13 +42,17 @@ body {
   width: 100%;
 }
 .tag {
-  background-color: #DBE3E8;
+  background-color: #D7AFAF;
   padding: 1px;
   border-radius: 3px;
   margin-bottom: 5px;
+  color: black;
 }
 .tag:hover {
   text-decoration: none;
+}
+.notifi-suggest {
+  color: green;
 }
 .char-app {
   font-family: serif;
@@ -470,7 +481,7 @@ header nav {
 /* Store Items */
 
 .store-items {
-  margin-bottom: 19px;
+  margin-bottom: 0px;
 }
 .store-item {
   padding: 5px;
@@ -1645,7 +1656,7 @@ p,
 */
 
 .push-bit {
-  margin-bottom: 30px;
+  margin-bottom: 0px;
 }
 .push {
   margin-bottom: 49px;
