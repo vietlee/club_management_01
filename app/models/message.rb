@@ -4,6 +4,8 @@ class Message < ApplicationRecord
 
   after_create :send_message
 
+  scope :newest, -> {order created_at: :desc}
+
   private
   def send_message
     SendMessageJob.perform_now self

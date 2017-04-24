@@ -10,7 +10,7 @@
     <% @members.take(Settings.member_club).each do |member| %>
       <div class="col-md-4 col-sm-6">
         <div class="text-center">
-          <%= link_to user_path(member.user_id), title: member.full_name do %>
+          <%= link_to user_path(member.user_id), title: member.full_name, target: "_blank" do %>
             <%= image_tag member.avatar,
               class: "circle-profile-list members-club" %>
           <% end %>

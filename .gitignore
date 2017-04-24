@@ -44,18 +44,18 @@ config/database.yml
 Gemfile.lock
 
 # Ignore Images
-app/assets/images/
+#app/assets/images/
 
 # Ignore Fonts
-app/assets/fonts/
+#app/assets/fonts/
 
 #Igrone schema.db
 db/schema.rb
 
 #Igrone public/uploads
-public/uploads
+#public/uploads
 #Igrone public/assets
-public/assets
+#public/assets
 
 # Ignore application configuration
 /config/application.yml
