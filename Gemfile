@@ -35,6 +35,7 @@ gem "activerecord-import"
 source "https://rails-assets.org" do
   gem "rails-assets-chosen"
 end
+gem "redis"
 
 group :production do
   gem "pg"
