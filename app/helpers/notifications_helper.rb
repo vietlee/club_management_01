@@ -7,7 +7,7 @@ module NotificationsHelper
     img =  notification.owner.avatar
     case notification.trackable_type
     when Club.name
-      img =  notification.trackable.image
+      img =  notification.trackable.logo
     when Event.name
       img =  notification.trackable.image
     when Organization.name

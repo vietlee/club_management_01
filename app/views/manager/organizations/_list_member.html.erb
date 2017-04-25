@@ -21,18 +21,20 @@
               <% end %>
             </h4>
             <% if member.pending? && !member.reject? %>
-              <%= link_to t("active"),
-                manager_member_path(id: member.id,
+              <%= link_to manager_member_path(id: member.id,
                 status: UserOrganization.statuses[:joined],
                 organization_id: member.organization_id), method: :put,
-                remote: true, class: "btn btn-primary",
-                data: {confirm: t("answer_active")} %>
-              <%= link_to t("reject"),
-                manager_member_path(id: member.id,
+                remote: true, class: "btn btn-primary btn-sm",
+                data: {confirm: t("answer_active")} do %>
+                <i class="fa fa-check"> <%= t "active" %></i>
+              <% end %>
+              <%= link_to manager_member_path(id: member.id,
                 status: UserOrganization.statuses[:reject],
                 organization_id: member.organization_id), method: :put,
-                remote: true, class: "btn btn-danger",
-                data: {confirm: t("answer_reject")} %>
+                remote: true, class: "btn btn-danger btn-sm",
+                data: {confirm: t("answer_reject")} do %>
+                <i class="fa fa-times"></i> <%= t "reject" %>
+              <% end %>
             <% end %>
           <% end %>
         </div>

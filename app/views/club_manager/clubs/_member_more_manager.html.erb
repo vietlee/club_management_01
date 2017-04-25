@@ -26,16 +26,18 @@
                     <% end %>
                   </h4>
                   <% if member.status == Settings.pending %>
-                    <%= link_to t("accept"),
-                      club_manager_club_request_path(id: member.id, club_id: @club.id,
+                    <%= link_to club_manager_club_request_path(id: member.id, club_id: @club.id,
                       status: UserClub.statuses[:joined]), method: :put,
-                      class: "btn btn-danger",
-                      data: {confirm: t("answer_active")} %>
-                    <%= link_to t("reject"),
-                      club_manager_club_request_path(id: member.id ,club_id: @club.id,
+                      class: "btn btn-danger btn-sm",
+                      data: {confirm: t("answer_active")} do %>
+                      <i class="fa fa-check"></i> <%= t "accept" %>
+                    <% end %>
+                    <%= link_to club_manager_club_request_path(id: member.id ,club_id: @club.id,
                       status: UserClub.statuses[:reject]), method: :put,
-                      class: "btn btn-primary",
-                      data: {confirm: t("answer_reject")} %>
+                      class: "btn btn-primary btn-sm",
+                      data: {confirm: t("answer_reject")} do %>
+                      <i class="fa fa-times"></i> <%= t "reject" %>
+                    <% end %>
                   <% end %>
                 <% end %>
               </div>
