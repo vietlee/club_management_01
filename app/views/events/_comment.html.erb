@@ -1,8 +1,8 @@
-<section class="site-content event-comment">
+<section class="site-comment event-comment">
   <div class="container">
     <div class="row">
       <div class="col-md-10 col-md-offset-1 site-block">
-        <h3 class="site-heading"><strong><%= t "comments" %></strong></h3>
+        <h3 class="site-heading"><strong><%= t("comments") if @event.comments.any? %></strong></h3>
         <ul class="media-list">
           <%= render partial: "events/list_comment", locals: {comments: comments} %>
         </ul>
@@ -17,3 +17,4 @@
     </div>
   </div>
 </section>
+<%= render "new_comment" %>
