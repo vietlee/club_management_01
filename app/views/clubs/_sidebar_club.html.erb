@@ -65,8 +65,8 @@
           </li>
         <% end %>
         <li>
-          <%= link_to "#",class: "site-nav-sub" do %>
-            <i class="name-user"><%= current_user.full_name %></i>
+          <%= link_to "#",class: "site-nav-sub text-warning" do %>
+            <b><%= current_user.full_name %></b>
               <span class="fa fa-user"></span>
             <input type="hidden" class="current-user-id" value="<%= current_user.id %>">
           <% end %>

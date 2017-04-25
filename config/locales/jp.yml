@@ -212,6 +212,7 @@ jp:
   descriptions_club: "Description's Club"
   question_organization: "You are belong to which Organization?"
   request_new_club: "Request New A Club"
+  sort_by_rate: "Sort by Ratings"
   request_new_event: "Request New A Event"
   select_one_request: "Select One Type A Request:"
   request_to_manager: "Request To Manager"

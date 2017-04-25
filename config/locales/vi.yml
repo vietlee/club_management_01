@@ -124,6 +124,7 @@ vi:
   manager: "Quản lý"
   organization_management: "Quản lý tổ chức"
   club_management: "Quản lý câu lạc bộ"
+  sort_by_rate: "Sắp xếp theo xếp hạng"
   organization_question: "Nếu bạn muốn yêu cầu 1 tổ chức mới?"
   select_one_organization: "Chọn Tổ chức"
   organization_sign: "Tổ chức"

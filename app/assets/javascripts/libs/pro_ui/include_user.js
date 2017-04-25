@@ -1,6 +1,20 @@
 $(document).on('turbolinks:load', function() {
   $('input.rating[type=number]').rating();
 
+  $(document).on('change', '#file-upload', function(e) {
+    var preview = document.getElementById("img-upload");
+    var file    = document.querySelector('input[type=file]').files[0];
+    var reader  = new FileReader();
+    reader.onloadend = function () {
+      preview.src = reader.result;
+    }
+    if (file) {
+      reader.readAsDataURL(file);
+    } else {
+      preview.src = "";
+    }
+  });
+
   $("#ecom-filter-rating").change(function(){
     $("#ecom-search").attr("name", "q[rating_eq]");
     $("#ecom-search").val($(this).val());

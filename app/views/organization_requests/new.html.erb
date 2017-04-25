@@ -31,10 +31,10 @@
             <div class="row">
               <div class="col-md-3">
                 <label for="contact-email"><%= t "organization_logo" %></label>
-                <%= f.file_field :logo, class: "form-control", id: "example-file-input" %>
+                <%= f.file_field :logo, class: "form-control", id: "file-upload" %>
               </div>
               <div class="col-md-8">
-                  <img src="https://upload.wikimedia.org/wikipedia/en/0/0a/Hurling_club_logo.png" height="100">
+                <%= image_tag "logo_tmp.png", class: "img-height-100", id: "img-upload" %>
               </div>
             </div>
           </div>
