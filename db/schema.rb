@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170324062106) do
+ActiveRecord::Schema.define(version: 20170425023120) do
 
   create_table "activities", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "trackable_type"
@@ -78,7 +78,7 @@ ActiveRecord::Schema.define(version: 20170324062106) do
     t.index ["type"], name: "index_ckeditor_assets_on_type", using: :btree
   end
 
-  create_table "club_requests", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", comment: "utf8_general_ci" do |t|
+  create_table "club_requests", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.integer  "organization_id"
     t.integer  "user_id"
     t.string   "name"
@@ -93,7 +93,7 @@ ActiveRecord::Schema.define(version: 20170324062106) do
     t.index ["user_id"], name: "index_club_requests_on_user_id", using: :btree
   end
 
-  create_table "clubs", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", comment: "utf8_general_ci" do |t|
+  create_table "clubs", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.integer  "organization_id"
     t.string   "name"
     t.text     "notification",    limit: 65535
@@ -153,6 +153,14 @@ ActiveRecord::Schema.define(version: 20170324062106) do
     t.datetime "updated_at",                                 null: false
     t.index ["club_id"], name: "index_events_on_club_id", using: :btree
     t.index ["user_id"], name: "index_events_on_user_id", using: :btree
+  end
+
+  create_table "feed_backs", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.string   "content"
+    t.integer  "user_id"
+    t.integer  "type_feed_back", default: 0
+    t.datetime "created_at",                 null: false
+    t.datetime "updated_at",                 null: false
   end
 
   create_table "hobbies_tags", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|

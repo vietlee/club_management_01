@@ -40,6 +40,9 @@
             <li><%= link_to t("list_request"), "#modal-request-question",
               data: {toggle: "modal"}, class: "enable-tooltip" %>
             </li>
+            <li><%= link_to t("feed_back"),
+              new_user_feed_back_path(user_id: current_user.id) %>
+            </li>
           </ul>
         </li>
         <%= render "request/request_question" %>

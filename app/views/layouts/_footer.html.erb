@@ -1,14 +1,16 @@
 <footer class="site-footer site-section">
   <div class="container">
     <div class="row">
-      <div class="col-sm-6 col-md-6 address-footer">
+      <div class="col-sm-7 col-md-7 address-footer">
         <p><i class="fa fa-map-marker" aria-hidden="true"></i>
           <%= t "address_com" %>
         </p>
         <p><i class="fa fa-phone" aria-hidden="true"></i><%= t "phone_com" %></p>
-        <p><i class="fa fa-envelope" aria-hidden="true"></i><%= t "mail_com" %></p>
+        <p>
+          <small class="text-muted"> <span class="fa fa-users"></span> <%= t "dev_by" %></small>
+        </p>
       </div>
-      <div class="col-sm-6 col-md-3 follow-footer">
+      <div class="col-sm-6 col-md-3 follow-footer pull-right">
         <h4 class="footer-heading"><%= t "follow_us" %></h4>
         <ul class="footer-nav footer-nav-social list-inline">
           <li>
@@ -27,21 +29,14 @@
               <i class="fa fa-linkedin"></i>
             <% end %>
           </li>
+          <li>
+            <%= mail_to t("mail_com") do %>
+              <i class="fa fa-envelope-o"></i>
+            <% end %>
+          </li>
         </ul>
       </div>
-      <div class="col-sm-6 col-md-3">
-        <p class="footer-icon"><b class="char-app"><%= t "F" %></b>
-          <label class="logo-small"><%= t "club_logo" %></label></p>
-        <p>
-          <a href="http://framgia.com" target="_blank">
-            <img src="http://poll.framgia.vn/uploads/images/logo.png"
-              class="copyright-image">
-          </a>
-            <span class="color-white"><%= t "copyright" %></span>
-        </p>
-      </div>
     </div>
-  </div>
 </footer>
 <%= link_to "#", id: "to-top", class: "top" do %>
   <i class="fa fa-angle-up"></i>
