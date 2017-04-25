@@ -45,6 +45,13 @@
           <% end %>
         </li>
         <li>
+          <%= link_to admin_feed_backs_path do %>
+            <i class="fa fa-search sidebar-nav-icon"></i>
+            <span class="sidebar-nav-mini-hide">
+              <%= t "view" %> <%= t "feed_back" %></span>
+          <% end %>
+        </li>
+        <li>
           <%= link_to t("do_nothing"), class: "sidebar-nav-menu" do %>
             <i class="fa fa-angle-left sidebar-nav-indicator sidebar-nav-mini-hide"></i>
             <i class="gi gi-building sidebar-nav-icon"></i>

@@ -19,6 +19,7 @@ Rails.application.routes.draw do
     get "/" => "static_pages#index"
     resources :users
     resources :organizations, except: [:edit, :update, :destroy]
+    resources :feed_backs, only: :index
     resources :organization_requests
   end
 
@@ -53,6 +54,7 @@ Rails.application.routes.draw do
     resources :club_requests, only: [:new, :create, :index]
     resources :organization_requests, only: [:new, :create, :index]
     resources :other_clubs, only: :index
+    resources :feed_backs, only: [:new, :create]
     resources :user_organizations, except: [:new, :update]
   end
 

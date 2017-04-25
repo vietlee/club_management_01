@@ -78,3 +78,4 @@ read_key_row1: 1
 read_data_row2: 2
 limit_comments: 5
 chat_messages_limit: 30
+min_content: 20
