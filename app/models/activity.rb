@@ -17,6 +17,12 @@ class Activity < ApplicationRecord
 
   private
   def push_notify
-    NotificationBroadcastJob.perform_now self
+    NotificationBroadcastJob.perform_now self, lists_received
+  end
+
+  def lists_received
+    lists_received = self.container.users.try(:ids)
+    lists_received.delete(self.owner_id)
+    lists_received
   end
 end
