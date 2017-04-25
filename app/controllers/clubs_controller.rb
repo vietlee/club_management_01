@@ -28,15 +28,15 @@ class ClubsController < ApplicationController
 
   protected
   def verify_club
-    unless @club.is_active?
-      flash[:danger] = t("club_is_lock")
-      redirect_to clubs_url
-    end
+    return if @club.is_active?
+    flash[:danger] = t("club_is_lock")
+    redirect_to clubs_url
   end
 
   def load_club
     @club = Club.find_by id: params[:id]
     return if @club
     flash[:danger] = t("not_found")
+    redirect_to clubs_url
   end
 end

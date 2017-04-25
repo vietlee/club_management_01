@@ -86,7 +86,7 @@ vi:
   english: "English"
   vietnamese: "Việt Nam"
   japanese: "JaPanese"
-  club_is_lock: "Câu lạc bộ này đang tạm ngừng hoạt động!"
+  club_is_lock: "Bạn không có quyền vào trang câu lạc bộ này!"
   a-z: "(A to Z)"
   z-a: "(Z to A)"
   sort_by: "Sắp xếp bởi:"

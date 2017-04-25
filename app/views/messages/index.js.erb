@@ -1,0 +1,7 @@
+<% if @messages.present? %>
+  $('#list-messages').prepend("<%= j render @messages %>");
+  $('.num-step-message').val(parseInt($('.num-step-message').val()) + parseInt("<%= @messages.size %>"));
+  $('div').animate({scrollTop: 0},'slow');
+<% else %>
+  $('a.load-more-message').hide();
+<% end %>

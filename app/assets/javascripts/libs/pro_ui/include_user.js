@@ -15,6 +15,16 @@ $(document).on('turbolinks:load', function() {
     }
   });
 
+  $('.load-more-message').click(function(){
+    if($(this).scrollTop() == 0){
+      $.ajax({
+        type: 'GET',
+        url: '/messages',
+        data: {num_message: $('.num-step-message').val(), id: $('#chat-box-club-id').val()}
+      });
+    }
+  });
+
   $("#ecom-filter-rating").change(function(){
     $("#ecom-search").attr("name", "q[rating_eq]");
     $("#ecom-search").val($(this).val());
