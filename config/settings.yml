@@ -83,3 +83,4 @@ ratings: "ratings"
 truncate:
   club:
     description: 50
+messages_load_more: 30

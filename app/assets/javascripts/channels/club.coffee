@@ -16,6 +16,7 @@ jQuery(document).on 'turbolinks:load', ->
       @perform 'speak', message: message, club_id: club_id
 
   $(".chat-box-submit").on "click",(event) ->
+    if $('.chat-input').val().length > 2
       App.club.speak($(".chat-input").val())
       $(".chat-input").val("")
       event.preventDefault()

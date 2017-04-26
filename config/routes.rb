@@ -65,7 +65,7 @@ Rails.application.routes.draw do
   end
 
   resources :invite_join_clubs, only: :create
-  resources :messages, only: [:new, :create, :index]
+  resources :messages, only: :index
   resources :user_events, only: :create
   resources :ratings, only: :create
   resources :organizations, only: [:show, :index]
