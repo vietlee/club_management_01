@@ -79,3 +79,7 @@ read_data_row2: 2
 limit_comments: 5
 chat_messages_limit: 30
 min_content: 20
+ratings: "ratings"
+truncate:
+  club:
+    description: 50

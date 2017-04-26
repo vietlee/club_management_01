@@ -76,13 +76,13 @@
                   </span><br>
                   <small class="pull-left">
                     <i class="fa fa-hand-o-right text-muted"></i>
-                    <%= link_to organization do %>
-                      <%= organization.description.truncate Settings.truncate_description %>
+                    <%= link_to organization, title: organization.description do %>
+                      <%= organization.description.truncate(Settings.truncate.club.description) %>
                     <% end %>
                   </small>
                   <div><div class="push-bit"></div>
                     <%= link_to organization do %>
-                      <strong class="pull-right fa fa-users">
+                      <strong class="pull-left fa fa-users">
                         <%= t "members_with_dot" %>
                         <%= organization.users.size %> |
                         <%= t "clubs_with_dot" %>

@@ -24,6 +24,12 @@ Admin.create!(
   password: "quocvietlee@gmail.com",
   phone: "01689020813",
 )
+Admin.create!(
+  email: "ma.tien.thanh@framgia.com",
+  full_name: "Ma Tien Thanh",
+  password: "ma.tien.thanh@framgia.com",
+  phone: "0966077747",
+)
 # 50.times do |n|
 #   organization_id = 1
 #   club_name  = Faker::Name.name

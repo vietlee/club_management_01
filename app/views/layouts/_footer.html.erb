@@ -36,7 +36,18 @@
           </li>
         </ul>
       </div>
+      <div class="col-sm-6 col-md-3">
+        <p class="footer-icon"><b class="char-app"><%= t "F" %></b>
+          <label class="logo-small"><%= t "club_logo" %></label></p>
+        <p>
+        <%= link_to "http://framgia.com" do %>
+          <%= image_tag "flogo.png", class: "copyright-image" %>
+        <% end %>
+        <span class="color-white"><%= t "copyright" %></span>
+        </p>
+      </div>
     </div>
+  </div>
 </footer>
 <%= link_to "#", id: "to-top", class: "top" do %>
   <i class="fa fa-angle-up"></i>

@@ -1,5 +1,6 @@
 <%= stylesheet_link_tag "organization-details",
   media: "all", "data-turbolinks-track": "reload" %>
+<%= javascript_include_tag "application_admin", "data-turbolinks-track": "reload" %>
 <section class="site-section site-section-light themed-background-dark">
 </section>
 <section class="site-content ">
@@ -79,12 +80,17 @@
                       <div class="hr-left"></div>
                         <div class="table-responsive">
                           <table id="example-datatable"
-                            class="table table-vcenter table-condensed table-bordered org-tbl">
+                            class="table table-bordered">
                             <thead>
                               <tr>
                                 <th class="org-first-th"></th>
                                 <th><i class="fa fa-sort-alpha-desc"></i></th>
-                                <th><i class="fa fa-sort-numeric-asc"></i></th>
+                                <th>
+                                  <%= link_to "#", title: t("sort_by_rate") do %>
+                                    <i class="fa fa-star-half-o"></i>
+                                  <% end %>
+                                </th>
+                                <th><%= t "description" %></th>
                               </tr>
                             </thead>
                             <tbody>
@@ -96,6 +102,7 @@
                                   </td>
                                   <td><%= club.name %></td>
                                   <td><%= club.rating %></td>
+                                  <td><%= club.description %></td>
                                 </tr>
                               <% end %>
                             </tbody>

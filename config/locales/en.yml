@@ -94,6 +94,7 @@ en:
   a-z: "(A to Z)"
   z-a: "(Z to A)"
   sort_by: "SORT BY"
+  sort_by_rate: "Sort by Ratings"
   stars: "Stars"
   hobbies: "Hobbies"
   filters: "Filters"
