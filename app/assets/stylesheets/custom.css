@@ -895,3 +895,6 @@ table{
 .break-all {
   word-break: break-all;
 }
+.content-event{
+  border-radius: 10px;
+}

@@ -122,9 +122,11 @@ h4 .money {
   background: #394263;
   padding: 10px;
   color: white;
+  border-radius: 10px;
 }
 .event-block {
   border: 1px solid #394263;
+  border-radius: 10px;
 }
 .site-block .title {
   color: #394263;
