@@ -891,3 +891,7 @@ table{
     transform:rotate(360deg);
   }
 }
+
+.break-all {
+  word-break: break-all;
+}

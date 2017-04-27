@@ -312,7 +312,6 @@ header nav {
 }
 .site-content {
   background-color: #ffffff;
-  padding-bottom: 255px;
 }
 .site-section-top {
   padding-top: 250px;
@@ -1674,31 +1673,14 @@ p,
 .display-none {
   display: none;
 }
-.visibility-none {
-  visibility: hidden;
-}
-:focus {
-  outline: 0 !important;
-}
-/*
-=================================================================
-(#m07res) RESPONSIVE
-=================================================================
-*/
-/* Small devices, Tablets (>767px) */
 
 @media screen and (min-width: 768px) {
-  /* General */
-
   .site-heading-promo {
-  margin-top: 60px;
+    margin-top: 60px;
   }
 }
-/* Medium devices, Desktops (>991px) */
 
 @media screen and (min-width: 992px) {
-  /* Menu */
-
   .site-nav {
     position: static;
     top: auto;

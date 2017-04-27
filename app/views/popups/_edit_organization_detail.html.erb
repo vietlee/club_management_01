@@ -30,9 +30,9 @@
                 <%= f.label t("description") %>
                 <%= f.text_area :description, required: true, class: "form-control" %>
 
-                <%= f.label :logo %>
-                <%= f.file_field :logo %>
-                <%= image_tag @organization.logo, class: "circle-profile" %><hr/>
+                <%= f.label :background %>
+                <%= f.file_field :logo %><br>
+                <%= image_tag @organization.logo, class: "img-responsive" %><hr/>
                 <%= f.submit t("update"), class: "btn btn-primary" %>
               <% end %>
             </div>
