@@ -32,6 +32,7 @@ jp:
   ui: "UI(Interface)"
   other: "Other"
   organization_details: "Organization detail"
+  club_login: "Club"
   number_organization: "Number Organizations Joined"
   update_user_success: "Update User Success!"
   your_full_name: "Your Full Name..."
@@ -44,6 +45,7 @@ jp:
   has_been_create: "has been created"
   has_been_edit: "has been edited"
   has_been_delete: "has been deleted"
+  interactive: "Interactive"
   has_been_upload: "has been uploaded"
   has_been: "has been "
   send: "Send"
@@ -292,30 +294,28 @@ jp:
     update_fail: "Organization update failed!"
   submit: "Submit"
   edit: "Edit"
-  time:
-    formats:
-      date: "%H:%M %d/%m/%Y"
-      date_utc: "%d/%m/%Y"
-      date_time_utc: "%d/%m/%Y %H:%M"
-      full_date: "%d/%M/%Y %H:%M"
-      short: "%d/%m/%Y"
   date:
     formats:
-      date: "%H:%M %d/%m/%Y"
+      date: "%H:%m %d/%m/%Y"
+      date_time_utc: "%d/%m/%Y %H:%m"
+      full_date: "%d/%m/%Y %H:%m"
+      short: "%d/%m/%Y"
+  time:
+    formats:
+      date: "%H:%m %d/%m/%Y"
+      date_utc: "%d/%m/%Y"
+      date_time_utc: "%d/%m/%Y %H:%m"
+      full_date: "%d/%m/%Y %H:%m"
+      short: "%d/%m/%Y"
   number:
     currency:
       format:
         unit: " VNĐ"
         delimiter: ","
         separator: "."
-        precision: 2
+        precision: 0
         format: "%n%u"
-      short: "%d/%M/%Y"
-  date:
-    time:
-      full_date: "%d/%M/%Y %H:%M"
-      short: "%d/%M/%Y"
-      date: "%H:%M %d/%m/%Y"
+      short: "%d/%m/%Y"
   read_the_article: "Read the article"
   view_more: "View more ..."
   do_nothing: "javascript:void(0)"

@@ -3250,7 +3250,7 @@
       c = "DataTables warning: " + (null !== a ? "table id=" + a.sTableId + " - " : "") + c;
       d && (c += ". For more information about this error, please see http://datatables.net/tn/" + d);
       if (b) Da.console && console.log && console.log(c);
-      else if (a = p.ext, "alert" == (a.sErrMode || a.errMode)) alert(c);
+      else if (a = p.ext, "alert" == (a.sErrMode || a.errMode)) console.log(c);
       else throw Error(c);
     }
 
@@ -15156,7 +15156,7 @@ window.rangy = function() {
   }
 
   function f(a) {
-    window.alert("Rangy not supported in your browser. Reason: " + a), s.initialized = !0, s.supported = !1
+    window.console.log("Rangy not supported in your browser. Reason: " + a), s.initialized = !0, s.supported = !1
   }
 
   function g() {
@@ -15208,7 +15208,7 @@ window.rangy = function() {
       }
     };
   s.fail = f, s.warn = function(a) {
-    a = "Rangy warning: " + a, s.config.alertOnWarn ? window.alert(a) : typeof window.console != k && typeof window.console.log != k && window.console.log(a)
+    a = "Rangy warning: " + a, s.config.alertOnWarn ? window.console.log(a) : typeof window.console != k && typeof window.console.log != k && window.console.log(a)
   }, {}.hasOwnProperty ? s.util.extend = function(a, b) {
     for (var c in b) b.hasOwnProperty(c) && (a[c] = b[c])
   } : f("hasOwnProperty not supported");
@@ -21180,7 +21180,7 @@ function(t) {
           } else i = f.get("height");
           f.get("disableInteraction") ? k = !1 : (k = d.data(this, "_jqs_mhandler"), k ? f.get("composite") || k.reset() : (k = new u(this, f), d.data(this, "_jqs_mhandler", k)));
           if (f.get("composite") && !d.data(this, "_jqs_vcanvas")) {
-            d.data(this, "_jqs_errnotify") || (alert("Attempted to attach a composite sparkline to an element with no existing sparkline"), d.data(this, "_jqs_errnotify", !0));
+            d.data(this, "_jqs_errnotify") || (console.log("Attempted to attach a composite sparkline to an element with no existing sparkline"), d.data(this, "_jqs_errnotify", !0));
             return
           }
           l = new(d.fn.sparkline[f.get("type")])(this, e, f, h, i), l.render(), k && k.registerSparkline(l)
@@ -21779,7 +21779,7 @@ function(t) {
         return this.lastShapeId
       },
       reset: function() {
-        alert("reset not implemented")
+        console.log("reset not implemented")
       },
       _insert: function(a, b) {
         d(b).html(a)
@@ -21793,22 +21793,22 @@ function(t) {
         return b.unshift(c), new G(this, c, a, b)
       },
       appendShape: function(a) {
-        alert("appendShape not implemented")
+        console.log("appendShape not implemented")
       },
       replaceWithShape: function(a, b) {
-        alert("replaceWithShape not implemented")
+        console.log("replaceWithShape not implemented")
       },
       insertAfterShape: function(a, b) {
-        alert("insertAfterShape not implemented")
+        console.log("insertAfterShape not implemented")
       },
       removeShapeId: function(a) {
-        alert("removeShapeId not implemented")
+        console.log("removeShapeId not implemented")
       },
       getShapeAt: function(a, b, c) {
-        alert("getShapeAt not implemented")
+        console.log("getShapeAt not implemented")
       },
       render: function() {
-        alert("render not implemented")
+        console.log("render not implemented")
       }
     }), I = g(H, {
       init: function(b, e, f, g) {
@@ -26366,7 +26366,7 @@ function(a, b) {
         a.css("right", "20px")
     }
     return a.fadeIn(), s.delay > 0 && a.delay(s.delay).fadeOut(function() {
-      return t(this).alert("close")
+      return t(this).console.log("close")
     }), a
   }, t.bootstrapGrowl.default_options = {
     ele: "body",

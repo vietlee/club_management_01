@@ -23,8 +23,7 @@
       <%= t "club_manager.news.content" %>
     </label>
     <div class="col-md-8">
-      <%= f.text_area :content,
-        class: "form-control ckeditor", id: "ckeditor",
+      <%= f.cktext_area :content, class: "form-control",
         placeholder: t("club_manager.news.content") %>
     </div>
   </div><br>
