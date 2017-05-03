@@ -7,6 +7,7 @@ class UserOrganization < ApplicationRecord
   enum status: {pending: 0, joined: 1, reject: 2}
 
   scope :are_admin, -> {where is_admin: true}
+  scope :without_user_ids, -> user_ids {where.not user_id: user_ids}
   scope :find_with_user_of_company, -> user_id, organization_id do
     find_by user_id: user_id, organization_id: organization_id
   end

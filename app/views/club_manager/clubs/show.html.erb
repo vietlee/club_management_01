@@ -24,6 +24,14 @@
           <strong><%= t "note_cotent" %></strong>
         <% end %>
       </div>
+      <div>
+        <h4><strong><%= t "add_member" %></strong>
+          <%= link_to "#modal-club-add-user", data: {toggle: "modal"},
+            class: "btn btn-sm btn-danger animation-fadeIn360" do %>
+            <i class="fa fa-plus "></i> <%= t "add" %>
+          <% end %>
+        </h4>
+      </div>
     </div>
     <div class="container"></div>
   </section>
@@ -39,7 +47,7 @@
         <%= t("members") %>
         <span class="label label-primary label-indicator
           animation-floating">
-          <%= @members.joined.size %>
+          <%= @support.members.joined.size %>
         </span>
       <% end %>
     </li>
@@ -48,7 +56,7 @@
         <%= t("manager") %>
         <span class="label label-primary label-indicator
           animation-floating">
-          <%= @members.manager.size %>
+          <%= @support.members.manager.size %>
         </span>
       <% end %>
     </li>
@@ -57,7 +65,7 @@
         <%= t("request") %>
         <span class="label label-primary label-indicator
           animation-floating">
-          <%= @members.pending.size %>
+          <%= @support.members.pending.size %>
         </span>
       <% end %>
     </li>
@@ -78,19 +86,19 @@
         <div role="tabpanel" class="tab-pane fade in" id="members">
           <div class="row block">
             <%= render partial: "list_member",
-              locals: {members: @members.joined} %>
+              locals: {members: @support.members.joined} %>
           </div>
         </div>
         <div role="tabpanel" class="tab-pane fade in" id="manager">
           <div class="row block">
             <%= render partial: "list_member",
-              locals: {members: @members.manager} %>
+              locals: {members: @support.members.manager} %>
           </div>
         </div>
         <div role="tabpanel" class="tab-pane fade in" id="request">
           <div class="row block">
             <%= render partial: "list_member",
-              locals: {members: @members.pending} %>
+              locals: {members: @support.members.pending} %>
           </div>
         </div>
         <div role="tabpanel" class="tab-pane fade in" id="albums">
@@ -105,4 +113,8 @@
 <div id="modal-club-edit" class="modal fade" tabindex="-1" role="dialog"
   aria-hidden="true">
   <%= render "popups/edit_club_detail" %>
+</div>
+<div id="modal-club-add-user" class="modal fade" tabindex="-1" role="dialog"
+  aria-hidden="true">
+  <%= render "popups/list_user_organization" %>
 </div>

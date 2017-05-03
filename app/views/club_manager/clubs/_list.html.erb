@@ -1,4 +1,4 @@
-<% if @albums.blank? %>
+<% if @support.albums.blank? %>
   <div class="block">
     <h1 class="text-center">
       <strong><b>
@@ -8,7 +8,7 @@
   </div>
 <% else %>
   <div class="row">
-    <% @albums.each do |album| %>
+    <% @support.albums.each do |album| %>
       <div class="col-md-6 gallery-image">
         <% if album.images.blank? %>
           <%= image_tag "gallery_default.jpg", class: "image-gallery album-full" %>
@@ -56,7 +56,7 @@
   <div class="row">
     <div class="text-center">
       <ul class="pagination pagination-lg">
-         <%= paginate @albums %>
+         <%= paginate @support.albums %>
       </ul>
     </div>
   </div>

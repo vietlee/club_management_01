@@ -26,6 +26,9 @@ body {
   text-decoration: none;
   color: green;
 }
+h6 {
+  font-size: 10px;
+}
 .version-beta {
   color: #981414;
 }
@@ -96,6 +99,11 @@ body {
 }
 .image-notifi {
   padding: 10px;
+  width: 100px;
+}
+.image-notifi img {
+  height: 50px;
+  width: 70px;
 }
 .list-language-head {
   width: 125px !important;
@@ -316,7 +324,7 @@ header nav {
   background-color: #ffffff;
 }
 .site-section-top {
-  padding-top: 250px;
+  padding-top: 166px;
   overflow: hidden;
 }
 .site-section-light {
