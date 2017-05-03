@@ -16,7 +16,7 @@
     <li class="dropdown">
       <%= link_to t("do_nothing"), {class: "dropdown-toggle",
         "data-toggle": "dropdown"} do %>
-        <%= image_tag "placeholders/avatars/avatar2.jpg" %>
+        <%= image_tag current_user.avatar %>
         <b class="caret"></b>
       <% end %>
       <ul class="dropdown-menu dropdown-custom dropdown-menu-right">

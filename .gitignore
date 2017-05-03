@@ -53,7 +53,7 @@ Gemfile.lock
 db/schema.rb
 
 #Igrone public/uploads
-#public/uploads
+public/uploads
 #Igrone public/assets
 public/assets
 

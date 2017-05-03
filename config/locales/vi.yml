@@ -55,7 +55,7 @@ vi:
   name_des: "Tên hoặc mô tả..."
   created_at: "Ngày thành lập"
   for_rating: "Điểm đánh giá"
-  members_with_dot: "Số lượng câu thành viên:"
+  members_with_dot: "Số lượng thành viên:"
   type_your_message: "Viết tin nhắn tại đây..."
   line_single: "Line"
   time_single: "Time"
@@ -804,3 +804,4 @@ vi:
   dev_by: "Develop by Ma Tien Thanh - Ly Duc Long - Le Quoc Viet"
   view_less: "Hiển thị ít hơn"
   not_club_conformity_now: "Hiện không có CLB nào phù hợp cho bạn!"
+  user_details: "Trang cá nhân"
