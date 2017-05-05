@@ -1,5 +1,6 @@
 class ClubManager::UserClubsController < BaseClubManagerController
-  before_action :load_userclub, only: :update
+  before_action :load_userclub, only: [:update, :destroy]
+  before_action :load_club
 
   def index
     @club = Club.find_by id: params[:club_id]
@@ -16,7 +17,29 @@ class ClubManager::UserClubsController < BaseClubManagerController
     else
       flash_error @club
     end
-    redirect_to :back
+    redirect_back fallback_location: club_manager_path(@club)
+  end
+
+  def create
+    ActiveRecord::Base.transaction do
+      params[:users].each do |user_id|
+        UserClub.create user_id: user_id, club_id: @club.id, status: :joined
+      end
+      flash[:success] = t("add_user_successfully")
+      redirect_back fallback_location: club_manager_path(@club)
+    end
+    rescue
+      flash[:danger] = t("error_in_processing")
+      redirect_to :back
+  end
+
+  def destroy
+    if @user_club.destroy
+      flash[:success] = t("deleted_successfull")
+    else
+      flash[:danger] = t("error_process")
+    end
+    redirect_back fallback_location: club_manager_path(@club)
   end
 
   private

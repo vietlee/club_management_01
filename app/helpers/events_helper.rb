@@ -15,4 +15,17 @@ module EventsHelper
     end
     after_money
   end
+
+  def view_notification event
+    case event.event_category
+    when Settings.get_money
+      "#{t("after_get_money")}"
+    when Settings.pay_money
+      "#{t("after_pay_money")}"
+    when Settings.subsidy
+      "#{t("after_receive_money")}"
+    else
+      "#{t("notification_event")}"
+    end
+  end
 end

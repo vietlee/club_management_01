@@ -105,9 +105,9 @@ Rails.application.configure do
   config.active_job.queue_adapter = :delayed_job
   config.action_mailer.delivery_method = :smtp
   config.action_mailer.smtp_settings = {
-    address: "smtp.gmail.com",
+    address: "smtp.sendgrid.net",
     port: 587,
-    domain: "mydomain.com",
+    domain: "club.framgia.vn",
     user_name: ENV["FCLUB_EMAIL_USERNAME"],
     password: ENV["FCLUB_EMAIL_PASSWORD"],
     authentication: "plain",

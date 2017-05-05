@@ -35,7 +35,10 @@
                               <h2 class="center"><strong><%= t "before_money" %></strong></br>
                                 <strong><%= number_to_currency(@event.amount, locale: :vi) %></strong>
                               </h2>
-                              <h2 class="center"><strong><%= t "after_money" %></strong></br>
+                              <h2 class="center">
+                                <strong>
+                                  <%= view_notification @event %>
+                                </strong></br>
                                 <strong>
                                   <%= number_to_currency(view_case_money_after(@event), locale: :vi) %></strong>
                               </h2>

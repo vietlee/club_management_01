@@ -5,8 +5,9 @@
         <div class="text-center">
           <%= link_to manager_member_path(id: member.user_id,
             organization: @organization.id) do %>
-            <%= image_tag member.avatar, class: "circle-profile-list" %>
-            <h4 class="center">
+            <%= image_tag member.avatar, class: "circle-profile-list",
+              title: member.full_name %>
+            <h6 class="center">
               <b><%= member.full_name %></b></br>
               <% if member.joined? && !member.is_admin? %>
                 <%= link_to manager_member_path(id: member.id,
@@ -19,7 +20,7 @@
               <% if member.joined? && member.is_admin? %>
                 <i class="gi gi-old_man btn btn-primary", title="Admin"></i>
               <% end %>
-            </h4>
+            </h6>
             <% if member.pending? && !member.reject? %>
               <%= link_to manager_member_path(id: member.id,
                 status: UserOrganization.statuses[:joined],

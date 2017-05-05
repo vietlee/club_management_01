@@ -70,7 +70,8 @@ pay_money: 1
 event_page: 4
 member_manager: 23
 notification_event: "Event"
-my_url: "google.com.vn"
+notification_club: "Club"
+my_url: "http://club.framgia.vn/"
 limit_tags: 4
 error_import: "error when input file"
 error_data: "has user exist"
@@ -84,3 +85,6 @@ truncate:
   club:
     description: 50
 messages_load_more: 30
+subsidy: "subsidy"
+pay_money: "pay_money"
+get_money: "get_money"

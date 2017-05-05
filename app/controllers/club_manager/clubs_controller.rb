@@ -1,13 +1,12 @@
 class ClubManager::ClubsController < BaseClubManagerController
   before_action :load_club
   before_action :manager_club
+  before_action :load_organization, only: :show
 
   def show
     @event = Event.new
-    @members = @club.user_clubs.newest
-    @albums = @club.albums.newest.page(params[:page]).per Settings.per_page_album
     @new_album = Album.new
-    @events = @club.events.newest.page(params[:page]).per(Settings.event_page)
+    @support = Support::ClubSupport.new(@club, params[:page], @organization)
   end
 
   def update
@@ -39,6 +38,14 @@ class ClubManager::ClubsController < BaseClubManagerController
     unless correct_manager
       flash[:danger] = t "not_correct_manager"
       redirect_to club_manager_path
+    end
+  end
+
+  def load_organization
+    @organization = Organization.find_by id: @club.organization_id
+    unless @organization
+      flash[:danger] = t("not_found_organization")
+      redirect_to request.referrer
     end
   end
 end
