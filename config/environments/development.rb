@@ -30,17 +30,6 @@ Rails.application.configure do
 
   config.action_mailer.perform_caching = false
 
-  config.active_job.queue_adapter = :delayed_job
-  config.action_mailer.delivery_method = :smtp
-  config.action_mailer.smtp_settings = {
-    address: "smtp.gmail.com",
-    port: 587,
-    domain: "mydomain.com",
-    user_name: ENV["FCLUB_EMAIL_USERNAME"],
-    password: ENV["FCLUB_EMAIL_PASSWORD"],
-    authentication: "plain",
-    enable_starttls_auto: true}
-
   # Print deprecation notices to the Rails logger.
   config.active_support.deprecation = :log
 
@@ -65,11 +54,11 @@ Rails.application.configure do
   config.action_mailer.delivery_method = :smtp
   # SMTP settings for gmail
   config.action_mailer.smtp_settings = {
-   :address              => "smtp.sendgrid.net",
+   :address              => "smtp.gmail.com",
    :port                 => 587,
    :user_name            => ENV['FCLUB_EMAIL_USERNAME'],
    :password             => ENV['FCLUB_EMAIL_PASSWORD'],
    :authentication       => "plain",
-  :enable_starttls_auto => true
+  :enable_starttls_auto  => true
   }
 end

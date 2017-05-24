@@ -816,3 +816,5 @@ vi:
   after_receive_money: "Số tiền sau khi nhận"
   error_in_processing: "Có lỗi trong quá trình thêm,vui lòng thử lại!"
   notification_event: "Đây là sự kiện không liên quan đến quỷ"
+  refresh: "Làm mới trang"
+  more: "Xem thêm"

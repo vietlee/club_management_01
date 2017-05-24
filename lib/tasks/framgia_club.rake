@@ -19,10 +19,10 @@ namespace :db do
       email: "framgiahn@framgia.com",
       location: "Ha Noi"
     )
-    User.create!(
-      email: "quocvietlee@gmail.com",
-      full_name: "Quoc Viet",
-      password: "quocvietlee@gmail.com",
+    boss = User.create!(
+      email: "fclub.framgia.info@gmail.com",
+      full_name: "Boss",
+      password: "fclub.framgia.info@gmail.com",
       phone: "01689020813",
     )
     Admin.create!(
@@ -35,7 +35,7 @@ namespace :db do
       name: "CLB Bóng đá",
       is_active: 1,
       club_type: 1,
-      organization_id: 1,
+      organization_id: framgiadn.id,
       description: "Câu lạc bộ bóng đá tại FramGia Đà Nẵng",
       money: 2240000
     )
@@ -43,7 +43,7 @@ namespace :db do
       name: "CLB CLB Từ Thiện",
       is_active: 1,
       club_type: 0,
-      organization_id: 1,
+      organization_id: framgiadn.id,
       description: "Câu lạc bộ từ thiện tại FramGia Đà Nẵng",
       money: 1150000
     )
@@ -51,7 +51,7 @@ namespace :db do
       name: "CLB Game",
       is_active: 1,
       club_type: 2,
-      organization_id: 1,
+      organization_id: framgiadn.id,
       description: "Câu lạc bộ game tại FramGia Đà Nẵng",
       money: 1150000
     )
@@ -59,46 +59,185 @@ namespace :db do
       name: "CLB Tiếng Nhật",
       is_active: 1,
       club_type: 1,
-      organization_id: 1,
+      organization_id: framgiadn.id,
       description: "Câu lạc bộ tiếng nhật tại FramGia Đà Nẵng",
       money: 250000
     )
+    framgiafc = Club.create!(
+      name: "Framgia FC",
+      is_active: 1,
+      club_type: 0,
+      organization_id: framgiahn.id,
+      description: "Câu lạc bộ tại FramGia Hà Nội",
+      money: 0
+    )
+    gameclub = Club.create!(
+      name: "Game Club",
+      is_active: 1,
+      club_type: 1,
+      organization_id: framgiahn.id,
+      description: "Câu lạc bộ game tại FramGia Hà Nội",
+      money: 0
+    )
+    japaneseclub = Club.create!(
+      name: "Japanese Club",
+      is_active: 1,
+      club_type: 3,
+      organization_id: framgiahn.id,
+      description: "Câu lạc bộ tiếng nhật tại FramGia Hà Nội",
+      money: 0
+    )
+    charityclub = Club.create!(
+      name: "Charity Club",
+      is_active: 1,
+      club_type: 0,
+      organization_id: framgiahn.id,
+      description: "Câu lạc bộ từ thiện tại FramGia Hà Nội",
+      money: 0
+    )
+    chinese_chess_club = Club.create!(
+      name: "Chinese chess Club",
+      is_active: 1,
+      club_type: 2,
+      organization_id: framgiahn.id,
+      description: "Câu lạc bộ cờ tướng tại FramGia Hà Nội",
+      money: 0
+    )
+    dance_club = Club.create!(
+      name: "Dance Club",
+      is_active: 1,
+      club_type: 5,
+      organization_id: framgiahn.id,
+      description: "Câu lạc bộ dance tại FramGia Hà Nội",
+      money: 0
+    )
+    gymclub = Club.create!(
+      name: "Gym Club",
+      is_active: 1,
+      club_type: 5,
+      organization_id: framgiahn.id,
+      description: "Câu lạc bộ Gym tại FramGia Hà Nội",
+      money: 0
+    )
+     japanese_food_club = Club.create!(
+      name: "Japanese Food Club",
+      is_active: 1,
+      club_type: 7,
+      organization_id: framgiahn.id,
+      description: "Câu lạc bộ Japanese Food tại FramGia Hà Nội",
+      money: 0
+    )
+    intellect_game_club = Club.create!(
+      name: "Intellect Game Club",
+      is_active: 1,
+      club_type: 2,
+      organization_id: framgiahn.id,
+      description: "Câu lạc bộ Intellect Game tại FramGia Hà Nội",
+      money: 0
+    )
+     music_club = Club.create!(
+      name: "Music Club",
+      is_active: 1,
+      club_type: 4,
+      organization_id: framgiahn.id,
+      description: "Câu lạc bộ âm nhạc tại FramGia Hà Nội",
+      money: 0
+    )
     UserOrganization.create!(
-      user_id: 1,
+      user_id: boss.id,
       organization_id: framgiadn.id,
       status: 1,
       is_admin: 1
     )
     UserOrganization.create!(
-      user_id: 1,
+      user_id: boss.id,
       organization_id: framgiahn.id,
       status: 1,
       is_admin: 1
     )
     UserClub.create!(
-      user_id: 1,
+      user_id: boss.id,
       club_id: bongda_club.id,
       status: 1,
       is_manager: 1
     )
     UserClub.create!(
-      user_id: 1,
+      user_id: boss.id,
       club_id: tuthien_club.id,
       status: 1,
       is_manager: 1
     )
     UserClub.create!(
-      user_id: 1,
+      user_id: boss.id,
       club_id: game_club.id,
-      status: 1,
+      status: boss.id,
       is_manager: 1
     )
     UserClub.create!(
-      user_id: 1,
+      user_id: boss.id,
       club_id: tiengnhat_club.id,
       status: 1,
       is_manager: 1
     )
-
+    UserClub.create!(
+      user_id: boss.id,
+      club_id: framgiafc.id,
+      status: 1,
+      is_manager: 1
+    )
+    UserClub.create!(
+      user_id: boss.id,
+      club_id: gameclub.id,
+      status: 1,
+      is_manager: 1
+    )
+    UserClub.create!(
+      user_id: boss.id,
+      club_id: japaneseclub.id,
+      status: 1,
+      is_manager: 1
+    )
+    UserClub.create!(
+      user_id: boss.id,
+      club_id: charityclub.id,
+      status: 1,
+      is_manager: 1
+    )
+    UserClub.create!(
+      user_id: boss.id,
+      club_id: chinese_chess_club.id,
+      status: 1,
+      is_manager: 1
+    )
+    UserClub.create!(
+      user_id: boss.id,
+      club_id: dance_club.id,
+      status: 1,
+      is_manager: 1
+    )
+    UserClub.create!(
+      user_id: boss.id,
+      club_id: gymclub.id,
+      status: 1,
+      is_manager: 1
+    )
+    UserClub.create!(
+      user_id: boss.id,
+      club_id: japanese_food_club.id,
+      status: 1,
+      is_manager: 1
+    )
+    UserClub.create!(
+      user_id: boss.id,
+      club_id: intellect_game_club.id,
+      status: 1,
+      is_manager: 1
+    )
+    UserClub.create!(
+      user_id: boss.id,
+      club_id: music_club.id,
+      status: 1,
+      is_manager: 1
+    )
   end
 end
