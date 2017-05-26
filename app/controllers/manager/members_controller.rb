@@ -1,5 +1,5 @@
 class Manager::MembersController < BaseOrganizationManagerController
-  before_action :load_user_organization, only: :update
+  before_action :load_user_organization, only: [:update, :destroy]
   before_action :organization, only: :update
 
   def index
@@ -33,6 +33,15 @@ class Manager::MembersController < BaseOrganizationManagerController
       redirect_to :back
     end
     flash[:success] = t("success_process")
+    redirect_to :back
+  end
+
+  def destroy
+    if @user.destroy
+      flash[:success] = t("deleted_successfull")
+    else
+      flash[:danger] = t("error_process")
+    end
     redirect_to :back
   end
 

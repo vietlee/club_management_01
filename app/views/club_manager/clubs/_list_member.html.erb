@@ -1,66 +1,65 @@
 <% if members.any? %>
-  <div class="col-md-12">
-    <% members.take(Settings.member_manager).each do |member| %>
-      <div class="col-md-2 col-sm-2 col-sm-2 member-manager">
-        <div class="text-center">
-          <%= link_to club_manager_club_member_path(id: member.user.id,
-            club_id: @club.id) do %>
-            <%= image_tag member.user.avatar, class: "circle-profile-list",
-              title: member.user.full_name %>
-            <h6 class="center">
-              <b><%= member.user.full_name %></b></br>
-              <% if member.joined? && !member.is_manager? %>
-                <%= link_to club_manager_club_request_path(id: member.id,
-                  club_id: @club.id, status: nil), method: :put,
-                  title: t("add_admin"),
-                  data: {confirm: t("answer_admin")} do %>
-                  <i class="gi gi-cogwheel btn btn-danger"></i>
-                <% end %>
-                <%= link_to club_manager_club_user_club_path(id: member.id,
-                  club_id: @club.id), method: :delete,
-                  title: t("delete_member"),
-                  data: {confirm: t("answer_delete_member")} do %>
-                  <i class="hi hi-remove btn btn-default"></i>
-                <% end %>
+  <div class="table-responsive">
+    <table id="example-datatable2"
+      class="table table-vcenter example-datatable2 table-condensed table-bordered">
+      <thead>
+        <tr>
+          <th class="text-center"><i class="fa fa-user-o"></i></th>
+          <th class="text-center"><%= t "full_name" %></th>
+          <th class="text-center"><%= t "email" %></th>
+          <th class="text-center"><%= t "action" %></th>
+        </tr>
+      </thead>
+      <tbody>
+        <% members.each do |member| %>
+          <tr class="data-<%= member.id %>">
+            <td><%= image_tag member.avatar,
+              class: "img-responsive img-budgets-member" %></td>
+            <td>
+              <%= link_to club_manager_club_member_path(id: member.user.id,
+                club_id: @club.id) do %>
+                <%= member.full_name %>
               <% end %>
-              <% if member.joined? && member.is_manager? %>
-                <i class="gi gi-old_man btn btn-primary", title="Admin"></i>
+            </td>
+            <td><%= member.email %></td>
+            <td class="center">
+              <h6 class="center">
+                <% if member.joined? && !member.is_manager? %>
+                  <%= link_to club_manager_club_request_path(id: member.id,
+                    club_id: @club.id, status: nil), method: :put,
+                    title: t("add_admin"),
+                    data: {confirm: t("answer_admin")} do %>
+                    <i class="gi gi-cogwheel btn btn-danger"></i>
+                  <% end %>
+                  <%= link_to club_manager_club_user_club_path(id: member.id,
+                    club_id: @club.id), method: :delete,
+                    title: t("delete_member"),
+                    data: {confirm: t("answer_delete_member")} do %>
+                    <i class="hi hi-remove btn btn-default"></i>
+                  <% end %>
+                <% end %>
+                <% if member.joined? && member.is_manager? %>
+                  <i class="gi gi-old_man btn btn-primary", title="Admin"></i>
+                <% end %>
+              </h6>
+              <% if member.status == Settings.pending %>
+                <%= link_to t("accept"),
+                  club_manager_club_request_path(id: member.id, club_id: @club.id,
+                  status: UserClub.statuses[:joined]), method: :put,
+                  class: "btn btn-danger",
+                  data: {confirm: t("answer_active")} %>
+                <%= link_to t("reject"),
+                  club_manager_club_request_path(id: member.id ,club_id: @club.id,
+                  status: UserClub.statuses[:reject]), method: :put,
+                  class: "btn btn-primary",
+                  data: {confirm: t("answer_reject")} %>
               <% end %>
-            </h6>
-            <% if member.status == Settings.pending %>
-              <%= link_to t("accept"),
-                club_manager_club_request_path(id: member.id, club_id: @club.id,
-                status: UserClub.statuses[:joined]), method: :put,
-                class: "btn btn-danger",
-                data: {confirm: t("answer_active")} %>
-              <%= link_to t("reject"),
-                club_manager_club_request_path(id: member.id ,club_id: @club.id,
-                status: UserClub.statuses[:reject]), method: :put,
-                class: "btn btn-primary",
-                data: {confirm: t("answer_reject")} %>
-            <% end %>
-          <% end %>
-        </div>
-      </div>
-      <% if members.size > Settings.member_manager %>
-        <div class="col-md-4 col-sm-6">
-          <%= link_to ".manager-user", data: {toggle: "modal"},
-            class: "circle-profile-list members-club
-              animation-fadeIn360", title: "more" do %>
-            <%= image_tag "more.png", class: "circle-profile-list
-              members-club animation-fadeIn360" %>
-          <% end %>
-        </div>
-      <% end %>
-      <div class="text-center">
-        <div id="" class="modal manager-user fade" tabindex="-1"
-          role="dialog" aria-hidden="true">
-          <%= render partial: "member_more_manager", locals: {all_members: members} %>
-        </div>
-      </div>
-    <% end %>
+            </td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
   </div>
 <% else %>
   <h1><%= t "no_data" %></h1>
 <% end %>
-
