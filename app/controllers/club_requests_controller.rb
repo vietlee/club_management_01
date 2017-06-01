@@ -1,8 +1,10 @@
 class ClubRequestsController < ApplicationController
   before_action :authenticate_user!
+  protect_from_forgery except: :index
+
   def index
     @requests = current_user.club_requests
-    if @request
+    if @requests
       respond_to do |format|
         format.js
       end
@@ -22,18 +24,6 @@ class ClubRequestsController < ApplicationController
       flash_error request
     end
     redirect_to :back
-  end
-
-  def destroy
-    request = ClubRequest.find_by id: params[:id]
-    if request
-      @request_id = request.id
-      if request.destroy
-        respond_to do |format|
-          format.js
-        end
-      end
-    end
   end
 
   private
