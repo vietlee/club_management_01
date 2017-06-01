@@ -31,6 +31,7 @@ gem "daemons"
 gem "roo"
 gem "roo-xls"
 gem "activerecord-import"
+gem "ransack"
 source "https://rails-assets.org" do
   gem "rails-assets-chosen"
 end

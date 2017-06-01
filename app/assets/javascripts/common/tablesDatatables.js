@@ -12,8 +12,7 @@ var TablesDatatables = function() {
 
       /* Initialize Datatables */
       $('#example-datatable').dataTable();
-      $('#example-datatable2').dataTable();
-      $('.example-datatable2').dataTable();
+      $('.datatable-public').dataTable();
     }
   };
 }();
