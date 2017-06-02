@@ -95,15 +95,13 @@
         <div role="tabpanel" class="tab-pane fade in" id="members_organization">
           <div class="row block">
             <%= render partial: "list_member",
-              locals: {members: @members.joined.newest.page(params[:page]).per(
-              Settings.member_club)} %>
+              locals: {members: @members.joined.newest} %>
           </div>
         </div>
         <div role="tabpanel" class="tab-pane fade in" id="manager_organization">
           <div class="row block">
             <%= render partial: "list_member",
-              locals: {members: @members.are_admin.newest.page(
-              params[:page]).per(Settings.member_club)} %>
+              locals: {members: @members.are_admin.newest} %>
           </div>
         </div>
         <div role="tabpanel" class="tab-pane fade in" id="request_club">
@@ -114,8 +112,7 @@
         <div role="tabpanel" class="tab-pane fade in" id="requestmember">
           <div class="row block">
             <%= render partial: "list_member",
-              locals: {members: @members.pending.newest.page(params[:page]).per(
-              Settings.member_club)} %>
+              locals: {members: @members.pending.newest} %>
           </div>
         </div>
       </div>
