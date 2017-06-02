@@ -17,5 +17,6 @@
 *= require admin/pro_ui/plugins
 *= require plugins
 *= require custom
+*= require album
 *= require bootstrap-tagsinput
 */

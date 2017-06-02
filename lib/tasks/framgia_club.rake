@@ -37,7 +37,7 @@ namespace :db do
       club_type: 1,
       organization_id: framgiadn.id,
       description: "Câu lạc bộ bóng đá tại FramGia Đà Nẵng",
-      money: 2240000
+      money: -1215000
     )
     tuthien_club = Club.create!(
       name: "CLB CLB Từ Thiện",

@@ -393,6 +393,9 @@ header nav {
   right: 0;
   left: 0;
 }
+ul {
+  list-style-type: none;
+}
 .media-container > .media-image {
   left: 50%;
   width: 2560px;

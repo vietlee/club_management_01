@@ -633,7 +633,7 @@ vi:
               invalid: "Bạn chỉ được thêm tối đa 4 tags"
   not_found_user_event: "Không tìm thấy sự kiện mà bạn tham gia!"
   not_found_user_club: "Không tìm thấy câu lạc bộ mà bạn tham gia!"
-  see_you_next_time: "Gặp lại sau nhé!!"
+  see_you_next_time: "Bạn đã hủy tham gia!!!"
   thanks_for_join: "Cám ơn bạn vì đã tham gia!"
   not_found_event: "Không tìm thấy sự kiện!"
   create_activity_fails: "Ghi nhật ký hoạt động thất bại!"

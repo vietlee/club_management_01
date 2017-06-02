@@ -23,8 +23,8 @@
           </span>
           <small class="pull-left site-description">
             <i class="fa fa-hand-o-right text-muted"></i>
-            <%= link_to club, title: club.description do %>
-              <%= club.description.truncate(Settings.truncate.club.description) %>
+            <%= link_to club, title: club.description.html_safe do %>
+              <%= club.description.truncate(Settings.truncate.club.description).html_safe %>
             <% end %>
           </small>
           <div>
