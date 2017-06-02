@@ -25,37 +25,20 @@
       </div>
       <div class="row portfolio">
         <% @albums.each do |album| %>
-          <% album.images.newest.each do |image| %>
-            <div class="col-sm-4 portfolio-item animation-fadeInQuick image-size"
-              data-category="<%= album.id %>">
-              <%= link_to "javascript:void(0)" do %>
-                <%= image_tag image.url, class: "img-responsive thumb" %>
-                <span class="portfolio-item-info">
-                  <strong><%= image.name %></strong>
-                </span>
-              <% end %>
-            </div>
-          <% end %>
+          <ul class="first">
+            <% album.images.each do |image| %>
+              <li class="col-md-3">
+                <div class="col-md-3 portfolio-item"
+                  data-category="<%= album.id %>">
+                  <%= image_tag image.url, class: "img-responsive" %>
+                </div>
+              </li>
+            <% end %>
+          </ul>
         <% end %>
       </div>
     </div>
   </section>
   <section class="site-section site-section-light site-bottom themed-background-dark">
   </section>
-</div>
-<div tabindex="-1" class="modal fade" id="myModalImage" role="dialog">
-  <div class="modal-dialog">
-  <div class="modal-content">
-    <div class="modal-header">
-    <button class="close" type="button" data-dismiss="modal">×</button>
-  </div>
-  <div class="modal-body-image">
-  </div>
-  <div class="modal-footer">
-    <button class="btn btn-default" data-dismiss="modal">
-      <%= t "close" %>
-    </button>
-  </div>
-   </div>
-  </div>
 </div>

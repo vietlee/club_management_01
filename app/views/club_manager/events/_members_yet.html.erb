@@ -7,7 +7,6 @@
         <tr>
           <th class="text-center"><i class="fa fa-user-o"></i></th>
           <th class="text-center"><%= t "full_name" %></th>
-          <th><%= t "email" %></th>
           <th><%= t "action" %></th>
         </tr>
       </thead>
@@ -17,7 +16,6 @@
             <td><%= image_tag user.avatar,
               class: "img-responsive img-budgets-member" %></td>
             <td><%= user.full_name %></td>
-            <td><%= user.email %></td>
             <td class="center">
               <label class="">
                 <%= check_box_tag("users[]", user.id, false) %>
