@@ -60,19 +60,19 @@ suppermall {
 }
 
 .vi {
-  background: url(/assets/flag-full-icons.png);
+  background-image: image-url("flag-full-icons.png");
   background-position: 50px 106px;
   border-radius: 5px;
 }
 
 .en {
-  background:url(/assets/flag-full-icons.png);
+  background-image: image-url("flag-full-icons.png");
   background-position: 242px 1050px;
   border-radius: 5px;
 }
 
 .jp {
-  background: url(/assets/flag-full-icons.png);
+  background-image: image-url("flag-full-icons.png");
   background-position: 916px 735px;
   border-radius: 5px;
 }

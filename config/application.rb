@@ -11,7 +11,6 @@ Bundler.require(*Rails.groups)
 module Clubmanagement
   class Application < Rails::Application
     config.autoload_paths += %W(#{config.root}/lib)
-    config.autoload_paths += %w(#{config.root}/app/models/ckeditor)
     config.autoload_paths << Rails.root.join('services')
     # Settings in config/environments/* take precedence over those specified here.
     # Application configuration should go into files in config/initializers
@@ -19,5 +18,8 @@ module Clubmanagement
     config.i18n.default_locale = :vi
     config.assets.paths << Rails.root.join("/app/assets/fonts/")
     config.middleware.use I18n::JS::Middleware
+    config.assets.precompile += Ckeditor.assets
+    config.assets.precompile += %w( ckeditor/* )
+    config.autoload_paths += %W(#{config.root}/app/models/ckeditor)
   end
 end
