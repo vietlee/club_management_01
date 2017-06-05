@@ -13,7 +13,7 @@ class Event < ApplicationRecord
   mount_uploader :image, ImageUploader
 
   validates :name, presence: true, length: {minimum: Settings.min_name}
-  validates :expense, presence: true
+  validates :expense, presence: true, length: {maximum: Settings.max_exspene}
   validates :location, presence: true, length: {minimum: Settings.min_location}
   validates :description, presence: true, length: {minimum: Settings.min_description}
   validates :date_start, :date_end, presence: true

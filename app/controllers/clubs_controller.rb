@@ -20,7 +20,7 @@ class ClubsController < ApplicationController
     @q = events.search(params[:q])
     @events = @q.result.newest.page(params[:page]).per Settings.per_page
     @time_line_events = @events.by_current_year.group_by_quarter
-    @messages = @club.messages.newest.take(Settings.chat_messages_limit)
+    @messages = @club.messages.take(Settings.chat_messages_limit)
     @message = Message.new
     @user_club = UserClub.new
     @members = @club.user_clubs.joined

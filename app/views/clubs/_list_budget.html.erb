@@ -6,6 +6,7 @@
           <tr>
             <th></th>
             <th></th>
+            <th></th>
           </tr>
         <% end %>
       </thead>
@@ -18,6 +19,7 @@
                 <%= event.name %>
               <% end %>
             </td>
+            <td><%= number_to_currency(event.expense, locale: :vi) %></td>
             <td><%= l event.created_at, format: :short %></td>
           </tr>
         <% end %>
