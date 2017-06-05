@@ -35,9 +35,6 @@
     <div class="col-md-7">
       <%= f.text_field :name, class: "form-control",
         placeholder: t("club_manager.event.event_name") %>
-      <span class="help-block">
-        <%= t "club_manager.event.name_guide" %>
-      </span>
     </div>
   </div>
   <div class="form-group">
@@ -63,13 +60,13 @@
       <%= t "club_manager.event.start" %>
     </label>
     <div class="col-md-7">
-      <div class="input-group input-daterange" data-date-format="dd/mm/yyyy">
-          <%= f.text_field :date_start, class: "form-control text-center",
+      <div class="input-group" data-date-format="dd/mm/yyyy">
+          <%= f.date_field :date_start, class: "form-control text-center",
             placeholder: t("club_manager.event.day_start") %>
           <span class="input-group-addon">
             <i class="fa fa-angle-right"></i>
           </span>
-          <%= f.text_field :date_end, class: "form-control text-center",
+          <%= f.date_field :date_end, class: "form-control text-center",
             placeholder: t("club_manager.event.day_end") %>
       </div>
     </div>

@@ -88,3 +88,4 @@ messages_load_more: 30
 subsidy: "subsidy"
 pay_money: "pay_money"
 get_money: "get_money"
+max_exspene: 9
