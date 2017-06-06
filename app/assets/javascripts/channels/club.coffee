@@ -15,7 +15,7 @@ jQuery(document).on 'turbolinks:load', ->
     speak: (message) ->
       @perform 'speak', message: message, club_id: club_id
 
-  $(".chat-box-submit").on "click",(event) ->
+  $(".row-chat").on "submit",(event) ->
     if $('.chat-input').val().length > 0
       App.club.speak($(".chat-input").val())
       $(".chat-input").val("")
