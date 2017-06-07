@@ -181,3 +181,25 @@
 .has-scrollbar{
   height: 380px;
 }
+@media screen and (max-width: 768px) {
+  #browser-window {
+    background-image: image-url("background-chat.png");
+    height: 350px;
+    width: 300px;
+    padding: 49px 25px 10px 25px;
+    margin: auto;
+    position:fixed;
+    bottom: 10px;
+    z-index: 210;
+    right: 0px;
+  }
+  .icon-chat {
+    font-size: 45px !important;
+    color: #1BBAE1;
+  }
+  .toggle-chat{
+    right: 0px;
+    bottom: 298px;
+    z-index: 210;
+  }
+}

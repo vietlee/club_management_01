@@ -84,12 +84,10 @@
                       <% end %>
                     <% end %>
                     <% if @members.size > Settings.event_user  %>
-                      <div class="col-sm-2">
+                      <div class="col-md-2 col-sm-2">
                         <%= link_to "#modal-user", data: {toggle: "modal"},
-                          class: "circle-profile-list members-club
-                            animation-fadeIn360", title: "more" do %>
-                          <%= image_tag "more.png", class: "circle-profile-list
-                            members-club animation-fadeIn360" %>
+                          class: "members-club animation-fadeIn360", title: "more" do %>
+                          <i class="hi hi-plus"></i>
                         <% end %>
                       </div>
                     <% end %>

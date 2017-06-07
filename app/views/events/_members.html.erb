@@ -8,7 +8,7 @@
   </h4>
   <div class="col-md-12">
     <% @members.take(Settings.member_club).each do |member| %>
-      <div class="col-md-4 col-sm-6">
+      <div class="col-md-4 col-sm-3 col-xs-3">
         <div class="text-center">
           <%= link_to user_path(member.user_id), title: member.full_name, target: "_blank" do %>
             <%= image_tag member.avatar,
@@ -18,7 +18,7 @@
       </div>
     <% end %>
     <% if @members.size > Settings.member_club %>
-      <div class="col-md-4 col-sm-6">
+      <div class="col-md-3 col-sm-6">
         <%= link_to "#modal-user", data: {toggle: "modal"},
           class: "members-club animation-fadeIn360", title: "more" do %>
           <i class="hi hi-plus"></i>
