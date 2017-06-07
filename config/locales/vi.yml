@@ -822,3 +822,4 @@ vi:
   notification_event: "Đây là sự kiện không liên quan đến quỷ"
   refresh: "Làm mới trang"
   more: "Xem thêm"
+  no_description: "Không có mô tả gì thêm!"

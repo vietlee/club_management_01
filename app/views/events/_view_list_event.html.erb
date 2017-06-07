@@ -26,12 +26,14 @@
               class: "label label-primary" %>
           </p>
           <ul class="list-inline pull-left">
-            <li>
-              <i class="fa fa-calendar"></i>
-              <%= event.date_start %>
-              <span class="fa fa-long-arrow-right"></span>
-              <%= event.date_end %>
-            </li>
+            <% unless event.date_start.blank? && event.date_end.blank? %>
+              <li>
+                <i class="fa fa-calendar"></i>
+                <%= event.date_start %>
+                <span class="fa fa-long-arrow-right"></span>
+                <%= event.date_end %>
+              </li>
+            <% end %>
             <li>
               <i class="fa fa-user"></i> <%= t "post_by" %>
               <%= link_to event.user.full_name, event.user %>

@@ -671,3 +671,4 @@ en:
   after_pay_money: "after pay money"
   after_receive_money: "after receive money"
   error_in_processing: "Error in adding,please try again!"
+  no_description: "No further description!"

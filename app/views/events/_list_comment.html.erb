@@ -5,7 +5,7 @@
     </a>
     <div class="media-body">
       <span class="text-muted pull-right"><small><em>
-        <%= l comment.created_at, format: :short %>
+        <%= l comment.created_at, format: :full_date %>
       </em></small></span>
       <%= link_to comment.user do %>
         <strong><%= comment.user.full_name %></strong>

@@ -22,6 +22,13 @@ body {
 .suggest-club a {
   font-weight: bold;
 }
+.required {
+  color: red;
+}
+.add-event {
+  margin-bottom: 40px;
+  margin-left: 56px;
+}
 .suggest-club a:hover {
   text-decoration: none;
   color: green;
@@ -193,9 +200,6 @@ h4 .money {
 .name-member {
   font-size: 10px !important;
 }
-.infor-event {
-  margin-bottom: 10px;
-}
 .user img {
   margin-bottom: 10px;
 }
@@ -327,10 +331,13 @@ header nav {
   padding-top: 100px;
 }
 .site-block {
-  margin-bottom: 49px;
+  margin-bottom: 10px;
 }
 .site-heading {
-  margin: 0 0 29px;
+  margin: 0 0 10px;
+}
+.description-event p {
+  text-align: justify;
 }
 .site-content {
   background-color: #ffffff;
@@ -1623,7 +1630,6 @@ fieldset[disabled] .btn-info.active {
 }
 /* Bottom Margin */
 
-p,
 .table,
 .alert,
 .carousel {
@@ -1885,7 +1891,13 @@ li:last-child {
   border: solid 1px red;
   border-color: #dddddd;
 }
-
+.required {
+  color: black;
+}
+.required:after {
+  color: red;
+  content: "(*)";
+}
 .circle-profile-list {
   width: 60px;
   height: 60px;
