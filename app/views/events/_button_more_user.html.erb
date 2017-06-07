@@ -1,27 +1,21 @@
-<div class="col-md-12">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div>
-      </div>
-      <div class="modal-body">
-        <div class="col-md-12">
-          <% @members.each do |user_event| %>
-            <% if join_event? @event %>
-              <div class="col-sm-2 user">
-                <%= link_to user_path(id: user_event.id) do %>
-                  <%= image_tag user_event.avatar,
-                    class: "circle-profile-list",
-                    title: user_event.full_name %>
-                <% end %>
-              </div>
-            <% end %>
+<div class="modal-dialog">
+  <div class="modal-content">
+    <div>
+    </div>
+    <div class="modal-body">
+      <% @members.each do |user_event| %>
+        <div class="col-md-2 col-sm-2 col-xs-3">
+          <%= link_to user_path(id: user_event.id) do %>
+            <%= image_tag user_event.avatar,
+              class: "circle-profile-list",
+              title: user_event.full_name %>
           <% end %>
         </div>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-default" data-dismiss="modal">
-          <%= t "close" %></button>
-      </div>
+      <% end %>
+    </div>
+    <div class="modal-footer">
+      <button type="button" class="btn btn-default" data-dismiss="modal">
+        <%= t "close" %></button>
     </div>
   </div>
 </div>

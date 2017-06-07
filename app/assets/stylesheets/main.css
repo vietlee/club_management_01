@@ -1887,8 +1887,8 @@ li:last-child {
 }
 
 .circle-profile-list {
-  width: 100px;
-  height: 100px;
+  width: 60px;
+  height: 60px;
   background: red;
   -moz-border-radius: 50px;
   -webkit-border-radius: 50px;
@@ -1972,7 +1972,7 @@ li:last-child {
   margin-bottom: 20px;
 }
 .modal-dialog {
-  width: 800px;
+  max-width: 800px;
 }
 .thumb {
   width: 100%;
