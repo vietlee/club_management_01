@@ -10,7 +10,6 @@
   <div class="row">
     <% if @event.notification? %>
       <div class="col-md-6">
-        <%= render "list_new" %>
         <%= render "list_joined_member" %>
       </div>
       <div class="col-md-6">
@@ -18,13 +17,9 @@
           <div class="block-title">
             <h2><strong><%= @event.name %></strong></h2>
             <div class ="pull-right btn-group">
-              <%= link_to edit_club_manager_club_event_path(id: @event.id),
+              <%= link_to edit_club_manager_club_event_path(id: @event.id, type: Event.event_categories["notification"]),
                 class: "btn btn-nm btn-primary" do %>
                 <i class="fa fa-pencil"> <%= t "edit" %></i>
-              <% end %>
-              <%= link_to new_club_manager_club_event_news_path(event_id: @event.id),
-                class: "btn btn-nm btn-warning" do %>
-                <i class="fa fa-newspaper-o"> <%= t "club_manager.news.new" %></i>
               <% end %>
             </div>
           </div>

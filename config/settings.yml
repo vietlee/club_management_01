@@ -4,12 +4,13 @@ max_name: 30
 min_name: 5
 min_password: 6
 min_description: 10
+max_description: 400
 max_for_limit: 5
 per_page: 5
 truncate_description: 90
 truncate_organization: 30
 description_event: 360
-min_location: 5
+max_location: 150
 delete: "delete"
 comment: "comment"
 edit: "edit"
@@ -77,7 +78,7 @@ error_import: "error when input file"
 error_data: "has user exist"
 read_key_row1: 1
 read_data_row2: 2
-limit_comments: 5
+limit_comments: 7
 chat_messages_limit: 30
 min_content: 20
 ratings: "ratings"

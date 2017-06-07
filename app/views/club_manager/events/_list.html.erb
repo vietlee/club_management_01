@@ -17,29 +17,11 @@
                 <%= image_tag "logo.png", class: "widget-image pull-right" %>
                 <%= link_to event.name, club_manager_club_event_path(id: event.id),
                   class: "themed-color-autumn" %><br>
-                <small>
-                  <%= l event.date_start, format: :date %>
-                  <%= t("club_manager.event.to") %>
-                  <%= l event.date_end, format: :date %>
-                </small>
               </h3>
               <div class="widget-options-left">
                 <%= link_to edit_club_manager_club_event_path(id: event.id),
                   class: "btn btn-nm btn-warning" do %>
                   <i class="fa fa-pencil"></i>
-                <% end %>
-              </div>
-              <div class="widget-options">
-                <% if event.finished? %>
-                  <%= link_to t("do_nothing"),
-                    class: "btn btn-nm btn-primary", title: t("finished") do %>
-                    <i class="fa fa-check"></i>
-                  <% end %>
-                <% else %>
-                  <%= link_to t("do_nothing"), method: :patch,
-                    class: "btn btn-nm btn-warning", title: t("inprocess") do %>
-                    <i class="fa fa-step-forward"></i>
-                  <% end %>
                 <% end %>
               </div>
             </div>
