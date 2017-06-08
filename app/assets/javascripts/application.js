@@ -23,3 +23,4 @@
 //= require cable
 //= require portfolio
 //= require bootstrap-tagsinput
+//= require handle_menu

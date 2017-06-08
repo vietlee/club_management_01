@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
   resources :tags
   root "static_pages#index"
+  mount ActionCable.server => "/cable"
 
   mount Ckeditor::Engine => '/ckeditor'
 
@@ -59,13 +60,12 @@ Rails.application.routes.draw do
   end
 
   resources :clubs, only: [:show, :index] do
-    mount ActionCable.server => "/cable"
     resources :events, only: :show
     resources :albums
   end
 
   resources :invite_join_clubs, only: :create
-  resources :messages, only: :index
+  resources :messages
   resources :user_events, only: :create
   resources :ratings, only: :create
   resources :organizations, only: [:show, :index]
