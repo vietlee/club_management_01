@@ -1542,6 +1542,9 @@ fieldset[disabled] .btn-info.active {
 .nav-pills > .active > a > .badge {
   color: #1bbae1;
 }
+.description-club-text p {
+  font-size: 25px !important;
+}
 .nav-stacked > li > a {
   margin: 4px 0 0;
 }
@@ -1809,6 +1812,29 @@ fieldset[disabled] .btn-info.active {
     font-weight: 300;
   }
 }
+@media screen and (max-width: 768px) {
+  /* General */
+
+  .tip {
+    padding: 10px 10px;
+    position: fixed;
+    z-index: 100;
+    float: right;
+    bottom: 150px;
+    right: 20px!important;
+    border-radius: 20px;
+    text-align: center;
+    font-size: 40px!important;
+    color: hsl(120, 60%, 80%)
+  }
+  .tip a span{
+    font-size: 16px;
+    font-weight: bold;
+  }
+  .tip a i {
+    font-size: 35px;
+  }
+}
 /*
 =================================================================
 (#m08rts) RETINA
@@ -1901,7 +1927,6 @@ li:last-child {
 .circle-profile-list {
   width: 60px;
   height: 60px;
-  background: red;
   -moz-border-radius: 50px;
   -webkit-border-radius: 50px;
   border-radius: 1000px;

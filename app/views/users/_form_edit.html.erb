@@ -28,7 +28,6 @@
     <div class="form-group">
       <label class="col-md-4 control-label">
         <%= t "enter_tags" %></br>
-        <p class="character-input"><%= t "character_input" %></p>
       </label>
       <div class="col-md-6">
         <%= f.collection_select :tag_ids, Tag.order(:name), :id, :name, {},

@@ -826,9 +826,9 @@ table{
 }
 
 .caret {
- border-left: 8px solid transparent;
- border-right: 8px solid transparent;
- border-top: 8px solid white;
+ border-left: 15px solid transparent;
+ border-right: 15px solid transparent;
+ border-top: 15px solid white;
  margin-right: 5px;
 }
 

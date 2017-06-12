@@ -12,7 +12,7 @@
         </div>
         <div class="store-item-image">
           <%= link_to club do %>
-            <%= image_tag club.image, class: "img-responsive image-club" %>
+            <%= image_tag club.logo, class: "img-responsive image-club" %>
             <%= image_tag "tick.png",
               class: "store-item-joined" if current_user.user_clubs.joined.of_club(club) %>
           <% end %>
@@ -22,7 +22,6 @@
             <%= club.name %>
           </span>
           <small class="pull-left site-description">
-            <i class="fa fa-hand-o-right text-muted"></i>
             <%= link_to club, title: club.description.html_safe do %>
               <%= club.description.truncate(Settings.truncate.club.description).html_safe %>
             <% end %>
