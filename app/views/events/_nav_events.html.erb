@@ -1,10 +1,10 @@
 <div class="sidebar-block">
   <ul class="nav nav-tabs push-bit" data-toggle="tabs">
-    <li class="active"><a href="#top"><i class="fa fa-users"></i> <%= t "periodic_events" %></a></li>
-    <li><a href="#periodic"><i class="fa fa-newspaper-o"></i> <%= t "top_events" %></a></li>
+    <li><a href="#top"><i class="fa fa-users"></i> <%= t "periodic_events" %></a></li>
+    <li class="active"><a href="#periodic"><i class="fa fa-newspaper-o"></i> <%= t "top_events" %></a></li>
   </ul>
   <div class="tab-content">
-    <div class="tab-pane active" id="top">
+    <div class="tab-pane" id="top">
       <% if current_user.user_clubs.joined.of_club(@club) %>
         <% @events.periodic.limit(Settings.max_for_limit).each do |event| %>
           <div class="content-float clearfix">
@@ -22,7 +22,7 @@
         <% end %>
       <% end %>
     </div>
-    <div class="tab-pane" id="periodic">
+    <div class="tab-pane active" id="periodic">
       <% if current_user.user_clubs.joined.of_club(@club) %>
         <% @events.top_like.limit(Settings.max_for_limit).each do |event| %>
           <div class="content-float clearfix">

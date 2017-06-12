@@ -1,7 +1,7 @@
 <div class="media-container">
 <%= render "users/users" %>
   <section class="site-section site-section-light site-section-top">
-    <div class="container">
+    <div class="container description-club-text">
       <div class="join-cancel-toggle-container">
         <%= render "user_clubs/join_cancel_toggle" %>
       </div>
@@ -20,7 +20,7 @@
       <span class="animation-slideUp hidden-xs rating-container">
         <%= render "ratings/rating" %>
       </span>
-      <p class="h3 animation-slideUp hidden-xs">
+      <p class="h3 animation-slideUp hidden-xs description-club-text">
         <%= @club.description.html_safe %>
       </p>
     </div>

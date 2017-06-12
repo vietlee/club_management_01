@@ -298,14 +298,14 @@ jp:
     formats:
       date: "%H:%m %d/%m/%Y"
       date_time_utc: "%d/%m/%Y %H:%m"
-      full_date: "%d/%m/%Y %H:%m"
+      full_date: "%d-%m-%Y, %H:%M"
       short: "%d/%m/%Y"
   time:
     formats:
       date: "%H:%m %d/%m/%Y"
       date_utc: "%d/%m/%Y"
       date_time_utc: "%d/%m/%Y %H:%m"
-      full_date: "%d/%m/%Y %H:%m"
+      full_date: "%d-%m-%Y, %H:%M"
       short: "%d/%m/%Y"
   number:
     currency:

@@ -37,15 +37,15 @@ namespace :db do
       club_type: 1,
       organization_id: framgiadn.id,
       description: "Câu lạc bộ bóng đá tại FramGia Đà Nẵng",
-      money: 1805000
+      money: 0
     )
     tuthien_club = Club.create!(
-      name: "CLB CLB Từ Thiện",
+      name: "CLB Từ Thiện",
       is_active: 1,
       club_type: 0,
       organization_id: framgiadn.id,
       description: "Câu lạc bộ từ thiện tại FramGia Đà Nẵng",
-      money: 1150000
+      money: 0
     )
     game_club = Club.create!(
       name: "CLB Game",
@@ -53,7 +53,7 @@ namespace :db do
       club_type: 2,
       organization_id: framgiadn.id,
       description: "Câu lạc bộ game tại FramGia Đà Nẵng",
-      money: 1150000
+      money: 0
     )
     tiengnhat_club = Club.create!(
       name: "CLB Tiếng Nhật",
@@ -61,7 +61,7 @@ namespace :db do
       club_type: 1,
       organization_id: framgiadn.id,
       description: "Câu lạc bộ tiếng nhật tại FramGia Đà Nẵng",
-      money: 250000
+      money: 0
     )
     framgiafc = Club.create!(
       name: "Framgia FC",
