@@ -25,6 +25,10 @@ body {
 .required {
   color: red;
 }
+.org-td img {
+  height: 70px;
+  width: 100px;
+}
 .add-event {
   margin-bottom: 40px;
   margin-left: 56px;
