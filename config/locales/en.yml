@@ -675,3 +675,5 @@ en:
   reset_password: "Send email to receive introduction"
   change_my_password: "Change my password"
   more_tool: "More tool"
+  for_rating: "For rating"
+  created_at: "For date create"

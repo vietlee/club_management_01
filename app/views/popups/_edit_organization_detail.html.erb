@@ -33,7 +33,8 @@
                 <%= f.label :background %>
                 <%= f.file_field :logo %><br>
                 <%= image_tag @organization.logo, class: "img-responsive" %><hr/>
-                <%= f.submit t("update"), class: "btn btn-primary" %>
+                <%= f.submit t("update"),
+                  class: "btn btn-primary button-margin-bottom" %>
               <% end %>
             </div>
           </div>

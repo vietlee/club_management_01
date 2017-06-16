@@ -86,6 +86,7 @@ ratings: "ratings"
 truncate:
   club:
     description: 100
+  album_name: 20
 messages_load_more: 30
 subsidy: "subsidy"
 pay_money: "pay_money"

@@ -27,7 +27,7 @@
               <td><%= club.description.truncate(Settings.event_truncate).html_safe %></td>
               <td class="text-center">
                 <%= link_to t("view"), manager_club_path(club.id),
-                  class: "btn btn-lg btn-primary" %>
+                  class: "btn btn-primary" %>
               </td>
             </tr>
           <% end %>

@@ -168,7 +168,7 @@ vi:
   send_request_club: "Gửi yêu cầu tạo câu lạc bộ mới"
   post_at: "Đăng vào lúc:"
   description_request: "Hãy cho chúng tôi biết mô tả của câu lạc bộ... (tối thiểu 10 ký tự)"
-  logo_club: "Logo Club"
+  logo_club: "Logo câu lạc bộ"
   for_ratings: "(Điểm đánh giá)"
   support: "Hỗ trợ"
   password: "Mật khẩu"
@@ -582,7 +582,7 @@ vi:
               too_short: " quá ngắn"
             description:
               blank: " không được bỏ trống"
-              too_short: " quá dài"
+              too_short: " quá ngắn"
         event:
           attributes:
             name:
@@ -774,7 +774,6 @@ vi:
   of_you_accept: " của bạn đã được chấp nhận!!!"
   add_admin_mail: "Bạn đã được thêm làm quản lý của "
   let_access_member: "Hãy truy cập vào website để khám phá!! "
-  click_here: "Nhấn vào đây!!!"
   request_mail: "Chấp nhận yêu cầu tham gia"
   let_access_manager_club: "Hãy truy cập vào website để có thể quản lý câu lạc bộ này!!! "
   request_mail_club: "Thêm quyền quản trị viên"
@@ -839,3 +838,5 @@ vi:
   characters_minimum: " ký tự tối thiểu)"
   change_my_password: "Thay đổi mật khẩu của tôi"
   input_email_to_reset_password: "Nhập email cần thay đổi mật khẩu"
+  logo: "Logo"
+  ratings: "Đánh gía"
