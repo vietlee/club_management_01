@@ -546,8 +546,10 @@ vi:
         description: "Mô tả"
       user:
         tag_list: "Danh sách Tags: "
+        email: "email"
         password: "Mật khẩu"
         password_confirmation: "Xác nhận mật khẩu"
+        reset_password_token: "Mã thay đổi mật khẩu"
     errors:
       messages:
         record_invalid: "Bản ghi không hợp lệ"
@@ -580,7 +582,7 @@ vi:
               too_short: " quá ngắn"
             description:
               blank: " không được bỏ trống"
-              too_short: " quá ngắn"
+              too_short: " quá dài"
         event:
           attributes:
             name:
@@ -595,6 +597,7 @@ vi:
             description:
               blank: " không được bỏ trống"
               too_short: " quá ngắn"
+              too_long: ""
             date_start:
               blank: " không được bỏ trống"
             date_end:
@@ -631,10 +634,14 @@ vi:
             password:
               blank: " không được bỏ trống"
               too_short: " quá ngắn"
+            email:
+              blank: " không được bỏ trống"
             password_confirmation:
               confirmation: " không đúng"
             tag_list:
               invalid: "Bạn chỉ được thêm tối đa 4 tags"
+            reset_password_token:
+              invalid: " không đúng,vui lòng kiểm tra lại email!"
   not_found_user_event: "Không tìm thấy sự kiện mà bạn tham gia!"
   not_found_user_club: "Không tìm thấy câu lạc bộ mà bạn tham gia!"
   see_you_next_time: "Bạn đã hủy tham gia!!!"
@@ -823,3 +830,12 @@ vi:
   refresh: "Làm mới trang"
   more: "Xem thêm"
   no_description: "Không có mô tả gì thêm!"
+  more_tool: "Ứng dụng khác"
+  forget_password: "Quên mật khẩu?"
+  reset_password: "Gửi"
+  change_your_password: "Thay đổi mật khẩu"
+  new_password: "Mật khẩu mới"
+  confirm_new_password: "Xác nhận mật khẩu mới"
+  characters_minimum: " ký tự tối thiểu)"
+  change_my_password: "Thay đổi mật khẩu của tôi"
+  input_email_to_reset_password: "Nhập email cần thay đổi mật khẩu"

@@ -17,6 +17,8 @@
           <% end %>
         </li>
         <li><%= link_to t("home"), root_path %></li>
+        <li><%= link_to t("more_tool"), Settings.tools_url, target: "_blank" %>
+        </li>
         <li>
           <%= link_to "#", class: "site-nav-sub" do %>
             <%= t "account" %> <span class="fa fa-user"></span>

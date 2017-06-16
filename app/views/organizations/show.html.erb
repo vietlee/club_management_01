@@ -100,8 +100,9 @@
                                       class: "img-responsive img-club-org-details" %>
                                   </td>
                                   <td><%= club.name %></td>
-                                  <td><%= club.rating %></td>
-                                  <td><%= club.description %></td>
+                                  <td>
+                                    <%= club.rating.round Settings.round_float %></td>
+                                  <td><%= club.description.truncate(Settings.truncate.club.description).html_safe %></td>
                                 </tr>
                               <% end %>
                             </tbody>

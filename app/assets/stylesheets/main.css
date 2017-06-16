@@ -64,11 +64,21 @@ h6 {
   width: 100%;
 }
 .tag {
-  background-color: #D7AFAF;
-  padding: 1px;
-  border-radius: 3px;
-  margin-bottom: 5px;
-  color: black;
+  border: 1px solid #1bbae1;
+  background-color: #1bbae1;
+  color: #ffffff;
+  font-weight: 600;
+  border-radius: 2px;
+  display: block;
+  float: left;
+  padding: 4px 10px 20px 10px;
+  height: 20px;
+  line-height: 18px;
+  text-decoration: none;
+  margin-right: 4px;
+  margin-bottom: 6px;
+  font-size: 12px;
+  position: relative;
 }
 .tag:hover {
   text-decoration: none;
@@ -1543,7 +1553,7 @@ fieldset[disabled] .btn-info.active {
   color: #1bbae1;
 }
 .description-club-text p {
-  font-size: 25px !important;
+  font-size: 17px !important;
 }
 .nav-stacked > li > a {
   margin: 4px 0 0;
@@ -2013,4 +2023,9 @@ li:last-child {
 }
 .thumb {
   width: 100%;
+}
+.notify .alert {
+  color: #27ae60;
+  background-color: #daf2e4;
+  border-color: #b8e5cb;
 }

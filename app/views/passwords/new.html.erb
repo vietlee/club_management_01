@@ -1,0 +1,20 @@
+<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1.0">
+<%= stylesheet_link_tag "user_login" %>
+<%= javascript_include_tag "close", "data-turbolinks-track": "reload" %>
+<div class="container">
+  <div class="body"></div>
+  <div class="grad"></div>
+  <div class="header">
+    <div><%= t "club_login" %><span class="tit-login"> <%= t "interactive" %></span></div>
+  </div><br>
+  <div class="login">
+    <%= devise_error_messages! %>
+    <h4><%= t "input_email_to_reset_password" %></h4>
+    <%= form_for(:user, url: user_password_path,
+      method: :post) do |f| %>
+      <%= f.text_field :email, placeholder: t("email"), autofocus: true,
+        required: true %>
+      <%= f.submit t("reset_password") %>
+    <% end %>
+  </div>
+</div>

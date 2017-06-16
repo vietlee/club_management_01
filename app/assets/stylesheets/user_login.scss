@@ -148,3 +148,64 @@
 ::-moz-input-placeholder{
    color: rgba(255,255,255,0.6);
 }
+/* Alerts */
+
+.alert {
+  margin-bottom: 20px;
+  list-style-type: none;
+  width: 71%;
+  border-top-width: 0;
+  border-right-width: 2px;
+  border-bottom-width: 0;
+  border-left-width: 2px;
+}
+.alert button {
+  font-size: 20px;
+}
+.alert li {
+  height: 30%;
+  text-align: center;
+}
+.alert-danger {
+  color: #e74c3c;
+  background-color: #ffd1cc;
+  border-color: #ffb8b0;
+}
+.alert-danger .alert-link {
+  color: #e74c3c;
+}
+.alert-warning {
+  color: #e67e22;
+  background-color: #ffe4cc;
+  border-color: #ffd6b2;
+}
+.alert-warning .alert-link {
+  color: #e67e22;
+}
+.alert-success {
+  color: #27ae60;
+  background-color: #daf2e4;
+  border-color: #b8e5cb;
+}
+.alert-success .alert-link {
+  color: #27ae60;
+}
+.alert-info {
+  color: #3498db;
+  background-color: #dae8f2;
+  border-color: #b8d2e5;
+}
+.alert-info .alert-link {
+  color: #3498db;
+}
+.alert-dismissable .close {
+  top: -5px;
+  right: -25px;
+}
+.close {
+  padding: 0;
+  cursor: pointer;
+  background: transparent;
+  border: 0;
+  -webkit-appearance: none;
+}

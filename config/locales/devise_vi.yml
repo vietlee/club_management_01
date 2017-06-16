@@ -28,10 +28,10 @@ vi:
       success: "Xác thực tài khoản %{kind} thành công."
     passwords:
       no_token: "Bạn chỉ có thể truy cập trang này thông qua email thay đổi mật khẩu. Nếu bạn truy cập thông qua email, hãy chắc chắn rằng mình nhập đúng đưòng dẫn."
-      send_instructions: "Bạn sẽ nhận đưọc email hướn dẫn thay đổi mật khẩu trong vài phút tới."
+      send_instructions: "Bạn sẽ nhận được email hướng dẫn thay đổi mật khẩu trong vài phút tới."
       send_paranoid_instructions: "Nếu địa chỉ email của bạn đã tồn tại trong cơ sở dữ liệu, Đưòng dẫn thay đôi mật khẩu sẽ được gửi tới bạn trong ít phút tới."
       updated: "Mật khẩu đã được thay đổi. Bạn đã đăng nhập vào hệ thống."
-      updated_not_active: "Mật khẩu đã đưọc thay đổi thành công."
+      updated_not_active: "Mật khẩu đã được thay đổi thành công."
     registrations:
       destroyed: "Tạm biệt! Tài khoản của bạn đã được hủy thành công. Hi vọng sẽ sớm gặp lại bạn."
       signed_up: "Chúc mừng! Bạn đã đăng ký thành công tài khoản."
