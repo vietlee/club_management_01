@@ -8,7 +8,8 @@ Rails.application.routes.draw do
   delete "join_event" => "user_events#destroy"
   get "other-clubs" => "clubs#index"
 
-  devise_for :users, controllers: {registrations: "registrations", sessions: "authentications"}
+  devise_for :users, controllers: {registrations: "registrations",
+    sessions: "authentications", passwords: "passwords"}
   devise_for :admin, controllers: {sessions: "admin/sessions"}
 
   devise_scope :admin do

@@ -5,6 +5,7 @@
         <h2 class="modal-title"><i class="fa fa-user-plus"></i> <%= t "register" %></h2>
       </div>
       <div class="modal-body">
+      <%= devise_error_messages! %>
         <%= form_for :user, url: user_registration_path,
           html: {class: "form-horizontal form-bordered" } do |f| %>
             <div class="form-modal">

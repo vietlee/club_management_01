@@ -4,8 +4,7 @@
       data-animation-class="animation-fadeInQuick" data-element-offset="-100">
       <div class="store-item">
         <div class="store-item-rating text-warning">
-          <%= club.rating_club(club) %>
-          <%= club.rating %> <%= t "for_ratings" %>
+          <%= club.rating.round Settings.round_float %> <%= t "for_ratings" %>
         </div>
         <div class="store-item-organiztion text-organiztion text-warning">
           <span><%= club.club_name %></span>

@@ -1,0 +1,31 @@
+<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1.0">
+<%= stylesheet_link_tag "user_login" %>
+<%= javascript_include_tag "close", "data-turbolinks-track": "reload" %>
+<div class="container">
+  <div class="body"></div>
+  <div class="grad"></div>
+  <div class="header">
+    <div><%= t "club_login" %><span class="tit-login"> <%= t "interactive" %></span></div>
+  </div><br>
+  <div class="login">
+    <h2><%= t("change_your_password") %></h2>
+    <%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :put }) do |f| %>
+      <%= devise_error_messages! %>
+      <%= f.hidden_field :reset_password_token %>
+      <div class="field">
+        <%= f.label :password, t("new_password") %><br />
+        <% if @minimum_password_length %>
+          <em>(<%= @minimum_password_length %> <%= t("characters_minimum") %></em><br />
+        <% end %>
+        <%= f.password_field :password, autofocus: true, autocomplete: "off" %>
+      </div>
+      <div class="field">
+        <%= f.label :password_confirmation, t("confirm_new_password") %><br />
+        <%= f.password_field :password_confirmation, autocomplete: "off" %>
+      </div>
+      <div class="actions">
+        <%= f.submit t("change_my_password") %>
+      </div>
+    <% end %>
+  </div>
+</div>

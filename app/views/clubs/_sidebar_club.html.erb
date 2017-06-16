@@ -64,6 +64,8 @@
         <li><%= link_to t("feed_back"),
           new_user_feed_back_path(user_id: current_user.id) %>
         </li>
+        <li><%= link_to t("more_tool"), Settings.tools_url, target: "_blank" %>
+        </li>
         <li>
           <%= link_to "#",class: "site-nav-sub text-warning" do %>
             <b><%= current_user.full_name %></b>
