@@ -25,8 +25,8 @@
           <%= number_to_currency(event_club.expense, locale: :vi) %>
         </h5>
       <% end %>
-      <div class="inside-div">
-        <%= truncate_html(event_club.description.html_safe, length: Settings.new_detail) %><br>
+      <div class="inside-div description-event">
+        <%= event_club.description.truncate(Settings.event_truncate).html_safe %><br>
         <%= link_to t("view_more"),
           club_manager_club_event_path(club_id: @club.id, id: event_club.id) %>
       </div>

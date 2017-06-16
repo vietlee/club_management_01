@@ -2,7 +2,7 @@
   "data-turbolinks-track" => true %>
 <div class="media-container">
   <section class="site-section site-section-light site-section-top">
-    <div class="container">
+    <div class="container club-manager-container description-club">
       <h1 class="animation-slideDown">
         <strong><%= @club.name %></strong>
       </h1>
@@ -11,7 +11,13 @@
         <%= t "budget_now" %><%= number_to_vnd @club.money %>
       </h3>
       <p class="h3 animation-slideUp hidden-xs">
-        <%= @club.description.html_safe %>
+        <% if @club.description.length > Settings.club_description %>
+          <%= @club.description.truncate(Settings.club_description).html_safe %>
+          <%= link_to "#modal-club-description", data: {toggle: "modal"},
+            class: "btn btn-xs btn-default animation-fadeIn360" do %>
+            <i class="fa fa-plus "></i> <%= t "more" %>
+          <% end %>
+        <% end %>
       </p>
       <div class="join-cancel-toggle-container">
         <%= link_to "#modal-club-edit", data: {toggle: "modal"},
@@ -124,4 +130,8 @@
 <div id="modal-club-add-user" class="modal fade" tabindex="-1" role="dialog"
   aria-hidden="true">
   <%= render "popups/list_user_organization" %>
+</div>
+<div id="modal-club-description" class="modal fade" tabindex="-1" role="dialog"
+  aria-hidden="true">
+  <%= render "popups/description" %>
 </div>

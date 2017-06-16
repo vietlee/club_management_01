@@ -597,7 +597,7 @@ vi:
             description:
               blank: " không được bỏ trống"
               too_short: " quá ngắn"
-              too_long: ""
+              too_long: " quá dài"
             date_start:
               blank: " không được bỏ trống"
             date_end:
