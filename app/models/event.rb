@@ -15,7 +15,6 @@ class Event < ApplicationRecord
   validates :name, presence: true, length: {minimum: Settings.min_name}
   validates :expense, length: {maximum: Settings.max_exspene}
   validates :location, length: {maximum: Settings.max_location}
-  validates :description, length: {maximum: Settings.max_description}
 
   scope :top_like, -> {order num_like: :desc}
   scope :of_month_payment, -> month_payment {where month_of_payment: month_payment}

@@ -29,6 +29,9 @@ body {
   margin-bottom: 40px;
   margin-left: 56px;
 }
+.description-event p, .description-club p {
+  text-align: justify;
+}
 .suggest-club a:hover {
   text-decoration: none;
   color: green;
@@ -139,11 +142,14 @@ h6 {
 }
 h4 .notification {
   color: #60BFD6;
-  font-size: 25px !important;
+  font-size: 20px !important;
 }
 h4 .money {
   color: #60BFD6;
-  font-size: 25px !important;
+  font-size: 20px !important;
+}
+.club-manager-container {
+  width: 970px;
 }
 .tab-list {
   margin-top: 10px;

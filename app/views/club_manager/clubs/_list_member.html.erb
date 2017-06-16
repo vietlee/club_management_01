@@ -29,7 +29,7 @@
                     club_id: @club.id, status: nil), method: :put,
                     title: t("add_admin"),
                     data: {confirm: t("answer_admin")} do %>
-                    <i class="gi gi-cogwheel btn btn-danger"></i>
+                    <i class="gi gi-keys btn btn-danger"></i>
                   <% end %>
                   <%= link_to club_manager_club_user_club_path(id: member.id,
                     club_id: @club.id), method: :delete,

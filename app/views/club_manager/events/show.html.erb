@@ -53,8 +53,8 @@
             </div>
           </div><hr>
           <div class="row" >
-            <div class="col-md-10 col-md-offset-1 site-block">
-              <%= @event.description.html_safe %>
+            <div class="col-md-10 col-md-offset-1 site-block description-event">
+              <%= @event.description.truncate(Settings.event_truncate).html_safe %>
             </div>
           </div><hr>
         </div>
