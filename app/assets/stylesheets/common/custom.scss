@@ -84,7 +84,7 @@ suppermall {
   position: absolute;
   float: right;
   right: 10px !important;
-  width: 50px;
+  width: 40px;
   bottom: 120px;
   z-index: 200;
   opacity: 0.8;
@@ -152,4 +152,25 @@ suppermall {
 
 .members-budgeted button {
   margin-right:10px!important;
+}
+
+.margin-label-club {
+  padding: 0px 2px !important;
+}
+
+.button-margin-bottom {
+  margin-bottom: 15px !important;
+}
+
+.border-non-image {
+  border: none;
+  position: relative;
+}
+
+.on-image {
+  bottom: 70px;
+  left: 0;
+  position: absolute;
+  right: 0;
+  text-align: center;
 }

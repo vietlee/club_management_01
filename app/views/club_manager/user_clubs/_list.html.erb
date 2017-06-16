@@ -8,7 +8,7 @@
     <td><%= user_club.phone %></td>
     <td class="text-center">
       <%= form_for [:club_manager, @club, user_club] do |f| %>
-        <%= f.submit t("approve"), class: "btn btn-lg btn-primary" %>
+        <%= f.submit t("approve"), class: "btn btn-primary" %>
       <% end %>
     </td>
   </tr>

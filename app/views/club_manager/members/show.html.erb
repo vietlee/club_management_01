@@ -47,7 +47,7 @@
             <div class="col-md-6 center">
               <% @member.clubs.each do |club| %>
                 <% if status_user_club(@member, club) %>
-                  <%= club.name %><br>
+                  <span class="label label-warning margin-label-club"><%= club.name %></span>
                 <% end %>
               <% end %>
             </div>

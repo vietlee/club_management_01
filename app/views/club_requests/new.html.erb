@@ -9,7 +9,7 @@
             <label for="contact-name"><%= t "organization_sign" %></label><br>
             <%= f.select(:organization_id, @organizations.collect {|org| [ org.name, org.organization_id ]}, {}, {class: "form-control" }) %>
             <label class="push-left"><%= t "organization_question" %></label>
-            <%= link_to t("click_here!"), new_user_organization_request_path(user_id: current_user.id) %>
+            <%= link_to t("click_here"), new_user_organization_request_path(user_id: current_user.id) %>
           </div>
           <div class="form-group">
             <label for="contact-name"><%= t "club_name" %></label>
@@ -41,7 +41,8 @@
               class: "form-control input-lg", id: "contact-message", row: 10  %>
           </div>
           <div class="form-group center">
-            <%= f.submit t("send_request"), class: "btn btn-primary btn-lg" %>
+            <%= f.submit t("send_request"),
+              class: "btn btn-primary send-request-button" %>
           </div>
         <% end %>
       </div>
