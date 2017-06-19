@@ -6,7 +6,7 @@
 </div>
 <% events.each do |event_club| %>
   <div class="row form-group">
-    <div class="col-sm-5 text-center full-img-new">
+    <div class="col-sm-5 text-center full-img-new margin-image-event">
       <%= link_to club_manager_club_event_path(club_id: @club.id, id: event_club.id) do %>
         <%= image_tag event_club.image %>
       <% end %>

@@ -16,10 +16,11 @@ class OrganizationRequestsController < ApplicationController
     request = OrganizationRequest.new request_params
     if request.save
       flash[:success] = t("success_create")
+      redirect_to root_path
     else
       flash_error request
+      redirect_to :back
     end
-    redirect_to root_path
   end
 
   def destroy

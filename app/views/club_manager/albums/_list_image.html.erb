@@ -16,7 +16,7 @@
               <%= link_to t("delete"),
                 club_manager_club_album_image_path(id: image.id, album_id: @album.id, club_id: @album.club_id),
                 method: :delete,
-                dât: {confirm: t("club_manager.image.confirm_delete")},
+                data: {confirm: t("club_manager.image.confirm_delete")},
                 class: "btn btn-sm btn-alt btn-warning" %>
             </p>
             <p class="text-center">
