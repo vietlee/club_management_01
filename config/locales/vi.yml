@@ -1,4 +1,6 @@
 vi:
+  too_short: &too_short " quá ngắn (ít nhất %{count} ký tự)"
+  too_long: &too_long " quá dài (nhiều nhất %{count} ký tự)"
   request_parent:
     pending: "Chờ duyệt"
     joined: "Đã duyệt"
@@ -558,46 +560,56 @@ vi:
           attributes:
             title:
               blank: " không được bỏ trống"
-              too_short: " quá ngắn"
+              too_short: *too_short
             content:
               blank: " không được bỏ trống"
-              too_short: " quá ngắn"
+              too_short: *too_short
         organization_request:
           attributes:
             name:
+              taken: " đã tồn tại"
               blank: " không được bỏ trống"
+              too_long: *too_long
             email:
               taken: " đã tồn tại"
               blank: " không được bỏ trống"
             description:
               blank: " không được bỏ trống"
-              too_short: " quá ngắn"
+              too_short: *too_short
+              too_long: *too_long
             phone:
               blank: " không được bỏ trống"
+              too_short: *too_short
+              too_long: *too_long
+            location:
+              too_long: *too_long
         club_request:
           attributes:
             name:
               taken: " đã tồn tại"
               blank: " không được bỏ trống"
-              too_short: " quá ngắn"
+              too_short: *too_short
+              too_long: *too_short
             description:
               blank: " không được bỏ trống"
-              too_short: " quá ngắn"
+              too_short: *too_short
+              too_long: *too_long
         event:
           attributes:
             name:
               blank: " không được bỏ trống"
-              too_short: " quá ngắn"
+              too_short: *too_short
             expense:
               blank: " không được bỏ trống"
-              too_long: " quá dài"
+              too_long: *too_long
             location:
               blank: " không được bỏ trống"
-              too_short: " quá ngắn"
+              too_short: *too_short
+              too_long: *too_long
             description:
               blank: " không được bỏ trống"
-              too_short: " quá ngắn"
-              too_long: " quá dài"
+              too_short: *too_short
+              too_long: *too_long
             date_start:
               blank: " không được bỏ trống"
             date_end:
@@ -608,12 +620,12 @@ vi:
           attributes:
             name:
               blank: " không được bỏ trống"
-              too_short: " quá ngắn"
+              too_short: *too_short
         image:
           attributes:
             name:
               blank: " không được bỏ trống"
-              too_short: " quá ngắn"
+              too_short: *too_short
             url:
               blank: " chưa được chọn"
         organization:
@@ -633,7 +645,7 @@ vi:
           attributes:
             password:
               blank: " không được bỏ trống"
-              too_short: " quá ngắn"
+              too_short: *too_short
             email:
               blank: " không được bỏ trống"
             password_confirmation:
@@ -840,3 +852,6 @@ vi:
   input_email_to_reset_password: "Nhập email cần thay đổi mật khẩu"
   logo: "Logo"
   ratings: "Đánh gía"
+  errors:
+    messages:
+      extension_whitelist_error: "Lỗi định dạng"

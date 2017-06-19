@@ -677,3 +677,6 @@ en:
   more_tool: "More tool"
   for_rating: "For rating"
   created_at: "For date create"
+  errors:
+    messages:
+      extension_whitelist_error: "format errors"

@@ -7,9 +7,11 @@ class ClubRequest < ApplicationRecord
   enum club_type: {sport: 1, game: 2, education: 3, music: 4,
     entertainment: 5, confidential: 6, junket: 7, other: 0}
 
-  validates :name, presence: true, uniqueness: true
+  validates :name, presence: true, uniqueness: true,
+    length: {maximum: Settings.club_request.max_name_length}
   validates :description, presence: true,
-    length: {minimum: Settings.min_description}
+    length: {minimum: Settings.club_request.min_description_length,
+      maximum: Settings.club_request.max_description_length}
 
   delegate :full_name, to: :user, allow_nil: :true
 

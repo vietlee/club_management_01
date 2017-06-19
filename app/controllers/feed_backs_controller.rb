@@ -9,10 +9,11 @@ class FeedBacksController < ApplicationController
     feed_back = FeedBack.new feed_back_params
     if feed_back.save
       flash[:success] = t "tks_for_feed_back"
+      redirect_to root_url
     else
       flash[:danger] = t "error_create"
+      redirect_to :back
     end
-    redirect_to root_url
   end
 
   private
