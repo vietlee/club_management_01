@@ -1,9 +1,8 @@
 class FeedBack < ApplicationRecord
   belongs_to :user
 
-  validates :content, presence: true,
-    length: {minimum: Settings.feed_back.min_content,
-      maximum: Settings.feed_back.max_content}
+  validates :description, presence: true,
+    length: {minimum: Settings.feed_back.min_content}
 
   enum type_feed_back: [:other, :web_content, :process, :ui]
 

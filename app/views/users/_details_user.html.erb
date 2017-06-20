@@ -80,7 +80,7 @@
                   </h4>
                   <div class="hr-left"></div>
                   <h4><strong><%= t "number_club_joined" %>:</strong>
-                    <%= @user.clubs.size %>
+                    <%= @user.user_clubs.joined.size %>
                   </h4>
                   <div class="hr-left"></div>
                   <% if current_user.is_user?@user %>
