@@ -99,7 +99,11 @@
                                     <%= image_tag club.image,
                                       class: "img-responsive img-club-org-details" %>
                                   </td>
-                                  <td><%= club.name %></td>
+                                  <td>
+                                    <%= link_to club_path(club) do %>
+                                      <%= club.name %>
+                                    <% end %>
+                                  </td>
                                   <td>
                                     <%= club.rating.round Settings.round_float %></td>
                                   <td><%= club.description.truncate(Settings.truncate.club.description).html_safe %></td>
