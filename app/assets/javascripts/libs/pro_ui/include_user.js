@@ -56,6 +56,14 @@ $(document).on('turbolinks:load', function() {
     $("#example-datatable").dataTable();
   });
 
+  $("#ecom-filter-organization").change(function(){
+    $("#ecom-search").attr("name", "q[organization_id_eq]");
+    $("#ecom-search").val($(this).val());
+    document.getElementById("search-club-input").style.display = 'none';
+    $("#club_search").submit();
+    $("#example-datatable").dataTable();
+  });
+
   $(".join-event").click(function(){
     $("#new_user_event").submit();
   });
