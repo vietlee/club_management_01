@@ -36,7 +36,8 @@ namespace :db do
       is_active: 1,
       club_type: 1,
       organization_id: framgiadn.id,
-      description: "Câu lạc bộ bóng đá tại FramGia Đà Nẵng",
+      content: "Câu lạc bộ bóng đá tại FramGia Đà Nẵng",
+      goal: "Mục tiêu câu lạc bộ giải trí",
       money: 0
     )
     tuthien_club = Club.create!(
@@ -44,7 +45,8 @@ namespace :db do
       is_active: 1,
       club_type: 0,
       organization_id: framgiadn.id,
-      description: "Câu lạc bộ từ thiện tại FramGia Đà Nẵng",
+      content: "Câu lạc bộ từ thiện tại FramGia Đà Nẵng",
+      goal: "Mục tiêu câu lạc bộ Từ thiện",
       money: 0
     )
     game_club = Club.create!(
@@ -52,7 +54,8 @@ namespace :db do
       is_active: 1,
       club_type: 2,
       organization_id: framgiadn.id,
-      description: "Câu lạc bộ game tại FramGia Đà Nẵng",
+      content: "Câu lạc bộ game tại FramGia Đà Nẵng",
+      goal: "Mục tiêu câu lạc bộ giải trí",
       money: 0
     )
     tiengnhat_club = Club.create!(
@@ -60,7 +63,8 @@ namespace :db do
       is_active: 1,
       club_type: 1,
       organization_id: framgiadn.id,
-      description: "Câu lạc bộ tiếng nhật tại FramGia Đà Nẵng",
+      content: "Câu lạc bộ tiếng nhật tại FramGia Đà Nẵng",
+      goal: "Mục tiêu câu lạc bộ Học tập",
       money: 0
     )
     framgiafc = Club.create!(
@@ -68,7 +72,8 @@ namespace :db do
       is_active: 1,
       club_type: 0,
       organization_id: framgiahn.id,
-      description: "Câu lạc bộ tại FramGia Hà Nội",
+      content: "Câu lạc bộ tại FramGia Hà Nội",
+      goal: "Mục tiêu câu lạc bộ giải trí",
       money: 0
     )
     gameclub = Club.create!(
@@ -76,7 +81,8 @@ namespace :db do
       is_active: 1,
       club_type: 1,
       organization_id: framgiahn.id,
-      description: "Câu lạc bộ game tại FramGia Hà Nội",
+      content: "Câu lạc bộ game tại FramGia Hà Nội",
+      goal: "Mục tiêu câu lạc bộ giải trí",
       money: 0
     )
     japaneseclub = Club.create!(
@@ -84,7 +90,8 @@ namespace :db do
       is_active: 1,
       club_type: 3,
       organization_id: framgiahn.id,
-      description: "Câu lạc bộ tiếng nhật tại FramGia Hà Nội",
+      content: "Câu lạc bộ tiếng nhật tại FramGia Hà Nội",
+      goal: "Mục tiêu câu lạc bộ Học tập",
       money: 0
     )
     charityclub = Club.create!(
@@ -92,7 +99,8 @@ namespace :db do
       is_active: 1,
       club_type: 0,
       organization_id: framgiahn.id,
-      description: "Câu lạc bộ từ thiện tại FramGia Hà Nội",
+      content: "Câu lạc bộ từ thiện tại FramGia Hà Nội",
+      goal: "Mục tiêu câu lạc bộ Từ thiện",
       money: 0
     )
     chinese_chess_club = Club.create!(
@@ -100,7 +108,8 @@ namespace :db do
       is_active: 1,
       club_type: 2,
       organization_id: framgiahn.id,
-      description: "Câu lạc bộ cờ tướng tại FramGia Hà Nội",
+      content: "Câu lạc bộ cờ tướng tại FramGia Hà Nội",
+      goal: "Mục tiêu câu lạc bộ giải trí",
       money: 0
     )
     dance_club = Club.create!(
@@ -108,7 +117,8 @@ namespace :db do
       is_active: 1,
       club_type: 5,
       organization_id: framgiahn.id,
-      description: "Câu lạc bộ dance tại FramGia Hà Nội",
+      content: "Câu lạc bộ dance tại FramGia Hà Nội",
+      goal: "Mục tiêu câu lạc bộ giải trí",
       money: 0
     )
     gymclub = Club.create!(
@@ -116,7 +126,8 @@ namespace :db do
       is_active: 1,
       club_type: 5,
       organization_id: framgiahn.id,
-      description: "Câu lạc bộ Gym tại FramGia Hà Nội",
+      content: "Câu lạc bộ Gym tại FramGia Hà Nội",
+      goal: "Mục tiêu câu lạc bộ Cải thiện thể chất",
       money: 0
     )
      japanese_food_club = Club.create!(
@@ -124,7 +135,8 @@ namespace :db do
       is_active: 1,
       club_type: 7,
       organization_id: framgiahn.id,
-      description: "Câu lạc bộ Japanese Food tại FramGia Hà Nội",
+      content: "Câu lạc bộ Japanese Food tại FramGia Hà Nội",
+      goal: "Mục tiêu câu lạc bộ Ăn uống",
       money: 0
     )
     intellect_game_club = Club.create!(
@@ -132,7 +144,8 @@ namespace :db do
       is_active: 1,
       club_type: 2,
       organization_id: framgiahn.id,
-      description: "Câu lạc bộ Intellect Game tại FramGia Hà Nội",
+      content: "Câu lạc bộ Intellect Game tại FramGia Hà Nội",
+      goal: "Mục tiêu câu lạc bộ giải trí",
       money: 0
     )
      music_club = Club.create!(
@@ -140,7 +153,8 @@ namespace :db do
       is_active: 1,
       club_type: 4,
       organization_id: framgiahn.id,
-      description: "Câu lạc bộ âm nhạc tại FramGia Hà Nội",
+      content: "Câu lạc bộ âm nhạc tại FramGia Hà Nội",
+      goal: "Mục tiêu câu lạc bộ giải trí",
       money: 0
     )
     UserOrganization.create!(

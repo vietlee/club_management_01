@@ -11,8 +11,8 @@
         <%= t "budget_now" %><%= number_to_vnd @club.money %>
       </h3>
       <p class="h3 animation-slideUp hidden-xs">
-        <% if @club.description.length > Settings.club_description %>
-          <%= @club.description.truncate(Settings.club_description).html_safe %>
+        <% if @club.content.length > Settings.club_description %>
+          <%= @club.content.truncate(Settings.club_description).html_safe %>
           <%= link_to "#modal-club-description", data: {toggle: "modal"},
             class: "btn btn-xs btn-default animation-fadeIn360" do %>
             <i class="fa fa-plus "></i> <%= t "more" %>

@@ -31,7 +31,7 @@
             <div class="form-group">
               <label class="col-md-3 control-label"><%= t "description" %></label>
               <div class="col-md-8">
-                <%= f.cktext_area :description, value: @club.description.html_safe,
+                <%= f.cktext_area :content, value: @club.content.html_safe,
                   class: "form-control", rows: Settings.edit_description %>
               </div>
             </div>

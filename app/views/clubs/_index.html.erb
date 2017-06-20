@@ -11,7 +11,7 @@
             <span class="portfolio-item-info">
               <strong class="border-name-club"><%= club.name %></strong>
               <div class="border-white-50"></div>
-              <%= club.description.truncate Settings.truncate_description %>
+              <%= club.content.truncate Settings.truncate_description %>
             </span>
           <% end %>
         </div>
