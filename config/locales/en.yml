@@ -680,3 +680,5 @@ en:
   errors:
     messages:
       extension_whitelist_error: "format errors"
+  organization_request: "Organizations request"
+  request: "Request"
