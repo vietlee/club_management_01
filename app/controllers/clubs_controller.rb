@@ -24,6 +24,7 @@ class ClubsController < ApplicationController
     @message = Message.new
     @user_club = UserClub.new
     @members = @club.user_clubs.joined
+    @history_budget = @club.events.without_notification(@club.events.notification).newest
   end
 
   protected

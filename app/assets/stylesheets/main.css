@@ -22,6 +22,18 @@ body {
 .suggest-club a {
   font-weight: bold;
 }
+.name-event a {
+  color: black;
+}
+.name-event a:hover {
+  color: #FF0072;
+  text-decoration: none;
+}
+.money-club {
+  width: 100px;
+  margin-top: 10px;
+  margin-left: 3px;
+}
 .required {
   color: red;
 }
@@ -942,6 +954,18 @@ ul.ul-breath li {
 .table-borderless tbody > tr > th,
 .table-borderless tbody > tr > td {
   border-top-width: 0;
+}
+.get-money-icon {
+  font-size: 10px!important;
+}
+.pay-money-icon {
+  font-size: 10px!important;
+}
+.red {
+  color: red;
+}
+.blue {
+  color: blue
 }
 .table thead > tr > th,
 .table tbody > tr > th,
@@ -1956,7 +1980,6 @@ li:last-child {
 .circle-profile {
   width: 200px;
   height: 200px;
-  background: red;
   -moz-border-radius: 50px;
   -webkit-border-radius: 50px;
   border-radius: 1000px;
