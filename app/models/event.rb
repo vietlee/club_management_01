@@ -23,6 +23,7 @@ class Event < ApplicationRecord
   scope :by_current_year, -> {where "year(created_at) = ?", Time.zone.now.year}
   scope :by_quarter, -> months {where("month(created_at) in (?)", months)}
   scope :of_category, -> event_category {where event_category: event_category}
+  scope :without_notification, -> event_categories {where.not event_category: event_categories}
 
   enum status: {inprocess: 0, finished: 1}
   enum event_category: {pay_money: 1, get_money: 2, notification: 3, subsidy: 0}

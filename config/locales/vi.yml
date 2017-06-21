@@ -855,3 +855,10 @@ vi:
   errors:
     messages:
       extension_whitelist_error: "Lỗi định dạng"
+  history_budget: "Lịch Sử Thu-Chi"
+  timeline: "Thời gian"
+  form: "Theo hình thức"
+  name_event: "Tên sự kiện"
+  money_first: "Tiền đầu kỳ"
+  money: "Số tiền"
+  money_last: "Số tiền  cuối kỳ"
