@@ -723,7 +723,7 @@ vi:
   budget: "Thu quỹ"
   get_data: "Lấy dữ liệu"
   no_data: "Xin lỗi,không tìm thấy dữ liệu!!!"
-  answer_admin_organization: "Bạn muốn thành viên này làm quản trị viên cho câu lạc bộ?"
+  answer_admin_organization: "Bạn muốn thành viên này làm quản trị viên cho tổ chức?"
   request_member: "Yêu cầu gia nhập"
   request_club: "Yêu cầu mở câu lạc bộ"
   add_admin: "Thêm người này làm admin"
@@ -851,7 +851,7 @@ vi:
   change_my_password: "Thay đổi mật khẩu của tôi"
   input_email_to_reset_password: "Nhập email cần thay đổi mật khẩu"
   logo: "Logo"
-  ratings: "Đánh gía"
+  ratings: "Đánh giá"
   errors:
     messages:
       extension_whitelist_error: "Lỗi định dạng"

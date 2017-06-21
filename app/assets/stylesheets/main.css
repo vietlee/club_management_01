@@ -127,6 +127,12 @@ h6 {
   width: 25px;
   height: 25px;
 }
+#decade2010 img {
+  width: 100%;
+}
+.akita img {
+  width: 100%;
+}
 .notifi strong {
   color: black;
 }

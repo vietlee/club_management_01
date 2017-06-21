@@ -104,9 +104,10 @@ textarea {
   text-align: center;
   color: #4d4e52;
   z-index: 0;
-  height: 700px;
+  height: 400px;
   width: 100%;
   top: 0;
+  padding-top: 70px;
   left: 0;
   z-index: 1;
   background-color: #1BBAE1;

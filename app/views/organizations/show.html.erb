@@ -82,12 +82,10 @@
                             class="table table-bordered">
                             <thead>
                               <tr>
-                                <th class="org-first-th"></th>
-                                <th><i class="fa fa-sort-alpha-desc"></i></th>
+                                <th class="org-first-th"><%= t "background" %></th>
+                                <th></i><%= t "name" %></th>
                                 <th>
-                                  <%= link_to "#", title: t("sort_by_rate") do %>
-                                    <i class="fa fa-star-half-o"></i>
-                                  <% end %>
+                                  <i class="fa fa-star-half-o"></i>
                                 </th>
                                 <th><%= t "description" %></th>
                               </tr>

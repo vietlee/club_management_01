@@ -98,4 +98,8 @@ class User < ApplicationRecord
       @errors = Settings.error_import
     end
   end
+
+  def password_required?
+    encrypted_password.blank? || encrypted_password_changed?
+  end
 end

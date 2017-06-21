@@ -13,6 +13,8 @@ class ClubsController < ApplicationController
     @q = clubs.search(params[:q])
     @clubs = @q.result.newest.page(params[:page]).per Settings.club_per_page
     @user_organizations = current_user.user_organizations.joined
+    @organizations = Organization.by_user_organizations(
+      current_user.user_organizations.joined)
   end
 
   def show
