@@ -93,7 +93,7 @@ pay_money: "pay_money"
 get_money: "get_money"
 max_exspene: 9
 tools_url: "http://education.framgia.vn/tools"
-club_description: 500
+club_description: 200
 organization_request:
   max_phone_number_length: 12
   min_phone_number_length: 3
@@ -101,11 +101,46 @@ organization_request:
   max_name_length: 255
   max_location_length: 255
 club_request:
-  min_description_length: 10
-  max_description_length: 255
+  min_content_length: 10
+  max_content_length: 1000
+  min_goal_length: 10
+  max_goal_length: 1000
+  min_rules_length: 10
+  max_rules_length: 1000
+  min_rule_finance_length: 10
+  max_rule_finance_length: 1000
+  min_punishment_length: 10
+  max_punishment_length: 1000
+  max_local_length: 255
+  min_plan_length: 10
+  max_plan_length: 1000
   max_name_length: 255
+  max_member: 1000
+club:
+  min_content_length: 10
+  max_content_length: 1000
+  min_goal_length: 10
+  max_goal_length: 1000
+  min_rules_length: 10
+  max_rules_length: 1000
+  min_rule_finance_length: 10
+  max_rule_finance_length: 1000
+  min_punishment_length: 10
+  max_punishment_length: 1000
+  min_plan_length: 10
+  max_plan_length: 1000
+  max_name_length: 255
+  max_member: 1000
 feed_back:
   min_content: 20
   max_content: 255
 red_class: "red"
 blue_class: "blue"
+days:
+  monday: "Monday"
+  tuesday: "Tuesday"
+  wednesday: "Wednesday"
+  thursday: "Thursday"
+  friday: "Friday"
+  satuday: "Satuday"
+  sunday: "Sunday"

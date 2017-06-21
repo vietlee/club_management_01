@@ -165,6 +165,18 @@ en:
   post_at: "Post at:"
   description_request: "Please describe the club (10 characters at least)"
   logo_club: "Club logo"
+  member_count: "Members"
+  local_club: "Location active of Club"
+  content_club: "Content active of Club"
+  rules_club: "Rules of Club"
+  punishment: "Punishment of Club"
+  plan: "Plan of club"
+  rule_finance: "Financial regulations"
+  time_join: "Specify the time of membership"
+  time_club: "Club activities periodically"
+  goal: "The goal of Club"
+  date:
+    day_names: [Monday, Tuesday, Wednesday, Thursday, Friday, Satuday, Sunday]
   for_ratings: "(Rating)"
   support: "Support"
   password: "Password"

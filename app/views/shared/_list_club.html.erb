@@ -21,8 +21,8 @@
             <%= club.name %>
           </span>
           <small class="pull-left site-description">
-            <%= link_to club, title: club.description.html_safe do %>
-              <%= club.description.truncate(Settings.truncate.club.description).html_safe %>
+            <%= link_to club, title: club.content.html_safe do %>
+              <%= club.content.truncate(Settings.truncate.club.description).html_safe %>
             <% end %>
           </small>
           <div>

@@ -899,3 +899,19 @@ table{
 .content-event{
   border-radius: 10px;
 }
+
+.logo-club {
+  margin-top: 15px;
+}
+
+.send-request-button {
+  margin-top: 15px;
+}
+
+.days-selector {
+  text-align: center;
+}
+
+.button-readmore-club {
+  margin-top: 10px;
+}

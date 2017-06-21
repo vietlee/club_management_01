@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170620063934) do
+ActiveRecord::Schema.define(version: 20170620133305) do
 
   create_table "activities", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "trackable_type"
@@ -89,6 +89,16 @@ ActiveRecord::Schema.define(version: 20170620063934) do
     t.integer  "club_type",                     default: 0
     t.datetime "created_at",                                null: false
     t.datetime "updated_at",                                null: false
+    t.integer  "member"
+    t.text     "goal",            limit: 65535
+    t.string   "local"
+    t.text     "content",         limit: 65535
+    t.string   "time_activity"
+    t.text     "rules",           limit: 65535
+    t.text     "rule_finance",    limit: 65535
+    t.text     "time_join",       limit: 65535
+    t.text     "punishment",      limit: 65535
+    t.text     "plan",            limit: 65535
     t.index ["organization_id"], name: "index_club_requests_on_organization_id", using: :btree
     t.index ["user_id"], name: "index_club_requests_on_user_id", using: :btree
   end
@@ -106,6 +116,16 @@ ActiveRecord::Schema.define(version: 20170620063934) do
     t.integer  "club_type",                     default: 0
     t.datetime "created_at",                                   null: false
     t.datetime "updated_at",                                   null: false
+    t.integer  "member"
+    t.text     "goal",            limit: 65535
+    t.string   "local"
+    t.text     "content",         limit: 65535
+    t.string   "time_activity"
+    t.text     "rules",           limit: 65535
+    t.text     "rule_finance",    limit: 65535
+    t.text     "time_join",       limit: 65535
+    t.text     "punishment",      limit: 65535
+    t.text     "plan",            limit: 65535
     t.index ["organization_id"], name: "index_clubs_on_organization_id", using: :btree
   end
 

@@ -17,9 +17,24 @@ class Club < ApplicationRecord
   mount_uploader :image, ImageUploader
   mount_uploader :logo, ImageUploader
 
+  serialize :time_activity, Array
+
   validates :name, presence: true, uniqueness: true
-  validates :description, presence: true,
-    length: {minimum: Settings.min_description}
+  validates :content, presence: true,
+    length: {minimum: Settings.club.min_content_length,
+      maximum: Settings.club.max_content_length}
+  validates :goal, presence: true,
+    length: {minimum: Settings.club.min_goal_length,
+      maximum: Settings.club.max_goal_length}
+  validates :goal, presence: true,
+    length: {minimum: Settings.club.min_goal_length,
+      maximum: Settings.club.max_goal_length}
+  validates :rules, length: {maximum: Settings.club.max_rules_length}
+  validates :rule_finance,
+    length: {maximum: Settings.club.max_rule_finance_length}
+  validates :punishment,
+    length: {maximum: Settings.club.max_punishment_length}
+  validates :plan, length: {maximum: Settings.club.max_plan_length}
 
   enum club_type: {hobbies: 8, sport: 1, game: 2, education: 3, music: 4,
     entertainment: 5, confidential: 6, junket: 7, other: 0}

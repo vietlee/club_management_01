@@ -437,6 +437,20 @@ vi:
   cant_create_organization: "Không thể tạo tổ chức"
   cant_approve: "Không thể chấp thuận yêu cầu, vui lòng xem lại thông tin yêu cầu và thử lại!"
   event: "Sự kiện"
+  member_count: "Số lượng thành viên tham gia"
+  local_club: "Địa điểm hoạt động"
+  content_club: "Nội dung hoạt động"
+  rules_club: "Quy định câu lạc bộ"
+  punishment: "Kỷ luật"
+  plan: "Kế hoạch"
+  rule_finance: "Quy định về tài chính"
+  time_join: "Quy định thời gian tham gia của thành viên"
+  time_club: "Câu lạc bộ sinh hoạt định kỳ vào ngày"
+  goal: "Mục tiêu"
+  goal_club: "Mục tiêu câu lục bộ"
+  time_member_join: "Quy định thời gian tham gia"
+  date:
+    day_names: [Thứ hai, Thứ ba, Thứ tư, Thứ năm, Thứ sáu, Thứ bảy, Chủ nhật]
   member:
     clubs: "Câu lạc bộ đã tham gia"
     show: "Thành viên"
@@ -539,7 +553,22 @@ vi:
         phone: "Số điện thoại"
       club_request:
         name: "Tên câu lạc bộ"
-        description: "Mô tả"
+        content: "Nội dung hoạt động"
+        goal: "Mục tiêu"
+        rules: "Quy định câu lạc bộ"
+        rule_finance: "Quy định về tài chính"
+        punishment: "Kỉ luật"
+        plan: "Kế hoạch"
+        member: "Số lượng thành viên"
+      club:
+        name: "Tên câu lạc bộ"
+        content: "Nội dung hoạt động"
+        goal: "Mục tiêu"
+        rules: "Quy định câu lạc bộ"
+        rule_finance: "Quy định về tài chính"
+        punishment: "Kỉ luật"
+        plan: "Kế hoạch"
+        member: "Thành viên"
       organization:
         name: "Tên tổ chức"
         email: "Email"
@@ -589,11 +618,38 @@ vi:
               taken: " đã tồn tại"
               blank: " không được bỏ trống"
               too_short: *too_short
-              too_long: *too_short
-            description:
+              too_long: *too_long
+            content:
               blank: " không được bỏ trống"
               too_short: *too_short
               too_long: *too_long
+            goal:
+              blank: " không được bỏ trống"
+              too_short: *too_short
+              too_long: *too_long
+            rules:
+              blank: " không được bỏ trống"
+              too_short: *too_short
+              too_long: *too_long
+            rule_finance:
+              blank: " không được bỏ trống"
+              too_short: *too_short
+              too_long: *too_long
+            punishment:
+              blank: " không được bỏ trống"
+              too_short: *too_short
+              too_long: *too_long
+            local:
+              blank: " không được bỏ trống"
+              too_short: *too_short
+              too_long: *too_long
+            plan:
+              blank: " không được bỏ trống"
+              too_short: *too_short
+              too_long: *too_long
+            member:
+              less_than_or_equal_to: " quá lớn (phải nhỏ hơn %{count})"
+              not_a_number: " phải là một số"
         event:
           attributes:
             name:
