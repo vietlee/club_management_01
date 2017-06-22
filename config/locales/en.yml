@@ -174,7 +174,8 @@ en:
   rule_finance: "Financial regulations"
   time_join: "Specify the time of membership"
   time_club: "Club activities periodically"
-  goal: "The goal of Club"
+  goal: "Goal"
+  goal_club: "The goal of Club"
   date:
     day_names: [Monday, Tuesday, Wednesday, Thursday, Friday, Satuday, Sunday]
   for_ratings: "(Rating)"

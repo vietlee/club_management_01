@@ -1,14 +1,14 @@
-<div id="modal-content-club" class="modal fade" tabindex="-1" role="dialog"
+<div id="modal-local-club" class="modal fade" tabindex="-1" role="dialog"
   aria-hidden="true">
   <div class="col-md-3"></div>
   <div class="col-md-6">
     <div class="modal-dialog edit-club">
       <div class="modal-content">
         <div class="modal-header text-center">
-          <h2 class="modal-title"><%= t "content_club" %></h2>
+          <h2 class="modal-title"><%= t "local_club" %></h2>
         </div>
         <div class="modal-body">
-          <p class="text-justify"><%= @club.content.html_safe %></p>
+          <p class="text-justify"><%= get_field_club @club.local %></p>
         </div>
       </div>
     </div>
@@ -25,7 +25,7 @@
           <h2 class="modal-title"><%= t "rules_club" %></h2>
         </div>
         <div class="modal-body">
-          <p class="text-justify"><%= @club.rules %></p>
+          <p class="text-justify"><%= get_field_club @club.rules %></p>
         </div>
       </div>
     </div>
@@ -42,7 +42,7 @@
           <h2 class="modal-title"><%= t "rule_finance" %></h2>
         </div>
         <div class="modal-body">
-          <p class="text-justify"><%= @club.rule_finance %></p>
+          <p class="text-justify"><%= get_field_club @club.rule_finance %></p>
         </div>
       </div>
     </div>
@@ -59,7 +59,7 @@
           <h2 class="modal-title"><%= t "time_member_join" %></h2>
         </div>
         <div class="modal-body">
-          <p class="text-justify"><%= @club.time_join %></p>
+          <p class="text-justify"><%= get_field_club @club.time_join %></p>
         </div>
       </div>
     </div>
@@ -76,7 +76,7 @@
           <h2 class="modal-title"><%= t "goal" %></h2>
         </div>
         <div class="modal-body">
-          <p class="text-justify"><%= @club.goal %></p>
+          <p class="text-justify"><%= get_field_club @club.goal %></p>
         </div>
       </div>
     </div>
@@ -93,7 +93,7 @@
           <h2 class="modal-title"><%= t "plan" %></h2>
         </div>
         <div class="modal-body">
-          <p class="text-justify"><%= @club.plan %></p>
+          <p class="text-justify"><%= get_field_club @club.plan %></p>
         </div>
       </div>
     </div>

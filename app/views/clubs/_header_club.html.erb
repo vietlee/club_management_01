@@ -21,11 +21,13 @@
         <%= render "ratings/rating" %>
       </span>
       <p class="h3 animation-slideUp hidden-xs description-club-text">
-        <%= @club.local.truncate(Settings.club_description).html_safe %>
-        <% if @club.local.length > Settings.club_description %>
-          <%= link_to "#modal-club-location", data: {toggle: "modal"},
-            class: "btn btn-sm btn-default animation-fadeIn360" do %>
-            <i class="fa fa-plus "></i> <%= t "more" %>
+        <% unless @club.content.nil? %>
+          <%= @club.content.truncate(Settings.club_description).html_safe %>
+          <% if @club.content.length > Settings.club_description %>
+            <%= link_to "#modal-content-club", data: {toggle: "modal"},
+              class: "btn btn-sm btn-default animation-fadeIn360" do %>
+              <i class="fa fa-plus "></i> <%= t "more" %>
+            <% end %>
           <% end %>
         <% end %>
       </p>
@@ -36,10 +38,6 @@
   <%= image_tag @club.image, class: "media-image animation-pulseSlow" %>
 </div>
 <div class="pull-right button-readmore-club">
-  <%= link_to "#modal-content-club", data: {toggle: "modal"},
-    class: "btn btn-sm btn-default animation-fadeIn360" do %>
-    <i class="fa fa-plus-square"></i> <%= t "content_club" %>
-  <% end %>
   <%= link_to "#modal-goal-club", data: {toggle: "modal"},
     class: "btn btn-sm btn-default animation-fadeIn360" do %>
     <i class="fa fa-line-chart"></i> <%= t "goal" %>
@@ -47,6 +45,10 @@
   <%= link_to "#modal-plan-club", data: {toggle: "modal"},
     class: "btn btn-sm btn-default animation-fadeIn360" do %>
     <i class="fa fa-file-word-o"></i> <%= t "plan" %>
+  <% end %>
+  <%= link_to "#modal-local-club", data: {toggle: "modal"},
+    class: "btn btn-sm btn-default animation-fadeIn360" do %>
+    <i class="fa fa-home"></i> <%= t "local_club" %>
   <% end %>
   <%= link_to "#modal-rules-club", data: {toggle: "modal"},
     class: "btn btn-sm btn-default animation-fadeIn360" do %>
@@ -61,7 +63,7 @@
     <i class="fa fa-handshake-o"></i> <%= t "time_member_join" %>
   <% end %>
 </div>
-<div id="modal-club-location" class="modal fade" tabindex="-1" role="dialog"
+<div id="modal-content-club" class="modal fade" tabindex="-1" role="dialog"
   aria-hidden="true">
   <%= render "popups/location" %>
 </div>

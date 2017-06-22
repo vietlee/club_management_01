@@ -64,9 +64,9 @@
             <div class="col-md-12">
               <p><label for="contact-message"><%= t "time_club" %></label></p>
               <div class="days-selector">
-              <% for day in I18n.t('date.day_names') %>
-                <%= check_box_tag 'club_request[time_activity][]',
-                  day %>
+                <% for day in I18n.t('date.day_names') %>
+                  <%= check_box_tag 'club_request[time_activity][]',
+                    day %>
                   <label><%= day %></label>
                 <% end %>
               </div>
