@@ -18,12 +18,10 @@
         </div>
         <div class="store-item-info clearfix block-club">
           <span class="store-item-price themed-color-dark pull-left site-span">
-            <%= club.name %>
+            <%= link_to club.name, club %>
           </span>
           <small class="pull-left site-description">
-            <%= link_to club, title: club.content.html_safe do %>
-              <%= club.content.truncate(Settings.truncate.club.description).html_safe %>
-            <% end %>
+            <%= club.content.truncate(Settings.truncate.club.description).html_safe unless club.content.nil? %>
           </small>
           <div>
             <%= link_to club do %>

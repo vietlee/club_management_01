@@ -915,3 +915,10 @@ table{
 .button-readmore-club {
   margin-top: 10px;
 }
+.name-organization-link a{
+  color: #ff8533;
+}
+.name-organization-link a:hover{
+  text-decoration: none !important;
+  color: #808000;
+}

@@ -82,6 +82,10 @@ h6 {
 .site-description {
   width: 100%;
 }
+.site-span a:hover{
+  text-decoration: none !important;
+  color: #ff6600;
+}
 .tag {
   border: 1px solid #1bbae1;
   background-color: #1bbae1;

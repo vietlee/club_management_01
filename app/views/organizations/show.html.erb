@@ -104,7 +104,7 @@
                                   </td>
                                   <td>
                                     <%= club.rating.round Settings.round_float %></td>
-                                  <td><%= club.content.truncate(Settings.truncate.club.description).html_safe %></td>
+                                  <td><%= club.content.truncate(Settings.truncate.club.description).html_safe unless club.content.nil? %></td>
                                 </tr>
                               <% end %>
                             </tbody>
