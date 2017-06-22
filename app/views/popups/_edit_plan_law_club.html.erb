@@ -1,0 +1,50 @@
+<%= javascript_include_tag "bootstrap-tagsinput.js",
+  "data-turbolinks-track" => true %>
+<div class="col-md-3"></div>
+<div class="col-md-6">
+  <div class="modal-dialog edit-club">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h2 class="modal-title"><i class="fa fa-pencil"></i>
+          <%= t "edit_rule" %>
+        </h2>
+      </div>
+      <div class="modal-body">
+        <%= form_for [:club_manager, @club],
+          html: {multipart: true, enctype: "multipart/form-data",
+          class: "form-horizontal form-bordered"} do |f| %>
+          <fieldset>
+            <div class="form-group">
+              <label class="col-md-3 control-label">
+                <%= t "plan" %>
+              </label>
+              <div class="col-md-8">
+                <%= f.cktext_area :plan,
+                  value: get_field_club(@club.rules),
+                  class: "form-control", rows: Settings.edit_description %>
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="col-md-3 control-label">
+                <%= t "punishment" %>
+              </label>
+              <div class="col-md-8">
+                <%= f.cktext_area :punishment,
+                  value: get_field_club(@club.punishment),
+                  class: "form-control", rows: Settings.edit_description %>
+              </div>
+            </div>
+          </fieldset>
+          <div class="form-group form-actions">
+            <div class="col-xs-12 text-right">
+              <%= f.button t("close"), class: "btn btn-sm btn-warning",
+                "data-dismiss": "modal" %>
+              <%= f.button t("save"), class: "btn btn-sm btn-primary" %>
+            </div>
+          </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="col-md-3"></div>

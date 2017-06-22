@@ -45,6 +45,16 @@
   </section>
   <%= image_tag @club.image, class: "media-image animation-pulseSlow" %>
 </div>
+<div class="pull-right button-readmore-club">
+  <%= link_to "#modal-plan-law-club", data: {toggle: "modal"},
+    class: "btn btn-sm btn-info animation-fadeIn360" do %>
+    <i class="fa fa-pencil-square-o"></i> <%= t "plan_law" %>
+  <% end %>
+  <%= link_to "#modal-edit-rule-club", data: {toggle: "modal"},
+    class: "btn btn-sm btn-info animation-fadeIn360" do %>
+    <i class="fa fa-pencil-square-o"></i> <%= t "edit_rule" %>
+  <% end %>
+</div>
 <div class="block ">
   <ul class="nav nav-tabs" role="tablist">
     <li role="presentation" class="active">
@@ -136,4 +146,12 @@
 <div id="modal-club-description" class="modal fade" tabindex="-1" role="dialog"
   aria-hidden="true">
   <%= render "popups/location" %>
+</div>
+<div id="modal-edit-rule-club" class="modal fade" tabindex="-1" role="dialog"
+  aria-hidden="true">
+  <%= render "popups/edit_rule_club" %>
+</div>
+<div id="modal-plan-law-club" class="modal fade" tabindex="-1" role="dialog"
+  aria-hidden="true">
+  <%= render "popups/edit_plan_law_club" %>
 </div>

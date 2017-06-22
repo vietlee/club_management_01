@@ -14,7 +14,7 @@ class UserOrganization < ApplicationRecord
   scope :newest, -> {order created_at: :desc}
 
   delegate :full_name, :avatar, :email, :phone, to: :user, allow_nil: :true
-  delegate :name, :description, :phone, :logo, to: :organization, allow_nil: :true
+  delegate :name, :description, :phone, :email, :logo, to: :organization, allow_nil: :true
 
   class << self
     def join? organization

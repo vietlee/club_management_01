@@ -297,6 +297,7 @@ vi:
   submit: "Gửi"
   edit: "Sửa"
   date:
+    day_names: [Thứ hai, Thứ ba, Thứ tư, Thứ năm, Thứ sáu, Thứ bảy, Chủ nhật]
     formats:
       date: "%H:%m %d/%m/%Y"
       date_time_utc: "%d/%m/%Y %H:%m"
@@ -447,10 +448,10 @@ vi:
   time_join: "Quy định thời gian tham gia của thành viên"
   time_club: "Câu lạc bộ sinh hoạt định kỳ vào ngày"
   goal: "Mục tiêu"
+  edit_rule: "Chỉnh sửa quy định"
   goal_club: "Mục tiêu câu lục bộ"
+  plan_law: "Kế hoạch & kỷ lụât"
   time_member_join: "Quy định thời gian tham gia"
-  date:
-    day_names: [Thứ hai, Thứ ba, Thứ tư, Thứ năm, Thứ sáu, Thứ bảy, Chủ nhật]
   member:
     clubs: "Câu lạc bộ đã tham gia"
     show: "Thành viên"
@@ -613,6 +614,44 @@ vi:
             location:
               too_long: *too_long
         club_request:
+          attributes:
+            name:
+              taken: " đã tồn tại"
+              blank: " không được bỏ trống"
+              too_short: *too_short
+              too_long: *too_long
+            content:
+              blank: " không được bỏ trống"
+              too_short: *too_short
+              too_long: *too_long
+            goal:
+              blank: " không được bỏ trống"
+              too_short: *too_short
+              too_long: *too_long
+            rules:
+              blank: " không được bỏ trống"
+              too_short: *too_short
+              too_long: *too_long
+            rule_finance:
+              blank: " không được bỏ trống"
+              too_short: *too_short
+              too_long: *too_long
+            punishment:
+              blank: " không được bỏ trống"
+              too_short: *too_short
+              too_long: *too_long
+            local:
+              blank: " không được bỏ trống"
+              too_short: *too_short
+              too_long: *too_long
+            plan:
+              blank: " không được bỏ trống"
+              too_short: *too_short
+              too_long: *too_long
+            member:
+              less_than_or_equal_to: " quá lớn (phải nhỏ hơn %{count})"
+              not_a_number: " phải là một số"
+        club:
           attributes:
             name:
               taken: " đã tồn tại"

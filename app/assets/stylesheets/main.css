@@ -2072,3 +2072,10 @@ li:last-child {
   background-color: #daf2e4;
   border-color: #b8e5cb;
 }
+
+.edit-name-member {
+  margin-top: 15px;
+}
+.input-member-edit {
+  margin-top: 10px;
+}

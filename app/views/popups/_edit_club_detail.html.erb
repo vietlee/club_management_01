@@ -63,10 +63,28 @@
               <p><label for="contact-message"><%= t "time_club" %></label></p>
               <div class="days-selector">
                 <% for day in I18n.t("date.day_names") %>
-                    <%= check_box_tag "club[time_activity][]",
-                      day, check_date(@club.time_activity, day) %>
+                  <%= check_box_tag "club[time_activity][]",
+                    day, check_date(@club.time_activity, day) %>
                     <label><%= day %></label>
-                  <% end %>
+                <% end %>
+              </div>
+            </div>
+            <div class="col-md-12">
+              <label for="contact-message"><%= t "local_club" %></label>
+              <%= f.text_area :local, value: @club.local, placeholder: t("local_club"),
+                class: "form-control input-lg",
+                id: "contact-message", row: 10 %>
+            </div>
+            <br>
+            <div class="col-md-12">
+              <div class="col-md-6 edit-name-member">
+                <label for="contact-name"><%= t "member_count" %>
+                </label>
+              </div>
+              <div class="col-md-3 input-member-edit">
+                <%= f.number_field :member, value: @club.member,
+                  placeholder: t("member_count"),
+                  class: "form-control", id: "contact-name", min: 0 %>
               </div>
             </div>
           </fieldset>
