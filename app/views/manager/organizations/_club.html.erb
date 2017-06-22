@@ -24,7 +24,7 @@
                 class: "circle-profile-list" %></td>
               <td><%= club.name %></a></td>
               <td><%= club.notification %></td>
-              <td><%= club.content.truncate(Settings.event_truncate).html_safe %></td>
+              <td><%= club.content.truncate(Settings.event_truncate).html_safe unless club.content.nil? %></td>
               <td class="text-center">
                 <%= link_to t("view"), manager_club_path(club.id),
                   class: "btn btn-primary" %>

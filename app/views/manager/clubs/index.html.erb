@@ -24,7 +24,7 @@
                 class: "circle-profile-list" %></td>
               <td><%= club.name %></a></td>
               <td><%= club.notification %></td>
-              <td><%= club.content %></td>
+              <td><%= get_field_club club.content %></td>
               <td class="text-center">
                 <%= link_to t("view"), manager_club_path(club.id),
                   class: "btn btn-primary" %>
