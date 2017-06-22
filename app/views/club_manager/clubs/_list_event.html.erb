@@ -26,7 +26,8 @@
         </h5>
       <% end %>
       <div class="inside-div description-event">
-        <%= event_club.description.truncate(Settings.event_truncate).html_safe %><br>
+        <%= event_club.description.truncate(Settings.event_truncate)
+          .html_safe unless event_club.description.nil? %><br>
         <%= link_to t("view_more"),
           club_manager_club_event_path(club_id: @club.id, id: event_club.id) %>
       </div>
