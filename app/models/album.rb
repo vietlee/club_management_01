@@ -7,4 +7,5 @@ class Album < ApplicationRecord
   validates :name, presence: true, length: {minimum: Settings.min_name}
 
   scope :newest, -> {order created_at: :desc}
+  accepts_nested_attributes_for :images
 end

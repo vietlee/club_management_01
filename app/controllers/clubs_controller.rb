@@ -18,15 +18,15 @@ class ClubsController < ApplicationController
   end
 
   def show
-    events = @club.events
-    @q = events.search(params[:q])
+    list_events = @club.events
+    @q = list_events.search(params[:q])
     @events = @q.result.newest.page(params[:page]).per Settings.per_page
     @time_line_events = @events.by_current_year.group_by_quarter
     @messages = @club.messages.take(Settings.chat_messages_limit)
     @message = Message.new
     @user_club = UserClub.new
     @members = @club.user_clubs.joined
-    @history_budget = @club.events.without_notification(@club.events.notification).newest
+    @history_budget = @club.events.without_notification(Settings.notification).newest
   end
 
   protected

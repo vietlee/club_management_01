@@ -956,4 +956,7 @@ vi:
   name_event: "Tên sự kiện"
   money_first: "Tiền đầu kỳ"
   money: "Số tiền"
-  money_last: "Số tiền  cuối kỳ"
+  money_last: "Số tiền cuối kỳ"
+  not_found_album: "Không tìm thấy bộ sưu tập!"
+  add_images_successfully: "Thêm ảnh thành công!"
+  error_in_process: "Có lỗi, vui lòng thử lại!"

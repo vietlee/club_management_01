@@ -9,7 +9,7 @@ class ClubManager::AlbumsController < BaseClubManagerController
   end
 
   def show
-    @images = @album.images.page(params[:page]).per Settings.per_page_image
+    @images = @album.images.newest.page(params[:page]).per Settings.per_page_image
     @image = Image.new
   end
 
