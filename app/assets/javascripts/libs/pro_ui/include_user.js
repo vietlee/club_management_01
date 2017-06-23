@@ -1,4 +1,16 @@
 $(document).on('turbolinks:load', function() {
+  $('#q_name_or_content_cont').on('keyup',function(e) {
+    SearchClub();
+  });
+
+  $('.stype-clubs').on('change',function(e) {
+    SearchClub();
+  });
+
+  $('.stype-organizations').on('change',function(e) {
+    SearchClub();
+  });
+
   $('input.rating[type=number]').rating();
 
   $(document).on('change', '#file-upload', function(e) {
@@ -95,3 +107,13 @@ $(document).on('turbolinks:load', function() {
 $(document).ready(function() {
   TablesDatatables.init();
 });
+
+function SearchClub() {
+  var search = $('.form-search-clubs').val()
+  var stype_clubs = $('.stype-clubs').val();
+  var stype_organizations = $('.stype-organizations').val();
+  var data = {q: {name_or_content_cont: search,
+    club_type_eq: stype_clubs,organization_id_eq: stype_organizations}}
+  $.get($(this).attr('action'), data , null, 'script');
+  return false;
+}
