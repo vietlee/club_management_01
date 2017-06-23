@@ -26,6 +26,14 @@
           <%= render "clubs/tags" %>
           <%= render "events/nav_events" %>
           <%= render "clubs/budget" %>
+          <div class="text-center sidebar-block">
+            <%= link_to club_albums_path(club_id: @club.id),
+              class: "btn btn-primary", target: "_blank" do %>
+              <i class="fa fa-camera" aria-hidden="true"></i>
+              <%= t("albums") %>
+            <% end %>
+          </div>
+          </hr>
           <%= render "events/members" %>
         </aside>
       </div>

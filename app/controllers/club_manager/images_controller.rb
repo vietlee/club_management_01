@@ -1,17 +1,19 @@
 class ClubManager::ImagesController < ApplicationController
   before_action :user_signed_in
   before_action :load_image, except: :create
-  before_action :load_album, only: :destroy
+  before_action :load_album, only: [:destroy, :create]
 
   def create
-    image = Image.new image_params
-    if image.save
-      create_acivity image, Settings.create, image.album.club, current_user
-      flash[:success] = t "club_manager.image.success_create"
-    else
-      flash_error image
+    ActiveRecord::Base.transaction do
+      params[:images]["url"].each do |img|
+        @album.images.create!(url: img)
+        flash[:success] = t("add_images_successfully")
+      end
+      redirect_to club_manager_club_album_path id: @album.id
     end
-    redirect_to club_manager_club_album_path id: image.album_id
+    rescue
+      flash[:danger] = t("error_in_process")
+      redirect_to :back
   end
 
   def destroy
@@ -24,7 +26,6 @@ class ClubManager::ImagesController < ApplicationController
   end
 
   private
-
   def image_params
     params.require(:image).permit :name, :url, :user_id, :album_id
   end
@@ -39,7 +40,7 @@ class ClubManager::ImagesController < ApplicationController
 
   def load_album
     @album = Album.find_by id: params[:album_id]
-    unless @image
+    unless @album
       flash[:danger] = t "not_found_album"
       redirect_to root_path
     end

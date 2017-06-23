@@ -701,3 +701,5 @@ en:
   name_event: "Name of event"
   money_first: "First money"
   money: "Money"
+  add_images_successfully: "Successfull!"
+  error_in_process: "Error, please try again!"
