@@ -123,6 +123,8 @@ en:
   organization_management: "Organization management"
   club_management: "Club Management"
   organization_question: "Do you want to ask for a new organization??"
+  organization_filter: "Filter organizations"
+  style_filter: "Filter style club"
   organization_sign: "Organization"
   select_one_organization: "Select Organization"
   full_name: "Full Name"

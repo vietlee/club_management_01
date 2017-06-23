@@ -8,5 +8,9 @@ class MyClubsController < ApplicationController
     @clubs = @q.result.newest.page(params[:page]).per Settings.club_per_page
     @organizations = Organization.by_user_organizations(
       current_user.user_organizations.joined)
+    respond_to do |format|
+      format.html
+      format.js
+    end
   end
 end

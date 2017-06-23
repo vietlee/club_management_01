@@ -120,6 +120,8 @@ vi:
   organization_address: "Địa chỉ tổ chức"
   organization_email: "Hòm thư điện tử tổ chức"
   organization_phone: "Số điện thoại tổ chức"
+  organization_filter: "Lọc theo tổ chức"
+  style_filter: "Lọc theo thể loại"
   comment_fail: "Không thể bình luận, vui lòng kiểm tra lại!!"
   delete_succsess: "Xóa thành công!"
   un_approve: "Chưa được giải quyết"
