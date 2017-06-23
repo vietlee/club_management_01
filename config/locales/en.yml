@@ -176,8 +176,6 @@ en:
   time_club: "Club activities periodically"
   goal: "Goal"
   goal_club: "The goal of Club"
-  date:
-    day_names: [Monday, Tuesday, Wednesday, Thursday, Friday, Satuday, Sunday]
   for_ratings: "(Rating)"
   support: "Support"
   password: "Password"
@@ -306,6 +304,7 @@ en:
   submit: "Submit"
   edit: "Edit"
   date:
+    day_names: [Monday, Tuesday, Wednesday, Thursday, Friday, Satuday, Sunday]
     formats:
       date: "%H:%m %d/%m/%Y"
       date_time_utc: "%d/%m/%Y %H:%m"
