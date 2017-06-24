@@ -10,7 +10,7 @@ class Manager::MembersController < BaseOrganizationManagerController
     @user = User.find_by id: params[:id]
     unless @user
       flash[:danger] = t("not_found_user")
-      redirect_to request.referrer
+      redirect_to request.referer
     end
     @organizations = @user.organizations
     @user_organization = UserOrganization.find_with_user_of_company params[:id],
@@ -21,7 +21,8 @@ class Manager::MembersController < BaseOrganizationManagerController
     if params[:status].blank?
       user = @user.update_attributes is_admin: true
       OrganizationMailer.mail_to_user_admin_organization(
-        @user.user, @organization).deliver_later
+        @user.user, @organization
+      ).deliver_later
     else
       user = @user.update_attributes status: params[:status].to_i
       if params[:status].to_i == UserOrganization.statuses[:joined]
@@ -50,7 +51,7 @@ class Manager::MembersController < BaseOrganizationManagerController
     @user = UserOrganization.find_by id: params[:id]
     unless @user
       flash[:danger] = t("user_organization_not_found")
-      redirect_to request.referrer
+      redirect_to request.referer
     end
   end
 
@@ -58,7 +59,7 @@ class Manager::MembersController < BaseOrganizationManagerController
     @organization = Organization.find_by id: params[:organization_id]
     unless @organization
       flash[:danger] = t("not_found_organization")
-      redirect_to request.referrer
+      redirect_to request.referer
     end
   end
 end

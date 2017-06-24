@@ -2,7 +2,6 @@ class ClubManager::EventsController < BaseClubManagerController
   before_action :load_club
   before_action :correct_manager
   before_action :load_event, except: [:index, :create, :new]
-  before_action :is_finished, only: :edit
 
   def index
     unless @club
@@ -14,6 +13,10 @@ class ClubManager::EventsController < BaseClubManagerController
   end
 
   def edit
+    if @event.finished?
+      flash[:danger] = t "event_is_finish"
+      redirect_to :back
+    end
   end
 
   def new
@@ -26,9 +29,9 @@ class ClubManager::EventsController < BaseClubManagerController
     if event.save
       create_acivity event, Settings.create, event.club, current_user
       if params[:event][:event_category].to_i == Event.event_categories[:pay_money]
-        @club.money_pay(@club, params[:event][:expense].to_i)
+        @club.money_pay(params[:event][:expense].to_i)
       elsif params[:event][:event_category].to_i == Event.event_categories[:subsidy]
-        @club.money_subsidy(@club, params[:event][:expense].to_i)
+        @club.money_subsidy(params[:event][:expense].to_i)
       end
       flash[:success] = t "club_manager.event.success_create"
       redirect_to club_manager_club_path params[:club_id]
@@ -52,9 +55,9 @@ class ClubManager::EventsController < BaseClubManagerController
       flash[:success] = t "club_manager.event.success_update"
       redirect_to club_manager_club_event_path(id: @event.id)
     end
-    rescue
-      flash_error @event
-      redirect_to :back
+  rescue
+    flash_error @event
+    redirect_to :back
   end
 
   def show
@@ -83,13 +86,7 @@ class ClubManager::EventsController < BaseClubManagerController
   def event_params
     event_category = params[:event][:event_category].to_i
     params.require(:event).permit(:club_id, :name, :date_start, :status,
-      :expense, :date_end, :location, :description, :image, :user_id).merge! event_category: event_category
-  end
-
-  def is_finished
-    if @event.finished?
-      flash[:danger] = t "event_is_finish"
-      redirect_to :back
-    end
+      :expense, :date_end, :location, :description, :image, :user_id)
+      .merge! event_category: event_category
   end
 end

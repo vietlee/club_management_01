@@ -1,6 +1,6 @@
 class ApproveOrganizationService
   def initialize organization_request
-    @organization_request= organization_request
+    @organization_request = organization_request
     @user = @organization_request.user
   end
 
@@ -19,5 +19,4 @@ class ApproveOrganizationService
       organization_id: organization_id, is_admin: true
     @user_organization.joined!
   end
-
 end

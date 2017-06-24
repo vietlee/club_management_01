@@ -4,7 +4,7 @@ class Message < ApplicationRecord
 
   after_create :send_message
 
-  scope :newest, -> {order created_at: :desc}
+  scope :newest, ->{order created_at: :desc}
 
   delegate :full_name, to: :user, prefix: :user
 

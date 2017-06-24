@@ -3,7 +3,8 @@ class MessagesController < ApplicationController
   before_action :load_club
 
   def index
-    @messages = @club.messages.newest.limit(Settings.messages_load_more).offset params[:num_message].to_i
+    @messages = @club.messages.newest.limit(Settings.messages_load_more)
+      .offset params[:num_message].to_i
   end
 
   private

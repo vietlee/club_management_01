@@ -1,6 +1,6 @@
 module ApplicationHelper
   def devise_error_messages!
-    resource.errors.full_messages.map { |msg| content_tag(:li, msg) }.join
+    resource.errors.full_messages.map{|msg| content_tag(:li, msg)}.join
   end
 
   def resource_name
@@ -42,17 +42,15 @@ module ApplicationHelper
 
   def sort_suggest array_club
     h = Hash.new(0)
-    array_club.each {| v | h.store(v, h[v]+1)}
+    array_club.each{|v| h.store(v, h[v] + 1)}
     h = Hash[h.sort_by{|_, v| -v}]
-    a = h.map(&:flatten)
+    h.map(&:flatten)
   end
 
   def club_suggest_user_tag
     clubs = []
-    sort_suggest(current_user.tags_clubs).each do |club, s|
-      unless current_user.user_clubs.of_club(club)
-        clubs << club
-      end
+    sort_suggest(current_user.tags_clubs).each do |club, _s|
+      clubs << club unless current_user.user_clubs.of_club(club)
     end
     clubs
   end

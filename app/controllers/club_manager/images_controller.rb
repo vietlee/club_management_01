@@ -11,9 +11,9 @@ class ClubManager::ImagesController < ApplicationController
       end
       redirect_to club_manager_club_album_path id: @album.id
     end
-    rescue
-      flash[:danger] = t("error_in_process")
-      redirect_to :back
+  rescue
+    flash[:danger] = t("error_in_process")
+    redirect_to :back
   end
 
   def destroy

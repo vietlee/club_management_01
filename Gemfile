@@ -32,13 +32,15 @@ gem "roo"
 gem "roo-xls"
 gem "activerecord-import"
 gem "ransack"
+gem "mysql2"
+
 source "https://rails-assets.org" do
   gem "rails-assets-chosen"
 end
 gem "redis"
 
 group :production do
-  gem "pg"
+  # gem "pg"
   gem "rails_12factor"
 end
 
@@ -51,7 +53,6 @@ group :development, :test do
 end
 
 group :development do
-  gem "mysql2"
   gem "web-console"
   gem "listen", "~> 3.0.5"
   gem "spring"
@@ -59,11 +60,22 @@ group :development do
 end
 
 group :test do
-  gem "shoulda-matchers", "~> 3.0", require: false, github: 'thoughtbot/shoulda-matchers'
+  gem "shoulda-matchers", "~> 3.0", require: false, github: "thoughtbot/shoulda-matchers"
   gem "database_cleaner", "~> 1.5"
   gem "rails-controller-testing"
   gem "rspec-activemodel-mocks"
   gem "simplecov", require: false
+  gem "bundler-audit"
+
+  gem "pronto"
+  gem "pronto-rubocop", require: false
+  gem "pronto-flay", require: false
+  gem "pronto-brakeman", require: false
+  gem "pronto-rails_best_practices", require: false
+  gem "pronto-reek", require: false
+  gem "scss_lint", require: false
+  gem "pronto-scss", require: false
+  gem "pronto-eslint", require: false
 end
 
 gem "tzinfo-data", platforms: [:mingw, :mswin, :x64_mingw, :jruby]

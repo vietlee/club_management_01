@@ -1,6 +1,6 @@
 class UpdateClubMoneyService
   def initialize event, club, event_params
-    @event= event
+    @event = event
     @club = club
     @event_params = event_params
   end

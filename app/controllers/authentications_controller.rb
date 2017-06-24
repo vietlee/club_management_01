@@ -4,7 +4,7 @@ class AuthenticationsController < Devise::SessionsController
   def new
   end
 
-  def after_sign_in_path_for(resource)
+  def after_sign_in_path_for _resource
     my_clubs_path
   end
 end

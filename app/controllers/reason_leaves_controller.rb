@@ -24,9 +24,7 @@ class ReasonLeavesController < ApplicationController
   end
 
   def destroy_user_club
-    unless @user_club.destroy
-      flash_error @user_club
-    end
+    flash_error @user_club unless @user_club.destroy
   end
 
   def load_user_club

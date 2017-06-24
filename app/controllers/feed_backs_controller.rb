@@ -18,6 +18,7 @@ class FeedBacksController < ApplicationController
 
   private
   def feed_back_params
-    params.require(:feed_back).permit(:content, :description).merge!(user_id: current_user.id, type_feed_back: params[:type].to_i)
+    params.require(:feed_back).permit(:content, :description)
+      .merge!(user_id: current_user.id, type_feed_back: params[:type].to_i)
   end
 end

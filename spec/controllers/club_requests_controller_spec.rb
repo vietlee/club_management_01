@@ -3,7 +3,9 @@ require "rails_helper"
 RSpec.describe ClubRequestsController, type: :controller do
   let!(:user){FactoryGirl.create :user}
   let!(:organization1){FactoryGirl.create :organization}
-  let!(:user_organization1){FactoryGirl.create :user_organization, user_id: user.id, organization_id: organization1.id}
+  let!(:user_organization1) do
+    FactoryGirl.create :user_organization, user_id: user.id, organization_id: organization1.id
+  end
 
   before do
     sign_in user
@@ -18,14 +20,14 @@ RSpec.describe ClubRequestsController, type: :controller do
       user.club_requests
     end
     it "responds successfully" do
-      get :index, user_id: user.id, format: :js
+      get :index, params: {user_id: user.id, format: :js}
       expect(response).to be_ok
     end
   end
 
   describe "GET #new" do
     it "responds successfully" do
-      get :new, user_id: user.id
+      get :new, params: {user_id: user.id}
       expect(response).to render_template(:new)
     end
   end
@@ -35,7 +37,7 @@ RSpec.describe ClubRequestsController, type: :controller do
       it "create new club request" do
         request_params = FactoryGirl.attributes_for(:club_request)
         expect do
-          post :create, club_request: :request_params, user_id: user.id
+          post :create, params: {club_request: request_params, user_id: user.id}
         end.to change(ClubRequest, :count).by 1
         expect(flash[:success]).to be_present
       end
@@ -43,7 +45,7 @@ RSpec.describe ClubRequestsController, type: :controller do
       it "create fail with name nil" do
         request_params = FactoryGirl.attributes_for :club_request, name: nil
         expect do
-          post :create, :club_request => request_params, user_id: user.id
+          post :create, params: {club_request: request_params, user_id: user.id}
         end.to change(ClubRequest, :count).by 0
         expect(flash[:danger]).to be_present
       end

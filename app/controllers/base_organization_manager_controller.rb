@@ -23,7 +23,7 @@ class BaseOrganizationManagerController < ApplicationController
     @organization = Organization.find_by id: params[:organization]
     unless @organization
       flash[:danger] = t("not_found_organization")
-      redirect_to request.referrer
+      redirect_to request.referer
     end
   end
 end

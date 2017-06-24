@@ -7,6 +7,6 @@ class ClubChannel < ApplicationCable::Channel
   end
 
   def speak data
-    Message.create! content: data['message'], user: current_user, club_id: data['club_id']
+    Message.create! content: data["message"], user: current_user, club_id: data["club_id"]
   end
 end

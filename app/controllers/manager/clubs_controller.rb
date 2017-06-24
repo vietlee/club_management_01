@@ -14,7 +14,7 @@ class Manager::ClubsController < BaseOrganizationManagerController
     @club = Club.find_by id: params[:id]
     unless @club
       flash[:danger] = t("not_found_club")
-      redirect_to request.referrer
+      redirect_to request.referer
     end
     @organization = @club.organization
   end

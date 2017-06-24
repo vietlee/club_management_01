@@ -16,8 +16,8 @@ class Organization < ApplicationRecord
 
   mount_uploader :logo, ImageUploader
 
-  scope :newest, -> {order created_at: :desc}
-  scope :by_user_organizations, -> user_organizations do
+  scope :newest, ->{order created_at: :desc}
+  scope :by_user_organizations, ->user_organizations do
     where id: user_organizations.map(&:organization_id)
   end
 end

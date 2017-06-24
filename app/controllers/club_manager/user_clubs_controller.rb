@@ -28,9 +28,9 @@ class ClubManager::UserClubsController < BaseClubManagerController
       flash[:success] = t("add_user_successfully")
       redirect_back fallback_location: club_manager_path(@club)
     end
-    rescue
-      flash[:danger] = t("error_in_processing")
-      redirect_to :back
+  rescue
+    flash[:danger] = t("error_in_processing")
+    redirect_to :back
   end
 
   def destroy

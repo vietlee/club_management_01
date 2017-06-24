@@ -8,8 +8,8 @@ class Activity < ApplicationRecord
 
   after_create :push_notify
 
-  scope :of_user_clubs, -> user_clubs {where container_id: user_clubs.map(&:club_id).uniq}
-  scope :oder_by_read, -> {order read: :asc}
+  scope :of_user_clubs, ->user_clubs{where container_id: user_clubs.map(&:club_id).uniq}
+  scope :oder_by_read, ->{order read: :asc}
 
   delegate :name, to: :container, prefix: :container, allow_nil: :true
   delegate :name, to: :trackable, prefix: :trackable, allow_nil: :true

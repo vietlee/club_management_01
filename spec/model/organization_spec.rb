@@ -20,11 +20,11 @@ RSpec.describe Organization, type: :model do
   end
 
   context "validations" do
-    it { should validate_presence_of(:name) }
-    it { should validate_presence_of(:email) }
-    it { should validate_presence_of(:location) }
-    it { should validate_presence_of(:description) }
-    it {should validate_uniqueness_of(:name)}
+    it{should validate_presence_of(:name)}
+    it{should validate_presence_of(:email)}
+    it{should validate_presence_of(:location)}
+    it{should validate_presence_of(:description)}
+    it{should validate_uniqueness_of(:name)}
     it "is valid with a max lenght of name" do
       expect validate_length_of(:name)
         .is_at_most Settings.max_name
@@ -47,8 +47,14 @@ RSpec.describe Organization, type: :model do
     let!(:organization1){FactoryGirl.create :organization}
     let!(:organization2){FactoryGirl.create :organization}
     let!(:user1){FactoryGirl.create :user}
-    let!(:user_organization1){FactoryGirl.create :user_organization, user_id: user1.id, organization_id: organization1.id}
-    let!(:user_organization2){FactoryGirl.create :user_organization, user_id: user1.id, organization_id: organization2.id}
+    let!(:user_organization1) do
+      FactoryGirl.create :user_organization, user_id: user1.id,
+        organization_id: organization1.id
+    end
+    let!(:user_organization2) do
+      FactoryGirl.create :user_organization, user_id: user1.id,
+        organization_id: organization2.id
+    end
     it "by_user_organizations" do
       organizations = Organization.by_user_organizations(user1.user_organizations)
       expect(organizations).to eq [organization1, organization2]

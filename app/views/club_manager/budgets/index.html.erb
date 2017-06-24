@@ -20,7 +20,7 @@
             <div class="col-md-8" >
               <div class="form-group">
                 <%= select_tag :club_id,
-                  options_for_select(@clubs.collect{ |club| [club.name, club.id] }),
+                  options_for_select(@clubs.collect{|club| [club.name, club.id] }),
                   include_blank: t("select_one_club"), class: "select-chosen" %>
                 <%= hidden_field_tag :month_of_payment, nil, class: "month-payment" %>
               </div>
