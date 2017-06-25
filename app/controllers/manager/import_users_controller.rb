@@ -12,10 +12,9 @@ class Manager::ImportUsersController < BaseOrganizationManagerController
           flash[:success] = t("import_success")
         end
       end
-      redirect_to :back
     else
       flash[:danger] = t("import_file")
-      redirect_to :back
     end
+    redirect_to :back
   end
 end

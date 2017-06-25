@@ -3,7 +3,7 @@ class ClubManager::ClubBudgetsController < BaseClubManagerController
   before_action :load_event
 
   def index
-    unless params[:users].blank?
+    if params[:users].present?
       ActiveRecord::Base.transaction do
         params[:users].each do |user_id|
           @budget = Budget.create event_id: params[:event_id], user_id: user_id
@@ -32,9 +32,9 @@ class ClubManager::ClubBudgetsController < BaseClubManagerController
     if @budget_user
       if @budget_user.destroy
         @club.calculate_change_budget(@event)
-        flash[:success] = t ("success_process")
+        flash[:success] = t "success_process"
       else
-        flash[:danger] = t ("error_process")
+        flash[:danger] = t "error_process"
       end
     else
       flash[:danger] = t("not_found_user_budget")

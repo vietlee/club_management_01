@@ -1,6 +1,6 @@
 class RegistrationsController < Devise::RegistrationsController
   before_action :authenticate_user!
-  before_filter :configure_permitted_parameters
+  before_action :configure_permitted_parameters
 
   def create
     build_resource sign_up_params
@@ -17,7 +17,7 @@ class RegistrationsController < Devise::RegistrationsController
       end
     else
       clean_up_passwords resource
-      resource.errors.full_messages.each {|x| flash[x] = x}
+      resource.errors.full_messages.each{|x| flash[x] = x}
       redirect_to root_url
     end
   end

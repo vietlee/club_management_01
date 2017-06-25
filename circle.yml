@@ -1,0 +1,22 @@
+machine:
+  # ruby:
+  #   version:
+  #     2.4.0
+
+  environment:
+    CIRCLE_ENV: test
+# test:
+#   post:
+#     - chmod +x bin/run-rubocop.sh
+#     - bin/run-rubocop.sh
+#     - chmod +x bin/run-jscs.sh
+#     - bin/run-jscs.sh
+
+test:
+  post:
+    - chmod +x bin/cisetup.sh
+    - bin/cisetup.sh
+
+checkout:
+  post:
+    - git fetch origin --depth=1000000

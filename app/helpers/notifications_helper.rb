@@ -21,11 +21,11 @@ module NotificationsHelper
   def url_notification notification
     case notification.trackable_type
     when Settings.notification_event
-      url = club_event_path(id: notification.trackable_id, club_id: notification.container_id)
+      club_event_path(id: notification.trackable_id, club_id: notification.container_id)
     when Settings.notification_club
-      url = club_path(id: notification.container_id)
+      club_path(id: notification.container_id)
     else
-      url = club_albums_path(club_id: notification.container_id)
+      club_albums_path(club_id: notification.container_id)
     end
   end
 end

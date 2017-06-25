@@ -24,7 +24,7 @@ class UserOrganizationsController < ApplicationController
 
   def destroy
     user_organization = @organization.user_organizations
-    .find_by user_id: current_user.id
+      .find_by user_id: current_user.id
     if user_organization.destroy
       flash[:success] = t("cancel_success")
     else

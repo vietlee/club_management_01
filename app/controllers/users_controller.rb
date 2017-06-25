@@ -41,6 +41,7 @@ class UsersController < ApplicationController
 
   def load_organizations
     @organizaitons = Organization.by_user_organizations(
-      @user.user_organizations.joined)
+      @user.user_organizations.joined
+    )
   end
 end

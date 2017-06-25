@@ -6,5 +6,5 @@ class FeedBack < ApplicationRecord
 
   enum type_feed_back: [:other, :web_content, :process, :ui]
 
-  scope :newest, -> {order created_at: :desc}
+  scope :newest, ->{order created_at: :desc}
 end

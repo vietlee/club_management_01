@@ -22,5 +22,5 @@ class OrganizationRequest < ApplicationRecord
   delegate :full_name, to: :user, allow_nil: :true
 
   scope :unapprove, ->{where approve: false}
-  scope :newest, -> {order created_at: :desc}
+  scope :newest, ->{order created_at: :desc}
 end

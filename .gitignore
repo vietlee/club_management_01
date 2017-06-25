@@ -60,4 +60,8 @@ public/assets
 # Ignore application configuration
 /config/application.yml
 
-config/secrets.yml
+# config/secrets.yml
+
+# Ignore CI report
+/.framgia-ci-reports
+.framgia-ci-result.temp.yml

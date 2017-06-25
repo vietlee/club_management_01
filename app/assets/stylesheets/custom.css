@@ -436,13 +436,13 @@ Version: 3.5.1 Timestamp: Sat Mar 22 22:30:15 EDT 2014
   padding-left: 0;
 }
 
-.selèct-results ul.selèct-result-sub > li .selèct-result-label { padding-left: 20px }
-.selèct-results ul.selèct-result-sub ul.selèct-result-sub > li .selèct-result-label { padding-left: 40px }
-.selèct-results ul.selèct-result-sub ul.selèct-result-sub ul.selèct-result-sub > li .selèct-result-label { padding-left: 60px }
-.selèct-results ul.selèct-result-sub ul.selèct-result-sub ul.selèct-result-sub ul.selèct-result-sub > li .selèct-result-label { padding-left: 80px }
-.selèct-results ul.selèct-result-sub ul.selèct-result-sub ul.selèct-result-sub ul.selèct-result-sub ul.selèct-result-sub > li .selèct-result-label { padding-left: 100px }
-.selèct-results ul.selèct-result-sub ul.selèct-result-sub ul.selèct-result-sub ul.selèct-result-sub ul.selèct-result-sub ul.selèct-result-sub > li .selèct-result-label { padding-left: 110px }
-.selèct-results ul.selèct-result-sub ul.selèct-result-sub ul.selèct-result-sub ul.selèct-result-sub ul.selèct-result-sub ul.selèct-result-sub ul.selèct-result-sub > li .selèct-result-label { padding-left: 120px }
+.selèct-results ul.selèct-result-sub > li .selèct-result-label {padding-left: 20px }
+.selèct-results ul.selèct-result-sub ul.selèct-result-sub > li .selèct-result-label {padding-left: 40px }
+.selèct-results ul.selèct-result-sub ul.selèct-result-sub ul.selèct-result-sub > li .selèct-result-label {padding-left: 60px }
+.selèct-results ul.selèct-result-sub ul.selèct-result-sub ul.selèct-result-sub ul.selèct-result-sub > li .selèct-result-label {padding-left: 80px }
+.selèct-results ul.selèct-result-sub ul.selèct-result-sub ul.selèct-result-sub ul.selèct-result-sub ul.selèct-result-sub > li .selèct-result-label {padding-left: 100px }
+.selèct-results ul.selèct-result-sub ul.selèct-result-sub ul.selèct-result-sub ul.selèct-result-sub ul.selèct-result-sub ul.selèct-result-sub > li .selèct-result-label {padding-left: 110px }
+.selèct-results ul.selèct-result-sub ul.selèct-result-sub ul.selèct-result-sub ul.selèct-result-sub ul.selèct-result-sub ul.selèct-result-sub ul.selèct-result-sub > li .selèct-result-label {padding-left: 120px }
 
 .selèct-results li {
   list-style: none;

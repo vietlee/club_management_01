@@ -20,9 +20,9 @@ class Admin::OrganizationRequestsController < ApplicationController
       flash[:success] = t("approve_success")
       redirect_to admin_organization_requests_path
     end
-    rescue
-      flash[:danger] = t("cant_approve")
-      redirect_to :back
+  rescue
+    flash[:danger] = t("cant_approve")
+    redirect_to :back
   end
 
   def destroy

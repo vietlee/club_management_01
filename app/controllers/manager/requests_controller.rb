@@ -6,7 +6,7 @@ class Manager::RequestsController < BaseOrganizationManagerController
     @organization = Organization.find_by id: params[:organization]
     unless @organization
       flash[:danger] = t "not_found_organization"
-      redirect_to request.referrer
+      redirect_to request.referer
     end
     @requests = @organization.club_requests.pending.order_date_desc
   end
@@ -15,7 +15,7 @@ class Manager::RequestsController < BaseOrganizationManagerController
     @user = User.find_by id: @request.user_id
     unless @user
       flash[:danger] = t "not_found_user"
-      redirect_to request.referrer
+      redirect_to request.referer
     end
   end
 
@@ -39,9 +39,9 @@ class Manager::RequestsController < BaseOrganizationManagerController
         redirect_to :back
       end
     end
-    rescue
-      flash[:danger] = t("cant_not_update")
-      redirect_to :back
+  rescue
+    flash[:danger] = t("cant_not_update")
+    redirect_to :back
   end
 
   private
@@ -53,7 +53,7 @@ class Manager::RequestsController < BaseOrganizationManagerController
     @request = ClubRequest.find_by id: params[:id]
     unless @request
       flash[:danger] = t "not_found_request"
-      redirect_to request.referrer
+      redirect_to request.referer
     end
   end
 

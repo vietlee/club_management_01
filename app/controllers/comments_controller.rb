@@ -16,7 +16,6 @@ class CommentsController < ApplicationController
         format.js{alert(t("comment_fail"))}
       end
     end
-
   end
 
   def destroy

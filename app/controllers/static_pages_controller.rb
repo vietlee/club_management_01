@@ -7,8 +7,6 @@ class StaticPagesController < ApplicationController
 
   private
   def check_login
-    if user_signed_in?
-      redirect_to my_clubs_path
-    end
+    redirect_to my_clubs_path if user_signed_in?
   end
 end

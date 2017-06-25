@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   root "static_pages#index"
   mount ActionCable.server => "/cable"
 
-  mount Ckeditor::Engine => '/ckeditor'
+  mount Ckeditor::Engine => "/ckeditor"
 
   delete "join_event" => "user_events#destroy"
   get "other-clubs" => "clubs#index"

@@ -6,12 +6,12 @@ class UserOrganization < ApplicationRecord
 
   enum status: {pending: 0, joined: 1, reject: 2}
 
-  scope :are_admin, -> {where is_admin: true}
-  scope :without_user_ids, -> user_ids {where.not user_id: user_ids}
-  scope :find_with_user_of_company, -> user_id, organization_id do
+  scope :are_admin, ->{where is_admin: true}
+  scope :without_user_ids, ->user_ids{where.not user_id: user_ids}
+  scope :find_with_user_of_company, ->user_id, organization_id do
     find_by user_id: user_id, organization_id: organization_id
   end
-  scope :newest, -> {order created_at: :desc}
+  scope :newest, ->{order created_at: :desc}
 
   delegate :full_name, :avatar, :email, :phone, to: :user, allow_nil: :true
   delegate :name, :description, :phone, :email, :logo, to: :organization, allow_nil: :true
@@ -19,10 +19,6 @@ class UserOrganization < ApplicationRecord
   class << self
     def join? organization
       find_by(organization_id: organization.id).nil?
-    end
-
-    def join? organization_id
-      find_by(organization_id: organization_id).nil?
     end
 
     def verify_manager? user
