@@ -475,6 +475,8 @@ en:
       to: "To"
       success_update: "Event's information update successfull"
       edit: "Edit event's information"
+      no_event: "No events"
+      create: "New"
     club:
       success_update: "Club's information update successfull"
   cant_found_club: "Can found club"
