@@ -265,6 +265,7 @@ vi:
   cancel: "HỦY"
   submit: "Gửi"
   new_organization: "Tổ chức mới"
+  all: "Tất cả"
   session:
     title: "Đăng nhập & đăng ký"
     forgot: "Quên mật khẩu?"
@@ -520,6 +521,8 @@ vi:
       type: "Loại sự kiện"
       success_update: "Cập nhập thông tin sự kiện thành công"
       edit: "Chỉnh sửa thông tin sự kiện"
+      no_event: "Chưa có sự kiện nào!"
+      create: "Tạo mới"
     club:
       success_update: "Thông tin câu lạc bộ được cập nhập thành công"
   club_management: "Quản lý câu lạc bộ"

@@ -1,5 +1,5 @@
 $(document).on('turbolinks:load', function() {
-  $('#q_name_or_content_cont').on('keyup',function(e) {
+  $('.form-search-clubs').on('keyup',function(e) {
     SearchClub();
   });
 
@@ -114,6 +114,6 @@ function SearchClub() {
   var stype_organizations = $('.stype-organizations').val();
   var data = {q: {name_or_content_cont: search,
     club_type_eq: stype_clubs,organization_id_eq: stype_organizations}}
-  $.get($(this).attr('action'), data , null, 'script');
+  $.get('/my_clubs', data , null, 'script');
   return false;
 }

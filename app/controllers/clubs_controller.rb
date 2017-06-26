@@ -19,6 +19,10 @@ class ClubsController < ApplicationController
     @organizations = Organization.by_user_organizations(
       current_user.user_organizations.joined
     )
+    respond_to do |format|
+      format.html
+      format.js
+    end
   end
 
   def show

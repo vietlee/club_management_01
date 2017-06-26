@@ -63,7 +63,8 @@
                   </h4>
                   <div class="hr-left"></div>
                   <h4><strong><%= t "created_at" %>:</strong>
-                    <%= l @organization.created_at, format: :short %>
+                    <%= (l @organization.created_at, format: :short) unless
+                      @organization.created_at.nil? %>
                   </h4>
                   <div class="hr-left"></div>
                   <p class="break-all"><%= @organization.description %></p>

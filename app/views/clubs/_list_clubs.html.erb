@@ -10,9 +10,9 @@
             <%= search_form_for @q, class: "form-horizontal" do |f| %>
               <div class="form-group push-bit">
                 <div class="col-xs-12">
-                  <div class="input-group" id="search-club-input">
-                    <%= f.text_field :name_or_description_cont,
-                      class: "form-control", id: "ecom-search",
+                  <div class="input-group" id="search-other-club">
+                    <%= f.text_field :name_or_content_cont,
+                      class: "form-control form-search-other-clubs",
                       placeholder: t("name_des") %>
                     <div class="input-group-btn">
                       <button type="submit" class="btn btn-primary">
@@ -25,24 +25,21 @@
               <h4><strong><%= t "filters" %></strong></h4>
               <div class="form-group">
                 <div class="col-sm-8">
-                  <select id="ecom-filter-organization" name="ecom-filter-organization"
-                    class="form-control" size="1">
-                    <option value="0" disabled selected>
-                      <%= t "organizations" %>
-                    </option>
-                    <%= @organizations.each do |organization| %>
-                      <option value="<%= organization.id %>">
-                        <%= organization.name %>
-                      </option>
-                    <% end %>
-                  </select>
+                  <%= select_tag :stype_organizations,
+                    options_for_select(@organizations.map{|organization|
+                      [organization.name, organization.id]}
+                    .unshift([t("organization_filter"), nil]),
+                     include_blank: true),
+                    {class: "form-control stype-organizations-other-clubs"} %>
                 </div>
               </div>
               <div class="form-group">
                 <div class="col-sm-8">
-                  <%= select_tag "ecom-filter-condition", options_for_select(
-                    Club.club_types.map{|k, v| [t("#{k}"), v]}),
-                    {class: "form-control"} %>
+                  <%= select_tag :stype_clubs, options_for_select(
+                    Club.club_types.map{|k, v| [t("#{k}"), v]}
+                      .unshift([t("style_filter"), nil]),
+                    include_blank: true),
+                    {class: "form-control stype-other-clubs"} %>
                 </div>
               </div>
               <div class="form-group">
@@ -78,7 +75,7 @@
           </div>
         </aside>
       </div>
-      <div class="col-md-8 col-lg-9">
+      <div class="col-md-8 col-lg-9" id="list-other-club">
         <% if @user_organizations.any? %>
           <% if clubs.any? %>
             <%= render partial: "shared/list_club", locals: {clubs: clubs} %>
