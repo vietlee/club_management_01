@@ -45,17 +45,14 @@
               <div class="form-group">
                 <%= render "shared/rate_filter" %>
               </div><hr>
-              <h4 class="-header"><strong><%= t "sort_by" %></strong></h4>
+              <h4 class="-header text-center"><strong><%= t "sort_by" %></strong></h4>
               <div class="form-group">
-                <div class="col-xs-12">
-                  <%= sort_link(@q, :name,
-                    [:name, "name asc"], t("name_club")) %>
-                  <br>
-                  <%= sort_link(@q, :rating,
-                    [:rating, "rating desc"], t("for_rating")) %>
-                  <br>
-                  <%= sort_link(@q, :created_at,
-                    [:created_at, "created_at desc"], t("created_at")) %>
+                <div class="col-xs-8">
+                  <%= select_tag :sort_clubs, options_for_select(
+                    Settings.sort_clubs.map{|k, v| [t("#{k}"), v]}
+                      .unshift([t("sort_clubs"), nil]),
+                    include_blank: true),
+                    {class: "form-control sort-other-clubs"} %>
                 </div>
                 <hr>
               </div>

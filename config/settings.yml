@@ -144,3 +144,4 @@ days:
   friday: "Friday"
   satuday: "Satuday"
   sunday: "Sunday"
+sort_clubs: {name_club: "name asc", for_rating: "rating desc", created_at: "created_at desc"}
