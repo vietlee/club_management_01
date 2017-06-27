@@ -82,6 +82,11 @@ h6 {
 .site-description {
   width: 100%;
 }
+
+.site-span a {
+  transition: color 0.5s;
+}
+
 .site-span a:hover{
   text-decoration: none !important;
   color: #ff6600;

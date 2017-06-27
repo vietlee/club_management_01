@@ -11,7 +11,6 @@
             <th class="text-center"><%= t "id" %></th>
             <th class="text-center"><i class="gi gi-user"></i></th>
             <th><%= t "name_club" %></th>
-            <th><%= t "notification" %></th>
             <th><%= t "description" %></th>
             <th class="text-center"><%= t "view_member" %></th>
           </tr>
@@ -23,7 +22,6 @@
               <td class="text-center"><%= image_tag club.logo,
                 class: "circle-profile-list" %></td>
               <td><%= club.name %></a></td>
-              <td><%= club.notification %></td>
               <td>
                 <%= club.content.truncate(Settings.event_truncate).html_safe unless club.content.nil? %>
               </td>
