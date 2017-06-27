@@ -4,7 +4,7 @@ module ClubsHelper
   end
 
   def get_field_club field
-    safe_join(field) if field.present?
+    raw(field) if field.present?
   end
 
   def check_date days, day
