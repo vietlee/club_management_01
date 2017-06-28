@@ -818,7 +818,7 @@ vi:
   background: "Hình nền"
   accept: "Duyệt"
   add_admin: "Thêm người này làm admin"
-  no_data: "Xin lỗi,không tìm thấy dữ liệu!!!"
+  no_data: "Xin lỗi, không tìm thấy dữ liệu!!!"
   answer_admin: "Bạn muốn thành viên này làm quản trị viên cho câu lạc bộ?"
   budget: "Thu quỹ"
   get_data: "Lấy dữ liệu"

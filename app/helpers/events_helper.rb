@@ -1,6 +1,6 @@
 module EventsHelper
   def number_to_vnd amount
-    safe_join "#{amount} <sup>vnđ</sup>"
+    raw "#{amount} <sup>vnđ</sup>"
   end
 
   def view_case_money_after event
@@ -55,7 +55,7 @@ module EventsHelper
         <i class="fa fa-plus pay-money-icon" aria-hidden="true"></i>
       HTML
     end
-    safe_join html
+    raw html
   end
 
   def count_member_done event, club
@@ -64,6 +64,6 @@ module EventsHelper
       <<-HTML
         (#{members_done.size} <i class="fa fa-user-o" aria-hidden="true"></i>)
       HTML
-    safe_join html
+    raw html
   end
 end

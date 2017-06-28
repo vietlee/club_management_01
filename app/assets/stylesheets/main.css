@@ -37,6 +37,18 @@ body {
 .required {
   color: red;
 }
+.c-form-control-rating__star_active {
+  background-image: image-url("big-star.png");
+}
+.c-form-control-rating__star {
+  display: inline-block;
+  vertical-align: middle;
+  width: 12px;
+  height: 12px;
+  background-image: image-url("big-star.png");
+  background-size: contain;
+  margin: 0 3px 0 0;
+}
 .org-td img {
   height: 70px;
   width: 100px;

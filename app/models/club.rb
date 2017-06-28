@@ -24,7 +24,7 @@ class Club < ApplicationRecord
   validates :content, presence: true
   validates :goal, presence: true
 
-  enum club_type: {hobbies: 8, sport: 1, game: 2, education: 3, music: 4,
+  enum club_type: {sport: 1, game: 2, education: 3, music: 4,
     entertainment: 5, confidential: 6, junket: 7, other: 0}
 
   # scope :actives, ->{where is_active: true}
