@@ -24,18 +24,15 @@
         </div>
       </div>
       <div class="row portfolio">
-        <% @albums.each do |album| %>
-          <ul class="first">
+        <ul class="first">
+          <% @albums.each do |album| %>
             <% album.images.each do |image| %>
-              <li class="col-md-3">
-                <div class="col-md-3 portfolio-item"
-                  data-category="<%= album.id %>">
-                  <%= image_tag image.url, class: "img-responsive" %>
-                </div>
+              <li class="col-md-3 portfolio-item" data-category="<%= album.id %>">
+                <%= image_tag image.url, class: "img-responsive" %>
               </li>
             <% end %>
-          </ul>
-        <% end %>
+          <% end %>
+        </ul>
       </div>
     </div>
   </section>
