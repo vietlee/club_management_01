@@ -28,9 +28,11 @@
                   <td><%= organization.email %></td>
                   <td><%= organization.phone %></td>
                   <td class="text-center">
-                    <%= link_to t("view"),
-                      manager_organization_path(organization.organization_id),
-                      class: "btn btn-primary" %>
+                    <%= link_to manager_organization_path(organization.organization_id),
+                      class: "btn btn-primary" do %>
+                      <i class="fa fa-hand-o-right" aria-hidden="true"></i>
+                      <%= t ("view") %>
+                    <% end %>
                   </td>
                 </tr>
               <% end %>

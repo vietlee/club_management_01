@@ -13,7 +13,6 @@
                 <th class="text-center"><%= t "id" %></th>
                 <th class="text-center"><i class="gi gi-building"></i></th>
                 <th><%= t "name_club" %></th>
-                <th><%= t "notification" %></th>
                 <th><%= t "money" %></th>
                 <th class="text-center"><%= t "view" %></th>
               </tr>
@@ -25,12 +24,15 @@
                   <td class="text-center"><%= image_tag user_club.logo,
                     class: "circle-profile-list" %></td>
                   <td><%= user_club.name %></a></td>
-                  <td><%= user_club.notification %></td>
-                  <td><%= user_club.money %></td>
+                  <td>
+                    <%= number_to_currency(user_club.money, locale: I18n.locale) %>
+                  </td>
                   <td class="text-center">
-                    <%= link_to t("view"),
-                      club_manager_club_path(user_club.club_id),
-                      class: "btn btn-primary" %>
+                    <%= link_to club_manager_club_path(user_club.club_id),
+                      class: "btn btn-primary" do %>
+                      <i class="fa fa-hand-o-right" aria-hidden="true"></i> <%= t("view") %>
+                      </i>
+                    <% end %>
                   </td>
                 </tr>
               <% end %>

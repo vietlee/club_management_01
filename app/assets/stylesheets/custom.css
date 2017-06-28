@@ -917,6 +917,7 @@ table{
 }
 .name-organization-link a{
   color: #ff8533;
+  transition: color 0.5s;
 }
 .name-organization-link a:hover{
   text-decoration: none !important;
