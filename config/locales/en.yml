@@ -41,6 +41,7 @@ en:
   not_foud_notification: "Notifications not found!!"
   interactive: "Interactive"
   has_been_rate: "rated"
+  sort_clubs: "Sort clubs"
   has_been_create: "created"
   has_been_edit: "edited"
   has_been_delete: "deleted"
