@@ -4,20 +4,29 @@ class ClubManager::RequestsController < BaseClubManagerController
 
   def update
     if params[:status].blank?
-      member = @member.update_attributes is_manager: true
-      send_email_manager_club @member, @club
+      respond_to do |format|
+        member = @member.update_attributes is_manager: params[:is_manager]
+        send_email_manager_club @member, @club
+        if member
+          flash = t("success_process")
+        else
+          flash = t("error_process")
+        end
+        format.json{render json: {flash: flash, status: 200}}
+      end
     else
       member = @member.update_attributes status: params[:status].to_i
       if params[:status].to_i == UserClub.statuses[:joined]
         send_email_join_club @member, @club
       end
+      if member
+        flash[:success] = t("success_process")
+        redirect_to :back
+      else
+        flash[:danger] = t("error_process")
+        redirect_to :back
+      end
     end
-    unless member
-      flash[:danger] = t("error_process")
-      redirect_to :back
-    end
-    flash[:success] = t("success_process")
-    redirect_to :back
   end
 
   private
