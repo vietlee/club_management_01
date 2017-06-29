@@ -27,6 +27,21 @@ module ApplicationHelper
     @user_clubs = user.user_clubs.manager
   end
 
+  def name_organization_of_manager user_clubs
+    name_organization = []
+    @clubs = Club.where(id: user_clubs.map(&:club_id))
+    @clubs.each do |club|
+      name_organization << club.club_name
+    end
+    name_organization.uniq
+  end
+
+  def clubs_manager_of_organization organization, user
+    organization = Organization.find_by name: organization
+    clubs_manager = Club.of_user_clubs(manager_of_club(user))
+    @clubs = clubs_manager.of_organization(organization)
+  end
+
   def image_holder album
     album.images.first.url
   end

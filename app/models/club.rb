@@ -28,6 +28,9 @@ class Club < ApplicationRecord
     entertainment: 5, confidential: 6, junket: 7, other: 0}
 
   # scope :actives, ->{where is_active: true}
+  scope :of_organization, ->organization do
+    where(organization_id: organization.id)
+  end
   scope :of_user_clubs, ->user_clubs{where id: user_clubs.map(&:club_id)}
   scope :newest, ->{order created_at: :desc}
   scope :without_clubs, ->clubs{where.not(id: clubs.ids)}

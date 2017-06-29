@@ -38,9 +38,16 @@
             <span class="sidebar-nav-mini-hide"><%= t "my_clubs" %></span>
           <% end %>
           <ul>
-            <% manager_of_club(current_user).each do |user_club| %>
+            <% name_organization_of_manager(manager_of_club(current_user)).each do |organization| %>
               <li>
-                <%= link_to user_club.name, club_manager_club_path(user_club.club_id) %>
+                <a href="#" class="sidebar-nav-submenu"><i class="fa fa-angle-left sidebar-nav-indicator"></i><%= organization %></a>
+                <ul>
+                  <% clubs_manager_of_organization(organization, current_user).each do |club| %>
+                  <li>
+                    <%= link_to club.name, club_manager_club_path(club.id) %>
+                  </li>
+                  <% end %>
+                </ul>
               </li>
             <% end %>
           </ul>
