@@ -21,9 +21,9 @@ $(document).on('turbolinks:load', function() {
 });
 
 function SearchOtherClub() {
-  var sort_club = $('.sort-other-clubs').val()
+  var sort_club = $('.sort-other-clubs').val();
   var sort_params = LoadSortParam(sort_club);
-  var search = $('.form-search-other-clubs').val()
+  var search = $('.form-search-other-clubs').val();
   var stype_clubs = $('.stype-other-clubs').val();
   var rate_value = $( ".range-slider-demo" ).val();
   var rate = rate_value.split(",");

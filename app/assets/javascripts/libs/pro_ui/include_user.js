@@ -117,9 +117,9 @@ $(document).ready(function() {
 });
 
 function SearchClub() {
-  var sort_club = $('.sort-clubs').val()
+  var sort_club = $('.sort-clubs').val();
   var sort_params = LoadSortParam(sort_club);
-  var search = $('.form-search-clubs').val()
+  var search = $('.form-search-clubs').val();
   var stype_clubs = $('.stype-clubs').val();
   var rate_value = $( ".range-slider-demo" ).val();
   var rate = rate_value.split(",");
