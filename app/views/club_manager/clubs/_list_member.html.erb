@@ -24,23 +24,26 @@
             <td><%= member.email %></td>
             <td class="center">
               <h6 class="center">
-                <% if member.joined? && !member.is_manager? %>
-                  <%= link_to club_manager_club_request_path(id: member.id,
-                    club_id: @club.id, status: nil), method: :put,
-                    title: t("add_admin"),
-                    data: {confirm: t("answer_admin")} do %>
-                    <i class="gi gi-keys btn btn-danger"></i>
-                  <% end %>
+                <% if member.joined? && (member.user != current_user) %>
                   <%= link_to club_manager_club_user_club_path(id: member.id,
                     club_id: @club.id), method: :delete,
                     title: t("delete_member"),
                     data: {confirm: t("answer_delete_member")} do %>
                     <i class="hi hi-remove btn btn-default"></i>
                   <% end %>
+                  <input type="hidden" class="club-member"
+                  value="<%= @club.id %>" />
+                <label class="switch">
+                  <% if member.is_manager? %>
+                    <input type="checkbox", class = "checkbox_admin",
+                    value = "<%= member.id %>", title="Admin", checked />
+                  <% else %>
+                    <input type="checkbox", class = "checkbox_admin",
+                    value = "<%= member.id %>" />
+                  <% end %>
+                <div class="slider round"></div>
                 <% end %>
-                <% if member.joined? && member.is_manager? %>
-                  <i class="gi gi-old_man btn btn-primary", title="Admin"></i>
-                <% end %>
+                </label>
               </h6>
               <% if member.status == Settings.pending %>
                 <%= link_to t("accept"),
