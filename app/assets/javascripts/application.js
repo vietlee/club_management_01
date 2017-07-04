@@ -24,3 +24,4 @@
 //= require portfolio
 //= require bootstrap-tagsinput
 //= require handle_menu
+//= require jquery.range
