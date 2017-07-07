@@ -923,3 +923,9 @@ table{
   text-decoration: none !important;
   color: #808000;
 }
+
+.button-budget-album {
+  width: 160px;
+  padding: 6px 6px;
+  font-size: 14px;
+}
