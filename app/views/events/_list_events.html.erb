@@ -28,7 +28,7 @@
           <%= render "clubs/budget" %>
           <div class="text-center sidebar-block">
             <%= link_to club_albums_path(club_id: @club.id),
-              class: "btn btn-primary", target: "_blank" do %>
+              class: "btn btn-primary button-budget-album", target: "_blank" do %>
               <i class="fa fa-camera" aria-hidden="true"></i>
               <%= t("albums") %>
             <% end %>

@@ -25,7 +25,11 @@
             </td>
             <td class="<%= view_class(event) %> text-center tag money-club">
               <%= view_icon event %>
-            <%= number_to_currency(event.expense, locale: :vi) %></td>
+            <% if event.get_money? %>
+              <%= number_to_currency(get_money_expense(event, @club), locale: :vi) %>
+            <% else %>
+              <%= number_to_currency(event.expense, locale: :vi) %>
+            <% end %></td>
             <td class="text-center"><%= number_to_currency(event.amount, locale: :vi) %></td>
             <td class="text-center"><%= number_to_currency(view_case_money_event_after(event, @club), locale: :vi) %></br>
               <%= count_member_done event, @club if event.get_money? %>

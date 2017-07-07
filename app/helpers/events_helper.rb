@@ -66,4 +66,8 @@ module EventsHelper
       HTML
     raw html
   end
+
+  def get_money_expense event, club
+    event.expense * event.budgets.size
+  end
 end

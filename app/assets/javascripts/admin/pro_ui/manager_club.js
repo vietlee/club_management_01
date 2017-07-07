@@ -1,5 +1,5 @@
 $(document).on('turbolinks:load', function() {
-  $('.checkbox_admin').on('change',function() {
+  $(document).on('change', '.checkbox_admin',function() {
     var is_manager = $(this).prop("checked");
     var member = $(this).val();
     var club = $('.club-member').val();
