@@ -33,7 +33,7 @@
                   <% end %>
                   <input type="hidden" class="club-member"
                   value="<%= @club.id %>" />
-                <label class="switch">
+                <label class="switch" title="<%= t "admin_of_club" %>">
                   <% if member.is_manager? %>
                     <input type="checkbox", class = "checkbox_admin",
                     value = "<%= member.id %>", title="Admin", checked />
