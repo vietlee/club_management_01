@@ -11,55 +11,51 @@
             <div class="form-modal">
               <fieldset>
                 <legend><%= t "user_info" %></legend>
-                <div class="form-group">
-                  <label class="col-md-4 control-label"><%= t "email" %></label>
-                  <div class="col-md-8">
-                    <%= f.email_field :email, class: "form-control",
-                      placeholder: t("example_email"), required: true %>
-                  </div>
+                <div class="input-group">
+                  <span class="input-group-addon">
+                    <i class="gi gi-envelope"></i>
+                  </span>
+                  <%= f.email_field :email, class: "form-control input-lg",
+                    placeholder: t("example_email"), required: true %>
                 </div>
-                <div class="form-group">
-                  <label class="col-md-4 control-label"><%= t "full_name" %></label>
-                  <div class="col-md-8">
-                    <%= f.text_field :full_name, class: "form-control",
-                      placeholder: t("full_name"), required: true %>
-                  </div>
-                </div>
-              </fieldset>
-              <fieldset>
-                <div class="form-group">
-                  <label class="col-md-4 control-label"><%= t "phone" %></label>
-                  <div class="col-md-8">
-                    <%= f.text_field :phone, class: "form-control",
-                      placeholder: t("phone"), required: true %>
-                  </div>
-                </div>
-                <div class="form-group">
-                  <label class="col-md-4 control-label"><%= t "avatar" %></label>
-                  <div class="col-md-8">
-                    <%= f.file_field :avatar, placeholder: t("full_name"), required: true %>
-                  </div>
+                <div class="input-group">
+                  <span class="input-group-addon">
+                    <i class="gi gi-user"></i>
+                  </span>
+                  <%= f.text_field :full_name, class: "form-control input-lg",
+                    placeholder: t("full_name"), required: true %>
                 </div>
               </fieldset>
               <fieldset>
-                <div class="form-group">
-                  <label class="col-md-4 control-label" for="user-settings-password">
-                    <%= t "password" %>
-                  </label>
-                  <div class="col-md-8">
-                    <%= f.password_field :password, class: "form-control",
-                      id: "user-settings-password", required: true %>
-                  </div>
+                <div class="input-group">
+                  <span class="input-group-addon">
+                    <i class="fa fa-phone-square"></i>
+                  </span>
+                  <%= f.text_field :phone, class: "form-control input-lg",
+                    placeholder: t("phone"), required: true %>
                 </div>
-                <div class="form-group">
-                  <label class="col-md-4 control-label" for="user-settings-repassword">
-                    <%= t "password_confirm" %>
-                  </label>
-                  <div class="col-md-8">
-                    <div class="">
-                      <%= f.password_field :password_confirmation, class: "form-control", id: "val_password" %>
-                      <span class=""></span>
-                    </div>
+                <div class="input-group">
+                  <span class="input-group-addon">
+                    <i class="fa fa-file"></i>
+                  </span>
+                  <%= f.file_field :avatar, class: "form-control", placeholder: t("full_name"), required: true %>
+                </div>
+              </fieldset>
+              <fieldset>
+                <div class="input-group">
+                  <span class="input-group-addon">
+                    <i class="gi gi-asterisk"></i>
+                  </span>
+                  <%= f.password_field :password, placeholder: t("password"), class: "form-control input-lg",
+                    id: "user-settings-password", required: true %>
+                </div>
+                <div class="input-group">
+                  <span class="input-group-addon">
+                    <i class="gi gi-asterisk"></i>
+                  </span>
+                  <div class="">
+                    <%= f.password_field :password_confirmation, placeholder: t("password_confirmation"), class: "form-control", id: "val_password" %>
+                    <span class=""></span>
                   </div>
                 </div>
               </fieldset>

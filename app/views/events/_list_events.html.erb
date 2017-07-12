@@ -23,8 +23,6 @@
               </div>
             <% end %>
           </div>
-          <%= render "clubs/tags" %>
-          <%= render "events/nav_events" %>
           <%= render "clubs/budget" %>
           <div class="text-center sidebar-block">
             <%= link_to club_albums_path(club_id: @club.id),
@@ -33,6 +31,8 @@
               <%= t("albums") %>
             <% end %>
           </div>
+          <%= render "clubs/tags" %>
+          <%= render "events/nav_events" %>
           </hr>
           <%= render "events/members" %>
         </aside>

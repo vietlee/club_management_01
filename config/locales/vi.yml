@@ -710,6 +710,7 @@ vi:
               blank: " không được bỏ trống"
               too_short: *too_short
             email:
+              taken: " đã tồn tại"
               blank: " không được bỏ trống"
             password_confirmation:
               confirmation: " không đúng"
