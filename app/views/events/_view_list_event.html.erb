@@ -11,21 +11,16 @@
       <div class="col-md-8 description-event">
         <h4 class="site-heading"><strong><%= event.name %></strong>
           <% if event.notification? %>
-             <i class="fa fa-bullhorn notification" aria-hidden="true"></i>
+             <i class="hi hi-bell icon-event"></i>
            <% else %>
-             <i class="fa fa-usd money" aria-hidden="true"></i>
+              <i class="gi gi-usd icon-event"></i>
            <% end %>
         </h4>
         <p class="text-justify"><%= event.description.truncate(Settings.event_truncate).html_safe unless event.description.nil? %></p>
       </div>
     </div>
     <div class="clearfix">
-      <p class="pull-right">
-        <%= link_to t("read_more"),
-          club_event_url(event.club, event),
-          class: "label label-primary" %>
-      </p>
-      <ul class="list-inline pull-left">
+      <ul class="list-inline pull-left col-md-4">
         <% unless event.date_start.blank? && event.date_end.blank? %>
           <li>
             <i class="fa fa-calendar"></i>
@@ -45,6 +40,11 @@
           </a>
         </li>
       </ul>
+      <p class="pull-right col-md-8">
+        <%= link_to t("read_more"),
+          club_event_url(event.club, event),
+          class: "label label-primary" %>
+      </p>
     </div>
   </div>
 <% end %>

@@ -1,8 +1,10 @@
 <%= form_for UserClub.new, remote: true do |f| %>
   <%= f.hidden_field :club_id, value: @club.id %>
 <% end %>
-<%= link_to "javascript:void(0)", class: "join-club-button" do %>
-  <span class="site-top-avatar pull-right join-button animation-fadeIn360">
+<%= link_to "javascript:void(0)", class: "join-club-button btn pull-left btn-club",
+  title: t("join_club") do %>
+  <span class="animation-fadeIn360">
     <%= t "join" %>
+    <i class="fa fa-reply-all" aria-hidden="true"></i>
   </span>
 <% end %>
