@@ -2085,3 +2085,7 @@ li:last-child {
 .input-member-edit {
   margin-top: 10px;
 }
+
+.description-organization-request {
+  height: 100px !important;
+}
