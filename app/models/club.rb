@@ -1,5 +1,6 @@
 class Club < ApplicationRecord
   acts_as_taggable
+  attr_accessor :image_width, :image_height
 
   has_many :user_clubs, dependent: :destroy
   has_many :events, dependent: :destroy
@@ -23,6 +24,7 @@ class Club < ApplicationRecord
     length: {maximum: Settings.club.max_name_length}
   validates :content, presence: true
   validates :goal, presence: true
+  validate :check_dimensions, on: :update
 
   enum club_type: {sport: 1, game: 2, education: 3, music: 4,
     entertainment: 5, confidential: 6, junket: 7, other: 0}
@@ -65,5 +67,16 @@ class Club < ApplicationRecord
 
   def subsidy_money_change event, change
     self.update_attribute :money, self.money.to_i + (change.to_i - event.expense.to_i)
+  end
+
+  def check_dimensions
+    if !image_cache.nil? && (image.width < Settings.club.image.min_width_image_club ||
+      (image.height < Settings.club.image.min_height_image_club ||
+      image.height > Settings.club.image.max_height_image_club))
+      errors.add :image, I18n.t("errors_size_image",
+      min_width_image_club: Settings.club.image.min_width_image_club,
+      min_height_image_club: Settings.club.image.min_height_image_club,
+      max_height_image_club: Settings.club.image.max_height_image_club)
+    end
   end
 end

@@ -685,3 +685,5 @@ en:
   add_images_successfully: "Successfull!"
   error_in_process: "Error, please try again!"
   image_cover: "Cover image"
+  errors_size_image: "Cover image must be between %{min_height_image_club} and
+    %{max_height_image_club} and width from %{min_width_image_club}, please select again!"

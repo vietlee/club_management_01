@@ -538,6 +538,7 @@ vi:
         punishment: "Kỉ luật"
         plan: "Kế hoạch"
         member: "Thành viên"
+        image: "Ảnh bìa"
       organization:
         name: "Tên tổ chức"
         email: "Email"
@@ -924,3 +925,5 @@ vi:
   error_in_process: "Có lỗi, vui lòng thử lại!"
   event_not_save: "Không lưu được sự kiện"
   image_cover: "Ảnh bìa"
+  errors_size_image: "Ảnh bìa phải có chiều cao trong khoảng %{min_height_image_club}
+  đến %{max_height_image_club} và chiều rộng từ %{min_width_image_club} trở lên, vui lòng chọn lại!"
