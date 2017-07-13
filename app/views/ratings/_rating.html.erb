@@ -1,4 +1,6 @@
-<%= number_field_tag :rating, @club.rating.round,
+<div >
+  <%= number_field_tag :rating, @club.rating.round,
   class: "rating", "data-min": Settings.min_rate, "data-max": Settings.max_rate %>
-<%= hidden_field_tag :club_id, @club.id %>
-<p class="h3"><span class="num-rate"><%= @club.rating.round Settings.round_float %></span> <%= t "for_ratings" %></p>
+  <%= hidden_field_tag :club_id, @club.id %>
+  <p class="h3"><span class="num-rate"><%= @club.rating.round Settings.round_float %></span> <%= t "for_ratings" %></p>
+</div>

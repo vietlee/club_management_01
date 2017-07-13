@@ -2,7 +2,6 @@
 body {
   font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
   color: #353535;
-  background-color: #151515;
 }
 #page-container {
   margin: 0 auto;
@@ -134,9 +133,17 @@ h6 {
 .icon-noti {
   margin-top: 50px;
 }
-.fa-exclamation-triangle {
-  color: red;
-  font-size: 65px !important;
+.gi-lock {
+  color: #1BBAE1;
+  font-size: 35px !important;
+  margin-left: -245px;
+}
+.animation-slideDown {
+  margin-top: -2px;
+}
+.button-club {
+  border: 1px solid #D0D1D3!important;
+  color: black;
 }
 .fa-2x {
   color: #2E354F;
@@ -1963,9 +1970,17 @@ li:last-child {
 
 .rating-input {
   float: left;
-  margin-top: 8px;
+  margin-top: 0px;
 }
 
+.btn-club:hover {
+  color: green;
+
+}
+.btn-club {
+  border: 1px solid black!important;
+  color: black;
+}
 .rating-input span {
   font-size: 25px;
   padding-right: 5px;
@@ -2088,4 +2103,148 @@ li:last-child {
 
 .description-organization-request {
   height: 100px !important;
+}
+/* profile-template */
+
+.profile {
+  width: 100%;
+  position: relative;
+  background: #FFF;
+  padding-bottom: 5px;
+  margin-bottom: 20px;
+}
+
+.club-profile-image {
+  position: relative;
+}
+.profile .image {
+  display: block;
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+  text-align: center;
+}
+
+.profile .user {
+  position: relative;
+  padding: 0px 5px 5px;
+}
+
+.profile .user .avatars {
+  position: absolute;
+  left: 75px;
+  top: -159px;
+  z-index: 2;
+  width: 200px;
+  height: 200px;
+}
+
+.profile .user h2 {
+  font-size: 16px;
+  line-height: 20px;
+  display: block;
+  float: left;
+  margin: 4px 0px 0px 135px;
+  font-weight: bold;
+}
+
+.profile .user .actions {
+  float: right;
+}
+
+.profile .user .actions .btn {
+  margin-bottom: 0px;
+}
+
+.profile .info {
+  float: left;
+  margin-left: 20px;
+}
+
+.img-profile{
+  height: 200px;
+  width: 200px;
+}
+
+.img-cover{
+  width: 100%;
+  height: 450px;
+}
+.club-profile {
+  height: 530px;
+  position: relative;
+  overflow: hidden;
+}
+.bottomright {
+  position: absolute;
+  bottom: 8px;
+  right: 16px;
+  font-size: 18px;
+}
+.bottomleft {
+  position: absolute;
+  bottom: 8px;
+  left: 280px;
+  font-size: 16px;
+  color: white;
+}
+.name-club {
+  color: white;
+  font-weight: bold;
+}
+@media (max-width: 768px) {
+  .btn-responsive {
+    padding:2px 4px;
+    font-size:80%;
+    line-height: 1;
+    border-radius:3px;
+  }
+  .club-profile {
+    height: 500px;
+    position: relative;
+    overflow: hidden;
+  }
+  .join-cancel-toggle-container .gi-lock {
+    display: none!important;
+  }
+  .profile .user .avatars {
+    position: absolute;
+    left: 25px;
+    top: -120px;
+    z-index: 2;
+    width: 150px;
+    height: 150px;
+  }
+  .img-profile{
+    height: 150px;
+    width: 150px;
+  }
+  .actions {
+    display: none;
+  }
+  .bottomleft {
+    position: absolute;
+    bottom: 30px;
+    left: 180px;
+    font-size: 14px;
+    color: white;
+  }
+}
+
+@media (min-width: 769px) and (max-width: 992px) {
+  .btn-responsive {
+    padding:4px 9px;
+    font-size:90%;
+    line-height: 1.2;
+  }
+  .actions {
+    margin-top: 30px;
+  }
+}
+.icon-event {
+  background: green;
+  padding: 5px;
+  border-radius: 12px;
+  color: white;
+  font-size: 16px;
 }

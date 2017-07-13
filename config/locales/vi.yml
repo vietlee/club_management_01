@@ -923,3 +923,4 @@ vi:
   add_images_successfully: "Thêm ảnh thành công!"
   error_in_process: "Có lỗi, vui lòng thử lại!"
   event_not_save: "Không lưu được sự kiện"
+  image_cover: "Ảnh bìa"

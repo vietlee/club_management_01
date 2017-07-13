@@ -1,8 +1,9 @@
 <%= link_to user_club_path(id: 1, club_id: @club.id),
-  method: :delete, remote: true, class: "join-club-button" do %>
-  <span class="site-top-avatar pull-right join-button animation-fadeIn360">
+  method: :delete, remote: true, class: "join-club-button pull-left",
+  title: t("cancel") do %>
+  <span class="animation-fadeIn360 btn btn-club">
     <%= t "cancel" %>
+    <i class="fa fa-times-circle" aria-hidden="true"></i>
   </span>
 <% end %>
-<%= content_tag(:i, nil,
-    class: "fa fa-exclamation-triangle icon-noti pull-right animation-fadeIn360", title: t("wait_process_club")) %>
+<%= content_tag(:i, nil, class: "gi gi-lock", title: t("wait_process_club")) %>

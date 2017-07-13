@@ -1,69 +1,63 @@
-<div class="media-container">
+<div class="club-profile">
 <%= render "users/users" %>
-  <section class="site-section site-section-light site-section-top">
-    <div class="container description-club-text description-club">
-      <div class="join-cancel-toggle-container">
-        <%= render "user_clubs/join_cancel_toggle" %>
-      </div>
-      <h1 class="animation-slideDown">
-        <strong><%= @club.name %></strong>
-        <div class="pull-left dropdown">
-          <span class="caret" data-toggle="dropdown"></span>
-          <% if current_user.user_clubs.joined.of_club(@club) %>
-            <ul class="dropdown-menu">
-              <li><%= link_to t("leave_club"), user_club_path(club_id: @club.id), method: :delete, data: {confirm: t("answer_leave")} %></li>
-            </ul>
+  <section class="">
+    <div class="">
+      <div class="profile clearfix">
+        <div class="image club-profile-image">
+          <%= link_to club_path(@club) do %>
+            <%= image_tag @club.image, class: "img-cover", title: t("image_cover") %>
           <% end %>
+          <div class="bottomleft col-md-4">
+            <h3 class="name-club text-left"><%= @club.name %></h3>
+            <span class="animation-slideUp hidden-xs rating-container">
+              <%= render "ratings/rating" %>
+            </span>
+            <div class="join-cancel-toggle-container">
+              <%= render "user_clubs/join_cancel_toggle" %>
+            </div>
+          </div>
+          <div class="bottomright">
+          </div>
         </div>
-      </h1>
-      <span class="animation-slideUp hidden-xs rating-container">
-        <%= render "ratings/rating" %>
-      </span>
-      <p class="h3 animation-slideUp hidden-xs description-club-text">
-        <% unless @club.content.nil? %>
-          <%= @club.content.truncate(Settings.club_description).html_safe %>
-          <% if @club.content.length > Settings.club_description %>
-            <%= link_to "#modal-content-club", data: {toggle: "modal"},
-              class: "btn btn-sm btn-default animation-fadeIn360" do %>
-              <i class="fa fa-plus "></i> <%= t "more" %>
-            <% end %>
-          <% end %>
-        <% end %>
-      </p>
-      <p><%= get_day_view @club.time_activity %></p>
+        <div class="user clearfix">
+          <div class="avatars">
+            <%= image_tag @club.logo, title: t("logo"), class: "img-thumbnail img-profile" %>
+          </div>
+          <div class="actions">
+            <div class="pull-right button-readmore-club">
+              <%= link_to "#modal-goal-club", data: {toggle: "modal"},
+                class: "btn btn-sm button-club animation-fadeIn360" do %>
+                <i class="fa fa-line-chart"></i> <%= t "goal" %>
+              <% end %>
+              <%= link_to "#modal-plan-club", data: {toggle: "modal"},
+                class: "btn btn-sm button-club animation-fadeIn360" do %>
+                <i class="fa fa-file-word-o"></i> <%= t "plan" %>
+              <% end %>
+              <%= link_to "#modal-local-club", data: {toggle: "modal"},
+                class: "btn btn-sm button-club animation-fadeIn360" do %>
+                <i class="fa fa-home"></i> <%= t "local_club" %>
+              <% end %>
+              <%= link_to "#modal-rules-club", data: {toggle: "modal"},
+                class: "btn btn-sm button-club animation-fadeIn360" do %>
+                <i class="fa fa-file-text-o"></i> <%= t "rules_club" %>
+              <% end %>
+              <%= link_to "#modal-finance-club", data: {toggle: "modal"},
+                class: "btn btn-sm button-club animation-fadeIn360" do %>
+                <i class="fa fa-money "></i> <%= t "rule_finance" %>
+              <% end %>
+              <%= link_to "#modal-time-join-club", data: {toggle: "modal"},
+                class: "btn btn-sm button-club animation-fadeIn360" do %>
+                <i class="fa fa-handshake-o"></i> <%= t "time_member_join" %>
+              <% end %>
+              </div>
+              <div id="modal-content-club" class="modal fade" tabindex="-1"
+                role="dialog" aria-hidden="true">
+                <%= render "popups/location" %>
+              </div>
+              <%= render "clubs/modal_club_field" %>
+          </div>
+        </div>
+      </div>
     </div>
-    <div class="container"></div>
   </section>
-  <%= image_tag @club.image, class: "media-image animation-pulseSlow" %>
 </div>
-<div class="pull-right button-readmore-club">
-  <%= link_to "#modal-goal-club", data: {toggle: "modal"},
-    class: "btn btn-sm btn-info animation-fadeIn360" do %>
-    <i class="fa fa-line-chart"></i> <%= t "goal" %>
-  <% end %>
-  <%= link_to "#modal-plan-club", data: {toggle: "modal"},
-    class: "btn btn-sm btn-info animation-fadeIn360" do %>
-    <i class="fa fa-file-word-o"></i> <%= t "plan" %>
-  <% end %>
-  <%= link_to "#modal-local-club", data: {toggle: "modal"},
-    class: "btn btn-sm btn-info animation-fadeIn360" do %>
-    <i class="fa fa-home"></i> <%= t "local_club" %>
-  <% end %>
-  <%= link_to "#modal-rules-club", data: {toggle: "modal"},
-    class: "btn btn-sm btn-info animation-fadeIn360" do %>
-    <i class="fa fa-file-text-o"></i> <%= t "rules_club" %>
-  <% end %>
-  <%= link_to "#modal-finance-club", data: {toggle: "modal"},
-    class: "btn btn-sm btn-info animation-fadeIn360" do %>
-    <i class="fa fa-money "></i> <%= t "rule_finance" %>
-  <% end %>
-  <%= link_to "#modal-time-join-club", data: {toggle: "modal"},
-    class: "btn btn-sm btn-info animation-fadeIn360" do %>
-    <i class="fa fa-handshake-o"></i> <%= t "time_member_join" %>
-  <% end %>
-</div>
-<div id="modal-content-club" class="modal fade" tabindex="-1" role="dialog"
-  aria-hidden="true">
-  <%= render "popups/location" %>
-</div>
-<%= render "clubs/modal_club_field" %>
