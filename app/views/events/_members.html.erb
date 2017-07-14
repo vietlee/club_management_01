@@ -1,13 +1,13 @@
-<div class="sidebar">
-  <h4 class="site-heading text-center">
-    <strong><%= t "members" %></strong>
+<div class="sidebar member-site">
+  <h4 class="site-heading text-center left-title">
+    <%= t "members" %>
     <span class='label label-primary label-indicator
       animation-floating'>
-      <%= @members.size %>
+      <%= @support.members_joined.size %>
     </span>
   </h4>
   <div class="col-md-12">
-    <% @members.take(Settings.max_display_member_club).each do |member| %>
+    <% @support.members_joined.take(Settings.max_display_member_club).each do |member| %>
       <div class="col-md-4 col-sm-3 col-xs-3">
         <div class="text-center">
           <%= link_to user_path(member.user_id), title: member.full_name, target: "_blank" do %>
@@ -17,7 +17,7 @@
         </div>
       </div>
     <% end %>
-    <% if @members.size > Settings.max_display_member_club %>
+    <% if @support.members_joined.size > Settings.max_display_member_club %>
       <div class="col-md-3 col-sm-6">
         <%= link_to "#modal-user", data: {toggle: "modal"},
           class: "members-club animation-fadeIn360", title: "more" do %>

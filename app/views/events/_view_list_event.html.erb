@@ -9,12 +9,13 @@
         </p>
       </div>
       <div class="col-md-8 description-event">
-        <h4 class="site-heading"><strong><%= event.name %></strong>
+        <h4 class="site-heading">
           <% if event.notification? %>
-             <i class="hi hi-bell icon-event"></i>
-           <% else %>
-              <i class="gi gi-usd icon-event"></i>
-           <% end %>
+            <i class="hi hi-bell icon-event"></i>
+          <% else %>
+            <i class="gi gi-usd icon-event"></i>
+          <% end %>
+          <strong><%= event.name %></strong>
         </h4>
         <p class="text-justify"><%= event.description.truncate(Settings.event_truncate).html_safe unless event.description.nil? %></p>
       </div>

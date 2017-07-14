@@ -36,14 +36,12 @@
   white-space: nowrap;
 }
 .imgWrapper {
-  overflow: hidden;
-  height: 120px;
-  width: 220px;
-  margin-bottom: 5px;
+
 }
 .imgWrapper img {
-  height: 120px;
-  width: 220px;
+  height: 150px;
+  width: 100%;
+  margin-bottom: 4px;
 }
 a.bsp-controls,
 a.bsp-controls:visited,

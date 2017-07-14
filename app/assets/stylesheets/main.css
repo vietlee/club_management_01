@@ -21,8 +21,9 @@ body {
 .suggest-club a {
   font-weight: bold;
 }
-.name-event a {
+.name-event-budget a {
   color: black;
+  font-size: 13px;
 }
 .name-event a:hover {
   color: #FF0072;
@@ -45,8 +46,13 @@ body {
   margin-bottom: 40px;
   margin-left: 56px;
 }
+.description-event {
+  padding: 0px!important;
+}
 .description-event p, .description-club p {
+  margin-top: 10px;
   text-align: justify;
+  font-family: 'Lato', sans-serif;
 }
 .suggest-club a:hover {
   text-decoration: none;
@@ -121,7 +127,9 @@ h6 {
   font-weight: bold;
 }
 .view-tags {
+  margin-top: 20px;
   margin-bottom: 10px;
+  border-top: 1px solid #EEEEEE;
 }
 .tags-club {
   background-color: #F3F3F3;
@@ -134,9 +142,13 @@ h6 {
   margin-top: 50px;
 }
 .gi-lock {
-  color: #1BBAE1;
-  font-size: 35px !important;
+  color: #F5CE8F;
+  font-size: 25px !important;
   margin-left: -245px;
+  margin-top: 10px;
+}
+.gi-lock:hover {
+  color: red;
 }
 .animation-slideDown {
   margin-top: -2px;
@@ -207,8 +219,7 @@ h4 .money {
   border-radius: 10px;
 }
 .event-block {
-  border: 1px solid #394263;
-  border-radius: 10px;
+  padding: 0px;
 }
 .site-block .title {
   color: #394263;
@@ -259,7 +270,7 @@ h4 .money {
   margin-bottom: 10px;
 }
 .infor-event strong {
-  font-size: 17px;
+  font-size: 14px;
 }
 header {
   position: fixed;
@@ -436,6 +447,10 @@ header nav {
   margin-bottom: 0;
   font-size: 18px;
   color: #555555;
+}
+.more-image:hover {
+  text-decoration: none;
+  color: green;
 }
 /* Media Container */
 
@@ -759,6 +774,10 @@ a[data-toggle="lightbox-image"]:hover img {
 }
 .content-float .pull-right {
   margin: 0 0 20px 20px;
+}
+
+.site-right {
+  margin-top: -20px!important;
 }
 /* Counter */
 
@@ -1974,12 +1993,13 @@ li:last-child {
 }
 
 .btn-club:hover {
-  color: green;
-
+  color: black;
+  background-color: white;
 }
 .btn-club {
   border: 1px solid black!important;
   color: black;
+  background: #F7BE64;
 }
 .rating-input span {
   font-size: 25px;
@@ -2042,7 +2062,7 @@ li:last-child {
   right: 50px;
   border-radius: 20px;
   text-align: center;
-  font-size: 70px!important;
+  font-size: 40px!important;
   color: hsl(120, 60%, 80%)
 }
 
@@ -2053,7 +2073,7 @@ li:last-child {
 }
 
 .tip span {
-  font-size: 40px;
+  font-size: 20px;
   position: relative;
   font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
@@ -2243,8 +2263,86 @@ li:last-child {
 }
 .icon-event {
   background: green;
-  padding: 5px;
-  border-radius: 12px;
+  padding-left: 3px;
+  padding: 5px 4px 5px 4px;
+  border-radius: 9px;
   color: white;
+  font-size: 13px;
+}
+.name-event {
+  text-transform: uppercase;
+  font-family: 'Raleway', sans-serif;
+  font-style: italic;
+}
+.entry-meta {
+  margin: 10px -10px -15px 0;
+  list-style: none;
+}
+.entry-meta li {
+  float: left;
+  font-size: 13px;
+  line-height: 14px;
+  margin: 0 10px 15px 0;
+  color: #999;
+  font-family: 'Crete Round', serif;
+  font-style: italic;
+  color: #999999;
+  font-weight: bold;
+}
+.entry-meta li a {
+  color: #999999;
+}
+.entry-meta li a:hover {
+  text-decoration: none;
+  color: green;
+}
+.entry-meta li i {
+  position: relative;
+  top: -3px;
   font-size: 16px;
+  margin-right: 3px;
+}
+.entry-meta li:before {
+  content: '/';
+  display: inline-block;
+  margin-right: 10px;
+  opacity: 0.5;
+}
+.img-event-detail {
+  padding: 0px!important;
+}
+.img-event-detail img {
+  border-radius: 3px;
+  width: 100%;
+  height: auto;
+}
+.money-event p {
+  font-size: 13px!important;
+}
+.content-detail {
+  margin-top: -30px!important;
+}
+.image-club-show img{
+  width: 60px!important;
+  height: 60px!important;
+  margin-top: 3px;
+}
+.image-club-show {
+  padding: 0px!important;
+}
+.left-title {
+  text-transform: uppercase;
+  font-family: 'Raleway', sans-serif;
+  font-size: 15px;
+}
+.more-image {
+  padding-top: 12px;
+}
+.join-event i {
+  font-size: 25px;
+  margin-right: 3px;
+}
+.logo-page-club {
+  width: 89px;
+  margin-top: 0px;
 }
