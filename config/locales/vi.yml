@@ -205,7 +205,7 @@ vi:
   days: "Ngày"
   duration: "Thời gian diễn ra sự kiện"
   date_start: "Thời gian bắt đầu"
-  expense: "Số tiền (VND)"
+  expense: "Số tiền"
   event_name: "Tên sự kiện"
   choose_club: "Chọn một câu lạc bộ mà bạn muốn gửi yêu cầu"
   descriptions_club: "Mô tả của câu lạc bộ"
@@ -926,4 +926,6 @@ vi:
   event_not_save: "Không lưu được sự kiện"
   image_cover: "Ảnh bìa"
   errors_size_image: "Ảnh bìa phải có chiều cao trong khoảng %{min_height_image_club}
-  đến %{max_height_image_club} và chiều rộng từ %{min_width_image_club} trở lên, vui lòng chọn lại!"
+    đến %{max_height_image_club} và chiều rộng từ %{min_width_image_club} trở lên, vui lòng chọn lại!"
+  comment: "Bình luận"
+  images: "Hình Ảnh"

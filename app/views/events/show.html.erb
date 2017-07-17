@@ -5,21 +5,44 @@
       <div class="row">
         <div class="col-md-10 col-md-offset-1 site-block">
           <article>
-          <h1 class="center event-title"><strong><%= @event.name %></h1></strong>
+          <h3 class="name-event"><%= @event.name %></h3>
+          <ul class="entry-meta clearfix">
+            <li><i class="hi hi-calendar"></i><%= l @event.created_at,
+              format: :short %></li>
+            <li>
+              <%= link_to user_path(@event.user), target: "_blank" do %>
+                <i class="gi gi-user"></i>
+                <%= @event.user_full_name %>
+              <% end %>
+            </li>
+            <li>
+              <% if @event.notification? %>
+                <i class="hi hi-bell"></i>
+              <% else %>
+                <i class="gi gi-usd"></i>
+              <% end %>
+            </li>
+            <li><a href="#comment-position"><i class="gi gi-conversation"></i>
+              <%= @event.comments.size %> <%= t("comment") %>
+            </a></li>
+          </ul>
           <hr>
-          <div class="event-block col-md-12">
+          <div class="col-md-4 img-event-detail">
+            <%= image_tag @event.image, class: "img-responsive" %>
+          </div>
+          <div class="col-md-8">
             <div class="row block col-md-6">
               <div>
-                <h3 class="detail-text center">
+                <h4 class="detail-text center">
                   <%= t "detail" %>
-                </h3>
+                </h4>
               </div>
               <div class="col-md-12 center infor-event">
                 <% unless @event.notification? %>
                   <div class="col-md-6">
                     <p><strong><%= t "expense" %></strong></p>
                   </div>
-                  <div class="col-md-6">
+                  <div class="col-md-6 money-event">
                     <p><%= number_to_currency(@event.expense, locale: :vi) %>
                       <% unless @event.notification? %>
                         <button type="button" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#myModal">
@@ -62,15 +85,15 @@
                   <div class="col-md-6">
                     <p class="text-center"><strong><%= t "location" %></strong></p>
                   </div>
-                  <div class="col-md-6">
+                  <div class="col-md-6 money-event">
                     <p class="text-center"><%= @event.location %></p>
                   </div>
                 <% end %>
                 <% if @event.date_start.present? && @event.date_end.present? %>
-                  <div class="col-md-6 fa fa-calendar text-center infor-event">
+                  <div class="col-md-6 fa fa-calendar money-event text-center infor-event">
                     <strong> <%= t "date_start" %></strong> <br>
                     <p><%= @event.date_start %></p></div>
-                  <div class="col-md-6 fa fa-calendar text-center infor-event">
+                  <div class="col-md-6 fa fa-calendar money-event text-center infor-event">
                     <strong> <%= t "date_end" %></strong><br>
                     <p class="text-center"><%= @event.date_end %></p></div>
                 <% end %>
@@ -78,9 +101,9 @@
             </div>
             <div class="row col-md-6">
               <div>
-                <h3 class="detail-text center">
+                <h4 class="detail-text center">
                   <%= t "members" %>
-                </h3>
+                </h4>
               </div>
               <div class="row text-center">
                 <% if @event.notification? %>
@@ -103,13 +126,15 @@
                       </div>
                     <% end %>
                   <% else %>
-                    <h3><%= t "no_member" %></h3>
+                    <h5><%= t "no_member" %></h5>
                   <% end %>
                 <% else %>
-                  <h4><strong><%= t "all_member" %></strong></h4>
+                  <h5><strong><%= t "all_member" %></strong></h5>
                 <% end %>
               </div>
             </div>
+          </div>
+          <div class="event-block col-md-12">
             <div class="col-md-12 description-event">
               <% if @event.description.blank? %>
                 <h3 class="text-center">
@@ -131,6 +156,7 @@
       </div>
       <hr>
       <div class="list-comment-event">
+        <div id="comment-position"><a href="comment-position" name="comment-position"></a></div>
         <%= render partial: "events/comment", locals: {comments: @comments, event: @event} %>
       </div>
     </div>

@@ -1,4 +1,5 @@
-<section class="site-content">
+<%= javascript_include_tag "images", "data-turbolinks-track" => true %>
+<section class="site-content content-detail">
   <div class="container">
     <div class="row">
       <div class="col-sm-8 col-md-9">
@@ -7,7 +8,7 @@
         <div class="site-block"></div>
         <%= render partial: "events/event", locals: {event: @events} %>
       </div>
-      <div class="col-sm-4 col-md-3">
+      <div class="col-sm-4 col-md-3 site-right">
         <aside class="sidebar site-block site-section">
           <div class="sidebar-block">
             <%= search_form_for @q, url: club_url, method: :get do |f| %>
@@ -25,16 +26,28 @@
           </div>
           <%= render "clubs/budget" %>
           <div class="text-center sidebar-block">
-            <%= link_to club_albums_path(club_id: @club.id),
-              class: "btn btn-primary button-budget-album", target: "_blank" do %>
-              <i class="fa fa-camera" aria-hidden="true"></i>
-              <%= t("albums") %>
+            <% if @support.images_club.any? %>
+              <h4 class="text-center left-title"><%= t("images") %></h4>
+              <ul class="col-md-12 image-club-show">
+                <% @support.images_club.take(Settings.max_display_image_club).each do |image| %>
+                  <li class="">
+                    <%= image_tag image.url, class: "img-responsive" %>
+                  </li>
+                <% end %>
+                <% if @support.images_club.size > Settings.max_display_image_club %>
+                  <div class="col-md-3 col-sm-3 col-xs-3 more-image">
+                    <%= link_to club_albums_url(club_id: @club.id),
+                      class: "members-club more-image animation-fadeIn360" do %>
+                      <i><%= t("more") %></i>
+                    <% end %>
+                  </div>
+                <% end %>
+              </ul>
             <% end %>
           </div>
-          <%= render "clubs/tags" %>
           <%= render "events/nav_events" %>
-          </hr>
           <%= render "events/members" %>
+          <%= render "clubs/tags" %>
         </aside>
       </div>
     </div>

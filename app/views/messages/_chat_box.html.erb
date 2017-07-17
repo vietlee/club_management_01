@@ -21,12 +21,13 @@
         </strong>
       </div>
     </div>
-    <%= hidden_field_tag :num_message, {}, class: "num-step-message", value: @messages.size %>
+    <%= hidden_field_tag :num_message, {}, class: "num-step-message",
+     value: @support.messages.size %>
     <div class="panel-body">
       <div id="viewport">
         <div id="viewport-content">
           <div class="nano-content pad-all">
-            <% if @messages.size >= Settings.chat_messages_limit %>
+            <% if @support.messages.size >= Settings.chat_messages_limit %>
               <li class="text-center list-unstyled media-block">
               <a href="javascript:void(0)" class="load-more-message btn btn-default">
                 <i class="fa fa-spinner"></i> <%= t "read_more" %>
@@ -34,7 +35,7 @@
               </li><br>
             <% end %>
             <ul class="list-unstyled media-block" id="list-messages">
-              <%= render @messages %>
+              <%= render @support.messages %>
             </ul>
           </div>
         </div>

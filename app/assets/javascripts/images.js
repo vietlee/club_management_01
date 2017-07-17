@@ -12,4 +12,8 @@ $(function(){ Portfolio.init(); });
     "classes" : "col-md-6 col-sm-3 col-xs-4 col-xxs-12",
     "hasModal" : true
   });
+  $('.image-club-show').bsPhotoGallery({
+    "classes" : "col-md-3 image-club-show col-sm-3 col-xs-3",
+    "hasModal" : true
+  });
 });
