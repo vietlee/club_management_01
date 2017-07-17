@@ -8,7 +8,7 @@ Rails.application.config.assets.precompile += %w(application_admin.js ckeditor/c
   club_manager/select_tag.js manager/select_tag.js chosen.js bootstrap-tagsinput.js handle_menu.js
   close.js jquery.range.js)
 Rails.application.config.assets.precompile += %w(application_admin.css user_login.scss
-  organization-details.css intro.css jquery.range.css)
+  organization-details.css intro.css jquery.range.css user_profile)
 # Precompile additional assets.
 # application.js, application.css, and all non-JS/CSS in app/assets folder are already added.
 # Rails.application.config.assets.precompile += %w( search.js )

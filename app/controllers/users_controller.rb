@@ -5,6 +5,7 @@ class UsersController < ApplicationController
 
   def show
     @clubs = Club.of_user_clubs(@user.user_clubs.joined)
+      .page(params[:page]).per Settings.user.club_per_page
     @club_time_lines = current_user.clubs
   end
 

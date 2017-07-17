@@ -37,7 +37,7 @@ class Club < ApplicationRecord
     where(organization_id: organizations.ids)
   end
 
-  delegate :name, to: :organization, prefix: :club, allow_nil: :true
+  delegate :name, to: :organization, prefix: true, allow_nil: :true
 
   def calculate_change_budget event
     self.update_attributes money: self.money.to_i - event.expense.to_i
@@ -78,5 +78,10 @@ class Club < ApplicationRecord
       min_height_image_club: Settings.club.image.min_height_image_club,
       max_height_image_club: Settings.club.image.max_height_image_club)
     end
+  end
+
+  def display_organization
+    return "" if self.nil?
+    "#{self.organization_name} / #{I18n.t("club_type.#{self.club_type}")}"
   end
 end

@@ -1,4 +1,13 @@
 jp:
+  club_type:
+    sport: "Sport"
+    game: "Game"
+    education: "Education"
+    other: "Other"
+    music: "Music"
+    entertainment: "Entertainment"
+    confidential: "Confidential"
+    junket: "Junket"
   request_parent:
     pending: "Watting..."
     joined: "Done"
@@ -24,6 +33,8 @@ jp:
   joined: "Already a member"
   club_inner: "List Clubs inner Organization"
   send: "Send"
+  see_more: "SEE MORE"
+  settings: "SETTINGS"
   plan_law: "Plan & Law"
   feed_back: "Feed Back"
   overview: "Overview"

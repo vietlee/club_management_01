@@ -83,6 +83,8 @@ limit_comments: 7
 chat_messages_limit: 30
 min_content: 20
 ratings: "ratings"
+user:
+  club_per_page: 3
 truncate:
   club:
     description: 100
@@ -131,6 +133,7 @@ club:
   max_plan_length: 1000
   max_name_length: 255
   max_member: 1000
+  max_content_truncate: 270
   image:
     min_width_image_club: 1024
     min_height_image_club: 400

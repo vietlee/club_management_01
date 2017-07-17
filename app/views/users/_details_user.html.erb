@@ -1,94 +1,146 @@
 <%= stylesheet_link_tag "organization-details",
   media: "all", "data-turbolinks-track": "reload" %>
+<%= stylesheet_link_tag "user_profile",
+  media: "all", "data-turbolinks-track": "reload" %>
+<%= javascript_include_tag "chosen",
+  "data-turbolinks-track" => true %>
 <section class="site-section site-section-light themed-background-dark">
 </section>
 <section class="site-content">
   <div class="container" id="main">
-    <div class="row">
-      <div class="col-lg-3 col-md-3 col-sm-4 col-xs-12">
-        <div id="sidebar">
-          <div class="user">
-            <div class="text-center">
-              <%= image_tag @user.avatar,
-                class: "img-circle org-img-details", id: "img-upload" %>
-            </div>
-            <div class="user-head">
-              <h1><%= @user.full_name %></h1>
-              <div class="hr-center"></div>
-              <div class="push-mini-bit"></div>
-              <h5><%= t "number_organization" %>:
-                <%= @organizaitons.size %>
-              </h5>
-              <% @organizaitons.each do |organization| %>
-                <%= link_to(image_tag(organization.logo,
-                  title: organization.name,
-                  class: "usr-img-details"), organization) %>
-              <% end %>
+    <div class="container">
+      <div class="row profile-user-content">
+        <h1 class="timeline-head text-center"><%= t "user_details" %></h1>
+        <div class="hr-center-profile"></div>
+        <div class="col-lg-3 col-md-4">
+          <div class="text-center card-box">
+            <div class="member-card">
+              <div class="thumb-xl member-thumb m-b-10 center-block profile-avatar-user">
+                <%= image_tag @user.avatar,
+                  class: "img-circle org-img-details", id: "img-upload" %>
+              </div>
+              <div class="">
+                <h4 class="m-b-5"><%= @user.full_name %></h4>
+                <p class="text-muted"><%= @user.email %></p>
+              </div>
+              <div class="text-left m-t-40">
+                <p class="text-muted font-13">
+                  <strong><%= t "full_name" %></strong>
+                  <span class="m-l-15"><%= @user.full_name %></span>
+                </p>
+                <p class="text-muted font-13">
+                  <strong><%= t "phone" %></strong>
+                  <span class="m-l-15"><%= @user.phone %></span>
+                </p>
+                <p class="text-muted font-13">
+                  <strong><%= t "email" %></strong>
+                  <span class="m-l-15"><%= @user.email %></span>
+                </p>
+                <p class="text-muted font-13">
+                  <strong><%= t "number_organization" %> : <%= @organizaitons.size %></strong>
+                  <span class="m-l-15">
+                    <% @organizaitons.each do |organization| %>
+                      <%= link_to(image_tag(organization.logo,
+                        title: organization.name,
+                        class: "usr-img-details"), organization) %>
+                    <% end %>
+                  </span>
+                </p>
+              </div>
             </div>
           </div>
         </div>
-        <div class="col-md-12">
-          <% if (current_user.tag_list.any?) && (current_user.is_user?@user) %>
-            <h4><i class="gi gi-lightbulb"></i><strong><%= t "club_suggest" %></strong></h4>
-            <div class="suggest-club">
-              <% if current_user.tags_clubs.any? %>
-                <% if club_suggest_user_tag.any? %>
-                  <% club_suggest_user_tag.each do |club| %>
-                    <%= link_to club_path(club.id), target: "_blank" do %>
-                      <i class="gi gi-brightness_reduce"></i>
-                      <%= club.name %></br>
-                    <% end %>
-                  <% end %>
-                <% else %>
-                  <i class="fa fa-hand-o-right"></i>
-                  <strong class="notifi-suggest">
-                    <%= t "not_club_conformity_now" %>
-                  </strong>
+        <div class="col-md-8 col-lg-9">
+          <div class="">
+            <div class="">
+              <ul class="nav nav-tabs navtab-custom">
+                <li class="active">
+                  <a href="#home" data-toggle="tab" aria-expanded="false">
+                    <span class="visible-xs"><i class="fa fa-user"></i></span>
+                    <span class="hidden-xs"><%= t "see_more" %></span>
+                  </a>
+                </li>
+                <% if current_user.is_user?@user %>
+                  <li class="">
+                    <a href="#settings" data-toggle="tab" aria-expanded="false">
+                      <span class="visible-xs"><i class="fa fa-cog"></i></span>
+                      <span class="hidden-xs"><%= t "settings" %></span>
+                    </a>
+                  </li>
                 <% end %>
-              <% else %>
-                <i class="fa fa-hand-o-right"></i>
-                <strong>
-                  <%= t "not_club_conformity" %>
-                </strong>
-              <% end %>
-            </div>
-          <% end %>
-        </div>
-      </div>
-      <div class="col-lg-9 col-md-9 col-sm-8 col-xs-12">
-        <div id="content">
-          <div class="main-content">
-            <ul class="timeline">
-              <li id="id-profile">
-                <div class="timeline-badge default">
-                  <i class="fa fa-user"></i>
-                </div>
-                <h1 class="timeline-head"><%= t "user_details" %></h1>
-              </li>
-              <li id="profile">
-                <div class="timeline-badge primary"></div>
-                <div class="timeline-panel">
-                  <h1>
-                    <strong><%= @user.full_name %></strong>
-                  </h1><hr>
-                  <h4><strong><%= t "phone" %>:</strong>
-                    <%= @user.phone %>
-                  </h4>
-                  <div class="hr-left"></div>
-                  <h4><strong><%= t "email" %>:</strong>
-                    <%= @user.email %>
-                  </h4>
-                  <div class="hr-left"></div>
-                  <h4><strong><%= t "number_club_joined" %>:</strong>
+              </ul>
+              <div class="tab-content">
+                <div class="tab-pane active" id="home">
+                   <h4 class="text-center"><strong><%= t "number_club_joined" %>:</strong>
                     <%= @user.user_clubs.joined.size %>
                   </h4>
-                  <div class="hr-left"></div>
-                  <% if current_user.is_user?@user %>
-                    <%= render "users/form_edit" %>
+                  <hr>
+                  <%= render "user_club", clubs: @clubs %>
+                </div>
+                <div class="tab-pane" id="settings">
+                  <%= form_for @user, html:{id: "form-validation",
+                    multipart: true,
+                    class: "form-horizontal form-bordered"} do |f| %>
+                    <div class="form-group">
+                      <div class="col-md-12">
+                        <label for="FullName"><%= t "full_name" %></label>
+                        <span class="text-danger">*</span></label>
+                          <%= f.text_field :full_name,
+                            class: "form-control", id: "val_username",
+                            placeholder: t("your_full_name") %>
+                      </div>
+                    </div>
+                    <div class="form-group">
+                      <div class="col-md-12">
+                        <label for="Email"><%= t "email" %></label>
+                        <span class="text-danger">*</span></label>
+                          <%= f.email_field :email,
+                            class: "form-control", id: "val_email",
+                            placeholder: t("example_email") %>
+                      </div>
+                    </div>
+                    <div class="form-group">
+                      <div class="col-md-6 col-lg-6">
+                        <label for="EnterTags"><%= t "enter_tags" %></label>
+                        <%= f.collection_select :tag_ids, Tag.order(:name), :id, :name, {},
+                          {multiple: true} %>
+                      </div>
+                      <div class="col-md-6 col-lg-6">
+                        <label for="Phone"><%= t "phone" %></label>
+                          <%= f.number_field :phone,
+                            class: "form-control", id: "val_phone",
+                            placeholder: t("phone") %>
+                      </div>
+                    </div>
+                    <div class="form-group">
+                      <div class="col-md-12">
+                        <label for="vatar"><%= t "avatar" %></label>
+                        <%= f.file_field :avatar,
+                          class: "form-control", id: "file-upload" %>
+                      </div>
+                    </div>
+                    <div class="form-group">
+                      <div class="col-md-6">
+                        <label for="Password"><%= t "password" %></label>
+                          <%= f.password_field :password, class: "form-control", id: "val_password", placeholder: t("placeholder_password") %>
+                      </div>
+                      <div class="col-md-6">
+                        <label for="RePassword">
+                          <%= t "password_confirmation" %>
+                        </label>
+                        <%= f.password_field :password_confirmation, class: "form-control", id: "val_password", placeholder: t("placeholder_password") %>
+                      </div>
+                    </div>
+                    <div class="form-group pull-right">
+                      <div class="col-md-12">
+                        <%= f.submit t("update"),
+                          class: "btn btn-nm btn-primary" %>
+                      </div>
+                    </div>
                   <% end %>
                 </div>
-              </li>
-            </ul>
+              </div>
+            </div>
           </div>
         </div>
       </div>
