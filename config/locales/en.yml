@@ -1,4 +1,13 @@
 en:
+  club_type:
+    sport: "Sport"
+    game: "Game"
+    education: "Education"
+    other: "Other"
+    music: "Music"
+    entertainment: "Entertainment"
+    confidential: "Confidential"
+    junket: "Junket"
   request_parent:
     pending: "Watting..."
     joined: "Done"
@@ -24,6 +33,8 @@ en:
   club_login: "Club"
   joined: "Already became member"
   send: "Send"
+  see_more: "SEE MORE"
+  settings: "SETTINGS"
   tks_for_feed_back: "Thank you! for Send Feed Back!"
   feed_back: "Feed Back"
   club_inner: "List of clubs in organization"

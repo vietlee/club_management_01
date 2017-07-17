@@ -1,0 +1,15 @@
+<% clubs.each do |club| %>
+  <p class="m-b-5">
+    <%= club.content.truncate(Settings.club.max_content_truncate).html_safe %>
+  </p>
+  <div class="m-t-30">
+    <h4 class="button-club-profile"><%= link_to club.name, club %></h4>
+    <div class=" p-t-10">
+      <h5 class="text-primary m-b-5">
+        <%= club.display_organization %>
+      </h5>
+    </div>
+    <hr>
+  </div>
+<% end %>
+<%= paginate clubs %>

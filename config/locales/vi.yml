@@ -1,4 +1,13 @@
 vi:
+  club_type:
+    sport: "Thể thao"
+    game: "Game"
+    education: "Giáo dục"
+    other: "Khác..."
+    music: "Âm nhạc"
+    entertainment: "Giải trí"
+    confidential: "Tâm sự-Chuyện riêng"
+    junket: "Tiệc tùng-Ăn uống"
   too_short: &too_short " quá ngắn (ít nhất %{count} ký tự)"
   too_long: &too_long " quá dài (nhiều nhất %{count} ký tự)"
   request_parent:
@@ -24,6 +33,8 @@ vi:
   twitter: "Twitter"
   tks_for_feed_back: "Cám ơn vì đã gửi phản hồi, chúng tôi sẽ cố gắng khắc phục!"
   facebook: "Facebook"
+  see_more: "XEM THÊM"
+  settings: "THIẾT ĐẶT"
   feed_back: "Phản hồi"
   joined: "Đã là thành viên"
   club_inner: "Danh sách câu lạc bộ trong tổ chức"
