@@ -230,4 +230,5 @@ body{
 
 .button-club-profile a:hover{
   color: #1bbae1;
+  transition: color 0.5s;
 }

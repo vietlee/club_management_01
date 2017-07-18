@@ -1,0 +1,48 @@
+<div id="modal-user-sign-in" class="modal fade" tabindex="-1" role="dialog" aria-hidden="true">
+  <div class="modal-dialog modal-login-user">
+    <div class="modal-content background-image">
+      <div class="modal-header text-center">
+        <h2 class="modal-title"><i class="fa fa-sign-in"></i> <%= t "login" %></h2>
+      </div>
+      <div class="modal-body">
+        <div class="container container-modal-login">
+          <div class="body"></div>
+          <div class="grad"></div>
+          <div class="header">
+            <div class="title-login"><%= t "club_login" %><span class="interactive-login"> <%= t "interactive" %></span></div>
+            <div class="hr-center-line"></div>
+          </div><br>
+          <div class="login">
+            <%= form_for(:user, as: :user, url: session_path(:user)) do |f| %>
+              <div class="input-group">
+                <span class="input-group-addon">
+                  <i class="gi gi-envelope"></i>
+                </span>
+                <%= f.text_field :email, class: "form-control input-lg", placeholder: t("email"), autofocus: true %>
+              </div>
+              <br>
+              <div class="input-group">
+                <span class="input-group-addon">
+                  <i class="gi gi-asterisk"></i>
+                </span>
+                <%= f.password_field :password, class: "form-control input-lg",placeholder: t("password"), autocomplete: "off" %><br>
+              </div>
+              <hr>
+              <div class="input-group remember_me_box pull-left">
+                <% if devise_mapping.rememberable? -%>
+                  <%= f.check_box :remember_me %>
+                  <%= f.label :remember_me %>
+                <% end -%>
+              </div>
+              <%= f.submit t("login"), class: "btn btn-sm btn-primary button-login" %>
+            <% end %>
+            <div class="input-group forget-password">
+              <%= link_to t("forget_password"), new_user_password_path %>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<%= stylesheet_link_tag "user_login_modal" %>

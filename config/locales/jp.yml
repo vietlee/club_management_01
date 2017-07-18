@@ -41,6 +41,7 @@ jp:
   web_content: "Web content"
   process: "Process"
   ui: "UI(Interface)"
+  no_data_organization: "No data is found"
   other: "Other"
   organization_details: "Organization detail"
   club_login: "Club"
