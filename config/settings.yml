@@ -39,7 +39,7 @@ min_content: 10
 club_event: 4
 event_news: 4
 club_member: 6
-club_per_page: 4
+club_per_page: 6
 organization_per_page: 3
 my_clubs: "/clubs"
 spend: 1

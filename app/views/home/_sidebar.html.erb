@@ -24,7 +24,7 @@
             <%= t "account" %> <span class="fa fa-user"></span>
           <% end %>
           <ul>
-            <li><%= link_to t("login"), new_user_session_path %></li>
+            <li><%= link_to t("login"),  "#modal-user-sign-in", data:{toggle: "modal"}, class: "enable-tooltip" %></li>
             <li><%= link_to t("register"), "#modal-user-sign-up", data:{toggle: "modal"}, class: "enable-tooltip" %></li>
           </ul>
         </li>
@@ -36,3 +36,4 @@
 <div class="clear">
 </div>
 <%= render "registrations/new" %>
+<%= render "authentications/form" %>

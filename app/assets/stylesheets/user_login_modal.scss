@@ -1,0 +1,60 @@
+input[type="checkbox"] {
+  width: 24px;
+  height: 24px;
+  display: inline;
+  vertical-align: middle;
+  margin: 10px;
+}
+
+.button-login {
+  width: 115px;
+  background: #1bbae1;
+  float: right;
+  cursor: pointer;
+  border-radius: 5px;
+  font-family: 'ff-tisa-web-pro', serif;
+  font-weight: 400;
+  font-style: italic;
+  margin-top: 10px !important;
+}
+
+input[type="submit"]:hover {
+  border: 1px solid;
+  box-shadow: inset 0 0 20px rgba(255, 255, 255, .5), 0 0 20px rgba(255, 255, 255, .2);
+  outline-color: rgba(255, 255, 255, 0);
+  outline-offset: 15px;
+  text-shadow: 1px 1px 2px #427388;
+}
+
+.title-login {
+  font-family: 'ff-tisa-web-pro', serif;
+  font-weight: 400;
+  font-size: 35px;
+}
+
+.interactive-login {
+  color: #0e5e71;
+}
+
+.hr-center-line {
+  height: 1px;
+  background-color: #1abc9c;
+  width: 45%;
+  display: block;
+}
+
+.background-image {
+  background-image: image-url('wallpaper.jpg');
+}
+
+.modal-login-user {
+  margin-top: 100px;
+}
+
+.container-modal-login {
+  margin-bottom: 30px !important;
+}
+
+.forget-password {
+  margin: 0 auto;
+}

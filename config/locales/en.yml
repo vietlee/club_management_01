@@ -22,6 +22,7 @@ en:
   budgets_club: " Budgets of Club"
   amount_event: "Because amount of this event has been exits so current amout is old amount"
   select_one_club: "Select one Club..."
+  no_data_organization: "No data is found"
   cancel_error: "Fail to cancel!!!"
   cancel_success: "Successfully canceled!"
   clubs_with_dot: "Quantity of clubs:"
