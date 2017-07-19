@@ -1,6 +1,7 @@
 <% clubs.each do |club| %>
   <p class="m-b-5">
-    <%= club.content.truncate(Settings.club.max_content_truncate).html_safe %>
+    <%= sanitize club.content
+      .truncate(Settings.club.max_content_truncate) if club.content.present? %>
   </p>
   <div class="m-t-30">
     <h4 class="button-club-profile"><%= link_to club.name, club %></h4>

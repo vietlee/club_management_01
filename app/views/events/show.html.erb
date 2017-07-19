@@ -45,7 +45,7 @@
                       <p class="view-money"><%= number_to_currency(@event.expense, locale: :vi) %>
                         <% unless @event.notification? %>
                           <button type="button" class="btn fa fa-angle-double-up
-                            btn-primary btn-sm" data-toggle="modal" data-target="#myModal">
+                            btn-primary btn-sm button-money" data-toggle="modal" data-target="#myModal">
                           </button>
                           <div class="">
                             <div class="modal fade" id="myModal" role="dialog">

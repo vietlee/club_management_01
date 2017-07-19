@@ -1,13 +1,12 @@
 input[type="checkbox"] {
-  width: 24px;
-  height: 24px;
+  width: 32px;
+  height: 20px;
   display: inline;
   vertical-align: middle;
-  margin: 10px;
+  margin-bottom: 6px;
 }
 
 .button-login {
-  width: 115px;
   background: #1bbae1;
   float: right;
   cursor: pointer;
@@ -16,6 +15,7 @@ input[type="checkbox"] {
   font-weight: 400;
   font-style: italic;
   margin-top: 10px !important;
+  margin-bottom: 5px !important;
 }
 
 input[type="submit"]:hover {
@@ -29,7 +29,7 @@ input[type="submit"]:hover {
 .title-login {
   font-family: 'ff-tisa-web-pro', serif;
   font-weight: 400;
-  font-size: 35px;
+  font-size: 30px;
 }
 
 .interactive-login {
@@ -39,22 +39,50 @@ input[type="submit"]:hover {
 .hr-center-line {
   height: 1px;
   background-color: #1abc9c;
-  width: 45%;
+  width: 70%;
   display: block;
-}
-
-.background-image {
-  background-image: image-url('wallpaper.jpg');
 }
 
 .modal-login-user {
   margin-top: 100px;
+  width: 350px;
+}
+
+.forget-password {
+  margin-top: 60px;
+  margin-left: 80px;
 }
 
 .container-modal-login {
   margin-bottom: 30px !important;
 }
 
-.forget-password {
-  margin: 0 auto;
+.background-form-actions {
+  background-color: initial !important;
+}
+
+.custom-button-login {
+  height: 32px;
+  text-align: left;
+}
+
+.modal-signup-user {
+  width: 500px;
+  margin-top: 100px;
+}
+
+.modal-signup-user-form {
+  border: aliceblue;
+}
+
+.button-close-sign-up {
+  margin-right: 15px;
+}
+
+.background-image-form-div {
+  background-image: image-url('wallpaper.jpg');
+}
+
+.background-color-form-div {
+  background-color: #e0e0e0;
 }

@@ -18,7 +18,8 @@
           {selected: Event.event_categories[@event.event_category]}
         end), {},
         class: "form-control", disabled: true) %>
-        <%= f.hidden_field :event_category, value: params[:type] %>
+        <%= f.hidden_field :event_category,
+          value: params[:type] || Event.event_categories[@event.event_category] %>
     </div>
   </div>
   <div class="form-group">

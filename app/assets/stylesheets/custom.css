@@ -14,7 +14,7 @@
 }
 
 .form-modal {
-  margin-right: 70px;
+  margin: 0px 20px;
 }
 .widget-organization {
   width: 100%;
@@ -929,4 +929,21 @@ table{
   width: 160px;
   padding: 6px 6px;
   font-size: 14px;
+}
+
+.hr-center-line-div {
+  height: 1px;
+  background-color: #2e354f;
+  width: 35%;
+  display: block;
+  margin: 0 auto;
+}
+
+.box-border {
+  padding-top: 30px;
+  border: 1px solid #d4d4d4;
+  border-radius: 2px;
+  position: relative;
+  background-color: #f6f6f6;
+  overflow: hidden;
 }
