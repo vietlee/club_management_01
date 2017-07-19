@@ -11,11 +11,14 @@
       <div class="col-md-8 description-event">
         <h4 class="site-heading">
           <% if event.notification? %>
-            <i class="hi hi-bell icon-event"></i>
+            <i class="gi gi-bell icon-event"></i>
           <% else %>
             <i class="gi gi-usd icon-event"></i>
           <% end %>
-          <strong><%= event.name %></strong>
+          <strong>
+            <%= link_to event.name, club_event_url(event.club, event),
+              class: "name-event-view" %>
+          </strong>
         </h4>
         <p class="text-justify"><%= event.description.truncate(Settings.event_truncate).html_safe unless event.description.nil? %></p>
       </div>
