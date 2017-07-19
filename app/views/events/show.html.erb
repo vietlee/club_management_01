@@ -31,7 +31,7 @@
             <%= image_tag @event.image, class: "img-responsive" %>
           </div>
           <div class="col-md-8">
-            <div class="row block col-md-6">
+            <div class="row col-md-6">
               <div>
                 <h4 class="detail-text center">
                   <%= t "detail" %>
@@ -39,58 +39,57 @@
               </div>
               <div class="col-md-12 center infor-event">
                 <% unless @event.notification? %>
-                  <div class="col-md-6">
-                    <p><strong><%= t "expense" %></strong></p>
-                  </div>
-                  <div class="col-md-6 money-event">
-                    <p><%= number_to_currency(@event.expense, locale: :vi) %>
-                      <% unless @event.notification? %>
-                        <button type="button" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#myModal">
-                          <i class="fa fa-angle-double-up" aria-hidden="true"></i>
-                        </button>
-                        <div class="">
-                          <div class="modal fade" id="myModal" role="dialog">
-                            <div class="modal-dialog modal-sm">
-                              <div class="modal-content">
-                                <div class="modal-header">
-                                  <button type="button" class="close" data-dismiss="modal">&times;</button>
-                                  <h2 class="modal-title">
-                                    <strong><%= t "detail" %></strong>
-                                  </h2>
-                                </div>
-                                <div class="modal-body">
-                                  <h2 class="center"><strong><%= t "before_money" %></strong></br>
-                                    <strong><%= number_to_currency(@event.amount, locale: :vi) %></strong>
-                                  </h2>
-                                  <h2 class="center">
-                                    <strong>
-                                      <%= view_notification @event %>
-                                    </strong></br>
-                                    <strong>
-                                      <%= number_to_currency(view_case_money_after(@event), locale: :vi) %></strong>
-                                  </h2>
-                                </div>
-                                <div class="modal-footer">
-                                  <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                  <div class="col-md-12 money-div">
+                    <p class="col-md-5"><strong><%= t "expense" %></strong></p>
+                    <div class="col-md-7 money-event">
+                      <p class="view-money"><%= number_to_currency(@event.expense, locale: :vi) %>
+                        <% unless @event.notification? %>
+                          <button type="button" class="btn fa fa-angle-double-up
+                            btn-primary btn-sm" data-toggle="modal" data-target="#myModal">
+                          </button>
+                          <div class="">
+                            <div class="modal fade" id="myModal" role="dialog">
+                              <div class="modal-dialog modal-sm">
+                                <div class="modal-content">
+                                  <div class="modal-header">
+                                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                    <h2 class="modal-title">
+                                      <strong><%= t "detail" %></strong>
+                                    </h2>
+                                  </div>
+                                  <div class="modal-body">
+                                    <h2 class="center"><strong><%= t "before_money" %></strong></br>
+                                      <strong><%= number_to_currency(@event.amount, locale: :vi) %></strong>
+                                    </h2>
+                                    <h2 class="center">
+                                      <strong>
+                                        <%= view_notification @event %>
+                                      </strong></br>
+                                      <strong>
+                                        <%= number_to_currency(view_case_money_after(@event), locale: :vi) %></strong>
+                                    </h2>
+                                  </div>
+                                  <div class="modal-footer">
+                                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                                  </div>
                                 </div>
                               </div>
                             </div>
                           </div>
-                        </div>
-                      <% end %>
-                    </p>
+                        <% end %>
+                      </p>
+                    </div>
                   </div>
                 <% end %>
                 <% unless @event.location.blank? %>
-                  <div class="col-md-6">
-                    <p class="text-center"><strong><%= t "location" %></strong></p>
-                  </div>
-                  <div class="col-md-6 money-event">
-                    <p class="text-center"><%= @event.location %></p>
+                  <div class="col-md-12 money-event">
+                    <p class="text-center col-md-5"><strong><%= t "location" %></strong></p>
+                    <p class="col-md-7"><%= @event.location %></p>
                   </div>
                 <% end %>
                 <% if @event.date_start.present? && @event.date_end.present? %>
-                  <div class="col-md-6 fa fa-calendar money-event text-center infor-event">
+                  <div class="col-md-6 fa fa-calendar money-event text-center
+                    infor-event">
                     <strong> <%= t "date_start" %></strong> <br>
                     <p><%= @event.date_start %></p></div>
                   <div class="col-md-6 fa fa-calendar money-event text-center infor-event">
