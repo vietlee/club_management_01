@@ -1,14 +1,11 @@
 <li class="bubble-container" ng-repeat="m in messages" tabindex="1">
   <div class="avatar avatar-left">
-    <%= image_tag message.user.avatar %>
+    <%= image_tag message.user.avatar, title: "#{l message.created_at, format: :full_date}" %>
   </div>
   <div class="bubble bubble-left">
     <span class="text-warning"><%= message.user.full_name %></span>
     <small><%= message.content %></small><br>
     <div class="push-mini-bit"></div>
     <div class="top-border-chat"></div>
-    <suppermall class="pull-right">
-      <%= l message.created_at, format: :full_date %>
-    </suppermall>
   </div>
 </li>

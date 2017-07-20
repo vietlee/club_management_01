@@ -1685,8 +1685,6 @@ fieldset[disabled] .btn-info.active {
   color: #1bbae1;
   margin-left: 5px;
   margin-right: 5px;
-  border: none !important;
-  border-radius: 25px !important;
 }
 .pagination > .active > a,
 .pagination > .active > span,
@@ -1748,7 +1746,9 @@ fieldset[disabled] .btn-info.active {
 =================================================================
 */
 /* Default Color Theme specific colors */
-
+.pagination-event {
+  margin-left: 50%;
+}
 .themed-color {
   color: #1bbae1;
 }
