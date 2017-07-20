@@ -61,7 +61,7 @@
   background-image: image-url("background-chat.png");
   height: 500px;
   width: 320px;
-  padding: 49px 25px 10px 25px;
+  padding: 49px 0px 10px 10px;
   margin: auto;
   position:fixed;
   bottom: 10px;
@@ -94,8 +94,8 @@
 .bubble-container {
   display:block;
   clear: both;
-  position:relative;
-  margin-bottom:10px;
+  position: relative;
+  margin-bottom: 2px;
   min-height: 53px;
 }
 
@@ -106,8 +106,8 @@
 }
 
 .avatar,.avatar img {
-  width: 50px;
-  height: 50px;
+  width: 30px;
+  height: 30px;
   -webkit-border-radius: 30px; /* Saf3+, Chrome */
   border-radius: 30px; /* Opera 10.5, IE 9 */
 }
@@ -132,12 +132,12 @@
   display: block;
   width: 0;
   z-index: 1;
-  left: 61px;
-  top: 13px;
+  left: 46px;
+  top: 4px;
 }
 
 .pad-all ul li:last-child {
-  margin-bottom: 50px;
+  margin-bottom: 30px;
 }
 
 .avatar-right:before {
@@ -155,12 +155,15 @@
 
 .avatar-left {
   float: left;
-  width: 50px;
+  width: 30px;
 }
 
 .bubble-left {
-  overflow: hidden;
-  margin-left: 75px;
+  padding: 5px;
+}
+
+.bubble-left {
+  margin-left: 60px;
 }
 
 .avatar-right {
@@ -173,11 +176,6 @@
   margin-right: 75px;
 }
 
-.top-border-chat {
-  border-top:solid 1px #ececec;
-  padding-top: 2px;
-}
-
 .has-scrollbar{
   height: 380px;
 }
@@ -186,7 +184,7 @@
     background-image: image-url("background-chat.png");
     height: 450px;
     width: 300px;
-    padding: 49px 25px 10px 25px;
+    padding: 49px 0px 10px 10px;
     margin: auto;
     position:fixed;
     bottom: 10px;
