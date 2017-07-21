@@ -6,6 +6,7 @@
     <i class="fa fa-map-dolar">
       <strong><%= @event.name %></strong>
     </i><br><hr>
+    <i class="fa fa-money" aria-hidden="true"></i>
     <strong><%= t "value" %>
       </strong class="pull-right">
       <%= number_to_currency(@event.expense, locale: :vi) %><hr>

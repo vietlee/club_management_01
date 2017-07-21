@@ -2325,7 +2325,7 @@ li:last-child {
 .money-event p {
   font-size: 13px!important;
 }
-.money-event button {
+.money-event .button-money {
   height: 16px;
 }
 .view-money {

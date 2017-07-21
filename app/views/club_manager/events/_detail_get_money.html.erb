@@ -6,6 +6,7 @@
     <i class="fa fa-map-dolar">
       <strong><%= @event.name %></strong>
     </i><br><hr>
+    <i class="fa fa-money" aria-hidden="true"></i>
     <strong><%= t "value" %>
       </strong class="pull-right">
       <%= number_to_currency(@event.expense, locale: :vi) %><hr>
@@ -24,7 +25,10 @@
     <div class="col-md-6">
       <div class="block">
         <div class="block-title">
-          <h2><strong><%= t "done_budget" %></strong></h2>
+          <h2>
+            <i class="fa fa-check" aria-hidden="true"></i>
+            <strong><%= t "done_budget" %></strong>
+          </h2>
         </div>
         <div class="row">
           <div class="col-md-12 budgets-members">
@@ -36,7 +40,10 @@
     <div class="col-md-6">
       <div class="block">
         <div class="block-title">
-          <h2><strong><%= t "no_budget" %></strong></h2>
+          <h2>
+            <i class="fa fa-window-close-o" aria-hidden="true"></i>
+            <strong><%= t "no_budget" %></strong>
+          </h2>
         </div>
         <div class="row">
           <div class="col-md-12 budgets-members">

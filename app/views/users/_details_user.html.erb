@@ -25,18 +25,22 @@
               </div>
               <div class="text-left m-t-40">
                 <p class="text-muted font-13">
-                  <strong><%= t "full_name" %></strong>
+                  <i class="fa fa-user" aria-hidden="true"></i>
+                  <strong><%= t "full_name" %> : </strong>
                   <span class="m-l-15"><%= @user.full_name %></span>
                 </p>
                 <p class="text-muted font-13">
-                  <strong><%= t "phone" %></strong>
+                  <i class="fa fa-phone-square" aria-hidden="true"></i>
+                  <strong><%= t "phone" %> : </strong>
                   <span class="m-l-15"><%= @user.phone %></span>
                 </p>
                 <p class="text-muted font-13">
-                  <strong><%= t "email" %></strong>
+                  <i class="fa fa-envelope-open" aria-hidden="true"></i>
+                  <strong><%= t "email" %> : </strong>
                   <span class="m-l-15"><%= @user.email %></span>
                 </p>
                 <p class="text-muted font-13">
+                  <i class="fa fa-university" aria-hidden="true"></i>
                   <strong><%= t "number_organization" %> : <%= @organizaitons.size %></strong>
                   <span class="m-l-15">
                     <% @organizaitons.each do |organization| %>

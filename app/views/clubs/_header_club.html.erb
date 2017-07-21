@@ -29,7 +29,10 @@
         </div>
         <div class="user clearfix">
           <div class="avatars">
-            <%= image_tag @club.logo, title: t("logo"), class: "img-thumbnail img-profile" %>
+            <%= link_to @club do %>
+              <%= image_tag @club.logo, title: t("logo"),
+                class: "img-thumbnail img-profile" %>
+            <% end %>
           </div>
           <div class="actions">
             <div class="pull-right button-readmore-club">
