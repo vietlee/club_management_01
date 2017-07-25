@@ -9,10 +9,10 @@
         </ul>
         <% if event.comments.size > Settings.limit_comments && comments.size == Settings.limit_comments %>
           <%= link_to t("view_all"), club_event_path(comment_status: "all"),
-            class: "btn btn-primary", remote: true %>
+            class: "btn btn-xs btn-primary", remote: true %>
         <% elsif event.comments.size > Settings.limit_comments && comments.size > Settings.limit_comments %>
           <%= link_to t("view_less"), club_event_path(comment_status: "less"),
-            class: "btn btn-primary", remote: true %>
+            class: "btn btn-xs btn-primary", remote: true %>
         <% end %>
       </div>
     </div>
