@@ -49,20 +49,26 @@
                     </div>
                   </h1>
                   <h4>
+                    <i class="fa fa-phone-square" aria-hidden="true"></i>
                     <strong><%= t "phone" %>:</strong>
                     <%= @organization.phone %>
                   </h4>
                   <div class="hr-left"></div>
-                  <h4><strong><%= t "email" %>:</strong>
+                  <h4>
+                    <i class="fa fa-envelope" aria-hidden="true"></i>
+                    <strong><%= t "email" %>:</strong>
                     <%= @organization.email %>
                   </h4>
                   <div class="hr-left"></div>
                   <h4>
+                    <i class="fa fa-map-marker" aria-hidden="true"></i>
                     <strong><%= t "address" %>:</strong>
                     <%= @organization.location %>
                   </h4>
                   <div class="hr-left"></div>
-                  <h4><strong><%= t "created_at" %>:</strong>
+                  <h4>
+                    <i class="fa fa-calendar" aria-hidden="true"></i>
+                    <strong><%= t "created_at" %>:</strong>
                     <%= (l @organization.created_at, format: :short) unless
                       @organization.created_at.nil? %>
                   </h4>
@@ -76,7 +82,10 @@
                     @organization) %>
                     <div class="timeline-badge primary"></div>
                     <div class="timeline-panel">
-                      <h1><%= t "club_inner" %></h1>
+                      <h1>
+                        <i class="fa fa-list" aria-hidden="true"></i>
+                        <%= t "club_inner" %>
+                      </h1>
                       <div class="hr-left"></div>
                         <div class="table-responsive">
                           <table id="example-datatable"
