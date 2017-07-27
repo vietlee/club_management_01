@@ -172,7 +172,7 @@ en:
   zero_phone: "(000) 000-0000"
   cip_code_ect: "Region, Zip/Postal Code"
   town_city: "Town/City"
-  send_request_club: "Send request to create new club"
+  send_request_club: "Create new club"
   post_at: "Post at:"
   description_request: "Please describe the club (10 characters at least)"
   logo_club: "Club logo"

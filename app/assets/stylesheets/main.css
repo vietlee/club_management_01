@@ -46,6 +46,18 @@ body {
   margin-bottom: 40px;
   margin-left: 56px;
 }
+.new-organization a {
+  font-weight: bold!important;
+  color: green!important;
+  font-size: 18px!important;
+}
+.new-organization a:hover {
+  color: #716749!important;
+  text-decoration: none;
+}
+.more-club {
+  width: 100%!important;
+}
 .description-event {
   padding: 0px!important;
 }
@@ -1818,6 +1830,9 @@ fieldset[disabled] .btn-info.active {
     margin-left: 10px;
     position: relative;
   }
+  .site-nav-club li {
+    margin-left: 5px;
+  }
   .site-nav a {
     margin: 0;
   }
@@ -2338,7 +2353,7 @@ li:last-child {
   padding: 0px;
 }
 .content-detail {
-  margin-top: -30px!important;
+  margin-top: -60px!important;
 }
 .image-club-show img{
   width: 60px!important;
@@ -2363,4 +2378,22 @@ li:last-child {
 .logo-page-club {
   width: 89px;
   margin-top: 0px;
+}
+.tab-club {
+  border: aliceblue;
+}
+.panel-club {
+  background-color: white!important;
+  border: aliceblue;
+  margin-top: 28px;
+}
+.box-border-club p {
+  margin-left: 10px;
+}
+
+.icon-more {
+  border-left: 8px solid transparent !important;
+  border-right: 8px solid transparent !important;
+  border-top: 8px solid #6AD2EB !important;
+  margin-right: 8px !important;
 }
