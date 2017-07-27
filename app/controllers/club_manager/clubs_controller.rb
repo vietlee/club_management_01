@@ -10,6 +10,7 @@ class ClubManager::ClubsController < BaseClubManagerController
   end
 
   def update
+    @organizations = current_user.user_organizations.joined
     if @club.update_attributes club_params
       create_acivity @club, Settings.update, @club, current_user
       flash[:success] = t "club_manager.club.success_update"

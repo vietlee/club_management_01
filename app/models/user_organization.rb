@@ -8,9 +8,6 @@ class UserOrganization < ApplicationRecord
 
   scope :are_admin, ->{where is_admin: true}
   scope :without_user_ids, ->user_ids{where.not user_id: user_ids}
-  scope :find_with_user_of_company, ->user_id, organization_id do
-    find_by user_id: user_id, organization_id: organization_id
-  end
   scope :newest, ->{order created_at: :desc}
 
   delegate :full_name, :avatar, :email, :phone, to: :user, allow_nil: :true
@@ -30,6 +27,10 @@ class UserOrganization < ApplicationRecord
     def create_user_organization user_id, organization_id
       create user_id: user_id, organization_id: organization_id,
         status: :joined
+    end
+
+    def find_with_user_of_company user_id, organization_id
+      find_by user_id: user_id, organization_id: organization_id
     end
   end
 end

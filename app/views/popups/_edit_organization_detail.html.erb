@@ -7,17 +7,18 @@
       </div>
       <div class="modal-body">
         <div class="block">
-          <%= link_to t("back"),
-            manager_organization_path(id: @organization.id),
-            class: "btn btn-danger" %>
           <div class="row edit-organization">
-            <h1><%= t "edit_organization" %><%= @organization.name %></h1>
+            <h1><%= @organization.name %></h1>
             <div class="col-md-8 col-md-offset-2">
               <%= form_for [:manager, @organization], html: {multipart: true} do |f| %>
                 <%= render "shared/error_messages", object: f.object %>
                 <%= f.label t("name") %>
                 <%= f.text_field :name, required: true, class: "form-control" %>
-
+                <%= f.label t("status") %>
+                <%= f.select :status, options_for_select(
+                  Organization.statuses.map{|k, v| [t("#{k}"), v]},
+                  {selected: Organization.statuses["#{@organization.status}"]}),{},
+                  class: "form-control stype-other-clubs" %>
                 <%= f.label t("email") %>
                 <%= f.text_field :email, required: true, class: "form-control" %>
 

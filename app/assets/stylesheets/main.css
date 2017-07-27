@@ -2397,3 +2397,15 @@ li:last-child {
   border-top: 8px solid #6AD2EB !important;
   margin-right: 8px !important;
 }
+.modal-right-club {
+  margin-top: 10px;
+}
+.main-menu-manager {
+  margin-bottom: 30px;
+}
+.text-infomation {
+  margin-top: 150px;
+}
+.btton-edit-organization {
+  margin-top: 10px;
+}
