@@ -104,13 +104,13 @@ textarea {
   text-align: center;
   color: #4d4e52;
   z-index: 0;
-  height: 400px;
+  height: 600px;
   width: 100%;
   top: 0;
-  padding-top: 70px;
+  padding-top: 170px;
   left: 0;
   z-index: 1;
-  background-color: #1BBAE1;
+  background-color: #FAD260;
 }
 .front-page img {
   margin-top: 120px;

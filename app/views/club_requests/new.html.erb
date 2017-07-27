@@ -9,7 +9,7 @@
           </h3>
           <div class="hr-center-line-div"></div>
           <%= form_for [:user, @request], html: {id: "form-contact"} do |f|%>
-            <div class="form-group col-md-12">
+            <div class="form-group col-md-12 new-organization">
               <label for="contact-name"><%= t "organization_sign" %></label>
               <br>
               <%= f.select(:organization_id, @organizations.collect {|org| [ org.name, org.organization_id ]}, {}, {class: "form-control" }) %>
