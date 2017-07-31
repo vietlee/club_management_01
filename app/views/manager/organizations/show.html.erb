@@ -2,86 +2,85 @@
   "data-turbolinks-track" => true %>
 <div class="media-container">
   <section class="site-section site-section-light site-section-top">
-    <div class="container">
+    <div class="container text-infomation">
       <h1 class="animation-slideDown">
         <strong><%= @organization.name %>
-          <%= link_to "#modal-club-edit",
-            data: {toggle: "modal"},
-            class: "btn btn-sm btn-primary animation-fadeIn360" do %>
-            <i class="fa fa-pencil "></i> <%= t "edit" %>
-          <% end %>
         </strong>
       </h1>
       <p class="h3 animation-slideUp hidden-xs">
         <%= @organization.description.html_safe %>
       </p>
-      <div class="join-cancel-toggle-container">
-        <div class="pull-left">
-          <%= form_tag manager_import_users_path(organization:
-            @organization.id), multipart: true, method: :post do %>
-            <%= file_field_tag :file %>
-            <%= submit_tag t("import_user"), class: "btn btn-success", title: t("title_import") %>
-          <% end %>
-        </div>
-      </div>
     </div>
     <div class="container"></div>
   </section>
   <%= image_tag @organization.logo, class: "media-image animation-pulseSlow" %>
 </div>
-<ul class="nav nav-tabs" role="tablist">
-  <li>
-    <%= link_to "#clubs", data: {toggle: "tab"} do %>
-      <%= t("club") %>
-      <span class="label label-primary label-indicator
-        animation-floating">
-        <%= @clubs.size %>
-      </span>
+<div class="col-md-12">
+  <div class="pull-left">
+    <%= link_to "#modal-club-edit",
+      data: {toggle: "modal"},
+      class: "btn btn-sm btn-primary btton-edit-organization animation-fadeIn360" do %>
+      <i class="fa fa-pencil "></i> <%= t "edit_organization" %>
     <% end %>
-  </li>
-  <li role="presentation">
-    <%= link_to "#members_organization", data: {toggle: "tab"} do %>
-      <%= t("members") %>
-      <span class="label label-primary label-indicator
-        animation-floating">
-        <%= @members.joined.size %>
-      </span>
-    <% end %>
-  </li>
-  <li role="presentation">
-    <%= link_to "#manager_organization", data: {toggle: "tab"} do %>
-      <%= t("manager") %>
-      <span class="label label-primary label-indicator
-        animation-floating">
-        <%= @members.are_admin.size %>
-      </span>
-    <% end %>
-  </li>
-  <li role="presentation">
-    <%= link_to "#requestmember", data: {toggle: "tab"} do %>
-      <%= t("request_member") %>
-      <span class="label label-primary label-indicator
-        animation-floating">
-        <%= @members.pending.size %>
-      </span>
-    <% end %>
-  </li>
-  <li role="presentation">
-    <%= link_to "#request_club", data: {toggle: "tab"} do %>
-      <%= t("request_club") %>
-      <span class="label label-primary label-indicator
-        animation-floating">
-        <%= @requests.pending.size %>
-      </span>
-    <% end %>
-  </li>
-</ul>
-<div class="refresh">
-  <%= link_to manager_organization_path(@organization),
-    class: "btn btn-sm btn-primary animation-fadeIn360" do %>
-    <%= t("refresh") %>
-    <i class="fa fa-refresh" aria-hidden="true"></i>
-  <% end %>
+  </div>
+  <ul class="nav nav-tabs col-md-9 pull-right" role="tablist">
+    <li>
+      <%= link_to "#clubs", data: {toggle: "tab"} do %>
+        <%= t("club") %>
+        <span class="label label-primary label-indicator
+          animation-floating">
+          <%= @clubs.size %>
+        </span>
+      <% end %>
+    </li>
+    <li role="presentation">
+      <%= link_to "#members_organization", data: {toggle: "tab"} do %>
+        <%= t("members") %>
+        <span class="label label-primary label-indicator
+          animation-floating">
+          <%= @members.joined.size %>
+        </span>
+      <% end %>
+    </li>
+    <li role="presentation">
+      <%= link_to "#manager_organization", data: {toggle: "tab"} do %>
+        <%= t("manager") %>
+        <span class="label label-primary label-indicator
+          animation-floating">
+          <%= @members.are_admin.size %>
+        </span>
+      <% end %>
+    </li>
+    <li role="presentation">
+      <%= link_to "#requestmember", data: {toggle: "tab"} do %>
+        <%= t("request_member") %>
+        <span class="label label-primary label-indicator
+          animation-floating">
+          <%= @members.pending.size %>
+        </span>
+      <% end %>
+    </li>
+    <li role="presentation">
+      <%= link_to "#request_club", data: {toggle: "tab"} do %>
+        <%= t("request_club") %>
+        <span class="label label-primary label-indicator
+          animation-floating">
+          <%= @requests.pending.size %>
+        </span>
+      <% end %>
+    </li>
+  </ul>
+</div>
+<div class="col-md-12">
+  <div class="join-cancel-toggle-container">
+    <div class="pull-left">
+      <%= form_tag manager_import_users_path(organization:
+        @organization.id), multipart: true, method: :post do %>
+        <%= file_field_tag :file %>
+        <%= submit_tag t("import_user"), class: "btn btn-success", title: t("title_import") %>
+      <% end %>
+    </div>
+  </div>
 </div>
 <div id="page-content">
   <div class="row">

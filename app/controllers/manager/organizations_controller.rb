@@ -30,7 +30,8 @@ class Manager::OrganizationsController < BaseOrganizationManagerController
   end
 
   def organization_parmas
-    params.require(:organization).permit :name, :description, :phone,
-      :email, :location, :logo
+    status = params["organization"]["status"].to_i
+    params.require(:organization).permit(:name, :description, :phone,
+      :email, :location, :logo).merge! status: status
   end
 end

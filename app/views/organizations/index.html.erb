@@ -38,40 +38,34 @@
             <h4 class="notifi-join center"><%= t "no_data_organization" %></h4 >
           <% else %>
             <% @organizations.each do |organization| %>
-              <div class="col-md-4 visibility-none" data-toggle="animation-appear"
-                data-animation-class="animation-fadeInQuick" data-element-offset="-100">
-                <div class="store-item">
-                  <% if organization.user_organizations.are_admin.first %>
-                    <div class="store-item-rating">
-                      <%= t "manager" %>:
-                      <strong class="text-warning">
-                        <%= organization.user_organizations.are_admin.first.user.full_name %>
-                      </strong>
-                    </div>
-                  <% end %>
-                  <div class="store-item-image">
-                    <%= link_to organization do %>
-                      <%= image_tag organization.logo,
-                        class: "img-responsive image-club" %>
-                    <% end %>
-                  </div>
-                  <div class="store-item-info clearfix block-club">
-                    <span class="store-item-price themed-color-dark pull-left name-organization-link">
-                      <%= link_to organization.name, organization %>
-                    </span><br>
-                    <div><div class="push-bit"></div>
+              <% if view_organization?(organization, current_user) %>
+                <div class="col-md-4 visibility-none" data-toggle="animation-appear"
+                  data-animation-class="animation-fadeInQuick" data-element-offset="-100">
+                  <div class="store-item">
+                    <div class="store-item-image">
                       <%= link_to organization do %>
-                        <strong class="pull-left fa fa-users">
-                          <%= t "members_with_dot" %>
-                          <%= organization.users.size %> |
-                          <%= t "clubs_with_dot" %>
-                          <%= organization.clubs.size %>
-                        </strong>
+                        <%= image_tag organization.logo,
+                          class: "img-responsive image-club" %>
                       <% end %>
+                    </div>
+                    <div class="store-item-info clearfix block-club">
+                      <span class="store-item-price themed-color-dark pull-left name-organization-link">
+                        <%= link_to organization.name, organization %>
+                      </span><br>
+                      <div><div class="push-bit"></div>
+                        <%= link_to organization do %>
+                          <strong class="pull-left fa fa-users">
+                            <%= t "members_with_dot" %>
+                            <%= organization.users.size %> |
+                            <%= t "clubs_with_dot" %>
+                            <%= organization.clubs.size %>
+                          </strong>
+                        <% end %>
+                      </div>
                     </div>
                   </div>
                 </div>
-              </div>
+              <% end %>
             <% end %>
           <% end %>
         </div>

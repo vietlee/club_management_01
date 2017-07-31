@@ -699,3 +699,6 @@ en:
   image_cover: "Cover image"
   errors_size_image: "Cover image must be between %{min_height_image_club} and
     %{max_height_image_club} and width from %{min_width_image_club}, please select again!"
+  status_text: "Status"
+  hide: "Private"
+  professed: "Public"

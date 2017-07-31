@@ -14,6 +14,8 @@ class Organization < ApplicationRecord
   validates :location, presence: true
   validates :description, presence: true
 
+  enum status: {professed: 0, hide: 1}
+
   mount_uploader :logo, ImageUploader
 
   scope :newest, ->{order created_at: :desc}

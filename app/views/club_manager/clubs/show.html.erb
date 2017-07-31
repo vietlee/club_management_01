@@ -1,7 +1,7 @@
 <%= javascript_include_tag "club_manager/select_tag", "data-turbolinks-track": true %>
 <div class="media-container">
   <section class="site-section site-section-light site-section-top">
-    <div class="container club-manager-container description-club">
+    <div class="container club-manager-container description-club text-infomation">
       <h1 class="animation-slideDown">
         <strong><%= @club.name %></strong>
       </h1>
@@ -20,39 +20,38 @@
           <% end %>
         <% end %>
       </p>
-      <div class="join-cancel-toggle-container">
-        <%= link_to "#modal-club-edit", data: {toggle: "modal"},
-          class: "btn btn-sm btn-primary animation-fadeIn360" do %>
-          <i class="fa fa-pencil "></i> <%= t "edit" %>
-        <% end %>
-        <% if @club.tag_list.join.blank? %>
-          <%= t "head_note" %>
-          <i class="fa fa-hand-o-right"></i>
-          <strong><%= t "note_cotent" %></strong>
-        <% end %>
-      </div>
-      <div>
-        <h4><strong><%= t "add_member" %></strong>
-          <%= link_to "#modal-club-add-user", data: {toggle: "modal"},
-            class: "btn btn-sm btn-danger animation-fadeIn360" do %>
-            <i class="fa fa-plus "></i> <%= t "add" %>
-          <% end %>
-        </h4>
-      </div>
     </div>
     <div class="container"></div>
   </section>
   <%= image_tag @club.image, class: "media-image animation-pulseSlow" %>
 </div>
-<div class="pull-right margin-edit-button">
-  <%= link_to "#modal-plan-law-club", data: {toggle: "modal"},
-    class: "btn btn-sm btn-info animation-fadeIn360" do %>
-    <i class="fa fa-pencil-square-o"></i> <%= t "plan_law" %>
-  <% end %>
-  <%= link_to "#modal-edit-rule-club", data: {toggle: "modal"},
-    class: "btn btn-sm btn-info animation-fadeIn360" do %>
-    <i class="fa fa-pencil-square-o"></i> <%= t "edit_rule" %>
-  <% end %>
+<div class="col-md-12 main-menu-manager">
+  <div class="pull-left col-md-6">
+    <div>
+      <h4><strong><%= t "add_member" %></strong>
+        <%= link_to "#modal-club-add-user", data: {toggle: "modal"},
+          class: "btn btn-sm btn-danger animation-fadeIn360" do %>
+          <i class="fa fa-plus "></i> <%= t "add" %>
+        <% end %>
+      </h4>
+    </div>
+  </div>
+  <div class="col-md-6 modal-right-club">
+    <div class="pull-right">
+      <%= link_to "#modal-club-edit", data: {toggle: "modal"},
+        class: "btn btn-sm btn-primary animation-fadeIn360" do %>
+        <i class="fa fa-pencil "></i><%= t "edit_club" %>
+      <% end %>
+      <%= link_to "#modal-plan-law-club", data: {toggle: "modal"},
+        class: "btn btn-sm btn-info animation-fadeIn360" do %>
+        <i class="fa fa-pencil-square-o"></i> <%= t "plan_law" %>
+      <% end %>
+      <%= link_to "#modal-edit-rule-club", data: {toggle: "modal"},
+        class: "btn btn-sm btn-info animation-fadeIn360" do %>
+        <i class="fa fa-pencil-square-o"></i> <%= t "edit_rule" %>
+      <% end %>
+    </div>
+  </div>
 </div>
 <div class="block ">
   <ul class="nav nav-tabs" role="tablist">
@@ -90,13 +89,6 @@
       <%= link_to t("albums"), "#albums", data: {toggle: "tab"} %>
     </li>
   </ul>
-</div>
-<div class="refresh">
-  <%= link_to club_manager_club_path(@club),
-    class: "btn btn-sm btn-primary animation-fadeIn360" do %>
-    <%= t("refresh") %>
-    <i class="fa fa-refresh" aria-hidden="true"></i>
-  <% end %>
 </div>
 <div id="page-content">
   <div class="row">
