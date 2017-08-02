@@ -10,10 +10,11 @@
 // Read Sprockets README (https://github.com/rails/sprockets#sprockets-directives) for details
 // about supported directives.
 //
+//= require webfontloader.min
 //= require jquery
 //= require jquery_ujs
 //= require turbolinks
-//= require bootstrap
+//= require bootstrap-sprockets
 //= require i18n
 //= require i18n.js
 //= require i18n/translations
@@ -25,3 +26,6 @@
 //= require bootstrap-tagsinput
 //= require handle_menu
 //= require jquery.range
+//= require theme-plugins
+//= require mediaelement-playlist-plugin.min
+//= require mediaelement-and-player.min
