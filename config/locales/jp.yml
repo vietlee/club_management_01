@@ -150,7 +150,8 @@ jp:
   top_events: "Top events"
   placeholder_password: "Please choose a complex one.."
   require_info: "Required Information"
-  register: "Register"
+  register: "Complete Registration!"
+  register_title: "Register to F-Club"
   not_found_user_club: "User Club not found!!!"
   not_found_user_event: "User Event not found!!!"
   see_you_next_time: "See you next time!!"
@@ -261,7 +262,7 @@ jp:
   save_changes: "SAVE CHANGES"
   create: "Create"
   session:
-    title: "Login & Sign up"
+    title: "Login to your Account"
     forgot: "Forgot your password?"
     guide: "Enter your Email Address here to receive a link to change password."
     name: "Name"
@@ -626,3 +627,8 @@ jp:
   admin_now_organization: "You are admin of this organization now."
   organization_request: "組織要求"
   dev_by: "Develop by Ma Tien Thanh - Ly Duc Long - Le Quoc Viet"
+  static_pages:
+    index:
+      title: "Welcome to F-Club"
+      description: "Technological advancements over the last century have meant many of us now own multiple computers - desktops and laptops, mobile phones, tablets. The modern personal computer as we know it is only a recent invention"
+      register_now: "Register Now!"
