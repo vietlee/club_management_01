@@ -1,66 +1,27 @@
-<div id="modal-user-sign-up" class="modal fade" tabindex="-1" role="dialog" aria-hidden="true">
-  <div class="modal-dialog modal-signup-user">
-    <div class="modal-content background-image-signup">
-      <div class="modal-header text-center background-image-form-div">
-        <h2 class="modal-title"><i class="fa fa-user-plus"></i> <%= t "register" %></h2>
-      </div>
-      <div class="modal-body background-color-form-div">
-      <%= devise_error_messages! %>
-        <%= form_for :user, url: user_registration_path,
-          html: {class: "form-horizontal form-bordered" } do |f| %>
-            <div class="form-modal">
-              <fieldset class="modal-signup-user-form">
-                <legend><%= t "user_info" %></legend>
-                <div class="input-group">
-                  <span class="input-group-addon custom-border-login">
-                    <i class="gi gi-envelope"></i>
-                  </span>
-                  <%= f.email_field :email,
-                    class: "form-control input-lg custom-button-login",
-                    placeholder: t("example_email"), required: true %>
-                </div><br>
-                <div class="input-group">
-                  <span class="input-group-addon custom-border-login">
-                    <i class="gi gi-user"></i>
-                  </span>
-                  <%= f.text_field :full_name,
-                    class: "form-control input-lg custom-button-login",
-                    placeholder: t("full_name"), required: true %>
-                </div>
-              </fieldset>
-              <fieldset class="modal-signup-user-form">
-                <div class="input-group">
-                  <span class="input-group-addon custom-border-login">
-                    <i class="gi gi-asterisk"></i>
-                  </span>
-                  <%= f.password_field :password, placeholder: t("password"),
-                    class: "form-control input-lg custom-button-login",
-                    id: "user-settings-password", required: true %>
-                </div><br>
-                <div class="input-group">
-                  <span class="input-group-addon custom-border-login">
-                    <i class="gi gi-asterisk"></i>
-                  </span>
-                  <%= f.password_field :password_confirmation,
-                     placeholder: t("password_confirmation"),
-                     class: "form-control custom-button-login",
-                     id: "val_password" %>
-                </div>
-              </fieldset>
-            </div>
-            <div class="form-group form-actions background-form-actions">
-              <div class="col-xs-12 text-right">
-                <button type="submit" class="btn btn-sm btn-primary">
-                  <%= t "register" %>
-                </button>
-                <button type="button"
-                  class="btn btn-sm btn-default button-close-sign-up" data-dismiss="modal">
-                  <%= t "close" %>
-                </button>
-              </div>
-            </div>
-          <% end %>
+<div class="title h6"><%= t "register_title" %></div>
+<%= devise_error_messages! %>
+<%= form_for :user, url: user_registration_path, html: {class: "content"} do |f| %>
+  <div class="row">
+    <div class="col-xl-12 col-lg-12 col-md-12">
+      <div class="form-group label-floating">
+        <%= f.label(:full_name, t("full_name"), class: "control-label") %>
+        <%= f.text_field :full_name, class: "form-control", required: true %>
       </div>
     </div>
+    <div class="col-xl-12 col-lg-12 col-md-12">
+      <div class="form-group label-floating">
+        <%= f.label(:email, t("example_email"), class: "control-label") %>
+        <%= f.email_field :email, class: "form-control", required: true %>
+      </div>
+      <div class="form-group label-floating">
+        <%= f.label(:password, t("password"), class: "control-label") %>
+        <%= f.password_field :password, class: "form-control", required: true %>
+      </div>
+      <div class="form-group label-floating">
+        <%= f.label(:password_confirmation, t("password_confirmation"), class: "control-label") %>
+        <%= f.password_field :password_confirmation,  class: "form-control" %>
+      </div>
+       <%= f.submit t("register"), class: "btn btn-purple btn-lg full-width" %>
+    </div>
   </div>
-</div>
+<% end %>

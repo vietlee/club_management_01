@@ -263,7 +263,7 @@ vi:
   submit: "Gửi"
   all: "Tất cả"
   session:
-    title: "Đăng nhập & đăng ký"
+    title: "Đăng nhập tài khoản của bạn"
     forgot: "Quên mật khẩu?"
     guide: "Điền email của bạn vào đây để nhận lại mật khẩu."
     name: "Tên"
@@ -373,6 +373,7 @@ vi:
   request_approved: "Yêu cầu đã được chấp thuận!"
   localtion: "Địa chỉ"
   register: "Đăng ký"
+  register_title: "Đăng kí tới F-Club"
   devise:
     sessions:
       user:
@@ -948,3 +949,8 @@ vi:
   hide: "Bí mật"
   professed: "Công khai"
   status_text: "Trạng thái"
+  static_pages:
+    index:
+      title: "Chào mừng bạn tới với F-Club"
+      description: "Tiến bộ công nghệ trong thế kỷ qua đã vô tình kéo theo nhiều nhu cầu kết nối và giao tiếp. Để đáp ứng những nhu cầu đó nên F-Club đã ra đời. Thật dễ dàng chỉ cần vài bước đăng ký và gửi yêu cầu thì bạn có thể hoà mình vào những tổ chức chung"
+      register_now: "Đăng kí ngay"

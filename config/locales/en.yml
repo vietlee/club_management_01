@@ -151,7 +151,8 @@ en:
   top_events: "Hot"
   placeholder_password: "Enter new password..."
   require_info: "Required information"
-  register: "Register"
+  register: "Complete Registration!"
+  register_title: "Register to F-Club"
   not_found_user_club: "Can find the club you joined!!!"
   not_found_user_event: "Can find the event you joined!!!"
   see_you_next_time: "See you next time!!"
@@ -275,7 +276,9 @@ en:
   create: "Create"
   submit: "Submit"
   session:
-    title: "Login & Sign up"
+    title: "Login to your Account"
+    title: "Welcome to F-Club"
+    description: "Technological advancements over the last century have meant many of us now own multiple computers - desktops and laptops, mobile phones, tablets. The modern personal computer as we know it is only a recent invention"
     forgot: "Forgot your password?"
     guide: "Enter your Email Address here to receive a link to change password."
     name: "Name"
@@ -702,3 +705,8 @@ en:
   status_text: "Status"
   hide: "Private"
   professed: "Public"
+  static_pages:
+    index:
+      title: "Welcome to F-Club"
+      description: "Technological advancements over the last century have meant many of us now own multiple computers - desktops and laptops, mobile phones, tablets. The modern personal computer as we know it is only a recent invention"
+      register_now: "Register Now!"

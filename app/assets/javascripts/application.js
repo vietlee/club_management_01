@@ -27,5 +27,11 @@
 //= require handle_menu
 //= require jquery.range
 //= require theme-plugins
+//= require material.min
+//= require swiper.jquery.min
+//= require moment.min
+//= require custom
+//= require selectize.min
+//= require daterangepicker.min
 //= require mediaelement-playlist-plugin.min
 //= require mediaelement-and-player.min
