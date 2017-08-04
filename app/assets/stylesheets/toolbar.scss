@@ -1,0 +1,17 @@
+.toolbar{
+  height: 50px;
+  background: $secondary-color;
+  .more{
+    &:hover{
+      .more-dropdown{
+        z-index: 999999;
+      }
+    }
+  }
+  border-bottom: solid 1px $primary-color;
+  .author-thumb{
+    .avatar{
+      max-width: 25px;
+    }
+  }
+}

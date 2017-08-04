@@ -954,3 +954,7 @@ vi:
       title: "Chào mừng bạn tới với F-Club"
       description: "Tiến bộ công nghệ trong thế kỷ qua đã vô tình kéo theo nhiều nhu cầu kết nối và giao tiếp. Để đáp ứng những nhu cầu đó nên F-Club đã ra đời. Thật dễ dàng chỉ cần vài bước đăng ký và gửi yêu cầu thì bạn có thể hoà mình vào những tổ chức chung"
       register_now: "Đăng kí ngay"
+  organizations:
+    index:
+      member: "Thành viên"
+      club: "Câu lạc bộ"
