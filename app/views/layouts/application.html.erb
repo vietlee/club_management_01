@@ -10,6 +10,13 @@
     <%= javascript_include_tag "application", "data-turbolinks-track": "reload" %>
     <%= favicon_link_tag "icon.png" %>
   </head>
+  <script>
+    WebFont.load({
+      google: {
+        families: ['Roboto:300,400,500,700:latin']
+      }
+    });
+  </script>
   <body>
     <div id="page-container">
       <%= render "shared/flash_warning" %>

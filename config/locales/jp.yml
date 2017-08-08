@@ -632,3 +632,7 @@ jp:
       title: "Welcome to F-Club"
       description: "Technological advancements over the last century have meant many of us now own multiple computers - desktops and laptops, mobile phones, tablets. The modern personal computer as we know it is only a recent invention"
       register_now: "Register Now!"
+  organizations:
+    index:
+      member: "members"
+      club: "clubs"

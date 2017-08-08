@@ -1,23 +1,20 @@
-<span class="notification_count">
+<div class="label-avatar bg-primary">
   <% @notifications = notifications_result %>
   <%= @notifications.un_read.size if @notifications %>
-</span>
-<%= link_to t("do_nothing"), class: "notifiglobe" do %>
-  <i class="fa fa-bell-o"></i>
-<% end %>
-<div class="notificationContainer">
-  <div class="notificationTitle">
-    <%= t "notifications" %>
-    <div class="pull-right">
-      <span class="fa fa-times hide-notification"></span>
-    </div>
+</div>
+
+<div class="more-dropdown more-with-triangle triangle-top-center">
+  <div class="ui-block-title ui-block-title-small">
+    <h6 class="title">Notifications</h6>
   </div>
-  <div class="notificationsBody notifications">
-    <% @notifications.each do |notification| %>
-      <% if current_user.user_clubs.of_club(notification.container_id).joined? %>
+  <div class="mCustomScrollbar" data-mcs-theme="dark">
+    <ul class="notification-list">
+      <% @notifications.each do |notification| %>
+        <% if current_user.user_clubs.of_club(notification.container_id).joined? %>
         <%= render partial: "notifications/notification",
           locals: {notification: notification} %>
       <% end %>
     <% end %>
+    </ul>
   </div>
 </div>

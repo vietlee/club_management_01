@@ -1,80 +1,112 @@
-<section class="site-section site-section-light themed-background-dark">
-</section>
-<section class="site-content site-section organization">
-  <div class="container">
-    <div class="row">
-      <div class="push-bit">
-        <h1 class="text-center"><%= t "list_organizations" %></h1><br>
-      </div>
-      <div class="col-md-9">
-      </div>
-      <div class="col-md-3">
-        <aside class="sidebar site-block">
-          <div class="sidebar-block">
-            <%= search_form_for @q, class: "form-horizontal" do |f| %>
-              <div class="form-group push-bit">
-                <div class="col-xs-12">
-                  <div class="input-group">
-                    <%= f.text_field :name_or_description_cont,
-                      class: "form-control", id: "ecom-search",
-                      placeholder: t("name_des") %>
-                    <div class="input-group-btn">
-                      <button type="submit" class="btn btn-primary">
-                        <i class="fa fa-search"></i>
-                      </button>
-                    </div>
-                  </div>
+<%= render "shared/toolbar" %>
+<!-- Header -->
+<%= render "layouts/menu_account" %>
+<!-- ... end Header -->
+<div class="header-spacer"></div>
+<div class="container">
+  <div class="row">
+    <div class="col-xl-9 push-xl-3 col-lg-12 push-lg-0 col-md-12 col-sm-12 col-xs-12">
+      <div class="ui-block responsive-flex">
+        <div class="ui-block-title">
+          <div class="h6 title"><%= t "list_organizations" %></div>
+          <%= search_form_for @q, html:{class: "w-search"} do |f| %>
+            <div class="form-group push-bit">
+              <div class="col-xs-12">
+                <div class="input-group">
+                  <%= f.text_field :name_or_description_cont,
+                    class: "form-control", placeholder: t("name_des") %>
+                  <button type="submit">
+                    <svg class="olymp-magnifying-glass-icon"><use xlink:href="icons/icons.svg#olymp-magnifying-glass-icon"></use></svg>
+                  </button>
                 </div>
               </div>
-              <div class="form-group">
-              </div>
-            <% end %>
-          </div>
-        </aside>
+            </div>
+          <% end %>
+          <a href="#" class="more"><svg class="olymp-three-dots-icon"><use xlink:href="./assets/icons/icons.svg#olymp-three-dots-icon"></use></svg></a>
+        </div>
       </div>
-      <div class="col-md-12 col-lg-12"><hr>
-        <div class="row portfolio">
-          <% if @organizations.empty? %>
+
+      <div class="row">
+        <% if @organizations.empty? %>
             <h4 class="notifi-join center"><%= t "no_data_organization" %></h4 >
-          <% else %>
-            <% @organizations.each do |organization| %>
-              <% if view_organization?(organization, current_user) %>
-                <div class="col-md-4 visibility-none" data-toggle="animation-appear"
-                  data-animation-class="animation-fadeInQuick" data-element-offset="-100">
-                  <div class="store-item">
-                    <div class="store-item-image">
+        <% else %>
+          <% @organizations.each do |organization| %>
+            <% if view_organization?(organization, current_user) %>
+              <div class="col-lg-4 col-md-6 col-sm-12 col-xs-12">
+                <div class="ui-block">
+                  <div class="friend-item">
+                    <div class="friend-header-thumb">
                       <%= link_to organization do %>
-                        <%= image_tag organization.logo,
-                          class: "img-responsive image-club" %>
+                        <%= image_tag organization.logo, class: "img-responsive" %>
                       <% end %>
                     </div>
-                    <div class="store-item-info clearfix block-club">
-                      <span class="store-item-price themed-color-dark pull-left name-organization-link">
-                        <%= link_to organization.name, organization %>
-                      </span><br>
-                      <div><div class="push-bit"></div>
-                        <%= link_to organization do %>
-                          <strong class="pull-left fa fa-users">
-                            <%= t "members_with_dot" %>
-                            <%= organization.users.size %> |
-                            <%= t "clubs_with_dot" %>
-                            <%= organization.clubs.size %>
-                          </strong>
-                        <% end %>
+                    <div class="friend-item-content">
+                      <div class="friend-avatar">
+                        <div class="author-thumb">
+                          <img src="" alt="author">
+                        </div>
+                        <div class="author-content">
+                          <%= link_to organization.name, organization, class: "h5 author-name" %>
+                        </div>
+                      </div>
+                      <div class="swiper-container">
+                        <div class="swiper-wrapper">
+                          <div class="swiper-slide">
+                            <div class="friend-count" data-swiper-parallax="-500">
+                              <%= link_to organization, class: "friend-count-item" do %>
+                                <div class="h6"><%= organization.users.size %></div>
+                                <div class="title"><%= t "organizations.index.member" %></div>
+                              <% end %>
+                              <%= link_to organization, class: "friend-count-item" do %>
+                                <div class="h6"><%= organization.clubs.size %></div>
+                                <div class="title"><%= t "clubsorganizations.index.club" %></div>
+                              <% end %>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="swiper-pagination"></div>
                       </div>
                     </div>
                   </div>
                 </div>
-              <% end %>
+              </div>
             <% end %>
           <% end %>
+        <% end %>
+      </div>
+      <nav aria-label="Page navigation example">
+        <%= paginate @organizations %>
+      </nav>
+    </div>
+    <div class="col-xl-3 pull-xl-9 col-lg-12 pull-lg-0 col-md-12 col-sm-12 col-xs-12">
+      <div class="ui-block">
+        <div class="ui-block-title">
+          <h6 class="title"></h6>
         </div>
-        <div class="form-inline push-bit clearfix">
-          <div class="pull-right">
-            <%= paginate @organizations %>
+        <div class="ui-block-content">
+          <ul class="widget w-personal-info item-block">
+
+          </ul>
+        </div>
+      </div>
+      <div class="ui-block">
+        <div class="ui-block-title">
+          <h6 class="title"></h6>
+        </div>
+        <div class="ui-block-content">
+          <div class="widget w-socials">
           </div>
+        </div>
+      </div>
+      <div class="ui-block">
+        <div class="ui-block-title">
+          <h6 class="title"></h6>
+        </div>
+        <div class="ui-block-content">
+          <ul class="widget w-personal-info item-block">
+          </ul>
         </div>
       </div>
     </div>
   </div>
-</section>
+</div>
