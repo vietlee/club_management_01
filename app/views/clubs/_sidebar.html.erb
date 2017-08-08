@@ -1,0 +1,175 @@
+<div class="fixed-sidebar fixed-sidebar-responsive">
+  <div class="fixed-sidebar-left sidebar--small" id="sidebar-left-responsive">
+    <%= link_to root_path, class: "logo js-sidebar-open" do %>
+      <%= image_tag "logo.png", class: "img-responsive logo-page-club" %>
+    <% end %>
+  </div>
+    <div class="fixed-sidebar-left sidebar--large" id="sidebar-left-1-responsive">
+    <a href="#" class="logo">
+      <%= image_tag "logo.png", class: "img-responsive avatar" %>
+      <h6 class="logo-title"><%= t "mobie_menus.f_club" %></h6>
+    </a>
+    <div class="mCustomScrollbar" data-mcs-theme="dark">
+      <div class="control-block">
+        <div class="author-page author vcard inline-items">
+          <div class="author-thumb">
+            <%= image_tag current_user.avatar, class: "avatar" %>
+            <span class="icon-status online"></span>
+          </div>
+          <a href="02-ProfilePage.html" class="author-name fn">
+            <div class="author-title">
+              <%= current_user.full_name %> <svg class="olymp-dropdown-arrow-icon"><use xlink:href="icons/icons.svg#olymp-dropdown-arrow-icon"></use></svg>
+            </div>
+          </a>
+        </div>
+      </div>
+
+      <div class="ui-block-title ui-block-title-small">
+        <h6 class="title"><%= t "mobie_menus.main_menu" %></h6>
+      </div>
+      <ul class="left-menu">
+        <li>
+          <a href="#" class="js-sidebar-open">
+            <svg class="olymp-close-icon left-menu-icon"><use xlink:href="./assets/icons/icons.svg#olymp-close-icon"></use></svg>
+            <span class="left-menu-title"><%= t "mobie_menus.collapse_menu" %></span>
+          </a>
+        </li>
+        <li>
+        <%= link_to organizations_path do %>
+           <svg class="olymp-newsfeed-icon left-menu-icon"><use xlink:href="./assets/icons/icons.svg#olymp-newsfeed-icon"></use></svg>
+          <%= t("organizations") %>
+        <% end %>
+        </li>
+        <li>
+          <%= link_to my_clubs_path do %>
+            <svg class="olymp-star-icon left-menu-icon"><use xlink:href="./assets/icons/icons.svg#olymp-star-icon"></use></svg>
+            <%= t("my_clubs") %>
+          <% end  %>
+        </li>
+        <li>
+          <%= link_to new_user_club_request_path(user_id: current_user.id) do %>
+            <svg class="olymp-happy-faces-icon left-menu-icon"><use xlink:href="./assets/icons/icons.svg#olymp-happy-faces-icon"></use></svg>
+            <%= t("send_request_club") %>
+          <% end %>
+        </li>
+        <li>
+          <%= link_to new_user_feed_back_path(user_id: current_user.id) do %>
+            <svg class="olymp-headphones-icon left-menu-icon"><use xlink:href="./assets/icons/icons.svg#olymp-headphones-icon"></use></svg>
+            <%= t("feed_back") %>
+          <% end %>
+        </li>
+        <li>
+          <%= link_to Settings.tools_url, target: "_blank"  do %>
+            <svg class="olymp-calendar-icon left-menu-icon"><use xlink:href="./assets/icons/icons.svg#olymp-calendar-icon"></use></svg>
+            <%= t("more_tool") %>
+          <% end %>
+        </li>
+      </ul>
+
+      <div class="ui-block-title ui-block-title-small">
+        <h6 class="title"><%= t "mobie_menus.my_account" %></h6>
+      </div>
+
+      <ul class="account-settings">
+        <li>
+          <%= link_to user_path(current_user) do %>
+            <svg class="olymp-menu-icon"><use xlink:href="./assets/icons/icons.svg#olymp-menu-icon"></use></svg>
+            <%= t("profile") %>
+          <% end %>
+        </li>
+        <li>
+          <%= link_to destroy_user_session_path, method: :delete do %>
+            <svg class="olymp-logout-icon"><use xlink:href="./assets/icons/icons.svg#olymp-logout-icon"></use></svg>
+            <%= t("log_out") %>
+          <% end %>
+        </li>
+      </ul>
+
+      <div class="ui-block-title ui-block-title-small">
+        <h6 class="title"><%= t "mobie_menus.languages" %></h6>
+      </div>
+      <div class="author-page more has-items menu_language">
+        <%= render "shared/languages_nav" %>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- ... end Fixed Sidebar Left -->
+<!-- Header -->
+<header class="header" id="site-header">
+  <%= link_to root_path, class: "logo js-sidebar-open logo_sigin" do %>
+    <%= image_tag "logo.png", class: "img-responsive logo-page" %>
+  <% end %>
+  <nav class="menu_sign_in">
+    <ul class="site-nav site-nav-club">
+      <li><%= link_to t("organizations"), organizations_path %></li>
+      <li><%= link_to t("my_clubs"), my_clubs_path %></li>
+      </li>
+      <li><%= link_to t("send_request_club"),
+        new_user_club_request_path(user_id: current_user.id) %>
+      </li>
+      <%= render "request/request_question" %>
+      <li><%= link_to t("feed_back"),
+        new_user_feed_back_path(user_id: current_user.id) %>
+      </li>
+      <li><%= link_to t("more_tool"), Settings.tools_url, target: "_blank" %>
+      </li>
+    </ul>
+  </nav>
+    <div class="control-block">
+      <div class="control-icon more has-items">
+        <svg class="olymp-thunder-icon"><use xlink:href="./assets/icons/icons.svg#olymp-thunder-icon"></use></svg>
+        <%= render "notifications/notification_container" %>
+      </div>
+
+      <div class="author-page author vcard inline-items more">
+        <%= render "shared/account" %>
+      </div>
+      <div class="author-page more has-items menu_language">
+        <%= render "shared/languages_nav" %>
+      </div>
+    </div>
+  </div>
+</header>
+<!-- ... end Header -->
+
+<!-- Responsive Header -->
+<header class="header header-responsive custom_respon_nitification" id="site-header-responsive">
+  <div class="header-content-wrapper">
+    <ul class="nav nav-tabs mobile-app-tabs" role="tablist">
+      <li class="nav-item">
+        <a class="nav-link" data-toggle="tab" href="#notification" role="tab">
+          <div class="control-icon has-items">
+            <svg class="olymp-thunder-icon"><use xlink:href="./assets/icons/icons.svg#olymp-thunder-icon"></use></svg>
+            <div class="label-avatar bg-primary">
+              <% @notifications = notifications_result %>
+              <%= @notifications.un_read.size if @notifications %>
+            </div>
+          </div>
+        </a>
+      </li>
+    </ul>
+  </div>
+  <!-- Tab panes -->
+  <div class="tab-content tab-content-responsive">
+    <div class="tab-pane " id="notification" role="tabpanel">
+      <div class="mCustomScrollbar" data-mcs-theme="dark">
+        <div class="ui-block-title ui-block-title-small">
+          <h6 class="title"><%= t "notifications" %></h6>
+        </div>
+        <div class="mCustomScrollbar" data-mcs-theme="dark">
+          <ul class="notification-list">
+            <% @notifications.each do |notification| %>
+              <% if current_user.user_clubs.of_club(notification.container_id).joined? %>
+                <%= render partial: "notifications/notification",
+                  locals: {notification: notification} %>
+              <% end %>
+            <% end %>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- ... end  Tab panes -->
+</header>
+<!-- ... end Responsive Header -->

@@ -5,16 +5,16 @@
 
 <div class="more-dropdown more-with-triangle triangle-top-center">
   <div class="ui-block-title ui-block-title-small">
-    <h6 class="title">Notifications</h6>
+    <h6 class="title"><%= t "notifications" %></h6>
   </div>
   <div class="mCustomScrollbar" data-mcs-theme="dark">
     <ul class="notification-list">
       <% @notifications.each do |notification| %>
         <% if current_user.user_clubs.of_club(notification.container_id).joined? %>
-        <%= render partial: "notifications/notification",
-          locals: {notification: notification} %>
+          <%= render partial: "notifications/notification",
+            locals: {notification: notification} %>
+        <% end %>
       <% end %>
-    <% end %>
     </ul>
   </div>
 </div>

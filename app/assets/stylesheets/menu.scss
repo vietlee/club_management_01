@@ -1,41 +1,3 @@
-header.account_menu {
-  position: fixed;
-  top: 50px;
-  width: 100%;
-  padding: 10px 0;
-  color: #ffffff;
-  background:$secondary-color;
-  z-index: 1000;
-  -webkit-transition: all ease-out 0.25s;
-  transition: all ease-out 0.25s;
-  .container{
-    display: flex;
-    .site-logo{
-      float: none;
-      img{
-        max-width: 120px;
-      }
-    }
-    nav{
-      .site-menu-toggle{
-        display: none;
-      }
-      ul{
-        font-size: 0;
-        margin-bottom: 0;
-        li{
-          display: inline-block;
-          vertical-align: middle;
-          a{
-            &:hover{
-              color: $primary-color;
-            }
-          }
-        }
-      }
-    }
-  }
-}
 header.header-scroll {
   top: 0;
 }
@@ -90,4 +52,86 @@ header.header-scroll:hover {
   padding-bottom: 5px;
 }
 
+.logo_sigin{
+  float: left;
+  img{
+    max-width: 100px;
+  }
+}
+.menu_sign_in{
+  float: left;
+  display: block;
+  ul{
+    font-size: 0;
+    margin-top: 15px;
+    margin-left: 10px;
+    li{
+      display: inline-block;
+      font-size: 14px;
+      a{
+        display: block;
+        padding: 10px 20px;
+        transition: all .3s ease;
+        font-weight: 700;
+        color: $white-color;
+        &:hover{
+          color: $primary-color;
+        }
+      }
+    }
+  }
+}
+.author-thumb{
+  .avatar{
+    max-width: 30px;
+  }
+}
 
+header{
+  .author-page{
+    margin-left: 30px;
+  }
+}
+
+.menu_language{
+  .more-dropdown{
+    width: 100%;
+    min-width: 130px;
+    ul{
+      padding: 10px 15px;
+      li{
+        padding: 0;
+        a{
+          display: inline-block;
+        }
+      }
+    }
+  }
+
+  .vi {
+    background-image: image-url("flag-full-icons.png");
+    background-position: 38px 70px;
+    height: 20px;
+    width: 40px;
+    margin: 0;
+    background-size: 600px;
+  }
+
+  .en {
+    background-image: image-url("flag-full-icons.png");
+    background-position: 0px 70px;
+    height: 20px;
+    width: 40px;
+    margin: 0;
+    background-size: 600px;
+  }
+
+  .jp {
+    background-image: image-url("flag-full-icons.png");
+    background-position: 0px 478px;
+    height: 20px;
+    width: 40px;
+    margin: 0;
+    background-size: 600px;
+  }
+}

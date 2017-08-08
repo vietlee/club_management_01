@@ -1,6 +1,5 @@
-<%= render "shared/toolbar" %>
 <!-- Header -->
-<%= render "layouts/menu_account" %>
+<%= render "clubs/sidebar" %>
 <!-- ... end Header -->
 <div class="header-spacer"></div>
 <div class="container">
@@ -10,19 +9,18 @@
         <div class="ui-block-title">
           <div class="h6 title"><%= t "list_organizations" %></div>
           <%= search_form_for @q, html:{class: "w-search"} do |f| %>
-            <div class="form-group push-bit">
+            <div class="form-group with-button">
               <div class="col-xs-12">
                 <div class="input-group">
                   <%= f.text_field :name_or_description_cont,
                     class: "form-control", placeholder: t("name_des") %>
                   <button type="submit">
-                    <svg class="olymp-magnifying-glass-icon"><use xlink:href="icons/icons.svg#olymp-magnifying-glass-icon"></use></svg>
+                    <svg class="olymp-magnifying-glass-icon"><use xlink:href="./assets/icons/icons.svg#olymp-magnifying-glass-icon"></use></svg>
                   </button>
                 </div>
               </div>
             </div>
           <% end %>
-          <a href="#" class="more"><svg class="olymp-three-dots-icon"><use xlink:href="./assets/icons/icons.svg#olymp-three-dots-icon"></use></svg></a>
         </div>
       </div>
 
@@ -43,7 +41,6 @@
                     <div class="friend-item-content">
                       <div class="friend-avatar">
                         <div class="author-thumb">
-                          <img src="" alt="author">
                         </div>
                         <div class="author-content">
                           <%= link_to organization.name, organization, class: "h5 author-name" %>
@@ -55,11 +52,11 @@
                             <div class="friend-count" data-swiper-parallax="-500">
                               <%= link_to organization, class: "friend-count-item" do %>
                                 <div class="h6"><%= organization.users.size %></div>
-                                <div class="title"><%= t "organizations.index.member" %></div>
+                                <div class="title"><%= t "organization.index.member" %></div>
                               <% end %>
                               <%= link_to organization, class: "friend-count-item" do %>
                                 <div class="h6"><%= organization.clubs.size %></div>
-                                <div class="title"><%= t "clubsorganizations.index.club" %></div>
+                                <div class="title"><%= t "organization.index.club" %></div>
                               <% end %>
                             </div>
                           </div>
