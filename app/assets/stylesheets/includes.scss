@@ -1,6 +1,6 @@
 @import "libs/_variables";
 
-@import "libs/_mobile-app";
+@import "mobies/_mobile-app";
 @import "libs/_bootstrap-customization";
 @import "libs/jquery.mCustomScrollbar.min.css";
 @import "libs/bootstrap-select.css";
@@ -15,3 +15,5 @@
 @import "menus/_fixed-sidebar";
 @import "menu";
 @import "toolbar";
+@import "libs/_helper";
+@import "custom.scss";

@@ -1,0 +1,61 @@
+/*----- Notification--------*/
+.custom_notifications{
+  .notifyBody{
+    .author-thumb{
+      float: left;
+      margin-right: 10px;
+    }
+    .notification-event{
+      width: auto;
+    }
+  }
+}
+
+/*------------Responsive--------------*/
+.header-responsive{
+  .tab-content{
+    .notification-list{
+      li{
+        .author-thumb{
+          max-width: 50px;
+          img{
+            width: 100%;
+          }
+        }
+      }
+    }
+  }
+}
+
+.fixed-sidebar{
+  .logo{
+    img{
+      max-width: 50px;
+    }
+  }
+  .mCustomScrollbar{
+    overflow-y: scroll;
+  }
+}
+
+/*-------------Fix media---------------*/
+        //-------menu-----------//
+@media (max-width: 1180px){
+  .menu_sign_in ul li a{
+    padding: 10px 15px;
+  }
+}
+@media (max-width: 1040px){
+  .menu_sign_in ul li a{
+    padding: 10px 10px;
+  }
+}
+
+@media (max-width: 991px){
+  .header, .fixed-sidebar{
+    display: none;
+  }
+  .header-responsive, .fixed-sidebar.fixed-sidebar-responsive{
+    display: block;
+  }
+}

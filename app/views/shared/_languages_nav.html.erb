@@ -1,16 +1,17 @@
-<li class="languages_nav">
-  <%= link_to t("do_nothing"), class: "site-nav-sub pad-right-none" do %>
-    <%= t I18n.locale.to_s %>
-  <% end %>
-  <ul class="list-language-head">
-    <% Settings.languages.map do |key, val| %>
-      <li>
-        <div class="<%= key %>"></div>
-        <%= link_to_unless I18n.locale == val.to_sym,
-          t(key), set_language_path(id: val.downcase), method: :put %>
-      </li>
-    <% end %>
-  </ul>
-</li>
-<li>
 <div class="<%= I18n.locale %> last-site-nav"></div>
+<div class="more-dropdown more-with-triangle triangle-top-center">
+  <div class="ui-block-title ui-block-title-small">
+    <h6 class="title"><%= t "languages" %></h6>
+  </div>
+  <div class="mCustomScrollbar" data-mcs-theme="dark">
+    <ul class="notification-list">
+      <% Settings.languages.map do |key, val| %>
+        <li>
+          <div class="<%= key %>"></div>
+          <%= link_to_unless I18n.locale == val.to_sym,
+            t(key), set_language_path(id: val.downcase), method: :put %>
+        </li>
+      <% end %>
+    </ul>
+  </div>
+</div>
