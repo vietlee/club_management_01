@@ -732,3 +732,11 @@ en:
     phone: "Phone: "
     email: "Email: "
     search_name: "Search name"
+  page_my_clubs:
+    member: " Members"
+    list_my_clubs: "List my clubs"
+    search_club: "Search club"
+    filters_organizations: "Filters by organizations"
+    filters_style_club: "Filters by style club"
+    filters_rating: "Filters by rating"
+    oderby_asc: "Oder by Asc"

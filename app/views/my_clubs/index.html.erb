@@ -1,3 +1,24 @@
-<%= render "layouts/content" %>
-<%= render partial: "my_clubs/list_clubs",
-  locals: {clubs: @clubs, title_page: t("my_clubs")} %>
+<div class="header-spacer"></div>
+<div class="container">
+  <div class="row">
+    <div class="col-xl-9 push-xl-3 col-lg-12 push-lg-0 col-md-12 col-sm-12 col-xs-12">
+      <div class="ui-block responsive-flex">
+        <div class="ui-block-title">
+          <div class="h6 title"><%= t "page_my_clubs.list_my_clubs" %></div>
+        </div>
+      </div>
+
+      <div class="row" id="list-club-search">
+        <%= render "club", collection: @clubs %>
+      </div>
+
+      <nav aria-label="Page navigation example">
+        <%= paginate @clubs, remote: true %>
+      </nav>
+    </div>
+
+    <div class="col-xl-3 pull-xl-9 col-lg-12 pull-lg-0 col-md-12 col-sm-12 col-xs-12">
+      <%= render "left_sidebar" %>
+    </div>
+  </div>
+</div>
