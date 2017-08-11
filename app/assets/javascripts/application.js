@@ -35,3 +35,4 @@
 //= require daterangepicker.min
 //= require mediaelement-playlist-plugin.min
 //= require mediaelement-and-player.min
+//= require organization

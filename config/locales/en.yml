@@ -722,3 +722,13 @@ en:
     languages: "Languages"
     collapse_menu: "Collapse Menu"
     f_club: "F-Club"
+  organization_details:
+    organization_info: "Organization info"
+    name: "Name: "
+    club: " Clubs"
+    member: " Members"
+    created: "Created at:"
+    localtion: "Localtion:"
+    phone: "Phone: "
+    email: "Email: "
+    search_name: "Search name"

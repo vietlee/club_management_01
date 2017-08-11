@@ -1,134 +1,126 @@
-<%= stylesheet_link_tag "organization-details",
-  media: "all", "data-turbolinks-track": "reload" %>
-<section class="site-section site-section-light themed-background-dark">
-</section>
-<section class="site-content">
-  <div class="container" id="main">
+<div class="header-spacer header-spacer-small"></div>
+<!-- Main Header Badges -->
+
+<div class="main-header bg-group">
+  <div class="container">
     <div class="row">
-      <div class="col-lg-3 col-md-3 col-sm-4 col-xs-12">
-        <div id="sidebar">
-          <div class="user">
-            <div class="text-center">
-              <%= image_tag @organization.logo,
-                class: "img-circle org-img-details" %>
-            </div>
-            <div class="user-head">
-              <h1><%= @organization.name %></h1>
-              <div class="hr-center"></div>
-              <h5><%= t "members" %>:
-                <%= @organization.users.size %>
-              </h5>
-              <h5><%= t "clubs" %>:
-                <%= @organization.clubs.size %>
-              </h5>
-              <%= render "organizations/toggle" %>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="col-lg-9 col-md-9 col-sm-8 col-xs-12">
-        <div id="content">
-          <div class="main-content">
-            <ul class="timeline">
-              <li id="id-profile">
-                <div class="timeline-badge default">
-                  <i class="fa fa-university"></i>
-                </div>
-                <h1 class="timeline-head">
-                  <%= t "organization_details" %>
-                </h1>
-              </li>
-              <li id="profile">
-                <div class="timeline-badge primary"></div>
-                <div class="timeline-panel">
-                  <h1>
-                    <strong><%= @organization.name %></strong>
-                    <%= t "overview" %>
-                    <div class="pull-right">
-                      <%= select_case_view(@organization) %>
-                    </div>
-                  </h1>
-                  <h4>
-                    <i class="fa fa-phone-square" aria-hidden="true"></i>
-                    <strong><%= t "phone" %>:</strong>
-                    <%= @organization.phone %>
-                  </h4>
-                  <div class="hr-left"></div>
-                  <h4>
-                    <i class="fa fa-envelope" aria-hidden="true"></i>
-                    <strong><%= t "email" %>:</strong>
-                    <%= @organization.email %>
-                  </h4>
-                  <div class="hr-left"></div>
-                  <h4>
-                    <i class="fa fa-map-marker" aria-hidden="true"></i>
-                    <strong><%= t "address" %>:</strong>
-                    <%= @organization.location %>
-                  </h4>
-                  <div class="hr-left"></div>
-                  <h4>
-                    <i class="fa fa-calendar" aria-hidden="true"></i>
-                    <strong><%= t "created_at" %>:</strong>
-                    <%= (l @organization.created_at, format: :short) unless
-                      @organization.created_at.nil? %>
-                  </h4>
-                  <div class="hr-left"></div>
-                  <p class="break-all"><%= @organization.description %></p>
-                </div>
-              </li>
-              <% if @organization.clubs.present? %>
-                <li id="personal-info">
-                  <% unless current_user.user_organizations.joined.join?(
-                    @organization) %>
-                    <div class="timeline-badge primary"></div>
-                    <div class="timeline-panel">
-                      <h1>
-                        <i class="fa fa-list" aria-hidden="true"></i>
-                        <%= t "club_inner" %>
-                      </h1>
-                      <div class="hr-left"></div>
-                        <div class="table-responsive">
-                          <table id="example-datatable"
-                            class="table table-bordered">
-                            <thead>
-                              <tr>
-                                <th class="org-first-th"><%= t "background" %></th>
-                                <th></i><%= t "name" %></th>
-                                <th>
-                                  <i class="fa fa-star-half-o"></i>
-                                </th>
-                                <th><%= t "description" %></th>
-                              </tr>
-                            </thead>
-                            <tbody>
-                              <% @organization.clubs.each do |club| %>
-                                <tr data-link="<%= club_url(club) %>" class="org-link-to">
-                                  <td class="org-td">
-                                    <%= image_tag club.image,
-                                      class: "img-responsive img-club-org-details" %>
-                                  </td>
-                                  <td>
-                                    <%= link_to club_path(club) do %>
-                                      <%= club.name %>
-                                    <% end %>
-                                  </td>
-                                  <td>
-                                    <%= club.rating.round Settings.round_float %></td>
-                                  <td><%= club.content.truncate(Settings.truncate.club.description).html_safe unless club.content.nil? %></td>
-                                </tr>
-                              <% end %>
-                            </tbody>
-                          </table>
-                        </div>
-                    </div>
-                  <% end %>
-                </li>
-              <% end %>
-            </ul>
-          </div>
+      <div class="col-lg-8 offset-lg-2 col-md-8 offset-md-2 col-sm-12 col-xs-12">
+        <div class="main-header-content">
+          <h1><%= @organization.name %></h1>
+          <p><%= @organization.description %></p>
         </div>
       </div>
     </div>
   </div>
-</section>
-<%= render "layouts/content" %>
+  <%= image_tag "group-bottom.png", class: "img-responsive img-bottom" %>
+</div>
+<!-- ... end Main Header Group -->
+
+<div class="container">
+  <div class="row">
+    <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12">
+      <div class="ui-block">
+        <div class="ui-block-title ui-block-title-small">
+          <h6 class="title"><%= @organization.name %></h6>
+        </div>
+        <table class="event-item-table">
+          <tbody>
+            <tr class="event-item">
+              <td class="author">
+                <div class="event-author inline-items">
+                  <div class="author-thumb img_small">
+                    <%= image_tag @organization.logo, class: "img-circle org-img-details" %>
+                  </div>
+                  <div class="author-date">
+                    <a href="#" class="author-name h6"><%= @organization.name %></a>
+                  </div>
+                </div>
+              </td>
+              <td class="location">
+                <div class="place inline-items">
+                  <svg class="olymp-add-a-place-icon"><use xlink:href="<%= url_to_asset("icons/icons.svg#olymp-share-icon") %>"></use></svg>
+                  <span><strong><%= @organization.users.size %></strong><%= t "members" %></span>
+                </div>
+              </td>
+              <td class="location">
+                <div class="place inline-items">
+                  <svg class="olymp-add-a-place-icon"><use xlink:href="<%= url_to_asset("icons/icons.svg#olymp-block-from-chat") %>"></use></svg>
+                  <span><strong><%= @organization.clubs.size %></strong><%= t "clubs" %></span>
+                </div>
+              </td>
+              <td class="add-event">
+                <%= render "organizations/toggle" %>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="container">
+  <div class="row">
+    <div class="col-xl-9 push-xl-3 col-lg-12 push-lg-0 col-sm-12 col-xs-12">
+      <div class="row">
+        <div class="ui-block responsive-flex">
+          <div class="ui-block-title">
+            <%= search_form_for @q,  url: organization_path(@organization), class: "w-search", id: "organization_club_form" do |f| %>
+              <div class="form-group with-button" >
+                <%= f.text_field :name_cont,
+                  placeholder: t("organization_details.search_name"),
+                  class: "form-control", id: "organization_club_search" %>
+                <button>
+                  <svg class="olymp-magnifying-glass-icon">
+                    <use xlink:href="<%= url_to_asset("icons/icons.svg#olymp-magnifying-glass-icon")%>"></use>
+                  </svg>
+                </button>
+              </div>
+            <% end %>
+          </div>
+        </div>
+      </div>
+      <div class="row" id="organization_club">
+        <% if @clubs.present? %>
+          <% unless current_user.user_organizations.joined.join?( @organization) %>
+            <%= render "club", collection: @clubs %>
+          <% end %>
+        <% end %>
+      </div>
+    </div>
+    <div class="col-xl-3 pull-xl-9 col-lg-6 pull-lg-0 col-md-6 col-sm-12 col-xs-12">
+      <div class="ui-block">
+        <div class="ui-block-title">
+          <h6 class="title"><%= t "organization_details.organization_info" %></h6>
+          <a href="#" class="more"><svg class="olymp-three-dots-icon"><use xlink:href="icons/icons.svg#olymp-three-dots-icon"></use></svg></a>
+        </div>
+        <div class="ui-block-content">
+          <ul class="widget w-personal-info item-block">
+            <li>
+              <span class="title"><%= t "organization_details.name" %></span>
+              <span class="text"><%= @organization.name %></span>
+            </li>
+            <li>
+              <span class="title"><%= t "organization_details.created" %></span>
+              <span class="text"><%= (l @organization.created_at, format: :short) unless
+                @organization.created_at.nil? %></span>
+            </li>
+            <li>
+              <span class="title"><%= t "organization_details.localtion" %></span>
+              <span class="text"><%= @organization.location %></span>
+            </li>
+            <li>
+              <span class="title"><%= t "organization_details.phone" %></span>
+              <a href="#" class="text"><%= @organization.phone %></a>
+            </li>
+            <li>
+              <span class="title"><%= t "organization_details.email" %></span>
+              <a href="#" class="text"><%= @organization.email %></a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+

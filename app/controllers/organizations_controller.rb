@@ -10,6 +10,12 @@ class OrganizationsController < ApplicationController
   def show
     @user_organization = current_user.user_organizations
       .find_by organization_id: @organization.id
+    @q = @organization.clubs.search(params[:q])
+    @clubs = @q.result.page(params[:page]).to_a.uniq
+    respond_to do |format|
+      format.html
+      format.js
+    end
   end
 
   private

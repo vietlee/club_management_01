@@ -966,3 +966,13 @@ vi:
     languages: "Ngôn ngữ"
     collapse_menu: "Đóng menu"
     f_club: "F-Club"
+  organization_details:
+    organization_info: "Thông tin tổ chức"
+    name: "Tên: "
+    club: " Câu lạc bộ"
+    member: " Thành viên"
+    created: "Ngày thành lập:"
+    localtion: "Địa chỉ:"
+    phone: "Số điện thoại: "
+    email: "Email: "
+    search_name: "Tìm kiếm theo tên"
