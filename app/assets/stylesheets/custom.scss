@@ -69,3 +69,20 @@
     height: auto;
   }
 }
+.w-search.custom_medium{
+  width: auto;
+}
+.select_custom.form-control{
+  color: #888da8;
+  background-color: transparent;
+  padding:5px;
+  border: 1px solid #e6ecf5;
+  border-radius: 0.25rem;
+  margin: 0 0 3px 0;
+  font-size: 13px;
+}
+.filter_custom{
+  .slider-container{
+    margin-left: 0;
+  }
+}

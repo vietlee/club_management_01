@@ -1,0 +1,79 @@
+<div class="left_sidebar">
+  <%= search_form_for @q, url: my_clubs_path, class: "form-horizontal" do |f| %>
+    <div class="ui-block">
+      <div class="ui-block-title">
+        <h6 class="title"><%= t "page_my_clubs.search_club" %></h6>
+        <a href="#" class="more"><svg class="olymp-three-dots-icon"><use xlink:href="icons/icons.svg#olymp-three-dots-icon"></use></svg></a>
+      </div>
+      <div class="ui-block-content">
+        <div class="w-search custom_medium">
+          <div class="form-group with-button">
+            <%= f.text_field :name_or_content_cont,
+              class: "form-control form-search-clubs", placeholder: t("name_des") %>
+            <button>
+              <svg class="olymp-magnifying-glass-icon"><use xlink:href="./assets/icons/icons.svg#olymp-magnifying-glass-icon"></use></svg>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="ui-block">
+      <div class="ui-block-title">
+        <h6 class="title"><%= t "page_my_clubs.filters_organizations" %></h6>
+        <a href="#" class="more"><svg class="olymp-three-dots-icon"><use xlink:href="icons/icons.svg#olymp-three-dots-icon"></use></svg></a>
+      </div>
+      <div class="ui-block-content">
+        <div class="w-select">
+          <fieldset class="form-group">
+            <%= select_tag :stype_organizations,
+              options_for_select(@organizations.map{|organization|
+                [organization.name, organization.id]}
+              .unshift([t("organization_filter"), nil]),
+               include_blank: true),
+              {class: "select_custom form-control stype-organizations"} %>
+          </fieldset>
+        </div>
+      </div>
+    </div>
+    <div class="ui-block">
+      <div class="ui-block-title">
+        <h6 class="title"><%= t "page_my_clubs.filters_style_club" %></h6>
+        <a href="#" class="more"><svg class="olymp-three-dots-icon"><use xlink:href="icons/icons.svg#olymp-three-dots-icon"></use></svg></a>
+      </div>
+      <div class="ui-block-content">
+        <div class="w-select">
+          <fieldset class="form-group">
+            <%= select_tag :stype_clubs, options_for_select(
+              Club.club_types.map{|k, v| [t("#{k}"), v]}
+                .unshift([t("style_filter"), nil]),
+              include_blank: true),
+              {class: "select_custom form-control stype-clubs"} %>
+          </fieldset>
+        </div>
+      </div>
+    </div>
+    <div class="ui-block">
+      <div class="ui-block-title">
+        <h6 class="title"><%= t "page_my_clubs.filters_rating" %></h6>
+        <a href="#" class="more"><svg class="olymp-three-dots-icon"><use xlink:href="icons/icons.svg#olymp-three-dots-icon"></use></svg></a>
+      </div>
+      <div class="ui-block-content filter_custom">
+        <%= render "shared/rate_filter" %>
+      </div>
+    </div>
+    <div class="ui-block">
+      <div class="ui-block-title">
+        <h6 class="title"><%= t "page_my_clubs.oderby_time" %></h6>
+        <a href="#" class="more"><svg class="olymp-three-dots-icon"><use xlink:href="icons/icons.svg#olymp-three-dots-icon"></use></svg></a>
+      </div>
+      <div class="ui-block-content">
+        <%= select_tag :sort_clubs, options_for_select(
+          Settings.sort_clubs.map{|k, v| [t("#{k}"), v]}
+            .unshift([t("sort_clubs"), nil]),
+          include_blank: true),
+          {class: "select_custom form-control sort-clubs"} %>
+        <%= link_to t("other_club"), clubs_path, class: "btn btn-danger more-club" %>
+      </div>
+    </div>
+  <% end %>
+</div>
