@@ -23,34 +23,34 @@
               </li>
             </ul>
           </div>
-            <div class="panel-body">
-              <div class="tab-content">
-                <div class="tab-pane fade in active" id="event">
-                  <%= render partial: "events/event", locals: {event: @events} %>
-                </div>
-                <div class="tab-pane box-border box-border-club fade" id="goal">
-                  <%= view_detail_club(@club.goal) %>
-                </div>
-                <div class="tab-pane box-border box-border-club fade" id="plan">
-                  <%= view_detail_club(@club.plan) %>
-                </div>
-                <div class="tab-pane box-border box-border-club fade" id="local_club">
-                  <p><%= view_detail_club(@club.local) %></p>
-                </div>
-                <div class="tab-pane box-border box-border-club fade" id="rules_club">
-                  <%= view_detail_club(@club.rules) %>
-                </div>
-                <div class="tab-pane box-border box-border-club fade" id="content_club">
-                  <%= view_detail_club(@club.content) %>
-                </div>
-                <div class="tab-pane box-border box-border-club fade" id="rule_finance">
-                  <%= view_detail_club(@club.rule_finance) %>
-                </div>
-                <div class="tab-pane box-border box-border-club fade" id="time_member_join">
-                  <%= view_detail_club(@club.time_join) %>
-                </div>
+          <div class="panel-body">
+            <div class="tab-content">
+              <div class="tab-pane fade in active" id="event">
+                <%= render partial: "events/event", locals: {event: @events} %>
+              </div>
+              <div class="tab-pane box-border box-border-club fade" id="goal">
+                <%= view_detail_club(@club.goal) %>
+              </div>
+              <div class="tab-pane box-border box-border-club fade" id="plan">
+                <%= view_detail_club(@club.plan) %>
+              </div>
+              <div class="tab-pane box-border box-border-club fade" id="local_club">
+                <p><%= view_detail_club(@club.local) %></p>
+              </div>
+              <div class="tab-pane box-border box-border-club fade" id="rules_club">
+                <%= view_detail_club(@club.rules) %>
+              </div>
+              <div class="tab-pane box-border box-border-club fade" id="content_club">
+                <%= view_detail_club(@club.content) %>
+              </div>
+              <div class="tab-pane box-border box-border-club fade" id="rule_finance">
+                <%= view_detail_club(@club.rule_finance) %>
+              </div>
+              <div class="tab-pane box-border box-border-club fade" id="time_member_join">
+                <%= view_detail_club(@club.time_join) %>
               </div>
             </div>
+          </div>
         </div>
         <div class="site-block"></div>
       </div>

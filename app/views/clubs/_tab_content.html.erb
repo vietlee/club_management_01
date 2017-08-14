@@ -1,0 +1,68 @@
+<div class="container">
+  <div class="row">
+    <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 tab_detail_club">
+      <div class="ui-block" id="event">
+        <div class="ui-block-title ui-block-title-small">
+          <h6 class="title"><%= t "events" %></h6>
+        </div>
+        <%= render partial: "events/event", locals: {event: @club.events} %>
+      </div>
+      <div class="ui-block" id="content_club">
+        <div class="ui-block-title ui-block-title-small">
+          <h6 class="title"><%= t "content_club" %></h6>
+        </div>
+        <div class="content_tab">
+          <%= view_detail_club(@club.content) %>
+        </div>
+      </div>
+      <div class="ui-block" id="goal">
+        <div class="ui-block-title ui-block-title-small">
+          <h6 class="title"><%= t "goal" %></h6>
+        </div>
+        <div class="content_tab">
+          <%= view_detail_club(@club.goal) %>
+        </div>
+      </div>
+      <div class="ui-block" id="plan">
+        <div class="ui-block-title ui-block-title-small">
+          <h6 class="title"><%= t "plan" %></h6>
+        </div>
+        <div class="content_tab">
+          <%= view_detail_club(@club.plan) %>
+        </div>
+      </div>
+      <div class="ui-block" id="local_club">
+        <div class="ui-block-title ui-block-title-small">
+          <h6 class="title"><%= t "local_club" %></h6>
+        </div>
+        <div class="content_tab">
+          <p><%= view_detail_club(@club.local) %></p>
+        </div>
+      </div>
+      <div class="ui-block" id="rules_club">
+        <div class="ui-block-title ui-block-title-small">
+          <h6 class="title"><%= t "rules_club" %></h6>
+        </div>
+        <div class="content_tab">
+          <%= view_detail_club(@club.rules) %>
+        </div>
+      </div>
+      <div class="ui-block" id="rule_finance">
+        <div class="ui-block-title ui-block-title-small">
+          <h6 class="title"><%= t "rule_finance" %></h6>
+        </div>
+        <div class="content_tab">
+          <%= view_detail_club(@club.rule_finance) %>
+        </div>
+      </div>
+      <div class="ui-block" id="time_member_join">
+        <div class="ui-block-title ui-block-title-small">
+          <h6 class="title"><%= t "time_member_join" %></h6>
+        </div>
+        <div class="content_tab">
+          <%= view_detail_club(@club.time_join) %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

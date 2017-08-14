@@ -1,13 +1,10 @@
 <ul class="media-list load-more comments-ul-<%= activity.id %>">
   <li class="media">
     <div class="push-top form-hide form-comment-<%= activity.id %>">
-      <%= link_to current_user do %>
-        <%= image_tag current_user.avatar,
-          class: "img-circle pull-left img-user-time-line-small" %>
-      <% end %>
+
       <div class="media-body">
-      <%= render partial: "events/form_comment", locals: {target: t("activity"),
-        target_id: activity.id} %>
+        <%= render partial: "events/form_comment", locals: {target: t("activity"),
+          target_id: activity.id} %>
       </div>
     </div>
   </li>

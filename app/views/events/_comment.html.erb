@@ -2,9 +2,9 @@
 <section class="site-comment event-comment">
   <div class="container">
     <div class="row">
-      <div class="col-md-10 col-md-offset-1 site-block">
+      <div class="col-md-10 push-md-1 site-block">
         <h3 class="site-heading"><strong><%= t("comments") if @event.comments.any? %></strong></h3>
-        <ul class="media-list">
+        <ul class="comments-list">
           <%= render partial: "events/list_comment", locals: {comments: comments} %>
         </ul>
         <% if event.comments.size > Settings.limit_comments && comments.size == Settings.limit_comments %>
