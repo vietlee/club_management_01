@@ -1,56 +1,49 @@
 <% events.each do |event| %>
-  <div class="site-block">
-    <div class="row">
-      <div class="col-md-4">
-        <p>
-          <%= link_to club_event_url(event.club, event) do %>
-            <%= image_tag event.image, class: "img-responsive" %>
-          <% end %>
-        </p>
-      </div>
-      <div class="col-md-8 description-event">
-        <h4 class="site-heading">
-          <% if event.notification? %>
-            <i class="gi gi-bell icon-event"></i>
-          <% else %>
-            <i class="gi gi-usd icon-event"></i>
-          <% end %>
-          <strong>
-            <%= link_to event.name, club_event_url(event.club, event),
-              class: "name-event-view" %>
-          </strong>
-        </h4>
-        <p class="text-justify"><%= event.description.truncate(Settings.event_truncate).html_safe unless event.description.nil? %></p>
-      </div>
-    </div>
-    <div class="clearfix">
-      <ul class="list-inline pull-left col-md-4">
-        <% unless event.date_start.blank? && event.date_end.blank? %>
-          <li>
-            <i class="fa fa-calendar"></i>
-            <%= event.date_start %>
-            <span class="fa fa-long-arrow-right"></span>
-            <%= event.date_end %>
-          </li>
-        <% end %>
-        <li>
-          <i class="fa fa-user"></i> <%= t "post_by" %>
-          <%= link_to event.user.full_name, event.user %>
-        </li>
-        <li>
-          <i class="fa fa-comments"></i>
-          <a href="javascript:void(0)">
-            <%= event.comments.size %>
-          </a>
-        </li>
-      </ul>
-      <p class="pull-right col-md-8">
-        <%= link_to t("read_more"),
-          club_event_url(event.club, event),
-          class: "label label-primary" %>
-      </p>
-    </div>
-  </div>
+  <table class="event-item-table">
+    <tbody>
+      <tr class="event-item">
+
+        <td class="upcoming">
+          <div class="date-event">
+            <svg class="olymp-small-calendar-icon"><use xlink:href="icons/icons.svg#olymp-small-calendar-icon"></use></svg>
+            <span class="day"><%= event.date_start.day %></span>
+            <span class="month"><%= event.date_start.strftime("%B") %></span>
+          </div>
+        </td>
+        <td class="author">
+          <div class="event-author inline-items">
+            <div class="author-thumb img_small">
+              <%= link_to club_event_url(event.club, event) do %>
+                <%= image_tag event.image, class: "img-responsive" %>
+              <% end %>
+            </div>
+            <div class="author-date">
+              <%= link_to event.name, club_event_url(event.club, event), class: "author-name h6" %>
+              <% unless event.date_start.blank? && event.date_end.blank? %>
+                <time class="published"><%= event.date_start %>/<%= event.date_end %></time>
+              <% end %>
+            </div>
+          </div>
+        </td>
+        <td class="location">
+          <div class="place inline-items">
+            <svg class="olymp-add-a-place-icon"><use xlink:href="icons/icons.svg#olymp-add-a-place-icon"></use></svg>
+            <span><%= link_to event.user.full_name, event.user %></span>
+          </div>
+        </td>
+        <td class="description">
+          <p class="description"><%= event.description.truncate(Settings.event_truncate).html_safe unless event.description.nil? %></p>
+        </td>
+        <td class="users">
+
+        </td>
+        <td class="add-event">
+          <%= link_to t("read_more"), club_event_url(event.club, event),
+            class: "btn btn-breez btn-sm load_event" %>
+        </td>
+      </tr>
+    </tbody>
+  </table>
 <% end %>
 <div class="col-md-9">
   <%= paginate @events %>

@@ -1,174 +1,69 @@
-<div id="page-container">
-<%= render "clubs/header_club" %>
-  <section class="site-content ">
-    <div class="container">
-      <div class="row">
-        <div class="col-md-10 col-md-offset-1 site-block">
-          <article>
-          <h3 class="name-event"><%= @event.name %></h3>
-          <ul class="entry-meta clearfix">
-            <li><i class="hi hi-calendar"></i><%= l @event.created_at,
-              format: :short %></li>
-            <li>
-              <%= link_to user_path(@event.user), target: "_blank" do %>
-                <i class="gi gi-user"></i>
-                <%= @event.user_full_name %>
-              <% end %>
-            </li>
-            <li>
-              <% if @event.notification? %>
-                <i class="hi hi-bell"></i>
-              <% else %>
-                <i class="gi gi-usd"></i>
-              <% end %>
-            </li>
-            <li><a href="#comment-position"><i class="gi gi-conversation"></i>
-              <%= @event.comments.size %> <%= t("comment") %>
-            </a></li>
-          </ul>
-          <hr>
-          <div class="col-md-4 img-event-detail">
-            <%= image_tag @event.image, class: "img-responsive" %>
-          </div>
-          <div class="col-md-8">
-            <div class="row col-md-6">
-              <div>
-                <h4 class="detail-text center">
-                  <%= t "detail" %>
-                </h4>
-              </div>
-              <div class="col-md-12 center infor-event">
-                <% unless @event.notification? %>
-                  <div class="col-md-12 money-div">
-                    <p class="col-md-5"><strong><%= t "expense" %></strong></p>
-                    <div class="col-md-7 money-event">
-                      <p class="view-money"><%= number_to_currency(@event.expense, locale: :vi) %>
-                        <% unless @event.notification? %>
-                          <button type="button" class="btn fa fa-angle-double-up
-                            btn-primary btn-sm button-money" data-toggle="modal" data-target="#myModal">
-                          </button>
-                          <div class="">
-                            <div class="modal fade" id="myModal" role="dialog">
-                              <div class="modal-dialog modal-sm">
-                                <div class="modal-content">
-                                  <div class="modal-header">
-                                    <button type="button" class="close" data-dismiss="modal">&times;</button>
-                                    <h2 class="modal-title">
-                                      <strong><%= t "detail" %></strong>
-                                    </h2>
-                                  </div>
-                                  <div class="modal-body">
-                                    <h2 class="center"><strong><%= t "before_money" %></strong></br>
-                                      <strong><%= number_to_currency(@event.amount, locale: :vi) %></strong>
-                                    </h2>
-                                    <h2 class="center">
-                                      <strong>
-                                        <%= view_notification @event %>
-                                      </strong></br>
-                                      <strong>
-                                        <%= number_to_currency(view_case_money_after(@event), locale: :vi) %></strong>
-                                    </h2>
-                                  </div>
-                                  <div class="modal-footer">
-                                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                                  </div>
-                                </div>
-                              </div>
-                            </div>
-                          </div>
-                        <% end %>
-                      </p>
-                    </div>
-                  </div>
-                <% end %>
-                <% unless @event.location.blank? %>
-                  <div class="col-md-12 money-event">
-                    <p class="text-center col-md-5"><strong><%= t "location" %></strong></p>
-                    <p class="col-md-7"><%= @event.location %></p>
-                  </div>
-                <% end %>
-                <% if @event.date_start.present? && @event.date_end.present? %>
-                  <div class="col-md-6 fa fa-calendar money-event text-center
-                    infor-event">
-                    <strong> <%= t "date_start" %></strong> <br>
-                    <p><%= @event.date_start %></p></div>
-                  <div class="col-md-6 fa fa-calendar money-event text-center infor-event">
-                    <strong> <%= t "date_end" %></strong><br>
-                    <p class="text-center"><%= @event.date_end %></p></div>
-                <% end %>
-              </div>
-            </div>
-            <div class="row col-md-6">
-              <div>
-                <h4 class="detail-text center">
-                  <%= t "members" %>
-                </h4>
-              </div>
-              <div class="row text-center">
-                <% if @event.notification? %>
-                  <% if @members.any? %>
-                    <% @members.take(Settings.event_user).each do |user_event| %>
-                      <div class="col-sm-2">
-                        <%= link_to user_path(id: user_event.id) do %>
-                          <%= image_tag user_event.avatar,
-                            class: "circle-profile-list members-club",
-                            title: user_event.full_name %>
-                        <% end %>
-                      </div>
-                    <% end %>
-                    <% if @members.size > Settings.event_user  %>
-                      <div class="col-md-2 col-sm-2">
-                        <%= link_to "#modal-user", data: {toggle: "modal"},
-                          class: "members-club animation-fadeIn360", title: "more" do %>
-                          <i class="hi hi-plus"></i>
-                        <% end %>
-                      </div>
-                    <% end %>
-                  <% else %>
-                    <h5><%= t "no_member" %></h5>
-                  <% end %>
-                <% else %>
-                  <h5><strong><%= t "all_member" %></strong></h5>
-                <% end %>
+<div class="header-spacer"></div>
+<div class="container">
+  <div class="row">
+    <div class="col-xl-10 push-xl-1 col-lg-12 push-lg-0 col-md-12 col-sm-12 col-xs-12">
+      <div class="ui-block">
+        <article class="hentry post has-post-thumbnail thumb-full-width private-event">
+          <div class="private-event-head inline-items">
+            <%= image_tag "avatar77-sm.jpg" %>
+            <div class="author-date">
+              <a class="h3 event-title" href="#"><%= @event.name %></a>
+              <div class="event__date">
+                <time class="published" datetime="<%= l @event.created_at, format: :short %>">
+                  <%= l @event.created_at, format: :short %>
+                </time>
               </div>
             </div>
           </div>
-          <div class="event-block col-md-12">
-            <div class="col-md-12 description-event">
+          <div class="post-thumb">
+            <%= image_tag @event.image, class: "img-responsive full_image" %>
+          </div>
+          <div class="row">
+            <div class="col-lg-7 col-md-7 col-sm-12 col-xs-12">
+              <div class="post__author author vcard inline-items">
+                <div class="author-date">
+                  <a class="h6 post__author-name fn" href="#"><%= @event.user.full_name %></a>
+                  <div class="post__date">
+                    <time class="published" datetime="<%= l @event.created_at, format: :short %>">
+                      <%= l @event.created_at, format: :short %>
+                    </time>
+                  </div>
+                </div>
+              </div>
               <% if @event.description.blank? %>
-                <h3 class="text-center">
+                <h5 class="text-center">
                   <strong><%= t "no_description" %></strong>
-                </h3>
+                </h5>
               <% else %>
-                <%= @event.description.html_safe %>
+                <p><%= @event.description.html_safe %></p>
               <% end %>
             </div>
-          </div>
-          <% if @event.get_money? %>
-            <div class="content-event col-md-12 site-block border">
-              <%= render partial: "view_get_money" %>
+            <div class="col-lg-5 col-md-5 col-sm-12 col-xs-12">
+              <div class="event-description">
+                <h6 class="event-description-title"><%= t "info_event" %></h6>
+                <div class="place inline-items">
+                  <svg class="olymp-add-a-place-icon"><use xlink:href="./assets/icons/icons.svg#olymp-add-a-place-icon"></use></svg>
+                  <span><%= @event.location %></span>
+                </div>
+                <div class="place inline-items">
+                  <svg class="olymp-small-calendar-icon"><use xlink:href="./assets/icons/icons.svg#olymp-small-calendar-icon"></use></svg>
+                  <span><%= @event.date_start %></span>
+                </div>
+                <div class="place inline-items">
+                  <svg class="olymp-small-calendar-icon"><use xlink:href="icons/icons.svg#olymp-small-calendar-icon"></use></svg>
+                  <span><%= @event.date_end %></span>
+                </div>
+                <% if @event.notification? %>
+                  <%= render "user_events/join_event_toggle" %>
+                <% end %>
+              </div>
             </div>
-          <% end %>
+          </div>
         </article>
+        <div class="mCustomScrollbar list-comment-event" data-mcs-theme="dark">
+          <%= render partial: "events/comment", locals: {comments: @comments, event: @event} %>
         </div>
-        </div>
-      </div>
-      <hr>
-      <div class="list-comment-event">
-        <div id="comment-position"><a href="comment-position" name="comment-position"></a></div>
-        <%= render partial: "events/comment", locals: {comments: @comments, event: @event} %>
       </div>
     </div>
-  </section>
-</div>
-<div class="join-event-toggle-container">
-  <% if @event.notification? %>
-    <%= render "user_events/join_event_toggle" %>
-  <% end %>
-</div>
-<div class="text-center">
-  <div id="modal-user" class="modal fade" tabindex="-1"
-    role="dialog" aria-hidden="true">
-    <%= render "button_more_user" %>
   </div>
 </div>

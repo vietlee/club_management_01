@@ -1,9 +1,9 @@
 <% if current_user.user_clubs.joined.of_club(@club) %>
   <div class="sidebar-block">
     <% if current_user.user_clubs.joined.of_club(@club) %>
-      <h4 class="site-heading left-title center"><%= t "budget_now" %></strong></br>
+      <h5 class="site-heading left-title center"><%= t "budget_now" %></strong>
         <%= number_to_currency(@club.money, locale: :vi) %></strong>
-      </h4>
+      </h5>
       <div class="join-cancel-toggle-container center">
         <%= link_to "#budget-club", data: {toggle: "modal"},
           class: "btn btn-sm btn-primary animation-fadeIn360

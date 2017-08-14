@@ -86,3 +86,27 @@
     margin-left: 0;
   }
 }
+
+.custom_flex{
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  .item_club{
+    width: 100%;
+  }
+}
+
+.tab_detail_club{
+  .ui-block{
+    .content_tab{
+      padding: 30px 20px;
+    }
+  }
+}
+.full_image{
+  width: 100%;
+  margin-bottom: 20px;
+}
+.private-event{
+  padding: 15px;
+}

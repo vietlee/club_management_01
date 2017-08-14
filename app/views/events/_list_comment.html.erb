@@ -1,22 +1,22 @@
 <% comments.each do |comment| %>
-  <li class="media">
-    <a href="javascript:void(0)" class="pull-left">
+  <li>
+    <div class="post__author author vcard inline-items">
       <%= image_tag comment.user.avatar, class: "img-circle img-user-time-line" %>
-    </a>
-    <div class="">
-      <span class="text-muted pull-right"><small><em>
-        <%= l comment.created_at, format: :full_date %>
-      </em></small></span>
-      <%= link_to comment.user do %>
-        <strong><%= comment.user.full_name %></strong>
-      <% end %>
-      <%= render partial: "comments/toggle",
-        locals:
-        {comment_select: comment} if current_user == comment.user %>
-      <p class="edit-comment-<%= comment.id %>">
-        <%= comment.content %>
-      </p>
+      <div class="author-date">
+        <%= link_to comment.user, class: "h6 post__author-name fn" do %>
+          <%= comment.user.full_name %>
+        <% end %>
+        <div class="post__date">
+          <time class="published" datetime="<%= l comment.created_at, format: :full_date %>">
+            <%= l comment.created_at, format: :full_date %>
+          </time>
+        </div>
+      </div>
+      <a href="#" class="more"><svg class="olymp-three-dots-icon"><use xlink:href="./assets/icons/icons.svg#olymp-three-dots-icon"></use></svg></a>
     </div>
+    <%= render partial: "comments/toggle",
+      locals:
+      {comment_select: comment} if current_user == comment.user %>
+    <p class="edit-comment-<%= comment.id %>"><%= comment.content %></p>
   </li>
-  <div class="push-top"></div>
 <% end %>

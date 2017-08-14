@@ -1,41 +1,59 @@
-<div class="club-profile">
-<%= render "users/users" %>
-  <section class="">
-    <div class="">
-      <div class="profile clearfix">
-        <div class="image club-profile-image">
-          <%= link_to club_path(@club) do %>
+<div class="container">
+  <div class="row">
+    <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12">
+      <div class="ui-block">
+        <div class="top-header top-header-favorit">
+          <div class="top-header-thumb">
             <%= image_tag @club.image, class: "img-cover", title: t("image_cover") %>
-          <% end %>
-          <div class="bottomleft col-md-4">
-            <h3 class="name-club text-left"><%= @club.name %></h3>
-            <span class="animation-slideUp hidden-xs rating-container">
-              <%= render "ratings/rating" %>
-            </span>
-            <div class="join-cancel-toggle-container">
-              <%= render "user_clubs/join_cancel_toggle" %>
+            <div class="top-header-author">
+              <div class="author-thumb">
+                <%= image_tag @club.image, class: "img-cover img_small", title: t("image_cover") %>
+              </div>
+              <div class="author-content">
+                <a href="#" class="h3 author-name"><%= @club.name %></a>
+                <span class="animation-slideUp hidden-xs rating-container">
+                  <%= render "ratings/rating" %>
+                </span>
+                <div class="join-cancel-toggle-container">
+                  <%= render "user_clubs/join_cancel_toggle" %>
+                </div>
+              </div>
             </div>
-            <% if !current_user.user_clubs.of_club(@club).nil? && current_user.user_clubs.of_club(@club).joined? %>
-              <%= link_to user_club_path(club_id: @club.id), method: :delete,
-                data: {confirm: t("answer_leave")}, class: "join-club-button btn
-                pull-left btn-club" do %>
-                <%= t("leave_club") %>
-                <i class="fa fa-share-square-o" aria-hidden="true"></i>
-              <% end %>
-            <% end %>
           </div>
-          <div class="bottomright">
-          </div>
-        </div>
-        <div class="user clearfix">
-          <div class="avatars">
-            <%= link_to @club do %>
-              <%= image_tag @club.logo, title: t("logo"),
-                class: "img-thumbnail img-profile" %>
-            <% end %>
+          <div class="profile-section">
+            <div class="row">
+              <div class="col-xl-10 offset-xl-1 col-lg-8 offset-lg-2 col-md-12 offset-md-0">
+                <ul class="profile-menu tab_list_detail_club">
+                  <li>
+                    <%= link_to t("events"), "#event", class: "active" %>
+                  </li>
+                  <li >
+                    <%= link_to t("content_club"), "#content_club" %>
+                  </li>
+                  <li>
+                    <%= link_to t("goal"), "#goal" %>
+                  </li>
+                  <li>
+                    <%= link_to t("plan"), "#plan" %>
+                  </li>
+                  <li>
+                    <%= link_to t("local_club"), "#local_club" %>
+                  </li>
+                  <li>
+                    <%= link_to t("rules_club"), "#rules_club" %>
+                  </li>
+                  <li>
+                    <%= link_to t("rule_finance"), "#rule_finance" %>
+                  </li>
+                  <li>
+                    <%= link_to t("time_member_join"), "#time_member_join" %>
+                  </li>
+                </ul>
+              </div>
+            </div>
           </div>
         </div>
       </div>
     </div>
-  </section>
+  </div>
 </div>

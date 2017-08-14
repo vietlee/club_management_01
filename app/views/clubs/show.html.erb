@@ -1,3 +1,40 @@
+<div class="header-spacer"></div>
 <%= render "header_club" %>
-<%= render "events/list_events" %>
-<%= render "messages/chat_box" if current_user.user_clubs.joined.of_club @club %>
+
+<div class="container">
+  <div class="row">
+    <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12">
+      <div class="ui-block">
+        <div class="ui-block-title custom_flex">
+        <div class="item_club">
+          <%= render "clubs/budget" %>
+        </div>
+        <div class="item_club">
+          <% if !current_user.user_clubs.of_club(@club).nil? && current_user.user_clubs.of_club(@club).joined? %>
+            <%= link_to user_club_path(club_id: @club.id), method: :delete,
+              data: {confirm: t("answer_leave")}, class: "btn btn-breez btn-sm" do %>
+              <%= t("leave_club") %>
+              <i class="fa fa-share-square-o" aria-hidden="true"></i>
+            <% end %>
+          <% end %>
+        </div>
+        <div class="item_club">
+          <%= search_form_for @q, url: club_url, method: :get do |f| %>
+            <div class="w-search custom_medium">
+              <div class="form-group with-button">
+              <%= f.text_field :name_or_description_cont,
+                id: "search-term", class: "form-control",
+                placeholder: t("search") %>
+              <button>
+                <svg class="olymp-magnifying-glass-icon"><use xlink:href="icons/icons.svg#olymp-magnifying-glass-icon"></use></svg>
+              </button>
+              </div>
+            </div>
+          <% end %>
+        </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<%= render "tab_content" %>
