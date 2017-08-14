@@ -1,34 +1,38 @@
-<%= render "request/header" %>
+<div class="header-spacer"></div>
 <section class="site-content site-section">
   <div class="container">
-    <div class="row">
-      <div class="col-sm-6 col-md-8 col-md-offset-2 site-block box-border">
-        <h3 class="h2 site-heading center"><strong>
+    <div class="row ui-block">
+      <div class="col-sm-6 col-md-8 push-md-2 site-block box-border">
+        <h3 class="h2 site-heading center title_custom"><strong>
           <%= t "request" %></strong> <%= t "organization_sign" %>
         </h3>
         <div class="hr-center-line-div"></div>
         <%= form_for [:user, @request], html: {id: "form-contact"} do |f|%>
-          <div class="form-group col-md-12">
-            <label for="contact-name"><%= t "organization_name" %></label>
-            <%= f.text_field :name, placeholder: t("organization_name"),
-              class: "form-control input-lg", id: "contact-name" %>
+          <div class="form-group col-md-6">
+            <div class="form-group label-floating">
+              <%= f.label(:name, t("organization_name"), class: "control-label") %>
+              <%= f.text_field :name, class: "form-control", id: "contact-name" %>
+            </div>
           </div>
           <div class="form-group">
             <div class="col-md-6">
-              <label for="contact-name"><%= t "organization_phone" %></label>
-              <%= f.number_field :phone, placeholder: t("organization_phone"),
-                class: "form-control input-lg", id: "contact-name" %>
+              <div class="form-group label-floating">
+                <%= f.label(:phone, t("organization_phone"), class: "control-label") %>
+                <%= f.number_field :phone, class: "form-control", id: "contact-name" %>
+              </div>
             </div>
             <div class="col-md-6">
-              <label for="contact-name"><%= t "organization_email" %></label>
-              <%= f.email_field :email, placeholder: t("organization_email"),
-                class: "form-control input-lg", id: "contact-name" %>
+              <div class="form-group label-floating">
+                <%= f.label(:email, t("organization_email"), class: "control-label") %>
+                <%= f.email_field :email, class: "form-control", id: "contact-name" %>
+              </div>
             </div>
           </div>
           <div class="form-group col-md-12">
-            <label for="contact-name"><%= t "organization_address" %></label>
-            <%= f.text_field :location, placeholder: t("organization_address"),
-              class: "form-control input-lg", id: "contact-name" %>
+            <div class="form-group label-floating">
+              <%= f.label(:location, t("organization_address"), class: "control-label") %>
+              <%= f.text_field :location, class: "form-control", id: "contact-name" %>
+            </div>
           </div>
           <div class="form-group col-md-12 logo-club">
             <div class="row">
@@ -42,12 +46,13 @@
             </div>
           </div>
           <div class="form-group col-md-12">
-            <label for="contact-message"><%= t "description" %></label>
-            <%= f.text_area :description, placeholder: t("description_request"),
-              class: "form-control input-lg description-organization-request", id: "contact-message", row: 10  %>
+            <div class="form-group label-floating">
+              <%= f.label(:description, t("description_request"), class: "control-label") %>
+              <%= f.text_area :description, class: "form-control", id: "contact-message", row: 10 %>
+            </div>
           </div>
           <div class="form-group center">
-            <%= f.submit t("send_request"), class: "btn btn-primary" %>
+            <%= f.submit t("send_request"), class: "btn btn-secondary btn-lg full-width" %>
           </div>
         <% end %>
       </div>

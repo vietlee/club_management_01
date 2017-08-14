@@ -1,40 +1,44 @@
-<%= render "request/header" %>
+<div class="header-spacer"></div>
 <section class="site-content site-section">
   <div class="container">
     <div class="row">
-      <div class="col-md-12">
-        <div class="col-sm-6 col-md-8 col-md-offset-2 site-block box-border">
-          <h3 class="h2 site-heading center">
+      <div class="col-md-12 ui-block">
+        <div class="col-sm-6 col-md-8 push-md-2">
+          <h3 class="h2 site-heading center title_custom">
             <strong><%= t "request" %></strong> <%= t "club" %>
           </h3>
           <div class="hr-center-line-div"></div>
           <%= form_for [:user, @request], html: {id: "form-contact"} do |f|%>
-            <div class="form-group col-md-12 new-organization">
+            <div class="form-group col-md-6 new-organization">
               <label for="contact-name"><%= t "organization_sign" %></label>
               <br>
-              <%= f.select(:organization_id, @organizations.collect {|org| [ org.name, org.organization_id ]}, {}, {class: "form-control" }) %>
+              <%= f.select(:organization_id, @organizations.collect {|org| [ org.name, org.organization_id ]}, {}, {class: "form-control select_custom" }) %>
               <label class="push-left"><%= t "organization_question" %></label>
               <%= link_to t("click_here"), new_user_organization_request_path(user_id: current_user.id) %>
             </div>
-            <div class="form-group col-md-12">
-              <label for="contact-name"><%= t "club_name" %>
-                <span class="text-danger">*</span>
-              </label>
-              <%= f.text_field :name, placeholder: t("club_name"),
-                class: "form-control input-lg", id: "contact-name" %>
+            <div class="form-group col-md-6">
+              <div class="form-group label-floating">
+                <%= f.label(:name, class: "control-label") do %>
+                  <%= t("club_name") %>
+                  <span class="text-danger">*</span>
+                <% end %>
+                <%= f.text_field :name, class: "form-control", required: true %>
+              </div>
             </div>
             <div class="col-md-6">
               <label for="contact-name"><%= t "type_club" %></label></br>
               <%= f.select(:club_type, options_for_select(
                 ClubRequest.club_types.map{|k, v| [t("#{k}"), v]}), {},
-                {class: "form-control"}) %>
+                {class: "form-control select_custom"}) %>
             </div>
             <div class="col-md-6">
-              <label for="contact-name"><%= t "member_count" %>
-                <span class="text-danger">*</span>
-              </label></br>
-              <%= f.number_field :member, placeholder: t("member_count"),
-                class: "form-control", id: "contact-name", min: 0 %>
+              <div class="form-group label-floating">
+                <%= f.label(:member, class: "control-label") do %>
+                  <%= t("member_count") %>
+                  <span class="text-danger">*</span>
+                <% end %>
+                <%= f.number_field :member, class: "form-control", required: true %>
+              </div>
             </div>
             <div class="form-group col-md-12 logo-club">
               <div class="row">
@@ -49,62 +53,75 @@
               </div>
             </div>
             <div class="col-md-12">
-              <label for="contact-message"><%= t "content_club" %>
-                <span class="text-danger">*</span>
-              </label>
-              <%= f.text_area :content, placeholder: t("content_club"),
-                class: "form-control input-lg", id: "contact-message", row: 10  %>
+              <div class="form-group label-floating">
+                <%= f.label(:content, class: "control-label") do %>
+                  <%= t("content_club") %>
+                  <span class="text-danger">*</span>
+                <% end %>
+                <%= f.text_area :content, class: "form-control", required: true %>
+              </div>
             </div>
             <div class="col-md-12">
-              <label for="contact-message"><%= t "goal_club" %>
-                <span class="text-danger">*</span>
-              </label>
-              <%= f.text_area :goal, placeholder: t("goal_club"),
-                class: "form-control input-lg", id: "contact-message", row: 10  %>
+              <div class="form-group label-floating">
+                <%= f.label(:goal, class: "control-label") do %>
+                  <%= t("goal_club") %>
+                  <span class="text-danger">*</span>
+                <% end %>
+                <%= f.text_area :goal, class: "form-control", required: true %>
+              </div>
             </div>
             <div class="col-md-12">
               <p><label for="contact-message"><%= t "time_club" %></label></p>
               <div class="days-selector">
                 <% for day in I18n.t("date.day_names") %>
-                  <%= check_box_tag "club_request[time_activity][]",
-                    day %>
-                  <label><%= day %></label>
+                  <div class="checkbox">
+                    <label>
+                      <%= check_box_tag "club_request[time_activity][]", day %>
+                      <%= day %>
+                    </label>
+                  </div>
                 <% end %>
               </div>
             </div>
-            <div class="col-md-6">
-              <label for="contact-message"><%= t "time_join" %></label>
-              <%= f.text_area :time_join, placeholder: t("time_join"),
-                class: "form-control input-lg", id: "contact-message", row: 10  %>
+            <div class="col-md-12">
+               <div class="form-group label-floating">
+                <%= f.label(:time_join, t("time_join"), class: "control-label") %>
+                <%= f.text_area :time_join, class: "form-control", row: 10 %>
+              </div>
             </div>
-            <div class="col-md-6">
-              <label for="contact-message"><%= t "local_club" %></label>
-              <%= f.text_area :local, placeholder: t("local_club"),
-                class: "form-control input-lg", id: "contact-message", row: 10  %>
+            <div class="col-md-12">
+              <div class="form-group label-floating">
+                <%= f.label(:time_join, t("local_club"), class: "control-label") %>
+                <%= f.text_area :time_join, class: "form-control", id: "contact-message", row: 10%>
+              </div>
             </div>
-            <div class="col-md-6">
-              <label for="contact-message"><%= t "rules_club" %></label>
-              <%= f.text_area :rules, placeholder: t("rules_club"),
-                class: "form-control input-lg", id: "contact-message", row: 10  %>
+            <div class="col-md-12">
+              <div class="form-group label-floating">
+                <%= f.label(:rules, t("rules_club"), class: "control-label") %>
+                <%= f.text_area :rules, class: "form-control", id: "contact-message", row: 10%>
+              </div>
             </div>
-            <div class="col-md-6">
-              <label for="contact-message"><%= t "rule_finance" %></label>
-              <%= f.text_area :rule_finance, placeholder: t("rule_finance"),
-                class: "form-control input-lg", id: "contact-message", row: 10  %>
+            <div class="col-md-12">
+              <div class="form-group label-floating">
+                <%= f.label(:rule_finance, t("rule_finance"), class: "control-label") %>
+                <%= f.text_area :rule_finance, class: "form-control", id: "contact-message", row: 10%>
+              </div>
             </div>
-            <div class="col-md-6">
-              <label for="contact-message"><%= t "punishment" %></label>
-              <%= f.text_area :punishment, placeholder: t("punishment"),
-                class: "form-control input-lg", id: "contact-message", row: 10  %>
+            <div class="col-md-12">
+              <div class="form-group label-floating">
+                <%= f.label(:punishment, t("punishment"), class: "control-label") %>
+                <%= f.text_area :punishment, class: "form-control", id: "contact-message", row: 10%>
+              </div>
             </div>
-            <div class="col-md-6">
-              <label for="contact-message"><%= t "plan" %></label>
-              <%= f.text_area :plan, placeholder: t("plan"),
-                class: "form-control input-lg", id: "contact-message", row: 10  %>
+            <div class="col-md-12">
+              <div class="form-group label-floating">
+                <%= f.label(:plan, t("plan"), class: "control-label") %>
+                <%= f.text_area :plan, class: "form-control", id: "contact-message", row: 10%>
+              </div>
             </div>
             <div class="form-group center">
               <%= f.submit t("send_request"),
-                class: "btn btn-primary send-request-button" %>
+                class: "btn btn-secondary btn-lg full-width" %>
             </div>
           <% end %>
         </div>

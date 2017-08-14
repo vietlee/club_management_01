@@ -1,17 +1,17 @@
-<%= render "request/header" %>
+<div class="header-spacer"></div>
 <section class="site-content site-section">
   <div class="container">
-    <div class="row">
-      <div class="col-sm-6 col-md-8 col-md-offset-2 site-block">
-        <h3 class="h2 site-heading center"><strong><%= t "send" %></strong> <%= t "feed_back" %></h3>
+    <div class="row ui-block">
+      <div class="col-sm-6 col-md-8 push-md-2 site-block">
+        <h3 class="h2 site-heading center title_custom"><strong><%= t "send" %></strong> <%= t "feed_back" %></h3>
         <%= form_for [:user, @feed_back], html: {id: "form-contact"} do |f|%>
-          <div class="form-group">
-            <label for="contact-message"><%= t "description" %></label>
+          <div class="form-group label-floating">
             <%= f.hidden_field :content %>
-            <%= f.text_area :description, class: "form-control input-lg", id: "contact-message",
-              rows: 15, required: true, minlength: 20 %>
+            <%= f.label(:description, t("description"), class: "control-label") %>
+            <%= f.text_area :description, class: "form-control",
+              id: "contact-message", rows: 15, required: true, minlength: 20%>
           </div>
-          <div class="text-center">
+          <div class="text-center radio_custom">
             <label class="radio-inline">
               <input type="radio" name="type" value="3"><%= t "ui" %>
             </label>
@@ -26,7 +26,7 @@
             </label>
           </div><br>
           <div class="form-group center">
-            <%= f.submit t("send_request"), class: "btn btn-primary" %>
+            <%= f.submit t("send_request"), class: "btn btn-secondary btn-lg full-width" %>
           </div>
         <% end %>
       </div>
