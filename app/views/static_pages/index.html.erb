@@ -18,8 +18,8 @@
             <%= render "shared/languages_nav" %>
             <li>
               <a href="#" class="js-expanded-menu">
-                <svg class="olymp-menu-icon"><use xlink:href="./assets/icons/icons.svg#olymp-menu-icon"></use></svg>
-                <svg class="olymp-close-icon"><use xlink:href="./assets/icons/icons.svg#olymp-close-icon"></use></svg>
+                <svg class="olymp-menu-icon"><use xlink:href="<%= url_to_asset("/icons/icons.svg#olymp-menu-icon") %>"></use></svg>
+                <svg class="olymp-close-icon"><use xlink:href="<%= url_to_asset("/icons/icons.svg#olymp-close-icon") %>"></use></svg>
               </a>
             </li>
           </ul>
@@ -44,12 +44,12 @@
           <ul class="nav nav-tabs" role="tablist">
             <li class="nav-item">
               <a class="nav-link active" data-toggle="tab" href="#home" role="tab">
-                <svg class="olymp-login-icon"><use xlink:href="./assets/icons/icons.svg#olymp-login-icon"></use></svg>
+                <svg class="olymp-login-icon"><use xlink:href="<%= url_to_asset("/icons/icons.svg#olymp-login-icon") %>"></use></svg>
               </a>
             </li>
             <li class="nav-item">
               <a class="nav-link" data-toggle="tab" href="#profile" role="tab">
-                <svg class="olymp-register-icon"><use xlink:href="./assets/icons/icons.svg#olymp-register-icon"></use></svg>
+                <svg class="olymp-register-icon"><use xlink:href="<%= url_to_asset("/icons/icons.svg#olymp-register-icon") %>"></use></svg>
               </a>
             </li>
           </ul>

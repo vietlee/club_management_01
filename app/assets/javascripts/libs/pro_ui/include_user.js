@@ -53,10 +53,6 @@ $(document).on('turbolinks:load', function() {
 
   $("#example-datatable").dataTable();
 
-  $(".container-chat").hover(function(){
-    $('div').animate({scrollTop: $('#viewport-content ul').height()});
-  });
-
   $('a[data-toggle="collapse"]').click(function () {
     $(this).find('span.toggle-icon').toggleClass('fa fa-envelope-open-o fa fa-envelope-o');
   });

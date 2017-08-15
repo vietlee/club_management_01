@@ -36,19 +36,19 @@
         </li>
         <li>
         <%= link_to organizations_path do %>
-           <svg class="olymp-newsfeed-icon left-menu-icon"><use xlink:href="<%= url_to_asset("icons/icons.svg#olymp-newsfeed-icon") %>"></use></svg>
+           <svg class="olymp-newsfeed-icon left-menu-icon"><use xlink:href="<%= url_to_asset("/icons/icons.svg#olymp-newsfeed-icon") %>"></use></svg>
           <%= t("organizations") %>
         <% end %>
         </li>
         <li>
           <%= link_to my_clubs_path do %>
-            <svg class="olymp-star-icon left-menu-icon"><use xlink:href="<%= url_to_asset("icons/icons.svg#olymp-star-icon") %>"></use></svg>
+            <svg class="olymp-star-icon left-menu-icon"><use xlink:href="<%= url_to_asset("/icons/icons.svg#olymp-star-icon") %>"></use></svg>
             <%= t("my_clubs") %>
           <% end  %>
         </li>
         <li>
           <%= link_to new_user_club_request_path(user_id: current_user.id) do %>
-            <svg class="olymp-happy-faces-icon left-menu-icon"><use xlink:href="<%= url_to_asset("icons/icons.svg#olymp-happy-faces-icon") %>"></use></svg>
+            <svg class="olymp-happy-faces-icon left-menu-icon"><use xlink:href="<%= url_to_asset("/icons/icons.svg#olymp-happy-faces-icon") %>"></use></svg>
             <%= t("send_request_club") %>
           <% end %>
         </li>
@@ -73,18 +73,17 @@
       <ul class="account-settings">
         <li>
           <%= link_to user_path(current_user) do %>
-            <svg class="olymp-menu-icon"><use xlink:href="<%= url_to_asset("icons/icons.svg#olymp-menu-icon") %>"></use></svg>
+            <svg class="olymp-menu-icon"><use xlink:href="<%= url_to_asset("/icons/icons.svg#olymp-menu-icon") %>"></use></svg>
             <%= t("profile") %>
           <% end %>
         </li>
         <li>
           <%= link_to destroy_user_session_path, method: :delete do %>
-            <svg class="olymp-logout-icon"><use xlink:href="<%= url_to_asset("icons/icons.svg#olymp-logout-icon") %>"></use></svg>
+            <svg class="olymp-logout-icon"><use xlink:href="<%= url_to_asset("/icons/icons.svg#olymp-logout-icon") %>"></use></svg>
             <%= t("log_out") %>
           <% end %>
         </li>
       </ul>
-
       <div class="ui-block-title ui-block-title-small">
         <h6 class="title"><%= t "mobie_menus.languages" %></h6>
       </div>
@@ -118,7 +117,7 @@
   </nav>
     <div class="control-block">
       <div class="control-icon more has-items">
-        <svg class="olymp-thunder-icon"><use xlink:href="<%= url_to_asset("icons/icons.svg#olymp-thunder-icon") %>"></use></svg>
+        <svg class="olymp-thunder-icon"><use xlink:href="<%= url_to_asset("/icons/icons.svg#olymp-thunder-icon") %>"></use></svg>
         <%= render "notifications/notification_container" %>
       </div>
 
@@ -140,7 +139,7 @@
       <li class="nav-item">
         <a class="nav-link" data-toggle="tab" href="#notification" role="tab">
           <div class="control-icon has-items">
-            <svg class="olymp-thunder-icon"><use xlink:href="<%= url_to_asset("icons/icons.svg#olymp-thunder-icon") %>"></use></svg>
+            <svg class="olymp-thunder-icon"><use xlink:href="<%= url_to_asset("/icons/icons.svg#olymp-thunder-icon") %>"></use></svg>
             <div class="label-avatar bg-primary">
               <% @notifications = notifications_result %>
               <%= @notifications.un_read.size if @notifications %>
