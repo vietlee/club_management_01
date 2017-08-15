@@ -1,16 +1,15 @@
 <% clubs.each do |club| %>
-  <p class="m-b-5">
-    <%= sanitize club.content
-      .truncate(Settings.club.max_content_truncate) if club.content.present? %>
-  </p>
-  <div class="m-t-30">
-    <h4 class="button-club-profile"><%= link_to club.name, club %></h4>
-    <div class=" p-t-10">
-      <h5 class="text-primary m-b-5">
-        <%= club.display_organization %>
-      </h5>
+  <li>
+    <div class="author-thumb">
+      <%= image_tag club.logo, class: "avatar" %>
     </div>
-    <hr>
-  </div>
+    <div class="notification-event">
+      <%= link_to club.name, club, class: "h6 notification-friend" %>
+      <span class="chat-message-item"><%= club.display_organization %></span>
+    </div>
+    <span class="notification-icon">
+      <%= link_to t("profile_settings.read_more"), club, class: "btn btn-sm bg-blue" %>
+    </span>
+  </li>
 <% end %>
 <%= paginate clubs %>

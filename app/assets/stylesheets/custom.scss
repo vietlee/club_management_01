@@ -117,3 +117,25 @@
 .radio_custom label{
   margin-right: 20px;
 }
+/*------------- User page -----------*/
+.tab_my_account{
+  li{
+    display: inline-block;
+    padding: 5px 10px;
+    a{
+      font-size: 14px;
+      font-weight: 700;
+      color: #9a9fbf;
+      display: block;
+    }
+    a.active{
+      color: #515365;
+    }
+  }
+}
+
+.drop_form{
+  li{
+    padding: 5px 10px;
+  }
+}
