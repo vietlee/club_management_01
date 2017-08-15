@@ -740,3 +740,13 @@ en:
     filters_style_club: "Filters by style club"
     filters_rating: "Filters by rating"
     oderby_asc: "Oder by Asc"
+  profile_settings:
+    title: "Your Account Dashboard"
+    description: "Welcome to your account dashboard! Here you’ll find everything you need to change your profile information, settings, read notifications and requests, view your latest messages, change your pasword and much more! Also you can create or manage your own favourite page, have fun!"
+    personal_info: "Personal Info"
+    account_settings: "Account Settings"
+    full_name: "Name:"
+    join_organization_number: "Organization joined: "
+    read_more: "Read more"
+    list_my_group: "List my club"
+    settings: "Settings"

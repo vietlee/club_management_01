@@ -976,3 +976,21 @@ vi:
     phone: "Số điện thoại: "
     email: "Email: "
     search_name: "Tìm kiếm theo tên"
+  page_my_clubs:
+    member: "Thành viên"
+    list_my_clubs: "Danh sách câu lạc bộ"
+    search_club: "Tìm kiến câu lạc bộ"
+    filters_organizations: "Lọc theo tổ chức"
+    filters_style_club: "Lọc theo loại câu lạc bộ"
+    filters_rating: "Lọc theo đánh giá"
+    oderby_asc: "Sắp xếp tăng dần"
+  profile_settings:
+    title: "Quản lý tài khoản của bạn"
+    description: "Chào mừng bạn đến với trang tổng quan tài khoản của bạn! Ở đây bạn sẽ thấy mọi thứ bạn cần để thay đổi thông tin hồ sơ, cài đặt, đọc thông báo và yêu cầu, xem tin nhắn mới nhất, thay đổi mật khẩu và nhiều hơn nữa!"
+    personal_info: "Thông tin tài khoản"
+    account_settings: "Cài đặt tài khoản"
+    full_name: "Tên:"
+    join_organization_number: "Tổ chức tham gia: "
+    read_more: "Đọc thêm"
+    list_my_group: "Danh sách câu lạc bộ"
+    settings: "Cài đặt

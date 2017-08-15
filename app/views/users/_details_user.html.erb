@@ -4,150 +4,129 @@
   media: "all", "data-turbolinks-track": "reload" %>
 <%= javascript_include_tag "chosen",
   "data-turbolinks-track" => true %>
-<section class="site-section site-section-light themed-background-dark">
-</section>
-<section class="site-content">
-  <div class="container" id="main">
-    <div class="container">
-      <div class="row profile-user-content">
-        <h1 class="timeline-head text-center"><%= t "user_details" %></h1>
-        <div class="hr-center-profile"></div>
-        <div class="col-lg-3 col-md-4">
-          <div class="text-center card-box">
-            <div class="member-card">
-              <div class="thumb-xl member-thumb m-b-10 center-block profile-avatar-user">
-                <%= image_tag @user.avatar,
-                  class: "img-circle org-img-details", id: "img-upload" %>
-              </div>
-              <div class="">
-                <h4 class="m-b-5"><%= @user.full_name %></h4>
-                <p class="text-muted"><%= @user.email %></p>
-              </div>
-              <div class="text-left m-t-40">
-                <p class="text-muted font-13">
-                  <i class="fa fa-user" aria-hidden="true"></i>
-                  <strong><%= t "full_name" %> : </strong>
-                  <span class="m-l-15"><%= @user.full_name %></span>
-                </p>
-                <p class="text-muted font-13">
-                  <i class="fa fa-phone-square" aria-hidden="true"></i>
-                  <strong><%= t "phone" %> : </strong>
-                  <span class="m-l-15"><%= @user.phone %></span>
-                </p>
-                <p class="text-muted font-13">
-                  <i class="fa fa-envelope-open" aria-hidden="true"></i>
-                  <strong><%= t "email" %> : </strong>
-                  <span class="m-l-15"><%= @user.email %></span>
-                </p>
-                <p class="text-muted font-13">
-                  <i class="fa fa-university" aria-hidden="true"></i>
-                  <strong><%= t "number_organization" %> : <%= @organizaitons.size %></strong>
-                  <span class="m-l-15">
-                    <% @organizaitons.each do |organization| %>
-                      <%= link_to(image_tag(organization.logo,
-                        title: organization.name,
-                        class: "usr-img-details"), organization) %>
-                    <% end %>
-                  </span>
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-8 col-lg-9">
-          <div class="">
-            <div class="">
-              <ul class="nav nav-tabs navtab-custom">
-                <li class="active">
-                  <a href="#home" data-toggle="tab" aria-expanded="false">
-                    <span class="visible-xs"><i class="fa fa-user"></i></span>
-                    <span class="hidden-xs"><%= t "see_more" %></span>
-                  </a>
-                </li>
-                <% if current_user.is_user?@user %>
-                  <li class="">
-                    <a href="#settings" data-toggle="tab" aria-expanded="false">
-                      <span class="visible-xs"><i class="fa fa-cog"></i></span>
-                      <span class="hidden-xs"><%= t "settings" %></span>
-                    </a>
-                  </li>
-                <% end %>
-              </ul>
-              <div class="tab-content">
-                <div class="tab-pane active" id="home">
-                   <h4 class="text-center"><strong><%= t "number_club_joined" %>:</strong>
-                    <%= @user.user_clubs.joined.size %>
-                  </h4>
-                  <hr>
-                  <%= render "user_club", clubs: @clubs %>
-                </div>
-                <div class="tab-pane" id="settings">
-                  <%= form_for @user, html:{id: "form-validation",
-                    multipart: true,
-                    class: "form-horizontal form-bordered"} do |f| %>
-                    <div class="form-group">
-                      <div class="col-md-12">
-                        <label for="FullName"><%= t "full_name" %></label>
-                        <span class="text-danger">*</span></label>
-                          <%= f.text_field :full_name,
-                            class: "form-control", id: "val_username",
-                            placeholder: t("your_full_name") %>
-                      </div>
-                    </div>
-                    <div class="form-group">
-                      <div class="col-md-12">
-                        <label for="Email"><%= t "email" %></label>
-                        <span class="text-danger">*</span></label>
-                          <%= f.email_field :email,
-                            class: "form-control", id: "val_email",
-                            placeholder: t("example_email") %>
-                      </div>
-                    </div>
-                    <div class="form-group">
-                      <div class="col-md-6 col-lg-6">
-                        <label for="EnterTags"><%= t "enter_tags" %></label>
-                        <%= f.collection_select :tag_ids, Tag.order(:name), :id, :name, {},
-                          {multiple: true} %>
-                      </div>
-                      <div class="col-md-6 col-lg-6">
-                        <label for="Phone"><%= t "phone" %></label>
-                          <%= f.number_field :phone,
-                            class: "form-control", id: "val_phone",
-                            placeholder: t("phone") %>
-                      </div>
-                    </div>
-                    <div class="form-group">
-                      <div class="col-md-12">
-                        <label for="vatar"><%= t "avatar" %></label>
-                        <%= f.file_field :avatar,
-                          class: "form-control", id: "file-upload" %>
-                      </div>
-                    </div>
-                    <div class="form-group">
-                      <div class="col-md-6">
-                        <label for="Password"><%= t "password" %></label>
-                          <%= f.password_field :password, class: "form-control", id: "val_password", placeholder: t("placeholder_password") %>
-                      </div>
-                      <div class="col-md-6">
-                        <label for="RePassword">
-                          <%= t "password_confirmation" %>
-                        </label>
-                        <%= f.password_field :password_confirmation, class: "form-control", id: "val_password", placeholder: t("placeholder_password") %>
-                      </div>
-                    </div>
-                    <div class="form-group pull-right">
-                      <div class="col-md-12">
-                        <%= f.submit t("update"),
-                          class: "btn btn-nm btn-primary" %>
-                      </div>
-                    </div>
-                  <% end %>
-                </div>
-              </div>
-            </div>
-          </div>
+
+<div class="header-spacer header-spacer-small"></div>
+
+<div class="main-header bg-group">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 offset-lg-2 col-md-8 offset-md-2 col-sm-12 col-xs-12">
+        <div class="main-header-content">
+          <h1><%= t "profile_settings.title" %></h1>
+          <p><%= t "profile_settings.description" %></p>
         </div>
       </div>
     </div>
   </div>
-</section>
+  <%= image_tag "group-bottom.png", class: "img-responsive img-bottom" %>
+</div>
+
+<div class="container">
+  <div class="row">
+    <div class="col-xl-8 push-xl-4 col-lg-8 push-lg-4 col-md-12 col-sm-12 col-xs-12">
+      <div class="ui-block">
+        <div class="ui-block-title">
+          <ul class="tab_my_account">
+            <li><a href="#list_my_group" class="active"><%= t "profile_settings.list_my_group" %></a></li>
+            <li><a href="#my_settings"><%= t "profile_settings.settings" %></a></li>
+          </ul>
+        </div>
+        <div class="tab_content_account">
+          <div id="my_settings" class="tab_account_content">
+            <div class="ui-block-content">
+              <%= form_for @user, html:{id: "form-validation", multipart: true,
+                class: "form-horizontal form-bordered"} do |f| %>
+                <div class="row">
+                  <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                    <div class="form-group label-floating">
+                      <%= f.label(:full_name, t("your_full_name"), class: "control-label") %>
+                      <%= f.text_field :full_name, class: "form-control", id: "val_username" %>
+                    </div>
+                  </div>
+
+                  <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                    <div class="form-group label-floating">
+                      <%= f.label(:email, t("example_email"), class: "control-label") %>
+                      <%= f.email_field :email, class: "form-control", id: "val_email" %>
+                    </div>
+                  </div>
+
+                  <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                    <div class="form-group label-floating select_custom">
+                      <label for="EnterTags"><%= t "enter_tags" %></label>
+                      <%= f.collection_select :tag_ids, Tag.order(:name), :id, :name, {},
+                        {multiple: true} %>
+                    </div>
+                  </div>
+
+                  <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                    <div class="form-group label-floating">
+                      <%= f.label(:phone, t("phone"), class: "control-label") %>
+                      <%= f.number_field :phone, class: "form-control", id: "val_phone" %>
+                    </div>
+                  </div>
+
+                  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                    <div class="form-group">
+                      <label for="vatar"><%= t "avatar" %></label>
+                      <%= f.file_field :avatar, class: "form-control", id: "file-upload" %>
+                    </div>
+                  </div>
+                  <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                    <div class="form-group label-floating">
+                      <%= f.label(:password, t("placeholder_password"), class: "control-label") %>
+                      <%= f.email_field :password, class: "form-control", id: "val_password" %>
+                    </div>
+                  </div>
+                  <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                    <div class="form-group label-floating">
+                      <%= f.label(:password_confirmation, t("password_confirmation"), class: "control-label") %>
+                      <%= f.email_field :password_confirmation, class: "form-control", id: "val_password" %>
+                    </div>
+                  </div>
+
+                  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                    <%= f.submit t("update"), class: "btn btn-secondary btn-lg full-width" %>
+                  </div>
+                </div>
+              <% end %>
+            </div>
+          </div>
+          <div id="list_my_group" class="tab_account_content">
+            <ul class="notification-list friend-requests">
+              <%= render "user_club", clubs: @clubs %>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-xl-4 pull-xl-8 col-lg-4 pull-lg-8 col-md-12 col-sm-12 col-xs-12">
+      <div class="ui-block">
+        <div class="ui-block-title">
+          <h6 class="title"><%= t "profile_settings.personal_info" %></h6>
+          <a href="#" class="more"><svg class="olymp-three-dots-icon"><use xlink:href="./assets/icons/icons.svg#olymp-three-dots-icon"></use></svg></a>
+        </div>
+        <div class="ui-block-content">
+          <ul class="widget w-personal-info">
+            <li>
+              <span class="title"><%= t "profile_settings.full_name" %></span>
+              <span class="text"><%= @user.full_name %></span>
+            </li>
+            <li>
+              <span class="title"><%= t "profile_settings.email" %></span>
+              <span class="text"><%= @user.email %></span>
+            </li>
+            <li>
+              <span class="title"><%= t "profile_settings.phone" %></span>
+              <span class="text"><%= @user.phone %></span>
+            </li>
+            <li>
+              <span class="title"><%= t "profile_settings.join_organization_number" %></span>
+              <span class="text"><%= @organizaitons.size %></span>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
