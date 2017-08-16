@@ -1,11 +1,9 @@
-<li class="bubble-container" ng-repeat="m in messages" tabindex="1">
-  <div class="avatar avatar-left">
-    <%= image_tag message.user.avatar, title: "#{l message.created_at, format: :full_date}" %>
+<li>
+  <div class="author-thumb avatar">
+    <%= image_tag message.user.avatar, title: "#{message.user.full_name}"  %>
   </div>
-  <div class="bubble bubble-left">
-    <span class="text-warning"><%= message.user.full_name %></span>
-    <small><%= message.content %></small><br>
-    <div class="push-mini-bit"></div>
-    <div class="top-border-chat"></div>
+  <div class="notification-event">
+    <span class="chat-message-item"><%= message.content %></span>
+    <span class="notification-date"><time class="entry-date updated" datetime="#{l message.created_at, format: :full_date}"> <%= l message.created_at, format: :full_date %></time></span>
   </div>
 </li>

@@ -3,7 +3,7 @@
     <div class="ui-block">
       <div class="ui-block-title">
         <h6 class="title"><%= t "page_my_clubs.search_club" %></h6>
-        <a href="#" class="more"><svg class="olymp-three-dots-icon"><use xlink:href="icons/icons.svg#olymp-three-dots-icon"></use></svg></a>
+        <a href="#" class="more"><svg class="olymp-three-dots-icon"><use xlink:href="<%= url_to_asset("/icons/icons.svg#olymp-three-dots-icon") %>"></use></svg></a>
       </div>
       <div class="ui-block-content">
         <div class="w-search custom_medium">
@@ -11,7 +11,7 @@
             <%= f.text_field :name_or_content_cont,
               class: "form-control form-search-clubs", placeholder: t("name_des") %>
             <button>
-              <svg class="olymp-magnifying-glass-icon"><use xlink:href="./assets/icons/icons.svg#olymp-magnifying-glass-icon"></use></svg>
+              <svg class="olymp-magnifying-glass-icon"><use xlink:href="<%= url_to_asset("/icons/icons.svg#olymp-magnifying-glass-icon") %>"></use></svg>
             </button>
           </div>
         </div>
@@ -20,7 +20,7 @@
     <div class="ui-block">
       <div class="ui-block-title">
         <h6 class="title"><%= t "page_my_clubs.filters_organizations" %></h6>
-        <a href="#" class="more"><svg class="olymp-three-dots-icon"><use xlink:href="icons/icons.svg#olymp-three-dots-icon"></use></svg></a>
+        <a href="#" class="more"><svg class="olymp-three-dots-icon"><use xlink:href="<%= url_to_asset("/icons/icons.svg#olymp-three-dots-icon") %>"></use></svg></a>
       </div>
       <div class="ui-block-content">
         <div class="w-select">
@@ -38,7 +38,7 @@
     <div class="ui-block">
       <div class="ui-block-title">
         <h6 class="title"><%= t "page_my_clubs.filters_style_club" %></h6>
-        <a href="#" class="more"><svg class="olymp-three-dots-icon"><use xlink:href="icons/icons.svg#olymp-three-dots-icon"></use></svg></a>
+        <a href="#" class="more"><svg class="olymp-three-dots-icon"><use xlink:href="<%= url_to_asset("/icons/icons.svg#olymp-three-dots-icon") %>"></use></svg></a>
       </div>
       <div class="ui-block-content">
         <div class="w-select">
@@ -55,7 +55,7 @@
     <div class="ui-block">
       <div class="ui-block-title">
         <h6 class="title"><%= t "page_my_clubs.filters_rating" %></h6>
-        <a href="#" class="more"><svg class="olymp-three-dots-icon"><use xlink:href="icons/icons.svg#olymp-three-dots-icon"></use></svg></a>
+        <a href="#" class="more"><svg class="olymp-three-dots-icon"><use xlink:href="<%= url_to_asset("/icons/icons.svg#olymp-three-dots-icon") %>"></use></svg></a>
       </div>
       <div class="ui-block-content filter_custom">
         <%= render "shared/rate_filter" %>
@@ -64,7 +64,7 @@
     <div class="ui-block">
       <div class="ui-block-title">
         <h6 class="title"><%= t "page_my_clubs.oderby_time" %></h6>
-        <a href="#" class="more"><svg class="olymp-three-dots-icon"><use xlink:href="icons/icons.svg#olymp-three-dots-icon"></use></svg></a>
+        <a href="#" class="more"><svg class="olymp-three-dots-icon"><use xlink:href="<%= url_to_asset("/icons/icons.svg#olymp-three-dots-icon") %>"></use></svg></a>
       </div>
       <div class="ui-block-content">
         <%= select_tag :sort_clubs, options_for_select(

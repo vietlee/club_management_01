@@ -1,55 +1,36 @@
-<div class="container-chat">
-  <div class="panel-heading header-chat">
-    <h4 class="panel-title text-right">
-      <a data-toggle="collapse" data-parent="#panel-quote-group"
-        href="#browser-window">
-        <span class="toggle-icon fa fa-weixin icon-chat"></span>
-      </a>
-    </h4>
+<div class="icon_chat">
+  <span class="toggle-icon fa fa-weixin icon-chat"></span>
+</div>
+<div class="ui-block popup-chat custom_chatbox">
+  <div class="ui-block-title toggle-chat">
+    <span class="icon-status online"><i class="fa fa-close"></i></span>
+    <h6 class="title"><%= @club.name %></h6>
   </div>
-  <div id="browser-window" class="panel-collapse collapse">
-    <div class="header-chat toggle-chat">
-      <div class="col-md-12">
-        <div class="pull-right">
-          <a data-toggle="collapse" data-parent="#panel-quote-group"
-            href="#browser-window" class="pull-right">
-            <i class="fa fa-close"></i>
-          </a>
-        </div>
-        <strong class="text-center">
-          <div class="push-mini-bit"><%= @club.name %></div>
-        </strong>
-      </div>
-    </div>
-    <%= hidden_field_tag :num_message, {}, class: "num-step-message",
-     value: @support.messages.size %>
-    <div class="panel-body">
-      <div id="viewport">
-        <div id="viewport-content">
-          <div class="nano-content pad-all">
-            <% if @support.messages.size >= Settings.chat_messages_limit %>
-              <li class="text-center list-unstyled media-block">
-              <a href="javascript:void(0)" class="load-more-message btn btn-default">
-                <i class="fa fa-spinner"></i> <%= t "read_more" %>
-              </a>
-              </li><br>
-            <% end %>
-            <ul class="list-unstyled media-block" id="list-messages">
-              <%= render @support.messages %>
-            </ul>
-          </div>
-        </div>
-      </div>
-      <%= form_for @message, remote: true, html: {class: "row row-chat"} do |f| %>
-        <%= f.hidden_field :club_id, value: @club.id, id: "chat-box-club-id" %>
-        <div class="input-group">
-          <%= f.text_field :content, data: {behavior: "club_speaker"},
-            class: "form-control chat-input", placeholder: t("type_your_message") %>
-          <span class="input-group-btn">
-            <%= f.submit t("send"), class: "btn btn-primary chat-box-submit" %>
-          </span>
-        </div>
+  <%= hidden_field_tag :num_message, {}, class: "num-step-message",
+    value: @support.messages.size %>
+  <div class="content-chat">
+    <div class="mCustomScrollbar custom_content_chat" data-mcs-theme="dark">
+      <% if @support.messages.size >= Settings.chat_messages_limit %>
+        <li class="text-center list-unstyled media-block">
+        <a href="javascript:void(0)" class="load-more-message btn btn-default">
+          <i class="fa fa-spinner"></i> <%= t "read_more" %>
+        </a>
+        </li><br>
       <% end %>
+      <ul class="notification-list chat-message chat-message-field" id="list-messages">
+        <%= render @support.messages %>
+      </ul>
     </div>
+    <%= form_for @message, remote: true, html: {class: "row row-chat"} do |f| %>
+      <%= f.hidden_field :club_id, value: @club.id, id: "chat-box-club-id" %>
+      <div class="form-group label-floating">
+        <%= f.label(:content, t("type_your_message"), class: "control-label") %>
+        <%= f.text_field :content, data: {behavior: "club_speaker"},
+          class: "form-control chat-input" %>
+        <div class="add-options-message">
+          <%= f.submit t("send"), class: "options-message" %>
+        </div>
+      </div>
+    <% end %>
   </div>
 </div>
