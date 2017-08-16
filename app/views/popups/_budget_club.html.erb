@@ -1,33 +1,11 @@
-<div class="col-md-3"></div>
-<div class="col-md-12">
-  <div class="modal-dialog edit-club">
-    <div class="modal-content">
-      <div class="text-center">
-        <h3><strong><%= t("history_budget") %></strong></h3>
-      </div>
-      <div class="modal-body">
-        <div id="">
-          <div class="row">
-            <div class="col-md-12">
-              <div class="tab-content">
-                <div role="tabpanel" class="tab-pane active fade in"
-                  id="hisrory">
-                  <div class="row block">
-                    <%= render partial: "list_budget",
-                      locals: {events: @support.history_budget} %>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-default" data-dismiss="modal">
-          <%= t "close" %>
-        </button>
-      </div>
+<div class="modal-dialog ui-block window-popup event-private-public private-event custom_budget_popup">
+  <a href="#" class="close icon-close" data-dismiss="modal" aria-label="Close">
+    <svg class="olymp-close-icon"><use xlink:href="<%= url_to_asset("icons/icons.svg#olymp-close-icon") %>"></use></svg>
+  </a>
+  <div class="ui-block">
+    <div class="ui-block-title ui-block-title-small">
+      <h6 class="title"><%= t("history_budget") %></h6>
     </div>
+    <%= render partial: "list_budget", locals: {events: @support.history_budget} %>
   </div>
 </div>
-<div class="col-md-3"></div>

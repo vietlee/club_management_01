@@ -1,6 +1,5 @@
 <div class="table-responsive">
-  <table id="sort-bubget"
-      class="table table-vcenter datatable-public table-condensed table-bordered">
+  <table class="event-item-table table table-vcenter datatable-public table-condensed table-bordered" id="sort-bubget">
     <thead>
       <tr>
         <th><%= t "timeline" %></th>
@@ -12,38 +11,54 @@
       </tr>
     </thead>
     <tbody>
-      <% if events.any? %>
-        <% events.each do |event| %>
-          <tr>
-            <td class="text-center"><%= l event.created_at, format: :short %></td>
-            <td class="text-center">
-              <span><i class="fa fa-money" aria-hidden="true"></i></br>
-              </span>
-              <%= t "#{event.event_category}" %></td>
-            <td class="name-event-budget">
-              <%= link_to event.name, club_event_url(event.club, event), target: "_blank" %>
-            </td>
-            <td class="<%= view_class(event) %> text-center tag money-club">
-              <%= view_icon event %>
+    <% if events.any? %>
+      <% events.each do |event| %>
+        <tr class="event-item">
+
+          <td class="upcoming">
+            <div class="date-event">
+              <svg class="olymp-small-calendar-icon"><use xlink:href="<%= url_to_asset("icons/icons.svg#olymp-small-calendar-icon") %>"></use></svg>
+              <%= l event.created_at, format: :short %>
+            </div>
+          </td>
+          <td class="author">
+            <div class="event-author inline-items">
+              <div class="author-thumb">
+                <i class="fa fa-money" aria-hidden="true"></i>
+              </div>
+              <div class="author-date">
+                <%= t "#{event.event_category}" %>
+              </div>
+            </div>
+          </td>
+          <td class="location">
+            <%= link_to event.name, club_event_url(event.club, event), target: "_blank" %>
+          </td>
+          <td class="description <%= view_class(event) %>">
+            <%= view_icon event %>
             <% if event.get_money? %>
               <%= number_to_currency(get_money_expense(event, @club), locale: :vi) %>
             <% else %>
               <%= number_to_currency(event.expense, locale: :vi) %>
-            <% end %></td>
-            <td class="text-center"><%= number_to_currency(event.amount, locale: :vi) %></td>
-            <td class="text-center"><%= number_to_currency(view_case_money_event_after(event, @club), locale: :vi) %></br>
-              <%= count_member_done event, @club if event.get_money? %>
-            </td>
-          </tr>
-        <% end %>
-      <% else %>
-        <tr class="text-center">
-          <td colspan="6">
-            <h3 class="center notifi-empty"><%= t "empty" %></h3>
+            <% end %>
+          </td>
+          <td class="users">
+            <%= number_to_currency(event.amount, locale: :vi) %>
+          </td>
+          <td class="add-event">
+            <%= number_to_currency(view_case_money_event_after(event, @club), locale: :vi) %></br>
+            <%= count_member_done event, @club if event.get_money? %>
           </td>
         </tr>
       <% end %>
-    </tbody>
-  </table>
+    <% else %>
+      <tr class="text-center">
+        <td colspan="6">
+          <h3 class="center notifi-empty"><%= t "empty" %></h3>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
 </div>
 <%= javascript_include_tag "sort_by_date" %>

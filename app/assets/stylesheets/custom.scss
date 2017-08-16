@@ -223,3 +223,43 @@
     color: #7c5ac2;
   }
 }
+
+/*------------- Custom popup budget page -------------*/
+
+.custom_budget_popup{
+  .ui-block{
+    .table-responsive{
+      .dataTables_wrapper{
+        .dataTables_length{
+          float: left;
+          padding: 10px;
+          label{
+            select{
+              padding: 10px 15px;
+              margin-top: 5px
+            }
+          }
+        }
+        .dataTables_filter{
+          float: right;
+          padding: 10px;
+          input{
+            padding: 10px 15px;
+            display: block;
+            margin-top: 5px;
+          }
+        }
+        .dataTables_info{
+          padding-left: 10px;
+        }
+        .dataTables_paginate{
+          padding: 10px;
+          text-align: center;
+          a{
+            padding: 5px;
+          }
+        }
+      }
+    }
+  }
+}
