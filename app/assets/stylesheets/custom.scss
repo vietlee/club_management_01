@@ -1,12 +1,22 @@
 /*----- Notification--------*/
-.custom_notifications{
-  .notifyBody{
-    .author-thumb{
-      float: left;
-      margin-right: 10px;
-    }
-    .notification-event{
-      width: auto;
+.notification_custom{
+  overflow-y: scroll !important;
+  .notification-list{
+    .custom_notifications{
+      padding: 0;
+      .notifyBody{
+        padding: 25px;
+        .author-thumb{
+          float: left;
+          margin-right: 10px;
+        }
+        .notification-event{
+          width: auto;
+        }
+      }
+      .notifyBody.notification-un_read{
+        background-color: $body-bg;
+      }
     }
   }
 }
@@ -147,7 +157,7 @@
   right: 0;
   z-index: 10;
   font-size: 60px;
-  color: #7c5ac2;
+  color: $breez;
 }
 .custom_chatbox{
   background-color: #fff;
@@ -158,6 +168,7 @@
   display: none;
   margin-bottom: 0;
   .ui-block-title{
+    background-color:$breez;
     .icon-status{
       font-size: 20px;
       position: absolute;
@@ -170,6 +181,7 @@
     .custom_content_chat{
       background-color: #fff;
       overflow-y: scroll;
+      min-height: 150px;
       .chat-message{
         li{
           .avatar{
@@ -260,6 +272,58 @@
           }
         }
       }
+    }
+  }
+}
+
+/*---------- Custom default themes---------*/
+
+.header-spacer_custom{
+  height: 85px;
+}
+
+//----------box item-------//
+.friend-item{
+  .friend-header-thumb{
+
+  }
+  .friend-item-content{
+    padding: 0 20px 20px 20px;
+    .friend-avatar{
+      margin: 20px 0;
+      .author-content{
+        .author-name{
+          display: block;
+        }
+        .detail_item{
+          display: inline-block;
+          .rating_club{
+            padding: 10px 0;
+            text-align: left;
+            strong{
+              padding-right: 5px;
+            }
+          }
+          .country{
+            text-align: left;
+            strong{
+              padding-right: 5px;
+            }
+          }
+        }
+      }
+    }
+    .swiper-container{
+      padding-bottom: 20px;
+    }
+  }
+}
+
+.rating-container{
+  >div{
+    p.h5{
+      color: #fff;
+      font-size: 13px;
     }
   }
 }

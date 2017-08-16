@@ -32,6 +32,11 @@
           </ul>
         </div>
         <div class="tab_content_account">
+          <div id="list_my_group" class="tab_account_content">
+            <ul class="notification-list friend-requests">
+              <%= render "user_club", clubs: @clubs %>
+            </ul>
+          </div>
           <div id="my_settings" class="tab_account_content">
             <div class="ui-block-content">
               <%= form_for @user, html:{id: "form-validation", multipart: true,
@@ -91,11 +96,6 @@
                 </div>
               <% end %>
             </div>
-          </div>
-          <div id="list_my_group" class="tab_account_content">
-            <ul class="notification-list friend-requests">
-              <%= render "user_club", clubs: @clubs %>
-            </ul>
           </div>
         </div>
       </div>

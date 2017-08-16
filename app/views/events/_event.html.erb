@@ -2,8 +2,8 @@
   <% if @events.any? %>
     <%= render partial: "events/view_list_event", locals: {events: @events} %>
   <% else %>
-    <h3 class="notifi-join"><%= t "no_event" %></h3>
+    <h5 class="notifi-join text-center"><%= t "no_event" %></h5>
   <% end %>
 <% else %>
-  <h3 class="notifi-join"><%= t "join_to_see" %></h1>
+  <h5 class="notifi-join text-center"><%= t "join_to_see" %></h5>
 <% end %>
