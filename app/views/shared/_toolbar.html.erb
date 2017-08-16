@@ -2,7 +2,7 @@
   <div class="container">
     <div class="control-block">
       <div class="control-icon more has-items">
-        <svg class="olymp-thunder-icon"><use xlink:href="<%= url_to_asset("/icons/icons.svg#olymp-thunder-icon") %>"></use></svg>
+        <svg class="olymp-thunder-icon"><use xlink:href="<%= url_to_asset("icons/icons.svg#olymp-thunder-icon") %>"></use></svg>
         <%= render "notifications/notification_container" %>
       </div>
       <div class="author-page author vcard inline-items more">
@@ -15,13 +15,13 @@
             <ul class="account-settings">
               <li>
                 <%= link_to user_path(current_user) do %>
-                  <svg class="olymp-menu-icon"><use xlink:href="<%= url_to_asset("/icons/icons.svg#olymp-menu-icon") %>"></use></svg>
+                  <svg class="olymp-menu-icon"><use xlink:href="<%= url_to_asset("icons/icons.svg#olymp-menu-icon") %>"></use></svg>
                   <%= t("profile") %>
                 <% end %>
               </li>
               <li>
                 <%= link_to destroy_user_session_path, method: :delete do %>
-                  <svg class="olymp-logout-icon"><use xlink:href="<%= url_to_asset("/icons/icons.svg#olymp-logout-icon") %>></use></svg>
+                  <svg class="olymp-logout-icon"><use xlink:href="<%= url_to_asset("icons/icons.svg#olymp-logout-icon") %>"></use></svg>
                   <%= t("log_out") %>
                 <% end %>
               </li>
@@ -32,7 +32,7 @@
           <div class="author-title">
             <%= current_user.full_name %>
             <svg class="olymp-dropdown-arrow-icon">
-              <use xlink:href="<%= url_to_asset("/icons/icons.svg#olymp-dropdown-arrow-icon") %>">
+              <use xlink:href="<%= url_to_asset("icons/icons.svg#olymp-dropdown-arrow-icon") %>">
               </use>
             </svg>
           </div>
