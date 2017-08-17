@@ -37,7 +37,7 @@
         <li>
         <%= link_to organizations_path do %>
            <svg class="olymp-newsfeed-icon left-menu-icon"><use xlink:href="<%= url_to_asset("icons/icons.svg#olymp-newsfeed-icon") %>"></use></svg>
-          <%= t("organizations") %>
+          <%= t("organizations.organization") %>
         <% end %>
         </li>
         <li>
@@ -58,6 +58,7 @@
             <%= t("feed_back") %>
           <% end %>
         </li>
+        <%= render "request/request_question" %>
         <li>
           <%= link_to Settings.tools_url, target: "_blank"  do %>
             <svg class="olymp-calendar-icon left-menu-icon"><use xlink:href="<%= url_to_asset("icons/icons.svg#olymp-calendar-icon") %>"></use></svg>
@@ -101,7 +102,7 @@
   <% end %>
   <nav class="menu_sign_in">
     <ul class="site-nav site-nav-club">
-      <li><%= link_to t("organizations"), organizations_path %></li>
+      <li><%= link_to t("organizations.organization"), organizations_path %></li>
       <li><%= link_to t("my_clubs"), my_clubs_path %></li>
       </li>
       <li><%= link_to t("send_request_club"),

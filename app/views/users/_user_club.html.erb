@@ -1,4 +1,4 @@
-<% clubs.each do |club| %>
+<% @clubs.each do |club| %>
   <li>
     <div class="author-thumb">
       <%= image_tag club.logo, class: "avatar" %>
@@ -12,4 +12,3 @@
     </span>
   </li>
 <% end %>
-<%= paginate clubs %>

@@ -1,0 +1,37 @@
+<% if view_organization?(organization, current_user) %>
+  <div class="col-lg-4 col-md-6 col-sm-12 col-xs-12">
+    <div class="ui-block">
+      <div class="friend-item">
+        <div class="friend-header-thumb">
+          <%= link_to organization do %>
+            <%= image_tag organization.logo, class: "img-responsive" %>
+          <% end %>
+        </div>
+        <div class="friend-item-content">
+          <div class="friend-avatar">
+            <div class="author-content">
+              <%= link_to organization.name, organization, class: "h5 author-name" %>
+            </div>
+          </div>
+          <div class="swiper-container">
+            <div class="swiper-wrapper">
+              <div class="swiper-slide">
+                <div class="friend-count" data-swiper-parallax="-500">
+                  <%= link_to organization, class: "friend-count-item" do %>
+                    <div class="h6"><%= organization.users.size %></div>
+                    <div class="title"><%= t "organizations.index.member" %></div>
+                  <% end %>
+                  <%= link_to organization, class: "friend-count-item" do %>
+                    <div class="h6"><%= organization.clubs.size %></div>
+                    <div class="title"><%= t "organizations.index.club" %></div>
+                  <% end %>
+                </div>
+              </div>
+            </div>
+            <div class="swiper-pagination"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+<% end %>

@@ -19,7 +19,7 @@
       </div>
     </div>
     <hr>
-    <h1><%= t "organizations" %></h1>
+    <h1><%= t "organizations.organization" %></h1>
     <%= render partial: "user_organizations/other_organizations",
       locals: {organizations: @organizations.page(params[:page]).per(Settings.organization_per_page)} %>
   </div>
