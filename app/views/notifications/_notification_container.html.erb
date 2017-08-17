@@ -7,7 +7,7 @@
   <div class="ui-block-title ui-block-title-small">
     <h6 class="title"><%= t "notifications" %></h6>
   </div>
-  <div class="mCustomScrollbar" data-mcs-theme="dark">
+  <div class="mCustomScrollbar notification_custom" data-mcs-theme="dark">
     <ul class="notification-list">
       <% @notifications.each do |notification| %>
         <% if current_user.user_clubs.of_club(notification.container_id).joined? %>

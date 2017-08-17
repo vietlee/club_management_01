@@ -35,7 +35,7 @@
         <div class="landing-content">
           <h1><%= t "static_pages.index.title" %></h1>
           <p><%= t "static_pages.index.description" %></p>
-          <a href="#" class="btn btn-md btn-border c-white"><%= t "static_pages.index.register_now" %></a>
+          <%= link_to t("static_pages.index.register_now"), root_path, class: "btn btn-md btn-border c-white" %>
         </div>
       </div>
       <div class="col-xl-5 col-lg-6 col-md-12 col-sm-12 col-xs-12">
