@@ -83,7 +83,7 @@
       <div class="row" id="organization_club">
         <% if @clubs.present? %>
           <% unless current_user.user_organizations.joined.join?( @organization) %>
-            <%= render "club", collection: @clubs %>
+            <%= render "clubs/clubs", collection: @clubs %>
           <% end %>
         <% end %>
       </div>

@@ -7,6 +7,10 @@ class UsersController < ApplicationController
     @clubs = Club.of_user_clubs(@user.user_clubs.joined)
       .page(params[:page]).per Settings.user.club_per_page
     @club_time_lines = current_user.clubs
+    respond_to do |format|
+      format.html
+      format.js
+    end
   end
 
   def edit

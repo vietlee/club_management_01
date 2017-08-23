@@ -282,6 +282,11 @@
   height: 85px;
 }
 
+.top-header-thumb{
+  max-height: 350px;
+  display: block;
+  overflow: hidden;
+}
 //----------box item-------//
 .friend-item{
   .friend-header-thumb{
@@ -324,6 +329,51 @@
     p.h5{
       color: #fff;
       font-size: 13px;
+    }
+  }
+}
+
+/*-------edit form comment-----*/
+.cutom_edit_form{
+  input{
+    padding: 10px 15px;
+    background: #fff;
+  }
+  p{
+    font-size: 12px;
+    padding-left: 15px;
+    font-style: italic;
+  }
+}
+
+/*-------- pagination ----------*/
+.pagination{
+  margin: 20px 0;
+  justify-content: center;
+  display: flex;
+  padding-left: 0;
+  list-style: none;
+  border-radius: 0.25rem;
+  li{
+    font-size: 12px;
+    font-weight: 700;
+    padding: 0 4px;
+    a{
+      position: relative;
+      display: block;
+      padding: 0.9rem 1.2rem;
+      margin-left: -1px;
+      line-height: 1.25;
+      color: #515365;
+      background-color: #fff;
+      border: 1px solid #e6ecf5;
+      border-radius: 5px;
+      &:hover{
+        color: #fff;
+        text-decoration: none;
+        background-color: #ff5e3a;
+        border-color: #ff5e3a;
+      }
     }
   }
 }

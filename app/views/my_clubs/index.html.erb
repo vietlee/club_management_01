@@ -9,9 +9,26 @@
       </div>
 
       <div class="row" id="list-club-search">
-        <%= render "club", collection: @clubs %>
+        <% if current_user.user_organizations.joined.any? &&
+          current_user.user_clubs.joined.any? %>
+          <% if @clubs.any? %>
+            <%= render "clubs/clubs", collection: @clubs %>
+          <% else %>
+            <h4 class="notifi-join center"><%= t "no_data" %></h4 >
+          <% end %>
+        <% else %>
+          <h4 class="notifi-join"><%= t "no_data_club" %></h4 >
+          <h4>
+            <span><%= t "let_join" %></span>
+            <%= link_to t("here"), clubs_path, target: :blank,
+              class: "btn btn-danger" %>
+          </h4>
+          <h4>
+            <i class="fa fa-hand-o-right"></i>
+            <%= t "note_tags" %>
+          </h4>
+        <% end %>
       </div>
-
       <nav aria-label="Page navigation example">
         <%= paginate @clubs, remote: true %>
       </nav>

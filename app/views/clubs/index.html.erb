@@ -1,3 +1,37 @@
-<%= render "layouts/content" %>
-<%= render partial: "clubs/list_clubs",
-  locals: {clubs: @clubs, title_page: t("list_clubs")} %>
+<div class="header-spacer header-spacer_custom"></div>
+<div class="container">
+  <div class="row">
+    <div class="col-xl-9 push-xl-3 col-lg-12 push-lg-0 col-md-12 col-sm-12 col-xs-12">
+      <div class="ui-block responsive-flex">
+        <div class="ui-block-title">
+          <div class="h6 title"><%= t "page_my_clubs.list_my_clubs" %></div>
+        </div>
+      </div>
+
+      <div class="row" id="list-club-search_other">
+        <% if @user_organizations.any? %>
+          <% if @clubs.any? %>
+            <%= render "clubs", collection: @clubs %>
+          <% else %>
+            <h4 class="notifi-join center"><%= t "no_data" %></h4>
+          <% end %>
+        <% else %>
+          <h4 class="notifi-join center"><%= t "no_data_club_organization" %></h4 >
+          <h4>
+            <span><%= t "let_join_organization" %></span>
+            <%= link_to t("here"), organizations_path, target: :blank,
+              class: "btn btn-danger" %>
+          </h4>
+        <% end %>
+      </div>
+
+      <nav aria-label="Page navigation example">
+        <%= paginate @clubs, remote: true %>
+      </nav>
+    </div>
+
+    <div class="col-xl-3 pull-xl-9 col-lg-12 pull-lg-0 col-md-12 col-sm-12 col-xs-12">
+      <%= render "left_sidebar_club" %>
+    </div>
+  </div>
+</div>

@@ -1,3 +1,4 @@
-<%= form_for @comment, remote: :true do |f| %>
-  <%= f.text_field :content, required: :true, class: "form-control" %><br />
+<%= form_for @comment, html:{class: "cutom_edit_form"}, remote: :true do |f| %>
+  <%= f.text_field :content, required: :true, class: "form-control" %>
+  <p><%= t "comments.press_enter" %></p>
 <% end %>

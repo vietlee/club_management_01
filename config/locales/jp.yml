@@ -343,7 +343,6 @@ jp:
   news: " News"
   admin_require: "You need login as admin to access this page"
   login_dashboard: "Login to dashboard"
-  organizations: "組織"
   id: "ID"
   user_name: "User Name"
   view_profile: "View Profile"
@@ -632,10 +631,11 @@ jp:
       title: "Welcome to F-Club"
       description: "Technological advancements over the last century have meant many of us now own multiple computers - desktops and laptops, mobile phones, tablets. The modern personal computer as we know it is only a recent invention"
       register_now: "Register Now!"
-  organization:
+  organizations:
     index:
       member: "members"
       club: "clubs"
+    organization: "組織"
   languages: "Languages"
   my_account: "My Account"
   mobie_menus:
@@ -672,3 +672,7 @@ jp:
     read_more: "Read more"
     list_my_group: "List my club"
     settings: "Settings"
+    list_club_joined: "List club joined"
+  comments:
+    press_enter: "Press Enter to update"
+    comment: "Comment"

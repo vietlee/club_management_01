@@ -27,7 +27,7 @@
       <div class="ui-block">
         <div class="ui-block-title">
           <ul class="tab_my_account">
-            <li><a href="#list_my_group" class="active"><%= t "profile_settings.list_my_group" %></a></li>
+            <li><a href="#list_my_group" class="active"><%= t "profile_settings.list_club_joined" %></a></li>
             <li><a href="#my_settings"><%= t "profile_settings.settings" %></a></li>
           </ul>
         </div>
@@ -36,6 +36,9 @@
             <ul class="notification-list friend-requests">
               <%= render "user_club", clubs: @clubs %>
             </ul>
+            <nav aria-label="Page navigation example">
+              <%= paginate @clubs, remote: true %>
+            </nav>
           </div>
           <div id="my_settings" class="tab_account_content">
             <div class="ui-block-content">

@@ -13,13 +13,13 @@
               <% end %>
               <div class="detail_item">
                 <div class="rating_club">
-                  <i class="fa fa-star" aria-hidden="true"></i>
+                  <i class="fa fa-star-o" aria-hidden="true"></i>
                   <strong><%= club.rating.round Settings.round_float %></strong>
                   <%= t "for_ratings" %>
                 </div>
                 <div class="country">
-                  <i class="fa fa-users" aria-hidden="true"></i>
-                  <strong><%= club.user_clubs.joined.size %></strong><%= t "page_my_clubs.members" %>
+                  <i class="fa fa-user-o" aria-hidden="true"></i>
+                  <strong><%= club.user_clubs.joined.size %></strong><%= t "page_my_clubs.member" %>
                 </div>
               </div>
             </div>
