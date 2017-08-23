@@ -52,6 +52,29 @@ Rails.application.routes.draw do
     resources :budgets
   end
 
+  namespace :dashboard do
+    get "/" => "static_pages#index"
+    resources :requests
+    resources :members
+    resources :clubs
+    resources :organizations
+    resources :import_users, only: :create
+    resources :request_members
+    resources :clubs do
+      resources :members, only: [:index, :show]
+      resources :club_budgets
+      resources :events do
+        resources :news
+      end
+      resources :albums do
+        resources :images
+      end
+      resources :user_clubs
+      resources :requests
+    end
+    resources :budgets
+  end
+
   resources :users do
     resources :club_requests, only: [:new, :create, :index]
     resources :organization_requests, only: [:new, :create, :index]

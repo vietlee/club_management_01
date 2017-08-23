@@ -27,3 +27,4 @@
 //= require jquery.range
 //= require_tree ./libs/
 //= require_tree ./member/
+//= require_tree ./dashboard/

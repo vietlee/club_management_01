@@ -1,4 +1,4 @@
-class ClubManager::ClubsController < BaseClubManagerController
+class ClubManager::ClubsController < BaseDashboardController
   before_action :load_club
   before_action :manager_club
   before_action :load_organization, only: :show
