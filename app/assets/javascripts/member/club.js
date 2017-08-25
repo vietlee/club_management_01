@@ -1,4 +1,4 @@
-$(document).on('turbolinks:load', function() {
+jQuery(document).ready(function($) {
   $('.tab_detail_club .ui-block:not(:first)').hide();
   $('.tab_list_detail_club li a').click(function(){
     $('.tab_detail_club .ui-block').hide('slow');

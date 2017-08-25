@@ -1,4 +1,4 @@
-$(document).on('turbolinks:load', function() {
+jQuery(document).ready(function($) {
   $('.form-search-other-clubs').on('keyup',function(e) {
     SearchOtherClub();
   });

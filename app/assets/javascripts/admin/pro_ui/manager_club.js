@@ -1,4 +1,4 @@
-$(document).on('turbolinks:load', function() {
+jQuery(document).ready(function($) {
   $(document).on('change', '.checkbox_admin',function() {
     var is_manager = $(this).prop("checked");
     var member = $(this).val();

@@ -1,4 +1,4 @@
-$(document).on('turbolinks:load', function() {
+jQuery(document).ready(function($) {
   $('.icon_chat').click(function() {
     $('.custom_chatbox').toggle('slow');
   });
