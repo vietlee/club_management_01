@@ -1,4 +1,4 @@
-$(document).on('turbolinks:load', function() {
+jQuery(document).ready(function($) {
   jQuery(document).on('change', '#file-upload', function(e) {
     var preview = document.getElementById("img-upload");
     var file    = document.querySelector('input[type=file]').files[0];

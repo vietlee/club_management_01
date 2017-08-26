@@ -3,7 +3,7 @@ class CustomFailure < Devise::FailureApp
     if warden_options[:scope] == :admin
       new_admin_sessions_path
     else
-      new_user_session_path
+      root_path
     end
   end
 

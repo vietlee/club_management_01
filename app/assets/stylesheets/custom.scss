@@ -83,7 +83,7 @@
   width: auto;
 }
 .select_custom.form-control{
-  color: #888da8;
+  color: #313235;
   background-color: transparent;
   padding:5px;
   border: 1px solid #e6ecf5;
@@ -321,6 +321,10 @@
     .swiper-container{
       padding-bottom: 20px;
     }
+    .swiper-container.cutom_hard_height{
+      height: 65px;
+      overflow: hidden;
+    }
   }
 }
 
@@ -375,5 +379,53 @@
         border-color: #ff5e3a;
       }
     }
+    &.active{
+      a{
+        color: #fff;
+        text-decoration: none;
+        background-color: #ff5e3a;
+        border-color: #ff5e3a;
+      }
+    }
+  }
+}
+
+/*------------Custom landing page -------*/
+
+.custom_landing.landing-page{
+  &:before{
+    background-color: rgba(8, 221, 193,0.96);
+  }
+  .registration-login-form{
+    .nav-tabs{
+      .nav-link.active{
+        fill: #08ddc1;
+      }
+    }
+    .tab-content{
+      form{
+        .btn{
+          cursor: pointer;
+        }
+        .btn-purple{
+          background-color: #08ddc1;
+          &:hover{
+            background-color: #ff3407;
+          }
+        }
+      }
+    }
+  }
+  .btn-purple{
+    background-color: #08ddc1;
+  }
+}
+body{
+  color: $body-font-color;
+}
+.ui-block-title.ui-block-title-small{
+  .title{
+    font-size: 12px;
+    color: $body-font-color;
   }
 }

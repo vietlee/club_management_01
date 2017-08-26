@@ -24,8 +24,8 @@
               </div>
             </div>
           </div>
-          <div class="swiper-container">
-            <p><%= club.content.truncate(Settings.truncate.club.description).html_safe unless club.content.nil? %></p>
+          <div class="swiper-container cutom_hard_height">
+            <p> <%= club.content.truncate(Settings.truncate.club.description).html_safe unless club.content.nil? %></p>
           </div>
         </div>
       </div>

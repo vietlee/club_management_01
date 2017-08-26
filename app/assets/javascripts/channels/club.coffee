@@ -1,4 +1,4 @@
-jQuery(document).on 'turbolinks:load', ->
+jQuery(document).on 'turbo:ready', ->
   club_id = $("#chat-box-club-id").val()
   if (App.cable.subscriptions['subscriptions'].length > 1)
     App.cable.subscriptions.remove(App.cable.subscriptions['subscriptions'][1])

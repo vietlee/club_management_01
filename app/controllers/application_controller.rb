@@ -54,4 +54,8 @@ class ApplicationController < ActionController::Base
     I18n.locale = session[:locale] || I18n.default_locale
     session[:locale] = I18n.locale
   end
+
+  def after_sign_out_path_for _resource
+    request.referrer || my_clubs_path
+  end
 end

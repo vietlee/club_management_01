@@ -1,4 +1,4 @@
-$(document).on('turbolinks:load', function() {
+jQuery(document).ready(function($) {
   $('.tab_content_account .tab_account_content:not(:first)').hide();
   $('.tab_my_account li a').click(function(){
     $('.tab_content_account .tab_account_content').hide('slow');

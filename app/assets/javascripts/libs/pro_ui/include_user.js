@@ -1,4 +1,6 @@
-$(document).on('turbolinks:load', function() {
+// $(document).on('turbolinks:load', function() {
+jQuery(document).ready(function($) {
+
   $('.form-search-clubs').on('keyup', function(e) {
     SearchClub();
   });
