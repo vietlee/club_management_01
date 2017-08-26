@@ -2441,3 +2441,17 @@ li:last-child {
 .btn_custom_admin_delete{
   background-color: #ff5e3a;
 }
+
+/* ---User detail-- */
+.show_member{
+  border-radius: 4px;
+}
+
+.show_member .item.clearfix{
+  padding: 15px 0;
+  border-bottom: solid 1px #ddd;
+}
+.show_member .label-warning{
+  background-color: #9ce0c2;
+  padding: 5px !important;
+}

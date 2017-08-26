@@ -10,6 +10,9 @@
           <%= render "clubs/budget" %>
         </div>
         <div class="item_club">
+          <div class="join-cancel-toggle-container">
+            <%= render "user_clubs/join_cancel_toggle" %>
+          </div>
           <% if !current_user.user_clubs.of_club(@club).nil? && current_user.user_clubs.of_club(@club).joined? %>
             <%= link_to user_club_path(club_id: @club.id), method: :delete,
               data: {confirm: t("answer_leave")}, class: "btn btn-breez btn-sm" do %>

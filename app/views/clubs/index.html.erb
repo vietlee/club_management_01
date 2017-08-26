@@ -8,22 +8,24 @@
         </div>
       </div>
 
-      <div class="row" id="list-club-search_other">
-        <% if @user_organizations.any? %>
-          <% if @clubs.any? %>
+      <% if @user_organizations.any? %>
+        <% if @clubs.any? %>
+          <div class="row" id="list-club-search_other">
             <%= render "clubs", collection: @clubs %>
-          <% else %>
-            <h4 class="notifi-join center"><%= t "no_data" %></h4>
-          <% end %>
+          </div>
         <% else %>
+          <h4 class="notifi-join center"><%= t "no_data" %></h4>
+        <% end %>
+      <% else %>
+        <div class="ui-block pading_10">
           <h4 class="notifi-join center"><%= t "no_data_club_organization" %></h4 >
           <h4>
             <span><%= t "let_join_organization" %></span>
             <%= link_to t("here"), organizations_path, target: :blank,
               class: "btn btn-danger" %>
           </h4>
-        <% end %>
-      </div>
+        </div>
+      <% end %>
 
       <nav aria-label="Page navigation example">
         <%= paginate @clubs, remote: true %>

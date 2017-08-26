@@ -1,0 +1,24 @@
+.bg_login_admin{
+  background-image: url("landing-users.png");
+  animation: animatedBackground 30s linear infinite;
+  -moz-animation: animatedBackground 30s linear infinite;
+  -webkit-animation: animatedBackground 30s linear infinite;
+  -o-animation: animatedBackground 30s linear infinite;
+  position: relative;
+  min-height: 100vh;
+}
+.bg_login_admin:before{
+  content: '';
+  display: block;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: rgba(8, 221, 193,.95);
+  opacity: 1;
+}
+.bg_login_admin #login-container .login-title{
+  background: #08ddc1;
+  border: solid 1px #f9fafc;
+}
