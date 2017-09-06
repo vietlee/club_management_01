@@ -1,6 +1,6 @@
 class Dashboard::ClubsController < BaseDashboardController
   before_action :load_club
-  before_action :manager_club
+  before_action :manager_club, except: :show
   before_action :load_organization, only: :show
 
   def show

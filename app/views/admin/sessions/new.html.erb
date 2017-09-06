@@ -1,43 +1,44 @@
-<%= image_tag "admin_background.jpg", alt: "Login Full Background",
-  class: "full-bg animation-pulseSlow" %>
-<div id="login-container" class="animation-fadeIn">
-  <div class="login-title text-center">
-    <h1><strong><%= t "please_login" %></strong></h1>
-  </div>
-  <div class="block push-bit">
-    <%= form_for :admin, as: :admin, url: session_path(:admin),
-     html: {id: "form-login" ,class: "form-horizontal form-bordered"} do |f| %>
-     <div class="form-group">
-        <div class="col-xs-12">
-          <div class="input-group">
-            <span class="input-group-addon"><i class="gi gi-envelope"></i></span>
-            <%= f.email_field :email, class: "form-control input-lg",
-              placeholder: t("email"), autofocus: true %>
+
+<div class="bg_login_admin">
+  <div id="login-container" class="animation-fadeIn">
+    <div class="login-title text-center">
+      <h1><strong><%= t "please_login" %></strong></h1>
+    </div>
+    <div class="block push-bit">
+      <%= form_for :admin, as: :admin, url: session_path(:admin),
+       html: {id: "form-login" ,class: "form-horizontal form-bordered"} do |f| %>
+       <div class="form-group">
+          <div class="col-xs-12">
+            <div class="input-group">
+              <span class="input-group-addon"><i class="gi gi-envelope"></i></span>
+              <%= f.email_field :email, class: "form-control input-lg",
+                placeholder: t("email"), autofocus: true %>
+            </div>
           </div>
         </div>
-      </div>
-      <div class="form-group">
-        <div class="col-xs-12">
-          <div class="input-group">
-            <span class="input-group-addon"><i class="gi gi-asterisk"></i></span>
-            <%= f.password_field :password, class: "form-control input-lg",
-              placeholder: t("password"), autocomplete: "off" %>
+        <div class="form-group">
+          <div class="col-xs-12">
+            <div class="input-group">
+              <span class="input-group-addon"><i class="gi gi-asterisk"></i></span>
+              <%= f.password_field :password, class: "form-control input-lg",
+                placeholder: t("password"), autocomplete: "off" %>
+            </div>
           </div>
         </div>
-      </div>
-     <div class="form-group form-actions">
-        <div class="col-xs-4">
-          <label class="switch switch-primary"
-            data-toggle="tooltip" title="Remember Me?">
-            <input type="checkbox" id="login-remember-me"
-              name="login-remember-me" class="form-control" checked>
-            <span></span>
-          </label>
+       <div class="form-group form-actions">
+          <div class="col-xs-4">
+            <%= label_tag nil, "title": t("admin_remember"), "data-toggle": "tooltip",
+              class: "switch switch-primary" do %>
+              <input type="checkbox" id="login-remember-me"
+                name="login-remember-me" class="form-control" checked>
+              <span></span>
+            <% end %>
+          </div>
+          <div class="col-xs-8 text-right">
+            <%= f.submit t("login_dashboard"), class: "btn btn-sm btn-primary" %>
+          </div>
         </div>
-        <div class="col-xs-8 text-right">
-          <%= f.submit t("login_dashboard"), class: "btn btn-sm btn-primary" %>
-        </div>
-      </div>
-    <% end %>
+      <% end %>
+    </div>
   </div>
 </div>

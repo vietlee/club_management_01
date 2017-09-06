@@ -1,34 +1,65 @@
 class Dashboard::MembersController < BaseDashboardController
-  before_action :correct_manager
-  before_action :load_member, only: :show
-  before_action :load_correct_member, only: :show
-  before_action :load_club, only: [:index, :show]
+  before_action :load_user_organization, only: [:update, :destroy]
+  before_action :organization, only: :update
 
   def index
-    unless @club
-      flash[:danger] = t "cant_found_club"
-      redirect_to dashboard_path
-    end
-    @members = @club.users
+    @users = @organization.user_organizations.joined
   end
 
   def show
+    @user = User.find_by id: params[:id]
+    unless @user
+      flash[:danger] = t("not_found_user")
+      redirect_to request.referer
+    end
+    @organizations = @user.organizations
+    @user_organization = UserOrganization.find_with_user_of_company params[:id],
+      params[:organization]
+  end
+
+  def update
+    if params[:status].blank?
+      user = @user.update_attributes is_admin: true
+      OrganizationMailer.mail_to_user_admin_organization(
+        @user.user, @organization
+      ).deliver_later
+    else
+      user = @user.update_attributes status: params[:status].to_i
+      if params[:status].to_i == UserOrganization.statuses[:joined]
+        OrganizationMailer.mail_to_user_join(@user.user, @organization).deliver_later
+      end
+    end
+    unless user
+      flash[:danger] = t("error_process")
+      redirect_to :back
+    end
+    flash[:success] = t("success_process")
+    redirect_to :back
+  end
+
+  def destroy
+    if @user.destroy
+      flash[:success] = t("deleted_successfull")
+    else
+      flash[:danger] = t("error_process")
+    end
+    redirect_to :back
   end
 
   private
-  def load_member
-    @member = User.find_by id: params[:id]
-    unless @member
-      flash[:danger] = t("user.cant_found")
-      redirect_to dashboard_club_members_path params[:club_id]
+  def load_user_organization
+    @user = UserOrganization.find_by id: params[:id]
+    unless @user
+      flash[:danger] = t("user_organization_not_found")
+      redirect_to request.referer
     end
   end
 
-  def load_club
-    @club = Club.find_by id: params[:club_id]
-    unless @club
-      flash[:danger] = t("cant_found_club")
-      redirect_to dashboard_path
+  def organization
+    @organization = Organization.find_by id: params[:organization_id]
+    unless @organization
+      flash[:danger] = t("not_found_organization")
+      redirect_to request.referer
     end
   end
 end
