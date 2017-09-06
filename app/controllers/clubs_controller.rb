@@ -33,6 +33,7 @@ class ClubsController < ApplicationController
     @message = Message.new
     @user_club = UserClub.new
     @support = Support::ClubSupport.new(@club, params[:page], nil)
+    @albums = @club.albums.newest.includes(:images)
   end
 
   protected

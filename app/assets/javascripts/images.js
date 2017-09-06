@@ -17,3 +17,6 @@ $(function(){ Portfolio.init(); });
     "hasModal" : true
   });
 });
+$(document).ready(function () {
+  baguetteBox.run(".tz-gallery");
+});
