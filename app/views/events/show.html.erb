@@ -59,6 +59,11 @@
               </div>
             </div>
           </div>
+          <% if @event.get_money? %>
+            <div class="content-event col-md-12 site-block border">
+              <%= render partial: "view_get_money" %>
+            </div>
+          <% end %>
         </article>
         <div class="mCustomScrollbar list-comment-event" data-mcs-theme="dark">
           <%= render partial: "events/comment", locals: {comments: @comments, event: @event} %>
