@@ -299,6 +299,8 @@ vi:
       date_time_utc: "%d/%m/%Y %H:%m"
       full_date: "%d-%m-%Y, %H:%M"
       short: "%d/%m/%Y"
+      month: "%m"
+      day: "%d"
   time:
     formats:
       date: "%H:%m %d/%m/%Y"
@@ -789,7 +791,7 @@ vi:
   answer_active_club: "Bạn chắc chắn muốn kích hoạt câu lạc bộ này?"
   answer_reject_club: "Bạn chắc chắn muốn từ chối câu lạc bộ này?"
   cant_not_update: "Không thể hoàn thành cập nhập này,vui lòng thực hiện lại"
-  album_empty: "Bộ sưu tập này chưa có ảnh nào"
+  album_empty: "Chưa có ảnh nào!"
   background: "Hình nền"
   accept: "Duyệt"
   admin_of_club: "Quyền quản trị câu lạc bộ này"

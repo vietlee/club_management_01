@@ -9,6 +9,14 @@
           <%= render partial: "events/event", locals: {event: @club.events} %>
         </div>
       </div>
+      <div class="ui-block" id="image">
+        <div class="ui-block-title ui-block-title-small">
+          <h6 class="title"><%= t "images" %></h6>
+        </div>
+        <div class="content_tab">
+          <%= render partial: "albums/album", locals: {event: @club.events} %>
+        </div>
+      </div>
       <div class="ui-block" id="content_club">
         <div class="ui-block-title ui-block-title-small">
           <h6 class="title"><%= t "content_club" %></h6>

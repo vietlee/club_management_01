@@ -5,7 +5,7 @@
         <div class="top-header top-header-favorit">
           <div class="top-header-thumb">
             <%= image_tag @club.image, class: "img-cover", title: t("image_cover") %>
-            <div class="top-header-author">
+            <div class="top-header-author col-md-9">
               <div class="author-thumb">
                 <%= image_tag @club.image, class: "img-cover img_small", title: t("image_cover") %>
               </div>
@@ -14,9 +14,9 @@
                 <span class="animation-slideUp hidden-xs rating-container">
                   <%= render "ratings/rating" %>
                 </span>
-                <div class="join-cancel-toggle-container">
-                  <%= render "user_clubs/join_cancel_toggle" %>
-                </div>
+              </div>
+              <div class="pull-right">
+                <%= render "button_leave_club" %>
               </div>
             </div>
           </div>
@@ -26,6 +26,9 @@
                 <ul class="profile-menu tab_list_detail_club">
                   <li>
                     <%= link_to t("events"), "#event", class: "active" %>
+                  </li>
+                  <li>
+                    <%= link_to t("images"), "#image" %>
                   </li>
                   <li >
                     <%= link_to t("content_club"), "#content_club" %>

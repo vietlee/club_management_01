@@ -110,6 +110,7 @@
     <ul class="site-nav site-nav-club">
       <li><%= link_to t("organizations.organization"), organizations_path %></li>
       <li><%= link_to t("my_clubs"), my_clubs_path %></li>
+      <li><%= link_to t("other_club"), clubs_path %></li>
       </li>
       <li><%= link_to t("send_request_club"),
         new_user_club_request_path(user_id: current_user.id) %>

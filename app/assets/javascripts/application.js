@@ -13,6 +13,7 @@
 //= require webfontloader.min
 //= require jquery
 //= require jquery.turbolinks
+//= require baguetteBox.min
 //= require jquery_ujs
 //= require i18n
 //= require i18n.js
@@ -27,4 +28,3 @@
 //= require jquery.range
 //= require_tree ./libs/
 //= require_tree ./member/
-//= require_tree ./dashboard/

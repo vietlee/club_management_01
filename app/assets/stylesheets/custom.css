@@ -28,6 +28,14 @@
   position: relative;
 }
 
+.leave {
+  margin-left: 20px;
+}
+
+.button-leave {
+  margin-bottom: -40px;
+}
+
 .timeline-header {
   margin: 0;
   font-size: 18px;

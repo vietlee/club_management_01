@@ -317,6 +317,8 @@ en:
       date_time_utc: "%d/%m/%Y %H:%m"
       full_date: "%d-%m-%Y, %H:%M"
       short: "%d/%m/%Y"
+      month: "%m"
+      day: "%d"
   time:
     formats:
       date: "%H:%m %d/%m/%Y"

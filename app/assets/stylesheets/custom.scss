@@ -394,7 +394,7 @@
 
 .custom_landing.landing-page{
   &:before{
-    background-color: rgba(8, 221, 193,0.96);
+    background-color: rgba(8, 184, 127, 0.96);
   }
   .registration-login-form{
     .nav-tabs{
@@ -431,4 +431,10 @@ body{
 }
 .ui-block.pading_10{
   padding: 20px;
+}
+.group-btn {
+  margin-bottom: -120px!important;
+}
+.btn-leave {
+  margin-bottom:10px;
 }
