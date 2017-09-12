@@ -9,7 +9,8 @@
   <%= hidden_field_tag :num_message, {}, class: "num-step-message",
     value: @support.messages.size %>
   <div class="content-chat">
-    <div class="mCustomScrollbar custom_content_chat" data-mcs-theme="dark">
+    <div class="mCustomScrollbar custom_content_chat" data-mcs-theme="dark"
+      id="viewport-content">
       <% if @support.messages.size >= Settings.chat_messages_limit %>
         <li class="text-center list-unstyled media-block">
         <a href="javascript:void(0)" class="load-more-message btn btn-default">

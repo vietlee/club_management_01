@@ -758,3 +758,5 @@ en:
     comment: "Comment"
   add: "Add"
   admin_remember: "Remember Me?"
+  from: "From: "
+  to: "to: "

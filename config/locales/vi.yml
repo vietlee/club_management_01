@@ -1000,3 +1000,5 @@ vi:
     press_enter: "Ấn Enter để chỉnh sửa"
     comment: "Bình luận"
   admin_remember: "Nhớ mật khẩu?"
+  from: "Từ ngày: "
+  to: "đến ngày: "

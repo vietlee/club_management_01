@@ -26,6 +26,9 @@ class Event < ApplicationRecord
   scope :without_notification, ->category_notification do
     where.not event_category: category_notification
   end
+  scope :by_created_at, ->first_date, end_date do
+    where(created_at: first_date..end_date)
+  end
 
   enum status: {inprocess: 0, finished: 1}
   enum event_category: {pay_money: 1, get_money: 2, notification: 3, subsidy: 0}

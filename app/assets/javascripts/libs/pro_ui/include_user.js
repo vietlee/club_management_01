@@ -104,8 +104,19 @@ jQuery(document).ready(function($) {
     }
   });
 
-  $(".org-link-to").click(function(){
-    window.open($(this).attr("data-link"), "_self");
+  $('#budget-filter').change(function(){
+    var first_date = $('#date_first').val();
+    var second_date = $('#date_end').val();
+    var club_id = $('#club_id').val();
+    // alert(club_id);
+    var data = {date_search: {first_date: first_date,
+      second_date: second_date}}
+    $.get('/clubs/' + club_id + '/budgets', data , null, 'script');
+    return false;
+  });
+
+  $('.org-link-to').click(function(){
+    window.open($(this).attr('data-link'), '_self');
   });
   App.init();
 });
