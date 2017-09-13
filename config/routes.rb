@@ -86,6 +86,7 @@ Rails.application.routes.draw do
   resources :clubs, only: [:show, :index] do
     resources :events, only: :show
     resources :albums
+    resources :budgets
   end
 
   resources :invite_join_clubs, only: :create
