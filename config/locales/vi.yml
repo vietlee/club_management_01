@@ -996,9 +996,11 @@ vi:
     list_my_group: "Danh sách câu lạc bộ"
     settings: "Cài đặt"
     list_club_joined: "Câu lạc bộ tham gia"
+    club_suggest: "Câu lạc bộ gợi ý cho bạn"
   comments:
     press_enter: "Ấn Enter để chỉnh sửa"
     comment: "Bình luận"
   admin_remember: "Nhớ mật khẩu?"
   from: "Từ ngày: "
   to: "đến ngày: "
+  please_select_tags: "Hãy chọn tags mà bạn quan tâm!"

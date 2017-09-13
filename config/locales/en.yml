@@ -753,6 +753,7 @@ en:
     list_my_group: "List my club"
     settings: "Settings"
     list_club_joined: "List club joined"
+    club_suggest: "Club suggested for you"
   comments:
     press_enter: "Press Enter to update"
     comment: "Comment"
@@ -760,3 +761,4 @@ en:
   admin_remember: "Remember Me?"
   from: "From: "
   to: "to: "
+  please_select_tags: "Please choose tags for you!"
