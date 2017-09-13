@@ -27,19 +27,11 @@
       <div class="ui-block">
         <div class="ui-block-title">
           <ul class="tab_my_account">
-            <li><a href="#list_my_group" class="active"><%= t "profile_settings.list_club_joined" %></a></li>
-            <li><a href="#my_settings"><%= t "profile_settings.settings" %></a></li>
+            <li><a href="#my_settings" class="active"><%= t "profile_settings.settings" %></a></li>
+            <li><a href="#list_my_group"><%= t "profile_settings.list_club_joined" %></a></li>
           </ul>
         </div>
         <div class="tab_content_account">
-          <div id="list_my_group" class="tab_account_content">
-            <ul class="notification-list friend-requests">
-              <%= render "user_club", clubs: @clubs %>
-            </ul>
-            <nav aria-label="Page navigation example">
-              <%= paginate @clubs, remote: true %>
-            </nav>
-          </div>
           <div id="my_settings" class="tab_account_content">
             <div class="ui-block-content">
               <%= form_for @user, html:{id: "form-validation", multipart: true,
@@ -60,8 +52,7 @@
                   </div>
 
                   <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
-                    <div class="form-group label-floating select_custom">
-                      <label for="EnterTags"><%= t "enter_tags" %></label>
+                    <div class="form-group label-floating">
                       <%= f.collection_select :tag_ids, Tag.order(:name), :id, :name, {},
                         {multiple: true} %>
                     </div>
@@ -100,6 +91,14 @@
               <% end %>
             </div>
           </div>
+          <div id="list_my_group" class="tab_account_content">
+            <ul class="notification-list friend-requests">
+              <%= render "user_club", clubs: @clubs %>
+            </ul>
+            <nav aria-label="Page navigation example">
+              <%= paginate @clubs, remote: true %>
+            </nav>
+          </div>
         </div>
       </div>
     </div>
@@ -128,6 +127,35 @@
               <span class="text"><%= @organizaitons.size %></span>
             </li>
           </ul>
+        </div>
+      </div>
+      <div class="ui-block">
+        <div class="ui-block-title">
+          <h6 class="title"><%= t "profile_settings.club_suggest" %></h6>
+          <a href="#" class="more"><svg class="olymp-three-dots-icon"><use xlink:href="<%= url_to_asset("icons/icons.svg#olymp-three-dots-icon") %>"></use></svg></a>
+        </div>
+        <div class="ui-block-content">
+          <% if (current_user.tag_list.any?) && (current_user.is_user?@user) %>
+            <div>
+              <% if current_user.tags_clubs.any? %>
+                <% sort_suggest(current_user.tags_clubs).each do |club, s| %>
+                  <% unless current_user.user_clubs.of_club(club) %>
+                    <%= link_to club_path(club.id), target: "_blank" do %>
+                      <i class="gi gi-brightness_reduce"></i>
+                      <%= club.name %></br>
+                    <% end %>
+                  <% end %>
+                <% end %>
+              <% else %>
+                <i class="fa fa-hand-o-right"></i>
+                <strong>
+                  <%= t("not_club_conformity") %>
+                </strong>
+              <% end %>
+            </div>
+          <% else %>
+            <%= t("please_select_tags") %>
+          <% end %>
         </div>
       </div>
     </div>
