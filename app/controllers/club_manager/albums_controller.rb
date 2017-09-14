@@ -1,4 +1,4 @@
-class ClubManager::AlbumsController < BaseClubManagerController
+class ClubManager::AlbumsController < BaseDashboardController
   before_action :correct_manager
   before_action :load_club, only: [:index, :show, :create]
   before_action :load_album, except: [:index, :create]

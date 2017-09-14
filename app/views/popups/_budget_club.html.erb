@@ -6,10 +6,10 @@
     <div class="ui-block-title ui-block-title-small">
       <h6 class="title"><%= t("history_budget") %></h6>
     </div>
-    <div class="input-group" data-date-format="dd/mm/yyyy" id="budget-filter">
-      <div class="col-md-3 span-date text-center"><span><strong><%= t("from") %></span></strong></div>
+    <div class="input-group date-filter" data-date-format="dd/mm/yyyy" id="budget-filter">
+      <div class="col-md-2 span-date text-center"><span><strong><%= t("from") %></span></strong></div>
       <%= date_field_tag :date_first, class: "form-control text-center first" %>
-      <div class="col-md-3 span-date text-center"><span><strong><%= t("to") %></span></strong></span></div>
+      <div class="col-md-2 span-date text-center"><span><strong><%= t("to") %></span></strong></span></div>
       <%= date_field_tag :date_end, class: "form-control text-center second" %>
       <%= hidden_field :club_id, value: @club.id %>
     </div>

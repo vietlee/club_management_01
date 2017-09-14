@@ -1,4 +1,4 @@
-class ClubManager::EventsController < BaseClubManagerController
+class ClubManager::EventsController < BaseDashboardController
   before_action :load_club
   before_action :correct_manager
   before_action :load_event, except: [:index, :create, :new]

@@ -1,6 +1,6 @@
 <% if @clubs.any? %>
   $("#list-club-search_other").html('<%= j render "clubs/clubs", collection: @clubs %>');
 <% else %>
-  $('#list-club-search_other').html('<h4 class="notifi-join center"><%= t "no_data" %></h4 >');
+  $('#list-club-search_other').html('<h6 class="notifi-join text-center"><%= t "no_data" %></h6>');
 <% end %>
 
