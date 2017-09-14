@@ -19,21 +19,18 @@
         <% end %>
       <% else %>
         <div class="ui-block pading_10">
-          <h4 class="notifi-join"><%= t "no_data_club" %></h4 >
-          <h5>
+          <h6 class="notifi-join text-center"><%= t "no_data_club" %></h6>
+          <h6>
             <span><%= t "let_join" %></span>
             <%= link_to t("here"), clubs_path, target: :blank,
               class: "btn btn-danger" %>
-          </h5>
-          <h5>
+          </h6>
+          <h6>
             <i class="fa fa-hand-o-right"></i>
             <%= t "note_tags" %>
-          </h5>
+          </h6>
         </div>
       <% end %>
-      <nav aria-label="Page navigation example">
-        <%= paginate @clubs, remote: true %>
-      </nav>
     </div>
 
     <div class="col-xl-3 pull-xl-9 col-lg-12 pull-lg-0 col-md-12 col-sm-12 col-xs-12">

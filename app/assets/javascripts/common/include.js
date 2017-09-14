@@ -24,12 +24,12 @@ jQuery(document).ready(function($) {
 
 var turbolink_app = function(){
   $(document).ready(function() {
-      $('.notify').slideDown(300, function() {
+    $('.notify').slideDown(300, function() {
       window.setTimeout(function() {
         $('.notify').slideUp(300, function() {
           $('.notify').hide();
         });
-      }, 3000);
+      }, 4000);
     });
     $('.close-message').click(function(){
       $('.notify').slideUp(300, function() {

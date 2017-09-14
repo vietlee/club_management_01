@@ -60,7 +60,7 @@ vi:
   interactive: "Interactive"
   has_been_delete: "đã bị xóa bỏ"
   has_been_upload: "đã được tải lên"
-  has_been: "đã"
+  has_been: "đã "
   edit: "chỉnh sửa"
   notifications: "Thông báo"
   name_des: "Tên hoặc mô tả..."
@@ -1004,3 +1004,4 @@ vi:
   from: "Từ ngày: "
   to: "đến ngày: "
   please_select_tags: "Hãy chọn tags mà bạn quan tâm!"
+  tags: "Tags"
