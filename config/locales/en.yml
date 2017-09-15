@@ -762,3 +762,5 @@ en:
   from: "From: "
   to: "to: "
   please_select_tags: "Please choose tags for you!"
+  login_with_wsm: "Login with WSM's account"
+  auth_failure: "Authenticated fail"

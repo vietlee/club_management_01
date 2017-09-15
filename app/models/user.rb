@@ -3,7 +3,7 @@ class User < ApplicationRecord
 
   devise :database_authenticatable, :registerable, :recoverable, :rememberable,
     :trackable, :validatable
-
+  devise :omniauthable, omniauth_providers: [:framgia]
   has_many :ratings, as: :rateable
   has_many :user_organizations, dependent: :destroy
   has_many :organizations, through: :user_organizations
@@ -96,6 +96,17 @@ class User < ApplicationRecord
     when ".xlsx" then Roo::Excelx.new(file.path)
     else
       @errors = Settings.error_import
+    end
+  end
+
+  def self.from_omniauth auth
+    user = find_or_initialize_by email: auth.info.email
+    if user.present?
+      user.full_name = auth.info.name
+      user.password = User.generate_unique_secure_token if user.new_record?
+      user.remote_avatar_url = auth.info.avatar if auth.info.avatar.present?
+      user.save
+      user
     end
   end
 

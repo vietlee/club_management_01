@@ -1005,3 +1005,5 @@ vi:
   to: "đến ngày: "
   please_select_tags: "Hãy chọn tags mà bạn quan tâm!"
   tags: "Tags"
+  login_with_wsm: "Đăng nhập với tài khoản WSM"
+  auth_failure: "Xác thực không thành công"
