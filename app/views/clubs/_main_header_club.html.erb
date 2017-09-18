@@ -3,7 +3,7 @@
     <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12">
       <div class="ui-block">
         <div class="top-header top-header-favorit">
-          <div class="top-header-thumb">
+          <section class="top-header-thumb">
             <%= image_tag @club.image, class: "img-cover", title: t("image_cover") %>
             <div class="top-header-author col-md-9">
               <div class="author-thumb">
@@ -19,7 +19,7 @@
                 <%= render "button_leave_club" %>
               </div>
             </div>
-          </div>
+          </section>
           <div class="profile-section">
             <div class="row">
               <div class="col-xl-10 offset-xl-1 col-lg-8 offset-lg-2 col-md-12 offset-md-0">

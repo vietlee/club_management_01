@@ -141,8 +141,6 @@ club:
 feed_back:
   min_content: 20
   max_content: 255
-red_class: "red"
-blue_class: "blue"
 days:
   monday: "Monday"
   tuesday: "Tuesday"

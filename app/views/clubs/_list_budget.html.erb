@@ -31,7 +31,8 @@
             </div>
           </td>
           <td class="location">
-            <%= link_to event.name, club_event_url(event.club, event), target: "_blank" %>
+            <%= link_to event.name, club_event_url(event.club, event), target: "_blank",
+              class: "#{view_class(event)}" %>
           </td>
           <td class="description <%= view_class(event) %>">
             <%= view_icon event %>

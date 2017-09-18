@@ -42,7 +42,7 @@ module EventsHelper
   end
 
   def view_class event
-    event.pay_money? ? Settings.red_class : Settings.blue_class
+    event.pay_money? ? "text-success" : "text-primary"
   end
 
   def view_icon event

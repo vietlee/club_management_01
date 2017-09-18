@@ -11,7 +11,7 @@
   <div class="content-chat">
     <div class="mCustomScrollbar custom_content_chat" data-mcs-theme="dark"
       id="viewport-content">
-      <% if @support.messages.size >= Settings.chat_messages_limit %>
+      <% if @support.messages.size > Settings.chat_messages_limit %>
         <li class="text-center list-unstyled media-block">
         <a href="javascript:void(0)" class="load-more-message btn btn-default">
           <i class="fa fa-spinner"></i> <%= t "read_more" %>
