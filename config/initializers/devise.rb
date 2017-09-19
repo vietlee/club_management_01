@@ -20,6 +20,12 @@ Devise.setup do |config|
   # Configure the parent class responsible to send e-mails.
   # config.parent_mailer = 'ActionMailer::Base'
 
+  config.omniauth :framgia, ENV["APP_ID"], ENV["APP_SECRET"],
+    client_options: {
+      site: "http://10.0.1.14/",
+      authorize_url: "https://wsm.framgia.vn/authorize",
+      token_url: "http://10.0.1.14/auth/access_token"
+    }
   # ==> ORM configuration
   # Load and configure the ORM. Supports :active_record (default) and
   # :mongoid (bson_ext recommended) by default. Other ORMs may be

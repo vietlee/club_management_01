@@ -155,3 +155,4 @@ sort_clubs: {name_club: "name asc", for_rating: "rating desc", created_at: "crea
 max_display_image_club: 15
 professed: "professed"
 hide: "hide"
+name_office: " Office"

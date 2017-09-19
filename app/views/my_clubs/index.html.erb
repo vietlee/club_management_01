@@ -15,17 +15,17 @@
             <%= render "clubs/clubs", collection: @clubs %>
           </div>
         <% else %>
-          <h4 class="notifi-join center"><%= t "no_data" %></h4 >
+          <h6 class="notifi-join center"><%= t "no_data" %></h6 >
         <% end %>
       <% else %>
         <div class="ui-block pading_10">
           <h6 class="notifi-join text-center"><%= t "no_data_club" %></h6>
-          <h6>
+          <h6 class="text-center">
             <span><%= t "let_join" %></span>
             <%= link_to t("here"), clubs_path, target: :blank,
-              class: "btn btn-danger" %>
+              class: "btn btn-danger btn-sm btn-suggest" %>
           </h6>
-          <h6>
+          <h6 class="text-center">
             <i class="fa fa-hand-o-right"></i>
             <%= t "note_tags" %>
           </h6>

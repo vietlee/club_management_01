@@ -16,6 +16,11 @@
         </div>
         <div class="author-date">
           <%= link_to event.name, club_event_url(event.club, event), class: "author-name h6" %>
+          <% if event.notification? %>
+            <i class="fa fa-bell icon-event"></i>
+          <% else %>
+            <i class="fa fa-money icon-event"></i>
+          <% end %>
           <% unless event.date_start.blank? && event.date_end.blank? %>
             <time class="published"><%= event.date_start %>/<%= event.date_end %></time>
           <% end %>

@@ -21,7 +21,11 @@
         </div>
         <%= link_to t("forget_password"), new_user_password_path, class: "forgot" %>
       </div>
-      <%= f.submit t("login"), class: "btn btn-lg btn-primary full-width" %>
+      <%= f.submit t("login"), class: "btn btn-lg btn-primary btn-log full-width" %>
+      <%= link_to user_framgia_omniauth_authorize_path, class: "btn btn-login" do %>
+        <%= image_tag "icon-wsm.png", class: "icon" %>
+        <span class="name"><%= t("login_with_wsm") %></span>
+      <% end %>
     </div>
   </div>
 <% end %>

@@ -34,6 +34,7 @@ gem "roo-xls"
 gem "activerecord-import"
 gem "ransack"
 gem "mysql2"
+gem "omniauth-framgia", git: "https://github.com/framgia-education/omniauth-framgia.git"
 
 source "https://rails-assets.org" do
   gem "rails-assets-chosen"

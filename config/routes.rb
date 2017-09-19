@@ -9,7 +9,8 @@ Rails.application.routes.draw do
   get "other-clubs" => "clubs#index"
 
   devise_for :users, controllers: {registrations: "registrations",
-    sessions: "authentications", passwords: "passwords"}
+    sessions: "authentications", passwords: "passwords",
+    omniauth_callbacks: "omniauth_callbacks"}
   devise_for :admin, controllers: {sessions: "admin/sessions"}
 
   devise_scope :admin do
