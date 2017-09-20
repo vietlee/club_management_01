@@ -99,14 +99,31 @@ class User < ApplicationRecord
     end
   end
 
-  def self.from_omniauth auth
-    user = find_or_initialize_by email: auth.info.email
-    if user.present?
-      user.full_name = auth.info.name
-      user.password = User.generate_unique_secure_token if user.new_record?
-      user.remote_avatar_url = auth.info.avatar if auth.info.avatar.present?
-      user.save
-      user
+  class << self
+    def from_omniauth auth
+      user = find_or_initialize_by email: auth.info.email
+      if user.present?
+        user.full_name = auth.info.name
+        user.password = User.generate_unique_secure_token if user.new_record?
+        user.remote_avatar_url = auth.info.avatar if auth.info.avatar.present?
+        user.save
+        add_to_organization user, auth.info.workspaces
+        user
+      end
+    end
+
+    def add_to_organization user, workspace
+      workspace.first["name"].slice! Settings.name_office
+      query = workspace.first["name"]
+      organization = Organization.find_by "name LIKE ?" , "%#{query}%"
+      if organization.present?
+        user_organization = UserOrganization.find_with_user_of_company user.id, organization.id
+        unless user_organization
+          user_organization = UserOrganization.create user_id: user.id,
+            organization_id: organization.id, status: UserOrganization.statuses[:joined]
+          user_organization.save
+        end
+      end
     end
   end
 

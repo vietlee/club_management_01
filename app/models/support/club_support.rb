@@ -43,6 +43,6 @@ class Support::ClubSupport
   end
 
   def messages
-    @club_value.messages.take(Settings.chat_messages_limit)
+    @club_value.messages
   end
  end
