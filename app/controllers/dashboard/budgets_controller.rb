@@ -1,5 +1,5 @@
 class Dashboard::BudgetsController < BaseDashboardController
-  before_action :load_club, only: :create
+  before_action :load_club, only: :show
   def index
     @clubs = Club.of_user_clubs(current_user.user_clubs.manager)
   end
@@ -15,7 +15,26 @@ class Dashboard::BudgetsController < BaseDashboardController
     redirect_to dashboard_club_url(@club)
   end
 
+  def show
+    @event_clubs = @club.events.without_notification(Settings.notification).newest
+    @events = @event_clubs.by_created_at params[:date_search][:first_date],
+      params[:date_search][:second_date]
+    if @events
+      respond_to do |format|
+        format.js
+      end
+    end
+  end
+
   private
+  def load_club
+    @club = Club.find_by id: params[:id]
+    unless @club
+      flash[:danger] = t "club_manager.cant_fount"
+      redirect_to dashboard_path
+    end
+  end
+
   def create_event
     event_category = EventCategory.find_by id: Settings.periodic_category
     @event = event_category.events.of_month_payment(

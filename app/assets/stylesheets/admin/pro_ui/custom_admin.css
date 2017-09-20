@@ -22,3 +22,10 @@
   background: #08ddc1;
   border: solid 1px #f9fafc;
 }
+#budget-filter .date-search-budgets{
+  border-radius: 5px;
+  border: 1px solid #b1b7c3;
+}
+.span-date{
+  margin-top: 8px;
+}

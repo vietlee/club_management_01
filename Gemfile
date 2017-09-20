@@ -49,6 +49,7 @@ end
 group :development, :test do
   gem "byebug", platform: :mri
   gem "pry-rails"
+  gem "pry"
   gem "rspec-rails", "~> 3.4"
   gem "capybara"
   gem "factory_girl_rails", require: false

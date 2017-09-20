@@ -1,0 +1,15 @@
+<div class="input-group date-filter col-md-12" data-date-format="dd/mm/yyyy" id="budget-filter">
+  <div class="col-md-2 span-date text-center"><span><strong><%= t("from") %></span></strong></div>
+  <div class="col-md-3 form-group">
+    <%= date_field_tag :date_first, {},class: "form-control date-search-budgets first" %>
+  </div>
+  <div class="col-md-2 span-date text-center"><span><strong><%= t("to") %></span></strong></span></div>
+  <div class="col-md-3 form-group">
+    <%= date_field_tag :date_end, {},class: "form-control date-search-budgets second" %>
+  </div>
+  <%= hidden_field_tag :club_id, @club.id %>
+</div>
+<div id="data-event">
+  <%= render partial: "list_history_budgets", locals: {events: @support.history_budget} %>
+</div>
+<%= javascript_include_tag "budgets" %>
