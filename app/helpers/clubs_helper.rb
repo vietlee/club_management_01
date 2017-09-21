@@ -24,4 +24,12 @@ module ClubsHelper
       raw html
     end
   end
+
+  def check_view_manager club
+    if current_user.user_clubs.manager.find_by(club_id: club.id).present?
+      link_to t("view_more"), dashboard_club_path(club.id), class: "btn btn-success"
+    else
+      link_to t("view_more"), "javascript:void(0)", title: t("club_is_lock"), class: "btn btn-default"
+    end
+  end
 end

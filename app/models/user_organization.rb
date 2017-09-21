@@ -10,7 +10,7 @@ class UserOrganization < ApplicationRecord
   scope :without_user_ids, ->user_ids{where.not user_id: user_ids}
   scope :newest, ->{order created_at: :desc}
 
-  delegate :full_name, :avatar, :email, :phone, to: :user, allow_nil: :true
+  delegate :full_name, :avatar, :email, :phone, to: :user, prefix: :user, allow_nil: :true
   delegate :name, :description, :phone, :email, :logo, to: :organization, allow_nil: :true
 
   class << self

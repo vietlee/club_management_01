@@ -21,3 +21,4 @@
 //= require_tree ./common
 //= require ckeditor/init
 //= require bootstrap-tagsinput
+//= require dashboard_datatable.js

@@ -16,14 +16,25 @@
   <%= image_tag @organization.logo, class: "media-image animation-pulseSlow" %>
 </div>
 <div class="col-md-12 tab_custom">
-  <div class="pull-left">
+  <div class="col-md-6">
+    <div class="join-cancel-toggle-container">
+      <div class="pull-left">
+        <%= form_tag manager_import_users_path(organization:
+          @organization.id), multipart: true, method: :post do %>
+          <%= file_field_tag :file %>
+          <%= submit_tag t("import_user"), class: "btn btn-success", title: t("title_import") %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-6 text-right">
     <%= link_to "#modal-club-edit",
       data: {toggle: "modal"},
       class: "btn btn-sm btn-primary btton-edit-organization animation-fadeIn360" do %>
       <i class="fa fa-pencil "></i> <%= t "edit_organization" %>
     <% end %>
   </div>
-  <ul class="nav nav-tabs col-md-9 pull-right" role="tablist">
+  <ul class="nav nav-tabs col-md-10 col-md-offset-2" role="tablist">
     <li>
       <%= link_to "#clubs", data: {toggle: "tab"} do %>
         <%= t("club") %>
