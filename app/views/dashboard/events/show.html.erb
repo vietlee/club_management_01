@@ -1,7 +1,7 @@
 <div id="page-content">
   <ul class="breadcrumb breadcrumb-top">
     <li>
-      <%= link_to t("back"), club_manager_club_path(@club.id),
+      <%= link_to t("back"), dashboard_club_path(@club.id),
         class: "btn btn-danger" %>
     </li>
     <li><%= t "admin" %></li>
@@ -17,7 +17,7 @@
           <div class="block-title">
             <h2><strong><%= @event.name %></strong></h2>
             <div class ="pull-right btn-group">
-              <%= link_to edit_club_manager_club_event_path(id: @event.id, type: Event.event_categories["notification"]),
+              <%= link_to edit_dashboard_club_event_path(club_id: @club.id, id: @event.id, type: Event.event_categories["notification"]),
                 class: "btn btn-nm btn-primary" do %>
                 <i class="fa fa-pencil"> <%= t "edit" %></i>
               <% end %>

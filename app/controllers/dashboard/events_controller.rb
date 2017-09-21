@@ -53,7 +53,7 @@ class Dashboard::EventsController < BaseDashboardController
       service.update_money
       create_acivity @event, Settings.update, @event.club, current_user
       flash[:success] = t "club_manager.event.success_update"
-      redirect_to dashboard_club_event_path(id: @event.id)
+      redirect_to dashboard_club_event_path(club_id: params["club_id"], id: @event.id)
     end
   rescue
     flash_error @event

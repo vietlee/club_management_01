@@ -1,14 +1,11 @@
 <div id="page-content">
   <ul class="breadcrumb breadcrumb-top">
     <li>
-      <%= link_to t("back"), club_manager_club_path(@club.id),
-        class: "btn btn-danger" %>
+      <%= link_to t("back"), dashboard_club_event_path(club_id: params["club_id"],
+        id: @event.id), class: "btn btn-danger" %>
     </li>
     <li><%=  t "admin" %></li>
     <li><%= @event.name %>
-    <li>
-      <%= link_to t("club_manager.event.edit"), edit_club_manager_club_event_path(@event) %>
-    </li>
   </ul>
   <div class="row">
     <div class="col-md-1"></div>

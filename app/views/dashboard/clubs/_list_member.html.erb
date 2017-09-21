@@ -29,7 +29,7 @@
                     club_id: @club.id), method: :delete,
                     title: t("delete_member"),
                     data: {confirm: t("answer_delete_member")} do %>
-                    <i class="hi hi-remove btn btn-default"></i>
+                    <i class="fa fa-remove btn btn-default"></i>
                   <% end %>
                   <input type="hidden" class="club-member"
                   value="<%= @club.id %>" />
@@ -64,5 +64,5 @@
     </table>
   </div>
 <% else %>
-  <h1><%= t "no_data" %></h1>
+  <h4 class="text-center"><%= t "no_data" %></h4>
 <% end %>

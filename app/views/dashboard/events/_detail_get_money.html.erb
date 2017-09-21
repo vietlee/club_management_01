@@ -14,7 +14,7 @@
       <strong><%= t "detail" %></strong>
       <%= @event.description.html_safe %>
     </i><br><hr>
-    <%= link_to edit_club_manager_club_event_path(id: @event.id),
+    <%= link_to edit_dashboard_club_event_path(club_id: params["club_id"], id: @event.id),
       class: "btn btn-nm btn-primary" do %>
       <i class="fa fa-pencil"> <%= t "edit" %></i>
     <% end %>
