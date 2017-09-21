@@ -34,6 +34,10 @@ class ClubsController < ApplicationController
     @user_club = UserClub.new
     @support = Support::ClubSupport.new(@club, params[:page], nil)
     @albums = @club.albums.newest.includes(:images)
+    respond_to do |format|
+      format.html
+      format.js
+    end
   end
 
   protected

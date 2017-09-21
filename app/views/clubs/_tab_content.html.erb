@@ -5,7 +5,7 @@
         <div class="ui-block-title ui-block-title-small">
           <h6 class="title"><%= t "events" %></h6>
         </div>
-        <div class="content_tab">
+        <div class="content_tab" id="list-event-show">
           <%= render partial: "events/event", locals: {event: @club.events} %>
         </div>
       </div>
