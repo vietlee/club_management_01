@@ -1,0 +1,20 @@
+require "axlsx"
+wb = xlsx_package.workbook
+wb.styles do |style|
+  wb.add_worksheet(name: "Budgets") do |sheet|
+    sheet.add_row [t("history_budget") + @club.name]
+    sheet.add_row [t("timeline"), t("form"), t("name_event"), t("money"),
+    t("money_first"), t("money_last")]
+    @event_clubs.each do |event|
+      sheet.add_row [event.created_at, t("#{event.event_category}"),
+      event.name,
+      if event.get_money?
+        number_to_currency(get_money_expense(event, @club), locale: :vi)
+      else
+        number_to_currency(event.expense, locale: :vi)
+      end ,
+      number_to_currency(event.amount, locale: :vi),
+      number_to_currency(view_case_money_event_after(event, @club), locale: :vi)]
+    end
+  end
+end

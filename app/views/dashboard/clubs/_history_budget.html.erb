@@ -7,6 +7,10 @@
   <div class="col-md-3 form-group">
     <%= date_field_tag :date_end, {},class: "form-control date-search-budgets second" %>
   </div>
+  <div class="col-md-2 text-center">
+    <%= link_to t("export_budget"), dashboard_export_history_budgets_path( format: :xlsx, id: @club),
+    class: "btn btn-sm btn-danger" %>
+  </div>
   <%= hidden_field_tag :club_id, @club.id %>
 </div>
 <div id="data-event">
