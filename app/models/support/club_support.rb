@@ -39,7 +39,7 @@ class Support::ClubSupport
   end
 
   def members_joined
-    @club_value.user_clubs.joined
+    @club_value.user_clubs.joined.newest
   end
 
   def messages
