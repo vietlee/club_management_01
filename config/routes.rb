@@ -74,6 +74,7 @@ Rails.application.routes.draw do
       resources :requests
     end
     resources :budgets
+    resources :export_history_budgets
   end
 
   resources :users do

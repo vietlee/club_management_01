@@ -34,6 +34,10 @@ gem "roo-xls"
 gem "activerecord-import"
 gem "ransack"
 gem "mysql2"
+gem "rubyzip", "~> 1.1.0"
+gem "axlsx", "2.1.0.pre"
+gem "axlsx_rails"
+gem "acts_as_xlsx"
 gem "omniauth-framgia", git: "https://github.com/framgia-education/omniauth-framgia.git"
 
 source "https://rails-assets.org" do

@@ -926,7 +926,8 @@ vi:
   errors:
     messages:
       extension_whitelist_error: "Lỗi định dạng"
-  history_budget: "Lịch Sử Thu-Chi"
+  history_budget: "Lịch Sử Thu-Chi "
+  export_budget: "Xuất file"
   timeline: "Thời gian"
   form: "Theo hình thức"
   name_event: "Tên sự kiện"
