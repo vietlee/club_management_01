@@ -88,6 +88,9 @@
     <li role="presentation">
       <%= link_to t("albums"), "#albums", data: {toggle: "tab"} %>
     </li>
+    <li role="presentation">
+      <%= link_to t("history_budget"), "#history_budget", data: {toggle: "tab"} %>
+    </li>
   </ul>
 </div>
 <div id="page-content">
@@ -120,6 +123,11 @@
         <div role="tabpanel" class="tab-pane fade in" id="albums">
           <div class="row block">
             <%= render "list_albums" %>
+          </div>
+        </div>
+        <div role="tabpanel" class="tab-pane fade in" id="history_budget">
+          <div class="row block">
+            <%= render partial: "history_budget", locals: {events: @support.history_budget} %>
           </div>
         </div>
       </div>
