@@ -6,23 +6,47 @@
     <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12">
       <div class="ui-block">
         <div class="ui-block-title custom_flex">
-        <div class="item_club">
-          <%= render "clubs/budget" %>
-        </div>
-        <div class="item_club">
-          <%= search_form_for @q, url: club_url, method: :get do |f| %>
-            <div class="w-search custom_medium">
-              <div class="form-group with-button">
-              <%= f.text_field :name_or_description_cont,
-                id: "search-term", class: "form-control",
-                placeholder: t("search") %>
-              <button>
-                <svg class="olymp-magnifying-glass-icon"><use xlink:href="<%= url_to_asset("icons/icons.svg#olymp-magnifying-glass-icon") %>"></use></svg>
-              </button>
+          <div class="item_club col-md-4">
+            <%= render "clubs/budget" %>
+          </div>
+          <div class="item_club col-md-4">
+            <%= search_form_for @q, url: club_url, method: :get do |f| %>
+              <div class="w-search custom_medium">
+                <div class="form-group with-button">
+                <%= f.text_field :name_or_description_cont,
+                  id: "search-term", class: "form-control",
+                  placeholder: t("search") %>
+                <button>
+                  <svg class="olymp-magnifying-glass-icon"><use xlink:href="<%= url_to_asset("icons/icons.svg#olymp-magnifying-glass-icon") %>"></use></svg>
+                </button>
+                </div>
               </div>
+            <% end %>
+          </div>
+          <div class="col-md-4 view-member">
+            <% @support.members_joined.take(Settings.max_display_member_club).each do |member| %>
+              <div class="col-md-2 pull-right view-icon-memeber">
+                <%= link_to user_path(member.user_id) do %>
+                  <%= image_tag member.avatar, class: "member-club-view",
+                    title: "#{member.full_name}" %>
+                <% end %>
+              </div>
+            <% end %>
+            <% if @support.members_joined.size > Settings.max_display_member_club %>
+              <div class="col-md-2 pull-right view-icon-memeber">
+                <%= link_to "#modal-user", data: {toggle: "modal"},
+                  class: "animation-fadeIn360", title: t("more") do %>
+                  <%= image_tag "more_user", class: "member-club-view-more" %>
+                <% end %>
+              </div>
+            <% end %>
+          </div>
+          <div class="text-center">
+            <div id="modal-user" class="modal fade" tabindex="-1"
+              role="dialog" aria-hidden="true">
+              <%= render "button_more_user" %>
             </div>
-          <% end %>
-        </div>
+          </div>
         </div>
       </div>
     </div>
