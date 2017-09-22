@@ -794,7 +794,7 @@ vi:
   album_empty: "Chưa có ảnh nào!"
   background: "Hình nền"
   accept: "Duyệt"
-  admin_of_club: "Quyền quản trị câu lạc bộ này"
+  admin_of_club: "Thêm quyền quản trị câu lạc bộ này"
   add_admin: "Thêm người này làm admin"
   no_data: "Xin lỗi, không tìm thấy dữ liệu!!!"
   answer_admin: "Bạn muốn thành viên này làm quản trị viên cho câu lạc bộ?"
