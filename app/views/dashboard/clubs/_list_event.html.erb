@@ -15,9 +15,9 @@
       <h4>
         <b><%= event_club.name %></b>
         <% if event_club.notification? %>
-          <i class="fa fa-bullhorn " aria-hidden="true"></i>
+          <i class="fa fa-bell icon-for-event" aria-hidden="true"></i>
         <% else %>
-          <i class="fa fa-usd money" aria-hidden="true"></i>
+          <i class="fa fa-money icon-for-event" aria-hidden="true"></i>
         <% end %>
       </h4>
       <% unless event_club.notification? %>

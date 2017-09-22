@@ -4,7 +4,7 @@
       <h2 class="modal-title"><i class="fa fa-camera"></i> <%= t "club_manager.album.create" %></h2>
     </div>
     <div class="modal-body">
-      <%= form_for [:club_manager, @club, @album, @image], html: {multipart: true, enctype: "multipart/form-data", class: "form-horizontal form-bordered"} do |f| %>
+      <%= form_for [:dashboard, @club, @album, @image], html: {multipart: true, enctype: "multipart/form-data", class: "form-horizontal form-bordered"} do |f| %>
         <%= f.hidden_field :album_id, value: @album.id %>
         <fieldset>
           <div class="form-group">

@@ -2455,3 +2455,6 @@ li:last-child {
   background-color: #9ce0c2;
   padding: 5px !important;
 }
+.icon-for-event {
+  color: red;
+}
