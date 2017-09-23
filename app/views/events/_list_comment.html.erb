@@ -12,10 +12,11 @@
           </time>
         </div>
       </div>
+      <div class="pull-right">
+        <%= render partial: "comments/toggle", locals:
+          {comment_select: comment} if current_user == comment.user %>
+      </div>
     </div>
-    <%= render partial: "comments/toggle",
-      locals:
-      {comment_select: comment} if current_user == comment.user %>
     <p class="edit-comment-<%= comment.id %>"><%= comment.content %></p>
   </li>
 <% end %>

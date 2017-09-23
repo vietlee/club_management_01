@@ -8,11 +8,11 @@
       <%= link_to t("export_budget"), dashboard_export_history_budgets_path( format: :xlsx, id: @club),
     class: "btn btn-sm btn-danger pull-right" %>
     </div>
-    <div class="input-group date-filter" data-date-format="dd/mm/yyyy" id="budget-filter">
+    <div class="input-group" data-date-format="dd/mm/yyyy" id="budget-filter">
       <div class="col-md-2 span-date text-center"><span><strong><%= t("from") %></span></strong></div>
-      <%= date_field_tag :date_first, class: "form-control text-center first" %>
+      <%= date_field_tag :date_first, class: "form-control text-center" %>
       <div class="col-md-2 span-date text-center"><span><strong><%= t("to") %></span></strong></span></div>
-      <%= date_field_tag :date_end, class: "form-control text-center second" %>
+      <%= date_field_tag :date_end, class: "form-control text-center" %>
       <%= hidden_field :club_id, value: @club.id %>
     </div>
     <div id="data-event">

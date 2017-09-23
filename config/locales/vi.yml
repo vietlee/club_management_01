@@ -322,7 +322,7 @@ vi:
   do_nothing: "javascript:void(0)"
   profile: "Hồ sơ"
   setting: "Chỉnh sửa"
-  dashboard: "Trang chính"
+  dashboard: "Trang quản lý"
   list_users: "Danh sách người dùng"
   list_organizations: "Danh sách tổ chức"
   new_organizations: "Tạo mới tổ chức"
