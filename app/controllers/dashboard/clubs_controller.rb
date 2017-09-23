@@ -2,7 +2,7 @@ class Dashboard::ClubsController < BaseDashboardController
   before_action :load_club
   before_action :manager_club, except: :show
   before_action :load_organization, only: :show
-
+  before_action :verify_manager_club
   def show
     @event = Event.new
     @new_album = Album.new
@@ -48,6 +48,14 @@ class Dashboard::ClubsController < BaseDashboardController
     unless @organization
       flash[:danger] = t("not_found_organization")
       redirect_to request.referer
+    end
+  end
+
+  def verify_manager_club
+    @admin = (@club.user_clubs.manager).find_by user_id: current_user
+    unless @admin
+      flash[:danger] = t "not_authorities_to_access"
+      redirect_to dashboard_path
     end
   end
 end
