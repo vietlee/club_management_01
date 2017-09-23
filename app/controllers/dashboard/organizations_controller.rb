@@ -1,5 +1,6 @@
 class Dashboard::OrganizationsController < BaseDashboardController
   before_action :load_organization, only: [:show, :edit, :update]
+  before_action :verify_manager_organization, only: [:show, :edit, :update]
 
   def show
     @members = @organization.user_organizations.includes(:user)
@@ -25,7 +26,7 @@ class Dashboard::OrganizationsController < BaseDashboardController
     @organization = Organization.find_by id: params[:id]
     unless @organization
       flash[:danger] = t("organization_not_found")
-      redirect_to request.referer
+      redirect_to dashboard_path
     end
   end
 
@@ -33,5 +34,13 @@ class Dashboard::OrganizationsController < BaseDashboardController
     status = params["organization"]["status"].to_i
     params.require(:organization).permit(:name, :description, :phone,
       :email, :location, :logo).merge! status: status
+  end
+
+  def verify_manager_organization
+    @admin = (@organization.user_organizations.are_admin).find_by user_id: current_user
+    unless @admin
+      flash[:danger] = t "not_authorities_to_access"
+      redirect_to dashboard_path
+    end
   end
 end
