@@ -7,9 +7,6 @@
       <div class="ui-block">
         <div class="ui-block-title custom_flex">
           <div class="item_club col-md-4">
-            <%= render "clubs/budget" %>
-          </div>
-          <div class="item_club col-md-4">
             <%= search_form_for @q, url: club_url, method: :get do |f| %>
               <div class="w-search custom_medium">
                 <div class="form-group with-button">
@@ -22,6 +19,9 @@
                 </div>
               </div>
             <% end %>
+          </div>
+          <div class="item_club col-md-4 text-center">
+            <%= render "clubs/budget" %>
           </div>
           <div class="col-md-4 view-member">
             <% @support.members_joined.take(Settings.max_display_member_club).each do |member| %>

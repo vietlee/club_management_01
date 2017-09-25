@@ -516,3 +516,21 @@ body{
 .logo-page {
   height: 100px;
 }
+.half-width {
+  width: 50%;
+  left: 25%;
+}
+.fa-cog {
+  font-size: 18px;
+}
+.tab_list_detail_club li {
+  background-color: #FB5D39;
+  padding: 7px;
+}
+.tab_list_detail_club li a {
+  font-size: 13px;
+  color: white;
+}
+.tab_list_detail_club li .active {
+  color: black;
+}
